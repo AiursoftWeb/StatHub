@@ -1,4 +1,6 @@
 ﻿using Aiursoft.AiurProtocol;
+using Aiursoft.AiurProtocol.Attributes;
+using Aiursoft.StatHub.SDK.AddressModels;
 using Microsoft.Extensions.Options;
 
 namespace Aiursoft.StatHub.SDK;
@@ -16,10 +18,19 @@ public class ServerAccess
         _serverLocator = demoServerLocator.Value;
     }
 
-    public async Task<AiurResponse> InfoAsync()
+    public Task<AiurResponse> InfoAsync()
     {
         var url = new AiurApiEndpoint(host: _serverLocator.Instance, route: "/api/info", param: new {});
-        var result = await _http.Get<AiurResponse>(url);
-        return result;
+        return _http.Get<AiurResponse>(url);
+    }
+    
+    public Task<AiurResponse> MetricsAsync(int upTime)
+    {
+        var url = new AiurApiEndpoint(_serverLocator.Instance, "/api/metrics", new { });
+        var form = new AiurApiPayload(new MetricsAddressModel
+        {
+            UpTime = upTime
+        });
+        return _http.Post<AiurResponse>(url, form, BodyFormat.HttpJsonBody);
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Aiursoft.CommandFramework.Abstracts;
+using Aiursoft.CSTools.Services;
 using Aiursoft.StatHub.Client.Services;
 using Aiursoft.StatHub.Client.Services.Stat;
 using Microsoft.Extensions.DependencyInjection;
@@ -13,5 +14,6 @@ public class Startup : IStartUp
         services.AddSingleton<IHostedService, ServerMonitor>();
         services.AddScoped<SubmitService>();
         services.AddTransient<UptimeService>();
+        services.AddTransient<CommandService>();
     }
 }
