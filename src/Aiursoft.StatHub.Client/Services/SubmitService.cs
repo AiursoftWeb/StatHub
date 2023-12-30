@@ -1,7 +1,7 @@
 ﻿using Aiursoft.StatHub.SDK;
 using Microsoft.Extensions.Logging;
 
-namespace Aiursoft.StatHub.Client;
+namespace Aiursoft.StatHub.Client.Services;
 
 public class SubmitService
 {

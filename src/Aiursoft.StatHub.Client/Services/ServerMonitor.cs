@@ -1,9 +1,9 @@
 ﻿using System.Diagnostics.CodeAnalysis;
-using Aiursoft.StatHub.Client;
-using Aiursoft.StatHub.SDK;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+
+namespace Aiursoft.StatHub.Client.Services;
 
 [ExcludeFromCodeCoverage] // This class is not a part of our test.
 public class ServerMonitor : IHostedService

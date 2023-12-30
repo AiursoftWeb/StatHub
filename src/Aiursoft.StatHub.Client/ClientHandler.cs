@@ -3,10 +3,12 @@ using System.CommandLine.Invocation;
 using Aiursoft.CommandFramework.Framework;
 using Aiursoft.CommandFramework.Models;
 using Aiursoft.CommandFramework.Services;
-using Aiursoft.StatHub.Client;
+using Aiursoft.StatHub.Client.Services;
 using Aiursoft.StatHub.SDK;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+
+namespace Aiursoft.StatHub.Client;
 
 public class ClientHandler : ExecutableCommandHandlerBuilder
 {
@@ -30,7 +32,6 @@ public class ClientHandler : ExecutableCommandHandlerBuilder
     
     protected override Option[] GetCommandOptions() => new Option[]
     {
-        // Configure your options here.
         Server,
         OneTime,
         CommonOptionsProvider.VerboseOption

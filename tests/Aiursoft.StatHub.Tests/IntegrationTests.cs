@@ -1,6 +1,7 @@
 ﻿using Aiursoft.AiurProtocol;
 using Aiursoft.CommandFramework;
 using Aiursoft.CSTools.Tools;
+using Aiursoft.StatHub.Client;
 using Aiursoft.StatHub.SDK;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -38,7 +39,7 @@ public class IntegrationTests
         var serviceProvider = services.BuildServiceProvider();
         var sdk = serviceProvider.GetRequiredService<ServerAccess>();
 
-        var result = await sdk.InfoAsync()!;
+        var result = await sdk.InfoAsync();
         Assert.AreEqual(result.Code, Code.ResultShown);
         Assert.IsTrue(!string.IsNullOrWhiteSpace(result.Message));
     }

@@ -1,6 +1,8 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using Aiursoft.CommandFramework;
 
+namespace Aiursoft.StatHub.Client;
+
 [ExcludeFromCodeCoverage]
 public class Program
 {

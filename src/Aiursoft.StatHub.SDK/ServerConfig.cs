@@ -1,6 +1,4 @@
-﻿// In SDK
-
-namespace Aiursoft.StatHub.SDK;
+﻿namespace Aiursoft.StatHub.SDK;
 
 public class ServerConfig
 {
