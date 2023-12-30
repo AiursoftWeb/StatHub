@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E3A2580A-C1B4-4D7E-99CE-597C29A96733}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aiursoft.StatHub.Client", "src\Aiursoft.StatHub.Client\Aiursoft.StatHub.Client.csproj", "{3100F387-CC58-4D5D-BF35-EAC0CDDE73F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aiursoft.StatHub.SDK", "src\Aiursoft.StatHub.SDK\Aiursoft.StatHub.SDK.csproj", "{88754F18-53A8-4820-9202-C3E3ADE36429}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aiursoft.StatHub.Server", "src\Aiursoft.StatHub.Server\Aiursoft.StatHub.Server.csproj", "{8E0681F3-45A1-4F05-90ED-0C91C26B9263}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{B46B0D0D-43D7-4E3A-AF35-63547F064CBB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aiursoft.StatHub.Tests", "tests\Aiursoft.StatHub.Tests\Aiursoft.StatHub.Tests.csproj", "{53F23C38-2144-460B-BD78-6570D3049399}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3100F387-CC58-4D5D-BF35-EAC0CDDE73F7} = {E3A2580A-C1B4-4D7E-99CE-597C29A96733}
+		{88754F18-53A8-4820-9202-C3E3ADE36429} = {E3A2580A-C1B4-4D7E-99CE-597C29A96733}
+		{8E0681F3-45A1-4F05-90ED-0C91C26B9263} = {E3A2580A-C1B4-4D7E-99CE-597C29A96733}
+		{53F23C38-2144-460B-BD78-6570D3049399} = {B46B0D0D-43D7-4E3A-AF35-63547F064CBB}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3100F387-CC58-4D5D-BF35-EAC0CDDE73F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3100F387-CC58-4D5D-BF35-EAC0CDDE73F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3100F387-CC58-4D5D-BF35-EAC0CDDE73F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3100F387-CC58-4D5D-BF35-EAC0CDDE73F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88754F18-53A8-4820-9202-C3E3ADE36429}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88754F18-53A8-4820-9202-C3E3ADE36429}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88754F18-53A8-4820-9202-C3E3ADE36429}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88754F18-53A8-4820-9202-C3E3ADE36429}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E0681F3-45A1-4F05-90ED-0C91C26B9263}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E0681F3-45A1-4F05-90ED-0C91C26B9263}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E0681F3-45A1-4F05-90ED-0C91C26B9263}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E0681F3-45A1-4F05-90ED-0C91C26B9263}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53F23C38-2144-460B-BD78-6570D3049399}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53F23C38-2144-460B-BD78-6570D3049399}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53F23C38-2144-460B-BD78-6570D3049399}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53F23C38-2144-460B-BD78-6570D3049399}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
