@@ -24,12 +24,14 @@ public class ServerAccess
         return _http.Get<AiurResponse>(url);
     }
     
-    public Task<AiurResponse> MetricsAsync(int upTime)
+    public Task<AiurResponse> MetricsAsync(string hostname, int upTime, double cpuUsage)
     {
         var url = new AiurApiEndpoint(_serverLocator.Instance, "/api/metrics", new { });
         var form = new AiurApiPayload(new MetricsAddressModel
         {
-            UpTime = upTime
+            Hostname = hostname,
+            UpTime = upTime,
+            CpuUsage = cpuUsage
         });
         return _http.Post<AiurResponse>(url, form, BodyFormat.HttpJsonBody);
     }

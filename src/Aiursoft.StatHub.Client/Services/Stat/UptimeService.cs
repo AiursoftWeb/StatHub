@@ -12,13 +12,14 @@ public class UptimeService
     {
         _commandService = commandService;
     }
-    
+
     public async Task<int> GetUpTimeAsync()
     {
         if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
         {
             var uptime = await File.ReadAllTextAsync("/proc/uptime");
-            var upSeconds = double.Parse(uptime.Split(' ', StringSplitOptions.RemoveEmptyEntries)[0], CultureInfo.InvariantCulture);
+            var upSeconds = double.Parse(uptime.Split(' ', StringSplitOptions.RemoveEmptyEntries)[0],
+                CultureInfo.InvariantCulture);
             return (int)upSeconds;
         }
 
@@ -31,7 +32,7 @@ public class UptimeService
             var upTimeSpan = DateTime.Now - upTimeDate;
             return (int)upTimeSpan.TotalSeconds;
         }
-        
+
         throw new NotSupportedException("Your OS is not supported!");
     }
 }

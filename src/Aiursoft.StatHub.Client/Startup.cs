@@ -14,6 +14,8 @@ public class Startup : IStartUp
         services.AddSingleton<IHostedService, ServerMonitor>();
         services.AddScoped<SubmitService>();
         services.AddTransient<UptimeService>();
+        services.AddTransient<HostnameService>();
+        services.AddTransient<CpuUsageService>();
         services.AddTransient<CommandService>();
     }
 }

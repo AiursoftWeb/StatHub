@@ -1,5 +1,6 @@
 ﻿using System.Reflection;
 using Aiursoft.AiurProtocol.Server;
+using Aiursoft.StatHub.Server.Data;
 using Aiursoft.WebTools.Models;
 
 namespace Aiursoft.StatHub.Server;
@@ -8,6 +9,8 @@ public class Startup : IWebStartup
 {
     public void ConfigureServices(IConfiguration configuration, IWebHostEnvironment environment, IServiceCollection services)
     {
+        services.AddSingleton<InMemoryDatabase>();
+
         services
             .AddControllers()
             .AddAiurProtocol()

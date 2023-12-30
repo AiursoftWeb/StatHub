@@ -7,5 +7,17 @@ public class MetricsAddressModel
 {
     [Required]
     [JsonPropertyName("uptime")]
-    public int UpTime { get; set; }
+    public int UpTime { get; init; }
+
+    [Required]
+    [JsonPropertyName("hostname")]
+    [MaxLength(100)]
+    [MinLength(1)]
+    [RegularExpression("^[a-zA-Z0-9-]*$")]
+    public string? Hostname { get; set; }
+
+    [Required]
+    [JsonPropertyName("cpuUsage")]
+    [Range(0, 100)]
+    public double CpuUsage { get; set; }
 }
