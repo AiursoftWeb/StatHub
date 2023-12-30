@@ -8,7 +8,7 @@ public class Client
     
     public int UpTime { get; set; }
     
-    public double CpuUsage { get; set; }
+    public int CpuUsage { get; set; }
     
     public DateTime LastUpdate { get; set; } = DateTime.UtcNow;
 }

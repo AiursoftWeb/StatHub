@@ -18,14 +18,14 @@ public class CpuUsageService
     /// </summary>
     /// <returns>CPU Usage, output value is from 0 to 100.</returns>
     /// <exception cref="NotSupportedException"></exception>
-    public async Task<double> GetCpuUsageAsync()
+    public async Task<int> GetCpuUsageAsync()
     {
         if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
         {
             var dstatResult = await _commandService.RunCommandAsync("dstat", "-c --noheader 1 1", Path.GetTempPath());
             var usage = dstatResult.output.Split("\n").Last(t => !string.IsNullOrWhiteSpace(t));
             var idl = usage.Split(" ", StringSplitOptions.RemoveEmptyEntries)[2];
-            var idlDouble = double.Parse(idl, CultureInfo.InvariantCulture);
+            var idlDouble = int.Parse(idl, CultureInfo.InvariantCulture);
             return 100 - idlDouble;
         }
 
@@ -34,7 +34,7 @@ public class CpuUsageService
             var commandResult =
                 await _commandService.RunCommandAsync("wmic", "cpu get loadpercentage", Path.GetTempPath());
             var usage = commandResult.output.Split("\n").Last(t => !string.IsNullOrWhiteSpace(t));
-            var usageDouble = double.Parse(usage, CultureInfo.InvariantCulture);
+            var usageDouble = int.Parse(usage, CultureInfo.InvariantCulture);
             return usageDouble;
         }
 

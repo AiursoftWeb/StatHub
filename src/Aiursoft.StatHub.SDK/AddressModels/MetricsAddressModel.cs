@@ -19,5 +19,5 @@ public class MetricsAddressModel
     [Required]
     [JsonPropertyName("cpuUsage")]
     [Range(0, 100)]
-    public double CpuUsage { get; set; }
+    public int CpuUsage { get; set; }
 }

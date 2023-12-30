@@ -24,7 +24,7 @@ public class ServerAccess
         return _http.Get<AiurResponse>(url);
     }
     
-    public Task<AiurResponse> MetricsAsync(string hostname, int upTime, double cpuUsage)
+    public Task<AiurResponse> MetricsAsync(string hostname, int upTime, int cpuUsage)
     {
         var url = new AiurApiEndpoint(_serverLocator.Instance, "/api/metrics", new { });
         var form = new AiurApiPayload(new MetricsAddressModel
