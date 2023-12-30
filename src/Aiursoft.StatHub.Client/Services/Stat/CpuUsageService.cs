@@ -23,7 +23,7 @@ public class CpuUsageService
         if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
         {
             var dstatResult = await _commandService.RunCommandAsync("dstat", "-c --noheader 1 1", Path.GetTempPath());
-            var usage = dstatResult.output.Split("\n").Last();
+            var usage = dstatResult.output.Split("\n").Last(t => !string.IsNullOrWhiteSpace(t));
             var idl = usage.Split(" ", StringSplitOptions.RemoveEmptyEntries)[2];
             var idlDouble = double.Parse(idl, CultureInfo.InvariantCulture);
             return 100 - idlDouble;

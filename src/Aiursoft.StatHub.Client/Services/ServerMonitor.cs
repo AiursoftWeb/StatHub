@@ -28,7 +28,7 @@ public class ServerMonitor : IHostedService
     public Task StartAsync(CancellationToken cancellationToken)
     {
         _logger.LogInformation("Timed Background Service is starting");
-        _timer = new Timer(DoWork, null, TimeSpan.FromSeconds(20), TimeSpan.FromSeconds(10));
+        _timer = new Timer(DoWork, null, TimeSpan.FromSeconds(2), TimeSpan.FromSeconds(10));
         return Task.CompletedTask;
     }
 
