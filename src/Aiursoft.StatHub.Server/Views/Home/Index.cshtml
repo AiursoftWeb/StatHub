@@ -17,10 +17,11 @@
                         <table class="table table-hover table-sm datatable" id="logTable">
                             <thead>
                                 <tr>
-                                    <th>Hostname</th>
                                     <th>IP</th>
-                                    <th>Boot time</th>
+                                    <th>Name</th>
+                                    <th>Boot at</th>
                                     <th>CPU Usage</th>
+                                    <th>Used at</th>
                                     <th>Last Update</th>
                                 </tr>
                             </thead>
@@ -28,11 +29,12 @@
                                 @foreach (var client in Model)
                                 {
                                     <tr>
-                                        <td>@client.Hostname</td>
                                         <td>@client.Ip</td>
+                                        <td>@client.Hostname</td>
                                         <td data-utc-time="@client.GetBootTime().ToHtmlDateTime()" data-sort="@client.GetBootTime().ToUniversalTime()">
                                         </td>
                                         <td>@(client.CpuUsage)%</td>
+                                        <td>@(client.Process)</td>
                                         <td data-utc-time="@client.LastUpdate.ToHtmlDateTime()" data-sort="@client.LastUpdate.ToUniversalTime()">
                                         </td>
                                     </tr>

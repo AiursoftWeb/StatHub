@@ -13,6 +13,7 @@ public class Client
     public DateTime LastUpdate { get; set; } = DateTime.UtcNow;
     
     public string Version { get; set; } = null!;
+    public string Process { get; set; } = null!;
 
     public DateTime GetBootTime()
     {

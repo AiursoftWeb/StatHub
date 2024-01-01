@@ -21,9 +21,13 @@ public class MetricsAddressModel
     [Range(0, 100)]
     public int CpuUsage { get; set; }
 
-    [Required]
     [JsonPropertyName("version")]
     [MaxLength(100)]
     [MinLength(1)]
-    public string? Version { get; init; }
+    public string? Version { get; init; } = "unknown";
+
+    [JsonPropertyName("process")]
+    [MaxLength(100)]
+    [MinLength(1)]
+    public string? Process { get; init; } = "unknown";
 }

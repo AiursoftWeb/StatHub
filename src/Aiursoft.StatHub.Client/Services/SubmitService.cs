@@ -6,6 +6,7 @@ namespace Aiursoft.StatHub.Client.Services;
 
 public class SubmitService
 {
+    private readonly ExpensiveProcessService _expensiveProcessService;
     private readonly VersionService _versionService;
     private readonly CpuUsageService _cpuUsageService;
     private readonly HostnameService _hostnameService;
@@ -14,6 +15,7 @@ public class SubmitService
     private readonly ILogger<SubmitService> _logger;
 
     public SubmitService(
+        ExpensiveProcessService expensiveProcessService,
         VersionService versionService,
         CpuUsageService cpuUsageService,
         HostnameService hostnameService,
@@ -21,6 +23,7 @@ public class SubmitService
         ServerAccess serverAccess,
         ILogger<SubmitService> logger)
     {
+        _expensiveProcessService = expensiveProcessService;
         _versionService = versionService;
         _cpuUsageService = cpuUsageService;
         _hostnameService = hostnameService;
@@ -44,7 +47,10 @@ public class SubmitService
         
         var version = _versionService.GetAppVersion();
         _logger.LogInformation($"Version: {version}.");
+        
+        var expensiveProcess = await _expensiveProcessService.GetExpensiveProcessAsync();
+        _logger.LogInformation($"Expensive process: {expensiveProcess}.");
 
-        await _serverAccess.MetricsAsync(hostname, upTime, cpuUsage, version);
+        await _serverAccess.MetricsAsync(hostname, upTime, cpuUsage, version, expensiveProcess);
     }
 }

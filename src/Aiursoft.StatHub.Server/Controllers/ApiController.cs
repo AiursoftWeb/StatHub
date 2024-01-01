@@ -39,6 +39,7 @@ public class ApiController : ControllerBase
         entity.Ip = HttpContext.Connection.RemoteIpAddress?.ToString() ?? throw new ArgumentNullException(nameof(HttpContext.Connection.RemoteIpAddress));
         entity.LastUpdate = DateTime.UtcNow;
         entity.Version = model.Version ?? throw new ArgumentNullException(nameof(model.Version));
+        entity.Process = model.Process ?? throw new ArgumentNullException(nameof(model.Process));
         return this.Protocol(Code.JobDone, $"Received metrics!");
     }
     
