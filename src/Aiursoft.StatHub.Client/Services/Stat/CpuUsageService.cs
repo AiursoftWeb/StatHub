@@ -33,7 +33,7 @@ public class CpuUsageService
         {
             var commandResult =
                 await _commandService.RunCommandAsync("wmic", "cpu get loadpercentage", Path.GetTempPath());
-            var usage = commandResult.output.Split("\n").Last(t => !string.IsNullOrWhiteSpace(t));
+            var usage = commandResult.output.Split("\n")[1];
             var usageDouble = int.Parse(usage, CultureInfo.InvariantCulture);
             return usageDouble;
         }

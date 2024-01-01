@@ -27,14 +27,9 @@ public class ExpensiveProcessService
 
         if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
         {
-            var commandResult = await _commandService.RunCommandAsync("wmic", "process get Caption,ProcessId,CommandLine", Path.GetTempPath());
-            var firstMeaningfulLine = commandResult.output
-                .Split("\n")
-                .Where(l => !l.StartsWith("Caption", StringComparison.InvariantCultureIgnoreCase))
-                .FirstOrDefault(t => !string.IsNullOrWhiteSpace(t));
-            var firstWord = firstMeaningfulLine!.Split(" ", StringSplitOptions.RemoveEmptyEntries)[0];
-            var process = firstWord.Split("/").Last();
-            return process;
+            // Get most CPU consuming process.
+            // TODO.
+            return "Not implemented yet.";
         }
 
         throw new NotSupportedException("Your OS is not supported!");
