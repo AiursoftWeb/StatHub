@@ -43,6 +43,19 @@ public class IntegrationTests
         Assert.AreEqual(result.Code, Code.ResultShown);
         Assert.IsTrue(!string.IsNullOrWhiteSpace(result.Message));
     }
+    
+    [TestMethod]
+    public async Task GetCleints()
+    {
+        var services = new ServiceCollection();
+        services.AddStatHubServer(_endpointUrl);
+        var serviceProvider = services.BuildServiceProvider();
+        var sdk = serviceProvider.GetRequiredService<ServerAccess>();
+
+        var result = await sdk.GetClientsAsync();
+        Assert.AreEqual(result.Code, Code.ResultShown);
+        Assert.IsTrue(!string.IsNullOrWhiteSpace(result.Message));
+    }
 
     [TestMethod]
     public async Task CommandTest()
@@ -62,5 +75,29 @@ public class IntegrationTests
         {
             // Ignore
         }
+    }
+    
+    [TestMethod]
+    public async Task TestHomepage()
+    {
+        var httpClient = new HttpClient();
+        var response = await httpClient.GetAsync(_endpointUrl);
+        response.EnsureSuccessStatusCode();
+    }
+
+    [TestMethod]
+    public async Task TestAddPage()
+    {
+        var httpClient = new HttpClient();
+        var response = await httpClient.GetAsync(_endpointUrl + "/home/addclient");
+        response.EnsureSuccessStatusCode();
+    }
+    
+    [TestMethod]
+    public async Task TestAddScript()
+    {
+        var httpClient = new HttpClient();
+        var response = await httpClient.GetAsync(_endpointUrl + "/install.sh");
+        response.EnsureSuccessStatusCode();
     }
 }

@@ -43,8 +43,8 @@ public class ApiController : ControllerBase
         return this.Protocol(Code.JobDone, $"Received metrics!");
     }
     
-    [HttpGet("servers")]
-    public IActionResult Servers()
+    [HttpGet("clients")]
+    public IActionResult Clients()
     {
         var servers = _database.GetClients().ToList();
         return this.Protocol(Code.ResultShown, $"Successfully get all servers.", servers);
