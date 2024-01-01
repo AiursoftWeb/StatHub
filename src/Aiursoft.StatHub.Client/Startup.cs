@@ -16,6 +16,7 @@ public class Startup : IStartUp
         services.AddTransient<UptimeService>();
         services.AddTransient<HostnameService>();
         services.AddTransient<CpuUsageService>();
+        services.AddTransient<VersionService>();
         services.AddTransient<CommandService>();
     }
 }
