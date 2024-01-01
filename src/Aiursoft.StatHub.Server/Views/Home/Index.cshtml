@@ -23,6 +23,7 @@
                                     <th>CPU Usage</th>
                                     <th>Used at</th>
                                     <th>Last Update</th>
+                                    <th>Version</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -37,6 +38,7 @@
                                         <td>@(client.Process)</td>
                                         <td data-utc-time="@client.LastUpdate.ToHtmlDateTime()" data-sort="@client.LastUpdate.ToUniversalTime()">
                                         </td>
+                                        <td>@client.Version</td>
                                     </tr>
                                 }
                             </tbody>
