@@ -30,6 +30,7 @@ public class HomeController : Controller
         var installScript = @$"
 DEBIAN_FRONTEND=noninteractive sudo apt install dotnet7 -y
 sudo dotnet tool install Aiursoft.StatHub.Client --tool-path /opt/stathub-client || sudo dotnet tool update Aiursoft.StatHub.Client --tool-path /opt/stathub-client
+
 echo ""[Unit]
 Description=Stathub Client
 After=network.target
@@ -43,13 +44,10 @@ WorkingDirectory=/opt/stathub-client
 Restart=always
 RestartSec=10
 KillSignal=SIGINT
-Environment=\""ASPNETCORE_ENVIRONMENT=Production\""
-Environment=\""DOTNET_PRINT_TELEMETRY_MESSAGE=false\""
-Environment=\""DOTNET_CLI_TELEMETRY_OPTOUT=1\""
-Environment=\""ASPNETCORE_FORWARDEDHEADERS_ENABLED=true\""
 
 [Install]
 WantedBy=multi-user.target"" | sudo tee /etc/systemd/system/stathub.service
+
 sudo systemctl daemon-reload
 sudo systemctl enable stathub.service
 sudo systemctl stop stathub.service > /dev/null 2>&1
