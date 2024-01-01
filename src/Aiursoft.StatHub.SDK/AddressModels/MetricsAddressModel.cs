@@ -7,7 +7,7 @@ public class MetricsAddressModel
 {
     [Required]
     [JsonPropertyName("uptime")]
-    public int UpTime { get; init; }
+    public DateTime BootTime { get; init; }
 
     [Required]
     [JsonPropertyName("hostname")]

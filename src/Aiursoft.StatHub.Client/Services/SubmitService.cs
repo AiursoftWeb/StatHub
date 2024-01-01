@@ -10,7 +10,7 @@ public class SubmitService
     private readonly VersionService _versionService;
     private readonly CpuUsageService _cpuUsageService;
     private readonly HostnameService _hostnameService;
-    private readonly UptimeService _uptimeService;
+    private readonly BootTimeService _bootTimeService;
     private readonly ServerAccess _serverAccess;
     private readonly ILogger<SubmitService> _logger;
 
@@ -19,7 +19,7 @@ public class SubmitService
         VersionService versionService,
         CpuUsageService cpuUsageService,
         HostnameService hostnameService,
-        UptimeService uptimeService,
+        BootTimeService bootTimeService,
         ServerAccess serverAccess,
         ILogger<SubmitService> logger)
     {
@@ -27,7 +27,7 @@ public class SubmitService
         _versionService = versionService;
         _cpuUsageService = cpuUsageService;
         _hostnameService = hostnameService;
-        _uptimeService = uptimeService;
+        _bootTimeService = bootTimeService;
         _serverAccess = serverAccess;
         _logger = logger;
     }
@@ -36,8 +36,8 @@ public class SubmitService
     {
         _logger.LogInformation("Gathering metrics...");
         
-        var upTime = await _uptimeService.GetUpTimeAsync();
-        _logger.LogInformation($"Up time: {upTime} seconds.");
+        var bootTime = await _bootTimeService.GetBootTimeAsync();
+        _logger.LogInformation($"Boot time: {bootTime}.");
         
         var hostname = await _hostnameService.GetHostnameAsync();
         _logger.LogInformation($"Hostname: {hostname}.");
@@ -51,6 +51,6 @@ public class SubmitService
         var expensiveProcess = await _expensiveProcessService.GetExpensiveProcessAsync();
         _logger.LogInformation($"Expensive process: {expensiveProcess}.");
 
-        await _serverAccess.MetricsAsync(hostname, upTime, cpuUsage, version, expensiveProcess);
+        await _serverAccess.MetricsAsync(hostname, bootTime, cpuUsage, version, expensiveProcess);
     }
 }

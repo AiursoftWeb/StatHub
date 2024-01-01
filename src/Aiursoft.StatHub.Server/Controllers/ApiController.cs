@@ -30,11 +30,11 @@ public class ApiController : ControllerBase
     public IActionResult Metrics([FromBody] MetricsAddressModel model)
     {
         var identity = $"{model.Hostname}-{HttpContext.Connection.RemoteIpAddress}";
-        _logger.LogInformation($"Received metrics from {identity}.");
+        _logger.LogInformation("Received metrics from {Identity}.", identity);
         
         var entity = _database.GetOrAddClient(identity);
         entity.CpuUsage = model.CpuUsage;
-        entity.UpTime = model.UpTime;
+        entity.BootTime = model.BootTime;
         entity.Hostname = model.Hostname ?? throw new ArgumentNullException(nameof(model.Hostname));
         entity.Ip = HttpContext.Connection.RemoteIpAddress?.ToString() ?? throw new ArgumentNullException(nameof(HttpContext.Connection.RemoteIpAddress));
         entity.LastUpdate = DateTime.UtcNow;
