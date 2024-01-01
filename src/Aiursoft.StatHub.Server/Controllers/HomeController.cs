@@ -27,7 +27,8 @@ public class HomeController : Controller
     public IActionResult GetInstallScript()
     {
         // return text/plain
-        var installScript = @$"sudo apt install dotnet7
+        var installScript = @$"
+DEBIAN_FRONTEND=noninteractive sudo apt install dotnet7 -y
 sudo dotnet tool install Aiursoft.StatHub.Client --tool-path /opt/stathub-client || sudo dotnet tool update Aiursoft.StatHub.Client --tool-path /opt/stathub-client
 echo ""[Unit]
 Description=Stathub Client
