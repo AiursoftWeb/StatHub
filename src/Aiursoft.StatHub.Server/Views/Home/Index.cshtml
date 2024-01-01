@@ -1,4 +1,5 @@
-﻿@model Aiursoft.StatHub.SDK.Models.Client[]
+﻿@using Aiursoft.WebTools
+@model Aiursoft.StatHub.SDK.Models.Client[]
 
 <div class="jumbotron">
     <div class="container">
@@ -13,24 +14,30 @@
                 <div class="card-body">
                     <h5 class="card-title">Client status</h5>
                     <div class="table-responsive">
-                        <table class="table table-striped table-hover table-sm" id="logTable">
-                            <tr>
-                                <th>Hostname</th>
-                                <th>IP</th>
-                                <th>Up time</th>
-                                <th>CPU Usage</th>
-                                <th>Last Update</th>
-                            </tr>
-                            @foreach (var client in Model)
-                            {
+                        <table class="table table-hover table-sm datatable" id="logTable">
+                            <thead>
                                 <tr>
-                                    <td>@client.Hostname</td>
-                                    <td>@client.Ip</td>
-                                    <td>@client.UpTime</td>
-                                    <td>@client.CpuUsage</td>
-                                    <td>@client.LastUpdate</td>
+                                    <th>Hostname</th>
+                                    <th>IP</th>
+                                    <th>Boot time</th>
+                                    <th>CPU Usage</th>
+                                    <th>Last Update</th>
                                 </tr>
-                            }
+                            </thead>
+                            <tbody>
+                                @foreach (var client in Model)
+                                {
+                                    <tr>
+                                        <td>@client.Hostname</td>
+                                        <td>@client.Ip</td>
+                                        <td data-utc-time="@client.GetBootTime().ToHtmlDateTime()" data-sort="@client.GetBootTime().ToUniversalTime()">
+                                        </td>
+                                        <td>@(client.CpuUsage)%</td>
+                                        <td data-utc-time="@client.LastUpdate.ToHtmlDateTime()" data-sort="@client.LastUpdate.ToUniversalTime()">
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
                         </table>
                     </div>
                 </div>

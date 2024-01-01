@@ -11,4 +11,9 @@ public class Client
     public int CpuUsage { get; set; }
     
     public DateTime LastUpdate { get; set; } = DateTime.UtcNow;
+
+    public DateTime GetBootTime()
+    {
+        return LastUpdate - TimeSpan.FromSeconds(UpTime);
+    }
 }
