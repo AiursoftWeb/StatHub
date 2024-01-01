@@ -7,6 +7,24 @@
 
 StatHub is a simple server stat statistics system. It can collect server stats and display them in a simple way.
 
+## Run in Ubuntu
+
+The following script will install\update this app on your Ubuntu server. Supports Ubuntu 22.04.
+
+On your Ubuntu server, run the following command:
+
+```bash
+curl -sL https://gitlab.aiursoft.cn/aiursoft/stathub/-/raw/master/install.sh | sudo bash
+```
+
+Of course it is suggested that append a custom port number to the command:
+
+```bash
+curl -sL https://gitlab.aiursoft.cn/aiursoft/stathub/-/raw/master/install.sh | sudo bash -s 8080
+```
+
+It will install the app as a systemd service, and start it automatically. Binary files will be located at `/opt/apps`. Service files will be located at `/etc/systemd/system`.
+
 ## Run locally
 
 Requirements about how to run
