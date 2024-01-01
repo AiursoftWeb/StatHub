@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html lang="en" class="h-100">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="icon" type="image/x-icon" href="~/favicon.ico" />
+    <title>StatHub - Aiursoft</title>
+    <link rel="stylesheet" href="~/node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/node_modules/@@aiursoft/autodark.js/dist/css/autodark.min.css" />
+    <link rel="stylesheet" href="~/node_modules/@@fortawesome/fontawesome-free/css/all.min.css" />
+</head>
+
+<body class="d-flex flex-column h-100 pt-5">
+    <nav class="navbar fixed-top navbar-expand-md">
+        <div class="container">
+            <a class="navbar-brand" href="https://www.aiursoft.cn">
+                Aiursoft
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+                aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Clients</a>
+                    </li>
+                </ul>
+                <div class="form-inline">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://gitlab.aiursoft.cn/aiursoft/stathub">
+                                <i class="fab fa-gitlab"></i>
+                                View on GitLab
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    @RenderBody()
+
+    <footer class="footer mt-auto py-3">
+        <div class="container">
+            &copy; @DateTime.UtcNow.Year - Aiursoft.StatHub - <a
+                href="https://gitlab.aiursoft.cn/aiursoft/stathub">GitLab</a>
+        </div>
+    </footer>
+
+    <script type="module" src="~/node_modules/jquery/dist/jquery.min.js" defer></script>
+    <script type="module" src="~/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script type="module">
+        import { autoTheme } from '/node_modules/@@aiursoft/autodark.js/dist/esm/autodark.js';
+        autoTheme();
+    </script>
+    <script src="~/node_modules/chart.js/dist/Chart.bundle.min.js"></script>
+    @(await RenderSectionAsync("scripts", false))
+</body>
+
+</html>

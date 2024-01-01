@@ -1,0 +1,32 @@
+﻿<div class="jumbotron">
+    <div class="container">
+        <h1 class="display-4">Welcome, Admin!</h1>
+        <p class="lead">Here you can manage your clients and view your clients' status.</p>
+    </div>
+</div>
+<div class="container">
+    <div class="row no-gutters">
+        <div class="col-md-12 mt-3">
+            <div class="card mb-2 tests-card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">HTTP Lag</h5>
+                    <p class="card-text">Your browser will send server a simple message and get a simple response. This number means the time it costs from request to response. The smaller the number, the better your network is.</p>
+                    <div class="form">
+                        <div class="form-group">
+                            <label for="pinglagfilter">Log filter(ms)</label>
+                            <input type="number" class="form-control" id="pinglagfilter" value="200">
+                        </div>
+                        <button class="btn btn-primary" id="pingbutton" onclick="ping()">Start Test</button>
+                        <button class="btn btn-secondary" id="stop-pingbutton" onclick="stopPing()">Stop Test</button>
+                    </div>
+                    <p class="test-status mt-3">
+                        <kbd id="httpStatus" class="d-none"></kbd>
+                    </p>
+                    <p class="test-status">
+                        <kbd id="httpMax" class="d-none"></kbd>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

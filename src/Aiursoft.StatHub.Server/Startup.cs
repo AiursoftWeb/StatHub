@@ -12,13 +12,14 @@ public class Startup : IWebStartup
         services.AddSingleton<InMemoryDatabase>();
 
         services
-            .AddControllers()
+            .AddControllersWithViews()
             .AddAiurProtocol()
             .AddApplicationPart(Assembly.GetExecutingAssembly());
     }
 
     public void Configure(WebApplication app)
     {
+        app.UseStaticFiles();
         app.UseRouting();
         app.MapDefaultControllerRoute();
     }
