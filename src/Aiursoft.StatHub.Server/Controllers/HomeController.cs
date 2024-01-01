@@ -17,4 +17,9 @@ public class HomeController : Controller
         var clients = _database.GetClients();
         return View(clients);
     }
+
+    public IActionResult AddClient()
+    {
+        return View();
+    }
 }
