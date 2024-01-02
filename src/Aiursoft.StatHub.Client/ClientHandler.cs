@@ -1,12 +1,13 @@
 ﻿using System.CommandLine;
 using System.CommandLine.Invocation;
+using Aiursoft.AiurObserver;
 using Aiursoft.CommandFramework.Framework;
 using Aiursoft.CommandFramework.Models;
 using Aiursoft.CommandFramework.Services;
 using Aiursoft.StatHub.Client.Services;
 using Aiursoft.StatHub.SDK;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
+using Newtonsoft.Json;
 
 namespace Aiursoft.StatHub.Client;
 
@@ -52,15 +53,24 @@ public class ClientHandler : ExecutableCommandHandlerBuilder
         
         var host = hostBuilder.Build();
         
-        if (oneTime)
+        var dstatMonitor = host.Services.GetRequiredService<DstatMonitor>();
+        dstatMonitor.Subscribe(result =>
         {
-            var submitService = host.Services.CreateScope().ServiceProvider.GetRequiredService<SubmitService>();
-            await submitService.SubmitAsync();
-        }
-        else
-        {
-            await host.StartAsync();
-            await host.WaitForShutdownAsync();
-        }
+            var json = JsonConvert.SerializeObject(result);
+            Console.WriteLine(json);
+            return Task.CompletedTask;
+        });
+
+        await dstatMonitor.Monitor();
+        // if (oneTime)
+        // {
+        //     var submitService = host.Services.CreateScope().ServiceProvider.GetRequiredService<SubmitService>();
+        //     await submitService.SubmitAsync();
+        // }
+        // else
+        // {
+        //     await host.StartAsync();
+        //     await host.WaitForShutdownAsync();
+        // }
     }
 }

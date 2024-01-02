@@ -14,6 +14,7 @@ public class Startup : IStartUp
     {
         services.AddTaskCanon();
         services.AddSingleton<IHostedService, ServerMonitor>();
+        services.AddSingleton<DstatMonitor>();
         services.AddScoped<SubmitService>();
         services.AddTransient<BootTimeService>();
         services.AddTransient<HostnameService>();
