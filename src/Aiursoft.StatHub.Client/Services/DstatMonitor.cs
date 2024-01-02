@@ -38,8 +38,20 @@ public class DstatMonitor : AsyncObservable<DstatResult>
                 {
                     continue;
                 }
-                var result = new DstatResult(line);
-                await BroadcastAsync(result);
+                if (line.Split(" ", StringSplitOptions.RemoveEmptyEntries).Length < 16)
+                {
+                    continue;
+                }
+                try
+                {
+                    var result = new DstatResult(line);
+                    await BroadcastAsync(result);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    throw;
+                }
             }
         }
 
