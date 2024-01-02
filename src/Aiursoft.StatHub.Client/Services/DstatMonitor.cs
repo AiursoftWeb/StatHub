@@ -49,7 +49,9 @@ public class DstatMonitor : AsyncObservable<DstatResult>
                 }
                 catch (Exception e)
                 {
+                    Console.WriteLine(line);
                     Console.WriteLine(e.Message);
+                    Console.WriteLine(e.StackTrace);
                     throw;
                 }
             }
