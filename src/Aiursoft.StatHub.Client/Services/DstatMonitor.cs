@@ -38,8 +38,10 @@ public class DstatMonitor : AsyncObservable<DstatResult>
                 {
                     continue;
                 }
-                if (line.Split(" ", StringSplitOptions.RemoveEmptyEntries).Length < 16)
+                if (line.Replace("|", " ").Split(" ", StringSplitOptions.RemoveEmptyEntries).Length < 16)
                 {
+                    Console.WriteLine("Invalid line:");
+                    Console.WriteLine(line);
                     continue;
                 }
                 try
@@ -63,40 +65,6 @@ public class DstatMonitor : AsyncObservable<DstatResult>
         );
     }
 }
-
-
-// anduin@lab:~$ sudo dstat --cpu --mem --disk --net --load --nocolor  --noheaders
-// ----total-usage---- ------memory-usage----- -dsk/total- -net/total- ---load-avg---
-// usr sys idl wai stl| used  free  buf   cach| read  writ| recv  send| 1m   5m  15m
-// | 776M  547M  173M   13G|           |           |0.11 0.08 0.06
-// 0   1  99   0   0| 777M  545M  173M   13G|   0     0 | 192B  418B|0.11 0.08 0.06
-// 0   0  99   0   0| 775M  548M  173M   13G|   0    52k| 497B  570B|0.10 0.08 0.06
-// 0   0 100   0   0| 775M  548M  173M   13G|   0     0 | 132B  178B|0.10 0.08 0.06
-// 0   0 100   0   0| 775M  548M  173M   13G|   0     0 |3789B  220B|0.10 0.08 0.06
-// 0   0 100   0   0| 775M  548M  173M   13G|   0     0 | 132B  178B|0.10 0.08 0.06
-// 0   0  99   0   0| 775M  548M  173M   13G|   0   352k| 132B  178B|0.09 0.08 0.06
-// 0   0 100   0   0| 775M  548M  173M   13G|   0     0 | 132B  178B|0.09 0.08 0.06
-// 0   0 100   0   0| 775M  548M  173M   13G|   0  4096B| 132B  178B|0.09 0.08 0.06
-// 0   0 100   0   0| 775M  548M  173M   13G|   0     0 | 132B  178B|0.09 0.08 0.06
-// 1   0  99   0   0| 784M  539M  173M   13G|   0     0 | 132B  178B|0.09 0.08 0.06
-// 1   0  99   0   0| 786M  537M  173M   13G|   0    52k| 132B  178B|0.08 0.07 0.06
-// 0   0  99   0   0| 782M  541M  173M   13G|   0     0 | 497B  570B|0.08 0.07 0.06
-// 0   0 100   0   0| 782M  541M  173M   13G|   0   100k| 132B  178B|0.08 0.07 0.06
-// 0   0  99   0   0|  41G   20G  701M  714M| 108k    0 |  34M  919k|0.69 1.04 1.51
-// 0   4  96   0   0|  41G   20G  701M  714M| 624k  173M|  17M  766k|0.69 1.04 1.51
-// 0   0  99   0   0|  41G   20G  701M  714M|   0  4639k|3070k  161k|0.69 1.04 1.51
-// 0   0 100   0   0|  41G   20G  701M  714M|2262k    0 |5212k  478k|0.69 1.04 1.51
-// 0   0 100   0   0|  41G   20G  701M  714M|2136k    0 |  18M 1022k|0.63 1.02 1.50
-// 0   0 100   0   0|  41G   20G  701M  714M|1637k    0 |  16M 1332k|0.63 1.02 1.50
-// 0   5  95   0   0|  41G   20G  701M  714M|1315k  232M|9225k  314k|0.63 1.02 1.50
-// 0   0  99   0   0|  41G   20G  701M  714M|   0  4751k|3911k  277k|0.63 1.02 1.50
-// 0   0  99   0   0|  41G   20G  701M  714M|8119k  192k|6789k 7292k|0.63 1.02 1.50
-// 0   0 100   0   0|  41G   20G  701M  714M| 688k    0 |1111k  307k|0.58 1.00 1.49
-// 0   0 100   0   0|  41G   20G  701M  714M|2254k    0 |5430k  722k|0.58 1.00 1.49
-// 0   4  94   1   0|  41G   20G  701M  714M|5233k  207M|2639k 3810k|0.58 1.00 1.49
-// 0   1  94   4   0|  41G   20G  701M  714M| 236k   45M|1419k   72k|0.58 1.00 1.49
-// 0   3  93   4   0|  41G   20G  701M  714M| 360k   95M|8945k  246k|0.58 1.00 1.49
-// 0   1  98   1   0|  41G   20G  701M  714M| 488k   20M|5104k  286k|0.53 0.99 1.48
 
 public static class DstatNumberProcessor
 {
