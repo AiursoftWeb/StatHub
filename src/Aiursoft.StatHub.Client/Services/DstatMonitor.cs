@@ -127,7 +127,7 @@ public class DstatResult
     public DstatResult(string line)
     {
         var parts = line
-            .Replace("|", "")
+            .Replace("|", " ")
             .Split(" ", StringSplitOptions.RemoveEmptyEntries);
         CpuUsr = int.Parse(parts[0]);
         CpuSys = int.Parse(parts[1]);
