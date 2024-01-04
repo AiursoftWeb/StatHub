@@ -27,8 +27,6 @@ public class ServerMonitor
 
     public Task MonitorServerAsync(CancellationToken cancellationToken, bool onlyOneTrigger = false)
     {
-        try
-        {
             _logger.LogInformation("Starting to monitor server...");
             _subscription = _commandService
                 .Output
@@ -51,11 +49,6 @@ public class ServerMonitor
             }
 
             return _commandService.Run("dstat", args, Directory.GetCurrentDirectory());
-        }
-        finally
-        {
-            _subscription?.Unsubscribe();
-        }
     }
 
     public Task StopAsync(CancellationToken cancellationToken)
