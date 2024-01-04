@@ -58,7 +58,16 @@
                                                      title="@promptText"></div>
                                             </div>
                                         </td>
-                                        <td>@(client.Process)</td>
+                                        <td>
+                                            @if (cpuRate < 30)
+                                            {
+                                                <span class="badge badge-secondary">@(client.Process)</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="badge badge-danger">@(client.Process)</span>
+                                            }
+                                        </td>
                                         
                                         @* RAM *@
                                         @{
