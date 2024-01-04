@@ -27,29 +27,34 @@ public class ServerMonitor
 
     public Task MonitorServerAsync(CancellationToken cancellationToken, bool onlyOneTrigger = false)
     {
-        _logger.LogInformation("Starting to monitor server...");
-        _subscription = _commandService
-            .Output
-            .Filter(t => !string.IsNullOrWhiteSpace(t))
-            .Filter(t => !t.StartsWith("----"))
-            .Filter(t => !t.StartsWith("usr"))
-            .Map(t => t.Replace("|", " "))
-            .Filter(t => t.Split(" ", StringSplitOptions.RemoveEmptyEntries).Length >= 16)
-            .Map(t => new DstatResult(t))
-            .Aggregate(10) // Aggregate 10 results into one array. 
-            .Throttle(TimeSpan.FromSeconds(9))// Max speed is every 9 seconds one request.
-            .Pipe(result =>
-            {
-                _logger.LogTrace("Sending metrics: {Trace}.", JsonConvert.SerializeObject(result));
-            })
-            .Subscribe(_submitService);
-
-        var args = "--cpu --mem --disk --net --load --nocolor  --noheaders";
-        if (onlyOneTrigger)
+        try
         {
-            args += " 1 1";
+            _logger.LogInformation("Starting to monitor server...");
+            _subscription = _commandService
+                .Output
+                .Filter(t => !string.IsNullOrWhiteSpace(t))
+                .Filter(t => !t.StartsWith("----"))
+                .Filter(t => !t.StartsWith("usr"))
+                .Map(t => t.Replace("|", " "))
+                .Filter(t => t.Split(" ", StringSplitOptions.RemoveEmptyEntries).Length >= 16)
+                .Map(t => new DstatResult(t))
+                .Aggregate(10) // Aggregate 10 results into one array. 
+                .Throttle(TimeSpan.FromSeconds(9)) // Max speed is every 9 seconds one request.
+                .Pipe(result => { _logger.LogTrace("Sending metrics: {Trace}.", JsonConvert.SerializeObject(result)); })
+                .Subscribe(_submitService);
+
+            var args = "--cpu --mem --disk --net --load --nocolor  --noheaders";
+            if (onlyOneTrigger)
+            {
+                args += " 1 1";
+            }
+
+            return _commandService.Run("dstat", args, Directory.GetCurrentDirectory());
         }
-        return _commandService.Run("dstat", args, Directory.GetCurrentDirectory());
+        finally
+        {
+            _subscription?.Unsubscribe();
+        }
     }
 
     public Task StopAsync(CancellationToken cancellationToken)
