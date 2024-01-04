@@ -36,17 +36,30 @@
                                         <td>@client.Hostname</td>
                                         <td data-utc-time="@client.BootTime.ToHtmlDateTime()" data-sort="@client.BootTime.Ticks">
                                         </td>
-                                        <td>
-                                            @{
-                                                var cpu = client.GetCpuUsage();
-                                                var cpuRate = cpu.Ratio;
-                                            }
+                                        
+                                        @* CPU *@
+                                        @{
+                                            var cpu = client.GetCpuUsage();
+                                            var cpuRate = cpu.Ratio;
+                                            var promptText = $"CPU Usage:\nUser: {cpu.Usr.ToString("0.00")}%\nSystem: {cpu.Sys.ToString("0.00")}%\nIdle: {cpu.Idl.ToString("0.00")}%\nWait: {cpu.Wai.ToString("0.00")}%\nSteal: {cpu.Stl.ToString("0.00")}%";
+                                            var color = 
+                                                cpuRate < 5 ? "bg-success":
+                                                cpuRate < 10 ? "bg-info":
+                                                cpuRate < 20 ? "bg-secondary":
+                                                cpuRate < 40 ? "bg-warning":
+                                                "bg-danger";
+                                        }
+                                        <td data-sort="@cpuRate">
+
                                             <div class="progress">
-                                                <div class="progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: @(cpuRate)%" aria-valuenow="@cpuRate" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" 
-                                                     title="CPU Usage: User: @cpu.Usr.ToString("0.00")%, System: @cpu.Sys.ToString("0.00")%, Idle: @cpu.Idl.ToString("0.00")%, Wait: @cpu.Wai.ToString("0.00")%, Steal: @cpu.Stl.ToString("0.00")%"></div>
+                                                <div class="progress-bar-striped progress-bar-animated @color" 
+                                                     role="progressbar" style="width: @(cpuRate)%" aria-valuenow="@cpuRate" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" 
+                                                     title="@promptText"></div>
                                             </div>
                                         </td>
                                         <td>@(client.Process)</td>
+                                        
+                                        @* RAM *@
                                         @{
                                             var mem = client.GetMemUsed();
                                         }
