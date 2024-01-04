@@ -42,6 +42,6 @@ public class ServerAccess
             Process = process,
             Stats = stats
         });
-        return _http.Post<AiurResponse>(url, form, BodyFormat.HttpJsonBody);
+        return _http.Post<AiurResponse>(url, form, BodyFormat.HttpJsonBody, autoRetry: false);
     }
 }
