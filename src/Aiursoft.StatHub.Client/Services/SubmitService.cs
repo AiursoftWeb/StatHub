@@ -47,7 +47,8 @@ public class SubmitService : IConsumer<DstatResult[]>
         var expensiveProcess = await _expensiveProcessService.GetExpensiveProcessAsync();
         _logger.LogInformation($"Expensive process: {expensiveProcess}.");
 
-        await _serverAccess.MetricsAsync(hostname, bootTime, version, expensiveProcess, dstatResults);
+        var response = await _serverAccess.MetricsAsync(hostname, bootTime, version, expensiveProcess, dstatResults);
+        _logger.LogInformation("Metrics sent! Response: {ResponseMessage}.", response.Message);
     }
 
     public Func<DstatResult[], Task> Consume => SubmitAsync;

@@ -44,7 +44,7 @@ public class ApiController : ControllerBase
         {
             await entity.Stats.BroadcastAsync(stat);
         }
-        return this.Protocol(Code.JobDone, $"Received metrics!");
+        return this.Protocol(Code.JobDone, $"Got!");
     }
     
     [HttpGet("clients")]

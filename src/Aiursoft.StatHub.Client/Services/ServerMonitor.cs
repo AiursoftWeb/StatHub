@@ -27,6 +27,7 @@ public class ServerMonitor
 
     public Task MonitorServerAsync(CancellationToken cancellationToken, bool onlyOneTrigger = false)
     {
+        _logger.LogInformation("Starting to monitor server...");
         _subscription = _commandService
             .Output
             .Filter(t => !string.IsNullOrWhiteSpace(t))
