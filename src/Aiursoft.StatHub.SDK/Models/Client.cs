@@ -30,9 +30,35 @@ public class MemoryInfo
     public long Free { get; set; }
 }
 
+public class CpuInfo
+{
+    public CpuInfo(int usr, int sys, int idl, int wai, int stl)
+    {
+        Usr = usr;
+        Sys = sys;
+        Idl = idl;
+        Wai = wai;
+        Stl = stl;
+        Ratio = 100 - idl;
+    }
+    
+    public int Usr { get; set; }
+    public int Sys { get; set; }
+    public int Idl { get; set; }
+    public int Wai { get; set; }
+    public int Stl { get; set; }
+
+    public int Ratio;
+}
+
 public class Client
 {
-    private readonly MessageStage<int> _cpuUsage;
+    private readonly MessageStage<int> _cpuUsr;
+    private readonly MessageStage<int> _cpuSys;
+    private readonly MessageStage<int> _cpuIdl;
+    private readonly MessageStage<int> _cpuWai;
+    private readonly MessageStage<int> _cpuStl;
+    
     private readonly MessageStage<long> _memUsed;
     private readonly MessageStage<long> _memBuf;
     private readonly MessageStage<long> _memCach;
@@ -41,7 +67,12 @@ public class Client
     public Client()
     {
         Stats = new AsyncObservable<DstatResult>();
-        _cpuUsage = Stats.Map(stat => 100 - stat.CpuIdl).StageLast();
+        _cpuUsr = Stats.Map(stat => stat.CpuUsr).StageLast();
+        _cpuSys = Stats.Map(stat => stat.CpuSys).StageLast();
+        _cpuIdl = Stats.Map(stat => stat.CpuIdl).StageLast();
+        _cpuWai = Stats.Map(stat => stat.CpuWai).StageLast();
+        _cpuStl = Stats.Map(stat => stat.CpuStl).StageLast();
+        
         _memUsed = Stats.Map(stat => stat.MemUsed).StageLast();
         _memBuf = Stats.Map(stat => stat.MemBuf).StageLast();
         _memCach = Stats.Map(stat => stat.MemCach).StageLast();
@@ -54,9 +85,9 @@ public class Client
 
     public DateTime BootTime { get; set; } = DateTime.MinValue;
 
-    public int GetCpuUsage()
+    public CpuInfo GetCpuUsage()
     {
-        return _cpuUsage.Stage;
+        return new CpuInfo(_cpuUsr.Stage, _cpuSys.Stage, _cpuIdl.Stage, _cpuWai.Stage, _cpuStl.Stage);
     }
     
     public MemoryInfo GetMemUsed()
