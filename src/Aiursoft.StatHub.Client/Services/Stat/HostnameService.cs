@@ -34,7 +34,7 @@ public class OsInfoService
 
     public Task<string> GetOsInfoAsync()
     {
-        return _cacheService.RunWithCache("host-name", async () =>
+        return _cacheService.RunWithCache("os-info", async () =>
         {
             var osInfo = await File.ReadAllTextAsync("/etc/os-release");
 

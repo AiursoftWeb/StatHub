@@ -36,5 +36,5 @@ public class MetricsAddressModel
     [JsonProperty("osName")]
     [MaxLength(100)]
     [MinLength(1)]
-    public string? OsName { get; set; }
+    public string? OsName { get; set; } = "unknown";
 }

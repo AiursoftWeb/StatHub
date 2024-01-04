@@ -43,7 +43,7 @@ public class ServerMonitor
                 .Pipe(result => { _logger.LogTrace("Sending metrics: {Trace}.", JsonConvert.SerializeObject(result)); })
                 .Subscribe(_submitService);
 
-            var args = "--cpu --mem --disk --net --load --nocolor  --noheaders";
+            var args = "--cpu --mem --disk --net --load --nocolor --noheaders";
             if (onlyOneTrigger)
             {
                 args += " 1 1";
