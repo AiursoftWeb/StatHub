@@ -1,33 +1,35 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.Text.Json.Serialization;
+using Aiursoft.StatHub.SDK.Models;
+using Newtonsoft.Json;
 
 namespace Aiursoft.StatHub.SDK.AddressModels;
 
 public class MetricsAddressModel
 {
     [Required]
-    [JsonPropertyName("uptime")]
+    [JsonProperty("bootTime")]
     public DateTime BootTime { get; init; }
 
     [Required]
-    [JsonPropertyName("hostname")]
+    [JsonProperty("hostname")]
     [MaxLength(100)]
     [MinLength(1)]
     [RegularExpression("^[a-zA-Z0-9-]*$")]
     public string? Hostname { get; init; }
 
-    [Required]
-    [JsonPropertyName("cpuUsage")]
-    [Range(0, 100)]
-    public int CpuUsage { get; set; }
-
-    [JsonPropertyName("version")]
+    [JsonProperty("version")]
     [MaxLength(100)]
     [MinLength(1)]
     public string? Version { get; init; } = "unknown";
 
-    [JsonPropertyName("process")]
+    [JsonProperty("process")]
     [MaxLength(100)]
     [MinLength(1)]
     public string? Process { get; init; } = "unknown";
+
+    [JsonProperty("stats")]
+    [Required]
+    [MinLength(10)]
+    [MaxLength(10)]
+    public DstatResult[]? Stats { get; set; }
 }

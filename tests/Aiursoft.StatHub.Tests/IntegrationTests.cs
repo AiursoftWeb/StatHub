@@ -1,4 +1,5 @@
-﻿using Aiursoft.AiurProtocol;
+﻿using System.Runtime.InteropServices;
+using Aiursoft.AiurProtocol;
 using Aiursoft.CommandFramework;
 using Aiursoft.CSTools.Tools;
 using Aiursoft.StatHub.Client;
@@ -60,6 +61,11 @@ public class IntegrationTests
     [TestMethod]
     public async Task CommandTest()
     {
+        // Skip Windows.
+        if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+        {
+            return;
+        }
         var result = await _program.TestRunAsync(new[] { "-s", _endpointUrl, "--one-time" });
         Assert.AreEqual(0, result.ProgramReturn);
     }

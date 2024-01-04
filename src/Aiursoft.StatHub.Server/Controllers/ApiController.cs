@@ -1,6 +1,7 @@
 using Aiursoft.AiurProtocol;
 using Aiursoft.AiurProtocol.Server;
 using Aiursoft.StatHub.SDK.AddressModels;
+using Aiursoft.StatHub.SDK.Models;
 using Aiursoft.StatHub.Server.Data;
 using Microsoft.AspNetCore.Mvc;
 
@@ -27,20 +28,23 @@ public class ApiController : ControllerBase
     }
     
     [HttpPost("metrics")]
-    public IActionResult Metrics([FromBody] MetricsAddressModel model)
+    public async Task<IActionResult> Metrics([FromBody] MetricsAddressModel model)
     {
         var identity = $"{model.Hostname}-{HttpContext.Connection.RemoteIpAddress}";
         _logger.LogInformation("Received metrics from {Identity}.", identity);
         
         var entity = _database.GetOrAddClient(identity);
-        entity.CpuUsage = model.CpuUsage;
         entity.BootTime = model.BootTime;
         entity.Hostname = model.Hostname ?? throw new ArgumentNullException(nameof(model.Hostname));
         entity.Ip = HttpContext.Connection.RemoteIpAddress?.ToString() ?? throw new ArgumentNullException(nameof(HttpContext.Connection.RemoteIpAddress));
         entity.LastUpdate = DateTime.UtcNow;
         entity.Version = model.Version ?? throw new ArgumentNullException(nameof(model.Version));
         entity.Process = model.Process ?? throw new ArgumentNullException(nameof(model.Process));
-        return this.Protocol(Code.JobDone, $"Received metrics!");
+        foreach (var stat in model.Stats ?? Array.Empty<DstatResult>())
+        {
+            await entity.Stats.BroadcastAsync(stat);
+        }
+        return this.Protocol(Code.JobDone, $"Got!");
     }
     
     [HttpGet("clients")]

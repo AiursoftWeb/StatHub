@@ -1,5 +1,4 @@
-﻿using System.Runtime.InteropServices;
-using Aiursoft.CSTools.Services;
+﻿using Aiursoft.CSTools.Services;
 
 namespace Aiursoft.StatHub.Client.Services.Stat;
 
@@ -13,8 +12,6 @@ public class ExpensiveProcessService
     
     public async Task<string> GetExpensiveProcessAsync()
     {
-        if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
-        {
             var commandResult = await _commandService.RunCommandAsync("ps", "-eo cmd --sort=-%cpu", Path.GetTempPath());
             var firstMeaningfulLine = commandResult.output
                 .Split("\n")
@@ -23,15 +20,5 @@ public class ExpensiveProcessService
             var firstWord = firstMeaningfulLine!.Split(" ", StringSplitOptions.RemoveEmptyEntries)[0];
             var process = firstWord.Split("/").Last();
             return process;
-        }
-
-        if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
-        {
-            // Get most CPU consuming process.
-            // TODO.
-            return "Not implemented yet.";
-        }
-
-        throw new NotSupportedException("Your OS is not supported!");
     }
 }

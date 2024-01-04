@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Library</OutputType>
-    <Version>1.0.5</Version>
+    <Version>1.0.6</Version>
     <TargetFramework>net7.0</TargetFramework>
     <AssemblyName>Aiursoft.StatHub.SDK</AssemblyName>
     <RootNamespace>Aiursoft.StatHub.SDK</RootNamespace>
@@ -21,6 +21,7 @@
     <None Include="..\..\README.md" Pack="true" PackagePath="." />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Aiursoft.AiurProtocol" Version="7.0.15" />
+    <PackageReference Include="Aiursoft.AiurObserver" Version="7.0.12" />
+    <PackageReference Include="Aiursoft.AiurProtocol" Version="7.0.16" />
   </ItemGroup>
 </Project>

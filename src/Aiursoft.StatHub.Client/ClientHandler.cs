@@ -6,7 +6,6 @@ using Aiursoft.CommandFramework.Services;
 using Aiursoft.StatHub.Client.Services;
 using Aiursoft.StatHub.SDK;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 
 namespace Aiursoft.StatHub.Client;
 
@@ -51,16 +50,22 @@ public class ClientHandler : ExecutableCommandHandlerBuilder
         });
         
         var host = hostBuilder.Build();
-        
+        var serverMonitor = host.Services.GetRequiredService<ServerMonitor>();
+
         if (oneTime)
         {
-            var submitService = host.Services.CreateScope().ServiceProvider.GetRequiredService<SubmitService>();
-            await submitService.SubmitAsync();
+            try
+            {
+                await serverMonitor.MonitorServerAsync(CancellationToken.None, true);
+            }
+            catch (InvalidOperationException)
+            {
+                // Ignore because dstat will quit immediately.
+            }
         }
         else
         {
-            await host.StartAsync();
-            await host.WaitForShutdownAsync();
+            await serverMonitor.MonitorServerAsync(CancellationToken.None);
         }
     }
 }

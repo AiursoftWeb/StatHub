@@ -31,17 +31,17 @@ public class ServerAccess
         return _http.Get<AiurResponse>(url);
     }
     
-    public Task<AiurResponse> MetricsAsync(string hostname, DateTime bootTime, int cpuUsage, string version, string process)
+    public Task<AiurResponse> MetricsAsync(string hostname, DateTime bootTime, string version, string process, DstatResult[] stats)
     {
         var url = new AiurApiEndpoint(_serverLocator.Instance, "/api/metrics", new { });
         var form = new AiurApiPayload(new MetricsAddressModel
         {
             Hostname = hostname,
             BootTime = bootTime,
-            CpuUsage = cpuUsage,
             Version = version,
-            Process = process
+            Process = process,
+            Stats = stats
         });
-        return _http.Post<AiurResponse>(url, form, BodyFormat.HttpJsonBody);
+        return _http.Post<AiurResponse>(url, form, BodyFormat.HttpJsonBody, autoRetry: false);
     }
 }

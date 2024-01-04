@@ -34,7 +34,7 @@
                                         <td>@client.Hostname</td>
                                         <td data-utc-time="@client.BootTime.ToHtmlDateTime()" data-sort="@client.BootTime.ToUniversalTime()">
                                         </td>
-                                        <td>@(client.CpuUsage)%</td>
+                                        <td>@(client.GetCpuUsage())%</td>
                                         <td>@(client.Process)</td>
                                         <td data-utc-time="@client.LastUpdate.ToHtmlDateTime()" data-sort="@client.LastUpdate.ToUniversalTime()">
                                         </td>
