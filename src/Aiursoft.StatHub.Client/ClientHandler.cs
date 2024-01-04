@@ -53,36 +53,22 @@ public class ClientHandler : ExecutableCommandHandlerBuilder
         });
         
         var host = hostBuilder.Build();
-        var stopWatch = new Stopwatch();
-        
-        var dstatMonitor = host.Services.GetRequiredService<DstatMonitor>();
-        dstatMonitor
-            .Filter(t => !string.IsNullOrWhiteSpace(t))
-            .Filter(t => !t.StartsWith("----"))
-            .Filter(t => !t.StartsWith("usr"))
-            .Map(t => t.Replace("|", " "))
-            .Filter(t => t.Split(" ", StringSplitOptions.RemoveEmptyEntries).Length >= 16)
-            .Map(t => new DstatResult(t))
-            .Aggregate(10)
-            .Map(JsonConvert.SerializeObject)
-            .Subscribe(result =>
-        {
-            Console.WriteLine($"Time: {stopWatch.ElapsedMilliseconds}ms");
-            Console.WriteLine(result);
-            return Task.CompletedTask;
-        });
+        var serverMonitor = host.Services.GetRequiredService<ServerMonitor>();
 
-        stopWatch.Start();
-        await dstatMonitor.Monitor();
-        // if (oneTime)
-        // {
-        //     var submitService = host.Services.CreateScope().ServiceProvider.GetRequiredService<SubmitService>();
-        //     await submitService.SubmitAsync();
-        // }
-        // else
-        // {
-        //     await host.StartAsync();
-        //     await host.WaitForShutdownAsync();
-        // }
+        if (oneTime)
+        {
+            try
+            {
+                await serverMonitor.MonitorServerAsync(CancellationToken.None, true);
+            }
+            catch (InvalidOperationException)
+            {
+                // Ignore because dstat will quit immediately.
+            }
+        }
+        else
+        {
+            await serverMonitor.MonitorServerAsync(CancellationToken.None);
+        }
     }
 }

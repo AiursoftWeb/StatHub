@@ -1,14 +1,15 @@
-﻿using Aiursoft.StatHub.Client.Services.Stat;
+﻿using Aiursoft.AiurObserver;
+using Aiursoft.StatHub.Client.Services.Stat;
 using Aiursoft.StatHub.SDK;
+using Aiursoft.StatHub.SDK.Models;
 using Microsoft.Extensions.Logging;
 
 namespace Aiursoft.StatHub.Client.Services;
 
-public class SubmitService
+public class SubmitService : IConsumer<DstatResult[]>
 {
     private readonly ExpensiveProcessService _expensiveProcessService;
     private readonly VersionService _versionService;
-    private readonly CpuUsageService _cpuUsageService;
     private readonly HostnameService _hostnameService;
     private readonly BootTimeService _bootTimeService;
     private readonly ServerAccess _serverAccess;
@@ -17,7 +18,6 @@ public class SubmitService
     public SubmitService(
         ExpensiveProcessService expensiveProcessService,
         VersionService versionService,
-        CpuUsageService cpuUsageService,
         HostnameService hostnameService,
         BootTimeService bootTimeService,
         ServerAccess serverAccess,
@@ -25,14 +25,13 @@ public class SubmitService
     {
         _expensiveProcessService = expensiveProcessService;
         _versionService = versionService;
-        _cpuUsageService = cpuUsageService;
         _hostnameService = hostnameService;
         _bootTimeService = bootTimeService;
         _serverAccess = serverAccess;
         _logger = logger;
     }
     
-    public async Task SubmitAsync()
+    public async Task SubmitAsync(DstatResult[] dstatResults)
     {
         _logger.LogInformation("Gathering metrics...");
         
@@ -42,15 +41,14 @@ public class SubmitService
         var hostname = await _hostnameService.GetHostnameAsync();
         _logger.LogInformation($"Hostname: {hostname}.");
         
-        var cpuUsage = await _cpuUsageService.GetCpuUsageAsync();
-        _logger.LogInformation($"CPU Usage: {cpuUsage}.");
-        
         var version = _versionService.GetAppVersion();
         _logger.LogInformation($"Version: {version}.");
         
         var expensiveProcess = await _expensiveProcessService.GetExpensiveProcessAsync();
         _logger.LogInformation($"Expensive process: {expensiveProcess}.");
 
-        await _serverAccess.MetricsAsync(hostname, bootTime, cpuUsage, version, expensiveProcess);
+        await _serverAccess.MetricsAsync(hostname, bootTime, version, expensiveProcess, dstatResults);
     }
+
+    public Func<DstatResult[], Task> Consume => SubmitAsync;
 }

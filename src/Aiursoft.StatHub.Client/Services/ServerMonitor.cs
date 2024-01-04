@@ -1,48 +1,63 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
+using Aiursoft.AiurObserver;
+using Aiursoft.AiurObserver.Command;
+using Aiursoft.StatHub.SDK.Models;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 
 namespace Aiursoft.StatHub.Client.Services;
 
 [ExcludeFromCodeCoverage] // This class is not a part of our test.
-public class ServerMonitor : IHostedService
+public class ServerMonitor
 {
-    private Timer? _timer;
-    private readonly IServiceScopeFactory _serviceScopeFactory;
     private readonly ILogger<ServerMonitor> _logger;
+    private readonly SubmitService _submitService;
+    private readonly LongCommandRunner _commandService;
+    private ISubscription? _subscription;
 
     public ServerMonitor(
-        IServiceScopeFactory serviceScopeFactory,
+        SubmitService submitService,
+        LongCommandRunner commandService,
         ILogger<ServerMonitor> logger)
     {
-        _serviceScopeFactory = serviceScopeFactory;
+        _submitService = submitService;
+        _commandService = commandService;
         _logger = logger;
     }
 
-    public void Dispose()
+    public Task MonitorServerAsync(CancellationToken cancellationToken, bool onlyOneTrigger = false)
     {
-        _timer?.Dispose();
-    }
+        _subscription = _commandService
+            .Output
+            .Filter(t => !string.IsNullOrWhiteSpace(t))
+            .Filter(t => !t.StartsWith("----"))
+            .Filter(t => !t.StartsWith("usr"))
+            .Map(t => t.Replace("|", " "))
+            .Filter(t => t.Split(" ", StringSplitOptions.RemoveEmptyEntries).Length >= 16)
+            .Map(t => new DstatResult(t))
+            .Aggregate(10)
+            .Throttle(TimeSpan.FromSeconds(9))
+            .Pipe(result =>
+            {
+                _logger.LogInformation($"Sending metrics: {JsonConvert.SerializeObject(result)}.");
+            })
+            .Subscribe(_submitService);
 
-    public Task StartAsync(CancellationToken cancellationToken)
-    {
-        _logger.LogInformation("Timed Background Service is starting");
-        _timer = new Timer(DoWork, null, TimeSpan.FromSeconds(2), TimeSpan.FromSeconds(10));
-        return Task.CompletedTask;
+        var args = "--cpu --mem --disk --net --load --nocolor  --noheaders";
+        if (onlyOneTrigger)
+        {
+            args += " 1 1";
+        }
+        return _commandService.Run("dstat", args, Directory.GetCurrentDirectory());
     }
 
     public Task StopAsync(CancellationToken cancellationToken)
     {
-        _logger.LogInformation("Timed Background Service is stopping");
-        _timer?.Change(Timeout.Infinite, 0);
+        _subscription?.Unsubscribe();
+        _commandService.Stop();
         return Task.CompletedTask;
-    }
-
-    private async void DoWork(object? state)
-    {
-        using var scope = _serviceScopeFactory.CreateScope();
-        var submitService = scope.ServiceProvider.GetRequiredService<SubmitService>();
-        await submitService.SubmitAsync();
     }
 }
