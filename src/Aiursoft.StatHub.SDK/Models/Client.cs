@@ -2,16 +2,50 @@
 
 namespace Aiursoft.StatHub.SDK.Models;
 
+public class MemoryInfo
+{
+    public MemoryInfo(long used, long buf, long cach, long free)
+    {
+        Used = used;
+        Buf = buf;
+        Cache = cach;
+        Free = free;
+        var total = used + buf + cach + free;
+        UsedRate = (int)(used * 100.0 / total);
+        BufRate = (int)(buf * 100.0 / total);
+        CacheRate = (int)(cach * 100.0 / total);
+        FreeRate = (int)(free * 100.0 / total);
+    }
+    
+    public int UsedRate { get; set; }
+    public long Used { get; set; }
+    
+    public int BufRate { get; set; }
+    public long Buf { get; set; }
+    
+    public int CacheRate { get; set; }
+    public long Cache { get; set; }
+    
+    public int FreeRate { get; set; }
+    public long Free { get; set; }
+}
+
 public class Client
 {
-    private MessageStage<int> _cpuUsage;
-    private MessageStage<long> _memUsed;
+    private readonly MessageStage<int> _cpuUsage;
+    private readonly MessageStage<long> _memUsed;
+    private readonly MessageStage<long> _memBuf;
+    private readonly MessageStage<long> _memCach;
+    private readonly MessageStage<long> _memFree;
     
     public Client()
     {
         Stats = new AsyncObservable<DstatResult>();
         _cpuUsage = Stats.Map(stat => 100 - stat.CpuIdl).StageLast();
         _memUsed = Stats.Map(stat => stat.MemUsed).StageLast();
+        _memBuf = Stats.Map(stat => stat.MemBuf).StageLast();
+        _memCach = Stats.Map(stat => stat.MemCach).StageLast();
+        _memFree = Stats.Map(stat => stat.MemFree).StageLast();
     }
     
     public string Hostname { get; set; } = null!;
@@ -25,9 +59,9 @@ public class Client
         return _cpuUsage.Stage;
     }
     
-    public long GetMemUsed()
+    public MemoryInfo GetMemUsed()
     {
-        return _memUsed.Stage;
+        return new MemoryInfo(_memUsed.Stage, _memBuf.Stage, _memCach.Stage, _memFree.Stage);
     }
 
     public DateTime LastUpdate { get; set; } = DateTime.UtcNow;

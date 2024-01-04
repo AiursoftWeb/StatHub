@@ -34,12 +34,21 @@
                                     <tr>
                                         <td>@client.Ip</td>
                                         <td>@client.Hostname</td>
-                                        <td data-utc-time="@client.BootTime.ToHtmlDateTime()" data-sort="@client.BootTime.ToUniversalTime()">
+                                        <td data-utc-time="@client.BootTime.ToHtmlDateTime()" data-sort="@client.BootTime.Ticks">
                                         </td>
                                         <td>@(client.GetCpuUsage())%</td>
                                         <td>@(client.Process)</td>
-                                        <td data-sort="@client.GetMemUsed()">@client.GetMemUsed().HumanReadableSize()</td>
-                                        <td data-utc-time="@client.LastUpdate.ToHtmlDateTime()" data-sort="@client.LastUpdate.ToUniversalTime()">
+                                        @{
+                                            var mem = client.GetMemUsed();
+                                        }
+                                        <td data-sort="@mem.UsedRate">
+                                            <div class="progress">
+                                              <div class="progress-bar-striped bg-success" role="progressbar" style="width: @(mem.UsedRate)%" aria-valuenow="@(mem.UsedRate)" aria-valuemin="0" aria-valuemax="100">@mem.Used.HumanReadableSize()</div>
+                                              <div class="progress-bar-striped bg-info" role="progressbar" style="width: @(mem.BufRate)%" aria-valuenow="@(mem.BufRate)" aria-valuemin="0" aria-valuemax="100">@mem.Buf.HumanReadableSize()</div>
+                                              <div class="progress-bar-striped bg-warning" role="progressbar" style="width: @(mem.CacheRate)%" aria-valuenow="@(mem.CacheRate)" aria-valuemin="0" aria-valuemax="100">@mem.Cache.HumanReadableSize()</div>
+                                            </div>
+                                        </td>
+                                        <td data-utc-time="@client.LastUpdate.ToHtmlDateTime()" data-sort="@client.LastUpdate.Ticks">
                                         </td>
                                         <td>@client.Version</td>
                                     </tr>
