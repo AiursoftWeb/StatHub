@@ -6,6 +6,7 @@ using Aiursoft.CommandFramework.Services;
 using Aiursoft.StatHub.Client.Services;
 using Aiursoft.StatHub.SDK;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 
 namespace Aiursoft.StatHub.Client;
 
@@ -51,7 +52,8 @@ public class ClientHandler : ExecutableCommandHandlerBuilder
         
         var host = hostBuilder.Build();
         var serverMonitor = host.Services.GetRequiredService<ServerMonitor>();
-
+        var logger = host.Services.GetRequiredService<ILogger<ServerMonitor>>();
+        
         if (oneTime)
         {
             try
@@ -67,5 +69,7 @@ public class ClientHandler : ExecutableCommandHandlerBuilder
         {
             await serverMonitor.MonitorServerAsync(CancellationToken.None);
         }
+        
+        logger.LogInformation("The monitor quit.");
     }
 }
