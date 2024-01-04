@@ -1,4 +1,5 @@
 ﻿@using Aiursoft.WebTools
+@using Aiursoft.CSTools.Tools
 @model Aiursoft.StatHub.SDK.Models.Client[]
 
 <div class="jumbotron">
@@ -22,6 +23,7 @@
                                     <th>Boot at</th>
                                     <th>CPU Usage</th>
                                     <th>Used at</th>
+                                    <th>RAM Usage</th>
                                     <th>Last Update</th>
                                     <th>Version</th>
                                 </tr>
@@ -36,6 +38,7 @@
                                         </td>
                                         <td>@(client.GetCpuUsage())%</td>
                                         <td>@(client.Process)</td>
+                                        <td data-sort="@client.GetMemUsed()">@client.GetMemUsed().HumanReadableSize()</td>
                                         <td data-utc-time="@client.LastUpdate.ToHtmlDateTime()" data-sort="@client.LastUpdate.ToUniversalTime()">
                                         </td>
                                         <td>@client.Version</td>

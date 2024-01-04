@@ -36,11 +36,11 @@ public class ServerMonitor
             .Map(t => t.Replace("|", " "))
             .Filter(t => t.Split(" ", StringSplitOptions.RemoveEmptyEntries).Length >= 16)
             .Map(t => new DstatResult(t))
-            .Aggregate(10)
-            .Throttle(TimeSpan.FromSeconds(9))
+            .Aggregate(10) // Aggregate 10 results into one array. 
+            .Throttle(TimeSpan.FromSeconds(9))// Max speed is every 9 seconds one request.
             .Pipe(result =>
             {
-                _logger.LogInformation($"Sending metrics: {JsonConvert.SerializeObject(result)}.");
+                _logger.LogTrace("Sending metrics: {Trace}.", JsonConvert.SerializeObject(result));
             })
             .Subscribe(_submitService);
 

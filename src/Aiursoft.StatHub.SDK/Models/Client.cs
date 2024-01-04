@@ -1,14 +1,18 @@
 ﻿using Aiursoft.AiurObserver;
+using Aiursoft.CSTools.Tools;
 
 namespace Aiursoft.StatHub.SDK.Models;
 
 public class Client
 {
     private MessageStage<int> _cpuUsage;
+    private MessageStage<long> _memUsed;
+    
     public Client()
     {
         Stats = new AsyncObservable<DstatResult>();
         _cpuUsage = Stats.Map(stat => 100 - stat.CpuIdl).StageLast();
+        _memUsed = Stats.Map(stat => stat.MemUsed).StageLast();
     }
     
     public string Hostname { get; set; } = null!;
@@ -20,6 +24,11 @@ public class Client
     public int GetCpuUsage()
     {
         return _cpuUsage.Stage;
+    }
+    
+    public long GetMemUsed()
+    {
+        return _memUsed.Stage;
     }
 
     public DateTime LastUpdate { get; set; } = DateTime.UtcNow;
