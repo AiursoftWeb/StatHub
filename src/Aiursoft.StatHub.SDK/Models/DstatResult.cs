@@ -2,6 +2,12 @@ namespace Aiursoft.StatHub.SDK.Models;
 
 public class DstatResult
 {
+    // This method is for JSON.
+    public DstatResult()
+    {
+        
+    }
+    
     public DstatResult(string line)
     {
         var parts = line
