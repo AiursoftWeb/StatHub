@@ -42,7 +42,7 @@
                                         @{
                                             var cpu = client.GetCpuUsage();
                                             var cpuRate = cpu.Ratio;
-                                            var promptText = $"CPU Usage:\nUser: {cpu.Usr.ToString("0.00")}%\nSystem: {cpu.Sys.ToString("0.00")}%\nIdle: {cpu.Idl.ToString("0.00")}%\nWait: {cpu.Wai.ToString("0.00")}%\nSteal: {cpu.Stl.ToString("0.00")}%";
+                                            var promptText = $"CPU Usage:\nUser: {cpu.Usr}%\nSystem: {cpu.Sys}%\nIdle: {cpu.Idl}%\nWait: {cpu.Wai}%\nSteal: {cpu.Stl}%";
                                             var color = 
                                                 cpuRate < 5 ? "bg-success":
                                                 cpuRate < 10 ? "bg-info":
