@@ -56,6 +56,7 @@ public class SubmitService : IConsumer<DstatResult[]>
         catch (Exception e)
         {
             _logger.LogCritical(e, "Failed to send metrics!");
+            Console.WriteLine(e.StackTrace);
             throw;
         }
     }
