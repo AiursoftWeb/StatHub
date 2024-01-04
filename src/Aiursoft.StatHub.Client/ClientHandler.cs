@@ -1,5 +1,6 @@
 ﻿using System.CommandLine;
 using System.CommandLine.Invocation;
+using System.Diagnostics;
 using Aiursoft.AiurObserver;
 using Aiursoft.CommandFramework.Framework;
 using Aiursoft.CommandFramework.Models;
@@ -52,6 +53,7 @@ public class ClientHandler : ExecutableCommandHandlerBuilder
         });
         
         var host = hostBuilder.Build();
+        var stopWatch = new Stopwatch();
         
         var dstatMonitor = host.Services.GetRequiredService<DstatMonitor>();
         dstatMonitor
@@ -65,10 +67,12 @@ public class ClientHandler : ExecutableCommandHandlerBuilder
             .Map(JsonConvert.SerializeObject)
             .Subscribe(result =>
         {
+            Console.WriteLine($"Time: {stopWatch.ElapsedMilliseconds}ms");
             Console.WriteLine(result);
             return Task.CompletedTask;
         });
 
+        stopWatch.Start();
         await dstatMonitor.Monitor();
         // if (oneTime)
         // {
