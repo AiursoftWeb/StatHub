@@ -42,7 +42,7 @@
                                                 var cpuRate = cpu.Ratio;
                                             }
                                             <div class="progress">
-                                                <div class="progress-bar-striped bg-success" role="progressbar" style="width: @(cpuRate)%" aria-valuenow="@cpuRate" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" 
+                                                <div class="progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: @(cpuRate)%" aria-valuenow="@cpuRate" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" 
                                                      title="CPU Usage: User: @cpu.Usr.ToString("0.00")%, System: @cpu.Sys.ToString("0.00")%, Idle: @cpu.Idl.ToString("0.00")%, Wait: @cpu.Wai.ToString("0.00")%, Steal: @cpu.Stl.ToString("0.00")%"></div>
                                             </div>
                                         </td>
