@@ -48,8 +48,16 @@ public class SubmitService : IConsumer<DstatResult[]>
         _logger.LogInformation($"Expensive process: {expensiveProcess}.");
 
         _logger.LogInformation("Sending metrics...");
-        var response = await _serverAccess.MetricsAsync(hostname, bootTime, version, expensiveProcess, dstatResults);
-        _logger.LogInformation("Metrics sent! Response: {ResponseMessage}.", response.Message);
+        try
+        {
+            var response = await _serverAccess.MetricsAsync(hostname, bootTime, version, expensiveProcess, dstatResults);
+            _logger.LogInformation("Metrics sent! Response: {ResponseMessage}.", response.Message);
+        }
+        catch (Exception e)
+        {
+            _logger.LogCritical(e, "Failed to send metrics!");
+            throw;
+        }
     }
 
     public Func<DstatResult[], Task> Consume => SubmitAsync;
