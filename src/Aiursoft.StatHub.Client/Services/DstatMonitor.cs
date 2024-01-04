@@ -5,7 +5,7 @@ using Aiursoft.AiurObserver;
 
 namespace Aiursoft.StatHub.Client.Services;
 
-public class DstatMonitor : AsyncObservable<DstatResult>
+public class DstatMonitor : AsyncObservable<string>
 {
     public Task Monitor()
     {
@@ -25,44 +25,18 @@ public class DstatMonitor : AsyncObservable<DstatResult>
         };
         process.Start();
 
-        async Task MonitorOutputTask()
-        {
-            while (!process.StandardOutput.EndOfStream)
-            {
-                var line = await process.StandardOutput.ReadLineAsync();
-                if (string.IsNullOrWhiteSpace(line))
-                {
-                    continue;
-                }
-                if (line.StartsWith("----") || line.StartsWith("usr"))
-                {
-                    continue;
-                }
-                if (line.Replace("|", " ").Split(" ", StringSplitOptions.RemoveEmptyEntries).Length < 16)
-                {
-                    Console.WriteLine("Invalid line:");
-                    Console.WriteLine(line);
-                    continue;
-                }
-                try
-                {
-                    var result = new DstatResult(line);
-                    await BroadcastAsync(result);
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(line);
-                    Console.WriteLine(e.Message);
-                    Console.WriteLine(e.StackTrace);
-                    throw;
-                }
-            }
-        }
-
         return Task.WhenAll(
             MonitorOutputTask(),
             process.WaitForExitAsync()
         );
+
+        async Task MonitorOutputTask()
+        {
+            while (!process.StandardOutput.EndOfStream)
+            {
+                await BroadcastAsync(await process.StandardOutput.ReadLineAsync() ?? string.Empty);
+            }
+        }
     }
 }
 
@@ -95,7 +69,6 @@ public class DstatResult
     public DstatResult(string line)
     {
         var parts = line
-            .Replace("|", " ")
             .Split(" ", StringSplitOptions.RemoveEmptyEntries);
         CpuUsr = int.Parse(parts[0]);
         CpuSys = int.Parse(parts[1]);

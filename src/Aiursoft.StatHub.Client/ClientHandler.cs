@@ -54,10 +54,18 @@ public class ClientHandler : ExecutableCommandHandlerBuilder
         var host = hostBuilder.Build();
         
         var dstatMonitor = host.Services.GetRequiredService<DstatMonitor>();
-        dstatMonitor.Subscribe(result =>
+        dstatMonitor
+            .Filter(t => !string.IsNullOrWhiteSpace(t))
+            .Filter(t => !t.StartsWith("----"))
+            .Filter(t => !t.StartsWith("usr"))
+            .Map(t => t.Replace("|", " "))
+            .Filter(t => t.Split(" ", StringSplitOptions.RemoveEmptyEntries).Length >= 16)
+            .Map(t => new DstatResult(t))
+            .Aggregate(10)
+            .Map(JsonConvert.SerializeObject)
+            .Subscribe(result =>
         {
-            var json = JsonConvert.SerializeObject(result);
-            Console.WriteLine(json);
+            Console.WriteLine(result);
             return Task.CompletedTask;
         });
 
