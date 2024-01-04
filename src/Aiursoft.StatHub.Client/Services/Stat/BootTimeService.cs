@@ -1,21 +1,16 @@
 ﻿using System.Globalization;
-using System.Runtime.InteropServices;
 using Aiursoft.Canon;
-using Aiursoft.CSTools.Services;
 
 namespace Aiursoft.StatHub.Client.Services.Stat;
 
 public class BootTimeService
 {
     private readonly CacheService _cacheService;
-    private readonly CommandService _commandService;
 
     public BootTimeService(
-        CacheService cacheService,
-        CommandService commandService)
+        CacheService cacheService)
     {
         _cacheService = cacheService;
-        _commandService = commandService;
     }
 
     public Task<DateTime> GetBootTimeAsync()

@@ -5,7 +5,6 @@ using Aiursoft.CSTools.Services;
 using Aiursoft.StatHub.Client.Services;
 using Aiursoft.StatHub.Client.Services.Stat;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 
 namespace Aiursoft.StatHub.Client;
 

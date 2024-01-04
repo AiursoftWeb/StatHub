@@ -1,14 +1,11 @@
 ﻿using System.CommandLine;
 using System.CommandLine.Invocation;
-using System.Diagnostics;
-using Aiursoft.AiurObserver;
 using Aiursoft.CommandFramework.Framework;
 using Aiursoft.CommandFramework.Models;
 using Aiursoft.CommandFramework.Services;
 using Aiursoft.StatHub.Client.Services;
 using Aiursoft.StatHub.SDK;
 using Microsoft.Extensions.DependencyInjection;
-using Newtonsoft.Json;
 
 namespace Aiursoft.StatHub.Client;
 

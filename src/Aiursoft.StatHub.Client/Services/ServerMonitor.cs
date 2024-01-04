@@ -1,10 +1,7 @@
-﻿using System.Diagnostics;
-using System.Diagnostics.CodeAnalysis;
+﻿using System.Diagnostics.CodeAnalysis;
 using Aiursoft.AiurObserver;
 using Aiursoft.AiurObserver.Command;
 using Aiursoft.StatHub.SDK.Models;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 
