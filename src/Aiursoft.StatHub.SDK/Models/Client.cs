@@ -80,7 +80,7 @@ public class Client
     }
     
     public string Hostname { get; set; } = null!;
-    
+    public string OsName { get; set; } = null!;
     public string Ip { get; set; } = null!;
 
     public DateTime BootTime { get; set; } = DateTime.MinValue;

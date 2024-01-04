@@ -31,7 +31,7 @@ public class ServerAccess
         return _http.Get<AiurResponse>(url);
     }
     
-    public Task<AiurResponse> MetricsAsync(string hostname, DateTime bootTime, string version, string process, DstatResult[] stats)
+    public Task<AiurResponse> MetricsAsync(string hostname, DateTime bootTime, string version, string process, string osName, DstatResult[] stats)
     {
         var url = new AiurApiEndpoint(_serverLocator.Instance, "/api/metrics", new { });
         var form = new AiurApiPayload(new MetricsAddressModel
@@ -40,6 +40,7 @@ public class ServerAccess
             BootTime = bootTime,
             Version = version,
             Process = process,
+            OsName = osName,
             Stats = stats
         });
         return _http.Post<AiurResponse>(url, form, BodyFormat.HttpJsonBody, autoRetry: false,

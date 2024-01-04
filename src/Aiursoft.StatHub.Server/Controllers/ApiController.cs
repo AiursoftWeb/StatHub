@@ -40,6 +40,7 @@ public class ApiController : ControllerBase
         entity.LastUpdate = DateTime.UtcNow;
         entity.Version = model.Version ?? throw new ArgumentNullException(nameof(model.Version));
         entity.Process = model.Process ?? throw new ArgumentNullException(nameof(model.Process));
+        entity.OsName = model.OsName ?? throw new ArgumentNullException(nameof(model.OsName));
         foreach (var stat in model.Stats ?? Array.Empty<DstatResult>())
         {
             await entity.Stats.BroadcastAsync(stat);

@@ -32,4 +32,9 @@ public class MetricsAddressModel
     [MinLength(10)]
     [MaxLength(10)]
     public DstatResult[]? Stats { get; set; }
+
+    [JsonProperty("osName")]
+    [MaxLength(100)]
+    [MinLength(1)]
+    public string? OsName { get; set; }
 }

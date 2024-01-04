@@ -8,6 +8,7 @@ namespace Aiursoft.StatHub.Client.Services;
 
 public class SubmitService : IConsumer<DstatResult[]>
 {
+    private readonly OsInfoService _osInfoService;
     private readonly ExpensiveProcessService _expensiveProcessService;
     private readonly VersionService _versionService;
     private readonly HostnameService _hostnameService;
@@ -16,6 +17,7 @@ public class SubmitService : IConsumer<DstatResult[]>
     private readonly ILogger<SubmitService> _logger;
 
     public SubmitService(
+        OsInfoService osInfoService,
         ExpensiveProcessService expensiveProcessService,
         VersionService versionService,
         HostnameService hostnameService,
@@ -23,6 +25,7 @@ public class SubmitService : IConsumer<DstatResult[]>
         ServerAccess serverAccess,
         ILogger<SubmitService> logger)
     {
+        _osInfoService = osInfoService;
         _expensiveProcessService = expensiveProcessService;
         _versionService = versionService;
         _hostnameService = hostnameService;
@@ -36,21 +39,24 @@ public class SubmitService : IConsumer<DstatResult[]>
         _logger.LogInformation("Gathering metrics...");
         
         var bootTime = await _bootTimeService.GetBootTimeAsync();
-        _logger.LogInformation($"Boot time: {bootTime}.");
+        _logger.LogTrace($"Boot time: {bootTime}.");
         
         var hostname = await _hostnameService.GetHostnameAsync();
-        _logger.LogInformation($"Hostname: {hostname}.");
+        _logger.LogTrace($"Hostname: {hostname}.");
         
         var version = _versionService.GetAppVersion();
-        _logger.LogInformation($"Version: {version}.");
+        _logger.LogTrace($"Version: {version}.");
         
         var expensiveProcess = await _expensiveProcessService.GetExpensiveProcessAsync();
-        _logger.LogInformation($"Expensive process: {expensiveProcess}.");
+        _logger.LogTrace($"Expensive process: {expensiveProcess}.");
+        
+        var osName = await _osInfoService.GetOsInfoAsync();
+        _logger.LogTrace($"OS: {osName}.");
 
-        _logger.LogInformation("Sending metrics...");
+        _logger.LogTrace("Sending metrics...");
         try
         {
-            var response = await _serverAccess.MetricsAsync(hostname, bootTime, version, expensiveProcess, dstatResults);
+            var response = await _serverAccess.MetricsAsync(hostname, bootTime, version, expensiveProcess, osName, dstatResults);
             _logger.LogInformation("Metrics sent! Response: {ResponseMessage}.", response.Message);
         }
         catch (Exception e)

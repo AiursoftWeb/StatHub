@@ -24,6 +24,7 @@
                                     <th>CPU Usage</th>
                                     <th>Used at</th>
                                     <th>RAM Usage</th>
+                                    <th>OS</th>
                                     <th>Last Update</th>
                                     <th>Version</th>
                                 </tr>
@@ -65,11 +66,13 @@
                                         }
                                         <td data-sort="@mem.UsedRate">
                                             <div class="progress">
-                                              <div class="progress-bar-striped bg-success" role="progressbar" style="width: @(mem.UsedRate)%" aria-valuenow="@(mem.UsedRate)" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" title="Used RAM: @mem.Used.HumanReadableSize()"></div>
-                                              <div class="progress-bar-striped bg-info" role="progressbar" style="width: @(mem.BufRate)%" aria-valuenow="@(mem.BufRate)" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" title="Buffer RAM: @mem.Buf.HumanReadableSize()"></div>
-                                              <div class="progress-bar-striped bg-warning" role="progressbar" style="width: @(mem.CacheRate)%" aria-valuenow="@(mem.CacheRate)" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" title="Cache RAM: @mem.Cache.HumanReadableSize()"></div>
+                                                <div class="progress-bar-striped bg-success" role="progressbar" style="width: @(mem.UsedRate)%" aria-valuenow="@(mem.UsedRate)" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" title="Used RAM: @mem.Used.HumanReadableSize()"></div>
+                                                <div class="progress-bar-striped bg-info" role="progressbar" style="width: @(mem.BufRate)%" aria-valuenow="@(mem.BufRate)" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" title="Buffer RAM: @mem.Buf.HumanReadableSize()"></div>
+                                                <div class="progress-bar-striped bg-warning" role="progressbar" style="width: @(mem.CacheRate)%" aria-valuenow="@(mem.CacheRate)" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" title="Cache RAM: @mem.Cache.HumanReadableSize()"></div>
                                             </div>
                                         </td>
+                                        
+                                        <td>@client.OsName</td>
                                         <td data-utc-time="@client.LastUpdate.ToHtmlDateTime()" data-sort="@client.LastUpdate.Ticks">
                                         </td>
                                         <td>@client.Version</td>
