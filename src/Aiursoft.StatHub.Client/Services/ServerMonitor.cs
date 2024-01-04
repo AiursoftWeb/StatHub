@@ -32,6 +32,7 @@ public class ServerMonitor
             _logger.LogInformation("Starting to monitor server...");
             _subscription = _commandService
                 .Output
+                .Pipe(t => { _logger.LogTrace("Received metrics: {Trace}.", t); })
                 .Filter(t => !string.IsNullOrWhiteSpace(t))
                 .Filter(t => !t.StartsWith("----"))
                 .Filter(t => !t.StartsWith("usr"))
