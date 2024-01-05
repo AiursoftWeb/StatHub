@@ -45,4 +45,10 @@ public class MetricsAddressModel
     [JsonProperty("cpuCores")]
     [Range(0, 2048)]
     public int CpuCores { get; set; }
+
+    [JsonProperty("usedRoot")]
+    public int UsedRoot { get; set; }
+    
+    [JsonProperty("totalRoot")]
+    public int TotalRoot { get; set; }
 }

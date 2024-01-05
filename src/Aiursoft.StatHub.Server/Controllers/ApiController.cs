@@ -47,6 +47,8 @@ public class ApiController : ControllerBase
         entity.OsName = model.OsName ?? throw new ArgumentNullException(nameof(model.OsName));
         entity.CpuCores = model.CpuCores;
         entity.RamInGb = model.RamInGb;
+        entity.UsedRoot = model.UsedRoot;
+        entity.TotalRoot = model.TotalRoot;
         foreach (var stat in model.Stats ?? Array.Empty<DstatResult>())
         {
             await entity.Stats.BroadcastAsync(stat);
