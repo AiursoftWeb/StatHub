@@ -3,6 +3,7 @@
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://gitlab.aiursoft.cn/aiursoft/StatHub/-/blob/master/LICENSE)
 [![Pipeline stat](https://gitlab.aiursoft.cn/aiursoft/StatHub/badges/master/pipeline.svg)](https://gitlab.aiursoft.cn/aiursoft/StatHub/-/pipelines)
 [![Test Coverage](https://gitlab.aiursoft.cn/aiursoft/StatHub/badges/master/coverage.svg)](https://gitlab.aiursoft.cn/aiursoft/StatHub/-/pipelines)
+[![NuGet version (Aiursoft.StatHub.Client)](https://img.shields.io/nuget/v/Aiursoft.StatHub.Client.svg)](https://www.nuget.org/packages/Aiursoft.StatHub.Client/)
 [![ManHours](https://manhours.aiursoft.cn/r/gitlab.aiursoft.cn/aiursoft/StatHub.svg)](https://gitlab.aiursoft.cn/aiursoft/StatHub/-/commits/master?ref_type=heads)
 
 StatHub is a simple server stat statistics system. It can collect server stats and display them in a simple way.
