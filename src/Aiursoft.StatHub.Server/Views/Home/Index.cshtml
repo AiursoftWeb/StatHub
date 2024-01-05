@@ -25,6 +25,10 @@
                                     <th>CPU Usage</th>
                                     <th>Used at</th>
                                     <th>RAM Usage</th>
+                                    <th>Recv</th>
+                                    <th>Send</th>
+                                    <th>Read</th>
+                                    <th>Write</th>
                                     <th>OS</th>
                                     <th>Last Update</th>
                                     <th>Version</th>
@@ -100,6 +104,28 @@
                                                 <div class="progress-bar-striped bg-info" role="progressbar" style="width: @(mem.BufRate)%" aria-valuenow="@(mem.BufRate)" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" title="Buffer RAM: @mem.Buf.HumanReadableSize()"></div>
                                                 <div class="progress-bar-striped bg-warning" role="progressbar" style="width: @(mem.CacheRate)%" aria-valuenow="@(mem.CacheRate)" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" title="Cache RAM: @mem.Cache.HumanReadableSize()"></div>
                                             </div>
+                                        </td>
+                                        
+                                        @* NetWork *@
+                                        @{
+                                            var net = client.GetNetwork();
+                                        }
+                                        <td data-sort="@net.Recv">
+                                            @net.Recv.HumanReadableSize()
+                                        </td>
+                                        <td data-sort="@net.Send">
+                                            @net.Send.HumanReadableSize()
+                                        </td>
+                                        
+                                        @* Disk *@
+                                        @{
+                                            var disk = client.GetDisk();
+                                        }
+                                        <td data-sort="@disk.Read">
+                                            @disk.Read.HumanReadableSize()
+                                        </td>
+                                        <td data-sort="@disk.Writ">
+                                            @disk.Writ.HumanReadableSize()
                                         </td>
                                         
                                         <td>@client.OsName</td>

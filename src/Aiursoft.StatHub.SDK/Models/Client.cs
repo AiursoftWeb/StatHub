@@ -65,6 +65,30 @@ public class LoadInfo
     public double Load15M { get; set; }
 }
 
+public class NetworkInfo
+{
+    public NetworkInfo(long recv, long send)
+    {
+        Recv = recv;
+        Send = send;
+    }
+    
+    public long Recv { get; set; }
+    public long Send { get; set; }
+}
+
+public class DiskInfo
+{
+    public DiskInfo(long read, long writ)
+    {
+        Read = read;
+        Writ = writ;
+    }
+    
+    public long Read { get; set; }
+    public long Writ { get; set; }
+}
+
 public class Client
 {
     private readonly MessageStage<int> _cpuUsr;
@@ -77,6 +101,12 @@ public class Client
     private readonly MessageStage<long> _memBuf;
     private readonly MessageStage<long> _memCach;
     private readonly MessageStage<long> _memFree;
+    
+    private readonly MessageStage<long> _netRecv;
+    private readonly MessageStage<long> _netSend;
+    
+    private readonly MessageStage<long> _diskRead;
+    private readonly MessageStage<long> _diskWrit;
     
     private readonly MessageStage<double> _load1M;
     private readonly MessageStage<double> _load5M;
@@ -95,6 +125,12 @@ public class Client
         _memBuf = Stats.Map(stat => stat.MemBuf).StageLast();
         _memCach = Stats.Map(stat => stat.MemCach).StageLast();
         _memFree = Stats.Map(stat => stat.MemFree).StageLast();
+        
+        _netRecv = Stats.Map(stat => stat.NetRecv).StageLast();
+        _netSend = Stats.Map(stat => stat.NetSend).StageLast();
+        
+        _diskRead = Stats.Map(stat => stat.DskRead).StageLast();
+        _diskWrit = Stats.Map(stat => stat.DskWrit).StageLast();
         
         _load1M = Stats.Map(stat => stat.Load1M).StageLast();
         _load5M = Stats.Map(stat => stat.Load5M).StageLast();
@@ -115,6 +151,16 @@ public class Client
     public MemoryInfo GetMemUsed()
     {
         return new MemoryInfo(_memUsed.Stage, _memBuf.Stage, _memCach.Stage, _memFree.Stage);
+    }
+    
+    public NetworkInfo GetNetwork()
+    {
+        return new NetworkInfo(_netRecv.Stage, _netSend.Stage);
+    }
+    
+    public DiskInfo GetDisk()
+    {
+        return new DiskInfo(_diskRead.Stage, _diskWrit.Stage);
     }
     
     public LoadInfo GetLoad()
