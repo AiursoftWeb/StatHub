@@ -20,6 +20,7 @@
                                 <tr>
                                     <th>IP</th>
                                     <th>Name</th>
+                                    <th>SKU</th>
                                     <th>Boot at</th>
                                     <th>Avg Load</th>
                                     <th>CPU Usage</th>
@@ -40,6 +41,7 @@
                                     <tr>
                                         <td>@client.Ip</td>
                                         <td>@client.Hostname</td>
+                                        <td data-sort="@client.GetSkuInNumber()">@client.GetSku()</td>
                                         <td data-utc-time="@client.BootTime.ToHtmlDateTime()" data-sort="@client.BootTime.Ticks">
                                         </td>
                                         

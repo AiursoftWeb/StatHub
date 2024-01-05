@@ -8,6 +8,10 @@ using Microsoft.AspNetCore.Mvc;
 namespace Aiursoft.StatHub.Server.Controllers;
 
 [Route("api")]
+[ApiModelStateChecker]
+[ApiExceptionHandler(
+    PassthroughRemoteErrors = true, 
+    PassthroughAiurServerException = true)]
 public class ApiController : ControllerBase
 {
     private readonly InMemoryDatabase _database;
@@ -41,6 +45,8 @@ public class ApiController : ControllerBase
         entity.Version = model.Version ?? throw new ArgumentNullException(nameof(model.Version));
         entity.Process = model.Process ?? throw new ArgumentNullException(nameof(model.Process));
         entity.OsName = model.OsName ?? throw new ArgumentNullException(nameof(model.OsName));
+        entity.CpuCores = model.CpuCores;
+        entity.RamInGb = model.RamInGb;
         foreach (var stat in model.Stats ?? Array.Empty<DstatResult>())
         {
             await entity.Stats.BroadcastAsync(stat);

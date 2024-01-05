@@ -190,4 +190,17 @@ public class Client
     public string Process { get; set; } = null!;
 
     public AsyncObservable<DstatResult> Stats { get; set; }
+    public int CpuCores { get; set; }
+    public int RamInGb { get; set; }
+
+    public string GetSku()
+    {
+        return $"{CpuCores}CPU {RamInGb}GB";
+    }
+    
+    public int GetSkuInNumber()
+    {
+        return CpuCores * 1000 
+               + RamInGb;
+    }
 }

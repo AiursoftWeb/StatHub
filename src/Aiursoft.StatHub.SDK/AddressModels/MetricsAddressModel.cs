@@ -37,4 +37,12 @@ public class MetricsAddressModel
     [MaxLength(100)]
     [MinLength(1)]
     public string? OsName { get; set; } = "unknown";
+
+    [JsonProperty("ramInGb")]
+    [Range(0, 8192)]
+    public int RamInGb { get; set; }
+    
+    [JsonProperty("cpuCores")]
+    [Range(0, 2048)]
+    public int CpuCores { get; set; }
 }

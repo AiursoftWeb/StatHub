@@ -8,6 +8,7 @@ namespace Aiursoft.StatHub.Client.Services;
 
 public class SubmitService : IConsumer<DstatResult[]>
 {
+    private readonly CpuInfoService _cpuInfoService;
     private readonly OsInfoService _osInfoService;
     private readonly ExpensiveProcessService _expensiveProcessService;
     private readonly VersionService _versionService;
@@ -17,6 +18,7 @@ public class SubmitService : IConsumer<DstatResult[]>
     private readonly ILogger<SubmitService> _logger;
 
     public SubmitService(
+        CpuInfoService cpuInfoService,
         OsInfoService osInfoService,
         ExpensiveProcessService expensiveProcessService,
         VersionService versionService,
@@ -25,6 +27,7 @@ public class SubmitService : IConsumer<DstatResult[]>
         ServerAccess serverAccess,
         ILogger<SubmitService> logger)
     {
+        _cpuInfoService = cpuInfoService;
         _osInfoService = osInfoService;
         _expensiveProcessService = expensiveProcessService;
         _versionService = versionService;
@@ -52,12 +55,18 @@ public class SubmitService : IConsumer<DstatResult[]>
 
         var osName = await _osInfoService.GetOsInfoAsync();
         _logger.LogTrace($"OS: {osName}.");
+        
+        var cpuCores = await _cpuInfoService.GetCpuCores();
+        _logger.LogTrace($"CPU cores: {cpuCores}.");
+        
+        var totalRam = await _cpuInfoService.GetTotalRamInGb();
+        _logger.LogTrace($"Total RAM: {totalRam}.");
 
         _logger.LogTrace("Sending metrics...");
         try
         {
             var response =
-                await _serverAccess.MetricsAsync(hostname, bootTime, version, expensiveProcess, osName, statResults);
+                await _serverAccess.MetricsAsync(hostname, bootTime, version, expensiveProcess, osName, cpuCores, totalRam, statResults);
             _logger.LogInformation("Metrics sent! Response: {ResponseMessage}.", response.Message);
         }
         catch (Exception e)
