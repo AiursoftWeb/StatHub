@@ -6,19 +6,19 @@ public static class DstatNumberProcessor
     {
         if (number.EndsWith("B"))
         {
-            return long.Parse(number.Replace("B", ""));
+            return (long)(double.Parse(number.Replace("B", "")));
         }
         if (number.EndsWith("k"))
         {
-            return long.Parse(number.Replace("k", "")) * 1024;
+            return (long)(double.Parse(number.Replace("k", "")) * 1024);
         }
         if (number.EndsWith("M"))
         {
-            return long.Parse(number.Replace("M", "")) * 1024 * 1024;
+            return (long)(double.Parse(number.Replace("M", "")) * 1024 * 1024);
         }
         if (number.EndsWith("G"))
         {
-            return long.Parse(number.Replace("G", "")) * 1024 * 1024 * 1024;
+            return (long)(double.Parse(number.Replace("G", "")) * 1024 * 1024 * 1024);
         }
         return long.Parse(number);
     }
