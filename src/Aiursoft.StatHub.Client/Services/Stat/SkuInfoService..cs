@@ -38,7 +38,7 @@ public class SkuInfoService
             var totalRamInGb = double.Parse(totalRam) / 1024 / 1024;
             
             // Hack here. Because 16 GB ram will be 15.6 GB in Linux.
-            var totalRamInGbInt = Math.Floor(totalRamInGb);
+            var totalRamInGbInt = Math.Ceiling(totalRamInGb);
             return (int)totalRamInGbInt;
         }, cachedMinutes: _ => TimeSpan.FromDays(1));
     }
@@ -53,14 +53,14 @@ public class SkuInfoService
                 .Split(' ', StringSplitOptions.RemoveEmptyEntries)[1]) / 1024 / 1024;
             
             // Hack here. Because 16 GB ram will be 15.6 GB in Linux.
-            var rootDriveSizeInGbInt = Math.Floor(rootDriveSizeInGb);
+            var rootDriveSizeInGbInt = Math.Ceiling(rootDriveSizeInGb);
             
             var rootDriveUsedInGb = double.Parse(rootDriveSize.output
                 .Split('\n', StringSplitOptions.RemoveEmptyEntries)[1]
                 .Split(' ', StringSplitOptions.RemoveEmptyEntries)[2]) / 1024 / 1024;
             
             // Hack here. Because 16 GB ram will be 15.6 GB in Linux.
-            var rootDriveUsedInGbInt = Math.Floor(rootDriveUsedInGb);
+            var rootDriveUsedInGbInt = Math.Ceiling(rootDriveUsedInGb);
             
             return ((int)rootDriveSizeInGbInt, (int)rootDriveUsedInGbInt);
         }, cachedMinutes: _ => TimeSpan.FromMinutes(10));
