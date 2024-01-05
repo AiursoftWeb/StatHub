@@ -28,7 +28,7 @@ public class HomeController : Controller
     {
         // return text/plain
         var installScript = @$"
-DEBIAN_FRONTEND=noninteractive sudo apt install dotnet7 dstat -y
+DEBIAN_FRONTEND=noninteractive sudo apt install dotnet7 pcp -y
 sudo dotnet tool install Aiursoft.StatHub.Client --tool-path /opt/stathub-client || sudo dotnet tool update Aiursoft.StatHub.Client --tool-path /opt/stathub-client
 
 echo ""[Unit]
