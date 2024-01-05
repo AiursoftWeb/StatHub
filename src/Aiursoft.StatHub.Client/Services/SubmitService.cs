@@ -33,30 +33,31 @@ public class SubmitService : IConsumer<DstatResult[]>
         _serverAccess = serverAccess;
         _logger = logger;
     }
-    
-    public async Task SubmitAsync(DstatResult[] dstatResults)
+
+    private async Task SubmitAsync(DstatResult[] statResults)
     {
         _logger.LogInformation("Gathering metrics...");
-        
+
         var bootTime = await _bootTimeService.GetBootTimeAsync();
         _logger.LogTrace($"Boot time: {bootTime}.");
-        
+
         var hostname = await _hostnameService.GetHostnameAsync();
         _logger.LogTrace($"Hostname: {hostname}.");
-        
+
         var version = _versionService.GetAppVersion();
         _logger.LogTrace($"Version: {version}.");
-        
+
         var expensiveProcess = await _expensiveProcessService.GetExpensiveProcessAsync();
         _logger.LogTrace($"Expensive process: {expensiveProcess}.");
-        
+
         var osName = await _osInfoService.GetOsInfoAsync();
         _logger.LogTrace($"OS: {osName}.");
 
         _logger.LogTrace("Sending metrics...");
         try
         {
-            var response = await _serverAccess.MetricsAsync(hostname, bootTime, version, expensiveProcess, osName, dstatResults);
+            var response =
+                await _serverAccess.MetricsAsync(hostname, bootTime, version, expensiveProcess, osName, statResults);
             _logger.LogInformation("Metrics sent! Response: {ResponseMessage}.", response.Message);
         }
         catch (Exception e)
@@ -66,5 +67,8 @@ public class SubmitService : IConsumer<DstatResult[]>
         }
     }
 
-    public Func<DstatResult[], Task> Consume => SubmitAsync;
+    public Task Consume(DstatResult[] items)
+    {
+        return SubmitAsync(items);
+    }
 }

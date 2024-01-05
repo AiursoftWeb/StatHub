@@ -16,16 +16,16 @@ public class MemoryInfo
         CacheRate = (int)(cach * 100.0 / total);
         FreeRate = (int)(free * 100.0 / total);
     }
-    
+
     public int UsedRate { get; set; }
     public long Used { get; set; }
-    
+
     public int BufRate { get; set; }
     public long Buf { get; set; }
-    
+
     public int CacheRate { get; set; }
     public long Cache { get; set; }
-    
+
     public int FreeRate { get; set; }
     public long Free { get; set; }
 }
@@ -41,7 +41,7 @@ public class CpuInfo
         Stl = stl;
         Ratio = 100 - idl;
     }
-    
+
     public int Usr { get; set; }
     public int Sys { get; set; }
     public int Idl { get; set; }
@@ -59,7 +59,7 @@ public class LoadInfo
         Load5M = load5M;
         Load15M = load15M;
     }
-    
+
     public double Load1M { get; set; }
     public double Load5M { get; set; }
     public double Load15M { get; set; }
@@ -72,7 +72,7 @@ public class NetworkInfo
         Recv = recv;
         Send = send;
     }
-    
+
     public long Recv { get; set; }
     public long Send { get; set; }
 }
@@ -84,59 +84,75 @@ public class DiskInfo
         Read = read;
         Writ = writ;
     }
-    
+
     public long Read { get; set; }
     public long Writ { get; set; }
 }
 
 public class Client
 {
-    private readonly MessageStage<int> _cpuUsr;
-    private readonly MessageStage<int> _cpuSys;
-    private readonly MessageStage<int> _cpuIdl;
-    private readonly MessageStage<int> _cpuWai;
-    private readonly MessageStage<int> _cpuStl;
-    
-    private readonly MessageStage<long> _memUsed;
-    private readonly MessageStage<long> _memBuf;
-    private readonly MessageStage<long> _memCach;
-    private readonly MessageStage<long> _memFree;
-    
-    private readonly MessageStage<long> _netRecv;
-    private readonly MessageStage<long> _netSend;
-    
-    private readonly MessageStage<long> _diskRead;
-    private readonly MessageStage<long> _diskWrit;
-    
-    private readonly MessageStage<double> _load1M;
-    private readonly MessageStage<double> _load5M;
-    private readonly MessageStage<double> _load15M;
-    
+    private readonly MessageStageLast<int> _cpuUsr;
+    private readonly MessageStageLast<int> _cpuSys;
+    private readonly MessageStageLast<int> _cpuIdl;
+    private readonly MessageStageLast<int> _cpuWai;
+    private readonly MessageStageLast<int> _cpuStl;
+
+    private readonly MessageStageLast<long> _memUsed;
+    private readonly MessageStageLast<long> _memBuf;
+    private readonly MessageStageLast<long> _memCach;
+    private readonly MessageStageLast<long> _memFree;
+
+    private readonly MessageAdder<long> _netRecv;
+    private readonly MessageAdder<long> _netSend;
+
+    private readonly MessageAdder<long> _diskRead;
+    private readonly MessageAdder<long> _diskWrit;
+
+    private readonly MessageStageLast<double> _load1M;
+    private readonly MessageStageLast<double> _load5M;
+    private readonly MessageStageLast<double> _load15M;
+
     public Client()
     {
         Stats = new AsyncObservable<DstatResult>();
-        _cpuUsr = Stats.Map(stat => stat.CpuUsr).StageLast();
-        _cpuSys = Stats.Map(stat => stat.CpuSys).StageLast();
-        _cpuIdl = Stats.Map(stat => stat.CpuIdl).StageLast();
-        _cpuWai = Stats.Map(stat => stat.CpuWai).StageLast();
-        _cpuStl = Stats.Map(stat => stat.CpuStl).StageLast();
-        
-        _memUsed = Stats.Map(stat => stat.MemUsed).StageLast();
-        _memBuf = Stats.Map(stat => stat.MemBuf).StageLast();
-        _memCach = Stats.Map(stat => stat.MemCach).StageLast();
-        _memFree = Stats.Map(stat => stat.MemFree).StageLast();
-        
-        _netRecv = Stats.Map(stat => stat.NetRecv).StageLast();
-        _netSend = Stats.Map(stat => stat.NetSend).StageLast();
-        
-        _diskRead = Stats.Map(stat => stat.DskRead).StageLast();
-        _diskWrit = Stats.Map(stat => stat.DskWrit).StageLast();
-        
-        _load1M = Stats.Map(stat => stat.Load1M).StageLast();
-        _load5M = Stats.Map(stat => stat.Load5M).StageLast();
-        _load15M = Stats.Map(stat => stat.Load15M).StageLast();
+        _cpuUsr = new MessageStageLast<int>();
+        Stats.Map(stat => stat.CpuUsr).Subscribe(_cpuUsr);
+        _cpuSys = new MessageStageLast<int>();
+        Stats.Map(stat => stat.CpuSys).Subscribe(_cpuSys);
+        _cpuIdl = new MessageStageLast<int>();
+        Stats.Map(stat => stat.CpuIdl).Subscribe(_cpuIdl);
+        _cpuWai = new MessageStageLast<int>();
+        Stats.Map(stat => stat.CpuWai).Subscribe(_cpuWai);
+        _cpuStl = new MessageStageLast<int>();
+        Stats.Map(stat => stat.CpuStl).Subscribe(_cpuStl);
+
+        _memUsed = new MessageStageLast<long>();
+        Stats.Map(stat => stat.MemUsed).Subscribe(_memUsed);
+        _memBuf = new MessageStageLast<long>();
+        Stats.Map(stat => stat.MemBuf).Subscribe(_memBuf);
+        _memCach = new MessageStageLast<long>();
+        Stats.Map(stat => stat.MemCach).Subscribe(_memCach);
+        _memFree = new MessageStageLast<long>();
+        Stats.Map(stat => stat.MemFree).Subscribe(_memFree);
+
+        _netRecv = new MessageAdder<long>();
+        Stats.Map(stat => stat.NetRecv).Subscribe(_netRecv);
+        _netSend = new MessageAdder<long>();
+        Stats.Map(stat => stat.NetSend).Subscribe(_netSend);
+
+        _diskRead = new MessageAdder<long>();
+        Stats.Map(stat => stat.DskRead).Subscribe(_diskRead);
+        _diskWrit = new MessageAdder<long>();
+        Stats.Map(stat => stat.DskWrit).Subscribe(_diskWrit);
+
+        _load1M = new MessageStageLast<double>();
+        Stats.Map(stat => stat.Load1M).Subscribe(_load1M);
+        _load5M = new MessageStageLast<double>();
+        Stats.Map(stat => stat.Load5M).Subscribe(_load5M);
+        _load15M = new MessageStageLast<double>();
+        Stats.Map(stat => stat.Load15M).Subscribe(_load15M);
     }
-    
+
     public string Hostname { get; set; } = null!;
     public string OsName { get; set; } = null!;
     public string Ip { get; set; } = null!;
@@ -147,31 +163,31 @@ public class Client
     {
         return new CpuInfo(_cpuUsr.Stage, _cpuSys.Stage, _cpuIdl.Stage, _cpuWai.Stage, _cpuStl.Stage);
     }
-    
+
     public MemoryInfo GetMemUsed()
     {
         return new MemoryInfo(_memUsed.Stage, _memBuf.Stage, _memCach.Stage, _memFree.Stage);
     }
-    
+
     public NetworkInfo GetNetwork()
     {
-        return new NetworkInfo(_netRecv.Stage, _netSend.Stage);
+        return new NetworkInfo(_netRecv.Sum, _netSend.Sum);
     }
-    
+
     public DiskInfo GetDisk()
     {
-        return new DiskInfo(_diskRead.Stage, _diskWrit.Stage);
+        return new DiskInfo(_diskRead.Sum, _diskWrit.Sum);
     }
-    
+
     public LoadInfo GetLoad()
     {
         return new LoadInfo(_load1M.Stage, _load5M.Stage, _load15M.Stage);
     }
 
     public DateTime LastUpdate { get; set; } = DateTime.UtcNow;
-    
+
     public string Version { get; set; } = null!;
     public string Process { get; set; } = null!;
-    
+
     public AsyncObservable<DstatResult> Stats { get; set; }
 }
