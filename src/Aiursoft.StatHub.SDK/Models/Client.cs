@@ -48,7 +48,21 @@ public class CpuInfo
     public int Wai { get; set; }
     public int Stl { get; set; }
 
-    public int Ratio;
+    public readonly int Ratio;
+}
+
+public class LoadInfo
+{
+    public LoadInfo(double load1M, double load5M, double load15M)
+    {
+        Load1M = load1M;
+        Load5M = load5M;
+        Load15M = load15M;
+    }
+    
+    public double Load1M { get; set; }
+    public double Load5M { get; set; }
+    public double Load15M { get; set; }
 }
 
 public class Client
@@ -64,6 +78,10 @@ public class Client
     private readonly MessageStage<long> _memCach;
     private readonly MessageStage<long> _memFree;
     
+    private readonly MessageStage<double> _load1M;
+    private readonly MessageStage<double> _load5M;
+    private readonly MessageStage<double> _load15M;
+    
     public Client()
     {
         Stats = new AsyncObservable<DstatResult>();
@@ -77,6 +95,10 @@ public class Client
         _memBuf = Stats.Map(stat => stat.MemBuf).StageLast();
         _memCach = Stats.Map(stat => stat.MemCach).StageLast();
         _memFree = Stats.Map(stat => stat.MemFree).StageLast();
+        
+        _load1M = Stats.Map(stat => stat.Load1M).StageLast();
+        _load5M = Stats.Map(stat => stat.Load5M).StageLast();
+        _load15M = Stats.Map(stat => stat.Load15M).StageLast();
     }
     
     public string Hostname { get; set; } = null!;
@@ -93,6 +115,11 @@ public class Client
     public MemoryInfo GetMemUsed()
     {
         return new MemoryInfo(_memUsed.Stage, _memBuf.Stage, _memCach.Stage, _memFree.Stage);
+    }
+    
+    public LoadInfo GetLoad()
+    {
+        return new LoadInfo(_load1M.Stage, _load5M.Stage, _load15M.Stage);
     }
 
     public DateTime LastUpdate { get; set; } = DateTime.UtcNow;
