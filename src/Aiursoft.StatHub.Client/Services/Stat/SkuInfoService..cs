@@ -50,14 +50,14 @@ public class SkuInfoService
             var rootDriveSize = await _commandService.RunCommandAsync("df", "/", Path.GetTempPath());
             var rootDriveSizeInGb = double.Parse(rootDriveSize.output
                 .Split('\n', StringSplitOptions.RemoveEmptyEntries)[1]
-                .Split(' ', StringSplitOptions.RemoveEmptyEntries)[1]) / 1024 / 1024 / 1024;
+                .Split(' ', StringSplitOptions.RemoveEmptyEntries)[1]) / 1024 / 1024;
             
             // Hack here. Because 16 GB ram will be 15.6 GB in Linux.
             var rootDriveSizeInGbInt = Math.Floor(rootDriveSizeInGb);
             
             var rootDriveUsedInGb = double.Parse(rootDriveSize.output
                 .Split('\n', StringSplitOptions.RemoveEmptyEntries)[1]
-                .Split(' ', StringSplitOptions.RemoveEmptyEntries)[2]) / 1024 / 1024 / 1024;
+                .Split(' ', StringSplitOptions.RemoveEmptyEntries)[2]) / 1024 / 1024;
             
             // Hack here. Because 16 GB ram will be 15.6 GB in Linux.
             var rootDriveUsedInGbInt = Math.Floor(rootDriveUsedInGb);
