@@ -197,7 +197,7 @@ public class Client
 
     public string GetSku()
     {
-        return $"{CpuCores}CPU {RamInGb}GB";
+        return $"{CpuCores}C-{RamInGb}G-{TotalRoot}G";
     }
     
     public int GetSkuInNumber()
