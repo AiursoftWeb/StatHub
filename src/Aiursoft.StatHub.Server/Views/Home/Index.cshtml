@@ -44,10 +44,10 @@
                                             var load = client.GetLoad();
                                             var loadRate = load.Load15M * 100;
                                             var colorLoad = 
-                                                loadRate < 5 ? "bg-success":
-                                                loadRate < 10 ? "bg-info":
-                                                loadRate < 20 ? "bg-secondary":
-                                                loadRate < 40 ? "bg-warning":
+                                                loadRate < 10 ? "bg-success":
+                                                loadRate < 15 ? "bg-info":
+                                                loadRate < 30 ? "bg-secondary":
+                                                loadRate < 60 ? "bg-warning":
                                                 "bg-danger";
                                             var promptTextLoad = $"Load:\n1 min: {load.Load1M}\n5 min: {load.Load5M}\n15 min: {load.Load15M}";
                                         }
