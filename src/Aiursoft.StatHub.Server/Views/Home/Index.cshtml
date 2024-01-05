@@ -21,7 +21,7 @@
                                     <th>IP</th>
                                     <th>Name</th>
                                     <th>Boot at</th>
-                                    <th>Load</th>
+                                    <th>Avg Load</th>
                                     <th>CPU Usage</th>
                                     <th>Used at</th>
                                     <th>RAM Usage</th>
@@ -42,7 +42,7 @@
                                         @* Load *@
                                         @{
                                             var load = client.GetLoad();
-                                            var loadRate = load.Load15M * 100;
+                                            var loadRate = load.Load15M * 30; // Usually Load < 3.33 is safe.
                                             var colorLoad = 
                                                 loadRate < 10 ? "bg-success":
                                                 loadRate < 15 ? "bg-info":
