@@ -1,4 +1,5 @@
 ﻿using Aiursoft.CSTools.Services;
+using Aiursoft.CSTools.Tools;
 
 namespace Aiursoft.StatHub.Client.Services.Stat;
 
@@ -18,7 +19,12 @@ public class ExpensiveProcessService
             .Where(l => !l.StartsWith("CMD", StringComparison.InvariantCultureIgnoreCase))
             .FirstOrDefault(t => !string.IsNullOrWhiteSpace(t));
         var firstWord = firstMeaningfulLine!.Split(" ", StringSplitOptions.RemoveEmptyEntries)[0];
-        var process = firstWord.Split("/").Last();
+        var process = firstWord
+            .Split("/")
+            .Last()
+            .Split(".")
+            .First()
+            .SafeSubstring(16);
         return process;
     }
 }
