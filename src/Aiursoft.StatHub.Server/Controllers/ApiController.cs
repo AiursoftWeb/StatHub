@@ -34,17 +34,16 @@ public class ApiController : ControllerBase
     [HttpPost("metrics")]
     public async Task<IActionResult> Metrics([FromBody] MetricsAddressModel model)
     {
-        var identity = $"{model.Hostname}-{HttpContext.Connection.RemoteIpAddress}";
-        _logger.LogInformation("Received metrics from {Identity}.", identity);
+        _logger.LogInformation("Received metrics from {Identity}.", model.ClientId);
         
-        var entity = _database.GetOrAddClient(identity);
+        var entity = _database.GetOrAddClient(model.ClientId!);
         entity.BootTime = model.BootTime;
-        entity.Hostname = model.Hostname ?? throw new ArgumentNullException(nameof(model.Hostname));
-        entity.Ip = HttpContext.Connection.RemoteIpAddress?.ToString() ?? throw new ArgumentNullException(nameof(HttpContext.Connection.RemoteIpAddress));
+        entity.Hostname = model.Hostname!;
+        entity.Ip = HttpContext.Connection.RemoteIpAddress?.ToString()!;
         entity.LastUpdate = DateTime.UtcNow;
-        entity.Version = model.Version ?? throw new ArgumentNullException(nameof(model.Version));
-        entity.Process = model.Process ?? throw new ArgumentNullException(nameof(model.Process));
-        entity.OsName = model.OsName ?? throw new ArgumentNullException(nameof(model.OsName));
+        entity.Version = model.Version!;
+        entity.Process = model.Process!;
+        entity.OsName = model.OsName!;
         entity.CpuCores = model.CpuCores;
         entity.RamInGb = model.RamInGb;
         entity.UsedRoot = model.UsedRoot;

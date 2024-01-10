@@ -13,6 +13,7 @@ public class Startup : IStartUp
     public void ConfigureServices(IServiceCollection services)
     {
         services.AddTaskCanon();
+        services.AddSingleton<ClientIdService>();
         services.AddSingleton<ServerMonitor>();
         services.AddSingleton<LongCommandRunner>();
         services.AddSingleton<SubmitService>();

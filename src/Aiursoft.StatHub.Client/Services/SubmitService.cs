@@ -8,6 +8,7 @@ namespace Aiursoft.StatHub.Client.Services;
 
 public class SubmitService : IConsumer<DstatResult[]>
 {
+    private readonly ClientIdService _clientIdService;
     private readonly SkuInfoService _skuInfoService;
     private readonly OsInfoService _osInfoService;
     private readonly ExpensiveProcessService _expensiveProcessService;
@@ -18,6 +19,7 @@ public class SubmitService : IConsumer<DstatResult[]>
     private readonly ILogger<SubmitService> _logger;
 
     public SubmitService(
+        ClientIdService clientIdService,
         SkuInfoService skuInfoService,
         OsInfoService osInfoService,
         ExpensiveProcessService expensiveProcessService,
@@ -27,6 +29,7 @@ public class SubmitService : IConsumer<DstatResult[]>
         ServerAccess serverAccess,
         ILogger<SubmitService> logger)
     {
+        _clientIdService = clientIdService;
         _skuInfoService = skuInfoService;
         _osInfoService = osInfoService;
         _expensiveProcessService = expensiveProcessService;
@@ -64,12 +67,15 @@ public class SubmitService : IConsumer<DstatResult[]>
         
         var (totalRoot, usedRoot) = await _skuInfoService.GetRootDriveSizeInGb();
         _logger.LogTrace($"Disk size: {usedRoot}/{totalRoot}.");
+        
+        var clientId = await _clientIdService.GetClientId();
+        _logger.LogTrace($"Client id: {clientId}.");
 
         _logger.LogTrace("Sending metrics...");
         try
         {
             var response =
-                await _serverAccess.MetricsAsync(hostname, bootTime, version, expensiveProcess, osName, cpuCores, totalRam, usedRoot, totalRoot, statResults);
+                await _serverAccess.MetricsAsync(clientId, hostname, bootTime, version, expensiveProcess, osName, cpuCores, totalRam, usedRoot, totalRoot, statResults);
             _logger.LogInformation("Metrics sent! Response: {ResponseMessage}.", response.Message);
         }
         catch (Exception e)

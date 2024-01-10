@@ -18,24 +18,36 @@ public class ServerAccess
         _http = http;
         _serverLocator = demoServerLocator.Value;
     }
-    
+
     public Task<AiurCollection<Client>> GetClientsAsync()
     {
-        var url = new AiurApiEndpoint(host: _serverLocator.Instance, route: "/api/clients", param: new {});
+        var url = new AiurApiEndpoint(host: _serverLocator.Instance, route: "/api/clients", param: new { });
         return _http.Get<AiurCollection<Client>>(url);
     }
 
     public Task<AiurResponse> InfoAsync()
     {
-        var url = new AiurApiEndpoint(host: _serverLocator.Instance, route: "/api/info", param: new {});
+        var url = new AiurApiEndpoint(host: _serverLocator.Instance, route: "/api/info", param: new { });
         return _http.Get<AiurResponse>(url);
     }
-    
-    public Task<AiurResponse> MetricsAsync(string hostname, DateTime bootTime, string version, string process, string osName, int cpuCores, int ramInGb, int usedRoot, int totalRoot, DstatResult[] stats)
+
+    public Task<AiurResponse> MetricsAsync(
+        string clientId,
+        string hostname, 
+        DateTime bootTime, 
+        string version, 
+        string process, 
+        string osName, 
+        int cpuCores, 
+        int ramInGb,
+        int usedRoot, 
+        int totalRoot, 
+        DstatResult[] stats)
     {
         var url = new AiurApiEndpoint(_serverLocator.Instance, "/api/metrics", new { });
         var form = new AiurApiPayload(new MetricsAddressModel
         {
+            ClientId = clientId,
             Hostname = hostname,
             BootTime = bootTime,
             Version = version,
