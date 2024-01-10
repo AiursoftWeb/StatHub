@@ -32,8 +32,8 @@
                                     <th>Disk Read</th>
                                     <th>Disk Written</th>
                                     <th>OS</th>
-                                    <th>Last Update</th>
-                                    <th>Version</th>
+                                    @* <th>Last Update</th> *@
+                                    @* <th>Version</th> *@
                                 </tr>
                             </thead>
                             <tbody>
@@ -81,6 +81,9 @@
                                                     diskUseRatio < 0.6 ? "bg-success":
                                                     diskUseRatio < 0.7 ? "bg-warning":
                                                     "bg-danger";
+                                                
+                                                // OS
+                                                var osFirstTwoWords = string.Join(" ", client.OsName.Split(' ').Take(2)).Trim();
                                             }
                                             @if (isOutDated || loadRate > 60 || cpuRate > 40 || diskUseRatio > 0.7)
                                             {
@@ -157,10 +160,10 @@
                                             @disk.Writ.HumanReadableSize()
                                         </td>
                                         
-                                        <td>@client.OsName</td>
-                                        <td data-utc-time="@client.LastUpdate.ToHtmlDateTime()" data-sort="@client.LastUpdate.Ticks">
-                                        </td>
-                                        <td>@client.Version</td>
+                                        <td>@osFirstTwoWords</td>
+                                        @* <td data-utc-time="@client.LastUpdate.ToHtmlDateTime()" data-sort="@client.LastUpdate.Ticks"> *@
+                                        @* </td> *@
+                                        @* <td>@client.Version</td> *@
                                     </tr>
                                 }
                             </tbody>
