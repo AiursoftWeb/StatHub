@@ -6,6 +6,10 @@ namespace Aiursoft.StatHub.SDK.AddressModels;
 
 public class MetricsAddressModel
 {
+    [JsonProperty("clientId")]
+    [Required]
+    public string? ClientId { get; set; }
+    
     [Required]
     [JsonProperty("bootTime")]
     public DateTime BootTime { get; init; }
@@ -52,7 +56,6 @@ public class MetricsAddressModel
     [JsonProperty("totalRoot")]
     public int TotalRoot { get; set; }
 
-    [JsonProperty("clientId")]
-    [Required]
-    public string? ClientId { get; set; }
+    [JsonProperty("motd")]
+    public string? Motd { get; set; }
 }

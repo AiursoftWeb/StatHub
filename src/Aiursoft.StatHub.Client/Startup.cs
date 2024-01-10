@@ -14,6 +14,7 @@ public class Startup : IStartUp
     {
         services.AddTaskCanon();
         services.AddSingleton<ClientIdService>();
+        services.AddSingleton<MotdService>();
         services.AddSingleton<ServerMonitor>();
         services.AddSingleton<LongCommandRunner>();
         services.AddSingleton<SubmitService>();

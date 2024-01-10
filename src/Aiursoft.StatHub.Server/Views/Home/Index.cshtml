@@ -96,7 +96,7 @@
                                             }
                                             @client.Ip
                                         </td>
-                                        <td>@client.Hostname</td>
+                                        <td data-toggle="tooltip" data-placement="top" title="@client.Motd">@client.Hostname</td>
                                         <td data-sort="@client.GetSkuInNumber()">@client.GetSku()</td>
                                         <td data-utc-time="@client.BootTime.ToHtmlDateTime()" data-sort="@client.BootTime.Ticks">
                                         </td>

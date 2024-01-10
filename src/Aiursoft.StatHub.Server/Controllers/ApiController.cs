@@ -48,6 +48,7 @@ public class ApiController : ControllerBase
         entity.RamInGb = model.RamInGb;
         entity.UsedRoot = model.UsedRoot;
         entity.TotalRoot = model.TotalRoot;
+        entity.Motd = model.Motd!;
         foreach (var stat in model.Stats ?? Array.Empty<DstatResult>())
         {
             await entity.Stats.BroadcastAsync(stat);

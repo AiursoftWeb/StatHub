@@ -42,6 +42,7 @@ public class ServerAccess
         int ramInGb,
         int usedRoot, 
         int totalRoot, 
+        string motd,
         DstatResult[] stats)
     {
         var url = new AiurApiEndpoint(_serverLocator.Instance, "/api/metrics", new { });
@@ -57,6 +58,7 @@ public class ServerAccess
             RamInGb = ramInGb,
             UsedRoot = usedRoot,
             TotalRoot = totalRoot,
+            Motd = motd,
             Stats = stats
         });
         return _http.Post<AiurResponse>(url, form, BodyFormat.HttpJsonBody, autoRetry: false,

@@ -8,6 +8,7 @@ namespace Aiursoft.StatHub.Client.Services;
 
 public class SubmitService : IConsumer<DstatResult[]>
 {
+    private readonly MotdService _motdService;
     private readonly ClientIdService _clientIdService;
     private readonly SkuInfoService _skuInfoService;
     private readonly OsInfoService _osInfoService;
@@ -19,6 +20,7 @@ public class SubmitService : IConsumer<DstatResult[]>
     private readonly ILogger<SubmitService> _logger;
 
     public SubmitService(
+        MotdService motdService,
         ClientIdService clientIdService,
         SkuInfoService skuInfoService,
         OsInfoService osInfoService,
@@ -29,6 +31,7 @@ public class SubmitService : IConsumer<DstatResult[]>
         ServerAccess serverAccess,
         ILogger<SubmitService> logger)
     {
+        _motdService = motdService;
         _clientIdService = clientIdService;
         _skuInfoService = skuInfoService;
         _osInfoService = osInfoService;
@@ -70,12 +73,27 @@ public class SubmitService : IConsumer<DstatResult[]>
         
         var clientId = await _clientIdService.GetClientId();
         _logger.LogTrace($"Client id: {clientId}.");
+        
+        var motd = await _motdService.GetMotdLast10Lines();
+        _logger.LogTrace($"MOTD: {motd}.");
 
         _logger.LogTrace("Sending metrics...");
         try
         {
             var response =
-                await _serverAccess.MetricsAsync(clientId, hostname, bootTime, version, expensiveProcess, osName, cpuCores, totalRam, usedRoot, totalRoot, statResults);
+                await _serverAccess.MetricsAsync(
+                    clientId, 
+                    hostname, 
+                    bootTime, 
+                    version, 
+                    expensiveProcess, 
+                    osName, 
+                    cpuCores, 
+                    totalRam, 
+                    usedRoot, 
+                    totalRoot,
+                    motd,
+                    statResults);
             _logger.LogInformation("Metrics sent! Response: {ResponseMessage}.", response.Message);
         }
         catch (Exception e)

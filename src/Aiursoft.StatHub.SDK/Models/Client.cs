@@ -194,6 +194,7 @@ public class Client
     public int RamInGb { get; set; }
     public int TotalRoot { get; set; }
     public int UsedRoot { get; set; }
+    public string? Motd { get; set; }
 
     public string GetSku()
     {
