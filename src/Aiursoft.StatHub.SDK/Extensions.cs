@@ -12,4 +12,9 @@ public static class Extensions
         services.AddScoped<ServerAccess>();
         return services;
     }
+
+    public static Version GetSdkVersion()
+    {
+        return typeof(Extensions).Assembly.GetName().Version!;
+    }
 }
