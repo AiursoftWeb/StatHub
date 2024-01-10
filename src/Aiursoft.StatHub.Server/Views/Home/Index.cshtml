@@ -96,7 +96,7 @@
                                             }
                                             @client.Ip
                                         </td>
-                                        <td data-toggle="tooltip" data-placement="top" title="@client.Motd">@client.Hostname</td>
+                                        <td data-toggle="tooltip" data-placement="bottom" title="@client.Motd">@client.Hostname</td>
                                         <td data-sort="@client.GetSkuInNumber()">@client.GetSku()</td>
                                         <td data-utc-time="@client.BootTime.ToHtmlDateTime()" data-sort="@client.BootTime.Ticks">
                                         </td>
@@ -105,7 +105,7 @@
                                         <td data-sort="@loadRate">
                                             <div class="progress">
                                                 <div class="progress-bar-striped progress-bar-animated @colorLoad" 
-                                                     role="progressbar" style="width: @(loadRate)%" aria-valuenow="loadRate" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" 
+                                                     role="progressbar" style="width: @(loadRate)%" aria-valuenow="loadRate" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="bottom" 
                                                      title="@promptTextLoad"></div>
                                             </div>
                                         </td>
@@ -115,7 +115,7 @@
 
                                             <div class="progress">
                                                 <div class="progress-bar-striped progress-bar-animated @color" 
-                                                     role="progressbar" style="width: @(cpuRate)%" aria-valuenow="@cpuRate" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" 
+                                                     role="progressbar" style="width: @(cpuRate)%" aria-valuenow="@cpuRate" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="bottom" 
                                                      title="@promptText"></div>
                                             </div>
                                         </td>
@@ -133,9 +133,9 @@
                                         @* RAM *@
                                         <td data-sort="@mem.UsedRate">
                                             <div class="progress">
-                                                <div class="progress-bar-striped bg-success" role="progressbar" style="width: @(mem.UsedRate)%" aria-valuenow="@(mem.UsedRate)" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" title="Used RAM: @mem.Used.HumanReadableSize()"></div>
-                                                <div class="progress-bar-striped bg-info" role="progressbar" style="width: @(mem.BufRate)%" aria-valuenow="@(mem.BufRate)" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" title="Buffer RAM: @mem.Buf.HumanReadableSize()"></div>
-                                                <div class="progress-bar-striped bg-warning" role="progressbar" style="width: @(mem.CacheRate)%" aria-valuenow="@(mem.CacheRate)" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" title="Cache RAM: @mem.Cache.HumanReadableSize()"></div>
+                                                <div class="progress-bar-striped bg-success" role="progressbar" style="width: @(mem.UsedRate)%" aria-valuenow="@(mem.UsedRate)" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="bottom" title="Used RAM: @mem.Used.HumanReadableSize()"></div>
+                                                <div class="progress-bar-striped bg-info" role="progressbar" style="width: @(mem.BufRate)%" aria-valuenow="@(mem.BufRate)" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="bottom" title="Buffer RAM: @mem.Buf.HumanReadableSize()"></div>
+                                                <div class="progress-bar-striped bg-warning" role="progressbar" style="width: @(mem.CacheRate)%" aria-valuenow="@(mem.CacheRate)" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="bottom" title="Cache RAM: @mem.Cache.HumanReadableSize()"></div>
                                             </div>
                                         </td>
                                         
@@ -149,7 +149,7 @@
                                         
                                         <td data-sort="@diskUseRatio">
                                             <div class="progress">
-                                                <div class="progress-bar @diskColor" role="progressbar" style="width: @(diskUseRatio * 100)%" aria-valuenow="@(diskUseRatio * 100)" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" title="@message">@(client.UsedRoot)GB</div>
+                                                <div class="progress-bar @diskColor" role="progressbar" style="width: @(diskUseRatio * 100)%" aria-valuenow="@(diskUseRatio * 100)" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="bottom" title="@message">@(client.UsedRoot)GB</div>
                                             </div>
                                         <td data-sort="@disk.Read">
                                             @disk.Read.HumanReadableSize()
