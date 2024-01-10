@@ -1,6 +1,6 @@
 ﻿.dot {
-    height: 25px;
-    width: 25px;
+    height: 10px;
+    width: 10px;
     border-radius: 50%;
     display: inline-block;
 }
@@ -11,4 +11,12 @@
 
 .dot-primary {
     background-color: #007bff; /* Bootstrap 4 primary color */
+}
+
+.dot-success {
+    background-color: #28a745; /* Bootstrap 4 success color */
+}
+
+.dot-warning {
+    background-color: #ffc107; /* Bootstrap 4 warning color */
 }

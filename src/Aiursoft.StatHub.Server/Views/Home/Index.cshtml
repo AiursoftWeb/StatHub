@@ -42,11 +42,53 @@
                                     <tr>
                                         <td>
                                             @{
+                                                // Identify
                                                 var isOutDated = client.LastUpdate < DateTime.UtcNow.AddMinutes(-1);
+                                                
+                                                // Load
+                                                var load = client.GetLoad();
+                                                var loadRate = load.Load15M * 30; // Usually Load < 3.33 is safe.
+                                                var colorLoad = 
+                                                    loadRate < 10 ? "bg-success":
+                                                    loadRate < 15 ? "bg-info":
+                                                    loadRate < 30 ? "bg-secondary":
+                                                    loadRate < 60 ? "bg-warning":
+                                                    "bg-danger";
+                                                var promptTextLoad = $"Load:\n1 min: {load.Load1M}\n5 min: {load.Load5M}\n15 min: {load.Load15M}";
+
+                                                // CPU
+                                                var cpu = client.GetCpuUsage();
+                                                var cpuRate = cpu.Ratio;
+                                                var promptText = $"CPU Usage:\nUser: {cpu.Usr}%\nSystem: {cpu.Sys}%\nIdle: {cpu.Idl}%\nWait: {cpu.Wai}%\nSteal: {cpu.Stl}%";
+                                                var color = 
+                                                    cpuRate < 5 ? "bg-success":
+                                                    cpuRate < 10 ? "bg-info":
+                                                    cpuRate < 20 ? "bg-secondary":
+                                                    cpuRate < 40 ? "bg-warning":
+                                                    "bg-danger";
+                                                
+                                                // RAM
+                                                var mem = client.GetMemUsed();
+                                                
+                                                // NetWork
+                                                var net = client.GetNetwork();
+
+                                                // Disk
+                                                var disk = client.GetDisk();
+                                                var diskUseRatio = client.UsedRoot / (double)client.TotalRoot;
+                                                var message = $"{client.UsedRoot}GB / {client.TotalRoot}GB";
+                                                var diskColor = 
+                                                    diskUseRatio < 0.6 ? "bg-success":
+                                                    diskUseRatio < 0.7 ? "bg-warning":
+                                                    "bg-danger";
                                             }
-                                            @if (isOutDated)
+                                            @if (isOutDated || loadRate > 60 || cpuRate > 40 || diskUseRatio > 0.7)
                                             {
                                                 <div class="dot dot-danger"></div>
+                                            }
+                                            else if (loadRate > 30 || cpuRate > 20 || diskUseRatio > 0.6)
+                                            {
+                                                <div class="dot dot-warning"></div>
                                             }
                                             else
                                             {
@@ -60,17 +102,6 @@
                                         </td>
                                         
                                         @* Load *@
-                                        @{
-                                            var load = client.GetLoad();
-                                            var loadRate = load.Load15M * 30; // Usually Load < 3.33 is safe.
-                                            var colorLoad = 
-                                                loadRate < 10 ? "bg-success":
-                                                loadRate < 15 ? "bg-info":
-                                                loadRate < 30 ? "bg-secondary":
-                                                loadRate < 60 ? "bg-warning":
-                                                "bg-danger";
-                                            var promptTextLoad = $"Load:\n1 min: {load.Load1M}\n5 min: {load.Load5M}\n15 min: {load.Load15M}";
-                                        }
                                         <td data-sort="@loadRate">
                                             <div class="progress">
                                                 <div class="progress-bar-striped progress-bar-animated @colorLoad" 
@@ -80,17 +111,6 @@
                                         </td>
                                         
                                         @* CPU *@
-                                        @{
-                                            var cpu = client.GetCpuUsage();
-                                            var cpuRate = cpu.Ratio;
-                                            var promptText = $"CPU Usage:\nUser: {cpu.Usr}%\nSystem: {cpu.Sys}%\nIdle: {cpu.Idl}%\nWait: {cpu.Wai}%\nSteal: {cpu.Stl}%";
-                                            var color = 
-                                                cpuRate < 5 ? "bg-success":
-                                                cpuRate < 10 ? "bg-info":
-                                                cpuRate < 20 ? "bg-secondary":
-                                                cpuRate < 40 ? "bg-warning":
-                                                "bg-danger";
-                                        }
                                         <td data-sort="@cpuRate">
 
                                             <div class="progress">
@@ -111,9 +131,6 @@
                                         </td>
                                         
                                         @* RAM *@
-                                        @{
-                                            var mem = client.GetMemUsed();
-                                        }
                                         <td data-sort="@mem.UsedRate">
                                             <div class="progress">
                                                 <div class="progress-bar-striped bg-success" role="progressbar" style="width: @(mem.UsedRate)%" aria-valuenow="@(mem.UsedRate)" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" title="Used RAM: @mem.Used.HumanReadableSize()"></div>
@@ -123,9 +140,6 @@
                                         </td>
                                         
                                         @* NetWork *@
-                                        @{
-                                            var net = client.GetNetwork();
-                                        }
                                         <td data-sort="@net.Recv">
                                             @net.Recv.HumanReadableSize()
                                         </td>
@@ -133,16 +147,6 @@
                                             @net.Send.HumanReadableSize()
                                         </td>
                                         
-                                        @* Disk *@
-                                        @{
-                                            var disk = client.GetDisk();
-                                            var diskUseRatio = client.UsedRoot / (double)client.TotalRoot;
-                                            var message = $"{client.UsedRoot}GB / {client.TotalRoot}GB";
-                                            var diskColor = 
-                                                diskUseRatio < 0.6 ? "bg-success":
-                                                diskUseRatio < 0.7 ? "bg-warning":
-                                                "bg-danger";
-                                        }
                                         <td data-sort="@diskUseRatio">
                                             <div class="progress">
                                                 <div class="progress-bar @diskColor" role="progressbar" style="width: @(diskUseRatio * 100)%" aria-valuenow="@(diskUseRatio * 100)" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" title="@message">@(client.UsedRoot)GB</div>
