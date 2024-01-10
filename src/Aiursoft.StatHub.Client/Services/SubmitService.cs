@@ -74,7 +74,7 @@ public class SubmitService : IConsumer<DstatResult[]>
         var clientId = await _clientIdService.GetClientId();
         _logger.LogTrace($"Client id: {clientId}.");
         
-        var motd = await _motdService.GetMotdLast10Lines();
+        var motd = await _motdService.GetMotdFirstLine();
         _logger.LogTrace($"MOTD: {motd}.");
 
         _logger.LogTrace("Sending metrics...");

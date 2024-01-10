@@ -12,14 +12,16 @@ public class MotdService
         _cacheService = cacheService;
     }
 
-    public Task<string> GetMotdLast10Lines()
+    public Task<string?> GetMotdFirstLine()
     {
         return _cacheService.RunWithCache("motd", async () =>
         {
             var motd = await File.ReadAllTextAsync("/etc/motd");
-            var lines = motd.Split('\n');
-            var last10Lines = string.Join('\n', lines.TakeLast(10));
-            return last10Lines;
+
+            var firstLine = motd
+                .Split('\n', StringSplitOptions.RemoveEmptyEntries)
+                .FirstOrDefault(t => !string.IsNullOrWhiteSpace(t));
+            return firstLine;
         }, cachedMinutes: _ => TimeSpan.FromMinutes(20))!;
     }
 }
