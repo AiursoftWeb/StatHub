@@ -16,12 +16,17 @@ public class MotdService
     {
         return _cacheService.RunWithCache("motd", async () =>
         {
+            if (!File.Exists("/etc/motd"))
+            {
+                return null;
+            }
+            
             var motd = await File.ReadAllTextAsync("/etc/motd");
 
             var firstLine = motd
                 .Split('\n', StringSplitOptions.RemoveEmptyEntries)
                 .FirstOrDefault(t => !string.IsNullOrWhiteSpace(t));
             return firstLine;
-        }, cachedMinutes: _ => TimeSpan.FromMinutes(20))!;
+        }, cachedMinutes: _ => TimeSpan.FromMinutes(20));
     }
 }
