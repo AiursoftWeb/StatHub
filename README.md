@@ -8,6 +8,8 @@
 
 StatHub is a simple server stat statistics system. It can collect server stats and display them in a simple way.
 
+![overview](./screenshot.png)
+
 ## Run in Ubuntu
 
 The following script will install\update this app on your Ubuntu server. Supports Ubuntu 22.04.
