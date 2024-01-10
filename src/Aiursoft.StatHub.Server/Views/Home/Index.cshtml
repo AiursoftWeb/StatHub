@@ -40,7 +40,20 @@
                                 @foreach (var client in Model)
                                 {
                                     <tr>
-                                        <td>@client.Ip</td>
+                                        <td>
+                                            @{
+                                                var isOutDated = client.LastUpdate < DateTime.UtcNow.AddMinutes(-1);
+                                            }
+                                            @if (isOutDated)
+                                            {
+                                                <div class="dot dot-danger"></div>
+                                            }
+                                            else
+                                            {
+                                                <div class="dot dot-success"></div>
+                                            }
+                                            @client.Ip
+                                        </td>
                                         <td>@client.Hostname</td>
                                         <td data-sort="@client.GetSkuInNumber()">@client.GetSku()</td>
                                         <td data-utc-time="@client.BootTime.ToHtmlDateTime()" data-sort="@client.BootTime.Ticks">

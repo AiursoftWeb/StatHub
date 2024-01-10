@@ -1,0 +1,14 @@
+﻿.dot {
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.dot-danger {
+    background-color: #dc3545; /* Bootstrap 4 danger color */
+}
+
+.dot-primary {
+    background-color: #007bff; /* Bootstrap 4 primary color */
+}
