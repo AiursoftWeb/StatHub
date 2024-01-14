@@ -105,7 +105,13 @@
                                             }
                                             @client.Ip
                                         </td>
-                                        <td data-toggle="tooltip" data-placement="bottom" title="@client.Motd">@client.Hostname</td>
+                                        <td data-toggle="tooltip" data-placement="bottom" title="@client.Motd">
+                                                @client.Hostname
+                                                @if (!string.IsNullOrWhiteSpace(client.Motd))
+                                                {
+                                                    <span>✉️</span>
+                                                }
+                                        </td>
                                         <td data-sort="@client.GetSkuInNumber()">@client.GetSku()</td>
                                         <td data-utc-time="@client.BootTime.ToHtmlDateTime()" data-sort="@client.BootTime.Ticks">
                                         </td>
