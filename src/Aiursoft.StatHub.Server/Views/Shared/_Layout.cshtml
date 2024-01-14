@@ -64,10 +64,15 @@
             // Disable search, per page 30:
             $('.datatable').DataTable({
                 "paging": true,
-                "pageLength": 100,
+                "pageLength": 25,
                 "searching": false,
                 "info": false,
-                "order": [[0, "asc"]]
+                "order": [[0, "asc"]],
+                "drawCallback": function () {
+                    $('[data-toggle="tooltip"]').tooltip({
+                        trigger: 'hover'
+                    });
+                }
             });
             
             // Activate tooltip tool
