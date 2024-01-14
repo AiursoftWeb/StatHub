@@ -84,18 +84,24 @@
                                                 
                                                 // OS
                                                 var osFirstTwoWords = string.Join(" ", client.OsName.Split(' ').Take(2)).Trim();
+                                                
+                                                // Overall
+                                                var reason = isOutDated ? "Server is out of sync. " : "";
+                                                reason += loadRate > 60 ? "Load critical. " : loadRate > 30 ? "Load warning. " : "";
+                                                reason += cpuRate > 40 ? "CPU usage critical. " : cpuRate > 20 ? "CPU usage warning. " : "";
+                                                reason += diskUseRatio > 0.7 ? "Disk space critical. " : diskUseRatio > 0.6 ? "Disk space warning. " : "";
                                             }
                                             @if (isOutDated || loadRate > 60 || cpuRate > 40 || diskUseRatio > 0.7)
                                             {
-                                                <div class="dot dot-danger"></div>
+                                                <div class="dot dot-danger" data-toggle="tooltip" data-placement="bottom" title="@reason"></div>
                                             }
                                             else if (loadRate > 30 || cpuRate > 20 || diskUseRatio > 0.6)
                                             {
-                                                <div class="dot dot-warning"></div>
+                                                <div class="dot dot-warning" data-toggle="tooltip" data-placement="bottom" title="@reason"></div>
                                             }
                                             else
                                             {
-                                                <div class="dot dot-success"></div>
+                                                <div class="dot dot-success" data-toggle="tooltip" data-placement="bottom" title="@reason"></div>
                                             }
                                             @client.Ip
                                         </td>
