@@ -71,7 +71,9 @@
             });
             
             // Activate tooltip tool
-            $('[data-toggle="tooltip"]').tooltip();
+            $('[data-toggle="tooltip"]').tooltip({
+                trigger: 'hover'
+            });
         });
     </script>
     <script src="~/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

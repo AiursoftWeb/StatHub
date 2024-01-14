@@ -105,11 +105,11 @@
                                             }
                                             @client.Ip
                                         </td>
-                                        <td data-toggle="tooltip" data-placement="bottom" title="@client.Motd">
+                                        <td>
                                                 @client.Hostname
                                                 @if (!string.IsNullOrWhiteSpace(client.Motd))
                                                 {
-                                                    <span>✉️</span>
+                                                    <span data-toggle="tooltip" data-placement="bottom" title="@client.Motd">✉️</span>
                                                 }
                                         </td>
                                         <td data-sort="@client.GetSkuInNumber()">@client.GetSku()</td>
