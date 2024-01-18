@@ -56,11 +56,4 @@ public class ServerMonitor
             _subscription?.Unsubscribe();
         }
     }
-
-    public Task StopAsync(CancellationToken cancellationToken)
-    {
-        _subscription?.Unsubscribe();
-        _commandService.Stop();
-        return Task.CompletedTask;
-    }
 }
