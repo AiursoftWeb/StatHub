@@ -59,13 +59,13 @@ That will start a web server at `http://localhost:5000` and you can test the app
 
 The docker image has the following context:
 
-| Properties  | Value                           |
-|-------------|---------------------------------|
-| Image       | hub.aiursoft.cn/aiursoft/stathub|
-| Ports       | 5000                            |
-| Binary path | /app                            |
-| Data path   | /data                           |
-| Config path | /data/appsettings.json          |
+| Properties  | Value                            |
+|-------------|----------------------------------|
+| Image       | hub.aiursoft.cn/aiursoft/stathub |
+| Ports       | 5000                             |
+| Binary path | /app                             |
+| Data path   | /data                            |
+| Config path | /data/appsettings.json           |
 
 ## How to contribute
 

@@ -1,5 +1,5 @@
 ﻿using System.Runtime.InteropServices;
-using Aiursoft.AiurProtocol;
+using Aiursoft.AiurProtocol.Models;
 using Aiursoft.CommandFramework;
 using Aiursoft.CSTools.Tools;
 using Aiursoft.StatHub.Client;

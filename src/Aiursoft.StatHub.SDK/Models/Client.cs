@@ -1,4 +1,5 @@
 ﻿using Aiursoft.AiurObserver;
+using Aiursoft.AiurObserver.DefaultConsumers;
 
 namespace Aiursoft.StatHub.SDK.Models;
 

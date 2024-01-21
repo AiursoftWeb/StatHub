@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 using Aiursoft.AiurProtocol.Server;
 using Aiursoft.StatHub.Server.Data;
-using Aiursoft.WebTools.Models;
+using Aiursoft.WebTools.Abstractions.Models;
 
 namespace Aiursoft.StatHub.Server;
 
