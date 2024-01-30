@@ -1,5 +1,6 @@
 .vs/
 .idea/
+lib
 *.lock.json
 package-lock.json
 *.user
