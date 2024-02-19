@@ -11,10 +11,11 @@ public class HomeController : Controller
     {
         _database = database;
     }
-    
-    public IActionResult Index()
+
+    public IActionResult Index([FromQuery]bool last30Seconds = false)
     {
         var clients = _database.GetClients();
+        ViewBag.Last30Seconds = last30Seconds;
         return View(clients);
     }
 

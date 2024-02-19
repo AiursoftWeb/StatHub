@@ -1,7 +1,9 @@
 ﻿@using Aiursoft.WebTools
 @using Aiursoft.CSTools.Tools
 @model Aiursoft.StatHub.SDK.Models.Client[]
-
+@{
+    var showLast30 = ViewBag.Last30Seconds as bool? ?? false;
+}
 <div class="jumbotron">
     <div class="container">
         <h1 class="display-4">Welcome, Admin!</h1>
@@ -14,6 +16,23 @@
             <div class="card mb-2">
                 <div class="card-body">
                     <h5 class="card-title">Client status</h5>
+                    
+                    <div class="d-flex justify-content-center">
+                        @* Center *@
+                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                            @{
+                                var cumulativeActive = showLast30 ? "" : "active";
+                                var last30Active = showLast30 ? "active" : "";
+                            }
+                            <a class="btn btn-secondary @cumulativeActive" asp-controller="Home" asp-action="Index" asp-route-Last30Seconds="false">
+                                Cumulative
+                            </a>
+                            <a class="btn btn-secondary @last30Active" asp-controller="Home" asp-action="Index" asp-route-Last30Seconds="true">
+                                Last 30 seconds
+                            </a>
+                        </div>
+                    </div>
+                    
                     <div class="table-responsive">
                         <table class="table table-hover table-sm datatable" id="logTable">
                             <thead>
@@ -26,11 +45,22 @@
                                     <th>CPU Usage</th>
                                     <th>Used at</th>
                                     <th>RAM Usage</th>
-                                    <th>Net Received</th>
-                                    <th>Net Sent</th>
-                                    <th>Disk Used</th>
-                                    <th>Disk Read</th>
-                                    <th>Disk Written</th>
+                                    @if(showLast30)
+                                    {
+                                        <th>Net Receiving</th>
+                                        <th>Net Sending</th>
+                                        <th>Disk Used</th>
+                                        <th>Disk Reading</th>
+                                        <th>Disk Writing</th>
+                                    }
+                                    else
+                                    {
+                                        <th>Net Received</th>
+                                        <th>Net Sent</th>
+                                        <th>Disk Used</th>
+                                        <th>Disk Read</th>
+                                        <th>Disk Written</th>
+                                    }
                                     <th>OS</th>
                                     @* <th>Last Update</th> *@
                                     @* <th>Version</th> *@
@@ -71,10 +101,10 @@
                                                 var mem = client.GetMemUsed();
                                                 
                                                 // NetWork
-                                                var net = client.GetNetwork();
+                                                var net = showLast30 ? client.GetNetworkLast30Seconds() : client.GetNetwork();
 
                                                 // Disk
-                                                var disk = client.GetDisk();
+                                                var disk = showLast30 ? client.GetDiskLast30Seconds() : client.GetDisk();
                                                 var diskUseRatio = client.UsedRoot / (double)client.TotalRoot;
                                                 var message = $"{client.UsedRoot}GB / {client.TotalRoot}GB";
                                                 var diskColor = 
@@ -161,6 +191,7 @@
                                             @net.Send.HumanReadableSize()
                                         </td>
                                         
+                                        @* Disk *@
                                         <td data-sort="@diskUseRatio">
                                             <div class="progress">
                                                 <div class="progress-bar @diskColor" role="progressbar" style="width: @(diskUseRatio * 100)%" aria-valuenow="@(diskUseRatio * 100)" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="bottom" title="@message">@(client.UsedRoot)GB</div>
