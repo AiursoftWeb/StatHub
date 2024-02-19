@@ -3,6 +3,7 @@
 @model Aiursoft.StatHub.SDK.Models.Client[]
 @{
     var showLast30 = ViewBag.Last30Seconds as bool? ?? false;
+    var unit = showLast30 ? "/s" : string.Empty;
 }
 <div class="jumbotron">
     <div class="container">
@@ -185,10 +186,10 @@
                                         
                                         @* NetWork *@
                                         <td data-sort="@net.Recv">
-                                            @net.Recv.HumanReadableSize()
+                                            @net.Recv.HumanReadableSize()@unit
                                         </td>
                                         <td data-sort="@net.Send">
-                                            @net.Send.HumanReadableSize()
+                                            @net.Send.HumanReadableSize()@unit
                                         </td>
                                         
                                         @* Disk *@
@@ -197,10 +198,10 @@
                                                 <div class="progress-bar @diskColor" role="progressbar" style="width: @(diskUseRatio * 100)%" aria-valuenow="@(diskUseRatio * 100)" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="bottom" title="@message">@(client.UsedRoot)GB</div>
                                             </div>
                                         <td data-sort="@disk.Read">
-                                            @disk.Read.HumanReadableSize()
+                                            @disk.Read.HumanReadableSize()@unit
                                         </td>
                                         <td data-sort="@disk.Writ">
-                                            @disk.Writ.HumanReadableSize()
+                                            @disk.Writ.HumanReadableSize()@unit
                                         </td>
                                         
                                         <td>@osFirstTwoWords</td>
