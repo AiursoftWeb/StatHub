@@ -7,7 +7,7 @@
     </div>
 </div>
 
-<div class="container">
+<div class="container-fluid">
     <div class="row no-gutters">
         <div class="col-md-6 mt-3">
             <div class="card mb-2 tests-card h-100">
@@ -22,6 +22,8 @@
 
 @section scripts
 {
+    <script src="~/js/utils.js" asp-append-version="true"></script>
+    <script src="~/node_modules/chart.js/dist/Chart.bundle.min.js"></script>
     <script src="~/js/metrics.js" asp-append-version="true"></script>
     <script>
         startWebSocketClient("@Model.ClientId");

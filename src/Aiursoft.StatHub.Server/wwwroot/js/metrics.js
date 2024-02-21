@@ -4,46 +4,29 @@ const wsChartCtx = document.getElementById('wsChart').getContext('2d');
 const wsChartData = {
     labels: [],
     datasets: [{
-        label: "WebSocket Connection",
-        backgroundColor: 'rgb(2, 232, 99)',
-        borderColor: 'rgb(2, 232, 99)',
-        fill: false,
+        label: "CPU",
+        borderColor: Utils.CHART_COLORS.blue,
+        backgroundColor: Utils.transparentize(Utils.CHART_COLORS.blue, 0.5),
+        fill: true,
         data: []
     }]
-};
-
-const chartOption = {
-    responsive: true,
-    tooltips: {
-        mode: 'index',
-        intersect: false
-    },
-    hover: {
-        mode: 'nearest',
-        intersect: true
-    },
-    scales: {
-        xAxes: [{
-            display: true,
-            scaleLabel: {
-                display: true,
-                labelString: 'Time'
-            }
-        }],
-        yAxes: [{
-            display: true,
-            scaleLabel: {
-                display: true,
-                labelString: 'Value'
-            }
-        }]
-    }
 };
 
 window.myWsLine = new Chart(wsChartCtx, {
     type: 'line',
     data: wsChartData,
-    options: chartOption
+    options: {
+        responsive: true,
+        scales: {
+            y: {
+                title: {
+                    display: false,
+                },
+                min: 0,
+                max: 100,
+            }
+        }
+    }
 });
 
 const getWSAddress = function () {
