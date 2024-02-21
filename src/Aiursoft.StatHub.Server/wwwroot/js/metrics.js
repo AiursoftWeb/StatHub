@@ -18,13 +18,16 @@ window.myWsLine = new Chart(wsChartCtx, {
     data: wsChartData,
     options: {
         responsive: true,
+        plugins: {
+            legend: false,
+        },
         scales: {
             y: {
                 title: {
                     display: false,
                 },
-                min: 0,
-                max: 100,
+                suggestedMin: 0,
+                suggestedMax: 100
             }
         }
     }
