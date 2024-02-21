@@ -58,7 +58,7 @@ const updateWebSocketChart = function (evt) {
         wsChartData.labels.shift();
         wsChartData.datasets[0].data.shift();
     }
-    wsChartData.labels.push(new Date().toLocaleTimeString());
+    wsChartData.labels.push('');
     wsChartData.datasets[0].data.push(evt);
     window.myWsLine.update();
 };
@@ -67,7 +67,7 @@ const startWebSocketClient = function (machineId) {
     webSocket = new WebSocket(getWSAddress() + "/metrics/" + machineId + "/cpu.ws");
     webSocket.onmessage = function (evt) {
         setTimeout(function () {
-            updateWebSocketChart(evt);
+            updateWebSocketChart(evt.data);
         }, 0);
     };
 };
