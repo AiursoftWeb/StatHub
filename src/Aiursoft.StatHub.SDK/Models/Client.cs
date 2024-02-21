@@ -212,7 +212,9 @@ public class Client
     {
         var recv = _netRecvLast30Seconds.Average();
         var send = _netSendLast30Seconds.Average();
-        return new NetworkInfo(recv.Sum / recv.count, send.Sum / send.count);
+        return new NetworkInfo(
+        recv.count > 0 ? recv.Sum / recv.count: 0, 
+        send.count > 0 ? send.Sum / send.count: 0);
     }
 
     public DiskInfo GetDisk()
@@ -224,7 +226,9 @@ public class Client
     {
         var read = _diskReadLast30Seconds.Average();
         var writ = _diskWritLast30Seconds.Average();
-        return new DiskInfo(read.Sum / read.count, writ.Sum / writ.count);
+        return new DiskInfo(
+        read.count > 0 ? read.Sum / read.count: 0,
+        writ.count > 0 ? writ.Sum / writ.count: 0);
     }
 
     public LoadInfo GetLoad()
