@@ -2,6 +2,7 @@
 using Aiursoft.StatHub.Server.Data;
 using Microsoft.AspNetCore.Mvc;
 using Aiursoft.AiurObserver.Extensions;
+using Aiursoft.WebTools.Attributes;
 
 namespace Aiursoft.StatHub.Server.Controllers;
 
@@ -10,6 +11,7 @@ public class MetricsController(
     InMemoryDatabase database) : ControllerBase
 {
     [Route("{id}/cpu.ws")]
+    [EnforceWebSocket]
     public async Task Cpu([FromRoute]string id)
     {
         var client = database.GetOrAddClient(id);
