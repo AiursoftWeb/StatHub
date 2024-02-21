@@ -13,19 +13,11 @@ namespace Aiursoft.StatHub.Server.Controllers;
 [ApiExceptionHandler(
     PassthroughRemoteErrors = true, 
     PassthroughAiurServerException = true)]
-public class ApiController : ControllerBase
+public class ApiController(
+    InMemoryDatabase database,
+    ILogger<ApiController> logger)
+    : ControllerBase
 {
-    private readonly InMemoryDatabase _database;
-    private readonly ILogger<ApiController> _logger;
-
-    public ApiController(
-        InMemoryDatabase database,
-        ILogger<ApiController> logger)
-    {
-        _database = database;
-        _logger = logger;
-    }
-    
     [HttpGet("info")]
     public IActionResult Info()
     {
@@ -35,9 +27,9 @@ public class ApiController : ControllerBase
     [HttpPost("metrics")]
     public async Task<IActionResult> Metrics([FromBody] MetricsAddressModel model)
     {
-        _logger.LogInformation("Received metrics from {Identity}.", model.ClientId);
+        logger.LogInformation("Received metrics from {Identity}.", model.ClientId);
         
-        var entity = _database.GetOrAddClient(model.ClientId!);
+        var entity = database.GetOrAddClient(model.ClientId!);
         entity.ClientId = model.ClientId!;
         entity.BootTime = model.BootTime;
         entity.Hostname = model.Hostname!;
@@ -61,7 +53,7 @@ public class ApiController : ControllerBase
     [HttpGet("clients")]
     public IActionResult Clients()
     {
-        var servers = _database.GetClients().ToList();
+        var servers = database.GetClients().ToList();
         return this.Protocol(Code.ResultShown, $"Successfully get all servers.", servers);
     }
 }

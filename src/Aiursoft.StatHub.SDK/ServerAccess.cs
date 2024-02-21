@@ -7,29 +7,22 @@ using Microsoft.Extensions.Options;
 
 namespace Aiursoft.StatHub.SDK;
 
-public class ServerAccess
+public class ServerAccess(
+    AiurProtocolClient http,
+    IOptions<ServerConfig> demoServerLocator)
 {
-    private readonly AiurProtocolClient _http;
-    private readonly ServerConfig _serverLocator;
-
-    public ServerAccess(
-        AiurProtocolClient http,
-        IOptions<ServerConfig> demoServerLocator)
-    {
-        _http = http;
-        _serverLocator = demoServerLocator.Value;
-    }
+    private readonly ServerConfig _serverLocator = demoServerLocator.Value;
 
     public Task<AiurCollection<Client>> GetClientsAsync()
     {
         var url = new AiurApiEndpoint(host: _serverLocator.Instance, route: "/api/clients", param: new { });
-        return _http.Get<AiurCollection<Client>>(url);
+        return http.Get<AiurCollection<Client>>(url);
     }
 
     public Task<AiurResponse> InfoAsync()
     {
         var url = new AiurApiEndpoint(host: _serverLocator.Instance, route: "/api/info", param: new { });
-        return _http.Get<AiurResponse>(url);
+        return http.Get<AiurResponse>(url);
     }
 
     public Task<AiurResponse> MetricsAsync(
@@ -62,7 +55,7 @@ public class ServerAccess
             Motd = motd,
             Stats = stats
         });
-        return _http.Post<AiurResponse>(url, form, BodyFormat.HttpJsonBody, autoRetry: false,
+        return http.Post<AiurResponse>(url, form, BodyFormat.HttpJsonBody, autoRetry: false,
             enforceSameVersion: false);
     }
 }

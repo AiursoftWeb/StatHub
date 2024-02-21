@@ -31,70 +31,41 @@ public class MemoryInfo
     public long Free { get; set; }
 }
 
-public class CpuInfo
+public class CpuInfo(int usr, int sys, int idl, int wai, int stl)
 {
-    public CpuInfo(int usr, int sys, int idl, int wai, int stl)
-    {
-        Usr = usr;
-        Sys = sys;
-        Idl = idl;
-        Wai = wai;
-        Stl = stl;
-        Ratio = 100 - idl;
-    }
+    public int Usr { get; set; } = usr;
+    public int Sys { get; set; } = sys;
+    public int Idl { get; set; } = idl;
+    public int Wai { get; set; } = wai;
+    public int Stl { get; set; } = stl;
 
-    public int Usr { get; set; }
-    public int Sys { get; set; }
-    public int Idl { get; set; }
-    public int Wai { get; set; }
-    public int Stl { get; set; }
-
-    public readonly int Ratio;
+    public readonly int Ratio = 100 - idl;
 }
 
-public class LoadInfo
+public class LoadInfo(double load1M, double load5M, double load15M)
 {
-    public LoadInfo(double load1M, double load5M, double load15M)
-    {
-        Load1M = load1M;
-        Load5M = load5M;
-        Load15M = load15M;
-    }
-
-    public double Load1M { get; set; }
-    public double Load5M { get; set; }
-    public double Load15M { get; set; }
+    public double Load1M { get; set; } = load1M;
+    public double Load5M { get; set; } = load5M;
+    public double Load15M { get; set; } = load15M;
 }
 
-public class NetworkInfo
+public class NetworkInfo(long recv, long send)
 {
-    public NetworkInfo(long recv, long send)
-    {
-        Recv = recv;
-        Send = send;
-    }
-
-    public long Recv { get; set; }
-    public long Send { get; set; }
+    public long Recv { get; set; } = recv;
+    public long Send { get; set; } = send;
 }
 
-public class DiskInfo
+public class DiskInfo(long read, long writ)
 {
-    public DiskInfo(long read, long writ)
-    {
-        Read = read;
-        Writ = writ;
-    }
-
-    public long Read { get; set; }
-    public long Writ { get; set; }
+    public long Read { get; set; } = read;
+    public long Writ { get; set; } = writ;
 }
 
 public class Client
 {
     private readonly MessageStageLast<int> _cpuUsr;
     private readonly MessageStageLast<int> _cpuSys;
-    private readonly MessageStageLast<int> _cpuIdl;
+    public readonly MessageStageLast<int> CpuIdl;
     private readonly MessageStageLast<int> _cpuWai;
     private readonly MessageStageLast<int> _cpuStl;
 
@@ -126,8 +97,8 @@ public class Client
         Stats.Map(stat => stat.CpuUsr).Subscribe(_cpuUsr);
         _cpuSys = new MessageStageLast<int>();
         Stats.Map(stat => stat.CpuSys).Subscribe(_cpuSys);
-        _cpuIdl = new MessageStageLast<int>();
-        Stats.Map(stat => stat.CpuIdl).Subscribe(_cpuIdl);
+        CpuIdl = new MessageStageLast<int>();
+        Stats.Map(stat => stat.CpuIdl).Subscribe(CpuIdl);
         _cpuWai = new MessageStageLast<int>();
         Stats.Map(stat => stat.CpuWai).Subscribe(_cpuWai);
         _cpuStl = new MessageStageLast<int>();
@@ -187,7 +158,7 @@ public class Client
 
     public CpuInfo GetCpuUsage()
     {
-        return new CpuInfo(_cpuUsr.Stage, _cpuSys.Stage, _cpuIdl.Stage, _cpuWai.Stage, _cpuStl.Stage);
+        return new CpuInfo(_cpuUsr.Stage, _cpuSys.Stage, CpuIdl.Stage, _cpuWai.Stage, _cpuStl.Stage);
     }
 
     public MemoryInfo GetMemUsed()

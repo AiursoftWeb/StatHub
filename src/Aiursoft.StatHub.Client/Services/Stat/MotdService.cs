@@ -2,19 +2,11 @@
 
 namespace Aiursoft.StatHub.Client.Services.Stat;
 
-public class MotdService
+public class MotdService(CacheService cacheService)
 {
-    private readonly CacheService _cacheService;
-
-    public MotdService(
-        CacheService cacheService)
-    {
-        _cacheService = cacheService;
-    }
-
     public Task<string?> GetMotdFirstLine()
     {
-        return _cacheService.RunWithCache("motd", async () =>
+        return cacheService.RunWithCache("motd", async () =>
         {
             if (!File.Exists("/etc/motd"))
             {

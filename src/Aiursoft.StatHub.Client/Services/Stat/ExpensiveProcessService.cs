@@ -3,17 +3,11 @@ using Aiursoft.CSTools.Tools;
 
 namespace Aiursoft.StatHub.Client.Services.Stat;
 
-public class ExpensiveProcessService
+public class ExpensiveProcessService(CommandService commandService)
 {
-    private readonly CommandService _commandService;
-    public ExpensiveProcessService(CommandService commandService)
-    {
-        _commandService = commandService;
-    }
-    
     public async Task<string> GetExpensiveProcessAsync()
     {
-        var commandResult = await _commandService.RunCommandAsync("ps", "-eo cmd --sort=-%cpu", Path.GetTempPath());
+        var commandResult = await commandService.RunCommandAsync("ps", "-eo cmd --sort=-%cpu", Path.GetTempPath());
         var firstMeaningfulLine = commandResult.output
             .Split("\n")
             .Where(l => !l.StartsWith("CMD", StringComparison.InvariantCultureIgnoreCase))

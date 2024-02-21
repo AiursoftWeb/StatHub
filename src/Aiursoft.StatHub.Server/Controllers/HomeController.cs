@@ -3,25 +3,18 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Aiursoft.StatHub.Server.Controllers;
 
-public class HomeController : Controller
+public class HomeController(InMemoryDatabase database) : Controller
 {
-    private readonly InMemoryDatabase _database;
-
-    public HomeController(InMemoryDatabase database)
-    {
-        _database = database;
-    }
-
     public IActionResult Index([FromQuery]bool last30Seconds = false)
     {
-        var clients = _database.GetClients();
+        var clients = database.GetClients();
         ViewBag.Last30Seconds = last30Seconds;
         return View(clients);
     }
     
     public IActionResult Details([FromRoute]string id)
     {
-        var client = _database.GetOrAddClient(id);
+        var client = database.GetOrAddClient(id);
         return View(client);
     }
 

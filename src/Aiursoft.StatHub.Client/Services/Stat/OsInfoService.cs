@@ -2,19 +2,11 @@
 
 namespace Aiursoft.StatHub.Client.Services.Stat;
 
-public class OsInfoService
+public class OsInfoService(CacheService cacheService)
 {
-    private readonly CacheService _cacheService;
-
-    public OsInfoService(
-        CacheService cacheService)
-    {
-        _cacheService = cacheService;
-    }
-
     public Task<string> GetOsInfoAsync()
     {
-        return _cacheService.RunWithCache("os-info", async () =>
+        return cacheService.RunWithCache("os-info", async () =>
         {
             var osInfo = await File.ReadAllTextAsync("/etc/os-release");
 
