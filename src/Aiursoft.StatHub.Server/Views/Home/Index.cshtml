@@ -63,6 +63,7 @@
                                         <th>Disk Written</th>
                                     }
                                     <th>OS</th>
+                                    <th>More</th>
                                     @* <th>Last Update</th> *@
                                     @* <th>Version</th> *@
                                 </tr>
@@ -205,6 +206,10 @@
                                         </td>
                                         
                                         <td>@osFirstTwoWords</td>
+                                        
+                                        <td>
+                                            <a class="btn btn-primary btn-sm" asp-controller="Home" asp-action="Details" asp-route-id="@client.ClientId">Details</a>
+                                        </td>
                                         @* <td data-utc-time="@client.LastUpdate.ToHtmlDateTime()" data-sort="@client.LastUpdate.Ticks"> *@
                                         @* </td> *@
                                         @* <td>@client.Version</td> *@

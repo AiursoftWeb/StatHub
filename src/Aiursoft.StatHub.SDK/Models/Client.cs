@@ -186,6 +186,7 @@ public class Client
         Stats.Map(stat => stat.Load15M).Subscribe(_load15M);
     }
 
+    public string ClientId { get; set; } = null!;
     public string Hostname { get; set; } = null!;
     public string OsName { get; set; } = null!;
     public string Ip { get; set; } = null!;

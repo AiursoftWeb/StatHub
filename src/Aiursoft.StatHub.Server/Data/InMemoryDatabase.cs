@@ -8,11 +8,11 @@ public class InMemoryDatabase : ISingletonDependency
 {
     private ConcurrentDictionary<string, Client> Clients { get; } = new();
 
-    public Client GetOrAddClient(string ipWithHost)
+    public Client GetOrAddClient(string clientId)
     {
         lock (Clients)
         {
-            return Clients.GetOrAdd(ipWithHost, _ => new Client());
+            return Clients.GetOrAdd(clientId, _ => new Client());
         }
     }
     

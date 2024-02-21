@@ -18,6 +18,12 @@ public class HomeController : Controller
         ViewBag.Last30Seconds = last30Seconds;
         return View(clients);
     }
+    
+    public IActionResult Details([FromRoute]string id)
+    {
+        var client = _database.GetOrAddClient(id);
+        return View(client);
+    }
 
     public IActionResult AddClient()
     {

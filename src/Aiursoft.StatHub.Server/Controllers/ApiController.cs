@@ -38,6 +38,7 @@ public class ApiController : ControllerBase
         _logger.LogInformation("Received metrics from {Identity}.", model.ClientId);
         
         var entity = _database.GetOrAddClient(model.ClientId!);
+        entity.ClientId = model.ClientId!;
         entity.BootTime = model.BootTime;
         entity.Hostname = model.Hostname!;
         entity.Ip = HttpContext.Connection.RemoteIpAddress?.ToString()!;
