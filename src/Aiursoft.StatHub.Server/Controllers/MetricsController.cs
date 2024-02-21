@@ -18,6 +18,7 @@ public class MetricsController(
         var client = database.GetOrAddClient(id);
         var pusher = await HttpContext.AcceptWebSocketClient();
         var outSub = client.CpuIdl
+            .InNewThread()
             .Throttle(TimeSpan.FromSeconds(1))
             .Map(t => 100 - t)
             .Subscribe(t => pusher.Send(t.ToString(), HttpContext.RequestAborted));

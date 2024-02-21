@@ -37,19 +37,19 @@ public class SubmitService(
 
         var osName = await osInfoService.GetOsInfoAsync();
         logger.LogTrace($"OS: {osName}.");
-        
+
         var cpuCores = await skuInfoService.GetCpuCores();
         logger.LogTrace($"CPU cores: {cpuCores}.");
-        
+
         var totalRam = await skuInfoService.GetTotalRamInGb();
         logger.LogTrace($"Total RAM: {totalRam}.");
-        
+
         var (totalRoot, usedRoot) = await skuInfoService.GetRootDriveSizeInGb();
         logger.LogTrace($"Disk size: {usedRoot}/{totalRoot}.");
-        
+
         var clientId = await clientIdService.GetClientId();
         logger.LogTrace($"Client id: {clientId}.");
-        
+
         var motd = await motdService.GetMotdFirstLine();
         logger.LogTrace($"MOTD: {motd}.");
 
@@ -58,15 +58,15 @@ public class SubmitService(
         {
             var response =
                 await serverAccess.MetricsAsync(
-                    clientId, 
-                    hostname, 
-                    bootTime, 
-                    version, 
-                    expensiveProcess, 
-                    osName, 
-                    cpuCores, 
-                    totalRam, 
-                    usedRoot, 
+                    clientId,
+                    hostname,
+                    bootTime,
+                    version,
+                    expensiveProcess,
+                    osName,
+                    cpuCores,
+                    totalRam,
+                    usedRoot,
                     totalRoot,
                     motd,
                     statResults);
