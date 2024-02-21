@@ -1,13 +1,12 @@
 'use strict';
 let webSocket;
-const Utils = ChartUtils.init();
 const wsChartCtx = document.getElementById('wsChart').getContext('2d');
 const wsChartData = {
     labels: [],
     datasets: [{
         label: "CPU",
-        borderColor: Utils.CHART_COLORS.blue,
-        backgroundColor: Utils.transparentize(Utils.CHART_COLORS.blue, 0.5),
+        borderColor: '#2980b9',
+        backgroundColor: '#2980b988',
         fill: true,
         data: []
     }]
