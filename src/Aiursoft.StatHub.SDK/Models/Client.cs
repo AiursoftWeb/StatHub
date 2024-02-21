@@ -106,14 +106,14 @@ public class Client
     private readonly MessageAdder<long> _netRecv;
     private readonly MessageAdder<long> _netSend;
     
-    private readonly MessageStageLast<long> _netRecvLast30Seconds;
-    private readonly MessageStageLast<long> _netSendLast30Seconds;
+    private readonly RecentMessageAverage<long> _netRecvLast30Seconds;
+    private readonly RecentMessageAverage<long> _netSendLast30Seconds;
 
     private readonly MessageAdder<long> _diskRead;
     private readonly MessageAdder<long> _diskWrit;
     
-    private readonly MessageStageLast<long> _diskReadLast30Seconds;
-    private readonly MessageStageLast<long> _diskWritLast30Seconds;
+    private readonly RecentMessageAverage<long> _diskReadLast30Seconds;
+    private readonly RecentMessageAverage<long> _diskWritLast30Seconds;
 
     private readonly MessageStageLast<double> _load1M;
     private readonly MessageStageLast<double> _load5M;
@@ -147,13 +147,13 @@ public class Client
         _netSend = new MessageAdder<long>();
         Stats.Map(stat => stat.NetSend).Subscribe(_netSend);
         
-        _netRecvLast30Seconds = new MessageStageLast<long>();
+        _netRecvLast30Seconds = new RecentMessageAverage<long>(30);
         Stats
             .Map(stat => stat.NetRecv)
             .Aggregate(30)
             .Map(last30 => last30.Sum() / last30.Length) 
             .Subscribe(_netRecvLast30Seconds);
-        _netSendLast30Seconds = new MessageStageLast<long>();
+        _netSendLast30Seconds = new RecentMessageAverage<long>(30);
         Stats
             .Map(stat => stat.NetSend)
             .Aggregate(30)
@@ -165,13 +165,13 @@ public class Client
         _diskWrit = new MessageAdder<long>();
         Stats.Map(stat => stat.DskWrit).Subscribe(_diskWrit);
         
-        _diskReadLast30Seconds = new MessageStageLast<long>();
+        _diskReadLast30Seconds = new RecentMessageAverage<long>(30);
         Stats
             .Map(stat => stat.DskRead)
             .Aggregate(30)
             .Map(last30 => last30.Sum() / last30.Length) 
             .Subscribe(_diskReadLast30Seconds);
-        _diskWritLast30Seconds = new MessageStageLast<long>();
+        _diskWritLast30Seconds = new RecentMessageAverage<long>(30);
         Stats
             .Map(stat => stat.DskWrit)
             .Aggregate(30)
@@ -210,7 +210,9 @@ public class Client
     
     public NetworkInfo GetNetworkLast30Seconds()
     {
-        return new NetworkInfo(_netRecvLast30Seconds.Stage, _netSendLast30Seconds.Stage);
+        var recv = _netRecvLast30Seconds.Average();
+        var send = _netSendLast30Seconds.Average();
+        return new NetworkInfo(recv.Sum / recv.count, send.Sum / send.count);
     }
 
     public DiskInfo GetDisk()
@@ -220,7 +222,9 @@ public class Client
     
     public DiskInfo GetDiskLast30Seconds()
     {
-        return new DiskInfo(_diskReadLast30Seconds.Stage, _diskWritLast30Seconds.Stage);
+        var read = _diskReadLast30Seconds.Average();
+        var writ = _diskWritLast30Seconds.Average();
+        return new DiskInfo(read.Sum / read.count, writ.Sum / writ.count);
     }
 
     public LoadInfo GetLoad()
