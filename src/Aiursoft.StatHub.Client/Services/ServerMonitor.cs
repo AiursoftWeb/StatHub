@@ -30,6 +30,7 @@ public class ServerMonitor(
                 .Map(t => new DstatResult(t))
                 .Aggregate(10) // Aggregate 10 results into one array. 
                 .Throttle(TimeSpan.FromSeconds(9)) // Max speed is every 9 seconds one request.
+                .InNewThread()
                 .Pipe(result => { logger.LogTrace("Sending {Count} metrics.", result.Length); })
                 .Subscribe(submitService);
 
