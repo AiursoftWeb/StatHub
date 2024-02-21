@@ -53,6 +53,7 @@ public class ClientIdService
     
     public async Task<string> GetClientId()
     {
+        // TODO: Leverage /etc/machine-id on Linux
         _logger.LogTrace("Getting id...");
         var id = await GetConfigFileContent();
 
