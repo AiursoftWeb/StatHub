@@ -150,14 +150,10 @@ public class Client
         _netRecvLast30Seconds = new RecentMessageAverage<long>(30);
         Stats
             .Map(stat => stat.NetRecv)
-            .Aggregate(30)
-            .Map(last30 => last30.Sum() / last30.Length) 
             .Subscribe(_netRecvLast30Seconds);
         _netSendLast30Seconds = new RecentMessageAverage<long>(30);
         Stats
             .Map(stat => stat.NetSend)
-            .Aggregate(30)
-            .Map(last30 => last30.Sum() / last30.Length) 
             .Subscribe(_netSendLast30Seconds);
 
         _diskRead = new MessageAdder<long>();
@@ -168,14 +164,10 @@ public class Client
         _diskReadLast30Seconds = new RecentMessageAverage<long>(30);
         Stats
             .Map(stat => stat.DskRead)
-            .Aggregate(30)
-            .Map(last30 => last30.Sum() / last30.Length) 
             .Subscribe(_diskReadLast30Seconds);
         _diskWritLast30Seconds = new RecentMessageAverage<long>(30);
         Stats
             .Map(stat => stat.DskWrit)
-            .Aggregate(30)
-            .Map(last30 => last30.Sum() / last30.Length) 
             .Subscribe(_diskWritLast30Seconds);
 
         _load1M = new MessageStageLast<double>();
