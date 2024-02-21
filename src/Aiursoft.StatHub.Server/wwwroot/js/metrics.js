@@ -1,5 +1,6 @@
 'use strict';
 let webSocket;
+const Utils = ChartUtils.init();
 const wsChartCtx = document.getElementById('wsChart').getContext('2d');
 const wsChartData = {
     labels: [],
