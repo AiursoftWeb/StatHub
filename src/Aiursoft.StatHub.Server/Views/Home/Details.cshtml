@@ -12,28 +12,7 @@
         <div class="col-md-6 mt-3">
             <div class="card mb-2 tests-card h-100">
                 <div class="card-body">
-                    <h5 class="card-title">WebSocket Lag</h5>
-                    <p class="card-text">This number means how much gap time between current server event and last server event. The number should be close to 100ms. More than 120ms or less than 90ms is not proper.</p>
-                    <div class="form">
-                        <div class="form-group">
-                            <label for="wslagfilter">Log filter(ms)</label>
-                            <input type="number" class="form-control" id="wslagfilter" value="300">
-                        </div>
-                    </div>
-                    <p class="test-status mt-3">
-                        <kbd id="wsStatus" class="d-none"></kbd>
-                        <span class="badge badge-secondary ml-2" id="spanStatus">Idle</span>
-                    </p>
-                    <p class="test-status">
-                        <kbd id="wsmax" class="d-none"></kbd>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6 mt-3">
-            <div class="card mb-2 tests-card h-100">
-                <div class="card-body">
-                    <h5 class="card-title">WebSocket Lag</h5>
+                    <h5 class="card-title">CPU Usage</h5>
                     <canvas id="wsChart"></canvas>
                 </div>
             </div>
