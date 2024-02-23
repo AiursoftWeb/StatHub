@@ -1,6 +1,15 @@
 'use strict';
-const wsChartCtx = document.getElementById('wsChart').getContext('2d');
-const wsChartData = {
+
+const getWSAddress = function () {
+    const isHttps = 'https:' === document.location.protocol;
+    const host = window.location.host;
+    const head = isHttps ? "wss://" : "ws://";
+    return head + host;
+};
+
+const cpuChartCtx = document.getElementById('cpuChart').getContext('2d');
+const ramChartCtx = document.getElementById('ramChart').getContext('2d');
+const cpuChartData = {
     labels: Array(30).fill(''),
     datasets: [{
         label: "CPU",
@@ -10,10 +19,20 @@ const wsChartData = {
         data: Array(30).fill(NaN)
     }]
 };
+const ramChartData = {
+    labels: Array(30).fill(''),
+    datasets: [{
+        label: "RAM",
+        borderColor: '#768DF1',
+        backgroundColor: '#768DF188',
+        fill: true,
+        data: Array(30).fill(NaN)
+    }]
+};
 
-window.myWsLine = new Chart(wsChartCtx, {
+const cpuChart = new Chart(cpuChartCtx, {
     type: 'line',
-    data: wsChartData,
+    data: cpuChartData,
     options: {
         responsive: true,
         plugins: {
@@ -31,26 +50,56 @@ window.myWsLine = new Chart(wsChartCtx, {
     }
 });
 
-const getWSAddress = function () {
-    const isHttps = 'https:' === document.location.protocol;
-    const host = window.location.host;
-    const head = isHttps ? "wss://" : "ws://";
-    return head + host;
+const ramChart = new Chart(ramChartCtx, {
+    type: 'line',
+    data: ramChartData,
+    options: {
+        responsive: true,
+        plugins: {
+            legend: false,
+        },
+        scales: {
+            y: {
+                title: {
+                    display: false,
+                },
+                suggestedMin: 0,
+            }
+        }
+    }
+});
+
+
+const updateCpuChart = function (evt) {
+    cpuChartData.labels.shift();
+    cpuChartData.labels.push('');
+    cpuChartData.datasets[0].data.shift();
+    cpuChartData.datasets[0].data.push(evt);
+    cpuChart.update();
 };
 
-const updateWebSocketChart = function (evt) {
-    wsChartData.labels.shift();
-    wsChartData.labels.push('');
-    wsChartData.datasets[0].data.shift();
-    wsChartData.datasets[0].data.push(evt);
-    window.myWsLine.update();
+const updateRamChart = function (evt) {
+    ramChartData.labels.shift();
+    ramChartData.labels.push('');
+    ramChartData.datasets[0].data.shift();
+    ramChartData.datasets[0].data.push(evt);
+    ramChart.update();
 };
 
-const startWebSocketClient = function (machineId) {
+const startCpuClient = function (machineId) {
     const webSocket = new WebSocket(getWSAddress() + "/metrics/" + machineId + "/cpu.ws");
     webSocket.onmessage = function (evt) {
         setTimeout(function () {
-            updateWebSocketChart(evt.data);
+            updateCpuChart(evt.data);
+        }, 0);
+    };
+};
+
+const startRamClient = function (machineId) {
+    const webSocket = new WebSocket(getWSAddress() + "/metrics/" + machineId + "/ram.ws");
+    webSocket.onmessage = function (evt) {
+        setTimeout(function () {
+            updateRamChart(evt.data);
         }, 0);
     };
 };

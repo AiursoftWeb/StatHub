@@ -37,4 +37,32 @@ public class MetricsController(
             outSub.Unsubscribe();
         }
     }
+
+    [Route("{id}/ram.ws")]
+    [EnforceWebSocket]
+    public async Task Ram([FromRoute]string id)
+    {
+        var client = database.GetOrAddClient(id);
+        var pusher = await HttpContext.AcceptWebSocketClient();
+        var outSub = client.MemUsed
+            .InNewThread()
+            .Map(m => m / 1024)
+            .Throttle(TimeSpan.FromSeconds(1))
+            .Subscribe(t => pusher.Send(t.ToString(), HttpContext.RequestAborted));
+        
+        try
+        {
+            await pusher.Listen(HttpContext.RequestAborted);
+        }
+        catch (TaskCanceledException)
+        {
+            // Ignore. This happens when the client closes the connection.
+        }
+        finally
+        {
+            await pusher.Close(HttpContext.RequestAborted);
+            outSub.Unsubscribe();
+        }
+    }
+
 }

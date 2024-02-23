@@ -69,7 +69,7 @@ public class Client
     private readonly MessageStageLast<int> _cpuWai;
     private readonly MessageStageLast<int> _cpuStl;
 
-    private readonly MessageStageLast<long> _memUsed;
+    public readonly MessageStageLast<long> MemUsed;
     private readonly MessageStageLast<long> _memBuf;
     private readonly MessageStageLast<long> _memCach;
     private readonly MessageStageLast<long> _memFree;
@@ -104,8 +104,8 @@ public class Client
         _cpuStl = new MessageStageLast<int>();
         Stats.Map(stat => stat.CpuStl).Subscribe(_cpuStl);
 
-        _memUsed = new MessageStageLast<long>();
-        Stats.Map(stat => stat.MemUsed).Subscribe(_memUsed);
+        MemUsed = new MessageStageLast<long>();
+        Stats.Map(stat => stat.MemUsed).Subscribe(MemUsed);
         _memBuf = new MessageStageLast<long>();
         Stats.Map(stat => stat.MemBuf).Subscribe(_memBuf);
         _memCach = new MessageStageLast<long>();
@@ -163,7 +163,7 @@ public class Client
 
     public MemoryInfo GetMemUsed()
     {
-        return new MemoryInfo(_memUsed.Stage, _memBuf.Stage, _memCach.Stage, _memFree.Stage);
+        return new MemoryInfo(MemUsed.Stage, _memBuf.Stage, _memCach.Stage, _memFree.Stage);
     }
 
     public NetworkInfo GetNetwork()
