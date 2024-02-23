@@ -7,7 +7,7 @@ const wsChartData = {
         borderColor: '#2980b9',
         backgroundColor: '#2980b988',
         fill: true,
-        data: Array(30).fill(''),
+        data: Array(30).fill(NaN)
     }]
 };
 
