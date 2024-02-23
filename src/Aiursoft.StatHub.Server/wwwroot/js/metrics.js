@@ -1,14 +1,13 @@
 'use strict';
-let webSocket;
 const wsChartCtx = document.getElementById('wsChart').getContext('2d');
 const wsChartData = {
-    labels: [],
+    labels: Array(30).fill(''),
     datasets: [{
         label: "CPU",
         borderColor: '#2980b9',
         backgroundColor: '#2980b988',
         fill: true,
-        data: []
+        data: Array(30).fill(''),
     }]
 };
 
@@ -40,17 +39,15 @@ const getWSAddress = function () {
 };
 
 const updateWebSocketChart = function (evt) {
-    if (wsChartData.labels.length > 30) {
-        wsChartData.labels.shift();
-        wsChartData.datasets[0].data.shift();
-    }
+    wsChartData.labels.shift();
     wsChartData.labels.push('');
+    wsChartData.datasets[0].data.shift();
     wsChartData.datasets[0].data.push(evt);
     window.myWsLine.update();
 };
 
 const startWebSocketClient = function (machineId) {
-    webSocket = new WebSocket(getWSAddress() + "/metrics/" + machineId + "/cpu.ws");
+    const webSocket = new WebSocket(getWSAddress() + "/metrics/" + machineId + "/cpu.ws");
     webSocket.onmessage = function (evt) {
         setTimeout(function () {
             updateWebSocketChart(evt.data);
