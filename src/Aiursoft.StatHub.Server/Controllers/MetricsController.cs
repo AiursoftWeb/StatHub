@@ -46,7 +46,7 @@ public class MetricsController(
         var pusher = await HttpContext.AcceptWebSocketClient();
         var outSub = client.MemUsed
             .InNewThread()
-            .Map(m => m / 1024)
+            .Map(m => m)
             .Throttle(TimeSpan.FromSeconds(1))
             .Subscribe(t => pusher.Send(t.ToString(), HttpContext.RequestAborted));
         

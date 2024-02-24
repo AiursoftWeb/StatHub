@@ -8,23 +8,12 @@ const getWSAddress = function () {
 };
 
 const cpuChartCtx = document.getElementById('cpuChart').getContext('2d');
-const ramChartCtx = document.getElementById('ramChart').getContext('2d');
 const cpuChartData = {
     labels: Array(30).fill(''),
     datasets: [{
         label: "CPU",
         borderColor: '#2980b9',
         backgroundColor: '#2980b988',
-        fill: true,
-        data: Array(30).fill(NaN)
-    }]
-};
-const ramChartData = {
-    labels: Array(30).fill(''),
-    datasets: [{
-        label: "RAM",
-        borderColor: '#768DF1',
-        backgroundColor: '#768DF188',
         fill: true,
         data: Array(30).fill(NaN)
     }]
@@ -50,40 +39,12 @@ const cpuChart = new Chart(cpuChartCtx, {
     }
 });
 
-const ramChart = new Chart(ramChartCtx, {
-    type: 'line',
-    data: ramChartData,
-    options: {
-        responsive: true,
-        plugins: {
-            legend: false,
-        },
-        scales: {
-            y: {
-                title: {
-                    display: false,
-                },
-                suggestedMin: 0,
-            }
-        }
-    }
-});
-
-
 const updateCpuChart = function (evt) {
     cpuChartData.labels.shift();
     cpuChartData.labels.push('');
     cpuChartData.datasets[0].data.shift();
     cpuChartData.datasets[0].data.push(evt);
     cpuChart.update();
-};
-
-const updateRamChart = function (evt) {
-    ramChartData.labels.shift();
-    ramChartData.labels.push('');
-    ramChartData.datasets[0].data.shift();
-    ramChartData.datasets[0].data.push(evt);
-    ramChart.update();
 };
 
 const startCpuClient = function (machineId) {
@@ -95,11 +56,46 @@ const startCpuClient = function (machineId) {
     };
 };
 
-const startRamClient = function (machineId) {
+const startRamClient = function (machineId, ramInGb) {
+    const ramChartCtx = document.getElementById('ramChart').getContext('2d');
+    const ramChartData = {
+        labels: Array(30).fill(''),
+        datasets: [{
+            label: "RAM",
+            borderColor: '#768DF1',
+            backgroundColor: '#768DF188',
+            fill: true,
+            data: Array(30).fill(NaN)
+        }]
+    };
+    const ramChart = new Chart(ramChartCtx, {
+        type: 'line',
+        data: ramChartData,
+        options: {
+            responsive: true,
+            plugins: {
+                legend: false,
+            },
+            scales: {
+                y: {
+                    title: {
+                        display: false,
+                    },
+                    suggestedMin: 0,
+                    suggestedMax: ramInGb * 1024 * 1024 * 1024
+                }
+            }
+        }
+    });
+    
     const webSocket = new WebSocket(getWSAddress() + "/metrics/" + machineId + "/ram.ws");
     webSocket.onmessage = function (evt) {
         setTimeout(function () {
-            updateRamChart(evt.data);
+            ramChartData.labels.shift();
+            ramChartData.labels.push('');
+            ramChartData.datasets[0].data.shift();
+            ramChartData.datasets[0].data.push(evt);
+            ramChart.update();
         }, 0);
     };
 };

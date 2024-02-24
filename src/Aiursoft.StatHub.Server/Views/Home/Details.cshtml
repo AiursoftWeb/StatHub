@@ -35,6 +35,6 @@
     <script src="~/js/metrics.js" asp-append-version="true"></script>
     <script>
         startCpuClient("@Model.ClientId");
-        startRamClient("@Model.ClientId");
+        startRamClient("@Model.ClientId", @Model.RamInGb);
     </script>
 }
