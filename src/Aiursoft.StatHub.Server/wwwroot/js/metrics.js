@@ -94,7 +94,7 @@ const startRamClient = function (machineId, ramInGb) {
             ramChartData.labels.shift();
             ramChartData.labels.push('');
             ramChartData.datasets[0].data.shift();
-            ramChartData.datasets[0].data.push(evt);
+            ramChartData.datasets[0].data.push(evt.data);
             ramChart.update();
         }, 0);
     };
