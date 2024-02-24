@@ -7,6 +7,18 @@ const getWSAddress = function () {
     return head + host;
 };
 
+function humanReadableByteText(bytes) {
+    if (bytes > 1024 * 1024 * 1024) {
+        return `${(bytes / 1024 / 1024 / 1024).toFixed(2)} GB`
+    } else if (bytes > 1024 * 1024) {
+        return `${(bytes / 1024 / 1024).toFixed(2)} MB`
+    } else if (bytes > 1024) {
+        return `${(bytes / 1024).toFixed(2)} KB`
+    } else {
+        return `${bytes} B`
+    }
+}
+
 const cpuChartCtx = document.getElementById('cpuChart').getContext('2d');
 const cpuChartData = {
     labels: Array(30).fill(''),
@@ -26,6 +38,14 @@ const cpuChart = new Chart(cpuChartCtx, {
         responsive: true,
         plugins: {
             legend: false,
+            tooltip: {
+                enabled: true,
+                callbacks: {
+                    label: t => {
+                        return `${t.parsed.y} %`;
+                    }
+                }
+            }
         },
         scales: {
             y: {
@@ -57,6 +77,7 @@ const startCpuClient = function (machineId) {
 };
 
 const startRamClient = function (machineId, ramInGb) {
+    const ramBytes = ramInGb * 1024 * 1024 * 1024;
     const ramChartCtx = document.getElementById('ramChart').getContext('2d');
     const ramChartData = {
         labels: Array(30).fill(''),
@@ -75,19 +96,30 @@ const startRamClient = function (machineId, ramInGb) {
             responsive: true,
             plugins: {
                 legend: false,
+                tooltip: {
+                    enabled: true,
+                    callbacks: {
+                        label: t => {
+                            return `${humanReadableByteText(t.parsed.y)} (${(t.parsed.y / ramBytes * 100).toFixed(0)}%)`;
+                        }
+                    }
+                }
             },
             scales: {
                 y: {
                     title: {
                         display: false,
                     },
-                    suggestedMin: 0,
-                    suggestedMax: ramInGb * 1024 * 1024 * 1024
+                    ticks: {
+                        callback: t => humanReadableByteText(t),
+                    },
+                    min: 0,
+                    max: ramBytes
                 }
             }
         }
     });
-    
+
     const webSocket = new WebSocket(getWSAddress() + "/metrics/" + machineId + "/ram.ws");
     webSocket.onmessage = function (evt) {
         setTimeout(function () {
