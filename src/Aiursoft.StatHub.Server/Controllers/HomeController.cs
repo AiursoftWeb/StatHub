@@ -31,6 +31,7 @@ public class HomeController(InMemoryDatabase database) : Controller
 DEBIAN_FRONTEND=noninteractive sudo apt install dotnet8 -y
 DEBIAN_FRONTEND=noninteractive sudo apt install pcp -y
 sudo touch /etc/motd
+sudo rm /root/.local/share/StatHubClient/config.conf
 sudo dotnet tool install Aiursoft.StatHub.Client --tool-path /opt/stathub-client || sudo dotnet tool update Aiursoft.StatHub.Client --tool-path /opt/stathub-client
 
 echo ""[Unit]
