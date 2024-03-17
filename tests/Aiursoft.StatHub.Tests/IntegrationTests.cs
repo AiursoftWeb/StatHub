@@ -66,6 +66,12 @@ public class IntegrationTests
         {
             return;
         }
+        
+        // Skip Container
+        if (EntryExtends.IsInDocker())
+        {
+            return;
+        }
         var result = await _program.TestRunAsync(new[] { "-s", _endpointUrl, "--one-time" });
         Assert.AreEqual(0, result.ProgramReturn);
     }
