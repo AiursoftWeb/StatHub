@@ -26,10 +26,10 @@ public class IntegrationTests
     }
 
     [TestInitialize]
-    public Task CreateServer()
+    public async Task CreateServer()
     {
-        _server = App<Aiursoft.StatHub.Server.Startup>(Array.Empty<string>(), port: _port);
-        return _server.StartAsync();
+        _server = await AppAsync<Aiursoft.StatHub.Server.Startup>(Array.Empty<string>(), port: _port);
+        await _server.StartAsync();
     }
 
     [TestMethod]
