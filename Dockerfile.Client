@@ -23,4 +23,4 @@ RUN apt update; DEBIAN_FRONTEND=noninteractive apt install -y dstat procps
 
 ENV SERVER_ENDPOINT="http://localhost:5000"
 
-ENTRYPOINT ["/bin/bash", "-c", "./stathub-client -s $SERVER_ENDPOINT"]
+ENTRYPOINT ["/bin/bash", "-c", "./stathub-client -s $SERVER_ENDPOINT -v"]
