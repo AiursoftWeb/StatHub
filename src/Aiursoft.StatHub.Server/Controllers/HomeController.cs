@@ -67,6 +67,8 @@ curl -fsSL https://get.docker.com -o get-docker.sh
 sh get-docker.sh
 
 docker run -d \
+    --restart always \
+    --name stathub-client \
     --pid host \
     --net host \
     -v /etc/lsb-release:/etc/lsb-release:ro \
