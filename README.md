@@ -75,7 +75,10 @@ First, install Docker [here](https://docs.docker.com/get-docker/).
 Then run the following commands in a Linux shell:
 
 ```bash
-docker run -d \
+sudo touch /etc/motd
+sudo docker run -d \
+    --restart always \
+    --name stathub-client \
     --pid host \
     --net host \
     -v /etc/lsb-release:/etc/lsb-release:ro \
@@ -83,7 +86,7 @@ docker run -d \
     -v /etc/motd:/etc/motd:ro \
     -v /etc/hostname:/etc/hostname:ro \
     --privileged \
-    -e SERVER_ENDPOINT=https://stathub.aiursoft.cn \
+    -e SERVER_ENDPOINT="https://stathub.aiursoft.cn" \
     hub.aiursoft.cn/aiursoft/stathub-client
 ```
 
