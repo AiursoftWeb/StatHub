@@ -7,6 +7,7 @@ public class ExpensiveProcessService(CommandService commandService)
 {
     public async Task<string> GetExpensiveProcessAsync()
     {
+        // In docker, this will return the most expensive process of the host machine.
         var commandResult = await commandService.RunCommandAsync("ps", "-eo cmd --sort=-%cpu", Path.GetTempPath());
         var firstMeaningfulLine = commandResult.output
             .Split("\n")

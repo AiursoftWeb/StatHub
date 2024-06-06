@@ -9,6 +9,7 @@ public class BootTimeService(CacheService cacheService)
     {
         return cacheService.RunWithCache("boot-time", async () =>
         {
+            // In docker, this will return the boot time of the host machine.
             var uptime = await File.ReadAllTextAsync("/proc/uptime");
             var upSeconds = double.Parse(uptime.Split(' ', StringSplitOptions.RemoveEmptyEntries)[0],
                 CultureInfo.InvariantCulture);

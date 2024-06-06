@@ -11,6 +11,7 @@ public class SkuInfoService(
     {
         return cacheService.RunWithCache("cpu-cores", async () =>
         {
+            // In docker, this will return the number of cores of the host machine.
             var commandResult = await commandService.RunCommandAsync("nproc", "", Path.GetTempPath());
             var cores = int.Parse(commandResult.output);
             return cores;
@@ -21,6 +22,7 @@ public class SkuInfoService(
     {
         return cacheService.RunWithCache("total-ram", async () =>
         {
+            // In docker, this will return the total ram of the host machine.
             var mem = await File.ReadAllTextAsync("/proc/meminfo");
             var totalRam = mem
                 .Split('\n', StringSplitOptions.RemoveEmptyEntries)
@@ -38,6 +40,7 @@ public class SkuInfoService(
     {
         return cacheService.RunWithCache("root-drive-size", async () =>
         {
+            // In docker, this will return the root drive size of the host machine.
             var rootDriveSize = await commandService.RunCommandAsync("df", "/", Path.GetTempPath());
             var rootDriveSizeInGb = double.Parse(rootDriveSize.output
                 .Split('\n', StringSplitOptions.RemoveEmptyEntries)[1]

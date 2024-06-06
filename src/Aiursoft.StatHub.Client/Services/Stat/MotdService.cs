@@ -8,6 +8,7 @@ public class MotdService(CacheService cacheService)
     {
         return cacheService.RunWithCache("motd", async () =>
         {
+            // We need to passthrough the /etc/motd file to docker container.
             if (!File.Exists("/etc/motd"))
             {
                 return null;

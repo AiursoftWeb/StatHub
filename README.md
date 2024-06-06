@@ -78,7 +78,10 @@ Then run the following commands in a Linux shell:
 docker run -d \
     --pid host \
     --net host \
-    -v /etc:/etc \
+    -v /etc/lsb-release:/etc/lsb-release:ro \
+    -v /etc/os-release:/etc/os-release:ro \
+    -v /etc/motd:/etc/motd:ro \
+    -v /etc/hostname:/etc/hostname:ro \
     --privileged \
     -e SERVER_ENDPOINT=https://stathub.aiursoft.cn \
     hub.aiursoft.cn/aiursoft/stathub-client

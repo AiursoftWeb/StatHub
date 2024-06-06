@@ -8,8 +8,9 @@ public class HostnameService(CacheService cacheService)
     {
         return cacheService.RunWithCache("host-name", async () =>
         {
-                var hostname = await File.ReadAllTextAsync("/etc/hostname");
-                return hostname.Trim();
+            // We need to passthrough the /etc/hostname file to docker container.
+            var hostname = await File.ReadAllTextAsync("/etc/hostname");
+            return hostname.Trim();
         }, cachedMinutes: _ => TimeSpan.FromDays(1))!;
     }
 }
