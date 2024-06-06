@@ -72,7 +72,7 @@ else
     echo 'Docker is already installed'
 fi
 
-touch /etc/motd
+sudo touch /etc/motd
 sudo docker run -d \
     --restart always \
     --name stathub-client \
