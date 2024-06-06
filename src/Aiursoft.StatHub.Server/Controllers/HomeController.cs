@@ -57,4 +57,26 @@ sudo systemctl stop stathub.service > /dev/null 2>&1
 sudo systemctl start stathub.service";
         return Content(installScript, "text/plain");
     }
+
+        [HttpGet("install-docker.sh")]
+    public IActionResult GetInstallScriptForDocker()
+    {
+        // return text/plain
+        var installScript = @$"
+curl -fsSL https://get.docker.com -o get-docker.sh
+sh get-docker.sh
+
+docker run -d \
+    --pid host \
+    --net host \
+    -v /etc/lsb-release:/etc/lsb-release:ro \
+    -v /etc/os-release:/etc/os-release:ro \
+    -v /etc/motd:/etc/motd:ro \
+    -v /etc/hostname:/etc/hostname:ro \
+    --privileged \
+    -e SERVER_ENDPOINT=""{Request.Scheme}://{Request.Host}"" \
+    hub.aiursoft.cn/aiursoft/stathub-client
+";
+        return Content(installScript, "text/plain");
+    }
 }
