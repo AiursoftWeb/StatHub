@@ -63,10 +63,17 @@ sudo systemctl start stathub.service";
     {
         // return text/plain
         var installScript = @$"
-curl -fsSL https://get.docker.com -o get-docker.sh
-sh get-docker.sh
+if ! command -v docker &> /dev/null
+then
+    curl -fsSL https://get.docker.com -o get-docker.sh
+    sh get-docker.sh
+    rm get-docker.sh
+else
+    echo 'Docker is already installed'
+fi
 
-docker run -d \
+touch /etc/motd
+sudo docker run -d \
     --restart always \
     --name stathub-client \
     --pid host \
