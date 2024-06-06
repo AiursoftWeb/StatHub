@@ -72,7 +72,6 @@ else
     echo 'Docker is already installed'
 fi
 
-rm -rf /etc/motd
 touch /etc/motd
 docker run -d \
     --restart always \
