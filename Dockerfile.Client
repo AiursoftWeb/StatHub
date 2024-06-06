@@ -20,6 +20,8 @@ COPY --from=build-env /app .
 
 # Install wget and curl
 RUN apt update; DEBIAN_FRONTEND=noninteractive apt install -y dstat procps
+# Clean etc because we gonna passthrough the host's etc
+RUN rm /etc/* -rf
 
 ENV SERVER_ENDPOINT="http://localhost:5000"
 
