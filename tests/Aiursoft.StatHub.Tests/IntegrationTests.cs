@@ -28,7 +28,7 @@ public class IntegrationTests
     [TestInitialize]
     public async Task CreateServer()
     {
-        _server = await AppAsync<Aiursoft.StatHub.Server.Startup>(Array.Empty<string>(), port: _port);
+        _server = await AppAsync<Aiursoft.StatHub.Server.Startup>([], port: _port);
         await _server.StartAsync();
     }
 
@@ -72,7 +72,7 @@ public class IntegrationTests
         {
             return;
         }
-        var result = await _program.TestRunAsync(new[] { "-s", _endpointUrl, "--one-time" });
+        var result = await _program.TestRunAsync(["-s", _endpointUrl, "--one-time"]);
         Assert.AreEqual(0, result.ProgramReturn);
     }
     [TestMethod]
@@ -80,7 +80,7 @@ public class IntegrationTests
     {
         try
         {
-            _ = await _program.TestRunAsync(new[] { "-s", "http://bad", "--one-time" });
+            _ = await _program.TestRunAsync(["-s", "http://bad", "--one-time"]);
             Assert.Fail();
         }
         catch

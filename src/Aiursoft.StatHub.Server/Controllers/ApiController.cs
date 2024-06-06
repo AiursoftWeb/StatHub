@@ -2,7 +2,6 @@ using Aiursoft.AiurProtocol.Models;
 using Aiursoft.AiurProtocol.Server;
 using Aiursoft.AiurProtocol.Server.Attributes;
 using Aiursoft.StatHub.SDK.AddressModels;
-using Aiursoft.StatHub.SDK.Models;
 using Aiursoft.StatHub.Server.Data;
 using Microsoft.AspNetCore.Mvc;
 
@@ -43,7 +42,7 @@ public class ApiController(
         entity.UsedRoot = model.UsedRoot;
         entity.TotalRoot = model.TotalRoot;
         entity.Motd = model.Motd!;
-        foreach (var stat in model.Stats ?? Array.Empty<DstatResult>())
+        foreach (var stat in model.Stats ?? [])
         {
             await entity.Stats.BroadcastAsync(stat);
         }

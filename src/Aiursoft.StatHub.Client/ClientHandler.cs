@@ -14,7 +14,7 @@ public class ClientHandler : ExecutableCommandHandlerBuilder
 {
     public static readonly Option<string> Server =
         new(
-            aliases: new[] { "-s", "--server" },
+            aliases: ["-s", "--server"],
             description: "The target server to use.")
         {
             IsRequired = true
@@ -22,20 +22,20 @@ public class ClientHandler : ExecutableCommandHandlerBuilder
 
     private static readonly Option<bool> OneTime =
         new(
-            aliases: new[] { "-o", "--one-time" },
+            aliases: ["-o", "--one-time"],
             description: "Only connect to the server once.",
             getDefaultValue: () => false);
 
     protected override string Name => "client";
 
     protected override string Description => "Serve as a client to connect to a StatHub server.";
-    
-    protected override Option[] GetCommandOptions() => new Option[]
-    {
+
+    protected override Option[] GetCommandOptions() =>
+    [
         Server,
         OneTime,
         CommonOptionsProvider.VerboseOption
-    };
+    ];
 
     protected override async Task Execute(InvocationContext context)
     {
@@ -54,20 +54,13 @@ public class ClientHandler : ExecutableCommandHandlerBuilder
         var serverMonitor = host.Services.GetRequiredService<ServerMonitor>();
         var logger = host.Services.GetRequiredService<ILogger<ServerMonitor>>();
         
-        if (oneTime)
+        try
         {
-            try
-            {
-                await serverMonitor.MonitorServerAsync(CancellationToken.None, true);
-            }
-            catch (InvalidOperationException)
-            {
-                // Ignore because dstat will quit immediately.
-            }
+            await serverMonitor.MonitorServerAsync(CancellationToken.None, oneTime);
         }
-        else
+        catch (InvalidOperationException) when (oneTime)
         {
-            await serverMonitor.MonitorServerAsync(CancellationToken.None);
+            // Ignore because dstat will quit immediately in one-time mode.
         }
         
         logger.LogInformation("The monitor quit.");
