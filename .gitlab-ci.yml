@@ -130,8 +130,8 @@ deploy_docker_client:
     - lint
     - test
   script:
-    - docker build -f ./Dockerfile.Client . -t hub.aiursoft.cn/$CI_PROJECT_NAMESPACE/$(CI_PROJECT_NAME)-client:latest
-    - docker push hub.aiursoft.cn/$CI_PROJECT_NAMESPACE/$(CI_PROJECT_NAME)-client:latest
+    - docker build -f ./Dockerfile.Client . -t hub.aiursoft.cn/$CI_PROJECT_NAMESPACE/${CI_PROJECT_NAME}-client:latest
+    - docker push hub.aiursoft.cn/$CI_PROJECT_NAMESPACE/${CI_PROJECT_NAME}-client:latest
   rules:
     - if: '$CI_COMMIT_BRANCH == "master"'
       exists:
