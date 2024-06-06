@@ -19,7 +19,7 @@ WORKDIR /app
 COPY --from=build-env /app .
 
 # Install wget and curl
-RUN apt update; DEBIAN_FRONTEND=noninteractive apt install -y dstat
+RUN apt update; DEBIAN_FRONTEND=noninteractive apt install -y dstat procps
 
 ENV SERVER_ENDPOINT="http://localhost:5000"
 
