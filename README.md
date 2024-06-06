@@ -75,12 +75,12 @@ First, install Docker [here](https://docs.docker.com/get-docker/).
 Then run the following commands in a Linux shell:
 
 ```bash
-sudo docker run -d \
+docker run -d \
     --pid host \
     --net host \
-    -e SERVER_ENDPOINT=https://stathub.aiursoft.cn \
     -v /etc:/etc \
     --privileged \
+    -e SERVER_ENDPOINT=https://stathub.aiursoft.cn \
     hub.aiursoft.cn/aiursoft/stathub-client
 ```
 
