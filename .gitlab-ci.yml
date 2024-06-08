@@ -109,7 +109,7 @@ upload_to_local_nuget:
   only:
     - master
 
-deploy_docker_server:
+deploy_docker:
   stage: deploy
   environment: production
   needs: 
@@ -118,20 +118,6 @@ deploy_docker_server:
   script:
     - docker build . -t hub.aiursoft.cn/$CI_PROJECT_NAMESPACE/$CI_PROJECT_NAME:latest
     - docker push hub.aiursoft.cn/$CI_PROJECT_NAMESPACE/$CI_PROJECT_NAME:latest
-  rules:
-    - if: '$CI_COMMIT_BRANCH == "master"'
-      exists:
-      - Dockerfile
-
-deploy_docker_client:
-  stage: deploy
-  environment: production
-  needs: 
-    - lint
-    - test
-  script:
-    - docker build -f ./Dockerfile.Client . -t hub.aiursoft.cn/$CI_PROJECT_NAMESPACE/${CI_PROJECT_NAME}-client:latest
-    - docker push hub.aiursoft.cn/$CI_PROJECT_NAMESPACE/${CI_PROJECT_NAME}-client:latest
   rules:
     - if: '$CI_COMMIT_BRANCH == "master"'
       exists:
