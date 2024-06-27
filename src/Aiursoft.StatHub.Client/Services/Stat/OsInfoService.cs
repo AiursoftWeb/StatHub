@@ -8,7 +8,7 @@ public class OsInfoService(CacheService cacheService)
     {
         return cacheService.RunWithCache("os-info", async () =>
         {
-            // We need to passthrough the /etc/lsb-release file to docker container.
+            // We need to pass through the /etc/lsb-release file to docker container.
             var osInfo = await File.ReadAllTextAsync("/etc/lsb-release");
 
             var prettyName = osInfo
@@ -18,6 +18,6 @@ public class OsInfoService(CacheService cacheService)
                 .Trim('"') ?? "Unknown";
             
             return prettyName.Trim();
-        }, cachedMinutes: _ => TimeSpan.FromDays(1))!;
+        }, cachedMinutes: _ => TimeSpan.FromDays(1));
     }
 }
