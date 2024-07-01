@@ -52,8 +52,8 @@ Then run the following commands in a Linux shell:
 ```bash
 image=hub.aiursoft.cn/aiursoft/stathub
 appName=stathub
-docker pull $image
-docker run -d --name $appName --restart unless-stopped -p 5000:5000 -v /var/www/$appName:/data $image
+sudo docker pull $image
+sudo docker run -d --name $appName --restart unless-stopped -p 5000:5000 -v /var/www/$appName:/data $image
 ```
 
 That will start a web server at `http://localhost:5000` and you can test the app.
