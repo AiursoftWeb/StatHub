@@ -123,7 +123,11 @@
                                                 reason += cpuRate > 40 ? "CPU usage critical. " : cpuRate > 20 ? "CPU usage warning. " : "";
                                                 reason += diskUseRatio > 0.7 ? "Disk space critical. " : diskUseRatio > 0.6 ? "Disk space warning. " : "";
                                             }
-                                            @if (isOutDated || loadRate > 60 || cpuRate > 40 || diskUseRatio > 0.7)
+                                            @if (isOutDated)
+                                            {
+                                                <div class="dot dot-secondary" data-toggle="tooltip" data-placement="bottom" title="@reason"></div>
+                                            }
+                                            else if (loadRate > 60 || cpuRate > 40 || diskUseRatio > 0.7)
                                             {
                                                 <div class="dot dot-danger" data-toggle="tooltip" data-placement="bottom" title="@reason"></div>
                                             }

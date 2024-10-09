@@ -20,3 +20,7 @@
 .dot-warning {
     background-color: #ffc107; /* Bootstrap 4 warning color */
 }
+
+.dot-secondary {
+    background-color: #6c757d; /* Bootstrap 4 secondary color */
+}
