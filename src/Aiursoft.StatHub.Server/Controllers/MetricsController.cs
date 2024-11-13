@@ -30,10 +30,17 @@ public class MetricsController(
         {
             // Ignore. This happens when the client closes the connection.
         }
+        catch (ConnectionAbortedException)
+        {
+            // Ignore. This happens when the client closes the connection.
+        }
         finally
         {
-            await pusher.Close(HttpContext.RequestAborted);
             outSub.Unsubscribe();
+            if (pusher.Connected)
+            {
+                await pusher.Close(HttpContext.RequestAborted);
+            }
         }
     }
 
