@@ -3,6 +3,7 @@ using Aiursoft.AiurObserver.WebSocket.Server;
 using Aiursoft.StatHub.Server.Data;
 using Microsoft.AspNetCore.Mvc;
 using Aiursoft.WebTools.Attributes;
+using Microsoft.AspNetCore.Connections;
 
 namespace Aiursoft.StatHub.Server.Controllers;
 
