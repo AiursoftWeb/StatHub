@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <Version>8.0.24</Version>
+    <Version>8.0.25</Version>
     <TargetFramework>net8.0</TargetFramework>
     <AssemblyName>stathub-client</AssemblyName>
     <RootNamespace>Aiursoft.StatHub.Client</RootNamespace>
@@ -24,7 +24,7 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Aiursoft.AiurObserver.Command" Version="8.0.9" />
+    <PackageReference Include="Aiursoft.AiurObserver.Command" Version="8.0.10" />
     <PackageReference Include="Aiursoft.CommandFramework" Version="8.0.6" />
     <None Include="..\..\README.md" Pack="true" PackagePath="." />
   </ItemGroup>
