@@ -28,7 +28,7 @@ public class HomeController(InMemoryDatabase database) : Controller
     {
         // return text/plain
         var installScript = @$"
-DEBIAN_FRONTEND=noninteractive sudo apt install dotnet8 -y
+DEBIAN_FRONTEND=noninteractive sudo apt install dotnet9 -y
 DEBIAN_FRONTEND=noninteractive sudo apt install pcp -y
 sudo touch /etc/motd
 sudo rm /root/.local/share/StatHubClient/config.conf
@@ -55,37 +55,6 @@ sudo systemctl daemon-reload
 sudo systemctl enable stathub.service
 sudo systemctl stop stathub.service > /dev/null 2>&1
 sudo systemctl start stathub.service";
-        return Content(installScript, "text/plain");
-    }
-
-        [HttpGet("install-docker.sh")]
-    public IActionResult GetInstallScriptForDocker()
-    {
-        // return text/plain
-        var installScript = @$"
-if ! command -v docker &> /dev/null
-then
-    curl -fsSL https://get.docker.com -o get-docker.sh
-    sh get-docker.sh
-    rm get-docker.sh
-else
-    echo 'Docker is already installed'
-fi
-
-touch /etc/motd
-docker run -d \
-    --restart always \
-    --name stathub-client \
-    --pid host \
-    --net host \
-    -v /etc/lsb-release:/etc/lsb-release:ro \
-    -v /etc/os-release:/etc/os-release:ro \
-    -v /etc/motd:/etc/motd:ro \
-    -v /etc/hostname:/etc/hostname:ro \
-    --privileged \
-    -e SERVER_ENDPOINT=""{Request.Scheme}://{Request.Host}"" \
-    hub.aiursoft.cn/aiursoft/stathub-client
-";
         return Content(installScript, "text/plain");
     }
 }

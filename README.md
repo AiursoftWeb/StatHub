@@ -68,30 +68,6 @@ The docker image has the following context:
 | Data path   | /data                            |
 | Config path | /data/appsettings.json           |
 
-## Run client in Docker
-
-First, install Docker [here](https://docs.docker.com/get-docker/).
-
-Then run the following commands in a Linux shell:
-
-```bash
-sudo touch /etc/motd
-sudo docker run -d \
-    --restart always \
-    --name stathub-client \
-    --pid host \
-    --net host \
-    -v /etc/lsb-release:/etc/lsb-release:ro \
-    -v /etc/os-release:/etc/os-release:ro \
-    -v /etc/motd:/etc/motd:ro \
-    -v /etc/hostname:/etc/hostname:ro \
-    --privileged \
-    -e SERVER_ENDPOINT="https://stathub.aiursoft.cn" \
-    hub.aiursoft.cn/aiursoft/stathub-client
-```
-
-Where `https://stathub.aiursoft.cn` is the endpoint of your StatHub server.
-
 ## How to contribute
 
 There are many ways to contribute to the project: logging bugs, submitting pull requests, reporting issues, and creating suggestions.
