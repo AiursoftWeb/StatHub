@@ -10,8 +10,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Aiursoft.AiurProtocol.Server" Version="9.0.2" />
-    <PackageReference Include="Aiursoft.WebTools" Version="9.0.0" />
+    <PackageReference Include="Aiursoft.AiurProtocol.Server" Version="9.0.3" />
+    <PackageReference Include="Aiursoft.WebTools" Version="9.0.1" />
     <PackageReference Include="Aiursoft.AiurObserver.WebSocket.Server" Version="9.0.1" />
   </ItemGroup>
   <ItemGroup>
