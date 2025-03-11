@@ -62,7 +62,7 @@ The docker image has the following context:
 
 | Properties  | Value                            |
 |-------------|----------------------------------|
-| Image       | aiursoft/stathub |
+| Image       | aiursoft/stathub                 |
 | Ports       | 5000                             |
 | Binary path | /app                             |
 | Data path   | /data                            |
