@@ -33,7 +33,7 @@ public class Startup : IWebStartup
                 options.Scope.Add("profile");
                 options.Scope.Add("email");
 
-                options.SignInScheme = CookieAuthenticationDefaults.CookiePrefix;
+                options.SignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
                 options.ResponseType = OpenIdConnectResponseType.Code;
 
                 options.SaveTokens = true;
