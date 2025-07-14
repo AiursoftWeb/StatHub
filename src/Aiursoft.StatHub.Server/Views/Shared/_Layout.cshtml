@@ -42,6 +42,15 @@
                 </ul>
                 <div class="form-inline">
                     <ul class="navbar-nav mr-auto">
+                        @if (User.Identity?.IsAuthenticated == true)
+                        {
+                            <li>
+                                <a class="nav-link" href="/">
+                                    <i class="fa-solid fa-user"></i>
+                                    Welcome, @User.Identity?.Name!
+                                </a>
+                            </li>
+                        }
                         <li class="nav-item">
                             <a class="nav-link" href="https://gitlab.aiursoft.cn/aiursoft/stathub">
                                 <i class="fab fa-gitlab"></i>
@@ -80,7 +89,7 @@
                     });
                 }
             });
-            
+
             // Activate tooltip tool
             $('[data-toggle="tooltip"]').tooltip({
                 trigger: 'hover'
@@ -93,7 +102,7 @@
     <script type="module">
         import { autoTheme } from '/node_modules/@@aiursoft/autodark.js/dist/esm/autodark.js';
         import UtcTime from '/node_modules/@@aiursoft/utctime.js/dist/esm/utctime.js';
- 
+
         autoTheme();
 
         new UtcTime({
