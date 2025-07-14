@@ -1,8 +1,10 @@
 ﻿using Aiursoft.StatHub.Server.Data;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Aiursoft.StatHub.Server.Controllers;
 
+[Authorize]
 public class HomeController(InMemoryDatabase database) : Controller
 {
     public IActionResult Index([FromQuery]bool last30Seconds = false)
@@ -11,7 +13,7 @@ public class HomeController(InMemoryDatabase database) : Controller
         ViewBag.Last30Seconds = last30Seconds;
         return View(clients);
     }
-    
+
     public IActionResult Details([FromRoute]string id)
     {
         var client = database.GetOrAddClient(id);
@@ -24,6 +26,7 @@ public class HomeController(InMemoryDatabase database) : Controller
     }
 
     [HttpGet("install.sh")]
+    [AllowAnonymous]
     public IActionResult GetInstallScript()
     {
         // return text/plain

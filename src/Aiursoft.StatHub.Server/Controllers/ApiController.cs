@@ -3,14 +3,16 @@ using Aiursoft.AiurProtocol.Server;
 using Aiursoft.AiurProtocol.Server.Attributes;
 using Aiursoft.StatHub.SDK.AddressModels;
 using Aiursoft.StatHub.Server.Data;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Aiursoft.StatHub.Server.Controllers;
 
+[AllowAnonymous]
 [Route("api")]
 [ApiModelStateChecker]
 [ApiExceptionHandler(
-    PassthroughRemoteErrors = true, 
+    PassthroughRemoteErrors = true,
     PassthroughAiurServerException = true)]
 public class ApiController(
     InMemoryDatabase database,
@@ -22,12 +24,12 @@ public class ApiController(
     {
         return this.Protocol(Code.ResultShown, $"Welcome to this StatHub server!");
     }
-    
+
     [HttpPost("metrics")]
     public async Task<IActionResult> Metrics([FromBody] MetricsAddressModel model)
     {
         logger.LogInformation("Received metrics from {Identity}.", model.ClientId);
-        
+
         var entity = database.GetOrAddClient(model.ClientId!);
         entity.ClientId = model.ClientId!;
         entity.BootTime = model.BootTime;
@@ -48,7 +50,7 @@ public class ApiController(
         }
         return this.Protocol(Code.JobDone, $"Got!");
     }
-    
+
     [HttpGet("clients")]
     public IActionResult Clients()
     {
