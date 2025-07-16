@@ -11,7 +11,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Aiursoft.AiurProtocol.Server" Version="9.0.15" />
-    <PackageReference Include="Aiursoft.WebTools" Version="9.0.3" />
+    <PackageReference Include="Aiursoft.WebTools" Version="9.0.4" />
     <PackageReference Include="Aiursoft.AiurObserver.WebSocket.Server" Version="9.0.7" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="9.0.7" />
   </ItemGroup>
