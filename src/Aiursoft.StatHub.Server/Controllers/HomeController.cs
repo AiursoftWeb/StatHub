@@ -31,6 +31,11 @@ public class HomeController(InMemoryDatabase database) : Controller
     {
         // return text/plain
         var installScript = @$"
+
+if [[ ""$(lsb_release -sc)"" =~ ^(devel|jammy|noble)$ ]]; then
+  sudo add-apt-repository ppa:dotnet/backports --yes
+fi
+
 DEBIAN_FRONTEND=noninteractive sudo apt install dotnet9 -y
 DEBIAN_FRONTEND=noninteractive sudo apt install pcp -y
 sudo touch /etc/motd
