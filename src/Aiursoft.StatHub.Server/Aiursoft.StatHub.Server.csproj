@@ -13,7 +13,7 @@
     <PackageReference Include="Aiursoft.AiurProtocol.Server" Version="9.0.19" />
     <PackageReference Include="Aiursoft.WebTools" Version="9.0.9" />
     <PackageReference Include="Aiursoft.AiurObserver.WebSocket.Server" Version="9.0.8" />
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="9.0.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="9.0.9" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Aiursoft.StatHub.SDK\Aiursoft.StatHub.SDK.csproj" />
