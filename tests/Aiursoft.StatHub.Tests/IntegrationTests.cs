@@ -6,7 +6,6 @@ using Aiursoft.StatHub.Client;
 using Aiursoft.StatHub.SDK;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using static Aiursoft.WebTools.Extends;
 
 namespace Aiursoft.StatHub.Tests;
@@ -41,10 +40,10 @@ public class IntegrationTests
         var sdk = serviceProvider.GetRequiredService<ServerAccess>();
 
         var result = await sdk.InfoAsync();
-        Assert.AreEqual(result.Code, Code.ResultShown);
-        Assert.IsTrue(!string.IsNullOrWhiteSpace(result.Message));
+        Assert.AreEqual(Code.ResultShown, result.Code);
+        Assert.IsFalse(string.IsNullOrWhiteSpace(result.Message));
     }
-    
+
     [TestMethod]
     public async Task GetCleints()
     {
@@ -54,8 +53,8 @@ public class IntegrationTests
         var sdk = serviceProvider.GetRequiredService<ServerAccess>();
 
         var result = await sdk.GetClientsAsync();
-        Assert.AreEqual(result.Code, Code.ResultShown);
-        Assert.IsTrue(!string.IsNullOrWhiteSpace(result.Message));
+        Assert.AreEqual(Code.ResultShown, result.Code);
+        Assert.IsFalse(string.IsNullOrWhiteSpace(result.Message));
     }
 
     [TestMethod]
@@ -66,7 +65,7 @@ public class IntegrationTests
         {
             return;
         }
-        
+
         // Skip Container
         if (EntryExtends.IsInDocker())
         {
@@ -88,7 +87,7 @@ public class IntegrationTests
             // Ignore
         }
     }
-    
+
     [TestMethod]
     public async Task TestHomepage()
     {
@@ -104,7 +103,7 @@ public class IntegrationTests
         var response = await httpClient.GetAsync(_endpointUrl + "/home/addclient");
         response.EnsureSuccessStatusCode();
     }
-    
+
     [TestMethod]
     public async Task TestAddScript()
     {
