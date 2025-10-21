@@ -10,7 +10,7 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Aiursoft.AiurProtocol.Server" Version="9.0.22" />
+    <PackageReference Include="Aiursoft.AiurProtocol.Server" Version="9.0.24" />
     <PackageReference Include="Aiursoft.WebTools" Version="9.0.9" />
     <PackageReference Include="Aiursoft.AiurObserver.WebSocket.Server" Version="9.0.9" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="9.0.10" />
