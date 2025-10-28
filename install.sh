@@ -1,7 +1,7 @@
-aiur() { arg="$( cut -d ' ' -f 2- <<< "$@" )" && curl -sL https://gitlab.aiursoft.cn/aiursoft/aiurscript/-/raw/master/$1.sh | sudo bash -s $arg; }
+aiur() { arg="$( cut -d ' ' -f 2- <<< "$@" )" && curl -sL https://gitlab.aiursoft.com/aiursoft/aiurscript/-/raw/master/$1.sh | sudo bash -s $arg; }
 
 app_name="stathub_server"
-repo_path="https://gitlab.aiursoft.cn/aiursoft/stathub"
+repo_path="https://gitlab.aiursoft.com/aiursoft/stathub"
 proj_path="src/Aiursoft.StatHub.Server/Aiursoft.StatHub.Server.csproj"
 
 get_dll_name()

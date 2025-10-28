@@ -1,10 +1,10 @@
 # StatHub
 
-[![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://gitlab.aiursoft.cn/aiursoft/StatHub/-/blob/master/LICENSE)
-[![Pipeline stat](https://gitlab.aiursoft.cn/aiursoft/StatHub/badges/master/pipeline.svg)](https://gitlab.aiursoft.cn/aiursoft/StatHub/-/pipelines)
-[![Test Coverage](https://gitlab.aiursoft.cn/aiursoft/StatHub/badges/master/coverage.svg)](https://gitlab.aiursoft.cn/aiursoft/StatHub/-/pipelines)
+[![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://gitlab.aiursoft.com/aiursoft/StatHub/-/blob/master/LICENSE)
+[![Pipeline stat](https://gitlab.aiursoft.com/aiursoft/StatHub/badges/master/pipeline.svg)](https://gitlab.aiursoft.com/aiursoft/StatHub/-/pipelines)
+[![Test Coverage](https://gitlab.aiursoft.com/aiursoft/StatHub/badges/master/coverage.svg)](https://gitlab.aiursoft.com/aiursoft/StatHub/-/pipelines)
 [![NuGet version (Aiursoft.StatHub.Client)](https://img.shields.io/nuget/v/Aiursoft.StatHub.Client.svg)](https://www.nuget.org/packages/Aiursoft.StatHub.Client/)
-[![ManHours](https://manhours.aiursoft.cn/r/gitlab.aiursoft.cn/aiursoft/StatHub.svg)](https://gitlab.aiursoft.cn/aiursoft/StatHub/-/commits/master?ref_type=heads)
+[![ManHours](https://manhours.aiursoft.cn/r/gitlab.aiursoft.com/aiursoft/StatHub.svg)](https://gitlab.aiursoft.com/aiursoft/StatHub/-/commits/master?ref_type=heads)
 [![Docker](https://img.shields.io/docker/pulls/aiursoft/stathub.svg)](https://hub.docker.com/r/aiursoft/stathub)
 
 StatHub is a simple server stat statistics system. It can collect server stats and display them in a simple way.
@@ -18,13 +18,13 @@ The following script will install\update this app on your Ubuntu server. Support
 On your Ubuntu server, run the following command:
 
 ```bash
-curl -sL https://gitlab.aiursoft.cn/aiursoft/stathub/-/raw/master/install.sh | sudo bash
+curl -sL https://gitlab.aiursoft.com/aiursoft/stathub/-/raw/master/install.sh | sudo bash
 ```
 
 Of course it is suggested that append a custom port number to the command:
 
 ```bash
-curl -sL https://gitlab.aiursoft.cn/aiursoft/stathub/-/raw/master/install.sh | sudo bash -s 8080
+curl -sL https://gitlab.aiursoft.com/aiursoft/stathub/-/raw/master/install.sh | sudo bash -s 8080
 ```
 
 It will install the app as a systemd service, and start it automatically. Binary files will be located at `/opt/apps`. Service files will be located at `/etc/systemd/system`.
