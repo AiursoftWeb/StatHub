@@ -58,6 +58,20 @@ public class BasicTests
         response.EnsureSuccessStatusCode();
     }
 
+    [TestMethod]
+    public async Task TestAddPage()
+    {
+        var response = await _http.GetAsync("/dashboard/AddServer");
+        Assert.AreEqual(HttpStatusCode.Redirect, response.StatusCode);
+    }
+
+    [TestMethod]
+    public async Task TestAddScript()
+    {
+        var response = await _http.GetAsync("/install.sh");
+        response.EnsureSuccessStatusCode();
+    }
+
     private async Task<string> GetAntiCsrfToken(string url)
     {
         var response = await _http.GetAsync(url);
@@ -118,7 +132,7 @@ public class BasicTests
         Assert.AreEqual("/Dashboard/Index", loginResponse.Headers.Location?.OriginalString);
 
         // Step 4: Verify the final login state by checking the home page content.
-        var finalHomePageResponse = await _http.GetAsync("/dashboard/index");
+        var finalHomePageResponse = await _http.GetAsync("/manage/index");
         finalHomePageResponse.EnsureSuccessStatusCode();
         var finalHtml = await finalHomePageResponse.Content.ReadAsStringAsync();
         Assert.Contains(expectedUserName, finalHtml);
@@ -394,7 +408,7 @@ public class BasicTests
         Assert.AreEqual("/Manage?Message=ChangeProfileSuccess", changeProfileResponse.Headers.Location?.OriginalString);
 
         // Step 5: Visit the home page and verify the new name is displayed.
-        var homePageResponse = await _http.GetAsync("/dashboard/index");
+        var homePageResponse = await _http.GetAsync("/manage/index");
         homePageResponse.EnsureSuccessStatusCode();
         var html = await homePageResponse.Content.ReadAsStringAsync();
         Assert.Contains(newUserName, html);
