@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="Client Details" xml:space="preserve">
+    <value>تفاصيل العميل</value>
+  </data>
+  <data name="Agent Information" xml:space="preserve">
+    <value>معلومات العميل</value>
+  </data>
+  <data name="Cores-RAM-Disk" xml:space="preserve">
+    <value>النوى-الذاكرة-القرص</value>
+  </data>
+  <data name="Hardware SKU" xml:space="preserve">
+    <value>الرقم المُميِّز للعتاد</value>
+  </data>
+  <data name="Last Update" xml:space="preserve">
+    <value>آخر تحديث</value>
+  </data>
+  <data name="Last Boot Time" xml:space="preserve">
+    <value>وقت آخر إقلاع</value>
+  </data>
+  <data name="Back to Dashboard" xml:space="preserve">
+    <value>العودة إلى لوحة التحكم</value>
+  </data>
+  <data name="Operating System" xml:space="preserve">
+    <value>نظام التشغيل</value>
+  </data>
+  <data name="Cores" xml:space="preserve">
+    <value>النوى</value>
+  </data>
+  <data name="Hardware Details" xml:space="preserve">
+    <value>تفاصيل العتاد</value>
+  </data>
+  <data name="Disk" xml:space="preserve">
+    <value>القرص</value>
+  </data>
+  <data name="Last Process" xml:space="preserve">
+    <value>آخر عملية</value>
+  </data>
+  <data name="Identity" xml:space="preserve">
+    <value>الهوية</value>
+  </data>
+  <data name="Runtime Info" xml:space="preserve">
+    <value>معلومات وقت التشغيل</value>
+  </data>
+  <data name="RAM" xml:space="preserve">
+    <value>الذاكرة العشوائية</value>
+  </data>
+  <data name="MOTD" xml:space="preserve">
+    <value>رسالة اليوم</value>
+  </data>
+  <data name="CPU Usage" xml:space="preserve">
+    <value>استخدام المعالج</value>
+  </data>
+  <data name="Client ID" xml:space="preserve">
+    <value>معرف العميل</value>
+  </data>
+  <data name="System Load" xml:space="preserve">
+    <value>حمل النظام</value>
+  </data>
+  <data name="RAM Usage" xml:space="preserve">
+    <value>استخدام الذاكرة العشوائية</value>
+  </data>
+  <data name="Disk I/O" xml:space="preserve">
+    <value>إدخال/إخراج القرص</value>
+  </data>
+  <data name="Network I/O" xml:space="preserve">
+    <value>إدخال/إخراج الشبكة</value>
+  </data>
+
+</root>

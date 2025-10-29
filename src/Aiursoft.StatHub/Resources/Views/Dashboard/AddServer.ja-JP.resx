@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="Latest agent version" xml:space="preserve">
+    <value>最新エージェントバージョン</value>
+  </data>
+  <data name="Add a New Server" xml:space="preserve">
+    <value>新しいサーバーを追加</value>
+  </data>
+  <data name="Version Information" xml:space="preserve">
+    <value>バージョン情報</value>
+  </data>
+  <data name="Current server SDK" xml:space="preserve">
+    <value>現在のサーバーSDK</value>
+  </data>
+  <data name="What does this script do?" xml:space="preserve">
+    <value>このスクリプトは何をしますか？</value>
+  </data>
+  <data name="Add a new server to monitor -" xml:space="preserve">
+    <value>監視対象に新しいサーバーを追加 -</value>
+  </data>
+  <data name="(Run as a systemd Service)" xml:space="preserve">
+    <value>(systemd サービスとして実行)</value>
+  </data>
+  <data name="Run the following command on your Linux machine to install the agent and register it as a service. This will automatically connect it to this server." xml:space="preserve">
+    <value>エージェントをインストールし、サービスとして登録するには、Linuxマシンで次のコマンドを実行してください。これにより自動的にこのサーバーに接続されます。</value>
+  </data>
+  <data name="Sets up a &lt;code&gt;systemd&lt;/code&gt; service to run the agent." xml:space="preserve">
+    <value>エージェントを実行するための&lt;code&gt;systemd&lt;/code&gt;サービスを設定します。</value>
+  </data>
+  <data name="Downloads the latest &lt;code&gt;Aiursoft.StatHub.Client&lt;/code&gt; agent." xml:space="preserve">
+    <value>最新の&lt;code&gt;Aiursoft.StatHub.Client&lt;/code&gt;エージェントをダウンロードします。</value>
+  </data>
+  <data name="Configures the agent to report to:" xml:space="preserve">
+    <value>エージェントがレポートする対象を設定します：</value>
+  </data>
+
+</root>

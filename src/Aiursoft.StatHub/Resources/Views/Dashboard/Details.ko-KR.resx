@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="Back to Dashboard" xml:space="preserve">
+    <value>대시보드로 돌아가기</value>
+  </data>
+  <data name="Agent Information" xml:space="preserve">
+    <value>에이전트 정보</value>
+  </data>
+  <data name="Cores-RAM-Disk" xml:space="preserve">
+    <value>코어-램-디스크</value>
+  </data>
+  <data name="Last Boot Time" xml:space="preserve">
+    <value>마지막 부팅 시간</value>
+  </data>
+  <data name="Hardware SKU" xml:space="preserve">
+    <value>하드웨어 SKU</value>
+  </data>
+  <data name="Client Details" xml:space="preserve">
+    <value>클라이언트 상세 정보</value>
+  </data>
+  <data name="Operating System" xml:space="preserve">
+    <value>운영 체제</value>
+  </data>
+  <data name="Last Update" xml:space="preserve">
+    <value>마지막 업데이트</value>
+  </data>
+  <data name="RAM" xml:space="preserve">
+    <value>램</value>
+  </data>
+  <data name="Cores" xml:space="preserve">
+    <value>코어</value>
+  </data>
+  <data name="Hardware Details" xml:space="preserve">
+    <value>하드웨어 상세 정보</value>
+  </data>
+  <data name="Runtime Info" xml:space="preserve">
+    <value>런타임 정보</value>
+  </data>
+  <data name="Disk" xml:space="preserve">
+    <value>디스크</value>
+  </data>
+  <data name="Last Process" xml:space="preserve">
+    <value>마지막 프로세스</value>
+  </data>
+  <data name="Identity" xml:space="preserve">
+    <value>신원 정보</value>
+  </data>
+  <data name="MOTD" xml:space="preserve">
+    <value>로그인 시 환영 메시지</value>
+  </data>
+  <data name="CPU Usage" xml:space="preserve">
+    <value>CPU 사용률</value>
+  </data>
+  <data name="RAM Usage" xml:space="preserve">
+    <value>RAM 사용량</value>
+  </data>
+  <data name="Client ID" xml:space="preserve">
+    <value>클라이언트 ID</value>
+  </data>
+  <data name="System Load" xml:space="preserve">
+    <value>시스템 부하</value>
+  </data>
+  <data name="Disk I/O" xml:space="preserve">
+    <value>디스크 입출력</value>
+  </data>
+  <data name="Network I/O" xml:space="preserve">
+    <value>네트워크 입출력</value>
+  </data>
+
+</root>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="Agent Information" xml:space="preserve">
+    <value>Thông Tin Agent</value>
+  </data>
+  <data name="Hardware SKU" xml:space="preserve">
+    <value>Mã phần cứng</value>
+  </data>
+  <data name="Client Details" xml:space="preserve">
+    <value>Thông Tin Máy Khách</value>
+  </data>
+  <data name="Operating System" xml:space="preserve">
+    <value>Hệ điều hành</value>
+  </data>
+  <data name="Last Boot Time" xml:space="preserve">
+    <value>Thời gian khởi động cuối cùng</value>
+  </data>
+  <data name="Back to Dashboard" xml:space="preserve">
+    <value>Quay lại Bảng điều khiển</value>
+  </data>
+  <data name="Cores-RAM-Disk" xml:space="preserve">
+    <value>Số lõi - RAM - Ổ cứng</value>
+  </data>
+  <data name="RAM" xml:space="preserve">
+    <value>RAM</value>
+  </data>
+  <data name="Last Update" xml:space="preserve">
+    <value>Cập nhật lần cuối</value>
+  </data>
+  <data name="Cores" xml:space="preserve">
+    <value>Lõi</value>
+  </data>
+  <data name="Disk" xml:space="preserve">
+    <value>Ổ cứng</value>
+  </data>
+  <data name="Runtime Info" xml:space="preserve">
+    <value>Thông tin Thời gian chạy</value>
+  </data>
+  <data name="Hardware Details" xml:space="preserve">
+    <value>Thông Tin Phần Cứng</value>
+  </data>
+  <data name="MOTD" xml:space="preserve">
+    <value>Thông điệp trong ngày</value>
+  </data>
+  <data name="Last Process" xml:space="preserve">
+    <value>Quy trình cuối cùng</value>
+  </data>
+  <data name="Client ID" xml:space="preserve">
+    <value>ID Máy khách</value>
+  </data>
+  <data name="Identity" xml:space="preserve">
+    <value>Định danh</value>
+  </data>
+  <data name="RAM Usage" xml:space="preserve">
+    <value>Mức Sử Dụng RAM</value>
+  </data>
+  <data name="CPU Usage" xml:space="preserve">
+    <value>Mức sử dụng CPU</value>
+  </data>
+  <data name="System Load" xml:space="preserve">
+    <value>Tải Hệ Thống</value>
+  </data>
+  <data name="Disk I/O" xml:space="preserve">
+    <value>Đĩa I/O</value>
+  </data>
+  <data name="Network I/O" xml:space="preserve">
+    <value>Lượng I/O Mạng</value>
+  </data>
+
+</root>

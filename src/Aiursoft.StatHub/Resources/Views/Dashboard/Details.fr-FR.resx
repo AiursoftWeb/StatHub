@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="Agent Information" xml:space="preserve">
+    <value>Informations sur l&apos;agent</value>
+  </data>
+  <data name="Client Details" xml:space="preserve">
+    <value>Détails du client</value>
+  </data>
+  <data name="Last Boot Time" xml:space="preserve">
+    <value>Dernier démarrage</value>
+  </data>
+  <data name="Back to Dashboard" xml:space="preserve">
+    <value>Retour au tableau de bord</value>
+  </data>
+  <data name="Operating System" xml:space="preserve">
+    <value>Système d&apos;exploitation</value>
+  </data>
+  <data name="Last Update" xml:space="preserve">
+    <value>Dernière mise à jour</value>
+  </data>
+  <data name="Cores-RAM-Disk" xml:space="preserve">
+    <value>Cœurs-RAM-Disque</value>
+  </data>
+  <data name="Hardware SKU" xml:space="preserve">
+    <value>Référence matérielle</value>
+  </data>
+  <data name="Disk" xml:space="preserve">
+    <value>Disque</value>
+  </data>
+  <data name="Cores" xml:space="preserve">
+    <value>Cœurs</value>
+  </data>
+  <data name="RAM" xml:space="preserve">
+    <value>Mémoire vive</value>
+  </data>
+  <data name="Runtime Info" xml:space="preserve">
+    <value>Informations d&apos;exécution</value>
+  </data>
+  <data name="Last Process" xml:space="preserve">
+    <value>Dernier processus</value>
+  </data>
+  <data name="Hardware Details" xml:space="preserve">
+    <value>Détails du matériel</value>
+  </data>
+  <data name="MOTD" xml:space="preserve">
+    <value>Message du jour</value>
+  </data>
+  <data name="Identity" xml:space="preserve">
+    <value>Identité</value>
+  </data>
+  <data name="CPU Usage" xml:space="preserve">
+    <value>Utilisation du processeur</value>
+  </data>
+  <data name="Network I/O" xml:space="preserve">
+    <value>E/S réseau</value>
+  </data>
+  <data name="Client ID" xml:space="preserve">
+    <value>Identifiant client</value>
+  </data>
+  <data name="System Load" xml:space="preserve">
+    <value>Charge du système</value>
+  </data>
+  <data name="Disk I/O" xml:space="preserve">
+    <value>E/S disque</value>
+  </data>
+  <data name="RAM Usage" xml:space="preserve">
+    <value>Utilisation de la RAM</value>
+  </data>
+
+</root>
