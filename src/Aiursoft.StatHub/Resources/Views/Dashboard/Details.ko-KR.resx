@@ -84,5 +84,11 @@
   <data name="Network I/O" xml:space="preserve">
     <value>네트워크 입출력</value>
   </data>
+  <data name="Mainly used by process" xml:space="preserve">
+    <value>주로 프로세스에서 사용됨</value>
+  </data>
+  <data name="Agent Version" xml:space="preserve">
+    <value>에이전트 버전</value>
+  </data>
 
 </root>

@@ -84,5 +84,11 @@
   <data name="Disk I/O" xml:space="preserve">
     <value>Levyaseman siirto</value>
   </data>
+  <data name="Agent Version" xml:space="preserve">
+    <value>Agentin versio</value>
+  </data>
+  <data name="Mainly used by process" xml:space="preserve">
+    <value>Enimmäkseen prosessin käyttämä</value>
+  </data>
 
 </root>

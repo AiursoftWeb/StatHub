@@ -84,5 +84,11 @@
   <data name="Disk I/O" xml:space="preserve">
     <value>We/Wy I/O dysku</value>
   </data>
+  <data name="Mainly used by process" xml:space="preserve">
+    <value>Głównie używane przez proces</value>
+  </data>
+  <data name="Agent Version" xml:space="preserve">
+    <value>Wersja Agenta</value>
+  </data>
 
 </root>

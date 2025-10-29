@@ -84,5 +84,11 @@
   <data name="Network I/O" xml:space="preserve">
     <value>إدخال/إخراج الشبكة</value>
   </data>
+  <data name="Agent Version" xml:space="preserve">
+    <value>إصدار العميل</value>
+  </data>
+  <data name="Mainly used by process" xml:space="preserve">
+    <value>يُستخدم بشكل رئيسي من قبل العملية</value>
+  </data>
 
 </root>

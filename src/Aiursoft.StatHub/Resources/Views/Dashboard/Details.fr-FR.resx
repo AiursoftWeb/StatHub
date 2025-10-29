@@ -84,5 +84,11 @@
   <data name="RAM Usage" xml:space="preserve">
     <value>Utilisation de la RAM</value>
   </data>
+  <data name="Agent Version" xml:space="preserve">
+    <value>Version de l&apos;Agent</value>
+  </data>
+  <data name="Mainly used by process" xml:space="preserve">
+    <value>Principalement utilisé par le processus</value>
+  </data>
 
 </root>

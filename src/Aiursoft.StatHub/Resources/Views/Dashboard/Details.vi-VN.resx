@@ -84,5 +84,11 @@
   <data name="Network I/O" xml:space="preserve">
     <value>Lượng I/O Mạng</value>
   </data>
+  <data name="Agent Version" xml:space="preserve">
+    <value>Phiên bản Agent</value>
+  </data>
+  <data name="Mainly used by process" xml:space="preserve">
+    <value>Chủ yếu được sử dụng bởi tiến trình</value>
+  </data>
 
 </root>

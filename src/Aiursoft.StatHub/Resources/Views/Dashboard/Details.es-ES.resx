@@ -84,5 +84,11 @@
   <data name="Network I/O" xml:space="preserve">
     <value>E/S de red</value>
   </data>
+  <data name="Agent Version" xml:space="preserve">
+    <value>Versión del Agente</value>
+  </data>
+  <data name="Mainly used by process" xml:space="preserve">
+    <value>Principalmente utilizado por el proceso</value>
+  </data>
 
 </root>

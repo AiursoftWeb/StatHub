@@ -84,5 +84,11 @@
   <data name="Disk I/O" xml:space="preserve">
     <value>Είσοδος/Έξοδος Δίσκου</value>
   </data>
+  <data name="Agent Version" xml:space="preserve">
+    <value>Έκδοση Παράγοντα</value>
+  </data>
+  <data name="Mainly used by process" xml:space="preserve">
+    <value>Κυρίως χρησιμοποιείται από διεργασία</value>
+  </data>
 
 </root>

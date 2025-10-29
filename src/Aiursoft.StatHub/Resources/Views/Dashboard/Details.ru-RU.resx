@@ -84,5 +84,11 @@
   <data name="Disk I/O" xml:space="preserve">
     <value>Дисковый ввод-вывод</value>
   </data>
+  <data name="Mainly used by process" xml:space="preserve">
+    <value>В основном используется процессом</value>
+  </data>
+  <data name="Agent Version" xml:space="preserve">
+    <value>Версия агента</value>
+  </data>
 
 </root>

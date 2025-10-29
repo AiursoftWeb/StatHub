@@ -84,5 +84,11 @@
   <data name="Disk I/O" xml:space="preserve">
     <value>Disk G/Ç</value>
   </data>
+  <data name="Agent Version" xml:space="preserve">
+    <value>Aracı Sürümü</value>
+  </data>
+  <data name="Mainly used by process" xml:space="preserve">
+    <value>Esas olarak işlem tarafından kullanılan</value>
+  </data>
 
 </root>

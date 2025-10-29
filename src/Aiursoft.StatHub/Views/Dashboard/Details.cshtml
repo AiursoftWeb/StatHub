@@ -162,7 +162,7 @@
                         @if (!string.IsNullOrWhiteSpace(agent.Process))
                         {
                             <li class="mb-1"><span data-lucide="activity"
-                                                   class="lucide-sm me-1"></span> @Localizer["Last Process"]: @agent.Process
+                                                   class="lucide-sm me-1"></span> @Localizer["Mainly used by process"]: @agent.Process
                             </li>
                         }
                         @if (!string.IsNullOrWhiteSpace(agent.Motd))
@@ -170,6 +170,9 @@
                             <li class="mb-1"><span data-lucide="mail"
                                                    class="lucide-sm me-1"></span> @Localizer["MOTD"]: @agent.Motd</li>
                         }
+
+                        <li class="mb-1"><span data-lucide="info-hex"
+                                               class="lucide-sm me-1"></span> @Localizer["Agent Version"]: @agent.Version</li>
                     </ul>
                 </div>
                 <hr class="my-0"/>
