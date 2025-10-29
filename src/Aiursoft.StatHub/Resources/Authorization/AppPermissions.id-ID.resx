@@ -84,5 +84,11 @@
   <data name="Grants permission to restart the application instance. May cause availability interruptions but all settings and cache will be reloaded." xml:space="preserve">
     <value>Memberikan izin untuk memulai ulang instance aplikasi. Dapat menyebabkan gangguan ketersediaan, tetapi semua pengaturan dan cache akan dimuat ulang.</value>
   </data>
+  <data name="View server dashboard to see server metrics." xml:space="preserve">
+    <value>Lihat dasbor server untuk melihat metrik server.</value>
+  </data>
+  <data name="Allows viewing server dashboard to see server metrics." xml:space="preserve">
+    <value>Memungkinkan melihat dasbor server untuk melihat metrik server.</value>
+  </data>
 
 </root>

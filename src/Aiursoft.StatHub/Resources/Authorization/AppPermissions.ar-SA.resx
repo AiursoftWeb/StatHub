@@ -84,5 +84,11 @@
   <data name="Grants permission to restart the application instance. May cause availability interruptions but all settings and cache will be reloaded." xml:space="preserve">
     <value>يمنح الإذن بإعادة تشغيل نسخة التطبيق. قد يتسبب ذلك في انقطاعات في التوفر ولكن سيتم إعادة تحميل جميع الإعدادات والذاكرة المؤقتة.</value>
   </data>
+  <data name="View server dashboard to see server metrics." xml:space="preserve">
+    <value>عرض لوحة تحكم الخادم لرؤية مقاييس الخادم.</value>
+  </data>
+  <data name="Allows viewing server dashboard to see server metrics." xml:space="preserve">
+    <value>يسمح بعرض لوحة تحكم الخادم لرؤية مقاييس الخادم.</value>
+  </data>
 
 </root>

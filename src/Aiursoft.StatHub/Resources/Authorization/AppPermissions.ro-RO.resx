@@ -84,5 +84,11 @@
   <data name="Grants permission to restart the application instance. May cause availability interruptions but all settings and cache will be reloaded." xml:space="preserve">
     <value>Acordă permisiunea de a reporni instanța aplicației. Poate cauza întreruperi de disponibilitate, dar toate setările și memoria cache vor fi reîncărcate.</value>
   </data>
+  <data name="View server dashboard to see server metrics." xml:space="preserve">
+    <value>Vizualizați tabloul de bord al serverului pentru a vedea metricile serverului.</value>
+  </data>
+  <data name="Allows viewing server dashboard to see server metrics." xml:space="preserve">
+    <value>Permite vizualizarea tabloului de bord al serverului pentru a vedea metricile serverului.</value>
+  </data>
 
 </root>

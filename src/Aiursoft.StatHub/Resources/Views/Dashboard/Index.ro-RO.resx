@@ -111,5 +111,101 @@
   <data name="Comes with full Docker support for simplified, consistent, and reliable deployments." xml:space="preserve">
     <value>Oferă suport complet pentru Docker pentru implementări simplificate, consistente și fiabile.</value>
   </data>
+  <data name="SKU" xml:space="preserve">
+    <value>SKU</value>
+  </data>
+  <data name="Boot at" xml:space="preserve">
+    <value>Data pornirii</value>
+  </data>
+  <data name="Cumulative" xml:space="preserve">
+    <value>Cumulativ</value>
+  </data>
+  <data name="IP" xml:space="preserve">
+    <value>IP</value>
+  </data>
+  <data name="Agents Dashboard" xml:space="preserve">
+    <value>Panoul de Control al Agenților</value>
+  </data>
+  <data name="Last 30 seconds" xml:space="preserve">
+    <value>Ultimele 30 de secunde</value>
+  </data>
+  <data name="Agents Status Monitor" xml:space="preserve">
+    <value>Monitorizare Stare Agenți</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Nume</value>
+  </data>
+  <data name="CPU Usage" xml:space="preserve">
+    <value>Utilizare CPU</value>
+  </data>
+  <data name="Avg Load" xml:space="preserve">
+    <value>Încărcare medie</value>
+  </data>
+  <data name="Used at" xml:space="preserve">
+    <value>Utilizat la</value>
+  </data>
+  <data name="Net Receiving" xml:space="preserve">
+    <value>Recepție rețea</value>
+  </data>
+  <data name="Disk Used" xml:space="preserve">
+    <value>Spațiu disc utilizat</value>
+  </data>
+  <data name="RAM Usage" xml:space="preserve">
+    <value>Utilizarea RAM</value>
+  </data>
+  <data name="Net Sending" xml:space="preserve">
+    <value>Trimitere rețea</value>
+  </data>
+  <data name="Disk Reading" xml:space="preserve">
+    <value>Citire disc</value>
+  </data>
+  <data name="Disk Writing" xml:space="preserve">
+    <value>Scriere pe disc</value>
+  </data>
+  <data name="More" xml:space="preserve">
+    <value>Mai multe</value>
+  </data>
+  <data name="Net Received" xml:space="preserve">
+    <value>Date primite</value>
+  </data>
+  <data name="Disk Written" xml:space="preserve">
+    <value>Scriere pe disc</value>
+  </data>
+  <data name="Disk Read" xml:space="preserve">
+    <value>Citire disc</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Detalii</value>
+  </data>
+  <data name="Net Sent" xml:space="preserve">
+    <value>Net Trimis</value>
+  </data>
+  <data name="OS" xml:space="preserve">
+    <value>SO</value>
+  </data>
+  <data name="Total Agents" xml:space="preserve">
+    <value>Total Agenți</value>
+  </data>
+  <data name="Healthy" xml:space="preserve">
+    <value>Sănătos</value>
+  </data>
+  <data name="Out of sync" xml:space="preserve">
+    <value>Nu este sincronizat</value>
+  </data>
+  <data name="Offline Agents" xml:space="preserve">
+    <value>Agenți Offline</value>
+  </data>
+  <data name="Agents with Alerts" xml:space="preserve">
+    <value>Agenți cu Alerte</value>
+  </data>
+  <data name="(15m, Online Agents)" xml:space="preserve">
+    <value>(15m, Agenți Online)</value>
+  </data>
+  <data name="Critical or Warning" xml:space="preserve">
+    <value>Critică sau Avertisment</value>
+  </data>
+  <data name="Average Load" xml:space="preserve">
+    <value>Încărcare medie</value>
+  </data>
 
 </root>

@@ -60,5 +60,8 @@
   <data name="Github" xml:space="preserve">
     <value>GitHub</value>
   </data>
+  <data name="Aiursoft Stathub - A simple server stat statistics system. It can collect server stats and display them in a simple way." xml:space="preserve">
+    <value>Aiursoft Stathub - Prosty system statystyk serwera. Zbiera statystyki serwera i wyświetla je w przejrzysty sposób.</value>
+  </data>
 
 </root>

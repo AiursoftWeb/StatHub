@@ -84,5 +84,11 @@
   <data name="Grants permission to restart the application instance. May cause availability interruptions but all settings and cache will be reloaded." xml:space="preserve">
     <value>Antaa luvan sovelluksen uudelleenkäynnistämiseen. Saattaa aiheuttaa käyttökatkoksia, mutta kaikki asetukset ja välimuisti ladataan uudelleen.</value>
   </data>
+  <data name="View server dashboard to see server metrics." xml:space="preserve">
+    <value>Näytä palvelinvalvontapaneeli nähdäksesi palvelinmittarit.</value>
+  </data>
+  <data name="Allows viewing server dashboard to see server metrics." xml:space="preserve">
+    <value>Mahdollistaa palvelimen kojelaudan tarkastelun palvelinmittareiden näkemiseksi.</value>
+  </data>
 
 </root>

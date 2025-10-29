@@ -60,5 +60,8 @@
   <data name="Social" xml:space="preserve">
     <value>Social</value>
   </data>
+  <data name="Aiursoft Stathub - A simple server stat statistics system. It can collect server stats and display them in a simple way." xml:space="preserve">
+    <value>Aiursoft Stathub - Un sistem simplu de statistici pentru servere. Poate colecta statistici despre servere și le poate afișa într-un mod simplu.</value>
+  </data>
 
 </root>

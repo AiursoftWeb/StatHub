@@ -84,5 +84,11 @@
   <data name="Grants permission to restart the application instance. May cause availability interruptions but all settings and cache will be reloaded." xml:space="preserve">
     <value>Ger tillstånd att starta om applikationsinstansen. Kan orsaka tillgänglighetsavbrott men alla inställningar och cacheminnen kommer att laddas om.</value>
   </data>
+  <data name="View server dashboard to see server metrics." xml:space="preserve">
+    <value>Visa serverdashboard för att se serverstatistik.</value>
+  </data>
+  <data name="Allows viewing server dashboard to see server metrics." xml:space="preserve">
+    <value>Tillåter visning av serverdashboard för att se serverstatistik.</value>
+  </data>
 
 </root>

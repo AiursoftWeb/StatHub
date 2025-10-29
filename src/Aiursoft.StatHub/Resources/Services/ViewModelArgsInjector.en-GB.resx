@@ -132,5 +132,20 @@
   <data name="Unauthorized" xml:space="preserve">
     <value>Unauthorised</value>
   </data>
+  <data name="StatHub" xml:space="preserve">
+    <value>StatHub</value>
+  </data>
+  <data name="Aiursoft StatHub" xml:space="preserve">
+    <value>Aiursoft StatHub</value>
+  </data>
+  <data name="Add a server" xml:space="preserve">
+    <value>Add a server</value>
+  </data>
+  <data name="Servers" xml:space="preserve">
+    <value>Servers</value>
+  </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>Dashboard</value>
+  </data>
 
 </root>

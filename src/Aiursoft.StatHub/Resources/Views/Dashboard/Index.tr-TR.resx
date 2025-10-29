@@ -111,5 +111,101 @@
   <data name="Comes with full Docker support for simplified, consistent, and reliable deployments." xml:space="preserve">
     <value>Basitleştirilmiş, tutarlı ve güvenilir dağıtımlar için tam Docker desteği ile birlikte gelir.</value>
   </data>
+  <data name="SKU" xml:space="preserve">
+    <value>SKU</value>
+  </data>
+  <data name="Last 30 seconds" xml:space="preserve">
+    <value>Son 30 saniye</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Ad</value>
+  </data>
+  <data name="Agents Status Monitor" xml:space="preserve">
+    <value>Aracı Durum İzleyici</value>
+  </data>
+  <data name="Cumulative" xml:space="preserve">
+    <value>Kümülatif</value>
+  </data>
+  <data name="IP" xml:space="preserve">
+    <value>IP Adresi</value>
+  </data>
+  <data name="Agents Dashboard" xml:space="preserve">
+    <value>Aracılar Panosu</value>
+  </data>
+  <data name="Boot at" xml:space="preserve">
+    <value>Başlangıç Zamanı</value>
+  </data>
+  <data name="Net Receiving" xml:space="preserve">
+    <value>Ağ Gelen Veri</value>
+  </data>
+  <data name="CPU Usage" xml:space="preserve">
+    <value>CPU Kullanımı</value>
+  </data>
+  <data name="RAM Usage" xml:space="preserve">
+    <value>Bellek Kullanımı</value>
+  </data>
+  <data name="Avg Load" xml:space="preserve">
+    <value>Ort. Yük</value>
+  </data>
+  <data name="Disk Used" xml:space="preserve">
+    <value>Disk Kullanımı</value>
+  </data>
+  <data name="Net Sending" xml:space="preserve">
+    <value>Ağ Gönderimi</value>
+  </data>
+  <data name="Used at" xml:space="preserve">
+    <value>Kullanılan İşlem</value>
+  </data>
+  <data name="Disk Reading" xml:space="preserve">
+    <value>Disk Okuma</value>
+  </data>
+  <data name="Disk Writing" xml:space="preserve">
+    <value>Disk Yazma</value>
+  </data>
+  <data name="Net Received" xml:space="preserve">
+    <value>Alınan Ağ Verisi</value>
+  </data>
+  <data name="Net Sent" xml:space="preserve">
+    <value>Gönderilen Ağ</value>
+  </data>
+  <data name="Disk Read" xml:space="preserve">
+    <value>Disk Okuma</value>
+  </data>
+  <data name="Disk Written" xml:space="preserve">
+    <value>Disk Yazılan</value>
+  </data>
+  <data name="OS" xml:space="preserve">
+    <value>İşletim Sistemi</value>
+  </data>
+  <data name="More" xml:space="preserve">
+    <value>Daha Fazla</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Detaylar</value>
+  </data>
+  <data name="Healthy" xml:space="preserve">
+    <value>Sağlıklı</value>
+  </data>
+  <data name="Average Load" xml:space="preserve">
+    <value>Ortalama Yük</value>
+  </data>
+  <data name="Agents with Alerts" xml:space="preserve">
+    <value>Uyarılı Ajanlar</value>
+  </data>
+  <data name="(15m, Online Agents)" xml:space="preserve">
+    <value>(15 dk, Çevrimiçi Aracılar)</value>
+  </data>
+  <data name="Critical or Warning" xml:space="preserve">
+    <value>Kritik veya Uyarı</value>
+  </data>
+  <data name="Out of sync" xml:space="preserve">
+    <value>Senkronizasyon Dışı</value>
+  </data>
+  <data name="Total Agents" xml:space="preserve">
+    <value>Toplam Ajanlar</value>
+  </data>
+  <data name="Offline Agents" xml:space="preserve">
+    <value>Çevrimdışı Ajanlar</value>
+  </data>
 
 </root>

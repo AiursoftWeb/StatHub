@@ -219,5 +219,17 @@
   <data name="Start a New Project" xml:space="preserve">
     <value>Iniciar um Novo Projeto</value>
   </data>
+  <data name="easier" xml:space="preserve">
+    <value>mais fácil</value>
+  </data>
+  <data name="Monitor your servers," xml:space="preserve">
+    <value>Monitorize os seus servidores,</value>
+  </data>
+  <data name="Join our community and start monitoring today!" xml:space="preserve">
+    <value>Junte-se à nossa comunidade e comece a monitorizar hoje mesmo!</value>
+  </data>
+  <data name="StatHub is a simple server stat statistics system. It can collect server stats and display them in a simple way." xml:space="preserve">
+    <value>O StatHub é um sistema de estatísticas de servidor simples. Pode recolher estatísticas do servidor e apresentá-las de forma descomplicada.</value>
+  </data>
 
 </root>

@@ -111,5 +111,101 @@
   <data name="Comes with full Docker support for simplified, consistent, and reliable deployments." xml:space="preserve">
     <value>Предоставляет полную поддержку Docker для упрощённых, согласованных и надёжных развёртываний.</value>
   </data>
+  <data name="Name" xml:space="preserve">
+    <value>Имя</value>
+  </data>
+  <data name="IP" xml:space="preserve">
+    <value>IP-адрес</value>
+  </data>
+  <data name="SKU" xml:space="preserve">
+    <value>SKU</value>
+  </data>
+  <data name="Boot at" xml:space="preserve">
+    <value>Время загрузки</value>
+  </data>
+  <data name="Agents Dashboard" xml:space="preserve">
+    <value>Панель управления агентами</value>
+  </data>
+  <data name="Agents Status Monitor" xml:space="preserve">
+    <value>Монитор состояния агентов</value>
+  </data>
+  <data name="Last 30 seconds" xml:space="preserve">
+    <value>Последние 30 секунд</value>
+  </data>
+  <data name="Cumulative" xml:space="preserve">
+    <value>Суммарно</value>
+  </data>
+  <data name="CPU Usage" xml:space="preserve">
+    <value>Использование ЦП</value>
+  </data>
+  <data name="Net Receiving" xml:space="preserve">
+    <value>Приём данных</value>
+  </data>
+  <data name="Net Sending" xml:space="preserve">
+    <value>Передача данных</value>
+  </data>
+  <data name="Disk Reading" xml:space="preserve">
+    <value>Чтение с диска</value>
+  </data>
+  <data name="RAM Usage" xml:space="preserve">
+    <value>Использование ОЗУ</value>
+  </data>
+  <data name="Used at" xml:space="preserve">
+    <value>Использовано в</value>
+  </data>
+  <data name="Avg Load" xml:space="preserve">
+    <value>Средняя нагрузка</value>
+  </data>
+  <data name="Disk Used" xml:space="preserve">
+    <value>Использовано диска</value>
+  </data>
+  <data name="Disk Writing" xml:space="preserve">
+    <value>Запись на диск</value>
+  </data>
+  <data name="Net Sent" xml:space="preserve">
+    <value>Отправлено</value>
+  </data>
+  <data name="Disk Written" xml:space="preserve">
+    <value>Запись на диск</value>
+  </data>
+  <data name="OS" xml:space="preserve">
+    <value>ОС</value>
+  </data>
+  <data name="Disk Read" xml:space="preserve">
+    <value>Чтение с диска</value>
+  </data>
+  <data name="Net Received" xml:space="preserve">
+    <value>Получено данных</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Подробности</value>
+  </data>
+  <data name="More" xml:space="preserve">
+    <value>Подробнее</value>
+  </data>
+  <data name="Healthy" xml:space="preserve">
+    <value>Работает</value>
+  </data>
+  <data name="Offline Agents" xml:space="preserve">
+    <value>Офлайн-агенты</value>
+  </data>
+  <data name="Out of sync" xml:space="preserve">
+    <value>Не синхронизировано</value>
+  </data>
+  <data name="Total Agents" xml:space="preserve">
+    <value>Всего агентов</value>
+  </data>
+  <data name="Average Load" xml:space="preserve">
+    <value>Средняя загрузка</value>
+  </data>
+  <data name="(15m, Online Agents)" xml:space="preserve">
+    <value>(15 мин, онлайн-агенты)</value>
+  </data>
+  <data name="Critical or Warning" xml:space="preserve">
+    <value>Критическое состояние или предупреждение</value>
+  </data>
+  <data name="Agents with Alerts" xml:space="preserve">
+    <value>Агенты с предупреждениями</value>
+  </data>
 
 </root>

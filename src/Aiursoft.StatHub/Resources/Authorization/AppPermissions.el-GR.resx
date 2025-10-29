@@ -84,5 +84,11 @@
   <data name="Grants permission to restart the application instance. May cause availability interruptions but all settings and cache will be reloaded." xml:space="preserve">
     <value>Παρέχει άδεια για επανεκκίνηση της εφαρμογής. Μπορεί να προκαλέσει διακοπές στη διαθεσιμότητα, αλλά όλες οι ρυθμίσεις και η προσωρινή μνήμη θα φορτωθούν εκ νέου.</value>
   </data>
+  <data name="Allows viewing server dashboard to see server metrics." xml:space="preserve">
+    <value>Επιτρέπει την προβολή του πίνακα ελέγχου του διακομιστή για να δείτε τις μετρήσεις του διακομιστή.</value>
+  </data>
+  <data name="View server dashboard to see server metrics." xml:space="preserve">
+    <value>Προβολή του πίνακα ελέγχου του διακομιστή για να δείτε τις μετρικές του διακομιστή.</value>
+  </data>
 
 </root>

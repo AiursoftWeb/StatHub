@@ -219,5 +219,17 @@
   <data name="Join our community and start building today!" xml:space="preserve">
     <value>加入我们的社区，立即开始构建！</value>
   </data>
+  <data name="Monitor your servers," xml:space="preserve">
+    <value>监控您的服务器，</value>
+  </data>
+  <data name="easier" xml:space="preserve">
+    <value>更轻松</value>
+  </data>
+  <data name="Join our community and start monitoring today!" xml:space="preserve">
+    <value>加入我们的社区，立即开始监控！</value>
+  </data>
+  <data name="StatHub is a simple server stat statistics system. It can collect server stats and display them in a simple way." xml:space="preserve">
+    <value>StatHub 是一款简洁的服务器状态统计系统，能够采集服务器数据并以直观方式呈现。</value>
+  </data>
 
 </root>

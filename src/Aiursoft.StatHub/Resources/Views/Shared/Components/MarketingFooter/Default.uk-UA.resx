@@ -60,5 +60,8 @@
   <data name="Contributions" xml:space="preserve">
     <value>Внесок</value>
   </data>
+  <data name="Aiursoft Stathub - A simple server stat statistics system. It can collect server stats and display them in a simple way." xml:space="preserve">
+    <value>Aiursoft Stathub — проста система статистики сервера. Вона збирає статистику сервера та відображає її у простому вигляді.</value>
+  </data>
 
 </root>

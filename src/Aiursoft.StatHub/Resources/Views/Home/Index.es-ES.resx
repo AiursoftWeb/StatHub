@@ -219,5 +219,17 @@
   <data name="The template is built for easy deployment. It includes full Docker support, so you can containerize your app and run it anywhere. You can also deploy it directly to IIS, Azure App Service, or any server that supports ASP.NET Core." xml:space="preserve">
     <value>La plantilla está diseñada para una implementación sencilla. Incluye soporte completo para Docker, por lo que puedes containerizar tu aplicación y ejecutarla en cualquier lugar. También puedes implementarla directamente en IIS, Azure App Service o cualquier servidor que admita ASP.NET Core.</value>
   </data>
+  <data name="easier" xml:space="preserve">
+    <value>más fácil</value>
+  </data>
+  <data name="Monitor your servers," xml:space="preserve">
+    <value>Supervisa tus servidores,</value>
+  </data>
+  <data name="Join our community and start monitoring today!" xml:space="preserve">
+    <value>¡Únete a nuestra comunidad y comienza a monitorizar hoy mismo!</value>
+  </data>
+  <data name="StatHub is a simple server stat statistics system. It can collect server stats and display them in a simple way." xml:space="preserve">
+    <value>StatHub es un sistema de estadísticas de servidor sencillo. Puede recopilar estadísticas del servidor y mostrarlas de forma simple.</value>
+  </data>
 
 </root>

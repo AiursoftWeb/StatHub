@@ -111,5 +111,101 @@
   <data name="A fully responsive layout that looks great on both desktop and mobile devices." xml:space="preserve">
     <value>데스크톱과 모바일 기기 모두에서 훌륭하게 보이는 완벽하게 반응형 레이아웃.</value>
   </data>
+  <data name="Name" xml:space="preserve">
+    <value>이름</value>
+  </data>
+  <data name="Cumulative" xml:space="preserve">
+    <value>누적</value>
+  </data>
+  <data name="IP" xml:space="preserve">
+    <value>IP</value>
+  </data>
+  <data name="Last 30 seconds" xml:space="preserve">
+    <value>지난 30초</value>
+  </data>
+  <data name="SKU" xml:space="preserve">
+    <value>SKU</value>
+  </data>
+  <data name="Boot at" xml:space="preserve">
+    <value>부팅 시간</value>
+  </data>
+  <data name="Agents Dashboard" xml:space="preserve">
+    <value>에이전트 대시보드</value>
+  </data>
+  <data name="Agents Status Monitor" xml:space="preserve">
+    <value>에이전트 상태 모니터</value>
+  </data>
+  <data name="Net Sending" xml:space="preserve">
+    <value>네트워크 송신</value>
+  </data>
+  <data name="Net Receiving" xml:space="preserve">
+    <value>네트워크 수신</value>
+  </data>
+  <data name="CPU Usage" xml:space="preserve">
+    <value>CPU 사용률</value>
+  </data>
+  <data name="Disk Used" xml:space="preserve">
+    <value>디스크 사용량</value>
+  </data>
+  <data name="Used at" xml:space="preserve">
+    <value>사용 시점</value>
+  </data>
+  <data name="RAM Usage" xml:space="preserve">
+    <value>RAM 사용량</value>
+  </data>
+  <data name="Avg Load" xml:space="preserve">
+    <value>평균 부하</value>
+  </data>
+  <data name="Disk Reading" xml:space="preserve">
+    <value>디스크 읽기</value>
+  </data>
+  <data name="Disk Writing" xml:space="preserve">
+    <value>디스크 쓰기</value>
+  </data>
+  <data name="Net Sent" xml:space="preserve">
+    <value>네트워크 전송</value>
+  </data>
+  <data name="Net Received" xml:space="preserve">
+    <value>누적 수신량</value>
+  </data>
+  <data name="OS" xml:space="preserve">
+    <value>운영체제</value>
+  </data>
+  <data name="Disk Written" xml:space="preserve">
+    <value>디스크 쓰기</value>
+  </data>
+  <data name="Disk Read" xml:space="preserve">
+    <value>디스크 읽기</value>
+  </data>
+  <data name="More" xml:space="preserve">
+    <value>더보기</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>세부 정보</value>
+  </data>
+  <data name="Agents with Alerts" xml:space="preserve">
+    <value>경고가 있는 에이전트</value>
+  </data>
+  <data name="Total Agents" xml:space="preserve">
+    <value>전체 에이전트</value>
+  </data>
+  <data name="Critical or Warning" xml:space="preserve">
+    <value>위험 또는 경고</value>
+  </data>
+  <data name="(15m, Online Agents)" xml:space="preserve">
+    <value>(15분, 온라인 에이전트)</value>
+  </data>
+  <data name="Average Load" xml:space="preserve">
+    <value>평균 부하</value>
+  </data>
+  <data name="Out of sync" xml:space="preserve">
+    <value>동기화되지 않음</value>
+  </data>
+  <data name="Offline Agents" xml:space="preserve">
+    <value>오프라인 에이전트</value>
+  </data>
+  <data name="Healthy" xml:space="preserve">
+    <value>정상</value>
+  </data>
 
 </root>

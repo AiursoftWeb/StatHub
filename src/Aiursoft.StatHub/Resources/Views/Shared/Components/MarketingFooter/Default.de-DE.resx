@@ -60,5 +60,8 @@
   <data name="Legal" xml:space="preserve">
     <value>Rechtliches</value>
   </data>
+  <data name="Aiursoft Stathub - A simple server stat statistics system. It can collect server stats and display them in a simple way." xml:space="preserve">
+    <value>Aiursoft Stathub - Ein einfaches Server-Statistiksystem. Es kann Server-Statistiken sammeln und auf einfache Weise anzeigen.</value>
+  </data>
 
 </root>

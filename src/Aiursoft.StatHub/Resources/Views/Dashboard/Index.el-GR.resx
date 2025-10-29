@@ -111,5 +111,101 @@
   <data name="Comes with full Docker support for simplified, consistent, and reliable deployments." xml:space="preserve">
     <value>Διαθέτει πλήρη υποστήριξη Docker για απλοποιημένες, συνεπείς και αξιόπιστες αναπτύξεις.</value>
   </data>
+  <data name="Agents with Alerts" xml:space="preserve">
+    <value>Πράκτορες με Ειδοποιήσεις</value>
+  </data>
+  <data name="Last 30 seconds" xml:space="preserve">
+    <value>Τελευταία 30 δευτερόλεπτα</value>
+  </data>
+  <data name="Critical or Warning" xml:space="preserve">
+    <value>Κρίσιμη ή Προειδοποίηση</value>
+  </data>
+  <data name="Healthy" xml:space="preserve">
+    <value>Υγιείς</value>
+  </data>
+  <data name="Offline Agents" xml:space="preserve">
+    <value>Εκτός σύνδεσης Παράγοντες</value>
+  </data>
+  <data name="Total Agents" xml:space="preserve">
+    <value>Σύνολο Πρακτόρων</value>
+  </data>
+  <data name="Cumulative" xml:space="preserve">
+    <value>Σωρευτικά</value>
+  </data>
+  <data name="Agents Dashboard" xml:space="preserve">
+    <value>Πίνακας Ελέγχου Παρακόντων</value>
+  </data>
+  <data name="Out of sync" xml:space="preserve">
+    <value>Εκτός συγχρονισμού</value>
+  </data>
+  <data name="Average Load" xml:space="preserve">
+    <value>Μέσος Φόρτος</value>
+  </data>
+  <data name="(15m, Online Agents)" xml:space="preserve">
+    <value>(15 λεπτά, Συνδεδεμένοι Πράκτορες)</value>
+  </data>
+  <data name="SKU" xml:space="preserve">
+    <value>Κωδικός SKU</value>
+  </data>
+  <data name="Boot at" xml:space="preserve">
+    <value>Εκκίνηση στις</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Όνομα</value>
+  </data>
+  <data name="IP" xml:space="preserve">
+    <value>Διεύθυνση IP</value>
+  </data>
+  <data name="Agents Status Monitor" xml:space="preserve">
+    <value>Παρακολούθηση Κατάστασης Πρακτόρων</value>
+  </data>
+  <data name="Avg Load" xml:space="preserve">
+    <value>Μέσος Φόρτος</value>
+  </data>
+  <data name="CPU Usage" xml:space="preserve">
+    <value>Χρήση CPU</value>
+  </data>
+  <data name="Used at" xml:space="preserve">
+    <value>Χρησιμοποιείται από</value>
+  </data>
+  <data name="Net Sending" xml:space="preserve">
+    <value>Αποστολή Δικτύου</value>
+  </data>
+  <data name="Net Receiving" xml:space="preserve">
+    <value>Εισερχόμενη Κίνηση Δικτύου</value>
+  </data>
+  <data name="RAM Usage" xml:space="preserve">
+    <value>Χρήση Μνήμης RAM</value>
+  </data>
+  <data name="Disk Used" xml:space="preserve">
+    <value>Χρησιμοποιούμενος Δίσκος</value>
+  </data>
+  <data name="Disk Writing" xml:space="preserve">
+    <value>Εγγραφή Δίσκου</value>
+  </data>
+  <data name="Disk Reading" xml:space="preserve">
+    <value>Ανάγνωση Δίσκου</value>
+  </data>
+  <data name="Disk Written" xml:space="preserve">
+    <value>Εγγραφή Δίσκου</value>
+  </data>
+  <data name="Net Received" xml:space="preserve">
+    <value>Ελήφθη Δικτύου</value>
+  </data>
+  <data name="Net Sent" xml:space="preserve">
+    <value>Δίκτυο Αποστολής</value>
+  </data>
+  <data name="OS" xml:space="preserve">
+    <value>ΛΣ</value>
+  </data>
+  <data name="More" xml:space="preserve">
+    <value>Περισσότερα</value>
+  </data>
+  <data name="Disk Read" xml:space="preserve">
+    <value>Ανάγνωση Δίσκου</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Λεπτομέρειες</value>
+  </data>
 
 </root>

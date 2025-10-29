@@ -84,5 +84,11 @@
   <data name="Grants permission to restart the application instance. May cause availability interruptions but all settings and cache will be reloaded." xml:space="preserve">
     <value>Erteilt die Berechtigung, die Anwendungsinstanz neu zu starten. Kann zu Verfügbarkeitsunterbrechungen führen, aber alle Einstellungen und der Cache werden neu geladen.</value>
   </data>
+  <data name="Allows viewing server dashboard to see server metrics." xml:space="preserve">
+    <value>Ermöglicht die Anzeige des Server-Dashboards, um Server-Metriken einzusehen.</value>
+  </data>
+  <data name="View server dashboard to see server metrics." xml:space="preserve">
+    <value>Server-Dashboard anzeigen, um Server-Metriken einzusehen.</value>
+  </data>
 
 </root>

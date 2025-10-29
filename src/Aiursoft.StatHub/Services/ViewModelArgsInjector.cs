@@ -63,7 +63,10 @@ public class ViewModelArgsInjector(
         _ = localizer["Profile Settings"];
         _ = localizer["Personal"];
         _ = localizer["Unauthorized"];
+        _ = localizer["Dashboard"];
         _ = localizer["Error"];
+        _ = localizer["Servers"];
+        _ = localizer["Add a server"];
     }
 
     public void InjectSimple(

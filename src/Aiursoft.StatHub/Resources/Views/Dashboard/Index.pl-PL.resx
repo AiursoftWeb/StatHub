@@ -111,5 +111,101 @@
   <data name="Comes with full Docker support for simplified, consistent, and reliable deployments." xml:space="preserve">
     <value>Oferuje pełne wsparcie dla Dockera, co upraszcza, ujednolica i zwiększa niezawodność wdrożeń.</value>
   </data>
+  <data name="SKU" xml:space="preserve">
+    <value>SKU</value>
+  </data>
+  <data name="Boot at" xml:space="preserve">
+    <value>Czas rozruchu</value>
+  </data>
+  <data name="IP" xml:space="preserve">
+    <value>IP</value>
+  </data>
+  <data name="Agents Dashboard" xml:space="preserve">
+    <value>Pulpit agentów</value>
+  </data>
+  <data name="Last 30 seconds" xml:space="preserve">
+    <value>Ostatnie 30 sekund</value>
+  </data>
+  <data name="Agents Status Monitor" xml:space="preserve">
+    <value>Monitor Statusu Agentów</value>
+  </data>
+  <data name="Cumulative" xml:space="preserve">
+    <value>Łącznie</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Nazwa</value>
+  </data>
+  <data name="Avg Load" xml:space="preserve">
+    <value>Średnie obciążenie</value>
+  </data>
+  <data name="Used at" xml:space="preserve">
+    <value>Wykorzystane w</value>
+  </data>
+  <data name="Net Receiving" xml:space="preserve">
+    <value>Odbieranie sieciowe</value>
+  </data>
+  <data name="CPU Usage" xml:space="preserve">
+    <value>Wykorzystanie procesora</value>
+  </data>
+  <data name="RAM Usage" xml:space="preserve">
+    <value>Zużycie pamięci RAM</value>
+  </data>
+  <data name="Disk Used" xml:space="preserve">
+    <value>Wykorzystane miejsce na dysku</value>
+  </data>
+  <data name="Net Sending" xml:space="preserve">
+    <value>Wysyłanie sieciowe</value>
+  </data>
+  <data name="Disk Writing" xml:space="preserve">
+    <value>Zapis na dysku</value>
+  </data>
+  <data name="Net Sent" xml:space="preserve">
+    <value>Wysłane w sieci</value>
+  </data>
+  <data name="Disk Reading" xml:space="preserve">
+    <value>Odczytywanie dysku</value>
+  </data>
+  <data name="Net Received" xml:space="preserve">
+    <value>Odebrane dane sieciowe</value>
+  </data>
+  <data name="OS" xml:space="preserve">
+    <value>System operacyjny</value>
+  </data>
+  <data name="Disk Written" xml:space="preserve">
+    <value>Zapis na dysku</value>
+  </data>
+  <data name="More" xml:space="preserve">
+    <value>Więcej</value>
+  </data>
+  <data name="Disk Read" xml:space="preserve">
+    <value>Odczyt dysku</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Szczegóły</value>
+  </data>
+  <data name="Critical or Warning" xml:space="preserve">
+    <value>Krytyczny lub Ostrzeżenie</value>
+  </data>
+  <data name="Average Load" xml:space="preserve">
+    <value>Średnie obciążenie</value>
+  </data>
+  <data name="Offline Agents" xml:space="preserve">
+    <value>Agenty offline</value>
+  </data>
+  <data name="Agents with Alerts" xml:space="preserve">
+    <value>Agenty z Alertami</value>
+  </data>
+  <data name="Out of sync" xml:space="preserve">
+    <value>Niesynchronizowane</value>
+  </data>
+  <data name="Healthy" xml:space="preserve">
+    <value>Zdrowy</value>
+  </data>
+  <data name="(15m, Online Agents)" xml:space="preserve">
+    <value>(15 min, Agenci online)</value>
+  </data>
+  <data name="Total Agents" xml:space="preserve">
+    <value>Łączna liczba agentów</value>
+  </data>
 
 </root>

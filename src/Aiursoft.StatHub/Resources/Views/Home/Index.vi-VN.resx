@@ -219,5 +219,17 @@
   <data name="Join our community and start building today!" xml:space="preserve">
     <value>Hãy tham gia cộng đồng của chúng tôi và bắt đầu xây dựng ngay hôm nay!</value>
   </data>
+  <data name="Monitor your servers," xml:space="preserve">
+    <value>Giám sát máy chủ của bạn,</value>
+  </data>
+  <data name="easier" xml:space="preserve">
+    <value>dễ dàng hơn</value>
+  </data>
+  <data name="Join our community and start monitoring today!" xml:space="preserve">
+    <value>Hãy tham gia cộng đồng của chúng tôi và bắt đầu giám sát ngay hôm nay!</value>
+  </data>
+  <data name="StatHub is a simple server stat statistics system. It can collect server stats and display them in a simple way." xml:space="preserve">
+    <value>StatHub là một hệ thống thống kê số liệu máy chủ đơn giản. Nó có thể thu thập các số liệu máy chủ và hiển thị chúng một cách dễ hiểu.</value>
+  </data>
 
 </root>

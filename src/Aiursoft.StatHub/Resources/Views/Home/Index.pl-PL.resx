@@ -219,5 +219,17 @@
   <data name="The template is built for easy deployment. It includes full Docker support, so you can containerize your app and run it anywhere. You can also deploy it directly to IIS, Azure App Service, or any server that supports ASP.NET Core." xml:space="preserve">
     <value>Szablon został zaprojektowany z myślą o łatwym wdrażaniu. Zawiera pełne wsparcie dla Dockera, więc możesz skonteneryzować swoją aplikację i uruchomić ją wszędzie. Możesz również wdrożyć ją bezpośrednio na IIS, Azure App Service lub dowolnym serwerze obsługującym ASP.NET Core.</value>
   </data>
+  <data name="easier" xml:space="preserve">
+    <value>łatwiej</value>
+  </data>
+  <data name="Monitor your servers," xml:space="preserve">
+    <value>Monitoruj swoje serwery,</value>
+  </data>
+  <data name="Join our community and start monitoring today!" xml:space="preserve">
+    <value>Dołącz do naszej społeczności i rozpocznij monitorowanie już dziś!</value>
+  </data>
+  <data name="StatHub is a simple server stat statistics system. It can collect server stats and display them in a simple way." xml:space="preserve">
+    <value>StatHub to prosty system statystyk serwera. Może zbierać statystyki serwera i wyświetlać je w prosty sposób.</value>
+  </data>
 
 </root>

@@ -111,5 +111,101 @@
   <data name="Comes with full Docker support for simplified, consistent, and reliable deployments." xml:space="preserve">
     <value>มาพร้อมการสนับสนุน Docker เต็มรูปแบบเพื่อให้การปรับใช้เป็นเรื่องง่าย สม่ำเสมอ และเชื่อถือได้</value>
   </data>
+  <data name="Cumulative" xml:space="preserve">
+    <value>สะสม</value>
+  </data>
+  <data name="IP" xml:space="preserve">
+    <value>ไอพี</value>
+  </data>
+  <data name="Boot at" xml:space="preserve">
+    <value>เวลาเริ่มต้นระบบ</value>
+  </data>
+  <data name="Last 30 seconds" xml:space="preserve">
+    <value>30 วินาทีล่าสุด</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>ชื่อ</value>
+  </data>
+  <data name="SKU" xml:space="preserve">
+    <value>รหัสสินค้า</value>
+  </data>
+  <data name="Agents Dashboard" xml:space="preserve">
+    <value>แดชบอร์ดเอเยนต์</value>
+  </data>
+  <data name="Agents Status Monitor" xml:space="preserve">
+    <value>ตัวติดตามสถานะเอเจนต์</value>
+  </data>
+  <data name="CPU Usage" xml:space="preserve">
+    <value>การใช้ซีพียู</value>
+  </data>
+  <data name="Used at" xml:space="preserve">
+    <value>ใช้งานเมื่อ</value>
+  </data>
+  <data name="RAM Usage" xml:space="preserve">
+    <value>การใช้หน่วยความจำ</value>
+  </data>
+  <data name="Net Receiving" xml:space="preserve">
+    <value>รับข้อมูลเครือข่าย</value>
+  </data>
+  <data name="Avg Load" xml:space="preserve">
+    <value>โหลดเฉลี่ย</value>
+  </data>
+  <data name="Disk Used" xml:space="preserve">
+    <value>พื้นที่ดิสก์ที่ใช้ไป</value>
+  </data>
+  <data name="Net Sending" xml:space="preserve">
+    <value>การส่งข้อมูลเครือข่าย</value>
+  </data>
+  <data name="Disk Writing" xml:space="preserve">
+    <value>การเขียนดิสก์</value>
+  </data>
+  <data name="Disk Reading" xml:space="preserve">
+    <value>การอ่านดิสก์</value>
+  </data>
+  <data name="Net Received" xml:space="preserve">
+    <value>ปริมาณข้อมูลที่ได้รับ</value>
+  </data>
+  <data name="Net Sent" xml:space="preserve">
+    <value>ข้อมูลส่งออก</value>
+  </data>
+  <data name="Disk Read" xml:space="preserve">
+    <value>การอ่านดิสก์</value>
+  </data>
+  <data name="Disk Written" xml:space="preserve">
+    <value>เขียนลงดิสก์</value>
+  </data>
+  <data name="More" xml:space="preserve">
+    <value>เพิ่มเติม</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>รายละเอียด</value>
+  </data>
+  <data name="OS" xml:space="preserve">
+    <value>ระบบปฏิบัติการ</value>
+  </data>
+  <data name="Offline Agents" xml:space="preserve">
+    <value>เอเจนต์ออฟไลน์</value>
+  </data>
+  <data name="Average Load" xml:space="preserve">
+    <value>โหลดเฉลี่ย</value>
+  </data>
+  <data name="Healthy" xml:space="preserve">
+    <value>สภาพดี</value>
+  </data>
+  <data name="Out of sync" xml:space="preserve">
+    <value>ไม่ตรงกัน</value>
+  </data>
+  <data name="(15m, Online Agents)" xml:space="preserve">
+    <value>(15 นาที, เอเจนต์ออนไลน์)</value>
+  </data>
+  <data name="Total Agents" xml:space="preserve">
+    <value>เอเจนต์ทั้งหมด</value>
+  </data>
+  <data name="Agents with Alerts" xml:space="preserve">
+    <value>เอเจนต์ที่มีการแจ้งเตือน</value>
+  </data>
+  <data name="Critical or Warning" xml:space="preserve">
+    <value>วิกฤตหรือเตือน</value>
+  </data>
 
 </root>

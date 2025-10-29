@@ -111,5 +111,101 @@
   <data name="Automatic Dark Mode" xml:space="preserve">
     <value>Automatische Donkere Modus</value>
   </data>
+  <data name="SKU" xml:space="preserve">
+    <value>SKU</value>
+  </data>
+  <data name="Cumulative" xml:space="preserve">
+    <value>Cumulatief</value>
+  </data>
+  <data name="Boot at" xml:space="preserve">
+    <value>Opgestart om</value>
+  </data>
+  <data name="IP" xml:space="preserve">
+    <value>IP</value>
+  </data>
+  <data name="Last 30 seconds" xml:space="preserve">
+    <value>Laatste 30 seconden</value>
+  </data>
+  <data name="Agents Dashboard" xml:space="preserve">
+    <value>Agenten Dashboard</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Naam</value>
+  </data>
+  <data name="Agents Status Monitor" xml:space="preserve">
+    <value>Agentstatusmonitor</value>
+  </data>
+  <data name="RAM Usage" xml:space="preserve">
+    <value>RAM-gebruik</value>
+  </data>
+  <data name="CPU Usage" xml:space="preserve">
+    <value>CPU-gebruik</value>
+  </data>
+  <data name="Net Receiving" xml:space="preserve">
+    <value>Netto ontvangen</value>
+  </data>
+  <data name="Disk Used" xml:space="preserve">
+    <value>Schijfgebruik</value>
+  </data>
+  <data name="Disk Reading" xml:space="preserve">
+    <value>Schijf lezen</value>
+  </data>
+  <data name="Net Sending" xml:space="preserve">
+    <value>Netto verzenden</value>
+  </data>
+  <data name="Avg Load" xml:space="preserve">
+    <value>Gem. belasting</value>
+  </data>
+  <data name="Used at" xml:space="preserve">
+    <value>Gebruikt door</value>
+  </data>
+  <data name="Net Sent" xml:space="preserve">
+    <value>Netwerk verzonden</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="OS" xml:space="preserve">
+    <value>Besturingssysteem</value>
+  </data>
+  <data name="Disk Written" xml:space="preserve">
+    <value>Schijfgeschreven</value>
+  </data>
+  <data name="Disk Read" xml:space="preserve">
+    <value>Schijflees</value>
+  </data>
+  <data name="Disk Writing" xml:space="preserve">
+    <value>Schrijven naar schijf</value>
+  </data>
+  <data name="More" xml:space="preserve">
+    <value>Meer</value>
+  </data>
+  <data name="Net Received" xml:space="preserve">
+    <value>Netto ontvangen</value>
+  </data>
+  <data name="Total Agents" xml:space="preserve">
+    <value>Totaal aantal agents</value>
+  </data>
+  <data name="Offline Agents" xml:space="preserve">
+    <value>Offline Agents</value>
+  </data>
+  <data name="Critical or Warning" xml:space="preserve">
+    <value>Kritiek of Waarschuwing</value>
+  </data>
+  <data name="Average Load" xml:space="preserve">
+    <value>Gemiddelde belasting</value>
+  </data>
+  <data name="Out of sync" xml:space="preserve">
+    <value>Niet gesynchroniseerd</value>
+  </data>
+  <data name="Healthy" xml:space="preserve">
+    <value>Gezond</value>
+  </data>
+  <data name="(15m, Online Agents)" xml:space="preserve">
+    <value>(15 min, Online Agents)</value>
+  </data>
+  <data name="Agents with Alerts" xml:space="preserve">
+    <value>Agents met waarschuwingen</value>
+  </data>
 
 </root>

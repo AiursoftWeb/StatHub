@@ -111,5 +111,101 @@
   <data name="Comes with full Docker support for simplified, consistent, and reliable deployments." xml:space="preserve">
     <value>يأتي مع دعم كامل لـ Docker لنشر مبسط، متسق، وموثوق.</value>
   </data>
+  <data name="Agents Status Monitor" xml:space="preserve">
+    <value>مراقب حالة الوكلاء</value>
+  </data>
+  <data name="Cumulative" xml:space="preserve">
+    <value>تراكمي</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>الاسم</value>
+  </data>
+  <data name="Agents Dashboard" xml:space="preserve">
+    <value>لوحة تحكم الوكلاء</value>
+  </data>
+  <data name="Boot at" xml:space="preserve">
+    <value>وقت الإقلاع</value>
+  </data>
+  <data name="SKU" xml:space="preserve">
+    <value>المنتج</value>
+  </data>
+  <data name="IP" xml:space="preserve">
+    <value>عنوان IP</value>
+  </data>
+  <data name="Last 30 seconds" xml:space="preserve">
+    <value>آخر 30 ثانية</value>
+  </data>
+  <data name="CPU Usage" xml:space="preserve">
+    <value>استخدام المعالج</value>
+  </data>
+  <data name="Avg Load" xml:space="preserve">
+    <value>متوسط الحمل</value>
+  </data>
+  <data name="Used at" xml:space="preserve">
+    <value>المستخدم في</value>
+  </data>
+  <data name="Net Receiving" xml:space="preserve">
+    <value>استقبال الشبكة</value>
+  </data>
+  <data name="RAM Usage" xml:space="preserve">
+    <value>استخدام الذاكرة العشوائية</value>
+  </data>
+  <data name="Disk Used" xml:space="preserve">
+    <value>المساحة المستخدمة</value>
+  </data>
+  <data name="Disk Reading" xml:space="preserve">
+    <value>قراءة القرص</value>
+  </data>
+  <data name="Net Sending" xml:space="preserve">
+    <value>إرسال الشبكة</value>
+  </data>
+  <data name="Disk Writing" xml:space="preserve">
+    <value>كتابة القرص</value>
+  </data>
+  <data name="Disk Read" xml:space="preserve">
+    <value>قراءة القرص</value>
+  </data>
+  <data name="Net Sent" xml:space="preserve">
+    <value>البيانات المرسلة</value>
+  </data>
+  <data name="Net Received" xml:space="preserve">
+    <value>البيانات المستلمة</value>
+  </data>
+  <data name="More" xml:space="preserve">
+    <value>المزيد</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>التفاصيل</value>
+  </data>
+  <data name="OS" xml:space="preserve">
+    <value>نظام التشغيل</value>
+  </data>
+  <data name="Disk Written" xml:space="preserve">
+    <value>البيانات المكتوبة على القرص</value>
+  </data>
+  <data name="Healthy" xml:space="preserve">
+    <value>سليم</value>
+  </data>
+  <data name="Average Load" xml:space="preserve">
+    <value>متوسط الحمل</value>
+  </data>
+  <data name="Offline Agents" xml:space="preserve">
+    <value>العملات غير المتصلة</value>
+  </data>
+  <data name="Out of sync" xml:space="preserve">
+    <value>غير متزامن</value>
+  </data>
+  <data name="Agents with Alerts" xml:space="preserve">
+    <value>العملاء مع التنبيهات</value>
+  </data>
+  <data name="Total Agents" xml:space="preserve">
+    <value>إجمالي الوكلاء</value>
+  </data>
+  <data name="(15m, Online Agents)" xml:space="preserve">
+    <value>(١٥ دقيقة، الوكلاء المتصلون)</value>
+  </data>
+  <data name="Critical or Warning" xml:space="preserve">
+    <value>حرج أو تحذير</value>
+  </data>
 
 </root>

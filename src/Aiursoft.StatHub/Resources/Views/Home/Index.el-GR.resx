@@ -219,5 +219,17 @@
   <data name="for any inquiries or to report issues." xml:space="preserve">
     <value>για οποιαδήποτε ερώτηση ή για να αναφέρετε προβλήματα.</value>
   </data>
+  <data name="Monitor your servers," xml:space="preserve">
+    <value>Παρακολουθήστε τους διακομιστές σας,</value>
+  </data>
+  <data name="Join our community and start monitoring today!" xml:space="preserve">
+    <value>Γίνετε μέλος της κοινότητάς μας και ξεκινήστε την παρακολούθηση σήμερα!</value>
+  </data>
+  <data name="easier" xml:space="preserve">
+    <value>ευκολότερα</value>
+  </data>
+  <data name="StatHub is a simple server stat statistics system. It can collect server stats and display them in a simple way." xml:space="preserve">
+    <value>Το StatHub είναι ένα απλό σύστημα στατιστικών διακομιστή. Μπορεί να συλλέγει στατιστικά του διακομιστή και να τα εμφανίζει με απλό τρόπο.</value>
+  </data>
 
 </root>

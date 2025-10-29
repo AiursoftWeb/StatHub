@@ -111,5 +111,101 @@
   <data name="Smart dark mode that automatically adapts to the user&apos;s system settings." xml:space="preserve">
     <value>Smart dark mode that automatically adapts to the user&apos;s system settings.</value>
   </data>
+  <data name="Cumulative" xml:space="preserve">
+    <value>Cumulative</value>
+  </data>
+  <data name="SKU" xml:space="preserve">
+    <value>SKU</value>
+  </data>
+  <data name="Agents Status Monitor" xml:space="preserve">
+    <value>Agent Status Monitor</value>
+  </data>
+  <data name="IP" xml:space="preserve">
+    <value>IP Address</value>
+  </data>
+  <data name="Agents Dashboard" xml:space="preserve">
+    <value>Agents Dashboard</value>
+  </data>
+  <data name="Last 30 seconds" xml:space="preserve">
+    <value>Last 30 seconds</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Hostname</value>
+  </data>
+  <data name="Boot at" xml:space="preserve">
+    <value>Boot time</value>
+  </data>
+  <data name="RAM Usage" xml:space="preserve">
+    <value>RAM Usage</value>
+  </data>
+  <data name="Net Receiving" xml:space="preserve">
+    <value>Network Receiving</value>
+  </data>
+  <data name="CPU Usage" xml:space="preserve">
+    <value>CPU Usage</value>
+  </data>
+  <data name="Used at" xml:space="preserve">
+    <value>Processes</value>
+  </data>
+  <data name="Disk Used" xml:space="preserve">
+    <value>Disk Used</value>
+  </data>
+  <data name="Avg Load" xml:space="preserve">
+    <value>Average Load</value>
+  </data>
+  <data name="Disk Reading" xml:space="preserve">
+    <value>Disk Read</value>
+  </data>
+  <data name="Net Sending" xml:space="preserve">
+    <value>Network Transmission</value>
+  </data>
+  <data name="Disk Writing" xml:space="preserve">
+    <value>Disk Writing</value>
+  </data>
+  <data name="Net Received" xml:space="preserve">
+    <value>Net Received</value>
+  </data>
+  <data name="Net Sent" xml:space="preserve">
+    <value>Net Sent</value>
+  </data>
+  <data name="OS" xml:space="preserve">
+    <value>Operating System</value>
+  </data>
+  <data name="Disk Read" xml:space="preserve">
+    <value>Disk Read</value>
+  </data>
+  <data name="Disk Written" xml:space="preserve">
+    <value>Disk Written</value>
+  </data>
+  <data name="More" xml:space="preserve">
+    <value>More</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="Average Load" xml:space="preserve">
+    <value>Average Load</value>
+  </data>
+  <data name="Out of sync" xml:space="preserve">
+    <value>Out of sync</value>
+  </data>
+  <data name="Healthy" xml:space="preserve">
+    <value>Healthy</value>
+  </data>
+  <data name="Critical or Warning" xml:space="preserve">
+    <value>Critical or Warning</value>
+  </data>
+  <data name="Offline Agents" xml:space="preserve">
+    <value>Offline Agents</value>
+  </data>
+  <data name="Agents with Alerts" xml:space="preserve">
+    <value>Agents with Alerts</value>
+  </data>
+  <data name="(15m, Online Agents)" xml:space="preserve">
+    <value>(15-minute average, online agents only)</value>
+  </data>
+  <data name="Total Agents" xml:space="preserve">
+    <value>Total Agents</value>
+  </data>
 
 </root>

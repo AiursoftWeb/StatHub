@@ -84,5 +84,11 @@
   <data name="Grants permission to restart the application instance. May cause availability interruptions but all settings and cache will be reloaded." xml:space="preserve">
     <value>授予重新啟動應用程式實例的權限。可能導致服務中斷，但所有設定和快取都將重新載入。</value>
   </data>
+  <data name="View server dashboard to see server metrics." xml:space="preserve">
+    <value>檢視伺服器儀表板以查看伺服器指標。</value>
+  </data>
+  <data name="Allows viewing server dashboard to see server metrics." xml:space="preserve">
+    <value>允許檢視伺服器儀表板以查看伺服器指標。</value>
+  </data>
 
 </root>

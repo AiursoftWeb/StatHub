@@ -111,5 +111,101 @@
   <data name="Smart dark mode that automatically adapts to the user&apos;s system settings." xml:space="preserve">
     <value>Smart mörkt läge som automatiskt anpassar sig efter användarens systeminställningar.</value>
   </data>
+  <data name="Name" xml:space="preserve">
+    <value>Namn</value>
+  </data>
+  <data name="Cumulative" xml:space="preserve">
+    <value>Ackumulerad</value>
+  </data>
+  <data name="Boot at" xml:space="preserve">
+    <value>Startades</value>
+  </data>
+  <data name="Agents Status Monitor" xml:space="preserve">
+    <value>Agents Statusövervakning</value>
+  </data>
+  <data name="SKU" xml:space="preserve">
+    <value>SKU</value>
+  </data>
+  <data name="Agents Dashboard" xml:space="preserve">
+    <value>Agenter Instrumentpanel</value>
+  </data>
+  <data name="IP" xml:space="preserve">
+    <value>IP-adress</value>
+  </data>
+  <data name="Last 30 seconds" xml:space="preserve">
+    <value>Senaste 30 sekunderna</value>
+  </data>
+  <data name="CPU Usage" xml:space="preserve">
+    <value>CPU-användning</value>
+  </data>
+  <data name="Used at" xml:space="preserve">
+    <value>Använt vid</value>
+  </data>
+  <data name="Net Sending" xml:space="preserve">
+    <value>Nätutsändning</value>
+  </data>
+  <data name="Avg Load" xml:space="preserve">
+    <value>Genomsnittlig belastning</value>
+  </data>
+  <data name="Disk Reading" xml:space="preserve">
+    <value>Diskläsning</value>
+  </data>
+  <data name="RAM Usage" xml:space="preserve">
+    <value>RAM-användning</value>
+  </data>
+  <data name="Net Receiving" xml:space="preserve">
+    <value>Mottagen nätverksdata</value>
+  </data>
+  <data name="Disk Used" xml:space="preserve">
+    <value>Använt diskutrymme</value>
+  </data>
+  <data name="Disk Written" xml:space="preserve">
+    <value>Disk Skrivet</value>
+  </data>
+  <data name="Disk Writing" xml:space="preserve">
+    <value>Diskskrivning</value>
+  </data>
+  <data name="OS" xml:space="preserve">
+    <value>OS</value>
+  </data>
+  <data name="Net Sent" xml:space="preserve">
+    <value>Nät skickat</value>
+  </data>
+  <data name="Disk Read" xml:space="preserve">
+    <value>Diskläsning</value>
+  </data>
+  <data name="Net Received" xml:space="preserve">
+    <value>Mottagen nätverksdata</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Detaljer</value>
+  </data>
+  <data name="More" xml:space="preserve">
+    <value>Mer</value>
+  </data>
+  <data name="Agents with Alerts" xml:space="preserve">
+    <value>Agenter med Aviseringar</value>
+  </data>
+  <data name="(15m, Online Agents)" xml:space="preserve">
+    <value>(15 min, online-agenter)</value>
+  </data>
+  <data name="Offline Agents" xml:space="preserve">
+    <value>Offline-agenter</value>
+  </data>
+  <data name="Out of sync" xml:space="preserve">
+    <value>Ej synkroniserad</value>
+  </data>
+  <data name="Average Load" xml:space="preserve">
+    <value>Genomsnittlig belastning</value>
+  </data>
+  <data name="Healthy" xml:space="preserve">
+    <value>Felfria</value>
+  </data>
+  <data name="Critical or Warning" xml:space="preserve">
+    <value>Kritisk eller Varning</value>
+  </data>
+  <data name="Total Agents" xml:space="preserve">
+    <value>Totalt antal agenter</value>
+  </data>
 
 </root>

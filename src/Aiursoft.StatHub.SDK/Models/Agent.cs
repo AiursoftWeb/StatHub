@@ -152,7 +152,7 @@ public class Agent
         Stats.Map(stat => stat.Load15M).Subscribe(Load15M);
     }
 
-    public string ClientId { get; set; } = null!;
+    public string ClientId { get; set; }
     public string Hostname { get; set; } = null!;
     public string OsName { get; set; } = null!;
     public string Ip { get; set; } = null!;
@@ -243,7 +243,7 @@ public class Agent
             UsedRoot / (double)TotalRoot : 0;
 
         // 2. 状态逻辑
-        var status = AgentStatus.Healthy;
+        AgentStatus status;
         string reason;
 
         if (isOutDated)
@@ -312,12 +312,12 @@ public record AgentHealthReport
     public int CpuRate { get; init; }
     public double DiskUseRatio { get; init; }
     public AgentStatus Status { get; init; }
-    public string Reason { get; init; }
+    public required string Reason { get; init; }
 
     // 2. Tooltips (用于主页)
-    public string LoadPrompt { get; init; }
-    public string CpuPrompt { get; init; }
-    public string DiskPrompt { get; init; }
+    public required string LoadPrompt { get; init; }
+    public required string CpuPrompt { get; init; }
+    public required string DiskPrompt { get; init; }
 
     // 3. 模板样式 (用于主页进度条)
     public string LoadColorClass => LoadRate < 10 ? "bg-success" :

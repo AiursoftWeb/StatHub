@@ -132,5 +132,20 @@
   <data name="Error" xml:space="preserve">
     <value>Error</value>
   </data>
+  <data name="Servers" xml:space="preserve">
+    <value>Servidores</value>
+  </data>
+  <data name="StatHub" xml:space="preserve">
+    <value>StatHub</value>
+  </data>
+  <data name="Add a server" xml:space="preserve">
+    <value>Añadir un servidor</value>
+  </data>
+  <data name="Aiursoft StatHub" xml:space="preserve">
+    <value>Aiursoft StatHub</value>
+  </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>Panel de control</value>
+  </data>
 
 </root>

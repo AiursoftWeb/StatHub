@@ -111,5 +111,101 @@
   <data name="Comes with full Docker support for simplified, consistent, and reliable deployments." xml:space="preserve">
     <value>Sisältää täyden Docker-tuen yksinkertaistettuja, yhdenmukaisia ja luotettavia käyttöönottoja varten.</value>
   </data>
+  <data name="Total Agents" xml:space="preserve">
+    <value>Agenteja yhteensä</value>
+  </data>
+  <data name="Healthy" xml:space="preserve">
+    <value>Kunnossa</value>
+  </data>
+  <data name="Agents Dashboard" xml:space="preserve">
+    <value>Agenttien kojelauta</value>
+  </data>
+  <data name="Cumulative" xml:space="preserve">
+    <value>Kumulatiivinen</value>
+  </data>
+  <data name="Agents with Alerts" xml:space="preserve">
+    <value>Agenteja, joilla on hälytyksiä</value>
+  </data>
+  <data name="Critical or Warning" xml:space="preserve">
+    <value>Kriittinen tai Varoitus</value>
+  </data>
+  <data name="Last 30 seconds" xml:space="preserve">
+    <value>Viimeiset 30 sekuntia</value>
+  </data>
+  <data name="Offline Agents" xml:space="preserve">
+    <value>Poissa olevat agentit</value>
+  </data>
+  <data name="Average Load" xml:space="preserve">
+    <value>Keskimääräinen kuorma</value>
+  </data>
+  <data name="(15m, Online Agents)" xml:space="preserve">
+    <value>(15 min, verkkoagenteista)</value>
+  </data>
+  <data name="IP" xml:space="preserve">
+    <value>IP-osoite</value>
+  </data>
+  <data name="Boot at" xml:space="preserve">
+    <value>Käynnistysaika</value>
+  </data>
+  <data name="SKU" xml:space="preserve">
+    <value>Malli</value>
+  </data>
+  <data name="Agents Status Monitor" xml:space="preserve">
+    <value>Agenttien tilanvalvonta</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Nimi</value>
+  </data>
+  <data name="Out of sync" xml:space="preserve">
+    <value>Ei synkronoidu</value>
+  </data>
+  <data name="Avg Load" xml:space="preserve">
+    <value>Keskim. kuorma</value>
+  </data>
+  <data name="Used at" xml:space="preserve">
+    <value>Käytetty</value>
+  </data>
+  <data name="RAM Usage" xml:space="preserve">
+    <value>RAM-käyttö</value>
+  </data>
+  <data name="CPU Usage" xml:space="preserve">
+    <value>Suorittimen käyttöaste</value>
+  </data>
+  <data name="Net Sending" xml:space="preserve">
+    <value>Verkon Lähetys</value>
+  </data>
+  <data name="Net Receiving" xml:space="preserve">
+    <value>Vastaanotettu verkko</value>
+  </data>
+  <data name="Disk Used" xml:space="preserve">
+    <value>Käytetty levytila</value>
+  </data>
+  <data name="Disk Reading" xml:space="preserve">
+    <value>Levyluku</value>
+  </data>
+  <data name="Net Received" xml:space="preserve">
+    <value>Vastaanotettu nettoliikenne</value>
+  </data>
+  <data name="Disk Writing" xml:space="preserve">
+    <value>Levytiedon kirjoitus</value>
+  </data>
+  <data name="Net Sent" xml:space="preserve">
+    <value>Lähetetty</value>
+  </data>
+  <data name="OS" xml:space="preserve">
+    <value>Käyttöjärjestelmä</value>
+  </data>
+  <data name="Disk Written" xml:space="preserve">
+    <value>Levytetty</value>
+  </data>
+  <data name="More" xml:space="preserve">
+    <value>Lisää</value>
+  </data>
+  <data name="Disk Read" xml:space="preserve">
+    <value>Levytiedoston luku</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Yksityiskohdat</value>
+  </data>
 
 </root>

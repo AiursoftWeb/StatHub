@@ -50,13 +50,6 @@ public class MetricsController(
         }
     }
 
-    private async Task StreamMetricAsync<T>(
-        IAsyncObservable<T> observable,
-        TimeSpan? throttle = null)
-    {
-        await StreamMetricAsync(observable, t => t?.ToString() ?? string.Empty, throttle);
-    }
-
     [Route("{id}/cpu.ws")]
     [EnforceWebSocket]
     public async Task Cpu([FromRoute]string id)

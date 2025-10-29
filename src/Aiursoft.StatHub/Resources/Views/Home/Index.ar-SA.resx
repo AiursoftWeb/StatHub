@@ -219,5 +219,17 @@
   <data name="Discussions page" xml:space="preserve">
     <value>صفحة المناقشات</value>
   </data>
+  <data name="easier" xml:space="preserve">
+    <value>أسهل</value>
+  </data>
+  <data name="Monitor your servers," xml:space="preserve">
+    <value>راقب خوادمك،</value>
+  </data>
+  <data name="Join our community and start monitoring today!" xml:space="preserve">
+    <value>انضم إلى مجتمعنا وابدأ المراقبة اليوم!</value>
+  </data>
+  <data name="StatHub is a simple server stat statistics system. It can collect server stats and display them in a simple way." xml:space="preserve">
+    <value>StatHub هو نظام بسيط لإحصائيات حالة الخادم. يمكنه جمع إحصائيات الخادم وعرضها بطريقة بسيطة.</value>
+  </data>
 
 </root>

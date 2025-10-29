@@ -60,5 +60,8 @@
   <data name="Licence" xml:space="preserve">
     <value>Licencia</value>
   </data>
+  <data name="Aiursoft Stathub - A simple server stat statistics system. It can collect server stats and display them in a simple way." xml:space="preserve">
+    <value>Aiursoft Stathub - Un sistema sencillo de estadísticas de servidores. Puede recopilar estadísticas del servidor y mostrarlas de forma sencilla.</value>
+  </data>
 
 </root>

@@ -1,9 +1,26 @@
 @using Aiursoft.WebTools
 @using Aiursoft.CSTools.Tools
+@using Aiursoft.StatHub.SDK.Models
 @model Aiursoft.StatHub.Models.DashboardViewModels.IndexViewModel
 @{
     var showLast30 = ViewBag.Last30Seconds as bool? ?? false;
     var unit = showLast30 ? "/s" : string.Empty;
+    var allHealthReports = Model.Agents.Select(a => a.GetHealthReport()).ToList();
+    var totalAgents = allHealthReports.Count;
+    var healthyAgents = allHealthReports.Count(h => h.Status == AgentStatus.Healthy);
+
+    var alertAgents = allHealthReports.Count(h =>
+        h.Status == AgentStatus.Warning ||
+        h.Status == AgentStatus.Critical);
+
+    var offlineAgents = allHealthReports.Count(h => h.Status == AgentStatus.Offline);
+
+    var onlineReports = allHealthReports
+        .Where(h => h.Status != AgentStatus.Offline)
+        .ToList();
+
+    var averageLoad = onlineReports.Any() ?
+        onlineReports.Average(h => h.LoadRate) : 0;
 }
 
 <div class="container-fluid p-0">
@@ -25,6 +42,89 @@
                 <a class="btn btn-light bg-white shadow-sm @last30Active" asp-controller="Dashboard" asp-action="Index" asp-route-Last30Seconds="true">
                     @Localizer["Last 30 seconds"]
                 </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-sm-6 col-xxl-3 d-flex">
+            <div class="card flex-fill">
+                <div class="card-body py-4">
+                    <div class="d-flex align-items-start">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-2">@totalAgents</h3>
+                            <p class="mb-2">@Localizer["Total Agents"]</p>
+                            <div class="mb-0">
+                                <span class="badge badge-subtle-success me-2"> @healthyAgents @Localizer["Healthy"] </span>
+                            </div>
+                        </div>
+                        <div class="d-inline-block ms-3">
+                            <div class="stat">
+                                <i class="align-middle text-success" data-lucide="server"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-xxl-3 d-flex">
+            <div class="card flex-fill">
+                <div class="card-body py-4">
+                    <div class="d-flex align-items-start">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-2">@alertAgents</h3>
+                            <p class="mb-2">@Localizer["Agents with Alerts"]</p>
+                            <div class="mb-0">
+                                <span class="badge badge-subtle-danger me-2"> @Localizer["Critical or Warning"] </span>
+                            </div>
+                        </div>
+                        <div class="d-inline-block ms-3">
+                            <div class="stat">
+                                <i class="align-middle text-danger" data-lucide="alert-triangle"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-xxl-3 d-flex">
+            <div class="card flex-fill">
+                <div class="card-body py-4">
+                    <div class="d-flex align-items-start">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-2">@offlineAgents</h3>
+                            <p class="mb-2">@Localizer["Offline Agents"]</p>
+                            <div class="mb-0">
+                                <span class="badge badge-subtle-secondary me-2"> @Localizer["Out of sync"] </span>
+                            </div>
+                        </div>
+                        <div class="d-inline-block ms-3">
+                            <div class="stat">
+                                <i class="align-middle text-muted" data-lucide="server-off"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-xxl-3 d-flex">
+            <div class="card flex-fill">
+                <div class="card-body py-4">
+                    <div class="d-flex align-items-start">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-2">@averageLoad.ToString("F0")%</h3>
+                            <p class="mb-2">@Localizer["Average Load"]</p>
+                            <div class="mb-0">
+                                <span class="text-muted">@Localizer["(15m, Online Agents)"]</span>
+                            </div>
+                        </div>
+                        <div class="d-inline-block ms-3">
+                            <div class="stat">
+                                <i class="align-middle text-info" data-lucide="bar-chart-2"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -78,8 +178,10 @@
                                 var osFirstTwoWords = string.Join(" ", agent.OsName.Split(' ').Take(2)).Trim();
                                 <tr>
                                     <td>
-                                        <i class="align-middle me-2 @health.IconClass" data-lucide="@health.IndexIconDataLucide" data-bs-toggle="tooltip" data-placement="bottom" title="@health.Reason"></i>
-                                        @agent.Ip
+                                        <label data-bs-toggle="tooltip" data-placement="bottom" title="@health.Reason">
+                                            <i class="align-middle me-2 @health.IconClass" data-lucide="@health.IndexIconDataLucide"></i>
+                                            @agent.Ip
+                                        </label>
                                     </td>
                                     <td>
                                         @agent.Hostname

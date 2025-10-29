@@ -219,5 +219,17 @@
   <data name="The template is built for easy deployment. It includes full Docker support, so you can containerize your app and run it anywhere. You can also deploy it directly to IIS, Azure App Service, or any server that supports ASP.NET Core." xml:space="preserve">
     <value>Malli on suunniteltu helppokäyttöiseksi käyttöönottoa varten. Se sisältää täyden Docker-tuen, joten voit konttipohjata sovelluksesi ja ajaa sitä missä tahansa. Voit myös ottaa sen käyttöön suoraan IIS:ään, Azure App Serviceen tai mihin tahansa palvelimeen, joka tukee ASP.NET Corea.</value>
   </data>
+  <data name="easier" xml:space="preserve">
+    <value>helpommin</value>
+  </data>
+  <data name="Monitor your servers," xml:space="preserve">
+    <value>Seuraa palvelimiasi,</value>
+  </data>
+  <data name="Join our community and start monitoring today!" xml:space="preserve">
+    <value>Liity yhteisöömme ja aloita palvelinten seuranta tänään!</value>
+  </data>
+  <data name="StatHub is a simple server stat statistics system. It can collect server stats and display them in a simple way." xml:space="preserve">
+    <value>StatHub on yksinkertainen palvelintilastojen seurantajärjestelmä. Se kerää palvelintilastoja ja näyttää ne yksinkertaisella tavalla.</value>
+  </data>
 
 </root>
