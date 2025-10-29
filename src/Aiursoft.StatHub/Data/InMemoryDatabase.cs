@@ -16,6 +16,12 @@ public class InMemoryDatabase : ISingletonDependency
         }
     }
 
+    public Agent? GetClient(string clientId)
+    {
+        Clients.TryGetValue(clientId, out var client);
+        return client;
+    }
+
     public Agent[] GetClients()
     {
         return Clients.Select(c => c.Value).ToArray();

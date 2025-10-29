@@ -32,7 +32,11 @@ public class DashboardController(InMemoryDatabase database) : Controller
     [Authorize(Policy = AppPermissionNames.CanViewDashboard)]
     public IActionResult Details([FromRoute]string id)
     {
-        var client = database.GetOrAddClient(id);
+        var client = database.GetClient(id);
+        if (client == null)
+        {
+            return NotFound();
+        }
         return this.StackView(new AgentDetailsViewModel
         {
             Agent = client

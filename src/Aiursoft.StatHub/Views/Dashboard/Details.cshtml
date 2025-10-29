@@ -1,28 +1,160 @@
 @model Aiursoft.StatHub.Models.DashboardViewModels.AgentDetailsViewModel
+@{
+    var agent = Model.Agent;
+    var health = agent.GetHealthReport();
+}
 
-<div class="jumbotron">
-    <div class="container">
-        <h1 class="display-4">Checking client: @Model.Agent.Hostname</h1>
-        <p class="lead">View detailed metrics of this client.</p>
+<div class="container-fluid p-0">
+    <div class="row mb-2 mb-xl-3">
+        <div class="col-auto d-none d-sm-block">
+            <h3>@Localizer["Client Details"]</h3>
+        </div>
+
+        <div class="col-auto ms-auto text-end mt-n1">
+            <a asp-action="Index" class="btn btn-light bg-white shadow-sm">
+                <i class="align-middle" data-lucide="arrow-left"></i> @Localizer["Back to Dashboard"]
+            </a>
+        </div>
     </div>
-</div>
 
-<div class="container-fluid">
-    <div class="row no-gutters">
-        <div class="col-md-4 mt-3">
-            <div class="card mb-2 tests-card h-100">
+    <div class="row">
+        <div class="col-12 col-sm-6 col-xxl-3 d-flex">
+            <div class="card flex-fill">
+                <div class="card-body py-4">
+                    <div class="d-flex align-items-start">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-2">@agent.Hostname</h3>
+                            <p class="mb-2">@agent.Ip</p>
+                            <div class="mb-0">
+                                <span class="badge @health.BadgeClass" data-bs-toggle="tooltip" title="@health.Reason">
+                                    @Localizer[health.BadgeText]
+                                </span>
+                            </div>
+                        </div>
+                        <div class="d-inline-block ms-3">
+                            <div class="stat">
+                                <i class="align-middle @health.IconClass" data-lucide="@health.DetailsIconDataLucide"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-xxl-3 d-flex">
+            <div class="card flex-fill">
+                <div class="card-body py-4">
+                    <div class="d-flex align-items-start">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-2">@Model.Agent.GetSku()</h3>
+                            <p class="mb-2">@Localizer["Hardware SKU"]</p>
+                            <div class="mb-0">
+                                <span class="text-muted">@Localizer["Cores-RAM-Disk"]</span>
+                            </div>
+                        </div>
+                        <div class="d-inline-block ms-3">
+                            <div class="stat">
+                                <i class="align-middle text-info" data-lucide="cpu"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-xxl-3 d-flex">
+            <div class="card flex-fill">
+                <div class="card-body py-4">
+                    <div class="d-flex align-items-start">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-2" style="font-size: 1.5rem;">@Model.Agent.OsName</h3>
+                            <p class="mb-2">@Localizer["Operating System"]</p>
+                            <div class="mb-0">
+                                <span class="text-muted">Ver: @Model.Agent.Version</span>
+                            </div>
+                        </div>
+                        <div class="d-inline-block ms-3">
+                            <div class="stat">
+                                <i class="align-middle text-primary" data-lucide="hard-drive"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-xxl-3 d-flex">
+            <div class="card flex-fill">
+                <div class="card-body py-4">
+                    <div class="d-flex align-items-start">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-2" data-bs-toggle="tooltip" title="@Model.Agent.BootTime.ToString("F")">
+                                @Model.Agent.BootTime.ToString("g")
+                            </h3>
+                            <p class="mb-2">@Localizer["Last Boot Time"]</p>
+                            <div class="mb-0">
+                                <span class="text-muted">@Localizer["(Server Local Time)"]</span>
+                            </div>
+                        </div>
+                        <div class="d-inline-block ms-3">
+                            <div class="stat">
+                                <i class="align-middle text-secondary" data-lucide="clock"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-lg-4 d-flex">
+            <div class="card flex-fill w-100">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">@Localizer["CPU Usage"]</h5>
+                </div>
                 <div class="card-body">
-                    <h5 class="card-title">CPU Usage</h5>
                     <canvas id="cpuChart"></canvas>
                 </div>
             </div>
         </div>
-
-        <div class="col-md-4 mt-3">
-            <div class="card mb-2 tests-card h-100">
+        <div class="col-12 col-lg-4 d-flex">
+            <div class="card flex-fill w-100">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">@Localizer["RAM Usage"]</h5>
+                </div>
                 <div class="card-body">
-                    <h5 class="card-title">RAM Usage</h5>
                     <canvas id="ramChart"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-lg-4 d-flex">
+            <div class="card flex-fill w-100">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">@Localizer["System Load"]</h5>
+                </div>
+                <div class="card-body">
+                    <canvas id="loadChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-lg-6 d-flex">
+            <div class="card flex-fill w-100">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">@Localizer["Network I/O"]</h5>
+                </div>
+                <div class="card-body">
+                    <canvas id="networkChart"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-lg-6 d-flex">
+            <div class="card flex-fill w-100">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">@Localizer["Disk I/O"]</h5>
+                </div>
+                <div class="card-body">
+                    <canvas id="diskChart"></canvas>
                 </div>
             </div>
         </div>
@@ -37,5 +169,8 @@
     <script>
         startCpuClient("@Model.Agent.ClientId");
         startRamClient("@Model.Agent.ClientId", @Model.Agent.RamInGb);
+        startLoadChart("@Model.Agent.ClientId");
+        startNetworkChart("@Model.Agent.ClientId");
+        startDiskChart("@Model.Agent.ClientId");
     </script>
 }

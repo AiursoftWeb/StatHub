@@ -71,75 +71,14 @@
                         <tbody>
                             @foreach (var agent in Model.Agents)
                             {
-                                    // Identify
-                                    var isOutDated = agent.LastUpdate < DateTime.UtcNow.AddMinutes(-1);
-
-                                    // Load
-                                    var load = agent.GetLoad();
-                                    var loadRate = load.Load15M * 30; // Usually Load < 3.33 is safe.
-                                    var colorLoad =
-                                        loadRate < 10 ? "bg-success" :
-                                        loadRate < 15 ? "bg-info" :
-                                        loadRate < 30 ? "bg-secondary" :
-                                        loadRate < 60 ? "bg-warning" :
-                                        "bg-danger";
-                                    var promptTextLoad = $"Load:\n1 min: {load.Load1M}\n5 min: {load.Load5M}\n15 min: {load.Load15M}";
-
-                                    // CPU
-                                    var cpu = agent.GetCpuUsage();
-                                    var cpuRate = cpu.Ratio;
-                                    var promptText = $"CPU Usage:\nUser: {cpu.Usr}%\nSystem: {cpu.Sys}%\nIdle: {cpu.Idl}%\nWait: {cpu.Wai}%\nSteal: {cpu.Stl}%";
-                                    var color =
-                                        cpuRate < 5 ? "bg-success" :
-                                        cpuRate < 10 ? "bg-info" :
-                                        cpuRate < 20 ? "bg-secondary" :
-                                        cpuRate < 40 ? "bg-warning" :
-                                        "bg-danger";
-
-                                    // RAM
-                                    var mem = agent.GetMemUsed();
-
-                                    // NetWork
-                                    var net = showLast30 ? agent.GetNetworkLast30Seconds() : agent.GetNetwork();
-
-                                    // Disk
-                                    var disk = showLast30 ? agent.GetDiskLast30Seconds() : agent.GetDisk();
-                                    var diskUseRatio = agent.UsedRoot / (double)agent.TotalRoot;
-                                    var message = $"{agent.UsedRoot}GB / {agent.TotalRoot}GB";
-                                    var diskColor =
-                                        diskUseRatio < 0.6 ? "bg-success" :
-                                        diskUseRatio < 0.7 ? "bg-warning" :
-                                        "bg-danger";
-
-                                    // OS
-                                    var osFirstTwoWords = string.Join(" ", agent.OsName.Split(' ').Take(2)).Trim();
-
-                                    // Overall
-                                    var reason = isOutDated ? "Server is out of sync. " : "";
-                                    reason += loadRate > 60 ? "Load critical. " : loadRate > 30 ? "Load warning. " : "";
-                                    reason += cpuRate > 40 ? "CPU usage critical. " : cpuRate > 20 ? "CPU usage warning. " : "";
-                                    reason += diskUseRatio > 0.7 ? "Disk space critical. " : diskUseRatio > 0.6 ? "Disk space warning. " : "";
-
+                                var health = agent.GetHealthReport();
+                                var mem = agent.GetMemUsed();
+                                var net = showLast30 ? agent.GetNetworkLast30Seconds() : agent.GetNetwork();
+                                var disk = showLast30 ? agent.GetDiskLast30Seconds() : agent.GetDisk();
+                                var osFirstTwoWords = string.Join(" ", agent.OsName.Split(' ').Take(2)).Trim();
                                 <tr>
                                     <td>
-                                        @if (isOutDated)
-                                        {
-                                            <i class="align-middle me-2 text-muted" data-lucide="activity" data-bs-toggle="tooltip" data-placement="bottom" title="@reason"></i>
-                                        }
-                                        else if (loadRate > 60 || cpuRate > 40 || diskUseRatio > 0.7)
-                                        {
-                                            <label data-bs-toggle="tooltip" data-placement="bottom" title="@reason">
-                                                <i class="align-middle me-2 text-danger" data-lucide="alert-triangle"></i>
-                                            </label>
-                                        }
-                                        else if (loadRate > 30 || cpuRate > 20 || diskUseRatio > 0.6)
-                                        {
-                                            <i class="align-middle me-2 text-warning" data-lucide="alert-circle" data-bs-toggle="tooltip" data-placement="bottom" title="@reason"></i>
-                                        }
-                                        else
-                                        {
-                                            <i class="align-middle me-2 text-success" data-lucide="check-circle"></i>
-                                        }
+                                        <i class="align-middle me-2 @health.IconClass" data-lucide="@health.IndexIconDataLucide" data-bs-toggle="tooltip" data-placement="bottom" title="@health.Reason"></i>
                                         @agent.Ip
                                     </td>
                                     <td>
@@ -153,30 +92,30 @@
                                     <td class="d-none d-xl-table-cell" data-utc-time="@agent.BootTime.ToHtmlDateTime()" data-sort="@agent.BootTime.Ticks">
                                     </td>
 
-                                    <td data-sort="@loadRate">
+                                    <td data-sort="@health.LoadRate">
                                         <div class="d-flex flex-column w-100">
-                                            <span class="me-2 mb-1 text-muted">@loadRate.ToString("F0")%</span>
+                                            <span class="me-2 mb-1 text-muted">@health.LoadRate.ToString("F0")%</span>
                                             <div class="progress progress-sm w-100">
-                                                <div class="progress-bar @colorLoad"
-                                                     role="progressbar" style="width: @(loadRate)%" aria-valuenow="@loadRate" aria-valuemin="0" aria-valuemax="100" data-bs-toggle="tooltip" data-placement="bottom"
-                                                     title="@promptTextLoad"></div>
+                                                <div class="progress-bar @health.LoadColorClass"
+                                                     role="progressbar" style="width: @(health.LoadRate)%" aria-valuenow="@health.LoadRate" aria-valuemin="0" aria-valuemax="100" data-bs-toggle="tooltip" data-placement="bottom"
+                                                     title="@health.LoadPrompt"></div>
                                             </div>
                                         </div>
                                     </td>
 
-                                    <td data-sort="@cpuRate">
+                                    <td data-sort="@health.CpuRate">
                                         <div class="d-flex flex-column w-100">
-                                            <span class="me-2 mb-1 text-muted">@cpuRate.ToString("F0")%</span>
+                                            <span class="me-2 mb-1 text-muted">@health.CpuRate.ToString("F0")%</span>
                                             <div class="progress progress-sm w-100">
-                                                <div class="progress-bar @color"
-                                                     role="progressbar" style="width: @(cpuRate)%" aria-valuenow="@cpuRate" aria-valuemin="0" aria-valuemax="100" data-bs-toggle="tooltip" data-placement="bottom"
-                                                     title="@promptText"></div>
+                                                <div class="progress-bar @health.CpuColorClass"
+                                                     role="progressbar" style="width: @(health.CpuRate)%" aria-valuenow="@health.CpuRate" aria-valuemin="0" aria-valuemax="100" data-bs-toggle="tooltip" data-placement="bottom"
+                                                     title="@health.CpuPrompt"></div>
                                             </div>
                                         </div>
                                     </td>
 
                                     <td class="d-none d-lg-table-cell">
-                                        @if (cpuRate < 30)
+                                        @if (health.CpuRate < 30)
                                         {
                                             <span class="badge badge-subtle-secondary">@(agent.Process)</span>
                                         }
@@ -201,11 +140,11 @@
                                         @net.Send.HumanReadableSize()@unit
                                     </td>
 
-                                    <td data-sort="@diskUseRatio">
+                                    <td data-sort="@health.DiskUseRatio">
                                         <div class="d-flex flex-column w-100">
-                                            <span class="me-2 mb-1 text-muted">@(Math.Round(diskUseRatio * 100))%</span>
+                                            <span class="me-2 mb-1 text-muted">@(Math.Round(health.DiskUseRatio * 100))%</span>
                                             <div class="progress progress-sm w-100">
-                                                <div class="progress-bar @diskColor" role="progressbar" style="width: @(diskUseRatio * 100)%" aria-valuenow="@(diskUseRatio * 100)" aria-valuemin="0" aria-valuemax="100" data-bs-toggle="tooltip" data-placement="bottom" title="@message"></div>
+                                                <div class="progress-bar @health.DiskColorClass" role="progressbar" style="width: @(health.DiskUseRatio * 100)%" aria-valuenow="@(health.DiskUseRatio * 100)" aria-valuemin="0" aria-valuemax="100" data-bs-toggle="tooltip" data-placement="bottom" title="@health.DiskPrompt"></div>
                                             </div>
                                         </div>
                                     </td>

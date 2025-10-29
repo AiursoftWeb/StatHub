@@ -63,16 +63,16 @@ public class DiskInfo(long read, long writ)
 
 public class Agent
 {
-    private readonly MessageStageLast<int> _cpuUsr;
-    private readonly MessageStageLast<int> _cpuSys;
+    public readonly MessageStageLast<int> CpuUsr;
+    public readonly MessageStageLast<int> CpuSys;
     public readonly MessageStageLast<int> CpuIdl;
-    private readonly MessageStageLast<int> _cpuWai;
-    private readonly MessageStageLast<int> _cpuStl;
+    public readonly MessageStageLast<int> CpuWai;
+    public readonly MessageStageLast<int> CpuStl;
 
     public readonly MessageStageLast<long> MemUsed;
-    private readonly MessageStageLast<long> _memBuf;
-    private readonly MessageStageLast<long> _memCach;
-    private readonly MessageStageLast<long> _memFree;
+    public readonly MessageStageLast<long> MemBuf;
+    public readonly MessageStageLast<long> MemCach;
+    public readonly MessageStageLast<long> MemFree;
 
     private readonly MessageAdder<long> _netRecv;
     private readonly MessageAdder<long> _netSend;
@@ -86,33 +86,35 @@ public class Agent
     private readonly RecentMessageAverage<long> _diskReadLast30Seconds;
     private readonly RecentMessageAverage<long> _diskWritLast30Seconds;
 
-    private readonly MessageStageLast<double> _load1M;
-    private readonly MessageStageLast<double> _load5M;
-    private readonly MessageStageLast<double> _load15M;
+    public readonly MessageStageLast<double> Load1M;
+    public readonly MessageStageLast<double> Load5M;
+    public readonly MessageStageLast<double> Load15M;
 
     public Agent(string clientId)
     {
         ClientId = clientId;
         Stats = new AsyncObservable<DstatResult>();
-        _cpuUsr = new MessageStageLast<int>();
-        Stats.Map(stat => stat.CpuUsr).Subscribe(_cpuUsr);
-        _cpuSys = new MessageStageLast<int>();
-        Stats.Map(stat => stat.CpuSys).Subscribe(_cpuSys);
+
+        // NOTE: 更新构造函数以初始化公共字段
+        CpuUsr = new MessageStageLast<int>();
+        Stats.Map(stat => stat.CpuUsr).Subscribe(CpuUsr);
+        CpuSys = new MessageStageLast<int>();
+        Stats.Map(stat => stat.CpuSys).Subscribe(CpuSys);
         CpuIdl = new MessageStageLast<int>();
         Stats.Map(stat => stat.CpuIdl).Subscribe(CpuIdl);
-        _cpuWai = new MessageStageLast<int>();
-        Stats.Map(stat => stat.CpuWai).Subscribe(_cpuWai);
-        _cpuStl = new MessageStageLast<int>();
-        Stats.Map(stat => stat.CpuStl).Subscribe(_cpuStl);
+        CpuWai = new MessageStageLast<int>();
+        Stats.Map(stat => stat.CpuWai).Subscribe(CpuWai);
+        CpuStl = new MessageStageLast<int>();
+        Stats.Map(stat => stat.CpuStl).Subscribe(CpuStl);
 
         MemUsed = new MessageStageLast<long>();
         Stats.Map(stat => stat.MemUsed).Subscribe(MemUsed);
-        _memBuf = new MessageStageLast<long>();
-        Stats.Map(stat => stat.MemBuf).Subscribe(_memBuf);
-        _memCach = new MessageStageLast<long>();
-        Stats.Map(stat => stat.MemCach).Subscribe(_memCach);
-        _memFree = new MessageStageLast<long>();
-        Stats.Map(stat => stat.MemFree).Subscribe(_memFree);
+        MemBuf = new MessageStageLast<long>();
+        Stats.Map(stat => stat.MemBuf).Subscribe(MemBuf);
+        MemCach = new MessageStageLast<long>();
+        Stats.Map(stat => stat.MemCach).Subscribe(MemCach);
+        MemFree = new MessageStageLast<long>();
+        Stats.Map(stat => stat.MemFree).Subscribe(MemFree);
 
         _netRecv = new MessageAdder<long>();
         Stats.Map(stat => stat.NetRecv).Subscribe(_netRecv);
@@ -142,12 +144,12 @@ public class Agent
             .Map(stat => stat.DskWrit)
             .Subscribe(_diskWritLast30Seconds);
 
-        _load1M = new MessageStageLast<double>();
-        Stats.Map(stat => stat.Load1M).Subscribe(_load1M);
-        _load5M = new MessageStageLast<double>();
-        Stats.Map(stat => stat.Load5M).Subscribe(_load5M);
-        _load15M = new MessageStageLast<double>();
-        Stats.Map(stat => stat.Load15M).Subscribe(_load15M);
+        Load1M = new MessageStageLast<double>();
+        Stats.Map(stat => stat.Load1M).Subscribe(Load1M);
+        Load5M = new MessageStageLast<double>();
+        Stats.Map(stat => stat.Load5M).Subscribe(Load5M);
+        Load15M = new MessageStageLast<double>();
+        Stats.Map(stat => stat.Load15M).Subscribe(Load15M);
     }
 
     public string ClientId { get; set; } = null!;
@@ -159,12 +161,12 @@ public class Agent
 
     public CpuInfo GetCpuUsage()
     {
-        return new CpuInfo(_cpuUsr.Stage, _cpuSys.Stage, CpuIdl.Stage, _cpuWai.Stage, _cpuStl.Stage);
+        return new CpuInfo(CpuUsr.Stage, CpuSys.Stage, CpuIdl.Stage, CpuWai.Stage, CpuStl.Stage);
     }
 
     public MemoryInfo GetMemUsed()
     {
-        return new MemoryInfo(MemUsed.Stage, _memBuf.Stage, _memCach.Stage, _memFree.Stage);
+        return new MemoryInfo(MemUsed.Stage, MemBuf.Stage, MemCach.Stage, MemFree.Stage);
     }
 
     public NetworkInfo GetNetwork()
@@ -197,7 +199,7 @@ public class Agent
 
     public LoadInfo GetLoad()
     {
-        return new LoadInfo(_load1M.Stage, _load5M.Stage, _load15M.Stage);
+        return new LoadInfo(Load1M.Stage, Load5M.Stage, Load15M.Stage);
     }
 
     public DateTime LastUpdate { get; set; } = DateTime.UtcNow;
@@ -222,4 +224,147 @@ public class Agent
         return CpuCores * 1000
                + RamInGb;
     }
+
+    /// <summary>
+    /// 计算并返回 Agent 的完整健康报告。
+    /// </summary>
+    public AgentHealthReport GetHealthReport()
+    {
+        // 1. 核心计算
+        var isOutDated = LastUpdate < DateTime.UtcNow.AddMinutes(-1);
+
+        var load = GetLoad();
+        var loadRate = load.Load15M * 30;
+
+        var cpu = GetCpuUsage();
+        var cpuRate = cpu.Ratio;
+
+        var diskUseRatio = UsedRoot > 0 && TotalRoot > 0 ?
+            UsedRoot / (double)TotalRoot : 0;
+
+        // 2. 状态逻辑
+        var status = AgentStatus.Healthy;
+        string reason;
+
+        if (isOutDated)
+        {
+            status = AgentStatus.Offline;
+            reason = "Server is out of sync.";
+        }
+        else if (loadRate > 60 || cpuRate > 40 || diskUseRatio > 0.7)
+        {
+            status = AgentStatus.Critical;
+            reason = (loadRate > 60 ? "Load critical. " : "") +
+                     (cpuRate > 40 ? "CPU critical. " : "") +
+                     (diskUseRatio > 0.7 ? "Disk critical. " : "");
+        }
+        else if (loadRate > 30 || cpuRate > 20 || diskUseRatio > 0.6)
+        {
+            status = AgentStatus.Warning;
+            reason = (loadRate > 30 ? "Load warning. " : "") +
+                     (cpuRate > 20 ? "CPU warning. " : "") +
+                     (diskUseRatio > 0.6 ? "Disk warning. " : "");
+        }
+        else
+        {
+            status = AgentStatus.Healthy;
+            reason = "System healthy.";
+        }
+
+        // 3. Tooltips
+        var loadPrompt = $"Load:\n1 min: {load.Load1M}\n5 min: {load.Load5M}\n15 min: {load.Load15M}";
+        var cpuPrompt = $"CPU Usage:\nUser: {cpu.Usr}%\nSystem: {cpu.Sys}%\nIdle: {cpu.Idl}%\nWait: {cpu.Wai}%\nSteal: {cpu.Stl}%";
+        var diskPrompt = $"{UsedRoot}GB / {TotalRoot}GB";
+
+        // 4. 返回报告
+        return new AgentHealthReport
+        {
+            LoadRate = loadRate,
+            CpuRate = cpuRate,
+            DiskUseRatio = diskUseRatio,
+            Status = status,
+            Reason = reason,
+            LoadPrompt = loadPrompt,
+            CpuPrompt = cpuPrompt,
+            DiskPrompt = diskPrompt
+        };
+    }
+}
+
+/// <summary>
+/// 定义 Agent 的健康状态。
+/// </summary>
+public enum AgentStatus
+{
+    Healthy,
+    Warning,
+    Critical,
+    Offline
+}
+
+/// <summary>
+/// 封装所有 Agent 健康状态的计算逻辑和表示逻辑。
+/// </summary>
+public record AgentHealthReport
+{
+    // 1. 核心计算指标
+    public double LoadRate { get; init; }
+    public int CpuRate { get; init; }
+    public double DiskUseRatio { get; init; }
+    public AgentStatus Status { get; init; }
+    public string Reason { get; init; }
+
+    // 2. Tooltips (用于主页)
+    public string LoadPrompt { get; init; }
+    public string CpuPrompt { get; init; }
+    public string DiskPrompt { get; init; }
+
+    // 3. 模板样式 (用于主页进度条)
+    public string LoadColorClass => LoadRate < 10 ? "bg-success" :
+                                    LoadRate < 15 ? "bg-info" :
+                                    LoadRate < 30 ? "bg-secondary" :
+                                    LoadRate < 60 ? "bg-warning" : "bg-danger";
+
+    public string CpuColorClass => CpuRate < 5 ? "bg-success" :
+                                   CpuRate < 10 ? "bg-info" :
+                                   CpuRate < 20 ? "bg-secondary" :
+                                   CpuRate < 40 ? "bg-warning" : "bg-danger";
+
+    public string DiskColorClass => DiskUseRatio < 0.6 ? "bg-success" :
+                                    DiskUseRatio < 0.7 ? "bg-warning" : "bg-danger";
+
+    // 4. 模板样式 (用于详情页卡片 和 主页状态图标)
+    public string BadgeClass => Status switch
+    {
+        AgentStatus.Offline => "badge-subtle-secondary",
+        AgentStatus.Critical => "badge-subtle-danger",
+        AgentStatus.Warning => "badge-subtle-warning",
+        _ => "badge-subtle-success"
+    };
+
+    public string BadgeText => Status.ToString();
+
+    public string IconClass => Status switch
+    {
+        AgentStatus.Offline => "text-muted",
+        AgentStatus.Critical => "text-danger",
+        AgentStatus.Warning => "text-warning",
+        _ => "text-success"
+    };
+
+    public string DetailsIconDataLucide => Status switch
+    {
+        AgentStatus.Offline => "server-off",
+        AgentStatus.Critical => "alert-triangle",
+        AgentStatus.Warning => "alert-circle",
+        _ => "server"
+    };
+
+    public string IndexIconDataLucide => Status switch
+    {
+        AgentStatus.Offline => "activity",
+        AgentStatus.Critical => "alert-triangle",
+        AgentStatus.Warning => "alert-circle",
+        _ => "check-circle"
+    };
 }
