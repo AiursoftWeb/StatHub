@@ -71,7 +71,7 @@ public class ViewModelArgsInjector(
         UiStackLayoutViewModel toInject)
     {
         toInject.PageTitle = localizer[toInject.PageTitle ?? "View"];
-        toInject.AppName = localizer["Template"];
+        toInject.AppName = localizer["StatHub"];
         toInject.Theme = UiTheme.Light;
         toInject.SidebarTheme = UiSidebarTheme.Default;
         toInject.Layout = UiLayout.Fluid;
@@ -84,13 +84,13 @@ public class ViewModelArgsInjector(
     {
         var preferDarkTheme = context.Request.Cookies[ThemeController.ThemeCookieKey] == true.ToString();
         toInject.PageTitle = localizer[toInject.PageTitle ?? "View"];
-        toInject.AppName = localizer["Template"];
+        toInject.AppName = localizer["StatHub"];
         toInject.Theme = preferDarkTheme ? UiTheme.Dark : UiTheme.Light;
         toInject.SidebarTheme = preferDarkTheme ? UiSidebarTheme.Dark : UiSidebarTheme.Default;
         toInject.Layout = UiLayout.Fluid;
         toInject.FooterMenu = new FooterMenuViewModel
         {
-            AppBrand = new Link { Text = localizer["Template"], Href = "https://gitlab.aiursoft.com/aiursoft/template" },
+            AppBrand = new Link { Text = localizer["StatHub"], Href = "https://gitlab.aiursoft.com/aiursoft/StatHub" },
             Links =
             [
                 new Link { Text = localizer["Home"], Href = "/" },
@@ -161,7 +161,7 @@ public class ViewModelArgsInjector(
         {
             SideLogo = new SideLogoViewModel
             {
-                AppName = localizer["Aiursoft Template"],
+                AppName = localizer["Aiursoft StatHub"],
                 LogoUrl = "/logo.svg",
                 Href = "/"
             },
