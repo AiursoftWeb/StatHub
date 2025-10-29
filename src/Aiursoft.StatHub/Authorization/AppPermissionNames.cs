@@ -5,6 +5,9 @@ namespace Aiursoft.StatHub.Authorization;
 /// </summary>
 public static class AppPermissionNames
 {
+    // Dashbaord Management
+    public const string CanViewDashboard = nameof(CanViewDashboard);
+
     // User Management
     public const string CanReadUsers = nameof(CanReadUsers);
     public const string CanDeleteUsers = nameof(CanDeleteUsers);

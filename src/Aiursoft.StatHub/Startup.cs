@@ -1,7 +1,9 @@
+using Aiursoft.AiurProtocol.Server;
 using Aiursoft.CSTools.Tools;
 using Aiursoft.DbTools.Switchable;
 using Aiursoft.Scanner;
 using Aiursoft.StatHub.Configuration;
+using Aiursoft.StatHub.Data;
 using Aiursoft.WebTools.Abstractions.Models;
 using Aiursoft.StatHub.InMemory;
 using Aiursoft.StatHub.MySql;
@@ -43,8 +45,11 @@ public class Startup : IWebStartup
         services.AddAssemblyDependencies(typeof(Startup).Assembly);
         services.AddSingleton<NavigationState<Startup>>();
 
+        services.AddSingleton<InMemoryDatabase>();
+
         // Controllers and localization
         services.AddControllersWithViews()
+            .AddAiurProtocol()
             .AddNewtonsoftJson(options =>
             {
                 options.SerializerSettings.DateTimeZoneHandling = DateTimeZoneHandling.Utc;
@@ -63,6 +68,7 @@ public class Startup : IWebStartup
         app.UseRouting();
         app.UseAuthentication();
         app.UseAuthorization();
+        app.UseWebSockets();
         app.MapDefaultControllerRoute();
     }
 }

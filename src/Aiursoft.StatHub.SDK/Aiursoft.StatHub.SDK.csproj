@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <Version>9.0.24</Version>
+    <TargetFramework>net9.0</TargetFramework>
+    <AssemblyName>Aiursoft.StatHub.SDK</AssemblyName>
+    <RootNamespace>Aiursoft.StatHub.SDK</RootNamespace>
+    <IsTestProject>false</IsTestProject>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <IsPackable>true</IsPackable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Company>Aiursoft</Company>
+    <Product>SDK</Product>
+    <Description>Nuget package of 'SDK' provided by Aiursoft</Description>
+    <PackageId>Aiursoft.StatHub.SDK</PackageId>
+    <PackageTags>nuget package dotnet csproj dependencies</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://gitlab.aiursoft.com/aiursoft/stathub</PackageProjectUrl>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://gitlab.aiursoft.com/aiursoft/stathub.git</RepositoryUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="..\..\README.md" Pack="true" PackagePath="." />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Aiursoft.AiurObserver.Extensions" Version="9.0.0" />
+    <PackageReference Include="Aiursoft.AiurProtocol" Version="9.0.16" />
+  </ItemGroup>
+</Project>

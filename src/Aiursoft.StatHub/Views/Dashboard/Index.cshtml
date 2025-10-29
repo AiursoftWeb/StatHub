@@ -1,204 +1,262 @@
-<div class="text-center mt-5">
-    <h1 class="display-4">@Localizer["Hello World!"]</h1>
-    <p>@Localizer["This is a template project, where we start the voyager..."]</p>
-</div>
+@using Aiursoft.WebTools
+@using Aiursoft.CSTools.Tools
+@model Aiursoft.StatHub.Models.DashboardViewModels.IndexViewModel
+@{
+    var showLast30 = ViewBag.Last30Seconds as bool? ?? false;
+    var unit = showLast30 ? "/s" : string.Empty;
+}
 
-<div class="container-fluid p-5">
+<div class="container-fluid p-0">
+
     <div class="row mb-2 mb-xl-3">
         <div class="col-auto d-none d-sm-block">
-            <h3>@Localizer["Welcome"]</h3>
+            <h3>@Localizer["Agents Dashboard"]</h3>
         </div>
 
         <div class="col-auto ms-auto text-end mt-n1">
-            <a href="https://template-docs.aiursoft.com/Tutorial/before.html" class="btn btn-primary me-2 shadow-sm" target="_blank">
-                <i class="align-middle" data-lucide="rocket"></i> @Localizer["Start a new project"]
-            </a>
-            <a href="https://template-docs.aiursoft.com/" class="btn btn-outline-primary shadow-sm" target="_blank">
-                <i class="align-middle" data-lucide="book"></i> @Localizer["Read the document"]
-            </a>
+            <div class="btn-group" role="group" aria-label="Data View Toggle">
+                @{
+                    var cumulativeActive = showLast30 ? "" : "active";
+                    var last30Active = showLast30 ? "active" : "";
+                }
+                <a class="btn btn-light bg-white shadow-sm @cumulativeActive" asp-controller="Dashboard" asp-action="Index" asp-route-Last30Seconds="false">
+                    @Localizer["Cumulative"]
+                </a>
+                <a class="btn btn-light bg-white shadow-sm @last30Active" asp-controller="Dashboard" asp-action="Index" asp-route-Last30Seconds="true">
+                    @Localizer["Last 30 seconds"]
+                </a>
+            </div>
         </div>
     </div>
 
     <div class="row">
         <div class="col-12">
-            <div class="card">
+            <div class="card flex-fill">
                 <div class="card-header">
-                    <h5 class="card-title mb-0">@Localizer["Why use the Aiursoft Template?"]</h5>
-                    <p class="mb-0 text-muted mt-2">@Localizer["A modern, feature-rich, and highly extensible foundation for your next web application."]</p>
+                    <h5 class="card-title mb-0">@Localizer["Agents Status Monitor"]</h5>
                 </div>
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-12 col-md-6 col-lg-4 d-flex">
-                            <div class="d-flex align-items-start py-3">
-                                <div class="d-inline-block me-3">
-                                    <div class="stat">
-                                        <i class="align-middle" data-lucide="database"></i>
-                                    </div>
-                                </div>
-                                <div class="flex-grow-1">
-                                    <h5 class="mt-0">@Localizer["Multiple Database Support"]</h5>
-                                    <p>@Localizer["Easily switch between providers like SQLite, MySQL, SQL Server, and an in-memory database for testing."]</p>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="col-12 col-md-6 col-lg-4 d-flex">
-                            <div class="d-flex align-items-start py-3">
-                                <div class="d-inline-block me-3">
-                                    <div class="stat">
-                                        <i class="align-middle" data-lucide="key-round"></i>
-                                    </div>
-                                </div>
-                                <div class="flex-grow-1">
-                                    <h5 class="mt-0">@Localizer["OpenID Connect Integration"]</h5>
-                                    <p>@Localizer["Seamlessly integrate with any OpenID Connect provider, with automatic role synchronization."]</p>
-                                </div>
-                            </div>
-                        </div>
+                <div class="table-responsive">
+                    <table class="table table-hover table-borderless my-0" id="logTable">
+                        <thead>
+                            <tr>
+                                <th>@Localizer["IP"]</th>
+                                <th>@Localizer["Name"]</th>
+                                <th class="d-none d-lg-table-cell">@Localizer["SKU"]</th>
+                                <th class="d-none d-xl-table-cell">@Localizer["Boot at"]</th>
+                                <th>@Localizer["Avg Load"]</th>
+                                <th>@Localizer["CPU Usage"]</th>
+                                <th class="d-none d-lg-table-cell">@Localizer["Used at"]</th>
+                                <th>@Localizer["RAM Usage"]</th>
+                                @if (showLast30)
+                                {
+                                    <th class="d-none d-md-table-cell">@Localizer["Net Receiving"]</th>
+                                    <th class="d-none d-md-table-cell">@Localizer["Net Sending"]</th>
+                                    <th>@Localizer["Disk Used"]</th>
+                                    <th class="d-none d-xl-table-cell">@Localizer["Disk Reading"]</th>
+                                    <th class="d-none d-xl-table-cell">@Localizer["Disk Writing"]</th>
+                                }
+                                else
+                                {
+                                    <th class="d-none d-md-table-cell">@Localizer["Net Received"]</th>
+                                    <th class="d-none d-md-table-cell">@Localizer["Net Sent"]</th>
+                                    <th>@Localizer["Disk Used"]</th>
+                                    <th class="d-none d-xl-table-cell">@Localizer["Disk Read"]</th>
+                                    <th class="d-none d-xl-table-cell">@Localizer["Disk Written"]</th>
+                                }
+                                <th class="d-none d-xl-table-cell">@Localizer["OS"]</th>
+                                <th>@Localizer["More"]</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var agent in Model.Agents)
+                            {
+                                    // Identify
+                                    var isOutDated = agent.LastUpdate < DateTime.UtcNow.AddMinutes(-1);
 
-                        <div class="col-12 col-md-6 col-lg-4 d-flex">
-                            <div class="d-flex align-items-start py-3">
-                                <div class="d-inline-block me-3">
-                                    <div class="stat">
-                                        <i class="align-middle" data-lucide="shield-check"></i>
-                                    </div>
-                                </div>
-                                <div class="flex-grow-1">
-                                    <h5 class="mt-0">@Localizer["RBAC Authorization"]</h5>
-                                    <p>@Localizer["A built-in Role-Based Access Control (RBAC) system for fine-grained permission management."]</p>
-                                </div>
-                            </div>
-                        </div>
+                                    // Load
+                                    var load = agent.GetLoad();
+                                    var loadRate = load.Load15M * 30; // Usually Load < 3.33 is safe.
+                                    var colorLoad =
+                                        loadRate < 10 ? "bg-success" :
+                                        loadRate < 15 ? "bg-info" :
+                                        loadRate < 30 ? "bg-secondary" :
+                                        loadRate < 60 ? "bg-warning" :
+                                        "bg-danger";
+                                    var promptTextLoad = $"Load:\n1 min: {load.Load1M}\n5 min: {load.Load5M}\n15 min: {load.Load15M}";
 
-                        <div class="col-12 col-md-6 col-lg-4 d-flex">
-                            <div class="d-flex align-items-start py-3">
-                                <div class="d-inline-block me-3">
-                                    <div class="stat">
-                                        <i class="align-middle" data-lucide="navigation"></i>
-                                    </div>
-                                </div>
-                                <div class="flex-grow-1">
-                                    <h5 class="mt-0">@Localizer["Dynamic Navigation Bar"]</h5>
-                                    <p>@Localizer["The navigation bar automatically adjusts based on user roles and permissions."]</p>
-                                </div>
-                            </div>
-                        </div>
+                                    // CPU
+                                    var cpu = agent.GetCpuUsage();
+                                    var cpuRate = cpu.Ratio;
+                                    var promptText = $"CPU Usage:\nUser: {cpu.Usr}%\nSystem: {cpu.Sys}%\nIdle: {cpu.Idl}%\nWait: {cpu.Wai}%\nSteal: {cpu.Stl}%";
+                                    var color =
+                                        cpuRate < 5 ? "bg-success" :
+                                        cpuRate < 10 ? "bg-info" :
+                                        cpuRate < 20 ? "bg-secondary" :
+                                        cpuRate < 40 ? "bg-warning" :
+                                        "bg-danger";
 
-                        <div class="col-12 col-md-6 col-lg-4 d-flex">
-                            <div class="d-flex align-items-start py-3">
-                                <div class="d-inline-block me-3">
-                                    <div class="stat">
-                                        <i class="align-middle" data-lucide="languages"></i>
-                                    </div>
-                                </div>
-                                <div class="flex-grow-1">
-                                    <h5 class="mt-0">@Localizer["AI-Powered Translations"]</h5>
-                                    <p>@Localizer["Automatic, AI-driven translation into 28 languages for global reach."]</p>
-                                </div>
-                            </div>
-                        </div>
+                                    // RAM
+                                    var mem = agent.GetMemUsed();
 
-                        <div class="col-12 col-md-6 col-lg-4 d-flex">
-                            <div class="d-flex align-items-start py-3">
-                                <div class="d-inline-block me-3">
-                                    <div class="stat">
-                                        <i class="align-middle" data-lucide="book-open-text"></i>
-                                    </div>
-                                </div>
-                                <div class="flex-grow-1">
-                                    <h5 class="mt-0">@Localizer["Comprehensive Documentation"]</h5>
-                                    <p>@Localizer["Includes extensive documentation and practical examples to get you started quickly."]</p>
-                                </div>
-                            </div>
-                        </div>
+                                    // NetWork
+                                    var net = showLast30 ? agent.GetNetworkLast30Seconds() : agent.GetNetwork();
 
-                        <div class="col-12 col-md-6 col-lg-4 d-flex">
-                            <div class="d-flex align-items-start py-3">
-                                <div class="d-inline-block me-3">
-                                    <div class="stat">
-                                        <i class="align-middle" data-lucide="user-cog"></i>
-                                    </div>
-                                </div>
-                                <div class="flex-grow-1">
-                                    <h5 class="mt-0">@Localizer["Built-in User Management"]</h5>
-                                    <p>@Localizer["A complete solution for user authentication and profile management right out of the box."]</p>
-                                </div>
-                            </div>
-                        </div>
+                                    // Disk
+                                    var disk = showLast30 ? agent.GetDiskLast30Seconds() : agent.GetDisk();
+                                    var diskUseRatio = agent.UsedRoot / (double)agent.TotalRoot;
+                                    var message = $"{agent.UsedRoot}GB / {agent.TotalRoot}GB";
+                                    var diskColor =
+                                        diskUseRatio < 0.6 ? "bg-success" :
+                                        diskUseRatio < 0.7 ? "bg-warning" :
+                                        "bg-danger";
 
-                        <div class="col-12 col-md-6 col-lg-4 d-flex">
-                            <div class="d-flex align-items-start py-3">
-                                <div class="d-inline-block me-3">
-                                    <div class="stat">
-                                        <i class="align-middle" data-lucide="zap"></i>
-                                    </div>
-                                </div>
-                                <div class="flex-grow-1">
-                                    <h5 class="mt-0">@Localizer["Automatic Dependency Injection"]</h5>
-                                    <p>@Localizer["All dependencies are automatically registered and always available via constructor injection."]</p>
-                                </div>
-                            </div>
-                        </div>
+                                    // OS
+                                    var osFirstTwoWords = string.Join(" ", agent.OsName.Split(' ').Take(2)).Trim();
 
-                        <div class="col-12 col-md-6 col-lg-4 d-flex">
-                            <div class="d-flex align-items-start py-3">
-                                <div class="d-inline-block me-3">
-                                    <div class="stat">
-                                        <i class="align-middle" data-lucide="folder-archive"></i>
-                                    </div>
-                                </div>
-                                <div class="flex-grow-1">
-                                    <h5 class="mt-0">@Localizer["Integrated File Management"]</h5>
-                                    <p>@Localizer["Features a built-in file management system with automatic avatar compression."]</p>
-                                </div>
-                            </div>
-                        </div>
+                                    // Overall
+                                    var reason = isOutDated ? "Server is out of sync. " : "";
+                                    reason += loadRate > 60 ? "Load critical. " : loadRate > 30 ? "Load warning. " : "";
+                                    reason += cpuRate > 40 ? "CPU usage critical. " : cpuRate > 20 ? "CPU usage warning. " : "";
+                                    reason += diskUseRatio > 0.7 ? "Disk space critical. " : diskUseRatio > 0.6 ? "Disk space warning. " : "";
 
-                        <div class="col-12 col-md-6 col-lg-4 d-flex">
-                            <div class="d-flex align-items-start py-3">
-                                <div class="d-inline-block me-3">
-                                    <div class="stat">
-                                        <i class="align-middle" data-lucide="airplay"></i>
-                                    </div>
-                                </div>
-                                <div class="flex-grow-1">
-                                    <h5 class="mt-0">@Localizer["Responsive Design"]</h5>
-                                    <p>@Localizer["A fully responsive layout that looks great on both desktop and mobile devices."]</p>
-                                </div>
-                            </div>
-                        </div>
+                                <tr>
+                                    <td>
+                                        @if (isOutDated)
+                                        {
+                                            <i class="align-middle me-2 text-muted" data-lucide="activity" data-bs-toggle="tooltip" data-placement="bottom" title="@reason"></i>
+                                        }
+                                        else if (loadRate > 60 || cpuRate > 40 || diskUseRatio > 0.7)
+                                        {
+                                            <label data-bs-toggle="tooltip" data-placement="bottom" title="@reason">
+                                                <i class="align-middle me-2 text-danger" data-lucide="alert-triangle"></i>
+                                            </label>
+                                        }
+                                        else if (loadRate > 30 || cpuRate > 20 || diskUseRatio > 0.6)
+                                        {
+                                            <i class="align-middle me-2 text-warning" data-lucide="alert-circle" data-bs-toggle="tooltip" data-placement="bottom" title="@reason"></i>
+                                        }
+                                        else
+                                        {
+                                            <i class="align-middle me-2 text-success" data-lucide="check-circle"></i>
+                                        }
+                                        @agent.Ip
+                                    </td>
+                                    <td>
+                                        @agent.Hostname
+                                        @if (!string.IsNullOrWhiteSpace(agent.Motd))
+                                        {
+                                            <i class="align-middle ms-1" data-lucide="mail" data-bs-toggle="tooltip" data-placement="bottom" title="@agent.Motd"></i>
+                                        }
+                                    </td>
+                                    <td class="d-none d-lg-table-cell" data-sort="@agent.GetSkuInNumber()">@agent.GetSku()</td>
+                                    <td class="d-none d-xl-table-cell" data-utc-time="@agent.BootTime.ToHtmlDateTime()" data-sort="@agent.BootTime.Ticks">
+                                    </td>
 
-                        <div class="col-12 col-md-6 col-lg-4 d-flex">
-                            <div class="d-flex align-items-start py-3">
-                                <div class="d-inline-block me-3">
-                                    <div class="stat">
-                                        <i class="align-middle" data-lucide="moon"></i>
-                                    </div>
-                                </div>
-                                <div class="flex-grow-1">
-                                    <h5 class="mt-0">@Localizer["Automatic Dark Mode"]</h5>
-                                    <p>@Localizer["Smart dark mode that automatically adapts to the user's system settings."]</p>
-                                </div>
-                            </div>
-                        </div>
+                                    <td data-sort="@loadRate">
+                                        <div class="d-flex flex-column w-100">
+                                            <span class="me-2 mb-1 text-muted">@loadRate.ToString("F0")%</span>
+                                            <div class="progress progress-sm w-100">
+                                                <div class="progress-bar @colorLoad"
+                                                     role="progressbar" style="width: @(loadRate)%" aria-valuenow="@loadRate" aria-valuemin="0" aria-valuemax="100" data-bs-toggle="tooltip" data-placement="bottom"
+                                                     title="@promptTextLoad"></div>
+                                            </div>
+                                        </div>
+                                    </td>
 
-                        <div class="col-12 col-md-6 col-lg-4 d-flex">
-                            <div class="d-flex align-items-start py-3">
-                                <div class="d-inline-block me-3">
-                                    <div class="stat">
-                                        <i class="align-middle" data-lucide="ship"></i>
-                                    </div>
-                                </div>
-                                <div class="flex-grow-1">
-                                    <h5 class="mt-0">@Localizer["Dockerized for Deployment"]</h5>
-                                    <p>@Localizer["Comes with full Docker support for simplified, consistent, and reliable deployments."]</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                                    <td data-sort="@cpuRate">
+                                        <div class="d-flex flex-column w-100">
+                                            <span class="me-2 mb-1 text-muted">@cpuRate.ToString("F0")%</span>
+                                            <div class="progress progress-sm w-100">
+                                                <div class="progress-bar @color"
+                                                     role="progressbar" style="width: @(cpuRate)%" aria-valuenow="@cpuRate" aria-valuemin="0" aria-valuemax="100" data-bs-toggle="tooltip" data-placement="bottom"
+                                                     title="@promptText"></div>
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                    <td class="d-none d-lg-table-cell">
+                                        @if (cpuRate < 30)
+                                        {
+                                            <span class="badge badge-subtle-secondary">@(agent.Process)</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge badge-subtle-danger">@(agent.Process)</span>
+                                        }
+                                    </td>
+
+                                    <td data-sort="@mem.UsedRate">
+                                        <div class="progress progress-sm">
+                                            <div class="progress-bar-striped bg-success" role="progressbar" style="width: @(mem.UsedRate)%" aria-valuenow="@(mem.UsedRate)" aria-valuemin="0" aria-valuemax="100" data-bs-toggle="tooltip" data-placement="bottom" title="Used RAM: @mem.Used.HumanReadableSize()"></div>
+                                            <div class="progress-bar-striped bg-info" role="progressbar" style="width: @(mem.BufRate)%" aria-valuenow="@(mem.BufRate)" aria-valuemin="0" aria-valuemax="100" data-bs-toggle="tooltip" data-placement="bottom" title="Buffer RAM: @mem.Buf.HumanReadableSize()"></div>
+                                            <div class="progress-bar-striped bg-warning" role="progressbar" style="width: @(mem.CacheRate)%" aria-valuenow="@(mem.CacheRate)" aria-valuemin="0" aria-valuemax="100" data-bs-toggle="tooltip" data-placement="bottom" title="Cache RAM: @mem.Cache.HumanReadableSize()"></div>
+                                        </div>
+                                    </td>
+
+                                    <td class="d-none d-md-table-cell" data-sort="@net.Recv">
+                                        @net.Recv.HumanReadableSize()@unit
+                                    </td>
+                                    <td class="d-none d-md-table-cell" data-sort="@net.Send">
+                                        @net.Send.HumanReadableSize()@unit
+                                    </td>
+
+                                    <td data-sort="@diskUseRatio">
+                                        <div class="d-flex flex-column w-100">
+                                            <span class="me-2 mb-1 text-muted">@(Math.Round(diskUseRatio * 100))%</span>
+                                            <div class="progress progress-sm w-100">
+                                                <div class="progress-bar @diskColor" role="progressbar" style="width: @(diskUseRatio * 100)%" aria-valuenow="@(diskUseRatio * 100)" aria-valuemin="0" aria-valuemax="100" data-bs-toggle="tooltip" data-placement="bottom" title="@message"></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="d-none d-xl-table-cell" data-sort="@disk.Read">
+                                        @disk.Read.HumanReadableSize()@unit
+                                    </td>
+                                    <td class="d-none d-xl-table-cell" data-sort="@disk.Writ">
+                                        @disk.Writ.HumanReadableSize()@unit
+                                    </td>
+
+                                    <td class="d-none d-xl-table-cell">@osFirstTwoWords</td>
+
+                                    <td>
+                                        <a class="btn btn-light btn-sm" asp-controller="Dashboard" asp-action="Details" asp-route-id="@agent.ClientId">
+                                            @Localizer["Details"]
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
     </div>
-
 </div>
+
+@* ReSharper disable once Razor.SectionNotResolved *@
+@section scripts {
+    <script>
+		document.addEventListener("DOMContentLoaded", function() {
+			// Datatables Responsive
+            // ("#datatables-reponsive")
+			$('#logTable').DataTable({
+                "responsive": true,
+                "paging": true,
+                "pageLength": 25,
+                "searching": false,
+                "info": false,
+                "order": [[0, "asc"]],
+                "drawCallback": function () {
+                    $('[data-toggle="tooltip"]').tooltip({
+                        trigger: 'hover'
+                    });
+                }
+			});
+
+            // Activate tooltip tool
+            $('[data-toggle="tooltip"]').tooltip({
+                trigger: 'hover'
+            });
+		});
+	</script>
+}

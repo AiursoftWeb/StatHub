@@ -21,10 +21,14 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="SixLabors.ImageSharp" Version="3.1.11" />
+
+      <PackageReference Include="Aiursoft.AiurProtocol.Server" Version="9.0.24" />
+      <PackageReference Include="Aiursoft.AiurObserver.WebSocket.Server" Version="9.0.10" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Aiursoft.StatHub.InMemory\Aiursoft.StatHub.InMemory.csproj" />
     <ProjectReference Include="..\Aiursoft.StatHub.MySql\Aiursoft.StatHub.MySql.csproj" />
+    <ProjectReference Include="..\Aiursoft.StatHub.SDK\Aiursoft.StatHub.SDK.csproj" />
     <ProjectReference Include="..\Aiursoft.StatHub.Sqlite\Aiursoft.StatHub.Sqlite.csproj" />
   </ItemGroup>
 </Project>

@@ -57,7 +57,10 @@ public class AppPermissions
                 localizer["Allows viewing system-level information and settings."]),
             new(AppPermissionNames.CanRebootThisApp,
                 localizer["Reboot This App"],
-                localizer["Grants permission to restart the application instance. May cause availability interruptions but all settings and cache will be reloaded."])
+                localizer["Grants permission to restart the application instance. May cause availability interruptions but all settings and cache will be reloaded."]),
+            new (AppPermissionNames.CanViewDashboard,
+                localizer["View server dashboard to see server metrics."],
+                localizer["Allows viewing server dashboard to see server metrics."])
         ];
         return allPermission;
     }

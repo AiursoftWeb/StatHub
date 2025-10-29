@@ -1,0 +1,41 @@
+@model Aiursoft.StatHub.Models.DashboardViewModels.AgentDetailsViewModel
+
+<div class="jumbotron">
+    <div class="container">
+        <h1 class="display-4">Checking client: @Model.Agent.Hostname</h1>
+        <p class="lead">View detailed metrics of this client.</p>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row no-gutters">
+        <div class="col-md-4 mt-3">
+            <div class="card mb-2 tests-card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">CPU Usage</h5>
+                    <canvas id="cpuChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mt-3">
+            <div class="card mb-2 tests-card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">RAM Usage</h5>
+                    <canvas id="ramChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@* ReSharper disable once Razor.SectionNotResolved *@
+@section scripts
+{
+    <script src="~/node_modules/chart.js/dist/chart.umd.js"></script>
+    <script src="~/scripts/metrics.js" asp-append-version="true"></script>
+    <script>
+        startCpuClient("@Model.Agent.ClientId");
+        startRamClient("@Model.Agent.ClientId", @Model.Agent.RamInGb);
+    </script>
+}

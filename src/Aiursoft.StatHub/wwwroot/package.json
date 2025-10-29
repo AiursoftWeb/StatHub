@@ -6,6 +6,7 @@
   "license": "MIT",
   "dependencies": {
     "@aiursoft/uistack": "^1.0.8",
-    "dropify": "^0.2.2"
+    "dropify": "^0.2.2",
+    "chart.js": "^4.4.1"
   }
 }
