@@ -5,7 +5,7 @@
 [![Test Coverage](https://gitlab.aiursoft.com/aiursoft/statHub/badges/master/coverage.svg)](https://gitlab.aiursoft.com/aiursoft/statHub/-/pipelines)
 [![ManHours](https://manhours.aiursoft.com/r/gitlab.aiursoft.com/aiursoft/statHub.svg)](https://gitlab.aiursoft.com/aiursoft/statHub/-/commits/master?ref_type=heads)
 [![Website](https://img.shields.io/website?url=https%3A%2F%2FstatHub.aiursoft.com)](https://statHub.aiursoft.com)
-[![Docker](https://img.shields.io/docker/pulls/aiursoft/statHub.svg)](https://hub.docker.com/r/aiursoft/statHub)
+[![Docker](https://img.shields.io/docker/pulls/aiursoft/stathub.svg)](https://hub.docker.com/r/aiursoft/stathub)
 
 StatHub is a simple server stat statistics system. It can collect server stats and display them in a simple way.
 
