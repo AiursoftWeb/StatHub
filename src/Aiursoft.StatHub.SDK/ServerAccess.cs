@@ -3,11 +3,13 @@ using Aiursoft.AiurProtocol.Models;
 using Aiursoft.AiurProtocol.Services;
 using Aiursoft.StatHub.SDK.AddressModels;
 using Aiursoft.StatHub.SDK.Models;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
 namespace Aiursoft.StatHub.SDK;
 
 public class ServerAccess(
+    ILogger<ServerAccess> logger,
     AiurProtocolClient http,
     IOptions<ServerConfig> demoServerLocator)
 {
@@ -49,6 +51,7 @@ public class ServerAccess(
             Motd = motd,
             Stats = stats
         });
+        logger.LogInformation("Sending metrics to endpoint: '{Endpoint}'", url);
         return http.Post<AiurResponse>(url, form, BodyFormat.HttpJsonBody, autoRetry: false,
             enforceSameVersion: false);
     }
