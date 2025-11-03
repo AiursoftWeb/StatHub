@@ -17,11 +17,11 @@ public class DashboardController(InMemoryDatabase database) : Controller
         CascadedLinksGroupName = "Dashboard",
         CascadedLinksIcon = "align-left",
         CascadedLinksOrder = 1,
-        LinkText = "Servers",
+        LinkText = "Agents",
         LinkOrder = 1)]
     public IActionResult Index([FromQuery]bool last30Seconds = false)
     {
-        var clients = database.GetClients();
+        var clients = database.GetAgents();
         ViewBag.Last30Seconds = last30Seconds;
         return this.StackView(new IndexViewModel
         {
@@ -50,11 +50,11 @@ public class DashboardController(InMemoryDatabase database) : Controller
         CascadedLinksGroupName = "Dashboard",
         CascadedLinksIcon = "align-left",
         CascadedLinksOrder = 1,
-        LinkText = "Add a server",
+        LinkText = "Add an agent",
         LinkOrder = 1)]
-    public IActionResult AddServer()
+    public IActionResult AddAgent()
     {
-        return this.StackView(new AddServerViewModel());
+        return this.StackView(new AddAgentViewModel());
     }
 
     [HttpGet("install.sh")]

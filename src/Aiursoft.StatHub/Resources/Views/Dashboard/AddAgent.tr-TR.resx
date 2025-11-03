@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="Version Information" xml:space="preserve">
+    <value>Sürüm Bilgisi</value>
+  </data>
+  <data name="Add a New agent" xml:space="preserve">
+    <value>Yeni bir aracı ekle</value>
+  </data>
+  <data name="Supported Operating Systems:" xml:space="preserve">
+    <value>Desteklenen İşletim Sistemleri:</value>
+  </data>
+  <data name="Current server SDK" xml:space="preserve">
+    <value>Mevcut sunucu SDK&apos;sı</value>
+  </data>
+  <data name="Latest agent version" xml:space="preserve">
+    <value>En son aracı sürümü</value>
+  </data>
+  <data name="Add a new agent to monitor -" xml:space="preserve">
+    <value>İzlemek için yeni bir aracı ekle -</value>
+  </data>
+  <data name="(Run as a systemd Service)" xml:space="preserve">
+    <value>(Bir systemd Servisi Olarak Çalıştır)</value>
+  </data>
+  <data name="What does this script do?" xml:space="preserve">
+    <value>Bu betik ne yapar?</value>
+  </data>
+  <data name="Run the following command on your Linux machine to install the agent and register it as a service. This will automatically connect it to this server." xml:space="preserve">
+    <value>Aracıyı kurmak ve bir servis olarak kaydetmek için Linux makinenizde aşağıdaki komutu çalıştırın. Bu, onu otomatik olarak bu sunucuya bağlayacaktır.</value>
+  </data>
+  <data name="Ubuntu 20.04 and above" xml:space="preserve">
+    <value>Ubuntu 20.04 ve üzeri</value>
+  </data>
+  <data name="AnduinOS 1.1 and above" xml:space="preserve">
+    <value>AnduinOS 1.1 ve üzeri</value>
+  </data>
+  <data name="Downloads the latest &lt;code&gt;Aiursoft.StatHub.Client&lt;/code&gt; agent." xml:space="preserve">
+    <value>En son &lt;code&gt;Aiursoft.StatHub.Client&lt;/code&gt; aracısını indirir.</value>
+  </data>
+  <data name="Sets up a &lt;code&gt;systemd&lt;/code&gt; service to run the agent." xml:space="preserve">
+    <value>Ajanı çalıştırmak için bir &lt;code&gt;systemd&lt;/code&gt; servisi kurar.</value>
+  </data>
+  <data name="Configures the agent to report to:" xml:space="preserve">
+    <value>Aracıyı şu adrese rapor verecek şekilde yapılandırır:</value>
+  </data>
+
+</root>

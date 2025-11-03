@@ -231,5 +231,11 @@
   <data name="StatHub is a simple server stat statistics system. It can collect server stats and display them in a simple way." xml:space="preserve">
     <value>StatHub là một hệ thống thống kê số liệu máy chủ đơn giản. Nó có thể thu thập các số liệu máy chủ và hiển thị chúng một cách dễ hiểu.</value>
   </data>
+  <data name="View Source on GitHub" xml:space="preserve">
+    <value>Xem mã nguồn trên GitHub</value>
+  </data>
+  <data name="Self host your own" xml:space="preserve">
+    <value>Tự lưu trữ phiên bản của bạn</value>
+  </data>
 
 </root>

@@ -2,9 +2,9 @@ using Aiursoft.UiStack.Layout;
 
 namespace Aiursoft.StatHub.Models.DashboardViewModels;
 
-public class AddServerViewModel : UiStackLayoutViewModel
+public class AddAgentViewModel : UiStackLayoutViewModel
 {
-    public AddServerViewModel()
+    public AddAgentViewModel()
     {
         PageTitle = "Add a server";
     }

@@ -231,5 +231,11 @@
   <data name="StatHub is a simple server stat statistics system. It can collect server stats and display them in a simple way." xml:space="preserve">
     <value>StatHub, basit bir sunucu istatistik sistemi istatistik sistemidir. Sunucu istatistiklerini toplayabilir ve bunları basit bir şekilde görüntüleyebilir.</value>
   </data>
+  <data name="Self host your own" xml:space="preserve">
+    <value>Kendi kendinize barındırın</value>
+  </data>
+  <data name="View Source on GitHub" xml:space="preserve">
+    <value>GitHub&apos;da Kaynağı Görüntüle</value>
+  </data>
 
 </root>

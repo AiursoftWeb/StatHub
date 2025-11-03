@@ -231,5 +231,11 @@
   <data name="StatHub is a simple server stat statistics system. It can collect server stats and display them in a simple way." xml:space="preserve">
     <value>Το StatHub είναι ένα απλό σύστημα στατιστικών διακομιστή. Μπορεί να συλλέγει στατιστικά του διακομιστή και να τα εμφανίζει με απλό τρόπο.</value>
   </data>
+  <data name="Self host your own" xml:space="preserve">
+    <value>Φιλοξενήστε το δικό σας</value>
+  </data>
+  <data name="View Source on GitHub" xml:space="preserve">
+    <value>Προβολή Πηγαίου Κώδικα στο GitHub</value>
+  </data>
 
 </root>

@@ -88,7 +88,7 @@
     <value>主要被进程使用</value>
   </data>
   <data name="Agent Version" xml:space="preserve">
-    <value>代理版本</value>
+    <value>终端版本</value>
   </data>
 
 </root>
