@@ -1,3 +1,4 @@
+using Aiursoft.WebTools.Attributes;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -6,6 +7,7 @@ namespace Aiursoft.StatHub.Controllers;
 /// <summary>
 /// This controller is used to change the current culture.
 /// </summary>
+[LimitPerMin]
 public class CultureController : ControllerBase
 {
     public IActionResult Set(string culture, string returnUrl)

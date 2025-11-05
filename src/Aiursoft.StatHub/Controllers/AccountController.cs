@@ -2,6 +2,7 @@ using Aiursoft.StatHub.Configuration;
 using Aiursoft.StatHub.Entities;
 using Aiursoft.StatHub.Models.AccountViewModels;
 using Aiursoft.StatHub.Services;
+using Aiursoft.WebTools.Attributes;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Authorization;
@@ -15,6 +16,7 @@ namespace Aiursoft.StatHub.Controllers;
 /// <summary>
 /// This controller is used to handle account related actions like login, register, log off.
 /// </summary>
+[LimitPerMin]
 public class AccountController(
     IStringLocalizer<AccountController> localizer,
     IOptions<AppSettings> appSettings,

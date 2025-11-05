@@ -4,6 +4,7 @@ using Aiursoft.StatHub.Entities;
 using Aiursoft.StatHub.Models.RolesViewModels;
 using Aiursoft.StatHub.Services;
 using Aiursoft.UiStack.Navigation;
+using Aiursoft.WebTools.Attributes;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -15,6 +16,7 @@ namespace Aiursoft.StatHub.Controllers;
 /// This controller is used to handle roles related actions like create, edit, delete, etc.
 /// </summary>
 [Authorize]
+[LimitPerMin]
 public class RolesController(
     UserManager<User> userManager,
     TemplateDbContext context,

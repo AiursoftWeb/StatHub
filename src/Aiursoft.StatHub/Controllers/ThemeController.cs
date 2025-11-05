@@ -1,4 +1,5 @@
 using Aiursoft.StatHub.Models.ManageViewModels;
+using Aiursoft.WebTools.Attributes;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Aiursoft.StatHub.Controllers;
@@ -6,6 +7,7 @@ namespace Aiursoft.StatHub.Controllers;
 /// <summary>
 /// This controller is used to handle theme related actions like switch theme.
 /// </summary>
+[LimitPerMin]
 public class ThemeController : ControllerBase
 {
     public const string ThemeCookieKey = "prefer-dark";

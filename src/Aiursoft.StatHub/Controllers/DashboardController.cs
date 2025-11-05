@@ -3,11 +3,13 @@ using Aiursoft.StatHub.Data;
 using Aiursoft.StatHub.Models.DashboardViewModels;
 using Aiursoft.StatHub.Services;
 using Aiursoft.UiStack.Navigation;
+using Aiursoft.WebTools.Attributes;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Aiursoft.StatHub.Controllers;
 
+[LimitPerMin]
 public class DashboardController(InMemoryDatabase database) : Controller
 {
     [Authorize(Policy = AppPermissionNames.CanViewDashboard)]

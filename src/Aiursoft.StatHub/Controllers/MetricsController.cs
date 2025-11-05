@@ -11,6 +11,7 @@ namespace Aiursoft.StatHub.Controllers;
 
 [Authorize(Policy = AppPermissionNames.CanViewDashboard)]
 [Route("metrics")]
+[LimitPerMin]
 public class MetricsController(
     InMemoryDatabase database) : ControllerBase
 {
