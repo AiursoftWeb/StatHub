@@ -231,5 +231,11 @@
   <data name="StatHub is a simple server stat statistics system. It can collect server stats and display them in a simple way." xml:space="preserve">
     <value>StatHub เป็นระบบสถิติสถานะเซิร์ฟเวอร์ที่เรียบง่าย โดยสามารถรวบรวมสถิติเซิร์ฟเวอร์และแสดงผลในรูปแบบที่เข้าใจง่าย</value>
   </data>
+  <data name="Self host your own" xml:space="preserve">
+    <value>โฮสต์ด้วยตัวเอง</value>
+  </data>
+  <data name="View Source on GitHub" xml:space="preserve">
+    <value>ดูซอร์สโค้ดบน GitHub</value>
+  </data>
 
 </root>

@@ -6,24 +6,24 @@ namespace Aiursoft.StatHub.Data;
 
 public class InMemoryDatabase : ISingletonDependency
 {
-    private ConcurrentDictionary<string, Agent> Clients { get; } = new();
+    private ConcurrentDictionary<string, Agent> Agents { get; } = new();
 
     public Agent GetOrAddClient(string clientId)
     {
-        lock (Clients)
+        lock (Agents)
         {
-            return Clients.GetOrAdd(clientId, _ => new Agent(clientId));
+            return Agents.GetOrAdd(clientId, _ => new Agent(clientId));
         }
     }
 
     public Agent? GetClient(string clientId)
     {
-        Clients.TryGetValue(clientId, out var client);
+        Agents.TryGetValue(clientId, out var client);
         return client;
     }
 
-    public Agent[] GetClients()
+    public Agent[] GetAgents()
     {
-        return Clients.Select(c => c.Value).ToArray();
+        return Agents.Select(c => c.Value).ToArray();
     }
 }

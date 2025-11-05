@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="Add a New agent" xml:space="preserve">
+    <value>Adaugă un agent nou</value>
+  </data>
+  <data name="Current server SDK" xml:space="preserve">
+    <value>SDK-ul serverului curent</value>
+  </data>
+  <data name="Latest agent version" xml:space="preserve">
+    <value>Ultima versiune a agentului</value>
+  </data>
+  <data name="Version Information" xml:space="preserve">
+    <value>Informații despre Versiune</value>
+  </data>
+  <data name="Add a new agent to monitor -" xml:space="preserve">
+    <value>Adaugă un agent nou de monitorizat -</value>
+  </data>
+  <data name="Supported Operating Systems:" xml:space="preserve">
+    <value>Sisteme de operare suportate:</value>
+  </data>
+  <data name="(Run as a systemd Service)" xml:space="preserve">
+    <value>(Rulează ca serviciu systemd)</value>
+  </data>
+  <data name="What does this script do?" xml:space="preserve">
+    <value>Ce face acest script?</value>
+  </data>
+  <data name="Run the following command on your Linux machine to install the agent and register it as a service. This will automatically connect it to this server." xml:space="preserve">
+    <value>Executați următoarea comandă pe mașina dvs. Linux pentru a instala agentul și a-l înregistra ca serviciu. Acest lucru îl va conecta automat la acest server.</value>
+  </data>
+  <data name="Configures the agent to report to:" xml:space="preserve">
+    <value>Configurează agentul să raporteze către:</value>
+  </data>
+  <data name="Ubuntu 20.04 and above" xml:space="preserve">
+    <value>Ubuntu 20.04 și versiuni superioare</value>
+  </data>
+  <data name="Downloads the latest &lt;code&gt;Aiursoft.StatHub.Client&lt;/code&gt; agent." xml:space="preserve">
+    <value>Descarcă cel mai recent agent &lt;code&gt;Aiursoft.StatHub.Client&lt;/code&gt;.</value>
+  </data>
+  <data name="AnduinOS 1.1 and above" xml:space="preserve">
+    <value>AnduinOS 1.1 și versiunile ulterioare</value>
+  </data>
+  <data name="Sets up a &lt;code&gt;systemd&lt;/code&gt; service to run the agent." xml:space="preserve">
+    <value>Configurează un serviciu &lt;code&gt;systemd&lt;/code&gt; pentru a rula agentul.</value>
+  </data>
+
+</root>

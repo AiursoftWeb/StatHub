@@ -1,6 +1,6 @@
 <div class="container-fluid p-0">
 
-    <h1 class="h3 mb-3">@Localizer["Add a New Server"]</h1>
+    <h1 class="h3 mb-3">@Localizer["Add a New agent"]</h1>
 
     <div class="row">
         <div class="col-md-4 col-xl-3">
@@ -27,12 +27,18 @@
         <div class="col-md-8 col-xl-9">
             <div class="card">
                 <div class="card-header">
-                    <h5 class="card-title mb-0">@Localizer["Add a new server to monitor -"] @Localizer["(Run as a systemd Service)"]</h5>
+                    <h5 class="card-title mb-0">@Localizer["Add a new agent to monitor -"] @Localizer["(Run as a systemd Service)"]</h5>
                 </div>
                 <div class="card-body">
                     <p>@Localizer["Run the following command on your Linux machine to install the agent and register it as a service. This will automatically connect it to this server."]</p>
 
                     <pre class="bg-body-tertiary p-3 rounded-3"><code>curl -sL @Context.Request.Scheme://@Context.Request.Host/install.sh | sudo bash</code></pre>
+
+                    <h6 class="mt-4">@Localizer["Supported Operating Systems:"]</h6>
+                    <ul class="mb-0">
+                        <li>@Localizer["Ubuntu 20.04 and above"]</li>
+                        <li>@Localizer["AnduinOS 1.1 and above"]</li>
+                    </ul>
 
                     <h6 class="mt-4">@Localizer["What does this script do?"]</h6>
                     <ul class="mb-0">

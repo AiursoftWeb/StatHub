@@ -61,7 +61,7 @@ public class BasicTests
     [TestMethod]
     public async Task TestAddPage()
     {
-        var response = await _http.GetAsync("/dashboard/AddServer");
+        var response = await _http.GetAsync("/dashboard/AddAgent");
         Assert.AreEqual(HttpStatusCode.Redirect, response.StatusCode);
     }
 

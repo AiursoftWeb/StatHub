@@ -231,5 +231,11 @@
   <data name="Join our community and start monitoring today!" xml:space="preserve">
     <value>Присоединяйтесь к нашему сообществу и начните мониторинг уже сегодня!</value>
   </data>
+  <data name="View Source on GitHub" xml:space="preserve">
+    <value>Просмотреть исходный код на GitHub</value>
+  </data>
+  <data name="Self host your own" xml:space="preserve">
+    <value>Разверните свою собственную версию</value>
+  </data>
 
 </root>
