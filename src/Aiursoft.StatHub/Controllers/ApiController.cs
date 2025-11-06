@@ -4,7 +4,6 @@ using Aiursoft.AiurProtocol.Server;
 using Aiursoft.AiurProtocol.Server.Attributes;
 using Aiursoft.StatHub.SDK.AddressModels;
 using Aiursoft.StatHub.Data;
-using Aiursoft.WebTools.Attributes;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,7 +15,6 @@ namespace Aiursoft.StatHub.Controllers;
 [ApiExceptionHandler(
     PassthroughRemoteErrors = true,
     PassthroughAiurServerException = true)]
-[LimitPerMin]
 public class ApiController(
     InMemoryDatabase database,
     ILogger<ApiController> logger)
