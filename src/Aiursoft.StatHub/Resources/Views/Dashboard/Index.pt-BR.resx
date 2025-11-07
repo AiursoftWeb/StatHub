@@ -207,5 +207,8 @@
   <data name="(15m, Online Agents)" xml:space="preserve">
     <value>(15m, Agentes Online)</value>
   </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
 
 </root>

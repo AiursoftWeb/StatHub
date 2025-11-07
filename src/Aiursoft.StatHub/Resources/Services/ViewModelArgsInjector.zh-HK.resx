@@ -147,5 +147,11 @@
   <data name="Dashboard" xml:space="preserve">
     <value>儀表板</value>
   </data>
+  <data name="Agents" xml:space="preserve">
+    <value>代理</value>
+  </data>
+  <data name="Add an agent" xml:space="preserve">
+    <value>新增代理</value>
+  </data>
 
 </root>

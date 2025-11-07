@@ -139,34 +139,35 @@
                 <div class="table-responsive">
                     <table class="table table-hover table-borderless my-0" id="logTable">
                         <thead>
-                            <tr>
-                                <th>@Localizer["IP"]</th>
-                                <th>@Localizer["Name"]</th>
-                                <th class="d-none d-lg-table-cell">@Localizer["SKU"]</th>
-                                <th class="d-none d-xl-table-cell">@Localizer["Boot at"]</th>
-                                <th>@Localizer["Avg Load"]</th>
-                                <th>@Localizer["CPU Usage"]</th>
-                                <th class="d-none d-lg-table-cell">@Localizer["Used at"]</th>
-                                <th>@Localizer["RAM Usage"]</th>
-                                @if (showLast30)
-                                {
-                                    <th class="d-none d-md-table-cell">@Localizer["Net Receiving"]</th>
-                                    <th class="d-none d-md-table-cell">@Localizer["Net Sending"]</th>
-                                    <th>@Localizer["Disk Used"]</th>
-                                    <th class="d-none d-xl-table-cell">@Localizer["Disk Reading"]</th>
-                                    <th class="d-none d-xl-table-cell">@Localizer["Disk Writing"]</th>
-                                }
-                                else
-                                {
-                                    <th class="d-none d-md-table-cell">@Localizer["Net Received"]</th>
-                                    <th class="d-none d-md-table-cell">@Localizer["Net Sent"]</th>
-                                    <th>@Localizer["Disk Used"]</th>
-                                    <th class="d-none d-xl-table-cell">@Localizer["Disk Read"]</th>
-                                    <th class="d-none d-xl-table-cell">@Localizer["Disk Written"]</th>
-                                }
-                                <th class="d-none d-xl-table-cell">@Localizer["OS"]</th>
-                                <th>@Localizer["More"]</th>
-                            </tr>
+                        <tr>
+                            <th>@Localizer["Status"]</th>
+                            <th>@Localizer["IP"]</th>
+                            <th>@Localizer["Name"]</th>
+                            <th class="d-none d-lg-table-cell">@Localizer["SKU"]</th>
+                            <th class="d-none d-xl-table-cell">@Localizer["Boot at"]</th>
+                            <th>@Localizer["Avg Load"]</th>
+                            <th>@Localizer["CPU Usage"]</th>
+                            <th class="d-none d-lg-table-cell">@Localizer["Used at"]</th>
+                            <th>@Localizer["RAM Usage"]</th>
+                            @if (showLast30)
+                            {
+                                <th class="d-none d-md-table-cell">@Localizer["Net Receiving"]</th>
+                                <th class="d-none d-md-table-cell">@Localizer["Net Sending"]</th>
+                                <th>@Localizer["Disk Used"]</th>
+                                <th class="d-none d-xl-table-cell">@Localizer["Disk Reading"]</th>
+                                <th class="d-none d-xl-table-cell">@Localizer["Disk Writing"]</th>
+                            }
+                            else
+                            {
+                                <th class="d-none d-md-table-cell">@Localizer["Net Received"]</th>
+                                <th class="d-none d-md-table-cell">@Localizer["Net Sent"]</th>
+                                <th>@Localizer["Disk Used"]</th>
+                                <th class="d-none d-xl-table-cell">@Localizer["Disk Read"]</th>
+                                <th class="d-none d-xl-table-cell">@Localizer["Disk Written"]</th>
+                            }
+                            <th class="d-none d-xl-table-cell">@Localizer["OS"]</th>
+                            <th>@Localizer["More"]</th>
+                        </tr>
                         </thead>
                         <tbody>
                             @foreach (var agent in Model.Agents)
@@ -177,11 +178,13 @@
                                 var disk = showLast30 ? agent.GetDiskLast30Seconds() : agent.GetDisk();
                                 var osFirstTwoWords = string.Join(" ", agent.OsName.Split(' ').Take(2)).Trim();
                                 <tr>
-                                    <td>
+                                    <td data-sort="@health.Status">
                                         <label data-bs-toggle="tooltip" data-placement="bottom" title="@health.Reason">
                                             <i class="align-middle me-2 @health.IconClass" data-lucide="@health.IndexIconDataLucide"></i>
-                                            @agent.Ip
                                         </label>
+                                    </td>
+                                    <td>
+                                        @agent.Ip
                                     </td>
                                     <td>
                                         @agent.Hostname

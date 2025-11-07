@@ -147,5 +147,11 @@
   <data name="Dashboard" xml:space="preserve">
     <value>แดชบอร์ด</value>
   </data>
+  <data name="Agents" xml:space="preserve">
+    <value>ตัวแทน</value>
+  </data>
+  <data name="Add an agent" xml:space="preserve">
+    <value>เพิ่มเอเจนต์</value>
+  </data>
 
 </root>

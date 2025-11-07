@@ -207,5 +207,8 @@
   <data name="Critical or Warning" xml:space="preserve">
     <value>Crítico o Advertencia</value>
   </data>
+  <data name="Status" xml:space="preserve">
+    <value>Estado</value>
+  </data>
 
 </root>

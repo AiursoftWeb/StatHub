@@ -207,5 +207,8 @@
   <data name="Details" xml:space="preserve">
     <value>Λεπτομέρειες</value>
   </data>
+  <data name="Status" xml:space="preserve">
+    <value>Κατάσταση</value>
+  </data>
 
 </root>

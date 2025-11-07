@@ -144,5 +144,11 @@
   <data name="Dashboard" xml:space="preserve">
     <value>Dasbor</value>
   </data>
+  <data name="Agents" xml:space="preserve">
+    <value>Agen</value>
+  </data>
+  <data name="Add an agent" xml:space="preserve">
+    <value>Tambahkan agen</value>
+  </data>
 
 </root>

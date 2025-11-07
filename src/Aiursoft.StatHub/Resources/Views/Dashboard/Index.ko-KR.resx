@@ -207,5 +207,8 @@
   <data name="Healthy" xml:space="preserve">
     <value>정상</value>
   </data>
+  <data name="Status" xml:space="preserve">
+    <value>상태</value>
+  </data>
 
 </root>

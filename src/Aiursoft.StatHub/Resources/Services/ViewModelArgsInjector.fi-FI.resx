@@ -144,5 +144,11 @@
   <data name="Dashboard" xml:space="preserve">
     <value>Kojelauta</value>
   </data>
+  <data name="Agents" xml:space="preserve">
+    <value>Agentit</value>
+  </data>
+  <data name="Add an agent" xml:space="preserve">
+    <value>Lisää agentti</value>
+  </data>
 
 </root>

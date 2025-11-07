@@ -144,5 +144,11 @@
   <data name="Dashboard" xml:space="preserve">
     <value>Pannello di controllo</value>
   </data>
+  <data name="Add an agent" xml:space="preserve">
+    <value>Aggiungi un agente</value>
+  </data>
+  <data name="Agents" xml:space="preserve">
+    <value>Agenti</value>
+  </data>
 
 </root>

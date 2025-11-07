@@ -207,5 +207,8 @@
   <data name="Agents with Alerts" xml:space="preserve">
     <value>Agents met waarschuwingen</value>
   </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
 
 </root>

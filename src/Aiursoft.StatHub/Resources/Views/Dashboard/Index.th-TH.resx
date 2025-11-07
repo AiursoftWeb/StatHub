@@ -207,5 +207,8 @@
   <data name="Critical or Warning" xml:space="preserve">
     <value>วิกฤตหรือเตือน</value>
   </data>
+  <data name="Status" xml:space="preserve">
+    <value>สถานะ</value>
+  </data>
 
 </root>

@@ -207,5 +207,8 @@
   <data name="Disk Written" xml:space="preserve">
     <value>डिस्क लिखित</value>
   </data>
+  <data name="Status" xml:space="preserve">
+    <value>स्थिति</value>
+  </data>
 
 </root>

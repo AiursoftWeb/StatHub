@@ -144,5 +144,11 @@
   <data name="Dashboard" xml:space="preserve">
     <value>لوحة التحكم</value>
   </data>
+  <data name="Add an agent" xml:space="preserve">
+    <value>إضافة عميل</value>
+  </data>
+  <data name="Agents" xml:space="preserve">
+    <value>الوكلاء</value>
+  </data>
 
 </root>

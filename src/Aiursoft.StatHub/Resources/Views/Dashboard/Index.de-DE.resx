@@ -207,5 +207,8 @@
   <data name="Out of sync" xml:space="preserve">
     <value>Nicht synchronisiert</value>
   </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
 
 </root>

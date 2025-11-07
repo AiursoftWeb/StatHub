@@ -144,5 +144,11 @@
   <data name="Dashboard" xml:space="preserve">
     <value>Instrumentpanel</value>
   </data>
+  <data name="Agents" xml:space="preserve">
+    <value>Agenter</value>
+  </data>
+  <data name="Add an agent" xml:space="preserve">
+    <value>Lägg till en agent</value>
+  </data>
 
 </root>

@@ -144,5 +144,11 @@
   <data name="Dashboard" xml:space="preserve">
     <value>Πίνακας Ελέγχου</value>
   </data>
+  <data name="Agents" xml:space="preserve">
+    <value>Πράκτορες</value>
+  </data>
+  <data name="Add an agent" xml:space="preserve">
+    <value>Προσθέστε έναν πράκτορα</value>
+  </data>
 
 </root>

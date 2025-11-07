@@ -207,5 +207,8 @@
   <data name="Average Load" xml:space="preserve">
     <value>Încărcare medie</value>
   </data>
+  <data name="Status" xml:space="preserve">
+    <value>Stare</value>
+  </data>
 
 </root>

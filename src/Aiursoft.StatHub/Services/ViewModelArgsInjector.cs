@@ -65,8 +65,8 @@ public class ViewModelArgsInjector(
         _ = localizer["Unauthorized"];
         _ = localizer["Dashboard"];
         _ = localizer["Error"];
-        _ = localizer["Servers"];
-        _ = localizer["Add a server"];
+        _ = localizer["Agents"];
+        _ = localizer["Add an agent"];
     }
 
     public void InjectSimple(

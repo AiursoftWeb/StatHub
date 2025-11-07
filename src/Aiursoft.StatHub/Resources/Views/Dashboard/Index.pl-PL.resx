@@ -207,5 +207,8 @@
   <data name="Total Agents" xml:space="preserve">
     <value>Łączna liczba agentów</value>
   </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
 
 </root>

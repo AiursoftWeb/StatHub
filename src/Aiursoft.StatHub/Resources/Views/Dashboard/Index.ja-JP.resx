@@ -207,5 +207,8 @@
   <data name="(15m, Online Agents)" xml:space="preserve">
     <value>（15分、オンラインエージェント）</value>
   </data>
+  <data name="Status" xml:space="preserve">
+    <value>ステータス</value>
+  </data>
 
 </root>

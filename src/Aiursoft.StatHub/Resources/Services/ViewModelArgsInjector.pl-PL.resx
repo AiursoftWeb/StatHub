@@ -144,5 +144,11 @@
   <data name="Dashboard" xml:space="preserve">
     <value>Pulpit</value>
   </data>
+  <data name="Add an agent" xml:space="preserve">
+    <value>Dodaj agenta</value>
+  </data>
+  <data name="Agents" xml:space="preserve">
+    <value>Agenci</value>
+  </data>
 
 </root>

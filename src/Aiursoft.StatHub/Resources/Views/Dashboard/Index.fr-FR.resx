@@ -207,5 +207,8 @@
   <data name="Offline Agents" xml:space="preserve">
     <value>Agents hors ligne</value>
   </data>
+  <data name="Status" xml:space="preserve">
+    <value>Statut</value>
+  </data>
 
 </root>

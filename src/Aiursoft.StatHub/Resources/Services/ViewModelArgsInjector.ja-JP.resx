@@ -147,5 +147,11 @@
   <data name="Dashboard" xml:space="preserve">
     <value>ダッシュボード</value>
   </data>
+  <data name="Add an agent" xml:space="preserve">
+    <value>エージェントを追加</value>
+  </data>
+  <data name="Agents" xml:space="preserve">
+    <value>エージェント</value>
+  </data>
 
 </root>

@@ -144,5 +144,11 @@
   <data name="Dashboard" xml:space="preserve">
     <value>Kontrol Paneli</value>
   </data>
+  <data name="Agents" xml:space="preserve">
+    <value>Ajanlar</value>
+  </data>
+  <data name="Add an agent" xml:space="preserve">
+    <value>Bir aracı ekle</value>
+  </data>
 
 </root>

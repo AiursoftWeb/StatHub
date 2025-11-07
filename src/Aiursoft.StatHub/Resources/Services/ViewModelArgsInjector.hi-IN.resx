@@ -144,5 +144,11 @@
   <data name="Dashboard" xml:space="preserve">
     <value>डैशबोर्ड</value>
   </data>
+  <data name="Agents" xml:space="preserve">
+    <value>एजेंट्स</value>
+  </data>
+  <data name="Add an agent" xml:space="preserve">
+    <value>एक एजेंट जोड़ें</value>
+  </data>
 
 </root>

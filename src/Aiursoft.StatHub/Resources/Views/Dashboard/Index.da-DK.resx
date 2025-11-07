@@ -207,5 +207,8 @@
   <data name="Details" xml:space="preserve">
     <value>Detaljer</value>
   </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
 
 </root>

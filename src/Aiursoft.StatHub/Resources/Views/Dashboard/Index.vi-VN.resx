@@ -207,5 +207,8 @@
   <data name="Agents with Alerts" xml:space="preserve">
     <value>Các tác nhân có Cảnh báo</value>
   </data>
+  <data name="Status" xml:space="preserve">
+    <value>Trạng thái</value>
+  </data>
 
 </root>
