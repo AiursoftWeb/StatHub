@@ -33,10 +33,7 @@
   <data name="Read the document" xml:space="preserve">
     <value>ドキュメントを読む</value>
   </data>
-  <data name="Start a new project" xml:space="preserve">
-    <value>新規プロジェクトを開始</value>
-  </data>
-  <data name="This is a template project, where we start the voyager..." xml:space="preserve">
+   <data name="This is a template project, where we start the voyager..." xml:space="preserve">
     <value>これはテンプレートプロジェクトです。ここから航海が始まります...</value>
   </data>
   <data name="OpenID Connect Integration" xml:space="preserve">

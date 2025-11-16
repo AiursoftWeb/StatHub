@@ -27,10 +27,7 @@
   <data name="Hello World!" xml:space="preserve">
     <value>Xin chào Thế giới!</value>
   </data>
-  <data name="Start a new project" xml:space="preserve">
-    <value>Bắt đầu một dự án mới</value>
-  </data>
-  <data name="Multiple Database Support" xml:space="preserve">
+   <data name="Multiple Database Support" xml:space="preserve">
     <value>Hỗ trợ Đa Cơ sở Dữ liệu</value>
   </data>
   <data name="Why use the Aiursoft Template?" xml:space="preserve">

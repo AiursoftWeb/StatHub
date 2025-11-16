@@ -108,10 +108,7 @@
   <data name="Read the document" xml:space="preserve">
     <value>Läs dokumentet</value>
   </data>
-  <data name="Start a new project" xml:space="preserve">
-    <value>Starta ett nytt projekt</value>
-  </data>
-  <data name="This is a template project, where we start the voyager..." xml:space="preserve">
+   <data name="This is a template project, where we start the voyager..." xml:space="preserve">
     <value>Det här är ett mallprojekt, där vi startar resan...</value>
   </data>
   <data name="Features" xml:space="preserve">
@@ -216,10 +213,7 @@
   <data name="The template is built for easy deployment. It includes full Docker support, so you can containerize your app and run it anywhere. You can also deploy it directly to IIS, Azure App Service, or any server that supports ASP.NET Core." xml:space="preserve">
     <value>Mallen är byggd för enkel distribution. Den inkluderar fullt Docker-stöd, så du kan containerisera din app och köra den var som helst. Du kan också distribuera den direkt till IIS, Azure App Service eller vilken server som helst som stöder ASP.NET Core.</value>
   </data>
-  <data name="Start a New Project" xml:space="preserve">
-    <value>Starta ett nytt projekt</value>
-  </data>
-  <data name="Monitor your servers," xml:space="preserve">
+   <data name="Monitor your servers," xml:space="preserve">
     <value>Övervaka dina servrar,</value>
   </data>
   <data name="easier" xml:space="preserve">

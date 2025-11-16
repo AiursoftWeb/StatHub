@@ -24,10 +24,7 @@
   <data name="Read the document" xml:space="preserve">
     <value>Lire la documentation</value>
   </data>
-  <data name="Start a new project" xml:space="preserve">
-    <value>Démarrer un nouveau projet</value>
-  </data>
-  <data name="Multiple Database Support" xml:space="preserve">
+   <data name="Multiple Database Support" xml:space="preserve">
     <value>Prise en charge de plusieurs bases de données</value>
   </data>
   <data name="Why use the Aiursoft Template?" xml:space="preserve">

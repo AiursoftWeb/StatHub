@@ -105,10 +105,7 @@
   <data name="Dockerized for Deployment" xml:space="preserve">
     <value>Dockerised for Deployment</value>
   </data>
-  <data name="Start a new project" xml:space="preserve">
-    <value>Start a new project</value>
-  </data>
-  <data name="Read the document" xml:space="preserve">
+   <data name="Read the document" xml:space="preserve">
     <value>Read the documentation</value>
   </data>
   <data name="This is a template project, where we start the voyager..." xml:space="preserve">
@@ -216,10 +213,7 @@
   <data name="The template is built for easy deployment. It includes full Docker support, so you can containerize your app and run it anywhere. You can also deploy it directly to IIS, Azure App Service, or any server that supports ASP.NET Core." xml:space="preserve">
     <value>The template is designed for straightforward deployment. It includes comprehensive Docker support, allowing you to containerise your app and run it anywhere. You can also deploy it directly to IIS, Azure App Service, or any server that supports ASP.NET Core.</value>
   </data>
-  <data name="Start a New Project" xml:space="preserve">
-    <value>Start a New Project</value>
-  </data>
-  <data name="Monitor your servers," xml:space="preserve">
+   <data name="Monitor your servers," xml:space="preserve">
     <value>Monitor your servers,</value>
   </data>
   <data name="Join our community and start monitoring today!" xml:space="preserve">

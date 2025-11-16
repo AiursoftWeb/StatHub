@@ -108,10 +108,7 @@
   <data name="Read the document" xml:space="preserve">
     <value>Прочитати документацію</value>
   </data>
-  <data name="Start a new project" xml:space="preserve">
-    <value>Розпочати новий проект</value>
-  </data>
-  <data name="This is a template project, where we start the voyager..." xml:space="preserve">
+   <data name="This is a template project, where we start the voyager..." xml:space="preserve">
     <value>Це шаблонний проект, з якого ми починаємо нашу подорож...</value>
   </data>
   <data name="Usage" xml:space="preserve">
@@ -213,10 +210,7 @@
   <data name="Join Discussions" xml:space="preserve">
     <value>Приєднатися до обговорень</value>
   </data>
-  <data name="Start a New Project" xml:space="preserve">
-    <value>Розпочати новий проєкт</value>
-  </data>
-  <data name="Join our community and start building today!" xml:space="preserve">
+   <data name="Join our community and start building today!" xml:space="preserve">
     <value>Приєднуйтесь до нашої спільноти та почніть створювати вже сьогодні!</value>
   </data>
   <data name="easier" xml:space="preserve">

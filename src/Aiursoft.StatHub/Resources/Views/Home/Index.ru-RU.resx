@@ -108,10 +108,7 @@
   <data name="Read the document" xml:space="preserve">
     <value>Прочитать документацию</value>
   </data>
-  <data name="Start a new project" xml:space="preserve">
-    <value>Начать новый проект</value>
-  </data>
-  <data name="This is a template project, where we start the voyager..." xml:space="preserve">
+   <data name="This is a template project, where we start the voyager..." xml:space="preserve">
     <value>Это шаблонный проект, с которого мы начинаем путешествие...</value>
   </data>
   <data name="Usage" xml:space="preserve">
@@ -210,10 +207,7 @@
   <data name="The template is built for easy deployment. It includes full Docker support, so you can containerize your app and run it anywhere. You can also deploy it directly to IIS, Azure App Service, or any server that supports ASP.NET Core." xml:space="preserve">
     <value>Шаблон создан для простого развертывания. Он включает полную поддержку Docker, что позволяет контейнеризировать ваше приложение и запускать его где угодно. Вы также можете развернуть его напрямую в IIS, Azure App Service или на любом сервере, который поддерживает ASP.NET Core.</value>
   </data>
-  <data name="Start a New Project" xml:space="preserve">
-    <value>Начать новый проект</value>
-  </data>
-  <data name="Join our community and start building today!" xml:space="preserve">
+   <data name="Join our community and start building today!" xml:space="preserve">
     <value>Присоединяйтесь к нашему сообществу и начните создавать уже сегодня!</value>
   </data>
   <data name="Join Discussions" xml:space="preserve">

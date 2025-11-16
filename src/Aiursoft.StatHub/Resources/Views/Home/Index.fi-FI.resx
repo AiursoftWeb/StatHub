@@ -108,10 +108,7 @@
   <data name="Read the document" xml:space="preserve">
     <value>Lue dokumentti</value>
   </data>
-  <data name="Start a new project" xml:space="preserve">
-    <value>Aloita uusi projekti</value>
-  </data>
-  <data name="This is a template project, where we start the voyager..." xml:space="preserve">
+   <data name="This is a template project, where we start the voyager..." xml:space="preserve">
     <value>Tämä on malliprojekti, josta aloitamme matkan...</value>
   </data>
   <data name="faster" xml:space="preserve">
@@ -213,10 +210,7 @@
   <data name="Join Discussions" xml:space="preserve">
     <value>Liity keskusteluun</value>
   </data>
-  <data name="Start a New Project" xml:space="preserve">
-    <value>Aloita uusi projekti</value>
-  </data>
-  <data name="The template is built for easy deployment. It includes full Docker support, so you can containerize your app and run it anywhere. You can also deploy it directly to IIS, Azure App Service, or any server that supports ASP.NET Core." xml:space="preserve">
+   <data name="The template is built for easy deployment. It includes full Docker support, so you can containerize your app and run it anywhere. You can also deploy it directly to IIS, Azure App Service, or any server that supports ASP.NET Core." xml:space="preserve">
     <value>Malli on suunniteltu helppokäyttöiseksi käyttöönottoa varten. Se sisältää täyden Docker-tuen, joten voit konttipohjata sovelluksesi ja ajaa sitä missä tahansa. Voit myös ottaa sen käyttöön suoraan IIS:ään, Azure App Serviceen tai mihin tahansa palvelimeen, joka tukee ASP.NET Corea.</value>
   </data>
   <data name="easier" xml:space="preserve">

@@ -108,10 +108,7 @@
   <data name="Read the document" xml:space="preserve">
     <value>Baca dokumen</value>
   </data>
-  <data name="Start a new project" xml:space="preserve">
-    <value>Mulai proyek baru</value>
-  </data>
-  <data name="This is a template project, where we start the voyager..." xml:space="preserve">
+   <data name="This is a template project, where we start the voyager..." xml:space="preserve">
     <value>Ini adalah proyek templat, tempat kami memulai perjalanan...</value>
   </data>
   <data name="Open Source" xml:space="preserve">
@@ -216,10 +213,7 @@
   <data name="Join our community and start building today!" xml:space="preserve">
     <value>Bergabunglah dengan komunitas kami dan mulailah membangun hari ini!</value>
   </data>
-  <data name="Start a New Project" xml:space="preserve">
-    <value>Mulai Proyek Baru</value>
-  </data>
-  <data name="Monitor your servers," xml:space="preserve">
+   <data name="Monitor your servers," xml:space="preserve">
     <value>Pantau server Anda,</value>
   </data>
   <data name="easier" xml:space="preserve">

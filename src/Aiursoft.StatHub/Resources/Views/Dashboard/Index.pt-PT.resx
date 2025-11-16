@@ -24,10 +24,7 @@
   <data name="Read the document" xml:space="preserve">
     <value>Ler o documento</value>
   </data>
-  <data name="Start a new project" xml:space="preserve">
-    <value>Iniciar um novo projeto</value>
-  </data>
-  <data name="Why use the Aiursoft Template?" xml:space="preserve">
+   <data name="Why use the Aiursoft Template?" xml:space="preserve">
     <value>Porquê usar o Aiursoft Template?</value>
   </data>
   <data name="This is a template project, where we start the voyager..." xml:space="preserve">

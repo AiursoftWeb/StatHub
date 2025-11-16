@@ -21,10 +21,7 @@
       <data name="Read the document" xml:space="preserve">
     <value>Läs dokumentet</value>
   </data>
-  <data name="Start a new project" xml:space="preserve">
-    <value>Starta ett nytt projekt</value>
-  </data>
-  <data name="Welcome" xml:space="preserve">
+   <data name="Welcome" xml:space="preserve">
     <value>Välkommen</value>
   </data>
   <data name="Multiple Database Support" xml:space="preserve">

@@ -24,10 +24,7 @@
   <data name="Welcome" xml:space="preserve">
     <value>Selamat datang</value>
   </data>
-  <data name="Start a new project" xml:space="preserve">
-    <value>Mulai proyek baru</value>
-  </data>
-  <data name="Read the document" xml:space="preserve">
+   <data name="Read the document" xml:space="preserve">
     <value>Baca dokumen</value>
   </data>
   <data name="Multiple Database Support" xml:space="preserve">

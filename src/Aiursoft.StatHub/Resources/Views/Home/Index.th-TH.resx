@@ -108,10 +108,7 @@
   <data name="Read the document" xml:space="preserve">
     <value>อ่านเอกสาร</value>
   </data>
-  <data name="Start a new project" xml:space="preserve">
-    <value>เริ่มต้นโปรเจกต์ใหม่</value>
-  </data>
-  <data name="This is a template project, where we start the voyager..." xml:space="preserve">
+   <data name="This is a template project, where we start the voyager..." xml:space="preserve">
     <value>นี่คือโครงการเทมเพลต ซึ่งเป็นจุดเริ่มต้นของการเดินทาง...</value>
   </data>
   <data name="Features" xml:space="preserve">
@@ -210,10 +207,7 @@
   <data name="for any inquiries or to report issues." xml:space="preserve">
     <value>สำหรับข้อสงสัยใดๆ หรือเพื่อรายงานปัญหา</value>
   </data>
-  <data name="Start a New Project" xml:space="preserve">
-    <value>เริ่มต้นโปรเจกต์ใหม่</value>
-  </data>
-  <data name="The template is built for easy deployment. It includes full Docker support, so you can containerize your app and run it anywhere. You can also deploy it directly to IIS, Azure App Service, or any server that supports ASP.NET Core." xml:space="preserve">
+   <data name="The template is built for easy deployment. It includes full Docker support, so you can containerize your app and run it anywhere. You can also deploy it directly to IIS, Azure App Service, or any server that supports ASP.NET Core." xml:space="preserve">
     <value>เทมเพลตนี้ถูกสร้างขึ้นเพื่อให้การปรับใช้เป็นเรื่องง่าย โดยมีระบบรองรับ Docker เต็มรูปแบบ ทำให้คุณสามารถสร้างคอนเทนเนอร์สำหรับแอปพลิเคชันและรันได้ทุกที่ นอกจากนี้คุณยังสามารถปรับใช้โดยตรงไปยัง IIS, Azure App Service หรือเซิร์ฟเวอร์ใดๆ ที่รองรับ ASP.NET Core ได้อีกด้วย</value>
   </data>
   <data name="Join our community and start building today!" xml:space="preserve">

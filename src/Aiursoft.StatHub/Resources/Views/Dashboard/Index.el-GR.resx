@@ -21,10 +21,7 @@
       <data name="Multiple Database Support" xml:space="preserve">
     <value>Υποστήριξη Πολλαπλών Βάσεων Δεδομένων</value>
   </data>
-  <data name="Start a new project" xml:space="preserve">
-    <value>Ξεκινήστε ένα νέο έργο</value>
-  </data>
-  <data name="Hello World!" xml:space="preserve">
+   <data name="Hello World!" xml:space="preserve">
     <value>Γεια σου Κόσμε!</value>
   </data>
   <data name="Why use the Aiursoft Template?" xml:space="preserve">

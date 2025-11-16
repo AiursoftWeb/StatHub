@@ -21,10 +21,7 @@
       <data name="Welcome" xml:space="preserve">
     <value>Bem-vindo</value>
   </data>
-  <data name="Start a new project" xml:space="preserve">
-    <value>Iniciar um novo projeto</value>
-  </data>
-  <data name="Why use the Aiursoft Template?" xml:space="preserve">
+   <data name="Why use the Aiursoft Template?" xml:space="preserve">
     <value>Por que usar o Aiursoft Template?</value>
   </data>
   <data name="Read the document" xml:space="preserve">

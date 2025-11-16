@@ -21,10 +21,7 @@
       <data name="Multiple Database Support" xml:space="preserve">
     <value>Підтримка кількох баз даних</value>
   </data>
-  <data name="Start a new project" xml:space="preserve">
-    <value>Розпочати новий проєкт</value>
-  </data>
-  <data name="This is a template project, where we start the voyager..." xml:space="preserve">
+   <data name="This is a template project, where we start the voyager..." xml:space="preserve">
     <value>Це шаблонний проект, з якого ми розпочинаємо нашу подорож...</value>
   </data>
   <data name="Why use the Aiursoft Template?" xml:space="preserve">

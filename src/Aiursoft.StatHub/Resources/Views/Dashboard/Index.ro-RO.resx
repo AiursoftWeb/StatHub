@@ -27,10 +27,7 @@
   <data name="Welcome" xml:space="preserve">
     <value>Bun venit</value>
   </data>
-  <data name="Start a new project" xml:space="preserve">
-    <value>Începeți un proiect nou</value>
-  </data>
-  <data name="This is a template project, where we start the voyager..." xml:space="preserve">
+   <data name="This is a template project, where we start the voyager..." xml:space="preserve">
     <value>Acesta este un proiect tip, de unde începem călătoria...</value>
   </data>
   <data name="Why use the Aiursoft Template?" xml:space="preserve">

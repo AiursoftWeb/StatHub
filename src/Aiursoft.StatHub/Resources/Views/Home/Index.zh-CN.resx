@@ -108,10 +108,7 @@
   <data name="Read the document" xml:space="preserve">
     <value>阅读文档</value>
   </data>
-  <data name="Start a new project" xml:space="preserve">
-    <value>开始新项目</value>
-  </data>
-  <data name="This is a template project, where we start the voyager..." xml:space="preserve">
+   <data name="This is a template project, where we start the voyager..." xml:space="preserve">
     <value>这是一个模板项目，我们将从这里开启探索之旅...</value>
   </data>
   <data name="Open Source" xml:space="preserve">
@@ -213,10 +210,7 @@
   <data name="Join Discussions" xml:space="preserve">
     <value>参与讨论</value>
   </data>
-  <data name="Start a New Project" xml:space="preserve">
-    <value>开始新项目</value>
-  </data>
-  <data name="Join our community and start building today!" xml:space="preserve">
+   <data name="Join our community and start building today!" xml:space="preserve">
     <value>加入我们的社区，立即开始构建！</value>
   </data>
   <data name="Monitor your servers," xml:space="preserve">

@@ -27,10 +27,7 @@
   <data name="Hello World!" xml:space="preserve">
     <value>مرحباً أيها العالم!</value>
   </data>
-  <data name="Start a new project" xml:space="preserve">
-    <value>بدء مشروع جديد</value>
-  </data>
-  <data name="Why use the Aiursoft Template?" xml:space="preserve">
+   <data name="Why use the Aiursoft Template?" xml:space="preserve">
     <value>لماذا نستخدم قالب Aiursoft؟</value>
   </data>
   <data name="This is a template project, where we start the voyager..." xml:space="preserve">

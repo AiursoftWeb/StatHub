@@ -108,10 +108,7 @@
   <data name="Read the document" xml:space="preserve">
     <value>Lees het document</value>
   </data>
-  <data name="Start a new project" xml:space="preserve">
-    <value>Start een nieuw project</value>
-  </data>
-  <data name="This is a template project, where we start the voyager..." xml:space="preserve">
+   <data name="This is a template project, where we start the voyager..." xml:space="preserve">
     <value>Dit is een templateproject, waar we de verkenning beginnen...</value>
   </data>
   <data name="Open Source" xml:space="preserve">
@@ -213,10 +210,7 @@
   <data name="Join Discussions" xml:space="preserve">
     <value>Doe mee aan discussies</value>
   </data>
-  <data name="Start a New Project" xml:space="preserve">
-    <value>Start een nieuw project</value>
-  </data>
-  <data name="Join our community and start building today!" xml:space="preserve">
+   <data name="Join our community and start building today!" xml:space="preserve">
     <value>Word lid van onze community en begin vandaag nog met bouwen!</value>
   </data>
   <data name="Monitor your servers," xml:space="preserve">

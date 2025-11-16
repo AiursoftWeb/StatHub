@@ -24,10 +24,7 @@
   <data name="Why use the Aiursoft Template?" xml:space="preserve">
     <value>Neden Aiursoft Template Kullanmalısınız?</value>
   </data>
-  <data name="Start a new project" xml:space="preserve">
-    <value>Yeni bir proje başlat</value>
-  </data>
-  <data name="Hello World!" xml:space="preserve">
+   <data name="Hello World!" xml:space="preserve">
     <value>Merhaba Dünya!</value>
   </data>
   <data name="This is a template project, where we start the voyager..." xml:space="preserve">

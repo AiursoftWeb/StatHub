@@ -105,10 +105,7 @@
   <data name="Comes with full Docker support for simplified, consistent, and reliable deployments." xml:space="preserve">
     <value>完全なDockerサポートにより、簡素化された一貫性のある信頼性の高いデプロイが可能です。</value>
   </data>
-  <data name="Start a new project" xml:space="preserve">
-    <value>新規プロジェクトを開始</value>
-  </data>
-  <data name="Read the document" xml:space="preserve">
+   <data name="Read the document" xml:space="preserve">
     <value>ドキュメントを読む</value>
   </data>
   <data name="This is a template project, where we start the voyager..." xml:space="preserve">
@@ -213,10 +210,7 @@
   <data name="Join Discussions" xml:space="preserve">
     <value>ディスカッションに参加</value>
   </data>
-  <data name="Start a New Project" xml:space="preserve">
-    <value>新規プロジェクトを開始</value>
-  </data>
-  <data name="The template is built for easy deployment. It includes full Docker support, so you can containerize your app and run it anywhere. You can also deploy it directly to IIS, Azure App Service, or any server that supports ASP.NET Core." xml:space="preserve">
+   <data name="The template is built for easy deployment. It includes full Docker support, so you can containerize your app and run it anywhere. You can also deploy it directly to IIS, Azure App Service, or any server that supports ASP.NET Core." xml:space="preserve">
     <value>このテンプレートは簡単なデプロイを実現するために構築されています。完全なDockerサポートを含んでいるため、アプリをコンテナ化してどこでも実行できます。また、IIS、Azure App Service、またはASP.NET Coreをサポートする任意のサーバーに直接デプロイすることも可能です。</value>
   </data>
   <data name="Monitor your servers," xml:space="preserve">

@@ -105,10 +105,7 @@
   <data name="Smart dark mode that automatically adapts to the user&apos;s system settings." xml:space="preserve">
     <value>智慧深色模式，可自動適應使用者的系統設定。</value>
   </data>
-  <data name="Start a new project" xml:space="preserve">
-    <value>開始新專案</value>
-  </data>
-  <data name="Read the document" xml:space="preserve">
+   <data name="Read the document" xml:space="preserve">
     <value>閱讀文件</value>
   </data>
   <data name="This is a template project, where we start the voyager..." xml:space="preserve">
@@ -216,10 +213,7 @@
   <data name="The template is built for easy deployment. It includes full Docker support, so you can containerize your app and run it anywhere. You can also deploy it directly to IIS, Azure App Service, or any server that supports ASP.NET Core." xml:space="preserve">
     <value>此模板專為簡化部署流程而設計。它提供完整的 Docker 支援，讓您能將應用程式容器化並隨處執行。您也可以直接部署到 IIS、Azure App Service 或任何支援 ASP.NET Core 的伺服器。</value>
   </data>
-  <data name="Start a New Project" xml:space="preserve">
-    <value>開始新專案</value>
-  </data>
-  <data name="Monitor your servers," xml:space="preserve">
+   <data name="Monitor your servers," xml:space="preserve">
     <value>監控您的伺服器，</value>
   </data>
   <data name="easier" xml:space="preserve">

@@ -105,10 +105,7 @@
   <data name="Comes with full Docker support for simplified, consistent, and reliable deployments." xml:space="preserve">
     <value>Bénéficie d&apos;une prise en charge complète de Docker pour des déploiements simplifiés, cohérents et fiables.</value>
   </data>
-  <data name="Start a new project" xml:space="preserve">
-    <value>Démarrer un nouveau projet</value>
-  </data>
-  <data name="Read the document" xml:space="preserve">
+   <data name="Read the document" xml:space="preserve">
     <value>Lire la documentation</value>
   </data>
   <data name="This is a template project, where we start the voyager..." xml:space="preserve">
@@ -207,10 +204,7 @@
   <data name="You&apos;ll need the .NET 9 SDK, npm and your favorite IDE, like Visual Studio or JetBrains Rider. You can find the full setup guide in our documentation." xml:space="preserve">
     <value>Vous aurez besoin du SDK .NET 9, de npm et de votre IDE préféré, comme Visual Studio ou JetBrains Rider. Vous trouverez le guide d&apos;installation complet dans notre documentation.</value>
   </data>
-  <data name="Start a New Project" xml:space="preserve">
-    <value>Démarrer un nouveau projet</value>
-  </data>
-  <data name="Join our community and start building today!" xml:space="preserve">
+   <data name="Join our community and start building today!" xml:space="preserve">
     <value>Rejoignez notre communauté et commencez à développer dès aujourd&apos;hui !</value>
   </data>
   <data name="The template is built for easy deployment. It includes full Docker support, so you can containerize your app and run it anywhere. You can also deploy it directly to IIS, Azure App Service, or any server that supports ASP.NET Core." xml:space="preserve">

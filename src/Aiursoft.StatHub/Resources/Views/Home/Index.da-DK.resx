@@ -108,10 +108,7 @@
   <data name="Read the document" xml:space="preserve">
     <value>Læs dokumentationen</value>
   </data>
-  <data name="Start a new project" xml:space="preserve">
-    <value>Start et nyt projekt</value>
-  </data>
-  <data name="This is a template project, where we start the voyager..." xml:space="preserve">
+   <data name="This is a template project, where we start the voyager..." xml:space="preserve">
     <value>Dette er et skabelonprojekt, hvor vi starter rejsen...</value>
   </data>
   <data name="faster" xml:space="preserve">
@@ -216,10 +213,7 @@
   <data name="The template is built for easy deployment. It includes full Docker support, so you can containerize your app and run it anywhere. You can also deploy it directly to IIS, Azure App Service, or any server that supports ASP.NET Core." xml:space="preserve">
     <value>Skabelonen er bygget til nem installation. Den inkluderer fuld Docker-understøttelse, så du kan containerisere din app og køre den hvor som helst. Du kan også installere den direkte på IIS, Azure App Service eller enhver server, der understøtter ASP.NET Core.</value>
   </data>
-  <data name="Start a New Project" xml:space="preserve">
-    <value>Start et nyt projekt</value>
-  </data>
-  <data name="easier" xml:space="preserve">
+   <data name="easier" xml:space="preserve">
     <value>nemmere</value>
   </data>
   <data name="Monitor your servers," xml:space="preserve">

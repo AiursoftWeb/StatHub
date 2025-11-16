@@ -105,10 +105,7 @@
   <data name="Smart dark mode that automatically adapts to the user&apos;s system settings." xml:space="preserve">
     <value>Inteligentny tryb ciemny, który automatycznie dostosowuje się do ustawień systemowych użytkownika.</value>
   </data>
-  <data name="Start a new project" xml:space="preserve">
-    <value>Rozpocznij nowy projekt</value>
-  </data>
-  <data name="Read the document" xml:space="preserve">
+   <data name="Read the document" xml:space="preserve">
     <value>Przeczytaj dokumentację</value>
   </data>
   <data name="This is a template project, where we start the voyager..." xml:space="preserve">
@@ -210,10 +207,7 @@
   <data name="Join our community and start building today!" xml:space="preserve">
     <value>Dołącz do naszej społeczności i zacznij budować już dziś!</value>
   </data>
-  <data name="Start a New Project" xml:space="preserve">
-    <value>Rozpocznij nowy projekt</value>
-  </data>
-  <data name="Join Discussions" xml:space="preserve">
+   <data name="Join Discussions" xml:space="preserve">
     <value>Dołącz do Dyskusji</value>
   </data>
   <data name="The template is built for easy deployment. It includes full Docker support, so you can containerize your app and run it anywhere. You can also deploy it directly to IIS, Azure App Service, or any server that supports ASP.NET Core." xml:space="preserve">

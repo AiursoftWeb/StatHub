@@ -105,10 +105,7 @@
   <data name="Comes with full Docker support for simplified, consistent, and reliable deployments." xml:space="preserve">
     <value>Bietet vollständige Docker-Unterstützung für vereinfachte, konsistente und zuverlässige Bereitstellungen.</value>
   </data>
-  <data name="Start a new project" xml:space="preserve">
-    <value>Ein neues Projekt starten</value>
-  </data>
-  <data name="Read the document" xml:space="preserve">
+   <data name="Read the document" xml:space="preserve">
     <value>Dokumentation lesen</value>
   </data>
   <data name="This is a template project, where we start the voyager..." xml:space="preserve">
@@ -216,10 +213,7 @@
   <data name="Join our community and start building today!" xml:space="preserve">
     <value>Treten Sie unserer Community bei und beginnen Sie noch heute mit dem Entwickeln!</value>
   </data>
-  <data name="Start a New Project" xml:space="preserve">
-    <value>Ein neues Projekt starten</value>
-  </data>
-  <data name="easier" xml:space="preserve">
+   <data name="easier" xml:space="preserve">
     <value>einfacher</value>
   </data>
   <data name="Monitor your servers," xml:space="preserve">

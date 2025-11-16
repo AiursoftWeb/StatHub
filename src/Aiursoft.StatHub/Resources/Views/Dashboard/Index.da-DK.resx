@@ -27,10 +27,7 @@
   <data name="Multiple Database Support" xml:space="preserve">
     <value>Understøttelse af flere databaser</value>
   </data>
-  <data name="Start a new project" xml:space="preserve">
-    <value>Start et nyt projekt</value>
-  </data>
-  <data name="Welcome" xml:space="preserve">
+   <data name="Welcome" xml:space="preserve">
     <value>Velkommen</value>
   </data>
   <data name="This is a template project, where we start the voyager..." xml:space="preserve">

@@ -24,10 +24,7 @@
   <data name="Why use the Aiursoft Template?" xml:space="preserve">
     <value>Miksi käyttää Aiursoft Templatea?</value>
   </data>
-  <data name="Start a new project" xml:space="preserve">
-    <value>Aloita uusi projekti</value>
-  </data>
-  <data name="Read the document" xml:space="preserve">
+   <data name="Read the document" xml:space="preserve">
     <value>Lue dokumentti</value>
   </data>
   <data name="Multiple Database Support" xml:space="preserve">

@@ -108,10 +108,7 @@
   <data name="Read the document" xml:space="preserve">
     <value>Belgeyi okuyun</value>
   </data>
-  <data name="Start a new project" xml:space="preserve">
-    <value>Yeni bir proje başlat</value>
-  </data>
-  <data name="This is a template project, where we start the voyager..." xml:space="preserve">
+   <data name="This is a template project, where we start the voyager..." xml:space="preserve">
     <value>Bu, yolculuğa başladığımız bir şablon projedir...</value>
   </data>
   <data name="Open Source" xml:space="preserve">
@@ -210,10 +207,7 @@
   <data name="for any inquiries or to report issues." xml:space="preserve">
     <value>her türlü soru veya sorun bildirimi için.</value>
   </data>
-  <data name="Start a New Project" xml:space="preserve">
-    <value>Yeni Bir Proje Başlat</value>
-  </data>
-  <data name="Join Discussions" xml:space="preserve">
+   <data name="Join Discussions" xml:space="preserve">
     <value>Tartışmalara Katıl</value>
   </data>
   <data name="The template is built for easy deployment. It includes full Docker support, so you can containerize your app and run it anywhere. You can also deploy it directly to IIS, Azure App Service, or any server that supports ASP.NET Core." xml:space="preserve">

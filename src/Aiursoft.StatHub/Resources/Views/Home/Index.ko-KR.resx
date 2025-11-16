@@ -108,10 +108,7 @@
   <data name="Read the document" xml:space="preserve">
     <value>문서 읽기</value>
   </data>
-  <data name="Start a new project" xml:space="preserve">
-    <value>새 프로젝트 시작하기</value>
-  </data>
-  <data name="This is a template project, where we start the voyager..." xml:space="preserve">
+   <data name="This is a template project, where we start the voyager..." xml:space="preserve">
     <value>이것은 템플릿 프로젝트로, 여기서 우리의 항해를 시작합니다...</value>
   </data>
   <data name="Open Source" xml:space="preserve">
@@ -216,10 +213,7 @@
   <data name="The template is built for easy deployment. It includes full Docker support, so you can containerize your app and run it anywhere. You can also deploy it directly to IIS, Azure App Service, or any server that supports ASP.NET Core." xml:space="preserve">
     <value>이 템플릿은 손쉬운 배포를 위해 구축되었습니다. 완전한 Docker 지원을 포함하고 있어 앱을 컨테이너화하여 어디서나 실행할 수 있습니다. 또한 IIS, Azure App Service 또는 ASP.NET Core를 지원하는 모든 서버에 직접 배포할 수도 있습니다.</value>
   </data>
-  <data name="Start a New Project" xml:space="preserve">
-    <value>새 프로젝트 시작하기</value>
-  </data>
-  <data name="easier" xml:space="preserve">
+   <data name="easier" xml:space="preserve">
     <value>더 쉽게</value>
   </data>
   <data name="Monitor your servers," xml:space="preserve">

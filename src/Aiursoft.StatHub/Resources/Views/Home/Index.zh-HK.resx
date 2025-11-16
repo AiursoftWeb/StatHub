@@ -108,10 +108,7 @@
   <data name="Read the document" xml:space="preserve">
     <value>閱讀文件</value>
   </data>
-  <data name="Start a new project" xml:space="preserve">
-    <value>開始新項目</value>
-  </data>
-  <data name="This is a template project, where we start the voyager..." xml:space="preserve">
+   <data name="This is a template project, where we start the voyager..." xml:space="preserve">
     <value>這是一個模板項目，我們由此展開探索之旅...</value>
   </data>
   <data name="Free" xml:space="preserve">
@@ -216,10 +213,7 @@
   <data name="Join Discussions" xml:space="preserve">
     <value>參與討論</value>
   </data>
-  <data name="Start a New Project" xml:space="preserve">
-    <value>開始新專案</value>
-  </data>
-  <data name="easier" xml:space="preserve">
+   <data name="easier" xml:space="preserve">
     <value>更輕鬆</value>
   </data>
   <data name="Join our community and start monitoring today!" xml:space="preserve">

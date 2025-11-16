@@ -108,10 +108,7 @@
   <data name="Read the document" xml:space="preserve">
     <value>Citește documentația</value>
   </data>
-  <data name="Start a new project" xml:space="preserve">
-    <value>Începe un proiect nou</value>
-  </data>
-  <data name="This is a template project, where we start the voyager..." xml:space="preserve">
+   <data name="This is a template project, where we start the voyager..." xml:space="preserve">
     <value>Acesta este un proiect tipic, de unde începem călătoria...</value>
   </data>
   <data name="Free" xml:space="preserve">
@@ -216,10 +213,7 @@
   <data name="The template is built for easy deployment. It includes full Docker support, so you can containerize your app and run it anywhere. You can also deploy it directly to IIS, Azure App Service, or any server that supports ASP.NET Core." xml:space="preserve">
     <value>Șablonul este construit pentru o implementare ușoară. Include suport complet pentru Docker, astfel încât poți containeriza aplicația și să o rulezi oriunde. De asemenea, îl poți implementa direct pe IIS, Azure App Service sau pe orice server care suportă ASP.NET Core.</value>
   </data>
-  <data name="Start a New Project" xml:space="preserve">
-    <value>Începeți un Proiect Nou</value>
-  </data>
-  <data name="easier" xml:space="preserve">
+   <data name="easier" xml:space="preserve">
     <value>mai ușor</value>
   </data>
   <data name="Monitor your servers," xml:space="preserve">

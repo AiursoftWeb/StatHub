@@ -24,10 +24,7 @@
   <data name="Hello World!" xml:space="preserve">
     <value>Hallo Welt!</value>
   </data>
-  <data name="Start a new project" xml:space="preserve">
-    <value>Ein neues Projekt starten</value>
-  </data>
-  <data name="Read the document" xml:space="preserve">
+   <data name="Read the document" xml:space="preserve">
     <value>Dokumentation lesen</value>
   </data>
   <data name="This is a template project, where we start the voyager..." xml:space="preserve">

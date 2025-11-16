@@ -108,10 +108,7 @@
   <data name="Read the document" xml:space="preserve">
     <value>Leer la documentación</value>
   </data>
-  <data name="Start a new project" xml:space="preserve">
-    <value>Iniciar un nuevo proyecto</value>
-  </data>
-  <data name="This is a template project, where we start the voyager..." xml:space="preserve">
+   <data name="This is a template project, where we start the voyager..." xml:space="preserve">
     <value>Este es un proyecto plantilla, donde comenzamos el viaje...</value>
   </data>
   <data name="MIT Licence" xml:space="preserve">
@@ -213,10 +210,7 @@
   <data name="Join our community and start building today!" xml:space="preserve">
     <value>¡Únete a nuestra comunidad y empieza a construir hoy!</value>
   </data>
-  <data name="Start a New Project" xml:space="preserve">
-    <value>Iniciar un Nuevo Proyecto</value>
-  </data>
-  <data name="The template is built for easy deployment. It includes full Docker support, so you can containerize your app and run it anywhere. You can also deploy it directly to IIS, Azure App Service, or any server that supports ASP.NET Core." xml:space="preserve">
+   <data name="The template is built for easy deployment. It includes full Docker support, so you can containerize your app and run it anywhere. You can also deploy it directly to IIS, Azure App Service, or any server that supports ASP.NET Core." xml:space="preserve">
     <value>La plantilla está diseñada para una implementación sencilla. Incluye soporte completo para Docker, por lo que puedes containerizar tu aplicación y ejecutarla en cualquier lugar. También puedes implementarla directamente en IIS, Azure App Service o cualquier servidor que admita ASP.NET Core.</value>
   </data>
   <data name="easier" xml:space="preserve">

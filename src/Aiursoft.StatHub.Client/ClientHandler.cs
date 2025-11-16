@@ -1,5 +1,4 @@
 ﻿using System.CommandLine;
-using System.CommandLine.Invocation;
 using Aiursoft.CommandFramework.Framework;
 using Aiursoft.CommandFramework.Models;
 using Aiursoft.CommandFramework.Services;
@@ -14,17 +13,21 @@ public class ClientHandler : ExecutableCommandHandlerBuilder
 {
     public static readonly Option<string> Server =
         new(
-            aliases: ["-s", "--server"],
-            description: "The target server to use.")
+            name: "--server",
+            aliases: ["-s"])
         {
-            IsRequired = true
+            Description = "The target server to use.",
+            Required = true
         };
 
     private static readonly Option<bool> OneTime =
         new(
-            aliases: ["-o", "--one-time"],
-            description: "Only connect to the server once.",
-            getDefaultValue: () => false);
+            name: "--one-time",
+            aliases: ["-o"])
+        {
+            Description = "Only connect to the server once.",
+            DefaultValueFactory = _ => false
+        };
 
     protected override string Name => "client";
 
@@ -37,11 +40,11 @@ public class ClientHandler : ExecutableCommandHandlerBuilder
         CommonOptionsProvider.VerboseOption
     ];
 
-    protected override async Task Execute(InvocationContext context)
+    protected override async Task Execute(ParseResult context)
     {
-        var server = context.ParseResult.GetValueForOption(Server)!;
-        var oneTime = context.ParseResult.GetValueForOption(OneTime);
-        var verbose = context.ParseResult.GetValueForOption(CommonOptionsProvider.VerboseOption);
+        var server = context.GetValue(Server)!;
+        var oneTime = context.GetValue(OneTime);
+        var verbose = context.GetValue(CommonOptionsProvider.VerboseOption);
         var hostBuilder = ServiceBuilder
             .CreateCommandHostBuilder<Startup>(verbose);
 
@@ -49,11 +52,11 @@ public class ClientHandler : ExecutableCommandHandlerBuilder
         {
             services.AddStatHubServer(server);
         });
-        
+
         var host = hostBuilder.Build();
         var serverMonitor = host.Services.GetRequiredService<ServerMonitor>();
         var logger = host.Services.GetRequiredService<ILogger<ServerMonitor>>();
-        
+
         try
         {
             await serverMonitor.MonitorServerAsync(CancellationToken.None, oneTime);
@@ -62,7 +65,7 @@ public class ClientHandler : ExecutableCommandHandlerBuilder
         {
             // Ignore because dstat will quit immediately in one-time mode.
         }
-        
+
         logger.LogInformation("The monitor quit.");
     }
 }

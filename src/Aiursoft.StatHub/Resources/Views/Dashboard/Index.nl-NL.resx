@@ -39,10 +39,7 @@
   <data name="Why use the Aiursoft Template?" xml:space="preserve">
     <value>Waarom de Aiursoft Template gebruiken?</value>
   </data>
-  <data name="Start a new project" xml:space="preserve">
-    <value>Start een nieuw project</value>
-  </data>
-  <data name="OpenID Connect Integration" xml:space="preserve">
+   <data name="OpenID Connect Integration" xml:space="preserve">
     <value>OpenID Connect-integratie</value>
   </data>
   <data name="Easily switch between providers like SQLite, MySQL, SQL Server, and an in-memory database for testing." xml:space="preserve">

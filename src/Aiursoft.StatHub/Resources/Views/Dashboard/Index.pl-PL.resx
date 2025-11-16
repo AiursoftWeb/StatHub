@@ -18,10 +18,7 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="Start a new project" xml:space="preserve">
-    <value>Rozpocznij nowy projekt</value>
-  </data>
-  <data name="Multiple Database Support" xml:space="preserve">
+   <data name="Multiple Database Support" xml:space="preserve">
     <value>Obsługa wielu baz danych</value>
   </data>
   <data name="This is a template project, where we start the voyager..." xml:space="preserve">
