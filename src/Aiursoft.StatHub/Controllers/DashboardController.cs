@@ -66,11 +66,16 @@ public class DashboardController(InMemoryDatabase database) : Controller
         // return text/plain
         var installScript = @$"
 
-if [[ ""$(lsb_release -sc)"" =~ ^(devel|jammy|noble)$ ]]; then
-  sudo add-apt-repository ppa:dotnet/backports --yes
-fi
+#if [[ ""$(lsb_release -sc)"" =~ ^(devel|jammy|noble)$ ]]; then
+#  sudo add-apt-repository ppa:dotnet/backports --yes
+#fi
 
-DEBIAN_FRONTEND=noninteractive sudo apt install dotnet9 -y
+wget https://dot.net/v1/dotnet-install.sh -O /tmp/dotnet-install.sh && \
+    chmod +x /tmp/dotnet-install.sh && \
+    sudo /tmp/dotnet-install.sh --channel 10.0 --install-dir /usr/share/dotnet && \
+    sudo ln -s /usr/share/dotnet/dotnet /usr/bin/dotnet && \
+    rm /tmp/dotnet-install.sh
+DEBIAN_FRONTEND=noninteractive sudo apt update
 DEBIAN_FRONTEND=noninteractive sudo apt install pcp -y
 sudo touch /etc/motd
 sudo rm /root/.local/share/StatHubClient/config.conf
