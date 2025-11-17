@@ -202,7 +202,7 @@
     <value>pour toute demande ou pour signaler des problèmes.</value>
   </data>
   <data name="You&apos;ll need the .NET 10 SDK, npm and your favorite IDE, like Visual Studio or JetBrains Rider. You can find the full setup guide in our documentation." xml:space="preserve">
-    <value>Vous aurez besoin du SDK .NET 9, de npm et de votre IDE préféré, comme Visual Studio ou JetBrains Rider. Vous trouverez le guide d&apos;installation complet dans notre documentation.</value>
+    <value>Vous aurez besoin du SDK .NET 10, de npm et de votre IDE préféré, comme Visual Studio ou JetBrains Rider. Vous trouverez le guide d&apos;installation complet dans notre documentation.</value>
   </data>
    <data name="Join our community and start building today!" xml:space="preserve">
     <value>Rejoignez notre communauté et commencez à développer dès aujourd&apos;hui !</value>
