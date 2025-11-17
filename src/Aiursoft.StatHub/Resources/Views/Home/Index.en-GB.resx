@@ -195,8 +195,8 @@
   <data name="You can get community support via GitHub Discussions. Please visit our" xml:space="preserve">
     <value>You can obtain community support via GitHub Discussions. Please visit our</value>
   </data>
-  <data name="You&apos;ll need the .NET 9 SDK, npm and your favorite IDE, like Visual Studio or JetBrains Rider. You can find the full setup guide in our documentation." xml:space="preserve">
-    <value>You&apos;ll need the .NET 9 SDK, npm and your favourite IDE, such as Visual Studio or JetBrains Rider. You can find the full setup guide in our documentation.</value>
+  <data name="You&apos;ll need the .NET 10 SDK, npm and your favorite IDE, like Visual Studio or JetBrains Rider. You can find the full setup guide in our documentation." xml:space="preserve">
+    <value>You&apos;ll need the .NET 10 SDK, npm and your favourite IDE, such as Visual Studio or JetBrains Rider. You can find the full setup guide in our documentation.</value>
   </data>
   <data name="Discussions page" xml:space="preserve">
     <value>Discussions page</value>

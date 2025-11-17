@@ -195,8 +195,8 @@
   <data name="Discussions page" xml:space="preserve">
     <value>討論頁面</value>
   </data>
-  <data name="You&apos;ll need the .NET 9 SDK, npm and your favorite IDE, like Visual Studio or JetBrains Rider. You can find the full setup guide in our documentation." xml:space="preserve">
-    <value>你需要安裝 .NET 9 SDK、npm 同你鍾意嘅 IDE，例如 Visual Studio 或者 JetBrains Rider。完整嘅設定指南可以喺我哋嘅說明文件度搵到。</value>
+  <data name="You&apos;ll need the .NET 10 SDK, npm and your favorite IDE, like Visual Studio or JetBrains Rider. You can find the full setup guide in our documentation." xml:space="preserve">
+    <value>你需要安裝 .NET 10 SDK、npm 同你鍾意嘅 IDE，例如 Visual Studio 或者 JetBrains Rider。完整嘅設定指南可以喺我哋嘅說明文件度搵到。</value>
   </data>
   <data name="You can get community support via GitHub Discussions. Please visit our" xml:space="preserve">
     <value>你可以透過 GitHub Discussions 獲得社群支援。請瀏覽我們的</value>

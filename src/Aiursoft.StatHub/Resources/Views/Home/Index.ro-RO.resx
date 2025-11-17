@@ -192,8 +192,8 @@
   <data name="How can I get support?" xml:space="preserve">
     <value>Cum pot obține asistență?</value>
   </data>
-  <data name="You&apos;ll need the .NET 9 SDK, npm and your favorite IDE, like Visual Studio or JetBrains Rider. You can find the full setup guide in our documentation." xml:space="preserve">
-    <value>Vei avea nevoie de .NET 9 SDK, npm și IDE-ul tău preferat, cum ar fi Visual Studio sau JetBrains Rider. Poți găsi ghidul complet de configurare în documentația noastră.</value>
+  <data name="You&apos;ll need the .NET 10 SDK, npm and your favorite IDE, like Visual Studio or JetBrains Rider. You can find the full setup guide in our documentation." xml:space="preserve">
+    <value>Vei avea nevoie de .NET 10 SDK, npm și IDE-ul tău preferat, cum ar fi Visual Studio sau JetBrains Rider. Poți găsi ghidul complet de configurare în documentația noastră.</value>
   </data>
   <data name="You can get community support via GitHub Discussions. Please visit our" xml:space="preserve">
     <value>Puteți obține suport din partea comunității prin GitHub Discussions. Vă rugăm să vizitați pagina noastră de</value>
