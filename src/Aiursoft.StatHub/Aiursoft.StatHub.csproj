@@ -10,7 +10,7 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Aiursoft.DbTools.Switchable" Version="10.0.1" />
+    <PackageReference Include="Aiursoft.DbTools.Switchable" Version="10.0.2" />
     <PackageReference Include="Aiursoft.Scanner" Version="10.0.0" />
     <PackageReference Include="Aiursoft.UiStack" Version="10.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="10.0.0" />
@@ -20,7 +20,7 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="SixLabors.ImageSharp" Version="3.1.12" />
-    <PackageReference Include="Aiursoft.AiurProtocol.Server" Version="10.0.1" />
+    <PackageReference Include="Aiursoft.AiurProtocol.Server" Version="10.0.2" />
     <PackageReference Include="Aiursoft.AiurObserver.WebSocket.Server" Version="10.0.0" />
   </ItemGroup>
   <ItemGroup>
