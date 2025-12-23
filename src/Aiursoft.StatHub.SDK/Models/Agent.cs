@@ -234,7 +234,10 @@ public class Agent
         var isOutDated = LastUpdate < DateTime.UtcNow.AddMinutes(-1);
 
         var load = GetLoad();
-        var loadRate = load.Load15M * 30;
+        // Normalize load by CPU cores and convert to percentage
+        // loadPerCore represents utilization: 1.0 = 100% of one core
+        var loadPerCore = CpuCores > 0 ? load.Load15M / CpuCores : 0;
+        var loadRate = loadPerCore * 100; // Convert to percentage for consistency
 
         var cpu = GetCpuUsage();
         var cpuRate = cpu.Ratio;
@@ -251,17 +254,17 @@ public class Agent
             status = AgentStatus.Offline;
             reason = "Server is out of sync.";
         }
-        else if (loadRate > 60 || cpuRate > 40 || diskUseRatio > 0.7)
+        else if (loadRate > 100 || cpuRate > 40 || diskUseRatio > 0.7)
         {
             status = AgentStatus.Critical;
-            reason = (loadRate > 60 ? "Load critical. " : "") +
+            reason = (loadRate > 100 ? "Load critical. " : "") +
                      (cpuRate > 40 ? "CPU critical. " : "") +
                      (diskUseRatio > 0.7 ? "Disk critical. " : "");
         }
-        else if (loadRate > 30 || cpuRate > 20 || diskUseRatio > 0.6)
+        else if (loadRate > 70 || cpuRate > 20 || diskUseRatio > 0.6)
         {
             status = AgentStatus.Warning;
-            reason = (loadRate > 30 ? "Load warning. " : "") +
+            reason = (loadRate > 70 ? "Load warning. " : "") +
                      (cpuRate > 20 ? "CPU warning. " : "") +
                      (diskUseRatio > 0.6 ? "Disk warning. " : "");
         }
@@ -322,8 +325,8 @@ public record AgentHealthReport
     // 3. 模板样式 (用于主页进度条)
     public string LoadColorClass => LoadRate < 10 ? "bg-success" :
                                     LoadRate < 15 ? "bg-info" :
-                                    LoadRate < 30 ? "bg-secondary" :
-                                    LoadRate < 60 ? "bg-warning" : "bg-danger";
+                                    LoadRate < 70 ? "bg-secondary" :
+                                    LoadRate < 100 ? "bg-warning" : "bg-danger";
 
     public string CpuColorClass => CpuRate < 5 ? "bg-success" :
                                    CpuRate < 10 ? "bg-info" :
