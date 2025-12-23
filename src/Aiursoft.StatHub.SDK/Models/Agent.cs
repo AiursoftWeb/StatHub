@@ -179,8 +179,8 @@ public class Agent
         var recv = _netRecvLast30Seconds.Average();
         var send = _netSendLast30Seconds.Average();
         return new NetworkInfo(
-        recv.count > 0 ? recv.Sum / recv.count: 0,
-        send.count > 0 ? send.Sum / send.count: 0);
+        recv.count > 0 ? recv.Sum / recv.count : 0,
+        send.count > 0 ? send.Sum / send.count : 0);
     }
 
     public DiskInfo GetDisk()
@@ -193,8 +193,8 @@ public class Agent
         var read = _diskReadLast30Seconds.Average();
         var writ = _diskWritLast30Seconds.Average();
         return new DiskInfo(
-        read.count > 0 ? read.Sum / read.count: 0,
-        writ.count > 0 ? writ.Sum / writ.count: 0);
+        read.count > 0 ? read.Sum / read.count : 0,
+        writ.count > 0 ? writ.Sum / writ.count : 0);
     }
 
     public LoadInfo GetLoad()
@@ -212,7 +212,10 @@ public class Agent
     public int RamInGb { get; set; }
     public int TotalRoot { get; set; }
     public int UsedRoot { get; set; }
+    public string? CountryName { get; set; }
+    public string? CountryCode { get; set; }
     public string? Motd { get; set; }
+
 
     public string GetSku()
     {
@@ -224,6 +227,52 @@ public class Agent
         return CpuCores * 1000
                + RamInGb;
     }
+
+    public bool IsPrivateIp()
+    {
+        if (string.IsNullOrWhiteSpace(Ip))
+            return true;
+
+        // Check for localhost
+        if (Ip == "::1" || Ip == "127.0.0.1" || Ip.StartsWith("127."))
+            return true;
+
+        // Parse IP address
+        if (System.Net.IPAddress.TryParse(Ip, out var ipAddress))
+        {
+            var bytes = ipAddress.GetAddressBytes();
+
+            // IPv4 private ranges
+            if (ipAddress.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+            {
+                // 10.0.0.0 - 10.255.255.255
+                if (bytes[0] == 10)
+                    return true;
+
+                // 172.16.0.0 - 172.31.255.255
+                if (bytes[0] == 172 && bytes[1] >= 16 && bytes[1] <= 31)
+                    return true;
+
+                // 192.168.0.0 - 192.168.255.255
+                if (bytes[0] == 192 && bytes[1] == 168)
+                    return true;
+            }
+            // IPv6 private ranges
+            else if (ipAddress.AddressFamily == System.Net.Sockets.AddressFamily.InterNetworkV6)
+            {
+                // Check for link-local (fe80::/10)
+                if (bytes[0] == 0xfe && (bytes[1] & 0xc0) == 0x80)
+                    return true;
+
+                // Check for unique local (fc00::/7)
+                if ((bytes[0] & 0xfe) == 0xfc)
+                    return true;
+            }
+        }
+
+        return false;
+    }
+
 
     /// <summary>
     /// 计算并返回 Agent 的完整健康报告。

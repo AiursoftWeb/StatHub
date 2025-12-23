@@ -1,9 +1,9 @@
-
 using Aiursoft.AiurProtocol.Models;
 using Aiursoft.AiurProtocol.Server;
 using Aiursoft.AiurProtocol.Server.Attributes;
 using Aiursoft.StatHub.SDK.AddressModels;
 using Aiursoft.StatHub.Data;
+using Aiursoft.StatHub.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,8 +17,10 @@ namespace Aiursoft.StatHub.Controllers;
     PassthroughAiurServerException = true)]
 public class ApiController(
     InMemoryDatabase database,
+    IpGeolocationService ipGeolocationService,
     ILogger<ApiController> logger)
     : ControllerBase
+
 {
     [HttpGet("info")]
     public IActionResult Info()
@@ -45,10 +47,23 @@ public class ApiController(
         entity.UsedRoot = model.UsedRoot;
         entity.TotalRoot = model.TotalRoot;
         entity.Motd = model.Motd!;
+
+        // Get country information if not already set
+        if (string.IsNullOrWhiteSpace(entity.CountryCode) && !string.IsNullOrWhiteSpace(entity.Ip))
+        {
+            var location = await ipGeolocationService.GetLocationAsync(entity.Ip);
+            if (location != null)
+            {
+                entity.CountryName = location.Value.CountryName;
+                entity.CountryCode = location.Value.CountryCode;
+            }
+        }
+
         foreach (var stat in model.Stats ?? [])
         {
             await entity.Stats.BroadcastAsync(stat);
         }
         return this.Protocol(Code.JobDone, $"Got!");
     }
+
 }

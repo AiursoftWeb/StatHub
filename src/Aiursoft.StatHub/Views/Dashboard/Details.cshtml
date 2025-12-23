@@ -29,7 +29,17 @@
                     <div class="d-flex align-items-start">
                         <div class="flex-grow-1">
                             <h3 class="mb-2">@agent.Hostname</h3>
-                            <p class="mb-2">@agent.Ip</p>
+                            <p class="mb-2">
+                                @if (agent.IsPrivateIp())
+                                {
+                                    <span style="margin-right: 5px;">🏠</span>
+                                }
+                                else if (!string.IsNullOrWhiteSpace(agent.CountryCode))
+                                {
+                                    <img src="~/node_modules/@("@aiursoft")/uistack/dist/img/flags/@(agent.CountryCode.ToLower()).png" alt="@agent.CountryName" style="height: 15px; margin-right: 5px;" />
+                                }
+                                @agent.Ip
+                            </p>
                             <div class="mb-0">
                                 <span class="badge @health.BadgeClass" data-bs-toggle="tooltip" title="@health.Reason">
                                     @Localizer[health.BadgeText]

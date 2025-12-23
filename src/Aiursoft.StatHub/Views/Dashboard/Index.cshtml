@@ -149,22 +149,22 @@
                             <th>@Localizer["CPU Usage"]</th>
                             <th class="d-none d-lg-table-cell">@Localizer["Used at"]</th>
                             <th>@Localizer["RAM Usage"]</th>
-                            @if (showLast30)
-                            {
-                                <th class="d-none d-md-table-cell">@Localizer["Net Receiving"]</th>
-                                <th class="d-none d-md-table-cell">@Localizer["Net Sending"]</th>
-                                <th>@Localizer["Disk Used"]</th>
-                                <th class="d-none d-xl-table-cell">@Localizer["Disk Reading"]</th>
-                                <th class="d-none d-xl-table-cell">@Localizer["Disk Writing"]</th>
-                            }
-                            else
-                            {
-                                <th class="d-none d-md-table-cell">@Localizer["Net Received"]</th>
-                                <th class="d-none d-md-table-cell">@Localizer["Net Sent"]</th>
-                                <th>@Localizer["Disk Used"]</th>
-                                <th class="d-none d-xl-table-cell">@Localizer["Disk Read"]</th>
-                                <th class="d-none d-xl-table-cell">@Localizer["Disk Written"]</th>
-                            }
+                                @if (showLast30)
+                                {
+                                    <th class="d-none d-md-table-cell">@Localizer["Net Receiving"]</th>
+                                    <th class="d-none d-md-table-cell">@Localizer["Net Sending"]</th>
+                                    <th>@Localizer["Disk Used"]</th>
+                                    <th class="d-none d-xl-table-cell">@Localizer["Disk Reading"]</th>
+                                    <th class="d-none d-xl-table-cell">@Localizer["Disk Writing"]</th>
+                                }
+                                else
+                                {
+                                    <th class="d-none d-md-table-cell">@Localizer["Net Received"]</th>
+                                    <th class="d-none d-md-table-cell">@Localizer["Net Sent"]</th>
+                                    <th>@Localizer["Disk Used"]</th>
+                                    <th class="d-none d-xl-table-cell">@Localizer["Disk Read"]</th>
+                                    <th class="d-none d-xl-table-cell">@Localizer["Disk Written"]</th>
+                                }
                             <th class="d-none d-xl-table-cell">@Localizer["OS"]</th>
                             <th>@Localizer["More"]</th>
                         </tr>
@@ -177,97 +177,106 @@
                                 var net = showLast30 ? agent.GetNetworkLast30Seconds() : agent.GetNetwork();
                                 var disk = showLast30 ? agent.GetDiskLast30Seconds() : agent.GetDisk();
                                 var osFirstTwoWords = string.Join(" ", agent.OsName.Split(' ').Take(2)).Trim();
-                                <tr>
-                                    <td data-sort="@health.Status">
-                                        <label data-bs-toggle="tooltip" data-placement="bottom" title="@health.Reason">
-                                            <i class="align-middle me-2 @health.IconClass" data-lucide="@health.IndexIconDataLucide"></i>
-                                        </label>
-                                    </td>
-                                    <td>
+                                    <tr>
+                                        <td data-sort="@health.Status">
+                                            <label data-bs-toggle="tooltip" data-placement="bottom" title="@health.Reason">
+                                                <i class="align-middle me-2 @health.IconClass" data-lucide="@health.IndexIconDataLucide"></i>
+                                            </label>
+                                        </td>
+                                        <td>
+                                        @if (agent.IsPrivateIp())
+                                        {
+                                                    <span style="margin-right: 5px;">🏠</span>
+                                        }
+                                        else if (!string.IsNullOrWhiteSpace(agent.CountryCode))
+                                        {
+                                                    <img src="~/node_modules/@("@aiursoft")/uistack/dist/img/flags/@(agent.CountryCode.ToLower()).png" alt="@agent.CountryName" style="height: 15px; margin-right: 5px;" />
+                                        }
                                         @agent.Ip
-                                    </td>
-                                    <td>
+
+                                        </td>
+                                        <td>
                                         @agent.Hostname
                                         @if (!string.IsNullOrWhiteSpace(agent.Motd))
                                         {
-                                            <i class="align-middle ms-1" data-lucide="mail" data-bs-toggle="tooltip" data-placement="bottom" title="@agent.Motd"></i>
+                                                    <i class="align-middle ms-1" data-lucide="mail" data-bs-toggle="tooltip" data-placement="bottom" title="@agent.Motd"></i>
                                         }
-                                    </td>
-                                    <td class="d-none d-lg-table-cell" data-sort="@agent.GetSkuInNumber()">@agent.GetSku()</td>
-                                    <td class="d-none d-xl-table-cell" data-utc-time="@agent.BootTime.ToHtmlDateTime()" data-sort="@agent.BootTime.Ticks">
-                                    </td>
+                                        </td>
+                                        <td class="d-none d-lg-table-cell" data-sort="@agent.GetSkuInNumber()">@agent.GetSku()</td>
+                                        <td class="d-none d-xl-table-cell" data-utc-time="@agent.BootTime.ToHtmlDateTime()" data-sort="@agent.BootTime.Ticks">
+                                        </td>
 
-                                    <td data-sort="@health.LoadRate">
-                                        <div class="d-flex flex-column w-100">
-                                            <span class="me-2 mb-1 text-muted">@health.LoadRate.ToString("F0")%</span>
-                                            <div class="progress progress-sm w-100">
-                                                <div class="progress-bar @health.LoadColorClass"
-                                                     role="progressbar" style="width: @(health.LoadRate)%" aria-valuenow="@health.LoadRate" aria-valuemin="0" aria-valuemax="100" data-bs-toggle="tooltip" data-placement="bottom"
-                                                     title="@health.LoadPrompt"></div>
+                                        <td data-sort="@health.LoadRate">
+                                            <div class="d-flex flex-column w-100">
+                                                <span class="me-2 mb-1 text-muted">@health.LoadRate.ToString("F0")%</span>
+                                                <div class="progress progress-sm w-100">
+                                                    <div class="progress-bar @health.LoadColorClass"
+                                                         role="progressbar" style="width: @(health.LoadRate)%" aria-valuenow="@health.LoadRate" aria-valuemin="0" aria-valuemax="100" data-bs-toggle="tooltip" data-placement="bottom"
+                                                         title="@health.LoadPrompt"></div>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </td>
+                                        </td>
 
-                                    <td data-sort="@health.CpuRate">
-                                        <div class="d-flex flex-column w-100">
-                                            <span class="me-2 mb-1 text-muted">@health.CpuRate.ToString("F0")%</span>
-                                            <div class="progress progress-sm w-100">
-                                                <div class="progress-bar @health.CpuColorClass"
-                                                     role="progressbar" style="width: @(health.CpuRate)%" aria-valuenow="@health.CpuRate" aria-valuemin="0" aria-valuemax="100" data-bs-toggle="tooltip" data-placement="bottom"
-                                                     title="@health.CpuPrompt"></div>
+                                        <td data-sort="@health.CpuRate">
+                                            <div class="d-flex flex-column w-100">
+                                                <span class="me-2 mb-1 text-muted">@health.CpuRate.ToString("F0")%</span>
+                                                <div class="progress progress-sm w-100">
+                                                    <div class="progress-bar @health.CpuColorClass"
+                                                         role="progressbar" style="width: @(health.CpuRate)%" aria-valuenow="@health.CpuRate" aria-valuemin="0" aria-valuemax="100" data-bs-toggle="tooltip" data-placement="bottom"
+                                                         title="@health.CpuPrompt"></div>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </td>
+                                        </td>
 
-                                    <td class="d-none d-lg-table-cell">
+                                        <td class="d-none d-lg-table-cell">
                                         @if (health.CpuRate < 30)
                                         {
-                                            <span class="badge badge-subtle-secondary">@(agent.Process)</span>
+                                                    <span class="badge badge-subtle-secondary">@(agent.Process)</span>
                                         }
                                         else
                                         {
-                                            <span class="badge badge-subtle-danger">@(agent.Process)</span>
+                                                    <span class="badge badge-subtle-danger">@(agent.Process)</span>
                                         }
-                                    </td>
+                                        </td>
 
-                                    <td data-sort="@mem.UsedRate">
-                                        <div class="progress progress-sm">
-                                            <div class="progress-bar-striped bg-success" role="progressbar" style="width: @(mem.UsedRate)%" aria-valuenow="@(mem.UsedRate)" aria-valuemin="0" aria-valuemax="100" data-bs-toggle="tooltip" data-placement="bottom" title="Used RAM: @mem.Used.HumanReadableSize()"></div>
-                                            <div class="progress-bar-striped bg-info" role="progressbar" style="width: @(mem.BufRate)%" aria-valuenow="@(mem.BufRate)" aria-valuemin="0" aria-valuemax="100" data-bs-toggle="tooltip" data-placement="bottom" title="Buffer RAM: @mem.Buf.HumanReadableSize()"></div>
-                                            <div class="progress-bar-striped bg-warning" role="progressbar" style="width: @(mem.CacheRate)%" aria-valuenow="@(mem.CacheRate)" aria-valuemin="0" aria-valuemax="100" data-bs-toggle="tooltip" data-placement="bottom" title="Cache RAM: @mem.Cache.HumanReadableSize()"></div>
-                                        </div>
-                                    </td>
-
-                                    <td class="d-none d-md-table-cell" data-sort="@net.Recv">
-                                        @net.Recv.HumanReadableSize()@unit
-                                    </td>
-                                    <td class="d-none d-md-table-cell" data-sort="@net.Send">
-                                        @net.Send.HumanReadableSize()@unit
-                                    </td>
-
-                                    <td data-sort="@health.DiskUseRatio">
-                                        <div class="d-flex flex-column w-100">
-                                            <span class="me-2 mb-1 text-muted">@(Math.Round(health.DiskUseRatio * 100))%</span>
-                                            <div class="progress progress-sm w-100">
-                                                <div class="progress-bar @health.DiskColorClass" role="progressbar" style="width: @(health.DiskUseRatio * 100)%" aria-valuenow="@(health.DiskUseRatio * 100)" aria-valuemin="0" aria-valuemax="100" data-bs-toggle="tooltip" data-placement="bottom" title="@health.DiskPrompt"></div>
+                                        <td data-sort="@mem.UsedRate">
+                                            <div class="progress progress-sm">
+                                                <div class="progress-bar-striped bg-success" role="progressbar" style="width: @(mem.UsedRate)%" aria-valuenow="@(mem.UsedRate)" aria-valuemin="0" aria-valuemax="100" data-bs-toggle="tooltip" data-placement="bottom" title="Used RAM: @mem.Used.HumanReadableSize()"></div>
+                                                <div class="progress-bar-striped bg-info" role="progressbar" style="width: @(mem.BufRate)%" aria-valuenow="@(mem.BufRate)" aria-valuemin="0" aria-valuemax="100" data-bs-toggle="tooltip" data-placement="bottom" title="Buffer RAM: @mem.Buf.HumanReadableSize()"></div>
+                                                <div class="progress-bar-striped bg-warning" role="progressbar" style="width: @(mem.CacheRate)%" aria-valuenow="@(mem.CacheRate)" aria-valuemin="0" aria-valuemax="100" data-bs-toggle="tooltip" data-placement="bottom" title="Cache RAM: @mem.Cache.HumanReadableSize()"></div>
                                             </div>
-                                        </div>
-                                    </td>
-                                    <td class="d-none d-xl-table-cell" data-sort="@disk.Read">
+                                        </td>
+
+                                        <td class="d-none d-md-table-cell" data-sort="@net.Recv">
+                                        @net.Recv.HumanReadableSize()@unit
+                                        </td>
+                                        <td class="d-none d-md-table-cell" data-sort="@net.Send">
+                                        @net.Send.HumanReadableSize()@unit
+                                        </td>
+
+                                        <td data-sort="@health.DiskUseRatio">
+                                            <div class="d-flex flex-column w-100">
+                                                <span class="me-2 mb-1 text-muted">@(Math.Round(health.DiskUseRatio * 100))%</span>
+                                                <div class="progress progress-sm w-100">
+                                                    <div class="progress-bar @health.DiskColorClass" role="progressbar" style="width: @(health.DiskUseRatio * 100)%" aria-valuenow="@(health.DiskUseRatio * 100)" aria-valuemin="0" aria-valuemax="100" data-bs-toggle="tooltip" data-placement="bottom" title="@health.DiskPrompt"></div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="d-none d-xl-table-cell" data-sort="@disk.Read">
                                         @disk.Read.HumanReadableSize()@unit
-                                    </td>
-                                    <td class="d-none d-xl-table-cell" data-sort="@disk.Writ">
+                                        </td>
+                                        <td class="d-none d-xl-table-cell" data-sort="@disk.Writ">
                                         @disk.Writ.HumanReadableSize()@unit
-                                    </td>
+                                        </td>
 
-                                    <td class="d-none d-xl-table-cell">@osFirstTwoWords</td>
+                                        <td class="d-none d-xl-table-cell">@osFirstTwoWords</td>
 
-                                    <td>
-                                        <a class="btn btn-light btn-sm" asp-controller="Dashboard" asp-action="Details" asp-route-id="@agent.ClientId">
+                                        <td>
+                                            <a class="btn btn-light btn-sm" asp-controller="Dashboard" asp-action="Details" asp-route-id="@agent.ClientId">
                                             @Localizer["Details"]
-                                        </a>
-                                    </td>
-                                </tr>
+                                            </a>
+                                        </td>
+                                    </tr>
                             }
                         </tbody>
                     </table>
@@ -279,29 +288,29 @@
 
 @* ReSharper disable once Razor.SectionNotResolved *@
 @section scripts {
-    <script>
-		document.addEventListener("DOMContentLoaded", function() {
-			// Datatables Responsive
-            // ("#datatables-reponsive")
-			$('#logTable').DataTable({
-                "destroy": true,
-                "responsive": true,
-                "paging": true,
-                "pageLength": 25,
-                "searching": false,
-                "info": false,
-                "order": [[0, "asc"]],
-                "drawCallback": function () {
-                    $('[data-toggle="tooltip"]').tooltip({
-                        trigger: 'hover'
-                    });
-                }
-			});
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                // Datatables Responsive
+                // ("#datatables-reponsive")
+                $('#logTable').DataTable({
+                    "destroy": true,
+                    "responsive": true,
+                    "paging": true,
+                    "pageLength": 25,
+                    "searching": false,
+                    "info": false,
+                    "order": [[0, "asc"]],
+                    "drawCallback": function () {
+                        $('[data-toggle="tooltip"]').tooltip({
+                            trigger: 'hover'
+                        });
+                    }
+                });
 
-            // Activate tooltip tool
-            $('[data-toggle="tooltip"]').tooltip({
-                trigger: 'hover'
+                // Activate tooltip tool
+                $('[data-toggle="tooltip"]').tooltip({
+                    trigger: 'hover'
+                });
             });
-		});
-	</script>
+        </script>
 }
