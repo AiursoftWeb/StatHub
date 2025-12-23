@@ -21,7 +21,7 @@ public class DashboardController(InMemoryDatabase database) : Controller
         CascadedLinksOrder = 1,
         LinkText = "Agents",
         LinkOrder = 1)]
-    public IActionResult Index([FromQuery]bool last30Seconds = false)
+    public IActionResult Index([FromQuery] bool last30Seconds = false)
     {
         var clients = database.GetAgents();
         ViewBag.Last30Seconds = last30Seconds;
@@ -32,7 +32,7 @@ public class DashboardController(InMemoryDatabase database) : Controller
     }
 
     [Authorize(Policy = AppPermissionNames.CanViewDashboard)]
-    public IActionResult Details([FromRoute]string id)
+    public IActionResult Details([FromRoute] string id)
     {
         var client = database.GetClient(id);
         if (client == null)
@@ -70,13 +70,8 @@ public class DashboardController(InMemoryDatabase database) : Controller
 #  sudo add-apt-repository ppa:dotnet/backports --yes
 #fi
 
-wget https://dot.net/v1/dotnet-install.sh -O /tmp/dotnet-install.sh && \
-    chmod +x /tmp/dotnet-install.sh && \
-    sudo /tmp/dotnet-install.sh --channel 10.0 --install-dir /usr/share/dotnet && \
-    sudo ln -s /usr/share/dotnet/dotnet /usr/bin/dotnet && \
-    rm /tmp/dotnet-install.sh
 DEBIAN_FRONTEND=noninteractive sudo apt update
-DEBIAN_FRONTEND=noninteractive sudo apt install pcp -y
+DEBIAN_FRONTEND=noninteractive sudo apt install pcp dotnet10 -y
 sudo touch /etc/motd
 sudo rm /root/.local/share/StatHubClient/config.conf
 sudo dotnet tool install Aiursoft.StatHub.Client --tool-path /opt/stathub-client || sudo dotnet tool update Aiursoft.StatHub.Client --tool-path /opt/stathub-client
