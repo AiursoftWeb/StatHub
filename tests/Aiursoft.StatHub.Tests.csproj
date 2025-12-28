@@ -1,5 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
   <PropertyGroup>
+    <OutputType>Library</OutputType>
     <TargetFramework>net10.0</TargetFramework>
     <RootNamespace>Aiursoft.StatHub.Tests</RootNamespace>
     <IsTestProject>true</IsTestProject>
