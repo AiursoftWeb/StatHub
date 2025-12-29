@@ -22,6 +22,7 @@ public class Startup : IStartUp
         services.AddSingleton<BootTimeService>();
         services.AddSingleton<HostnameService>();
         services.AddSingleton<OsInfoService>();
+        services.AddSingleton<KernelVersionService>();
         services.AddSingleton<VersionService>();
         services.AddSingleton<ExpensiveProcessService>();
         services.AddSingleton<CommandService>();

@@ -90,5 +90,8 @@
   <data name="Agent Version" xml:space="preserve">
     <value>에이전트 버전</value>
   </data>
+  <data name="Kernel Version" xml:space="preserve">
+    <value>커널 버전</value>
+  </data>
 
 </root>

@@ -90,5 +90,8 @@
   <data name="Agent Version" xml:space="preserve">
     <value>Versi Agen</value>
   </data>
+  <data name="Kernel Version" xml:space="preserve">
+    <value>Versi Kernel</value>
+  </data>
 
 </root>

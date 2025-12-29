@@ -90,5 +90,8 @@
   <data name="Mainly used by process" xml:space="preserve">
     <value>Esas olarak işlem tarafından kullanılan</value>
   </data>
+  <data name="Kernel Version" xml:space="preserve">
+    <value>Çekirdek Sürümü</value>
+  </data>
 
 </root>

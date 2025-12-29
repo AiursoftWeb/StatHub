@@ -269,7 +269,7 @@
                                         @disk.Writ.HumanReadableSize()@unit
                                         </td>
 
-                                        <td class="d-none d-xl-table-cell">@osFirstTwoWords</td>
+                                        <td class="d-none d-xl-table-cell" data-bs-toggle="tooltip" title="@agent.KernelVersion">@osFirstTwoWords</td>
 
                                         <td>
                                             <a class="btn btn-light btn-sm" asp-controller="Dashboard" asp-action="Details" asp-route-id="@agent.ClientId">

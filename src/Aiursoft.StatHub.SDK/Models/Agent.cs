@@ -155,6 +155,7 @@ public class Agent
     public string ClientId { get; set; }
     public string Hostname { get; set; } = null!;
     public string OsName { get; set; } = null!;
+    public string? KernelVersion { get; set; }
     public string Ip { get; set; } = null!;
 
     public DateTime BootTime { get; set; } = DateTime.MinValue;

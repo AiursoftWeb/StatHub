@@ -90,5 +90,8 @@
   <data name="Mainly used by process" xml:space="preserve">
     <value>主要被進程使用</value>
   </data>
+  <data name="Kernel Version" xml:space="preserve">
+    <value>核心版本</value>
+  </data>
 
 </root>

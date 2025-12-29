@@ -90,5 +90,8 @@
   <data name="Mainly used by process" xml:space="preserve">
     <value>Enimmäkseen prosessin käyttämä</value>
   </data>
+  <data name="Kernel Version" xml:space="preserve">
+    <value>Ytimen versio</value>
+  </data>
 
 </root>
