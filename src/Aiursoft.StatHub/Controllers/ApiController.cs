@@ -42,6 +42,7 @@ public class ApiController(
         entity.Version = model.Version!;
         entity.Process = model.Process!;
         entity.OsName = model.OsName!;
+        entity.KernelVersion = model.KernelVersion;
         entity.CpuCores = model.CpuCores;
         entity.RamInGb = model.RamInGb;
         entity.UsedRoot = model.UsedRoot;

@@ -90,5 +90,8 @@
   <data name="Agent Version" xml:space="preserve">
     <value>终端版本</value>
   </data>
+  <data name="Kernel Version" xml:space="preserve">
+    <value>内核版本</value>
+  </data>
 
 </root>

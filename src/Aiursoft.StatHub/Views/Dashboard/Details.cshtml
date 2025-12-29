@@ -175,6 +175,12 @@
                                                    class="lucide-sm me-1"></span> @Localizer["Mainly used by process"]: @agent.Process
                             </li>
                         }
+                        @if (!string.IsNullOrWhiteSpace(agent.KernelVersion))
+                        {
+                            <li class="mb-1"><span data-lucide="settings"
+                                                   class="lucide-sm me-1"></span> @Localizer["Kernel Version"]: @agent.KernelVersion
+                            </li>
+                        }
                         @if (!string.IsNullOrWhiteSpace(agent.Motd))
                         {
                             <li class="mb-1"><span data-lucide="mail"

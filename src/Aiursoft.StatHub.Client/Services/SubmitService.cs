@@ -11,6 +11,7 @@ public class SubmitService(
     ClientIdService clientIdService,
     SkuInfoService skuInfoService,
     OsInfoService osInfoService,
+    KernelVersionService kernelVersionService,
     ExpensiveProcessService expensiveProcessService,
     VersionService versionService,
     HostnameService hostnameService,
@@ -38,6 +39,9 @@ public class SubmitService(
         var osName = await osInfoService.GetOsInfoAsync();
         logger.LogTrace($"OS: {osName}.");
 
+        var kernelVersion = await kernelVersionService.GetKernelVersionAsync();
+        logger.LogTrace($"Kernel: {kernelVersion}.");
+
         var cpuCores = await skuInfoService.GetCpuCores();
         logger.LogTrace($"CPU cores: {cpuCores}.");
 
@@ -64,6 +68,7 @@ public class SubmitService(
                     version,
                     expensiveProcess,
                     osName,
+                    kernelVersion,
                     cpuCores,
                     totalRam,
                     usedRoot,

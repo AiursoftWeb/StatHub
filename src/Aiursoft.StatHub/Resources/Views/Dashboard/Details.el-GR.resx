@@ -90,5 +90,8 @@
   <data name="Mainly used by process" xml:space="preserve">
     <value>Κυρίως χρησιμοποιείται από διεργασία</value>
   </data>
+  <data name="Kernel Version" xml:space="preserve">
+    <value>Έκδοση Πυρήνα</value>
+  </data>
 
 </root>

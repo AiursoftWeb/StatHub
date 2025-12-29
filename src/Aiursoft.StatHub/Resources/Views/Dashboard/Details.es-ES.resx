@@ -90,5 +90,8 @@
   <data name="Mainly used by process" xml:space="preserve">
     <value>Principalmente utilizado por el proceso</value>
   </data>
+  <data name="Kernel Version" xml:space="preserve">
+    <value>Versión del Kernel</value>
+  </data>
 
 </root>
