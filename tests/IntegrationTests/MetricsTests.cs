@@ -4,7 +4,6 @@ using Aiursoft.DbTools;
 using Aiursoft.StatHub.Data;
 using Aiursoft.StatHub.Entities;
 using Aiursoft.StatHub.SDK.Models;
-using Microsoft.Extensions.DependencyInjection;
 using static Aiursoft.WebTools.Extends;
 
 namespace Aiursoft.StatHub.Tests.IntegrationTests;
@@ -59,13 +58,13 @@ public class MetricsTests
         // Let's just use HttpClient to post directly to the API to be sure.
         var metricsPayload = new
         {
-            clientId = clientId,
-            hostname = hostname,
+            clientId,
+            hostname,
             bootTime = DateTime.UtcNow.AddDays(-1),
             version = "1.0.0",
             process = "test-process",
-            osName = osName,
-            kernelVersion = kernelVersion,
+            osName,
+            kernelVersion,
             cpuCores = 4,
             ramInGb = 8,
             usedRoot = 20,

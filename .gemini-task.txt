@@ -1,0 +1,238 @@
+We are working on escroting the merge request #156: Fix for issue #16: Show kernel version
+
+Pipeline Web URL: https://gitlab.aiursoft.com/gemini-bot/stathub/-/pipelines/40403
+Pipeline Status: failed
+
+The CI/CD pipeline for this merge request has FAILED. Your task is to analyze the failure logs below and fix the code to make the pipeline pass.
+
+=== FAILURE LOGS ===
+
+
+=== Job: test (Stage: test) ===
+2025-12-29T08:44:36.081784Z 00O [0KRunning with gitlab-runner 18.7.0 (901991dd)[0;m
+2025-12-29T08:44:36.081795Z 00O [0K  on 7574dac7b318 wjuYPY19y, system ID: s_644bf7a70601[0;m
+2025-12-29T08:44:36.081811Z 00O section_start:1766997876:prepare_executor
+2025-12-29T08:44:36.081812Z 00O+[0K[0K[36;1mPreparing the "shell" executor[0;m[0;m
+2025-12-29T08:44:36.081874Z 00O [0KUsing Shell (bash) executor...[0;m
+2025-12-29T08:44:36.081876Z 00O section_end:1766997876:prepare_executor
+2025-12-29T08:44:36.081876Z 00O+[0Ksection_start:1766997876:prepare_script
+2025-12-29T08:44:36.081952Z 00O+[0K[0K[36;1mPreparing environment[0;m[0;m
+2025-12-29T08:44:36.090476Z 01O Running on 7574dac7b318...
+2025-12-29T08:44:36.092356Z 00O section_end:1766997876:prepare_script
+2025-12-29T08:44:36.092360Z 00O+[0Ksection_start:1766997876:get_sources
+2025-12-29T08:44:36.092586Z 00O+[0K[0K[36;1mGetting source from Git repository[0;m[0;m
+2025-12-29T08:44:36.116176Z 01O [32;1mGitaly correlation ID: 01KDMMFQ77PN4WDSMJ2R277S1S[0;m
+2025-12-29T08:44:36.120001Z 01O [32;1mFetching changes with git depth set to 20...[0;m
+2025-12-29T08:44:36.121628Z 01O Initialized empty Git repository in /home/gitlab-runner/builds/stathub/40403/.git/
+2025-12-29T08:44:36.122928Z 01O [32;1mCreated fresh repository.[0;m
+2025-12-29T08:44:36.349439Z 01O [32;1mChecking out 057dffef as detached HEAD (ref is fix-issue-16)...[0;m
+2025-12-29T08:44:36.402988Z 01O [32;1mSkipping Git submodules setup[0;m
+2025-12-29T08:44:36.403872Z 00O section_end:1766997876:get_sources
+2025-12-29T08:44:36.403883Z 00O+[0Ksection_start:1766997876:step_script
+2025-12-29T08:44:36.404231Z 00O+[0K[0K[36;1mExecuting "step_script" stage of the job script[0;m[0;m
+2025-12-29T08:44:36.417570Z 01O [32;1m$ export DOTNET_CLI_TELEMETRY_OPTOUT=1[0;m
+2025-12-29T08:44:36.417586Z 01O [32;1m$ export PATH=$PATH:$HOME/.dotnet/tools[0;m
+2025-12-29T08:44:36.417590Z 01O [32;1m$ which jb || dotnet tool install JetBrains.ReSharper.GlobalTools --global --add-source https://nuget.aiursoft.com/v3/index.json --configfile ./nuget.config -v d[0;m
+2025-12-29T08:44:36.418263Z 01O /home/gitlab-runner/.dotnet/tools/jb
+2025-12-29T08:44:36.418325Z 01O [32;1m$ which reportgenerator || dotnet tool install dotnet-reportgenerator-globaltool --global --add-source https://nuget.aiursoft.com/v3/index.json --configfile ./nuget.config -v d[0;m
+2025-12-29T08:44:36.418790Z 01O /home/gitlab-runner/.dotnet/tools/reportgenerator
+2025-12-29T08:44:36.418833Z 01O [32;1m$ echo "Hostname: $(hostname)"[0;m
+2025-12-29T08:44:36.419367Z 01O Hostname: 7574dac7b318
+2025-12-29T08:44:36.419375Z 01O [32;1m$ dotnet --info[0;m
+2025-12-29T08:44:36.480579Z 01O .NET SDK:
+2025-12-29T08:44:36.480587Z 01O  Version:           10.0.100
+2025-12-29T08:44:36.480588Z 01O  Commit:            b0f34d51fc
+2025-12-29T08:44:36.499823Z 01O  Workload version:  10.0.100-manifests.4eab3e0f
+2025-12-29T08:44:36.500292Z 01O  MSBuild version:   18.0.2+b0f34d51f
+2025-12-29T08:44:36.500299Z 01O 
+2025-12-29T08:44:36.500312Z 01O Runtime Environment:
+2025-12-29T08:44:36.500719Z 01O  OS Name:     ubuntu
+2025-12-29T08:44:36.500719Z 01O  OS Version:  25.10
+2025-12-29T08:44:36.501661Z 01O  OS Platform: Linux
+2025-12-29T08:44:36.506845Z 01O  RID:         ubuntu.25.10-x64
+2025-12-29T08:44:36.506851Z 01O  Base Path:   /usr/lib/dotnet/sdk/10.0.100/
+2025-12-29T08:44:36.506853Z 01O 
+2025-12-29T08:44:36.506853Z 01O .NET workloads installed:
+2025-12-29T08:44:36.508223Z 01O There are no installed workloads to display.
+2025-12-29T08:44:36.508253Z 01O Configured to use workload sets when installing new manifests.
+2025-12-29T08:44:36.508255Z 01O No workload sets are installed. Run "dotnet workload restore" to install a workload set.
+2025-12-29T08:44:36.509011Z 01O 
+2025-12-29T08:44:36.509011Z 01O Host:
+2025-12-29T08:44:36.509011Z 01O   Version:      10.0.0
+2025-12-29T08:44:36.509012Z 01O   Architecture: x64
+2025-12-29T08:44:36.509012Z 01O   Commit:       b0f34d51fc
+2025-12-29T08:44:36.509012Z 01O 
+2025-12-29T08:44:36.509012Z 01O .NET SDKs installed:
+2025-12-29T08:44:36.509013Z 01O   10.0.100 [/usr/lib/dotnet/sdk]
+2025-12-29T08:44:36.509032Z 01O 
+2025-12-29T08:44:36.509032Z 01O .NET runtimes installed:
+2025-12-29T08:44:36.509032Z 01O   Microsoft.AspNetCore.App 10.0.0 [/usr/lib/dotnet/shared/Microsoft.AspNetCore.App]
+2025-12-29T08:44:36.509033Z 01O   Microsoft.NETCore.App 10.0.0 [/usr/lib/dotnet/shared/Microsoft.NETCore.App]
+2025-12-29T08:44:36.509033Z 01O 
+2025-12-29T08:44:36.509033Z 01O Other architectures found:
+2025-12-29T08:44:36.509033Z 01O   None
+2025-12-29T08:44:36.509034Z 01O 
+2025-12-29T08:44:36.509034Z 01O Environment variables:
+2025-12-29T08:44:36.509034Z 01O   DOTNET_BUNDLE_EXTRACT_BASE_DIR           [/home/gitlab-runner/.cache/dotnet_bundle_extract]
+2025-12-29T08:44:36.509035Z 01O   DOTNET_CLI_TELEMETRY_OPTOUT              [1]
+2025-12-29T08:44:36.509035Z 01O 
+2025-12-29T08:44:36.509035Z 01O global.json file:
+2025-12-29T08:44:36.509035Z 01O   Not found
+2025-12-29T08:44:36.509036Z 01O 
+2025-12-29T08:44:36.509036Z 01O Learn more:
+2025-12-29T08:44:36.509036Z 01O   https://aka.ms/dotnet/info
+2025-12-29T08:44:36.509036Z 01O 
+2025-12-29T08:44:36.509036Z 01O Download .NET:
+2025-12-29T08:44:36.509037Z 01O   https://aka.ms/dotnet/download
+2025-12-29T08:44:36.512404Z 01O [32;1m$ dotnet test *.sln --collect:"XPlat Code Coverage" --logger "junit;MethodFormat=Class;FailureBodyFormat=Verbose"[0;m
+2025-12-29T08:44:36.737625Z 01E Fatal error.
+2025-12-29T08:44:36.737642Z 01E Internal CLR error. (0x80131506)
+2025-12-29T08:44:36.743648Z 01E bash: line 170: 56157 Aborted                 dotnet test *.sln --collect:"XPlat Code Coverage" --logger "junit;MethodFormat=Class;FailureBodyFormat=Verbose"
+2025-12-29T08:59:36.809014Z 00O section_end:1766998776:step_script
+2025-12-29T08:59:36.809022Z 00O+[0Ksection_start:1766998776:upload_artifacts_on_failure
+2025-12-29T08:59:36.809487Z 00O+[0K[0K[36;1mUploading artifacts for failed job[0;m[0;m
+2025-12-29T08:59:36.863308Z 01O [32;1mUploading artifacts...[0;m
+2025-12-29T08:59:36.902111Z 01E Runtime platform                                  [0;m  arch[0;m=amd64 os[0;m=linux pid[0;m=56318 revision[0;m=901991dd version[0;m=18.7.0
+2025-12-29T08:59:36.904097Z 01E [0;33mWARNING: ./**/TestResults.xml: no matching files. Ensure that the artifact path is relative to the working directory (/home/gitlab-runner/builds/stathub/40403)[0;m 
+2025-12-29T08:59:36.904105Z 01E [0;33mWARNING: ./Cobertura.xml: no matching files. Ensure that the artifact path is relative to the working directory (/home/gitlab-runner/builds/stathub/40403)[0;m 
+2025-12-29T08:59:36.904107Z 01E [31;1mERROR: No files to upload                         [0;m 
+2025-12-29T08:59:36.949527Z 01O [32;1mUploading artifacts...[0;m
+2025-12-29T08:59:36.989564Z 01E Runtime platform                                  [0;m  arch[0;m=amd64 os[0;m=linux pid[0;m=56354 revision[0;m=901991dd version[0;m=18.7.0
+2025-12-29T08:59:36.991355Z 01E [0;33mWARNING: ./**/TestResults.xml: no matching files. Ensure that the artifact path is relative to the working directory (/home/gitlab-runner/builds/stathub/40403)[0;m 
+2025-12-29T08:59:36.991357Z 01E [31;1mERROR: No files to upload                         [0;m 
+2025-12-29T08:59:37.031463Z 01O [32;1mUploading artifacts...[0;m
+2025-12-29T08:59:37.062264Z 01E Runtime platform                                  [0;m  arch[0;m=amd64 os[0;m=linux pid[0;m=56388 revision[0;m=901991dd version[0;m=18.7.0
+2025-12-29T08:59:37.062323Z 01E [0;33mWARNING: ./Cobertura.xml: no matching files. Ensure that the artifact path is relative to the working directory (/home/gitlab-runner/builds/stathub/40403)[0;m 
+2025-12-29T08:59:37.062325Z 01E [31;1mERROR: No files to upload                         [0;m 
+2025-12-29T08:59:37.065943Z 00O section_end:1766998777:upload_artifacts_on_failure
+2025-12-29T08:59:37.065948Z 00O+[0Ksection_start:1766998777:cleanup_file_variables
+2025-12-29T08:59:37.066009Z 00O+[0K[0K[36;1mCleaning up project directory and file based variables[0;m[0;m
+2025-12-29T08:59:37.082316Z 00O section_end:1766998777:cleanup_file_variables
+2025-12-29T08:59:37.082321Z 00O+[0K
+2025-12-29T08:59:37.082404Z 00O [31;1mERROR: Job failed: exit status 1[0;m
+
+=== End of Job Log ===
+
+
+
+=== Job: lint (Stage: lint) ===
+2025-12-29T08:44:34.346626Z 00O [0KRunning with gitlab-runner 18.7.0 (901991dd)[0;m
+2025-12-29T08:44:34.346637Z 00O [0K  on d06a4761ba74 wjuYPY19y, system ID: s_644bf7a70601[0;m
+2025-12-29T08:44:34.346654Z 00O section_start:1766997874:prepare_executor
+2025-12-29T08:44:34.346655Z 00O+[0K[0K[36;1mPreparing the "shell" executor[0;m[0;m
+2025-12-29T08:44:34.346708Z 00O [0KUsing Shell (bash) executor...[0;m
+2025-12-29T08:44:34.346709Z 00O section_end:1766997874:prepare_executor
+2025-12-29T08:44:34.346709Z 00O+[0Ksection_start:1766997874:prepare_script
+2025-12-29T08:44:34.346778Z 00O+[0K[0K[36;1mPreparing environment[0;m[0;m
+2025-12-29T08:44:34.354677Z 01O Running on d06a4761ba74...
+2025-12-29T08:44:34.357012Z 00O section_end:1766997874:prepare_script
+2025-12-29T08:44:34.357016Z 00O+[0Ksection_start:1766997874:get_sources
+2025-12-29T08:44:34.357242Z 00O+[0K[0K[36;1mGetting source from Git repository[0;m[0;m
+2025-12-29T08:44:34.378215Z 01O [32;1mGitaly correlation ID: 01KDMMFNHKYQ3KYVKHBPW2SN47[0;m
+2025-12-29T08:44:34.381164Z 01O [32;1mFetching changes with git depth set to 20...[0;m
+2025-12-29T08:44:34.382648Z 01O Initialized empty Git repository in /home/gitlab-runner/builds/stathub/40403/.git/
+2025-12-29T08:44:34.384308Z 01O [32;1mCreated fresh repository.[0;m
+2025-12-29T08:44:34.579230Z 01O [32;1mChecking out 057dffef as detached HEAD (ref is fix-issue-16)...[0;m
+2025-12-29T08:44:34.628409Z 01O [32;1mSkipping Git submodules setup[0;m
+2025-12-29T08:44:34.629238Z 00O section_end:1766997874:get_sources
+2025-12-29T08:44:34.629240Z 00O+[0Ksection_start:1766997874:step_script
+2025-12-29T08:44:34.629554Z 00O+[0K[0K[36;1mExecuting "step_script" stage of the job script[0;m[0;m
+2025-12-29T08:44:34.642147Z 01O [32;1m$ export DOTNET_CLI_TELEMETRY_OPTOUT=1[0;m
+2025-12-29T08:44:34.642170Z 01O [32;1m$ export PATH=$PATH:$HOME/.dotnet/tools[0;m
+2025-12-29T08:44:34.642171Z 01O [32;1m$ which jb || dotnet tool install JetBrains.ReSharper.GlobalTools --global --add-source https://nuget.aiursoft.com/v3/index.json --configfile ./nuget.config -v d[0;m
+2025-12-29T08:44:34.642955Z 01O /home/gitlab-runner/.dotnet/tools/jb
+2025-12-29T08:44:34.642958Z 01O [32;1m$ which reportgenerator || dotnet tool install dotnet-reportgenerator-globaltool --global --add-source https://nuget.aiursoft.com/v3/index.json --configfile ./nuget.config -v d[0;m
+2025-12-29T08:44:34.643642Z 01O /home/gitlab-runner/.dotnet/tools/reportgenerator
+2025-12-29T08:44:34.643643Z 01O [32;1m$ echo "Hostname: $(hostname)"[0;m
+2025-12-29T08:44:34.644211Z 01O Hostname: d06a4761ba74
+2025-12-29T08:44:34.644217Z 01O [32;1m$ dotnet --info[0;m
+2025-12-29T08:44:34.707734Z 01O .NET SDK:
+2025-12-29T08:44:34.707741Z 01O  Version:           10.0.100
+2025-12-29T08:44:34.707742Z 01O  Commit:            b0f34d51fc
+2025-12-29T08:44:34.727104Z 01O  Workload version:  10.0.100-manifests.4eab3e0f
+2025-12-29T08:44:34.727589Z 01O  MSBuild version:   18.0.2+b0f34d51f
+2025-12-29T08:44:34.727594Z 01O 
+2025-12-29T08:44:34.727619Z 01O Runtime Environment:
+2025-12-29T08:44:34.728036Z 01O  OS Name:     ubuntu
+2025-12-29T08:44:34.728037Z 01O  OS Version:  25.10
+2025-12-29T08:44:34.728994Z 01O  OS Platform: Linux
+2025-12-29T08:44:34.734396Z 01O  RID:         ubuntu.25.10-x64
+2025-12-29T08:44:34.734406Z 01O  Base Path:   /usr/lib/dotnet/sdk/10.0.100/
+2025-12-29T08:44:34.734408Z 01O 
+2025-12-29T08:44:34.734412Z 01O .NET workloads installed:
+2025-12-29T08:44:34.735891Z 01O There are no installed workloads to display.
+2025-12-29T08:44:34.735915Z 01O Configured to use workload sets when installing new manifests.
+2025-12-29T08:44:34.735920Z 01O No workload sets are installed. Run "dotnet workload restore" to install a workload set.
+2025-12-29T08:44:34.736430Z 01O 
+2025-12-29T08:44:34.736430Z 01O Host:
+2025-12-29T08:44:34.736431Z 01O   Version:      10.0.0
+2025-12-29T08:44:34.736431Z 01O   Architecture: x64
+2025-12-29T08:44:34.736431Z 01O   Commit:       b0f34d51fc
+2025-12-29T08:44:34.736431Z 01O 
+2025-12-29T08:44:34.736431Z 01O .NET SDKs installed:
+2025-12-29T08:44:34.736432Z 01O   10.0.100 [/usr/lib/dotnet/sdk]
+2025-12-29T08:44:34.736448Z 01O 
+2025-12-29T08:44:34.736448Z 01O .NET runtimes installed:
+2025-12-29T08:44:34.736448Z 01O   Microsoft.AspNetCore.App 10.0.0 [/usr/lib/dotnet/shared/Microsoft.AspNetCore.App]
+2025-12-29T08:44:34.736449Z 01O   Microsoft.NETCore.App 10.0.0 [/usr/lib/dotnet/shared/Microsoft.NETCore.App]
+2025-12-29T08:44:34.736449Z 01O 
+2025-12-29T08:44:34.736449Z 01O Other architectures found:
+2025-12-29T08:44:34.736449Z 01O   None
+2025-12-29T08:44:34.736450Z 01O 
+2025-12-29T08:44:34.736450Z 01O Environment variables:
+2025-12-29T08:44:34.736450Z 01O   DOTNET_BUNDLE_EXTRACT_BASE_DIR           [/home/gitlab-runner/.cache/dotnet_bundle_extract]
+2025-12-29T08:44:34.736450Z 01O   DOTNET_CLI_TELEMETRY_OPTOUT              [1]
+2025-12-29T08:44:34.736451Z 01O 
+2025-12-29T08:44:34.736451Z 01O global.json file:
+2025-12-29T08:44:34.736451Z 01O   Not found
+2025-12-29T08:44:34.736451Z 01O 
+2025-12-29T08:44:34.736451Z 01O Learn more:
+2025-12-29T08:44:34.736452Z 01O   https://aka.ms/dotnet/info
+2025-12-29T08:44:34.736452Z 01O 
+2025-12-29T08:44:34.736452Z 01O Download .NET:
+2025-12-29T08:44:34.736452Z 01O   https://aka.ms/dotnet/download
+2025-12-29T08:44:34.739441Z 01O [32;1m$ chmod +x ./lint.sh[0;m
+2025-12-29T08:44:34.740265Z 01O [32;1m$ ./lint.sh[0;m
+2025-12-29T08:44:34.741280Z 01O Checking for JetBrains ReSharper Global Tools...
+2025-12-29T08:44:34.741282Z 01O jb is already installed.
+2025-12-29T08:44:34.741283Z 01O Restoring dependencies...
+2025-12-29T08:44:35.252011Z 01O   Determining projects to restore...
+2025-12-29T08:44:35.690656Z 01O   Restored /home/gitlab-runner/builds/stathub/40403/src/Aiursoft.StatHub.MySql/Aiursoft.StatHub.MySql.csproj (in 159 ms).
+2025-12-29T08:44:35.690664Z 01O   Restored /home/gitlab-runner/builds/stathub/40403/src/Aiursoft.StatHub.Client/Aiursoft.StatHub.Client.csproj (in 159 ms).
+2025-12-29T08:44:35.690665Z 01O   Restored /home/gitlab-runner/builds/stathub/40403/src/Aiursoft.StatHub.InMemory/Aiursoft.StatHub.InMemory.csproj (in 159 ms).
+2025-12-29T08:44:35.690665Z 01O   Restored /home/gitlab-runner/builds/stathub/40403/src/Aiursoft.StatHub.Entities/Aiursoft.StatHub.Entities.csproj (in 159 ms).
+2025-12-29T08:44:35.690669Z 01O   Restored /home/gitlab-runner/builds/stathub/40403/tests/Aiursoft.StatHub.Tests.csproj (in 163 ms).
+2025-12-29T08:44:35.690669Z 01O   Restored /home/gitlab-runner/builds/stathub/40403/src/Aiursoft.StatHub.SDK/Aiursoft.StatHub.SDK.csproj (in 159 ms).
+2025-12-29T08:44:35.690669Z 01O   Restored /home/gitlab-runner/builds/stathub/40403/src/Aiursoft.StatHub/Aiursoft.StatHub.csproj (in 172 ms).
+2025-12-29T08:44:35.690685Z 01O   Restored /home/gitlab-runner/builds/stathub/40403/src/Aiursoft.StatHub.Sqlite/Aiursoft.StatHub.Sqlite.csproj (in 159 ms).
+2025-12-29T08:44:35.711047Z 01O Running ReSharper Code Inspection...
+2025-12-29T08:45:08.991504Z 01O Filtering known false positives...
+2025-12-29T08:45:08.996578Z 01O [0;31mLinting FAILED![0m
+2025-12-29T08:45:08.996578Z 01O Issues found:
+2025-12-29T08:45:09.005806Z 01O File: tests/IntegrationTests/MetricsTests.cs | Line: 62 | Reason: Redundant explicit property name
+2025-12-29T08:45:09.011355Z 01O File: tests/IntegrationTests/MetricsTests.cs | Line: 63 | Reason: Redundant explicit property name
+2025-12-29T08:45:09.017007Z 01O File: tests/IntegrationTests/MetricsTests.cs | Line: 67 | Reason: Redundant explicit property name
+2025-12-29T08:45:09.022399Z 01O File: tests/IntegrationTests/MetricsTests.cs | Line: 68 | Reason: Redundant explicit property name
+2025-12-29T08:45:09.029038Z 01O File: tests/IntegrationTests/MetricsTests.cs | Line: 7 | Reason: Using directive is not required by the code and can be safely removed
+2025-12-29T08:45:09.030842Z 00O section_end:1766997909:step_script
+2025-12-29T08:45:09.030846Z 00O+[0Ksection_start:1766997909:upload_artifacts_on_failure
+2025-12-29T08:45:09.031207Z 00O+[0K[0K[36;1mUploading artifacts for failed job[0;m[0;m
+2025-12-29T08:45:09.085384Z 01O [32;1mUploading artifacts...[0;m
+2025-12-29T08:45:09.116806Z 01E Runtime platform                                  [0;m  arch[0;m=amd64 os[0;m=linux pid[0;m=70451 revision[0;m=901991dd version[0;m=18.7.0
+2025-12-29T08:45:09.116843Z 01E ./analyze_output.xml: found 1 matching artifact files and directories[0;m 
+2025-12-29T08:45:09.200845Z 01E Uploading artifacts as "archive" to coordinator... 201 Created[0;m  correlation_id[0;m=01KDMMGQKYE6BSNR7VHZGMB9BB id[0;m=232036 responseStatus[0;m=201 Created token[0;m=64_zwaFCq
+2025-12-29T08:45:09.205137Z 00O section_end:1766997909:upload_artifacts_on_failure
+2025-12-29T08:45:09.205145Z 00O+[0Ksection_start:1766997909:cleanup_file_variables
+2025-12-29T08:45:09.205224Z 00O+[0K[0K[36;1mCleaning up project directory and file based variables[0;m[0;m
+2025-12-29T08:45:09.221133Z 00O section_end:1766997909:cleanup_file_variables
+2025-12-29T08:45:09.221140Z 00O+[0K
+2025-12-29T08:45:09.221208Z 00O [31;1mERROR: Job failed: exit status 1[0;m
+
+=== End of Job Log ===
+
+
+=== END OF FAILURE LOGS ===
+
+Please read git log, analyze the failure logs, identify the root cause, and make the necessary code changes to fix the build/test failures.
+
+Don't forget to run git commit after making changes.
