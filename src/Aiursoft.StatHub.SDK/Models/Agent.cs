@@ -217,6 +217,7 @@ public class Agent
     public string? CountryCode { get; set; }
     public string? Motd { get; set; }
 
+    public List<ContainerInfo> Containers { get; set; } = new();
 
     public string GetSku()
     {

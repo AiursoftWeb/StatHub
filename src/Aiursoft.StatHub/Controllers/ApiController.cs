@@ -2,6 +2,7 @@ using Aiursoft.AiurProtocol.Models;
 using Aiursoft.AiurProtocol.Server;
 using Aiursoft.AiurProtocol.Server.Attributes;
 using Aiursoft.StatHub.SDK.AddressModels;
+using Aiursoft.StatHub.SDK.Models;
 using Aiursoft.StatHub.Data;
 using Aiursoft.StatHub.Services;
 using Microsoft.AspNetCore.Authorization;
@@ -48,6 +49,7 @@ public class ApiController(
         entity.UsedRoot = model.UsedRoot;
         entity.TotalRoot = model.TotalRoot;
         entity.Motd = model.Motd!;
+        entity.Containers = model.Containers?.ToList() ?? new List<ContainerInfo>();
 
         // Get country information if not already set
         if (string.IsNullOrWhiteSpace(entity.CountryCode) && !string.IsNullOrWhiteSpace(entity.Ip))

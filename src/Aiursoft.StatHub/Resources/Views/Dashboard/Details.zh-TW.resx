@@ -93,5 +93,35 @@
   <data name="Kernel Version" xml:space="preserve">
     <value>核心版本</value>
   </data>
+  <data name="Docker Containers" xml:space="preserve">
+    <value>Docker 容器</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>狀態</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>名稱</value>
+  </data>
+  <data name="Image" xml:space="preserve">
+    <value>鏡像</value>
+  </data>
+  <data name="CPU %" xml:space="preserve">
+    <value>CPU %</value>
+  </data>
+  <data name="Memory" xml:space="preserve">
+    <value>記憶體</value>
+  </data>
+  <data name="Uptime" xml:space="preserve">
+    <value>執行時間</value>
+  </data>
+  <data name="Ports" xml:space="preserve">
+    <value>埠</value>
+  </data>
+  <data name="Healthy" xml:space="preserve">
+    <value>健康</value>
+  </data>
+  <data name="Unhealthy" xml:space="preserve">
+    <value>不健康</value>
+  </data>
 
 </root>

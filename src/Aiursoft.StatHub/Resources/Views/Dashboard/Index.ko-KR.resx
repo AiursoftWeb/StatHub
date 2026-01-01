@@ -30,7 +30,7 @@
   <data name="Multiple Database Support" xml:space="preserve">
     <value>다중 데이터베이스 지원</value>
   </data>
-   <data name="Why use the Aiursoft Template?" xml:space="preserve">
+  <data name="Why use the Aiursoft Template?" xml:space="preserve">
     <value>Aiursoft 템플릿을 사용하는 이유는 무엇인가요?</value>
   </data>
   <data name="This is a template project, where we start the voyager..." xml:space="preserve">
@@ -206,6 +206,9 @@
   </data>
   <data name="Status" xml:space="preserve">
     <value>상태</value>
+  </data>
+  <data name="Containers" xml:space="preserve">
+    <value>컨테이너</value>
   </data>
 
 </root>

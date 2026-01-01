@@ -259,6 +259,65 @@
                     </div>
                 </div>
             </div>
+            @if (agent.Containers.Any())
+            {
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="card-title mb-0">@Localizer["Docker Containers"]</h5>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-hover table-borderless my-0" id="containersTable">
+                                    <thead>
+                                        <tr>
+                                            <th>@Localizer["Status"]</th>
+                                            <th>@Localizer["Name"]</th>
+                                            <th>@Localizer["Image"]</th>
+                                            <th>@Localizer["CPU %"]</th>
+                                            <th>@Localizer["Memory"]</th>
+                                            <th>@Localizer["Uptime"]</th>
+                                            <th>@Localizer["Ports"]</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var container in agent.Containers)
+                                        {
+                                            <tr>
+                                                <td>
+                                                    @if (container.IsHealthy)
+                                                    {
+                                                        <span class="badge badge-subtle-success">@Localizer["Healthy"]</span>
+                                                    }
+                                                    else
+                                                    {
+                                                        <span class="badge badge-subtle-danger">@Localizer["Unhealthy"]</span>
+                                                    }
+                                                    <br/>
+                                                    <span class="text-muted small">@container.State (@container.Status)</span>
+                                                </td>
+                                                <td><strong>@container.Name</strong><br /><small class="text-muted">@container.Id.SafeSubstring(12)</small></td>
+                                                <td style="max-width: 200px;" class="text-truncate" title="@container.Image"><small>@container.Image</small></td>
+                                                <td>@container.CpuPercentage.ToString("F2")%</td>
+                                                <td>
+                                                    <div class="d-flex flex-column">
+                                                        <span>@container.MemoryUsage.HumanReadableSize()</span>
+                                                        <div class="progress progress-xs w-100" style="height: 4px;">
+                                                            <div class="progress-bar bg-primary" role="progressbar" style="width: @(container.MemoryLimit > 0 ? (container.MemoryUsage * 100.0 / container.MemoryLimit) : 0)%"></div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>@container.Uptime</td>
+                                                <td><small style="word-break: break-all;">@container.Ports</small></td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
         </div>
     </div>
 </div>
@@ -276,6 +335,23 @@
             startLoadChart("@Model.Agent.ClientId");
             startNetworkChart("@Model.Agent.ClientId");
             startDiskChart("@Model.Agent.ClientId");
+
+            if ($("#containersTable").length > 0) {
+                $('#containersTable').DataTable({
+                    "destroy": true,
+                    "responsive": true,
+                    "paging": true,
+                    "pageLength": 10,
+                    "searching": true,
+                    "info": false,
+                    "order": [[1, "asc"]],
+                    "drawCallback": function () {
+                        $('[data-toggle="tooltip"]').tooltip({
+                            trigger: 'hover'
+                        });
+                    }
+                });
+            }
         });
     </script>
 }

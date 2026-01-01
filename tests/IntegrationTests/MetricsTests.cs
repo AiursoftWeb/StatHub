@@ -70,7 +70,24 @@ public class MetricsTests
             usedRoot = 20,
             totalRoot = 100,
             motd = "Test MOTD",
-            stats = Enumerable.Range(0, 10).Select(_ => new DstatResult("0 0 100 0 0 100M 700M 0 0 0 0 0 0 0.0 0.0 0.0")).ToArray()
+            stats = Enumerable.Range(0, 10).Select(_ => new DstatResult("0 0 100 0 0 100M 700M 0 0 0 0 0 0 0.0 0.0 0.0")).ToArray(),
+            containers = new[]
+            {
+                new 
+                {
+                    id = "container-id-1234567890",
+                    name = "test-container",
+                    image = "test-image",
+                    state = "running",
+                    status = "Up 1 hour",
+                    cpuPercentage = 1.5,
+                    memoryUsage = 1024 * 1024 * 10,
+                    memoryLimit = 1024 * 1024 * 100,
+                    uptime = "1 hour",
+                    ports = "80/tcp",
+                    isHealthy = true
+                }
+            }
         };
 
         var response = await _http.PostAsJsonAsync("/api/metrics", metricsPayload);
@@ -81,6 +98,8 @@ public class MetricsTests
         var agent = database.GetClient(clientId);
         Assert.IsNotNull(agent);
         Assert.AreEqual(kernelVersion, agent.KernelVersion);
+        Assert.AreEqual(1, agent.Containers.Count);
+        Assert.AreEqual("test-container", agent.Containers[0].Name);
 
         // Now check if it's displayed on the details page.
         // We need to login first to see the dashboard.
@@ -90,6 +109,8 @@ public class MetricsTests
         detailsResponse.EnsureSuccessStatusCode();
         var detailsHtml = await detailsResponse.Content.ReadAsStringAsync();
         Assert.Contains(kernelVersion, detailsHtml);
+        Assert.Contains("test-container", detailsHtml);
+        Assert.Contains("test-image", detailsHtml);
     }
 
     private async Task LoginAsAdminAsync()

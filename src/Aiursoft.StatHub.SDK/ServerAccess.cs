@@ -34,7 +34,8 @@ public class ServerAccess(
         int usedRoot,
         int totalRoot,
         string? motd,
-        DstatResult[] stats)
+        DstatResult[] stats,
+        ContainerInfo[] containers)
     {
         var url = new AiurApiEndpoint(_serverLocator.Instance, "/api/metrics", new { });
         var form = new AiurApiPayload(new MetricsAddressModel
@@ -51,7 +52,8 @@ public class ServerAccess(
             UsedRoot = usedRoot,
             TotalRoot = totalRoot,
             Motd = motd,
-            Stats = stats
+            Stats = stats,
+            Containers = containers
         });
         logger.LogInformation("Sending metrics to endpoint: '{Endpoint}'", url);
         return http.Post<AiurResponse>(url, form, BodyFormat.HttpJsonBody, autoRetry: false,

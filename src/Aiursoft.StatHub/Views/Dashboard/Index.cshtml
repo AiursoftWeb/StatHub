@@ -144,6 +144,7 @@
                             <th>@Localizer["IP"]</th>
                             <th>@Localizer["Name"]</th>
                             <th class="d-none d-lg-table-cell">@Localizer["SKU"]</th>
+                            <th class="d-none d-lg-table-cell">@Localizer["Containers"]</th>
                             <th class="d-none d-xl-table-cell">@Localizer["Boot at"]</th>
                             <th>@Localizer["Avg Load"]</th>
                             <th>@Localizer["CPU Usage"]</th>
@@ -203,6 +204,19 @@
                                         }
                                         </td>
                                         <td class="d-none d-lg-table-cell" data-sort="@agent.GetSkuInNumber()">@agent.GetSku()</td>
+                                        <td class="d-none d-lg-table-cell" data-sort="@agent.Containers.Count">
+                                            @if (agent.Containers.Count > 0)
+                                            {
+                                                <span class="badge badge-subtle-primary">
+                                                    <i class="align-middle me-1" data-lucide="container" style="width: 12px; height: 12px;"></i>
+                                                    @agent.Containers.Count
+                                                </span>
+                                            }
+                                            else
+                                            {
+                                                <span class="text-muted">-</span>
+                                            }
+                                        </td>
                                         <td class="d-none d-xl-table-cell" data-utc-time="@agent.BootTime.ToHtmlDateTime()" data-sort="@agent.BootTime.Ticks">
                                         </td>
 

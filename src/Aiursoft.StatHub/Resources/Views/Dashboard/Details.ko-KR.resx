@@ -93,5 +93,35 @@
   <data name="Kernel Version" xml:space="preserve">
     <value>커널 버전</value>
   </data>
+  <data name="Docker Containers" xml:space="preserve">
+    <value>Docker 컨테이너</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>상태</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>이름</value>
+  </data>
+  <data name="Image" xml:space="preserve">
+    <value>이미지</value>
+  </data>
+  <data name="CPU %" xml:space="preserve">
+    <value>CPU %</value>
+  </data>
+  <data name="Memory" xml:space="preserve">
+    <value>메모리</value>
+  </data>
+  <data name="Uptime" xml:space="preserve">
+    <value>가동 시간</value>
+  </data>
+  <data name="Ports" xml:space="preserve">
+    <value>포트</value>
+  </data>
+  <data name="Healthy" xml:space="preserve">
+    <value>정상</value>
+  </data>
+  <data name="Unhealthy" xml:space="preserve">
+    <value>불건강</value>
+  </data>
 
 </root>
