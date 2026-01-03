@@ -98,7 +98,7 @@ public class MetricsTests
         var agent = database.GetClient(clientId);
         Assert.IsNotNull(agent);
         Assert.AreEqual(kernelVersion, agent.KernelVersion);
-        Assert.AreEqual(1, agent.Containers.Count);
+        Assert.HasCount(1, agent.Containers);
         Assert.AreEqual("test-container", agent.Containers[0].Name);
 
         // Now check if it's displayed on the details page.
