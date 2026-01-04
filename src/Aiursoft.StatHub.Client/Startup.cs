@@ -25,6 +25,7 @@ public class Startup : IStartUp
         services.AddSingleton<KernelVersionService>();
         services.AddSingleton<VersionService>();
         services.AddSingleton<ExpensiveProcessService>();
+        services.AddSingleton<DockerService>();
         services.AddSingleton<CommandService>();
     }
 }

@@ -24,7 +24,7 @@
   <data name="Read the document" xml:space="preserve">
     <value>閱讀文件</value>
   </data>
-   <data name="Multiple Database Support" xml:space="preserve">
+  <data name="Multiple Database Support" xml:space="preserve">
     <value>多種資料庫支援</value>
   </data>
   <data name="Hello World!" xml:space="preserve">
@@ -206,6 +206,9 @@
   </data>
   <data name="Status" xml:space="preserve">
     <value>狀態</value>
+  </data>
+  <data name="Containers" xml:space="preserve">
+    <value>容器</value>
   </data>
 
 </root>

@@ -1,11 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:schema id="root">
+        <xs:element name="root" ns1:IsDataSet="true">
 
-<root>
-    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-        <xsd:element name="root" msdata:IsDataSet="true">
-
-        </xsd:element>
-    </xsd:schema>
+        </xs:element>
+    </xs:schema>
     <resheader name="resmimetype">
         <value>text/microsoft-resx</value>
     </resheader>
@@ -19,7 +18,7 @@
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
       <data name="Agent Information" xml:space="preserve">
-    <value>Informations sur l&apos;agent</value>
+    <value>Informations sur l'agent</value>
   </data>
   <data name="Client Details" xml:space="preserve">
     <value>Détails du client</value>
@@ -31,7 +30,7 @@
     <value>Retour au tableau de bord</value>
   </data>
   <data name="Operating System" xml:space="preserve">
-    <value>Système d&apos;exploitation</value>
+    <value>Système d'exploitation</value>
   </data>
   <data name="Last Update" xml:space="preserve">
     <value>Dernière mise à jour</value>
@@ -52,7 +51,7 @@
     <value>Mémoire vive</value>
   </data>
   <data name="Runtime Info" xml:space="preserve">
-    <value>Informations d&apos;exécution</value>
+    <value>Informations d'exécution</value>
   </data>
   <data name="Last Process" xml:space="preserve">
     <value>Dernier processus</value>
@@ -85,7 +84,7 @@
     <value>Utilisation de la RAM</value>
   </data>
   <data name="Agent Version" xml:space="preserve">
-    <value>Version de l&apos;Agent</value>
+    <value>Version de l'Agent</value>
   </data>
   <data name="Mainly used by process" xml:space="preserve">
     <value>Principalement utilisé par le processus</value>
@@ -94,4 +93,4 @@
     <value>Version du noyau</value>
   </data>
 
-</root>
+<data name="Docker Containers" xml:space="preserve"><value>Docker Containers</value></data><data name="Status" xml:space="preserve"><value>Status</value></data><data name="Name" xml:space="preserve"><value>Name</value></data><data name="Image" xml:space="preserve"><value>Image</value></data><data name="CPU %" xml:space="preserve"><value>CPU %</value></data><data name="Memory" xml:space="preserve"><value>Memory</value></data><data name="Uptime" xml:space="preserve"><value>Uptime</value></data><data name="Ports" xml:space="preserve"><value>Ports</value></data><data name="Healthy" xml:space="preserve"><value>Healthy</value></data><data name="Unhealthy" xml:space="preserve"><value>Unhealthy</value></data></root>

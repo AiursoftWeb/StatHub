@@ -1,11 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:schema id="root">
+        <xs:element name="root" ns1:IsDataSet="true">
 
-<root>
-    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-        <xsd:element name="root" msdata:IsDataSet="true">
-
-        </xsd:element>
-    </xsd:schema>
+        </xs:element>
+    </xs:schema>
     <resheader name="resmimetype">
         <value>text/microsoft-resx</value>
     </resheader>
@@ -94,4 +93,4 @@
     <value>Wersja jądra</value>
   </data>
 
-</root>
+<data name="Docker Containers" xml:space="preserve"><value>Docker Containers</value></data><data name="Status" xml:space="preserve"><value>Status</value></data><data name="Name" xml:space="preserve"><value>Name</value></data><data name="Image" xml:space="preserve"><value>Image</value></data><data name="CPU %" xml:space="preserve"><value>CPU %</value></data><data name="Memory" xml:space="preserve"><value>Memory</value></data><data name="Uptime" xml:space="preserve"><value>Uptime</value></data><data name="Ports" xml:space="preserve"><value>Ports</value></data><data name="Healthy" xml:space="preserve"><value>Healthy</value></data><data name="Unhealthy" xml:space="preserve"><value>Unhealthy</value></data></root>

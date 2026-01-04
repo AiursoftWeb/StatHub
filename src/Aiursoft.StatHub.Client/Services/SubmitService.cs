@@ -16,6 +16,7 @@ public class SubmitService(
     VersionService versionService,
     HostnameService hostnameService,
     BootTimeService bootTimeService,
+    DockerService dockerService,
     ServerAccess serverAccess,
     ILogger<SubmitService> logger)
     : IConsumer<DstatResult[]>
@@ -57,6 +58,9 @@ public class SubmitService(
         var motd = await motdService.GetMotdFirstLine();
         logger.LogTrace($"MOTD: {motd}.");
 
+        var containers = await dockerService.GetDockerContainersAsync();
+        logger.LogTrace($"Found {containers.Length} containers.");
+
         logger.LogTrace("Sending metrics...");
         try
         {
@@ -74,7 +78,8 @@ public class SubmitService(
                     usedRoot,
                     totalRoot,
                     motd,
-                    statResults);
+                    statResults,
+                    containers);
             logger.LogInformation("Metrics sent! Response: {ResponseMessage}.", response.Message);
         }
         catch (Exception e)

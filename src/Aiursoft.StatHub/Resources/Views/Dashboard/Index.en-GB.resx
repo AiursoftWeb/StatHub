@@ -39,7 +39,7 @@
   <data name="Welcome" xml:space="preserve">
     <value>Welcome</value>
   </data>
-   <data name="OpenID Connect Integration" xml:space="preserve">
+  <data name="OpenID Connect Integration" xml:space="preserve">
     <value>OpenID Connect Integration</value>
   </data>
   <data name="RBAC Authorization" xml:space="preserve">
@@ -206,6 +206,9 @@
   </data>
   <data name="Status" xml:space="preserve">
     <value>Status</value>
+  </data>
+  <data name="Containers" xml:space="preserve">
+    <value>Containers</value>
   </data>
 
 </root>
