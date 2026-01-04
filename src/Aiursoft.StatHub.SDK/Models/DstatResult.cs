@@ -1,3 +1,5 @@
+using System.Globalization;
+
 namespace Aiursoft.StatHub.SDK.Models;
 
 public class DstatResult
@@ -12,11 +14,11 @@ public class DstatResult
     {
         var parts = line
             .Split(" ", StringSplitOptions.RemoveEmptyEntries);
-        CpuUsr = int.Parse(parts[0]);
-        CpuSys = int.Parse(parts[1]);
-        CpuIdl = int.Parse(parts[2]);
-        CpuWai = int.Parse(parts[3]);
-        CpuStl = int.Parse(parts[4]);
+        CpuUsr = int.Parse(parts[0], CultureInfo.InvariantCulture);
+        CpuSys = int.Parse(parts[1], CultureInfo.InvariantCulture);
+        CpuIdl = int.Parse(parts[2], CultureInfo.InvariantCulture);
+        CpuWai = int.Parse(parts[3], CultureInfo.InvariantCulture);
+        CpuStl = int.Parse(parts[4], CultureInfo.InvariantCulture);
         
         MemUsed = DstatNumberProcessor.ParseDataSize(parts[5]);
         MemFree = DstatNumberProcessor.ParseDataSize(parts[6]);
@@ -29,9 +31,9 @@ public class DstatResult
         NetRecv = DstatNumberProcessor.ParseDataSize(parts[11]);
         NetSend = DstatNumberProcessor.ParseDataSize(parts[12]);
         
-        Load1M = double.Parse(parts[13]);
-        Load5M = double.Parse(parts[14]);
-        Load15M = double.Parse(parts[15]);
+        Load1M = double.Parse(parts[13], CultureInfo.InvariantCulture);
+        Load5M = double.Parse(parts[14], CultureInfo.InvariantCulture);
+        Load15M = double.Parse(parts[15], CultureInfo.InvariantCulture);
     }
     
     public int CpuUsr { get; set; }
