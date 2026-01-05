@@ -20,8 +20,8 @@ public class DockerService(
                 return [];
             }
 
-            // Do NOT use quotes around the format string. If there are no spaces, it works better with some command runners.
-            var psResult = await commandService.RunCommandAsync("docker", "ps --format {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.State}}\t{{.Status}}\t{{.Ports}}\t{{.RunningFor}} --no-trunc", Path.GetTempPath());
+            // Do NOT use spaces in the format string. If there are no spaces, it works better with some command runners.
+            var psResult = await commandService.RunCommandAsync("docker", "ps --format {{.ID}}|{{.Names}}|{{.Image}}|{{.State}}|{{.Status}}|{{.Ports}}|{{.RunningFor}} --no-trunc", Path.GetTempPath());
             if (psResult.code != 0)
             {
                 logger.LogWarning($"docker ps failed with exit code {psResult.code}. Error: {psResult.error}");
@@ -32,7 +32,7 @@ public class DockerService(
             var lines = psResult.output.Replace("\r", "").Split("\n", StringSplitOptions.RemoveEmptyEntries);
             foreach (var line in lines)
             {
-                var parts = line.Split("\t");
+                var parts = line.Split("|");
                 if (parts.Length < 7)
                 {
                     logger.LogDebug($"Failed to parse docker ps line: {line}. Expected at least 7 parts but got {parts.Length}.");
@@ -57,13 +57,13 @@ public class DockerService(
                 return [];
             }
 
-            var statsResult = await commandService.RunCommandAsync("docker", "stats --no-stream --format {{.ID}}\t{{.CPUPerc}}\t{{.MemUsage}}\t{{.MemLimit}}", Path.GetTempPath());
+            var statsResult = await commandService.RunCommandAsync("docker", "stats --no-stream --format {{.ID}}|{{.CPUPerc}}|{{.MemUsage}}|{{.MemLimit}}", Path.GetTempPath());
             if (statsResult.code == 0)
             {
                 var statsLines = statsResult.output.Replace("\r", "").Split("\n", StringSplitOptions.RemoveEmptyEntries);
                 foreach (var statsLine in statsLines)
                 {
-                    var parts = statsLine.Split("\t");
+                    var parts = statsLine.Split("|");
                     if (parts.Length < 4) continue;
 
                     var container = containers.FirstOrDefault(c => c.Id.StartsWith(parts[0]));
@@ -93,15 +93,19 @@ public class DockerService(
     {
         try
         {
+            if (size.Contains('/'))
+            {
+                size = size.Split('/')[0];
+            }
             size = size.Trim().ToUpper();
-            if (size.EndsWith("KIB")) return (long)(double.Parse(size.Replace("KIB", "").Trim(), CultureInfo.InvariantCulture) * 1024);
-            if (size.EndsWith("MIB")) return (long)(double.Parse(size.Replace("MIB", "").Trim(), CultureInfo.InvariantCulture) * 1024 * 1024);
-            if (size.EndsWith("GIB")) return (long)(double.Parse(size.Replace("GIB", "").Trim(), CultureInfo.InvariantCulture) * 1024 * 1024 * 1024);
-            if (size.EndsWith("TIB")) return (long)(double.Parse(size.Replace("TIB", "").Trim(), CultureInfo.InvariantCulture) * 1024L * 1024 * 1024 * 1024);
-            if (size.EndsWith("KB")) return (long)(double.Parse(size.Replace("KB", "").Trim(), CultureInfo.InvariantCulture) * 1000);
-            if (size.EndsWith("MB")) return (long)(double.Parse(size.Replace("MB", "").Trim(), CultureInfo.InvariantCulture) * 1000 * 1000);
-            if (size.EndsWith("GB")) return (long)(double.Parse(size.Replace("GB", "").Trim(), CultureInfo.InvariantCulture) * 1000 * 1000 * 1000);
-            if (size.EndsWith("B")) return (long)double.Parse(size.Replace("B", "").Trim(), CultureInfo.InvariantCulture);
+            if (size.EndsWith("KIB")) return (long)(double.Parse(size[..^3].Trim(), CultureInfo.InvariantCulture) * 1024);
+            if (size.EndsWith("MIB")) return (long)(double.Parse(size[..^3].Trim(), CultureInfo.InvariantCulture) * 1024 * 1024);
+            if (size.EndsWith("GIB")) return (long)(double.Parse(size[..^3].Trim(), CultureInfo.InvariantCulture) * 1024 * 1024 * 1024);
+            if (size.EndsWith("TIB")) return (long)(double.Parse(size[..^3].Trim(), CultureInfo.InvariantCulture) * 1024L * 1024 * 1024 * 1024);
+            if (size.EndsWith("KB")) return (long)(double.Parse(size[..^2].Trim(), CultureInfo.InvariantCulture) * 1000);
+            if (size.EndsWith("MB")) return (long)(double.Parse(size[..^2].Trim(), CultureInfo.InvariantCulture) * 1000 * 1000);
+            if (size.EndsWith("GB")) return (long)(double.Parse(size[..^2].Trim(), CultureInfo.InvariantCulture) * 1000 * 1000 * 1000);
+            if (size.EndsWith("B")) return (long)double.Parse(size[..^1].Trim(), CultureInfo.InvariantCulture);
             return (long)double.Parse(size, CultureInfo.InvariantCulture);
         }
         catch
