@@ -1,10 +1,11 @@
-<?xml version='1.0' encoding='utf-8'?>
-<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-    <xs:schema id="root">
-        <xs:element name="root" ns1:IsDataSet="true">
+<?xml version="1.0" encoding="utf-8"?>
 
-        </xs:element>
-    </xs:schema>
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
     <resheader name="resmimetype">
         <value>text/microsoft-resx</value>
     </resheader>
@@ -17,80 +18,110 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="Operating System" xml:space="preserve">
-    <value>Styresystem</value>
-  </data>
-  <data name="Back to Dashboard" xml:space="preserve">
-    <value>Tilbage til dashboard</value>
-  </data>
-  <data name="Agent Information" xml:space="preserve">
+      <data name="Agent Information" xml:space="preserve">
     <value>Agentoplysninger</value>
-  </data>
-  <data name="Last Boot Time" xml:space="preserve">
-    <value>Sidste opstartstid</value>
-  </data>
-  <data name="Client Details" xml:space="preserve">
-    <value>Klientoplysninger</value>
-  </data>
-  <data name="Hardware SKU" xml:space="preserve">
-    <value>Hardware SKU</value>
-  </data>
-  <data name="Cores-RAM-Disk" xml:space="preserve">
-    <value>Kerner-RAM-Disk</value>
-  </data>
-  <data name="Last Update" xml:space="preserve">
-    <value>Sidste opdatering</value>
-  </data>
-  <data name="RAM" xml:space="preserve">
-    <value>RAM</value>
-  </data>
-  <data name="Hardware Details" xml:space="preserve">
-    <value>Hardwareoplysninger</value>
-  </data>
-  <data name="Cores" xml:space="preserve">
-    <value>Kerner</value>
-  </data>
-  <data name="Disk" xml:space="preserve">
-    <value>Disk</value>
-  </data>
-  <data name="Runtime Info" xml:space="preserve">
-    <value>Køreoplysninger</value>
-  </data>
-  <data name="Identity" xml:space="preserve">
-    <value>Identitet</value>
-  </data>
-  <data name="Last Process" xml:space="preserve">
-    <value>Sidste Proces</value>
-  </data>
-  <data name="CPU Usage" xml:space="preserve">
-    <value>CPU-forbrug</value>
-  </data>
-  <data name="MOTD" xml:space="preserve">
-    <value>Dagens besked</value>
-  </data>
-  <data name="System Load" xml:space="preserve">
-    <value>Systembelastning</value>
-  </data>
-  <data name="RAM Usage" xml:space="preserve">
-    <value>RAM-forbrug</value>
-  </data>
-  <data name="Network I/O" xml:space="preserve">
-    <value>Netværks-I/O</value>
-  </data>
-  <data name="Client ID" xml:space="preserve">
-    <value>Klient-ID</value>
-  </data>
-  <data name="Disk I/O" xml:space="preserve">
-    <value>Disk I/O</value>
-  </data>
-  <data name="Mainly used by process" xml:space="preserve">
-    <value>Primært brugt af proces</value>
   </data>
   <data name="Agent Version" xml:space="preserve">
     <value>Agentversion</value>
   </data>
+  <data name="Back to Dashboard" xml:space="preserve">
+    <value>Tilbage til dashboard</value>
+  </data>
+  <data name="Client Details" xml:space="preserve">
+    <value>Klientoplysninger</value>
+  </data>
+  <data name="Client ID" xml:space="preserve">
+    <value>Klient-ID</value>
+  </data>
+  <data name="Cores" xml:space="preserve">
+    <value>Kerner</value>
+  </data>
+  <data name="Cores-RAM-Disk" xml:space="preserve">
+    <value>Kerner-RAM-Disk</value>
+  </data>
+  <data name="CPU %" xml:space="preserve">
+    <value>CPU %</value>
+  </data>
+  <data name="CPU Usage" xml:space="preserve">
+    <value>CPU-forbrug</value>
+  </data>
+  <data name="Disk" xml:space="preserve">
+    <value>Disk</value>
+  </data>
+  <data name="Disk I/O" xml:space="preserve">
+    <value>Disk I/O</value>
+  </data>
+  <data name="Docker Containers" xml:space="preserve">
+    <value>Docker Containers</value>
+  </data>
+  <data name="Hardware Details" xml:space="preserve">
+    <value>Hardwareoplysninger</value>
+  </data>
+  <data name="Hardware SKU" xml:space="preserve">
+    <value>Hardware SKU</value>
+  </data>
+  <data name="Healthy" xml:space="preserve">
+    <value>Healthy</value>
+  </data>
+  <data name="Identity" xml:space="preserve">
+    <value>Identitet</value>
+  </data>
+  <data name="Image" xml:space="preserve">
+    <value>Image</value>
+  </data>
   <data name="Kernel Version" xml:space="preserve">
     <value>Kernelversion</value>
   </data>
+  <data name="Last Boot Time" xml:space="preserve">
+    <value>Sidste opstartstid</value>
+  </data>
+  <data name="Last Process" xml:space="preserve">
+    <value>Sidste Proces</value>
+  </data>
+  <data name="Last Update" xml:space="preserve">
+    <value>Sidste opdatering</value>
+  </data>
+  <data name="Mainly used by process" xml:space="preserve">
+    <value>Primært brugt af proces</value>
+  </data>
+  <data name="Memory" xml:space="preserve">
+    <value>Memory</value>
+  </data>
+  <data name="MOTD" xml:space="preserve">
+    <value>Dagens besked</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="Network I/O" xml:space="preserve">
+    <value>Netværks-I/O</value>
+  </data>
+  <data name="Operating System" xml:space="preserve">
+    <value>Styresystem</value>
+  </data>
+  <data name="Ports" xml:space="preserve">
+    <value>Ports</value>
+  </data>
+  <data name="RAM" xml:space="preserve">
+    <value>RAM</value>
+  </data>
+  <data name="RAM Usage" xml:space="preserve">
+    <value>RAM-forbrug</value>
+  </data>
+  <data name="Runtime Info" xml:space="preserve">
+    <value>Køreoplysninger</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="System Load" xml:space="preserve">
+    <value>Systembelastning</value>
+  </data>
+  <data name="Unhealthy" xml:space="preserve">
+    <value>Unhealthy</value>
+  </data>
+  <data name="Uptime" xml:space="preserve">
+    <value>Uptime</value>
+  </data>
 
-<data name="Docker Containers" xml:space="preserve"><value>Docker Containers</value></data><data name="Status" xml:space="preserve"><value>Status</value></data><data name="Name" xml:space="preserve"><value>Name</value></data><data name="Image" xml:space="preserve"><value>Image</value></data><data name="CPU %" xml:space="preserve"><value>CPU %</value></data><data name="Memory" xml:space="preserve"><value>Memory</value></data><data name="Uptime" xml:space="preserve"><value>Uptime</value></data><data name="Ports" xml:space="preserve"><value>Ports</value></data><data name="Healthy" xml:space="preserve"><value>Healthy</value></data><data name="Unhealthy" xml:space="preserve"><value>Unhealthy</value></data></root>
+</root>

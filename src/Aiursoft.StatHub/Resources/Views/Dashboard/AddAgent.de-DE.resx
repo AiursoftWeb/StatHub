@@ -18,47 +18,47 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="Version Information" xml:space="preserve">
-    <value>Versionsinformationen</value>
-  </data>
-  <data name="(Run as a systemd Service)" xml:space="preserve">
+      <data name="(Run as a systemd Service)" xml:space="preserve">
     <value>(Als systemd-Dienst ausführen)</value>
-  </data>
-  <data name="Latest agent version" xml:space="preserve">
-    <value>Neueste Agenten-Version</value>
   </data>
   <data name="Add a New agent" xml:space="preserve">
     <value>Einen neuen Agenten hinzufügen</value>
   </data>
-  <data name="Current server SDK" xml:space="preserve">
-    <value>Aktuelles Server-SDK</value>
-  </data>
-  <data name="Supported Operating Systems:" xml:space="preserve">
-    <value>Unterstützte Betriebssysteme:</value>
-  </data>
   <data name="Add a new agent to monitor -" xml:space="preserve">
     <value>Einen neuen Agenten zur Überwachung hinzufügen -</value>
-  </data>
-  <data name="Run the following command on your Linux machine to install the agent and register it as a service. This will automatically connect it to this server." xml:space="preserve">
-    <value>Führen Sie den folgenden Befehl auf Ihrem Linux-Rechner aus, um den Agenten zu installieren und als Dienst zu registrieren. Dadurch wird er automatisch mit diesem Server verbunden.</value>
-  </data>
-  <data name="What does this script do?" xml:space="preserve">
-    <value>Was macht dieses Skript?</value>
   </data>
   <data name="AnduinOS 1.1 and above" xml:space="preserve">
     <value>AnduinOS 1.1 und höher</value>
   </data>
-  <data name="Ubuntu 20.04 and above" xml:space="preserve">
-    <value>Ubuntu 20.04 und höher</value>
-  </data>
   <data name="Configures the agent to report to:" xml:space="preserve">
     <value>Konfiguriert den Agenten für die Berichterstattung an:</value>
+  </data>
+  <data name="Current server SDK" xml:space="preserve">
+    <value>Aktuelles Server-SDK</value>
   </data>
   <data name="Downloads the latest &lt;code&gt;Aiursoft.StatHub.Client&lt;/code&gt; agent." xml:space="preserve">
     <value>Lädt den neuesten &lt;code&gt;Aiursoft.StatHub.Client&lt;/code&gt;-Agent herunter.</value>
   </data>
+  <data name="Latest agent version" xml:space="preserve">
+    <value>Neueste Agenten-Version</value>
+  </data>
+  <data name="Run the following command on your Linux machine to install the agent and register it as a service. This will automatically connect it to this server." xml:space="preserve">
+    <value>Führen Sie den folgenden Befehl auf Ihrem Linux-Rechner aus, um den Agenten zu installieren und als Dienst zu registrieren. Dadurch wird er automatisch mit diesem Server verbunden.</value>
+  </data>
   <data name="Sets up a &lt;code&gt;systemd&lt;/code&gt; service to run the agent." xml:space="preserve">
     <value>Richtet einen &lt;code&gt;systemd&lt;/code&gt;-Dienst ein, um den Agenten auszuführen.</value>
+  </data>
+  <data name="Supported Operating Systems:" xml:space="preserve">
+    <value>Unterstützte Betriebssysteme:</value>
+  </data>
+  <data name="Ubuntu 20.04 and above" xml:space="preserve">
+    <value>Ubuntu 20.04 und höher</value>
+  </data>
+  <data name="Version Information" xml:space="preserve">
+    <value>Versionsinformationen</value>
+  </data>
+  <data name="What does this script do?" xml:space="preserve">
+    <value>Was macht dieses Skript?</value>
   </data>
 
 </root>

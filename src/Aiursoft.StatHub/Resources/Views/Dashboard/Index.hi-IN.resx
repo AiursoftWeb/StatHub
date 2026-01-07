@@ -1,10 +1,11 @@
-<?xml version='1.0' encoding='utf-8'?>
-<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-    <xs:schema id="root">
-        <xs:element name="root" ns1:IsDataSet="true">
+<?xml version="1.0" encoding="utf-8"?>
 
-        </xs:element>
-    </xs:schema>
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
     <resheader name="resmimetype">
         <value>text/microsoft-resx</value>
     </resheader>
@@ -17,32 +18,95 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="Hello World!" xml:space="preserve">
-    <value>नमस्ते दुनिया!</value>
+      <data name="(15m, Online Agents)" xml:space="preserve">
+    <value>(15 मिनट, ऑनलाइन एजेंट)</value>
   </data>
-  <data name="Multiple Database Support" xml:space="preserve">
-    <value>एकाधिक डेटाबेस समर्थन</value>
+  <data name="A built-in Role-Based Access Control (RBAC) system for fine-grained permission management." xml:space="preserve">
+    <value>सूक्ष्म अनुमति प्रबंधन के लिए एक अंतर्निहित भूमिका-आधारित पहुँच नियंत्रण (RBAC) प्रणाली।</value>
   </data>
-  <data name="Read the document" xml:space="preserve">
-    <value>दस्तावेज़ पढ़ें</value>
+  <data name="A complete solution for user authentication and profile management right out of the box." xml:space="preserve">
+    <value>बॉक्स से बाहर निकलते ही उपयोगकर्ता प्रमाणीकरण और प्रोफ़ाइल प्रबंधन के लिए एक संपूर्ण समाधान।</value>
   </data>
-   <data name="Why use the Aiursoft Template?" xml:space="preserve">
-    <value>Aiursoft टेम्पलेट क्यों उपयोग करें?</value>
-  </data>
-  <data name="This is a template project, where we start the voyager..." xml:space="preserve">
-    <value>यह एक टेम्पलेट प्रोजेक्ट है, जहाँ से हम अपनी यात्रा शुरू करते हैं...</value>
-  </data>
-  <data name="Welcome" xml:space="preserve">
-    <value>स्वागत है</value>
+  <data name="A fully responsive layout that looks great on both desktop and mobile devices." xml:space="preserve">
+    <value>एक पूरी तरह से उत्तरदायी लेआउट जो डेस्कटॉप और मोबाइल डिवाइस दोनों पर शानदार दिखता है।</value>
   </data>
   <data name="A modern, feature-rich, and highly extensible foundation for your next web application." xml:space="preserve">
     <value>आपके अगले वेब एप्लिकेशन के लिए एक आधुनिक, सुविधा-संपन्न और अत्यधिक विस्तार योग्य आधार।</value>
   </data>
-  <data name="RBAC Authorization" xml:space="preserve">
-    <value>आरबीएसी प्राधिकरण</value>
+  <data name="Agents Dashboard" xml:space="preserve">
+    <value>एजेंट्स डैशबोर्ड</value>
   </data>
-  <data name="OpenID Connect Integration" xml:space="preserve">
-    <value>ओपनआईडी कनेक्ट एकीकरण</value>
+  <data name="Agents Status Monitor" xml:space="preserve">
+    <value>एजेंट्स स्थिति मॉनिटर</value>
+  </data>
+  <data name="Agents with Alerts" xml:space="preserve">
+    <value>चेतावनी वाले एजेंट</value>
+  </data>
+  <data name="AI-Powered Translations" xml:space="preserve">
+    <value>AI-संचालित अनुवाद</value>
+  </data>
+  <data name="All dependencies are automatically registered and always available via constructor injection." xml:space="preserve">
+    <value>सभी निर्भरताएँ स्वचालित रूप से पंजीकृत होती हैं और कंस्ट्रक्टर इंजेक्शन के माध्यम से हमेशा उपलब्ध रहती हैं।</value>
+  </data>
+  <data name="Automatic Dark Mode" xml:space="preserve">
+    <value>स्वचालित डार्क मोड</value>
+  </data>
+  <data name="Automatic Dependency Injection" xml:space="preserve">
+    <value>स्वचालित निर्भरता इंजेक्शन</value>
+  </data>
+  <data name="Automatic, AI-driven translation into 28 languages for global reach." xml:space="preserve">
+    <value>28 भाषाओं में स्वचालित, एआई-चालित अनुवाद जो वैश्विक पहुंच प्रदान करता है।</value>
+  </data>
+  <data name="Average Load" xml:space="preserve">
+    <value>औसत लोड</value>
+  </data>
+  <data name="Avg Load" xml:space="preserve">
+    <value>औसत लोड</value>
+  </data>
+  <data name="Boot at" xml:space="preserve">
+    <value>बूट समय</value>
+  </data>
+  <data name="Built-in User Management" xml:space="preserve">
+    <value>अंतर्निहित उपयोगकर्ता प्रबंधन</value>
+  </data>
+  <data name="Comes with full Docker support for simplified, consistent, and reliable deployments." xml:space="preserve">
+    <value>पूर्ण Docker समर्थन के साथ आता है, जो सरल, सुसंगत और विश्वसनीय डेप्लॉयमेंट के लिए है।</value>
+  </data>
+  <data name="Comprehensive Documentation" xml:space="preserve">
+    <value>विस्तृत दस्तावेज़ीकरण</value>
+  </data>
+  <data name="Containers" xml:space="preserve">
+    <value>Containers</value>
+  </data>
+  <data name="CPU Usage" xml:space="preserve">
+    <value>सीपीयू उपयोग</value>
+  </data>
+  <data name="Critical or Warning" xml:space="preserve">
+    <value>गंभीर या चेतावनी</value>
+  </data>
+  <data name="Cumulative" xml:space="preserve">
+    <value>संचयी</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>विवरण</value>
+  </data>
+  <data name="Disk Read" xml:space="preserve">
+    <value>डिस्क रीड</value>
+  </data>
+  <data name="Disk Reading" xml:space="preserve">
+    <value>डिस्क रीडिंग</value>
+  </data>
+  <data name="Disk Used" xml:space="preserve">
+    <value>डिस्क उपयोग</value>
+  </data>
+  <data name="Disk Writing" xml:space="preserve">
+    <value>डिस्क लेखन</value>
+  </data>
+  <data name="Disk Written" xml:space="preserve">
+    <value>डिस्क लिखित</value>
+  </data>
+  <data name="Dockerized for Deployment" xml:space="preserve">
+    <value>डेप्लॉयमेंट के लिए डॉकरकृत</value>
   </data>
   <data name="Dynamic Navigation Bar" xml:space="preserve">
     <value>डायनामिक नेविगेशन बार</value>
@@ -50,161 +114,101 @@
   <data name="Easily switch between providers like SQLite, MySQL, SQL Server, and an in-memory database for testing." xml:space="preserve">
     <value>SQLite, MySQL, SQL Server और परीक्षण के लिए एक इन-मेमोरी डेटाबेस जैसे प्रदाताओं के बीच आसानी से स्विच करें।</value>
   </data>
-  <data name="Seamlessly integrate with any OpenID Connect provider, with automatic role synchronization." xml:space="preserve">
-    <value>किसी भी OpenID Connect प्रदाता के साथ सहज एकीकरण, स्वचालित भूमिका सिंक्रनाइज़ेशन के साथ।</value>
-  </data>
-  <data name="Comprehensive Documentation" xml:space="preserve">
-    <value>विस्तृत दस्तावेज़ीकरण</value>
-  </data>
-  <data name="AI-Powered Translations" xml:space="preserve">
-    <value>AI-संचालित अनुवाद</value>
-  </data>
-  <data name="A built-in Role-Based Access Control (RBAC) system for fine-grained permission management." xml:space="preserve">
-    <value>सूक्ष्म अनुमति प्रबंधन के लिए एक अंतर्निहित भूमिका-आधारित पहुँच नियंत्रण (RBAC) प्रणाली।</value>
-  </data>
-  <data name="The navigation bar automatically adjusts based on user roles and permissions." xml:space="preserve">
-    <value>नेविगेशन बार उपयोगकर्ता भूमिकाओं और अनुमतियों के आधार पर स्वचालित रूप से समायोजित होता है।</value>
-  </data>
-  <data name="Built-in User Management" xml:space="preserve">
-    <value>अंतर्निहित उपयोगकर्ता प्रबंधन</value>
-  </data>
-  <data name="Automatic, AI-driven translation into 28 languages for global reach." xml:space="preserve">
-    <value>28 भाषाओं में स्वचालित, एआई-चालित अनुवाद जो वैश्विक पहुंच प्रदान करता है।</value>
-  </data>
-  <data name="Includes extensive documentation and practical examples to get you started quickly." xml:space="preserve">
-    <value>विस्तृत दस्तावेज़ीकरण और व्यावहारिक उदाहरण शामिल हैं ताकि आप जल्दी से शुरुआत कर सकें।</value>
-  </data>
-  <data name="Automatic Dependency Injection" xml:space="preserve">
-    <value>स्वचालित निर्भरता इंजेक्शन</value>
-  </data>
-  <data name="Integrated File Management" xml:space="preserve">
-    <value>एकीकृत फ़ाइल प्रबंधन</value>
-  </data>
-  <data name="A complete solution for user authentication and profile management right out of the box." xml:space="preserve">
-    <value>बॉक्स से बाहर निकलते ही उपयोगकर्ता प्रमाणीकरण और प्रोफ़ाइल प्रबंधन के लिए एक संपूर्ण समाधान।</value>
-  </data>
-  <data name="Responsive Design" xml:space="preserve">
-    <value>उत्तरदायी डिज़ाइन</value>
-  </data>
   <data name="Features a built-in file management system with automatic avatar compression." xml:space="preserve">
     <value>स्वचालित अवतार संपीड़न के साथ एक अंतर्निहित फ़ाइल प्रबंधन प्रणाली की सुविधा प्रदान करता है।</value>
-  </data>
-  <data name="All dependencies are automatically registered and always available via constructor injection." xml:space="preserve">
-    <value>सभी निर्भरताएँ स्वचालित रूप से पंजीकृत होती हैं और कंस्ट्रक्टर इंजेक्शन के माध्यम से हमेशा उपलब्ध रहती हैं।</value>
-  </data>
-  <data name="A fully responsive layout that looks great on both desktop and mobile devices." xml:space="preserve">
-    <value>एक पूरी तरह से उत्तरदायी लेआउट जो डेस्कटॉप और मोबाइल डिवाइस दोनों पर शानदार दिखता है।</value>
-  </data>
-  <data name="Automatic Dark Mode" xml:space="preserve">
-    <value>स्वचालित डार्क मोड</value>
-  </data>
-  <data name="Dockerized for Deployment" xml:space="preserve">
-    <value>डेप्लॉयमेंट के लिए डॉकरकृत</value>
-  </data>
-  <data name="Comes with full Docker support for simplified, consistent, and reliable deployments." xml:space="preserve">
-    <value>पूर्ण Docker समर्थन के साथ आता है, जो सरल, सुसंगत और विश्वसनीय डेप्लॉयमेंट के लिए है।</value>
-  </data>
-  <data name="Smart dark mode that automatically adapts to the user's system settings." xml:space="preserve">
-    <value>स्मार्ट डार्क मोड जो स्वचालित रूप से उपयोगकर्ता की सिस्टम सेटिंग्स के अनुकूल हो जाता है।</value>
-  </data>
-  <data name="Total Agents" xml:space="preserve">
-    <value>कुल एजेंट</value>
-  </data>
-  <data name="Critical or Warning" xml:space="preserve">
-    <value>गंभीर या चेतावनी</value>
-  </data>
-  <data name="Agents Dashboard" xml:space="preserve">
-    <value>एजेंट्स डैशबोर्ड</value>
   </data>
   <data name="Healthy" xml:space="preserve">
     <value>स्वस्थ</value>
   </data>
-  <data name="Cumulative" xml:space="preserve">
-    <value>संचयी</value>
+  <data name="Hello World!" xml:space="preserve">
+    <value>नमस्ते दुनिया!</value>
   </data>
-  <data name="Offline Agents" xml:space="preserve">
-    <value>ऑफ़लाइन एजेंट</value>
+  <data name="Includes extensive documentation and practical examples to get you started quickly." xml:space="preserve">
+    <value>विस्तृत दस्तावेज़ीकरण और व्यावहारिक उदाहरण शामिल हैं ताकि आप जल्दी से शुरुआत कर सकें।</value>
   </data>
-  <data name="Agents with Alerts" xml:space="preserve">
-    <value>चेतावनी वाले एजेंट</value>
-  </data>
-  <data name="Last 30 seconds" xml:space="preserve">
-    <value>पिछले 30 सेकंड</value>
-  </data>
-  <data name="Out of sync" xml:space="preserve">
-    <value>सिंक से बाहर</value>
-  </data>
-  <data name="Name" xml:space="preserve">
-    <value>नाम</value>
-  </data>
-  <data name="Agents Status Monitor" xml:space="preserve">
-    <value>एजेंट्स स्थिति मॉनिटर</value>
-  </data>
-  <data name="Average Load" xml:space="preserve">
-    <value>औसत लोड</value>
+  <data name="Integrated File Management" xml:space="preserve">
+    <value>एकीकृत फ़ाइल प्रबंधन</value>
   </data>
   <data name="IP" xml:space="preserve">
     <value>आईपी</value>
   </data>
-  <data name="SKU" xml:space="preserve">
-    <value>एसकेयू</value>
-  </data>
-  <data name="(15m, Online Agents)" xml:space="preserve">
-    <value>(15 मिनट, ऑनलाइन एजेंट)</value>
-  </data>
-  <data name="Boot at" xml:space="preserve">
-    <value>बूट समय</value>
-  </data>
-  <data name="Avg Load" xml:space="preserve">
-    <value>औसत लोड</value>
-  </data>
-  <data name="CPU Usage" xml:space="preserve">
-    <value>सीपीयू उपयोग</value>
-  </data>
-  <data name="Net Sending" xml:space="preserve">
-    <value>नेट भेजना</value>
-  </data>
-  <data name="RAM Usage" xml:space="preserve">
-    <value>RAM उपयोग</value>
-  </data>
-  <data name="Disk Used" xml:space="preserve">
-    <value>डिस्क उपयोग</value>
-  </data>
-  <data name="Used at" xml:space="preserve">
-    <value>उपयोग किया गया</value>
-  </data>
-  <data name="Disk Reading" xml:space="preserve">
-    <value>डिस्क रीडिंग</value>
-  </data>
-  <data name="Disk Writing" xml:space="preserve">
-    <value>डिस्क लेखन</value>
-  </data>
-  <data name="Net Receiving" xml:space="preserve">
-    <value>नेट रिसीविंग</value>
-  </data>
-  <data name="Net Received" xml:space="preserve">
-    <value>नेट प्राप्त</value>
-  </data>
-  <data name="Net Sent" xml:space="preserve">
-    <value>नेट भेजा गया</value>
+  <data name="Last 30 seconds" xml:space="preserve">
+    <value>पिछले 30 सेकंड</value>
   </data>
   <data name="More" xml:space="preserve">
     <value>अधिक</value>
   </data>
-  <data name="Details" xml:space="preserve">
-    <value>विवरण</value>
+  <data name="Multiple Database Support" xml:space="preserve">
+    <value>एकाधिक डेटाबेस समर्थन</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>नाम</value>
+  </data>
+  <data name="Net Received" xml:space="preserve">
+    <value>नेट प्राप्त</value>
+  </data>
+  <data name="Net Receiving" xml:space="preserve">
+    <value>नेट रिसीविंग</value>
+  </data>
+  <data name="Net Sending" xml:space="preserve">
+    <value>नेट भेजना</value>
+  </data>
+  <data name="Net Sent" xml:space="preserve">
+    <value>नेट भेजा गया</value>
+  </data>
+  <data name="Offline Agents" xml:space="preserve">
+    <value>ऑफ़लाइन एजेंट</value>
+  </data>
+  <data name="OpenID Connect Integration" xml:space="preserve">
+    <value>ओपनआईडी कनेक्ट एकीकरण</value>
   </data>
   <data name="OS" xml:space="preserve">
     <value>ओएस</value>
   </data>
-  <data name="Disk Read" xml:space="preserve">
-    <value>डिस्क रीड</value>
+  <data name="Out of sync" xml:space="preserve">
+    <value>सिंक से बाहर</value>
   </data>
-  <data name="Disk Written" xml:space="preserve">
-    <value>डिस्क लिखित</value>
+  <data name="RAM Usage" xml:space="preserve">
+    <value>RAM उपयोग</value>
+  </data>
+  <data name="RBAC Authorization" xml:space="preserve">
+    <value>आरबीएसी प्राधिकरण</value>
+  </data>
+  <data name="Read the document" xml:space="preserve">
+    <value>दस्तावेज़ पढ़ें</value>
+  </data>
+  <data name="Responsive Design" xml:space="preserve">
+    <value>उत्तरदायी डिज़ाइन</value>
+  </data>
+  <data name="Seamlessly integrate with any OpenID Connect provider, with automatic role synchronization." xml:space="preserve">
+    <value>किसी भी OpenID Connect प्रदाता के साथ सहज एकीकरण, स्वचालित भूमिका सिंक्रनाइज़ेशन के साथ।</value>
+  </data>
+  <data name="SKU" xml:space="preserve">
+    <value>एसकेयू</value>
+  </data>
+  <data name="Smart dark mode that automatically adapts to the user&apos;s system settings." xml:space="preserve">
+    <value>स्मार्ट डार्क मोड जो स्वचालित रूप से उपयोगकर्ता की सिस्टम सेटिंग्स के अनुकूल हो जाता है।</value>
   </data>
   <data name="Status" xml:space="preserve">
     <value>स्थिति</value>
   </data>
+  <data name="The navigation bar automatically adjusts based on user roles and permissions." xml:space="preserve">
+    <value>नेविगेशन बार उपयोगकर्ता भूमिकाओं और अनुमतियों के आधार पर स्वचालित रूप से समायोजित होता है।</value>
+  </data>
+  <data name="This is a template project, where we start the voyager..." xml:space="preserve">
+    <value>यह एक टेम्पलेट प्रोजेक्ट है, जहाँ से हम अपनी यात्रा शुरू करते हैं...</value>
+  </data>
+  <data name="Total Agents" xml:space="preserve">
+    <value>कुल एजेंट</value>
+  </data>
+  <data name="Used at" xml:space="preserve">
+    <value>उपयोग किया गया</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>स्वागत है</value>
+  </data>
+  <data name="Why use the Aiursoft Template?" xml:space="preserve">
+    <value>Aiursoft टेम्पलेट क्यों उपयोग करें?</value>
+  </data>
 
-<data name="Containers" xml:space="preserve"><value>Containers</value></data></root>
+</root>

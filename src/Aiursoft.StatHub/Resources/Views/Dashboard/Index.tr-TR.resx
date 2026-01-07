@@ -1,10 +1,11 @@
-<?xml version='1.0' encoding='utf-8'?>
-<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-    <xs:schema id="root">
-        <xs:element name="root" ns1:IsDataSet="true">
+<?xml version="1.0" encoding="utf-8"?>
 
-        </xs:element>
-    </xs:schema>
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
     <resheader name="resmimetype">
         <value>text/microsoft-resx</value>
     </resheader>
@@ -17,194 +18,197 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="Read the document" xml:space="preserve">
-    <value>Belgeyi okuyun</value>
-  </data>
-  <data name="Why use the Aiursoft Template?" xml:space="preserve">
-    <value>Neden Aiursoft Template Kullanmalısınız?</value>
-  </data>
-   <data name="Hello World!" xml:space="preserve">
-    <value>Merhaba Dünya!</value>
-  </data>
-  <data name="This is a template project, where we start the voyager..." xml:space="preserve">
-    <value>Bu bir şablon projedir, yolculuğa buradan başlıyoruz...</value>
-  </data>
-  <data name="Multiple Database Support" xml:space="preserve">
-    <value>Çoklu Veritabanı Desteği</value>
-  </data>
-  <data name="A modern, feature-rich, and highly extensible foundation for your next web application." xml:space="preserve">
-    <value>Modern, zengin özelliklere sahip ve bir sonraki web uygulamanız için oldukça genişletilebilir bir temel.</value>
-  </data>
-  <data name="Welcome" xml:space="preserve">
-    <value>Hoş Geldiniz</value>
-  </data>
-  <data name="OpenID Connect Integration" xml:space="preserve">
-    <value>OpenID Connect Entegrasyonu</value>
-  </data>
-  <data name="Dynamic Navigation Bar" xml:space="preserve">
-    <value>Dinamik Gezinti Çubuğu</value>
-  </data>
-  <data name="RBAC Authorization" xml:space="preserve">
-    <value>RBAC Yetkilendirmesi</value>
-  </data>
-  <data name="AI-Powered Translations" xml:space="preserve">
-    <value>Yapay Zeka Destekli Çeviriler</value>
-  </data>
-  <data name="Easily switch between providers like SQLite, MySQL, SQL Server, and an in-memory database for testing." xml:space="preserve">
-    <value>SQLite, MySQL, SQL Server gibi sağlayıcılar ile testler için kullanılan bellek içi veritabanı arasında kolayca geçiş yapın.</value>
-  </data>
-  <data name="Seamlessly integrate with any OpenID Connect provider, with automatic role synchronization." xml:space="preserve">
-    <value>Herhangi bir OpenID Connect sağlayıcısıyla sorunsuz entegre olun, otomatik rol senkronizasyonu ile.</value>
+      <data name="(15m, Online Agents)" xml:space="preserve">
+    <value>(15 dk, Çevrimiçi Aracılar)</value>
   </data>
   <data name="A built-in Role-Based Access Control (RBAC) system for fine-grained permission management." xml:space="preserve">
     <value>Hassas izin yönetimi için yerleşik bir Rol Tabanlı Erişim Kontrolü (RBAC) sistemi.</value>
   </data>
-  <data name="Comprehensive Documentation" xml:space="preserve">
-    <value>Kapsamlı Dokümantasyon</value>
-  </data>
-  <data name="Automatic, AI-driven translation into 28 languages for global reach." xml:space="preserve">
-    <value>Küresel erişim için 28 dile otomatik, yapay zeka destekli çeviri.</value>
-  </data>
-  <data name="The navigation bar automatically adjusts based on user roles and permissions." xml:space="preserve">
-    <value>Gezinme çubuğu, kullanıcı rollerine ve izinlerine göre otomatik olarak ayarlanır.</value>
-  </data>
-  <data name="Includes extensive documentation and practical examples to get you started quickly." xml:space="preserve">
-    <value>Kapsamlı belgeler ve hızlı bir şekilde başlamanızı sağlayacak pratik örnekler içerir.</value>
-  </data>
-  <data name="Built-in User Management" xml:space="preserve">
-    <value>Dahili Kullanıcı Yönetimi</value>
-  </data>
-  <data name="Responsive Design" xml:space="preserve">
-    <value>Duyarlı Tasarım</value>
-  </data>
-  <data name="Automatic Dependency Injection" xml:space="preserve">
-    <value>Otomatik Bağımlılık Enjeksiyonu</value>
-  </data>
   <data name="A complete solution for user authentication and profile management right out of the box." xml:space="preserve">
     <value>Kullanıcı kimlik doğrulama ve profil yönetimi için kutudan çıkar çıkmaz kullanıma hazır eksiksiz bir çözüm.</value>
-  </data>
-  <data name="Integrated File Management" xml:space="preserve">
-    <value>Entegre Dosya Yönetimi</value>
-  </data>
-  <data name="All dependencies are automatically registered and always available via constructor injection." xml:space="preserve">
-    <value>Tüm bağımlılıklar otomatik olarak kaydedilir ve constructor injection yoluyla her zaman kullanılabilir.</value>
-  </data>
-  <data name="Features a built-in file management system with automatic avatar compression." xml:space="preserve">
-    <value>Otomatik avatar sıkıştırmalı yerleşik bir dosya yönetim sistemi içerir.</value>
   </data>
   <data name="A fully responsive layout that looks great on both desktop and mobile devices." xml:space="preserve">
     <value>Hem masaüstü hem de mobil cihazlarda harika görünen tamamen duyarlı bir düzen.</value>
   </data>
-  <data name="Automatic Dark Mode" xml:space="preserve">
-    <value>Otomatik Karanlık Mod</value>
-  </data>
-  <data name="Dockerized for Deployment" xml:space="preserve">
-    <value>Dağıtım İçin Dockerize Edildi</value>
-  </data>
-  <data name="Smart dark mode that automatically adapts to the user's system settings." xml:space="preserve">
-    <value>Kullanıcının sistem ayarlarına otomatik olarak uyum sağlayan akıllı karanlık mod.</value>
-  </data>
-  <data name="Comes with full Docker support for simplified, consistent, and reliable deployments." xml:space="preserve">
-    <value>Basitleştirilmiş, tutarlı ve güvenilir dağıtımlar için tam Docker desteği ile birlikte gelir.</value>
-  </data>
-  <data name="SKU" xml:space="preserve">
-    <value>SKU</value>
-  </data>
-  <data name="Last 30 seconds" xml:space="preserve">
-    <value>Son 30 saniye</value>
-  </data>
-  <data name="Name" xml:space="preserve">
-    <value>Ad</value>
-  </data>
-  <data name="Agents Status Monitor" xml:space="preserve">
-    <value>Aracı Durum İzleyici</value>
-  </data>
-  <data name="Cumulative" xml:space="preserve">
-    <value>Kümülatif</value>
-  </data>
-  <data name="IP" xml:space="preserve">
-    <value>IP Adresi</value>
+  <data name="A modern, feature-rich, and highly extensible foundation for your next web application." xml:space="preserve">
+    <value>Modern, zengin özelliklere sahip ve bir sonraki web uygulamanız için oldukça genişletilebilir bir temel.</value>
   </data>
   <data name="Agents Dashboard" xml:space="preserve">
     <value>Aracılar Panosu</value>
   </data>
-  <data name="Boot at" xml:space="preserve">
-    <value>Başlangıç Zamanı</value>
-  </data>
-  <data name="Net Receiving" xml:space="preserve">
-    <value>Ağ Gelen Veri</value>
-  </data>
-  <data name="CPU Usage" xml:space="preserve">
-    <value>CPU Kullanımı</value>
-  </data>
-  <data name="RAM Usage" xml:space="preserve">
-    <value>Bellek Kullanımı</value>
-  </data>
-  <data name="Avg Load" xml:space="preserve">
-    <value>Ort. Yük</value>
-  </data>
-  <data name="Disk Used" xml:space="preserve">
-    <value>Disk Kullanımı</value>
-  </data>
-  <data name="Net Sending" xml:space="preserve">
-    <value>Ağ Gönderimi</value>
-  </data>
-  <data name="Used at" xml:space="preserve">
-    <value>Kullanılan İşlem</value>
-  </data>
-  <data name="Disk Reading" xml:space="preserve">
-    <value>Disk Okuma</value>
-  </data>
-  <data name="Disk Writing" xml:space="preserve">
-    <value>Disk Yazma</value>
-  </data>
-  <data name="Net Received" xml:space="preserve">
-    <value>Alınan Ağ Verisi</value>
-  </data>
-  <data name="Net Sent" xml:space="preserve">
-    <value>Gönderilen Ağ</value>
-  </data>
-  <data name="Disk Read" xml:space="preserve">
-    <value>Disk Okuma</value>
-  </data>
-  <data name="Disk Written" xml:space="preserve">
-    <value>Disk Yazılan</value>
-  </data>
-  <data name="OS" xml:space="preserve">
-    <value>İşletim Sistemi</value>
-  </data>
-  <data name="More" xml:space="preserve">
-    <value>Daha Fazla</value>
-  </data>
-  <data name="Details" xml:space="preserve">
-    <value>Detaylar</value>
-  </data>
-  <data name="Healthy" xml:space="preserve">
-    <value>Sağlıklı</value>
-  </data>
-  <data name="Average Load" xml:space="preserve">
-    <value>Ortalama Yük</value>
+  <data name="Agents Status Monitor" xml:space="preserve">
+    <value>Aracı Durum İzleyici</value>
   </data>
   <data name="Agents with Alerts" xml:space="preserve">
     <value>Uyarılı Ajanlar</value>
   </data>
-  <data name="(15m, Online Agents)" xml:space="preserve">
-    <value>(15 dk, Çevrimiçi Aracılar)</value>
+  <data name="AI-Powered Translations" xml:space="preserve">
+    <value>Yapay Zeka Destekli Çeviriler</value>
+  </data>
+  <data name="All dependencies are automatically registered and always available via constructor injection." xml:space="preserve">
+    <value>Tüm bağımlılıklar otomatik olarak kaydedilir ve constructor injection yoluyla her zaman kullanılabilir.</value>
+  </data>
+  <data name="Automatic Dark Mode" xml:space="preserve">
+    <value>Otomatik Karanlık Mod</value>
+  </data>
+  <data name="Automatic Dependency Injection" xml:space="preserve">
+    <value>Otomatik Bağımlılık Enjeksiyonu</value>
+  </data>
+  <data name="Automatic, AI-driven translation into 28 languages for global reach." xml:space="preserve">
+    <value>Küresel erişim için 28 dile otomatik, yapay zeka destekli çeviri.</value>
+  </data>
+  <data name="Average Load" xml:space="preserve">
+    <value>Ortalama Yük</value>
+  </data>
+  <data name="Avg Load" xml:space="preserve">
+    <value>Ort. Yük</value>
+  </data>
+  <data name="Boot at" xml:space="preserve">
+    <value>Başlangıç Zamanı</value>
+  </data>
+  <data name="Built-in User Management" xml:space="preserve">
+    <value>Dahili Kullanıcı Yönetimi</value>
+  </data>
+  <data name="Comes with full Docker support for simplified, consistent, and reliable deployments." xml:space="preserve">
+    <value>Basitleştirilmiş, tutarlı ve güvenilir dağıtımlar için tam Docker desteği ile birlikte gelir.</value>
+  </data>
+  <data name="Comprehensive Documentation" xml:space="preserve">
+    <value>Kapsamlı Dokümantasyon</value>
+  </data>
+  <data name="Containers" xml:space="preserve">
+    <value>Containers</value>
+  </data>
+  <data name="CPU Usage" xml:space="preserve">
+    <value>CPU Kullanımı</value>
   </data>
   <data name="Critical or Warning" xml:space="preserve">
     <value>Kritik veya Uyarı</value>
   </data>
-  <data name="Out of sync" xml:space="preserve">
-    <value>Senkronizasyon Dışı</value>
+  <data name="Cumulative" xml:space="preserve">
+    <value>Kümülatif</value>
   </data>
-  <data name="Total Agents" xml:space="preserve">
-    <value>Toplam Ajanlar</value>
+  <data name="Details" xml:space="preserve">
+    <value>Detaylar</value>
+  </data>
+  <data name="Disk Read" xml:space="preserve">
+    <value>Disk Okuma</value>
+  </data>
+  <data name="Disk Reading" xml:space="preserve">
+    <value>Disk Okuma</value>
+  </data>
+  <data name="Disk Used" xml:space="preserve">
+    <value>Disk Kullanımı</value>
+  </data>
+  <data name="Disk Writing" xml:space="preserve">
+    <value>Disk Yazma</value>
+  </data>
+  <data name="Disk Written" xml:space="preserve">
+    <value>Disk Yazılan</value>
+  </data>
+  <data name="Dockerized for Deployment" xml:space="preserve">
+    <value>Dağıtım İçin Dockerize Edildi</value>
+  </data>
+  <data name="Dynamic Navigation Bar" xml:space="preserve">
+    <value>Dinamik Gezinti Çubuğu</value>
+  </data>
+  <data name="Easily switch between providers like SQLite, MySQL, SQL Server, and an in-memory database for testing." xml:space="preserve">
+    <value>SQLite, MySQL, SQL Server gibi sağlayıcılar ile testler için kullanılan bellek içi veritabanı arasında kolayca geçiş yapın.</value>
+  </data>
+  <data name="Features a built-in file management system with automatic avatar compression." xml:space="preserve">
+    <value>Otomatik avatar sıkıştırmalı yerleşik bir dosya yönetim sistemi içerir.</value>
+  </data>
+  <data name="Healthy" xml:space="preserve">
+    <value>Sağlıklı</value>
+  </data>
+  <data name="Hello World!" xml:space="preserve">
+    <value>Merhaba Dünya!</value>
+  </data>
+  <data name="Includes extensive documentation and practical examples to get you started quickly." xml:space="preserve">
+    <value>Kapsamlı belgeler ve hızlı bir şekilde başlamanızı sağlayacak pratik örnekler içerir.</value>
+  </data>
+  <data name="Integrated File Management" xml:space="preserve">
+    <value>Entegre Dosya Yönetimi</value>
+  </data>
+  <data name="IP" xml:space="preserve">
+    <value>IP Adresi</value>
+  </data>
+  <data name="Last 30 seconds" xml:space="preserve">
+    <value>Son 30 saniye</value>
+  </data>
+  <data name="More" xml:space="preserve">
+    <value>Daha Fazla</value>
+  </data>
+  <data name="Multiple Database Support" xml:space="preserve">
+    <value>Çoklu Veritabanı Desteği</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Ad</value>
+  </data>
+  <data name="Net Received" xml:space="preserve">
+    <value>Alınan Ağ Verisi</value>
+  </data>
+  <data name="Net Receiving" xml:space="preserve">
+    <value>Ağ Gelen Veri</value>
+  </data>
+  <data name="Net Sending" xml:space="preserve">
+    <value>Ağ Gönderimi</value>
+  </data>
+  <data name="Net Sent" xml:space="preserve">
+    <value>Gönderilen Ağ</value>
   </data>
   <data name="Offline Agents" xml:space="preserve">
     <value>Çevrimdışı Ajanlar</value>
   </data>
+  <data name="OpenID Connect Integration" xml:space="preserve">
+    <value>OpenID Connect Entegrasyonu</value>
+  </data>
+  <data name="OS" xml:space="preserve">
+    <value>İşletim Sistemi</value>
+  </data>
+  <data name="Out of sync" xml:space="preserve">
+    <value>Senkronizasyon Dışı</value>
+  </data>
+  <data name="RAM Usage" xml:space="preserve">
+    <value>Bellek Kullanımı</value>
+  </data>
+  <data name="RBAC Authorization" xml:space="preserve">
+    <value>RBAC Yetkilendirmesi</value>
+  </data>
+  <data name="Read the document" xml:space="preserve">
+    <value>Belgeyi okuyun</value>
+  </data>
+  <data name="Responsive Design" xml:space="preserve">
+    <value>Duyarlı Tasarım</value>
+  </data>
+  <data name="Seamlessly integrate with any OpenID Connect provider, with automatic role synchronization." xml:space="preserve">
+    <value>Herhangi bir OpenID Connect sağlayıcısıyla sorunsuz entegre olun, otomatik rol senkronizasyonu ile.</value>
+  </data>
+  <data name="SKU" xml:space="preserve">
+    <value>SKU</value>
+  </data>
+  <data name="Smart dark mode that automatically adapts to the user&apos;s system settings." xml:space="preserve">
+    <value>Kullanıcının sistem ayarlarına otomatik olarak uyum sağlayan akıllı karanlık mod.</value>
+  </data>
   <data name="Status" xml:space="preserve">
     <value>Durum</value>
   </data>
+  <data name="The navigation bar automatically adjusts based on user roles and permissions." xml:space="preserve">
+    <value>Gezinme çubuğu, kullanıcı rollerine ve izinlerine göre otomatik olarak ayarlanır.</value>
+  </data>
+  <data name="This is a template project, where we start the voyager..." xml:space="preserve">
+    <value>Bu bir şablon projedir, yolculuğa buradan başlıyoruz...</value>
+  </data>
+  <data name="Total Agents" xml:space="preserve">
+    <value>Toplam Ajanlar</value>
+  </data>
+  <data name="Used at" xml:space="preserve">
+    <value>Kullanılan İşlem</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>Hoş Geldiniz</value>
+  </data>
+  <data name="Why use the Aiursoft Template?" xml:space="preserve">
+    <value>Neden Aiursoft Template Kullanmalısınız?</value>
+  </data>
 
-<data name="Containers" xml:space="preserve"><value>Containers</value></data></root>
+</root>

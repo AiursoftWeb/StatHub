@@ -18,23 +18,26 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="Add a New agent" xml:space="preserve">
+      <data name="(Run as a systemd Service)" xml:space="preserve">
+    <value>(Uitvoeren als een systemd-service)</value>
+  </data>
+  <data name="Add a New agent" xml:space="preserve">
     <value>Een nieuwe agent toevoegen</value>
-  </data>
-  <data name="Version Information" xml:space="preserve">
-    <value>Versie-informatie</value>
-  </data>
-  <data name="Current server SDK" xml:space="preserve">
-    <value>Huidige server-SDK</value>
-  </data>
-  <data name="Supported Operating Systems:" xml:space="preserve">
-    <value>Ondersteunde besturingssystemen:</value>
   </data>
   <data name="Add a new agent to monitor -" xml:space="preserve">
     <value>Voeg een nieuwe agent toe om te monitoren -</value>
   </data>
-  <data name="(Run as a systemd Service)" xml:space="preserve">
-    <value>(Uitvoeren als een systemd-service)</value>
+  <data name="AnduinOS 1.1 and above" xml:space="preserve">
+    <value>AnduinOS 1.1 en hoger</value>
+  </data>
+  <data name="Configures the agent to report to:" xml:space="preserve">
+    <value>Configureert de agent om te rapporteren aan:</value>
+  </data>
+  <data name="Current server SDK" xml:space="preserve">
+    <value>Huidige server-SDK</value>
+  </data>
+  <data name="Downloads the latest &lt;code&gt;Aiursoft.StatHub.Client&lt;/code&gt; agent." xml:space="preserve">
+    <value>Downloadt de nieuwste &lt;code&gt;Aiursoft.StatHub.Client&lt;/code&gt; agent.</value>
   </data>
   <data name="Latest agent version" xml:space="preserve">
     <value>Nieuwste agentversie</value>
@@ -42,23 +45,20 @@
   <data name="Run the following command on your Linux machine to install the agent and register it as a service. This will automatically connect it to this server." xml:space="preserve">
     <value>Voer het volgende commando uit op je Linux-machine om de agent te installeren en te registreren als een service. Hiermee wordt deze automatisch verbonden met deze server.</value>
   </data>
-  <data name="What does this script do?" xml:space="preserve">
-    <value>Wat doet dit script?</value>
+  <data name="Sets up a &lt;code&gt;systemd&lt;/code&gt; service to run the agent." xml:space="preserve">
+    <value>Stelt een &lt;code&gt;systemd&lt;/code&gt;-service in om de agent uit te voeren.</value>
   </data>
-  <data name="Configures the agent to report to:" xml:space="preserve">
-    <value>Configureert de agent om te rapporteren aan:</value>
+  <data name="Supported Operating Systems:" xml:space="preserve">
+    <value>Ondersteunde besturingssystemen:</value>
   </data>
   <data name="Ubuntu 20.04 and above" xml:space="preserve">
     <value>Ubuntu 20.04 en hoger</value>
   </data>
-  <data name="AnduinOS 1.1 and above" xml:space="preserve">
-    <value>AnduinOS 1.1 en hoger</value>
+  <data name="Version Information" xml:space="preserve">
+    <value>Versie-informatie</value>
   </data>
-  <data name="Sets up a &lt;code&gt;systemd&lt;/code&gt; service to run the agent." xml:space="preserve">
-    <value>Stelt een &lt;code&gt;systemd&lt;/code&gt;-service in om de agent uit te voeren.</value>
-  </data>
-  <data name="Downloads the latest &lt;code&gt;Aiursoft.StatHub.Client&lt;/code&gt; agent." xml:space="preserve">
-    <value>Downloadt de nieuwste &lt;code&gt;Aiursoft.StatHub.Client&lt;/code&gt; agent.</value>
+  <data name="What does this script do?" xml:space="preserve">
+    <value>Wat doet dit script?</value>
   </data>
 
 </root>

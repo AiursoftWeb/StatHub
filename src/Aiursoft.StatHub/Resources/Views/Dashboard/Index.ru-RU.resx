@@ -1,10 +1,11 @@
-<?xml version='1.0' encoding='utf-8'?>
-<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-    <xs:schema id="root">
-        <xs:element name="root" ns1:IsDataSet="true">
+<?xml version="1.0" encoding="utf-8"?>
 
-        </xs:element>
-    </xs:schema>
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
     <resheader name="resmimetype">
         <value>text/microsoft-resx</value>
     </resheader>
@@ -17,107 +18,20 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-   <data name="Read the document" xml:space="preserve">
-    <value>Прочитать документацию</value>
-  </data>
-  <data name="Multiple Database Support" xml:space="preserve">
-    <value>Поддержка нескольких баз данных</value>
-  </data>
-  <data name="Hello World!" xml:space="preserve">
-    <value>Привет, мир!</value>
-  </data>
-  <data name="Welcome" xml:space="preserve">
-    <value>Добро пожаловать</value>
-  </data>
-  <data name="Why use the Aiursoft Template?" xml:space="preserve">
-    <value>Зачем использовать шаблон Aiursoft?</value>
-  </data>
-  <data name="A modern, feature-rich, and highly extensible foundation for your next web application." xml:space="preserve">
-    <value>Современная, многофункциональная и легко расширяемая основа для вашего следующего веб-приложения.</value>
-  </data>
-  <data name="OpenID Connect Integration" xml:space="preserve">
-    <value>Интеграция OpenID Connect</value>
-  </data>
-  <data name="This is a template project, where we start the voyager..." xml:space="preserve">
-    <value>Это шаблонный проект, с которого мы начинаем наше путешествие...</value>
-  </data>
-  <data name="RBAC Authorization" xml:space="preserve">
-    <value>Авторизация RBAC</value>
-  </data>
-  <data name="Easily switch between providers like SQLite, MySQL, SQL Server, and an in-memory database for testing." xml:space="preserve">
-    <value>Легко переключайтесь между поставщиками, такими как SQLite, MySQL, SQL Server, и базой данных в памяти для тестирования.</value>
-  </data>
-  <data name="The navigation bar automatically adjusts based on user roles and permissions." xml:space="preserve">
-    <value>Панель навигации автоматически адаптируется в зависимости от ролей и разрешений пользователя.</value>
-  </data>
-  <data name="Dynamic Navigation Bar" xml:space="preserve">
-    <value>Динамическая панель навигации</value>
-  </data>
-  <data name="AI-Powered Translations" xml:space="preserve">
-    <value>Переводы на основе ИИ</value>
-  </data>
-  <data name="Seamlessly integrate with any OpenID Connect provider, with automatic role synchronization." xml:space="preserve">
-    <value>Беспрепятственная интеграция с любым провайдером OpenID Connect с автоматической синхронизацией ролей.</value>
+      <data name="(15m, Online Agents)" xml:space="preserve">
+    <value>(15 мин, онлайн-агенты)</value>
   </data>
   <data name="A built-in Role-Based Access Control (RBAC) system for fine-grained permission management." xml:space="preserve">
     <value>Встроенная система управления доступом на основе ролей (RBAC) для детального управления разрешениями.</value>
   </data>
-  <data name="Comprehensive Documentation" xml:space="preserve">
-    <value>Полная документация</value>
-  </data>
-  <data name="Automatic, AI-driven translation into 28 languages for global reach." xml:space="preserve">
-    <value>Автоматический перевод с использованием искусственного интеллекта на 28 языков для глобального охвата.</value>
-  </data>
-  <data name="Built-in User Management" xml:space="preserve">
-    <value>Встроенное управление пользователями</value>
-  </data>
-  <data name="Integrated File Management" xml:space="preserve">
-    <value>Встроенная система управления файлами</value>
-  </data>
-  <data name="Includes extensive documentation and practical examples to get you started quickly." xml:space="preserve">
-    <value>Включает обширную документацию и практические примеры для быстрого начала работы.</value>
-  </data>
-  <data name="All dependencies are automatically registered and always available via constructor injection." xml:space="preserve">
-    <value>Все зависимости автоматически регистрируются и всегда доступны через внедрение в конструктор.</value>
-  </data>
   <data name="A complete solution for user authentication and profile management right out of the box." xml:space="preserve">
     <value>Готовое комплексное решение для аутентификации пользователей и управления профилями прямо из коробки.</value>
-  </data>
-  <data name="Features a built-in file management system with automatic avatar compression." xml:space="preserve">
-    <value>Оснащена встроенной системой управления файлами с автоматическим сжатием аватаров.</value>
-  </data>
-  <data name="Automatic Dependency Injection" xml:space="preserve">
-    <value>Автоматическое внедрение зависимостей</value>
-  </data>
-  <data name="Responsive Design" xml:space="preserve">
-    <value>Адаптивный дизайн</value>
-  </data>
-  <data name="Automatic Dark Mode" xml:space="preserve">
-    <value>Автоматическая тёмная тема</value>
   </data>
   <data name="A fully responsive layout that looks great on both desktop and mobile devices." xml:space="preserve">
     <value>Адаптивный макет, который отлично выглядит как на настольных компьютерах, так и на мобильных устройствах.</value>
   </data>
-  <data name="Smart dark mode that automatically adapts to the user's system settings." xml:space="preserve">
-    <value>Умный тёмный режим, который автоматически подстраивается под системные настройки пользователя.</value>
-  </data>
-  <data name="Dockerized for Deployment" xml:space="preserve">
-    <value>Готово к развертыванию в Docker</value>
-  </data>
-  <data name="Comes with full Docker support for simplified, consistent, and reliable deployments." xml:space="preserve">
-    <value>Предоставляет полную поддержку Docker для упрощённых, согласованных и надёжных развёртываний.</value>
-  </data>
-  <data name="Name" xml:space="preserve">
-    <value>Имя</value>
-  </data>
-  <data name="IP" xml:space="preserve">
-    <value>IP-адрес</value>
-  </data>
-  <data name="SKU" xml:space="preserve">
-    <value>SKU</value>
-  </data>
-  <data name="Boot at" xml:space="preserve">
-    <value>Время загрузки</value>
+  <data name="A modern, feature-rich, and highly extensible foundation for your next web application." xml:space="preserve">
+    <value>Современная, многофункциональная и легко расширяемая основа для вашего следующего веб-приложения.</value>
   </data>
   <data name="Agents Dashboard" xml:space="preserve">
     <value>Панель управления агентами</value>
@@ -125,32 +39,62 @@
   <data name="Agents Status Monitor" xml:space="preserve">
     <value>Монитор состояния агентов</value>
   </data>
-  <data name="Last 30 seconds" xml:space="preserve">
-    <value>Последние 30 секунд</value>
+  <data name="Agents with Alerts" xml:space="preserve">
+    <value>Агенты с предупреждениями</value>
   </data>
-  <data name="Cumulative" xml:space="preserve">
-    <value>Суммарно</value>
+  <data name="AI-Powered Translations" xml:space="preserve">
+    <value>Переводы на основе ИИ</value>
+  </data>
+  <data name="All dependencies are automatically registered and always available via constructor injection." xml:space="preserve">
+    <value>Все зависимости автоматически регистрируются и всегда доступны через внедрение в конструктор.</value>
+  </data>
+  <data name="Automatic Dark Mode" xml:space="preserve">
+    <value>Автоматическая тёмная тема</value>
+  </data>
+  <data name="Automatic Dependency Injection" xml:space="preserve">
+    <value>Автоматическое внедрение зависимостей</value>
+  </data>
+  <data name="Automatic, AI-driven translation into 28 languages for global reach." xml:space="preserve">
+    <value>Автоматический перевод с использованием искусственного интеллекта на 28 языков для глобального охвата.</value>
+  </data>
+  <data name="Average Load" xml:space="preserve">
+    <value>Средняя загрузка</value>
+  </data>
+  <data name="Avg Load" xml:space="preserve">
+    <value>Средняя нагрузка</value>
+  </data>
+  <data name="Boot at" xml:space="preserve">
+    <value>Время загрузки</value>
+  </data>
+  <data name="Built-in User Management" xml:space="preserve">
+    <value>Встроенное управление пользователями</value>
+  </data>
+  <data name="Comes with full Docker support for simplified, consistent, and reliable deployments." xml:space="preserve">
+    <value>Предоставляет полную поддержку Docker для упрощённых, согласованных и надёжных развёртываний.</value>
+  </data>
+  <data name="Comprehensive Documentation" xml:space="preserve">
+    <value>Полная документация</value>
+  </data>
+  <data name="Containers" xml:space="preserve">
+    <value>Containers</value>
   </data>
   <data name="CPU Usage" xml:space="preserve">
     <value>Использование ЦП</value>
   </data>
-  <data name="Net Receiving" xml:space="preserve">
-    <value>Приём данных</value>
+  <data name="Critical or Warning" xml:space="preserve">
+    <value>Критическое состояние или предупреждение</value>
   </data>
-  <data name="Net Sending" xml:space="preserve">
-    <value>Передача данных</value>
+  <data name="Cumulative" xml:space="preserve">
+    <value>Суммарно</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Подробности</value>
+  </data>
+  <data name="Disk Read" xml:space="preserve">
+    <value>Чтение с диска</value>
   </data>
   <data name="Disk Reading" xml:space="preserve">
     <value>Чтение с диска</value>
-  </data>
-  <data name="RAM Usage" xml:space="preserve">
-    <value>Использование ОЗУ</value>
-  </data>
-  <data name="Used at" xml:space="preserve">
-    <value>Использовано в</value>
-  </data>
-  <data name="Avg Load" xml:space="preserve">
-    <value>Средняя нагрузка</value>
   </data>
   <data name="Disk Used" xml:space="preserve">
     <value>Использовано диска</value>
@@ -158,53 +102,113 @@
   <data name="Disk Writing" xml:space="preserve">
     <value>Запись на диск</value>
   </data>
-  <data name="Net Sent" xml:space="preserve">
-    <value>Отправлено</value>
-  </data>
   <data name="Disk Written" xml:space="preserve">
     <value>Запись на диск</value>
   </data>
-  <data name="OS" xml:space="preserve">
-    <value>ОС</value>
+  <data name="Dockerized for Deployment" xml:space="preserve">
+    <value>Готово к развертыванию в Docker</value>
   </data>
-  <data name="Disk Read" xml:space="preserve">
-    <value>Чтение с диска</value>
+  <data name="Dynamic Navigation Bar" xml:space="preserve">
+    <value>Динамическая панель навигации</value>
   </data>
-  <data name="Net Received" xml:space="preserve">
-    <value>Получено данных</value>
+  <data name="Easily switch between providers like SQLite, MySQL, SQL Server, and an in-memory database for testing." xml:space="preserve">
+    <value>Легко переключайтесь между поставщиками, такими как SQLite, MySQL, SQL Server, и базой данных в памяти для тестирования.</value>
   </data>
-  <data name="Details" xml:space="preserve">
-    <value>Подробности</value>
-  </data>
-  <data name="More" xml:space="preserve">
-    <value>Подробнее</value>
+  <data name="Features a built-in file management system with automatic avatar compression." xml:space="preserve">
+    <value>Оснащена встроенной системой управления файлами с автоматическим сжатием аватаров.</value>
   </data>
   <data name="Healthy" xml:space="preserve">
     <value>Работает</value>
   </data>
+  <data name="Hello World!" xml:space="preserve">
+    <value>Привет, мир!</value>
+  </data>
+  <data name="Includes extensive documentation and practical examples to get you started quickly." xml:space="preserve">
+    <value>Включает обширную документацию и практические примеры для быстрого начала работы.</value>
+  </data>
+  <data name="Integrated File Management" xml:space="preserve">
+    <value>Встроенная система управления файлами</value>
+  </data>
+  <data name="IP" xml:space="preserve">
+    <value>IP-адрес</value>
+  </data>
+  <data name="Last 30 seconds" xml:space="preserve">
+    <value>Последние 30 секунд</value>
+  </data>
+  <data name="More" xml:space="preserve">
+    <value>Подробнее</value>
+  </data>
+  <data name="Multiple Database Support" xml:space="preserve">
+    <value>Поддержка нескольких баз данных</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Имя</value>
+  </data>
+  <data name="Net Received" xml:space="preserve">
+    <value>Получено данных</value>
+  </data>
+  <data name="Net Receiving" xml:space="preserve">
+    <value>Приём данных</value>
+  </data>
+  <data name="Net Sending" xml:space="preserve">
+    <value>Передача данных</value>
+  </data>
+  <data name="Net Sent" xml:space="preserve">
+    <value>Отправлено</value>
+  </data>
   <data name="Offline Agents" xml:space="preserve">
     <value>Офлайн-агенты</value>
+  </data>
+  <data name="OpenID Connect Integration" xml:space="preserve">
+    <value>Интеграция OpenID Connect</value>
+  </data>
+  <data name="OS" xml:space="preserve">
+    <value>ОС</value>
   </data>
   <data name="Out of sync" xml:space="preserve">
     <value>Не синхронизировано</value>
   </data>
-  <data name="Total Agents" xml:space="preserve">
-    <value>Всего агентов</value>
+  <data name="RAM Usage" xml:space="preserve">
+    <value>Использование ОЗУ</value>
   </data>
-  <data name="Average Load" xml:space="preserve">
-    <value>Средняя загрузка</value>
+  <data name="RBAC Authorization" xml:space="preserve">
+    <value>Авторизация RBAC</value>
   </data>
-  <data name="(15m, Online Agents)" xml:space="preserve">
-    <value>(15 мин, онлайн-агенты)</value>
+  <data name="Read the document" xml:space="preserve">
+    <value>Прочитать документацию</value>
   </data>
-  <data name="Critical or Warning" xml:space="preserve">
-    <value>Критическое состояние или предупреждение</value>
+  <data name="Responsive Design" xml:space="preserve">
+    <value>Адаптивный дизайн</value>
   </data>
-  <data name="Agents with Alerts" xml:space="preserve">
-    <value>Агенты с предупреждениями</value>
+  <data name="Seamlessly integrate with any OpenID Connect provider, with automatic role synchronization." xml:space="preserve">
+    <value>Беспрепятственная интеграция с любым провайдером OpenID Connect с автоматической синхронизацией ролей.</value>
+  </data>
+  <data name="SKU" xml:space="preserve">
+    <value>SKU</value>
+  </data>
+  <data name="Smart dark mode that automatically adapts to the user&apos;s system settings." xml:space="preserve">
+    <value>Умный тёмный режим, который автоматически подстраивается под системные настройки пользователя.</value>
   </data>
   <data name="Status" xml:space="preserve">
     <value>Статус</value>
   </data>
+  <data name="The navigation bar automatically adjusts based on user roles and permissions." xml:space="preserve">
+    <value>Панель навигации автоматически адаптируется в зависимости от ролей и разрешений пользователя.</value>
+  </data>
+  <data name="This is a template project, where we start the voyager..." xml:space="preserve">
+    <value>Это шаблонный проект, с которого мы начинаем наше путешествие...</value>
+  </data>
+  <data name="Total Agents" xml:space="preserve">
+    <value>Всего агентов</value>
+  </data>
+  <data name="Used at" xml:space="preserve">
+    <value>Использовано в</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>Добро пожаловать</value>
+  </data>
+  <data name="Why use the Aiursoft Template?" xml:space="preserve">
+    <value>Зачем использовать шаблон Aiursoft?</value>
+  </data>
 
-<data name="Containers" xml:space="preserve"><value>Containers</value></data></root>
+</root>

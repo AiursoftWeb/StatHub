@@ -1,10 +1,11 @@
-<?xml version='1.0' encoding='utf-8'?>
-<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-    <xs:schema id="root">
-        <xs:element name="root" ns1:IsDataSet="true">
+<?xml version="1.0" encoding="utf-8"?>
 
-        </xs:element>
-    </xs:schema>
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
     <resheader name="resmimetype">
         <value>text/microsoft-resx</value>
     </resheader>
@@ -17,194 +18,197 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="Welcome" xml:space="preserve">
-    <value>Bem-vindo</value>
-  </data>
-  <data name="Read the document" xml:space="preserve">
-    <value>Ler o documento</value>
-  </data>
-   <data name="Why use the Aiursoft Template?" xml:space="preserve">
-    <value>Porquê usar o Aiursoft Template?</value>
-  </data>
-  <data name="This is a template project, where we start the voyager..." xml:space="preserve">
-    <value>Este é um projeto modelo, onde iniciamos a viagem...</value>
-  </data>
-  <data name="A modern, feature-rich, and highly extensible foundation for your next web application." xml:space="preserve">
-    <value>Uma base moderna, rica em funcionalidades e altamente extensível para a sua próxima aplicação web.</value>
-  </data>
-  <data name="Hello World!" xml:space="preserve">
-    <value>Olá Mundo!</value>
-  </data>
-  <data name="Multiple Database Support" xml:space="preserve">
-    <value>Suporte para Múltiplas Bases de Dados</value>
-  </data>
-  <data name="OpenID Connect Integration" xml:space="preserve">
-    <value>Integração OpenID Connect</value>
-  </data>
-  <data name="RBAC Authorization" xml:space="preserve">
-    <value>Autorização RBAC</value>
-  </data>
-  <data name="AI-Powered Translations" xml:space="preserve">
-    <value>Traduções com Inteligência Artificial</value>
-  </data>
-  <data name="Dynamic Navigation Bar" xml:space="preserve">
-    <value>Barra de Navegação Dinâmica</value>
-  </data>
-  <data name="Seamlessly integrate with any OpenID Connect provider, with automatic role synchronization." xml:space="preserve">
-    <value>Integre-se perfeitamente com qualquer fornecedor OpenID Connect, com sincronização automática de funções.</value>
+      <data name="(15m, Online Agents)" xml:space="preserve">
+    <value>(15m, Agentes Online)</value>
   </data>
   <data name="A built-in Role-Based Access Control (RBAC) system for fine-grained permission management." xml:space="preserve">
     <value>Um sistema integrado de Controlo de Acesso Baseado em Funções (RBAC) para gestão de permissões de granularidade fina.</value>
   </data>
-  <data name="Easily switch between providers like SQLite, MySQL, SQL Server, and an in-memory database for testing." xml:space="preserve">
-    <value>Altere facilmente entre fornecedores como SQLite, MySQL, SQL Server e uma base de dados em memória para testes.</value>
-  </data>
-  <data name="The navigation bar automatically adjusts based on user roles and permissions." xml:space="preserve">
-    <value>A barra de navegação ajusta-se automaticamente com base nas funções e permissões do utilizador.</value>
-  </data>
-  <data name="Comprehensive Documentation" xml:space="preserve">
-    <value>Documentação Abrangente</value>
-  </data>
-  <data name="Built-in User Management" xml:space="preserve">
-    <value>Gestão de Utilizadores Integrada</value>
-  </data>
-  <data name="Automatic, AI-driven translation into 28 languages for global reach." xml:space="preserve">
-    <value>Tradução automática, orientada por IA, para 28 idiomas para um alcance global.</value>
-  </data>
-  <data name="Includes extensive documentation and practical examples to get you started quickly." xml:space="preserve">
-    <value>Inclui documentação extensa e exemplos práticos para começar rapidamente.</value>
-  </data>
-  <data name="Automatic Dependency Injection" xml:space="preserve">
-    <value>Injeção Automática de Dependências</value>
-  </data>
   <data name="A complete solution for user authentication and profile management right out of the box." xml:space="preserve">
     <value>Uma solução completa para autenticação de utilizadores e gestão de perfis, pronta a usar.</value>
-  </data>
-  <data name="Integrated File Management" xml:space="preserve">
-    <value>Gestão Integrada de Ficheiros</value>
-  </data>
-  <data name="All dependencies are automatically registered and always available via constructor injection." xml:space="preserve">
-    <value>Todas as dependências são registadas automaticamente e estão sempre disponíveis através de injeção no construtor.</value>
-  </data>
-  <data name="Responsive Design" xml:space="preserve">
-    <value>Design Responsivo</value>
-  </data>
-  <data name="Features a built-in file management system with automatic avatar compression." xml:space="preserve">
-    <value>Inclui um sistema de gestão de ficheiros integrado com compressão automática de avatares.</value>
-  </data>
-  <data name="Automatic Dark Mode" xml:space="preserve">
-    <value>Modo Escuro Automático</value>
-  </data>
-  <data name="Dockerized for Deployment" xml:space="preserve">
-    <value>Dockerizado para Implementação</value>
   </data>
   <data name="A fully responsive layout that looks great on both desktop and mobile devices." xml:space="preserve">
     <value>Um layout totalmente responsivo que tem um aspeto excelente tanto em computadores como em dispositivos móveis.</value>
   </data>
-  <data name="Smart dark mode that automatically adapts to the user's system settings." xml:space="preserve">
-    <value>Modo escuro inteligente que se adapta automaticamente às definições do sistema do utilizador.</value>
-  </data>
-  <data name="Comes with full Docker support for simplified, consistent, and reliable deployments." xml:space="preserve">
-    <value>Inclui suporte completo para Docker para implementações simplificadas, consistentes e fiáveis.</value>
+  <data name="A modern, feature-rich, and highly extensible foundation for your next web application." xml:space="preserve">
+    <value>Uma base moderna, rica em funcionalidades e altamente extensível para a sua próxima aplicação web.</value>
   </data>
   <data name="Agents Dashboard" xml:space="preserve">
     <value>Painel de Agentes</value>
   </data>
-  <data name="Cumulative" xml:space="preserve">
-    <value>Acumulado</value>
-  </data>
-  <data name="Name" xml:space="preserve">
-    <value>Nome</value>
-  </data>
-  <data name="SKU" xml:space="preserve">
-    <value>SKU</value>
-  </data>
-  <data name="IP" xml:space="preserve">
-    <value>IP</value>
-  </data>
   <data name="Agents Status Monitor" xml:space="preserve">
     <value>Monitor de Estado dos Agentes</value>
-  </data>
-  <data name="Last 30 seconds" xml:space="preserve">
-    <value>Últimos 30 segundos</value>
-  </data>
-  <data name="Boot at" xml:space="preserve">
-    <value>Início do sistema</value>
-  </data>
-  <data name="Avg Load" xml:space="preserve">
-    <value>Carga Média</value>
-  </data>
-  <data name="Used at" xml:space="preserve">
-    <value>Utilizado em</value>
-  </data>
-  <data name="CPU Usage" xml:space="preserve">
-    <value>Utilização da CPU</value>
-  </data>
-  <data name="RAM Usage" xml:space="preserve">
-    <value>Utilização de RAM</value>
-  </data>
-  <data name="Net Sending" xml:space="preserve">
-    <value>Envio de Rede</value>
-  </data>
-  <data name="Disk Used" xml:space="preserve">
-    <value>Espaço em Disco Utilizado</value>
-  </data>
-  <data name="Net Receiving" xml:space="preserve">
-    <value>Receção de Rede</value>
-  </data>
-  <data name="Disk Reading" xml:space="preserve">
-    <value>Leitura do Disco</value>
-  </data>
-  <data name="Disk Writing" xml:space="preserve">
-    <value>Escrita no Disco</value>
-  </data>
-  <data name="Net Received" xml:space="preserve">
-    <value>Rede Recebida</value>
-  </data>
-  <data name="Disk Read" xml:space="preserve">
-    <value>Leitura do Disco</value>
-  </data>
-  <data name="More" xml:space="preserve">
-    <value>Mais</value>
-  </data>
-  <data name="Net Sent" xml:space="preserve">
-    <value>Tráfego de Rede Enviado</value>
-  </data>
-  <data name="OS" xml:space="preserve">
-    <value>SO</value>
-  </data>
-  <data name="Details" xml:space="preserve">
-    <value>Detalhes</value>
-  </data>
-  <data name="Disk Written" xml:space="preserve">
-    <value>Escrita no Disco</value>
-  </data>
-  <data name="Offline Agents" xml:space="preserve">
-    <value>Agentes Offline</value>
-  </data>
-  <data name="Average Load" xml:space="preserve">
-    <value>Carga Média</value>
-  </data>
-  <data name="Critical or Warning" xml:space="preserve">
-    <value>Crítico ou Aviso</value>
-  </data>
-  <data name="Total Agents" xml:space="preserve">
-    <value>Agentes Totais</value>
-  </data>
-  <data name="(15m, Online Agents)" xml:space="preserve">
-    <value>(15m, Agentes Online)</value>
   </data>
   <data name="Agents with Alerts" xml:space="preserve">
     <value>Agentes com Alertas</value>
   </data>
-  <data name="Out of sync" xml:space="preserve">
-    <value>Fora de sincronização</value>
+  <data name="AI-Powered Translations" xml:space="preserve">
+    <value>Traduções com Inteligência Artificial</value>
+  </data>
+  <data name="All dependencies are automatically registered and always available via constructor injection." xml:space="preserve">
+    <value>Todas as dependências são registadas automaticamente e estão sempre disponíveis através de injeção no construtor.</value>
+  </data>
+  <data name="Automatic Dark Mode" xml:space="preserve">
+    <value>Modo Escuro Automático</value>
+  </data>
+  <data name="Automatic Dependency Injection" xml:space="preserve">
+    <value>Injeção Automática de Dependências</value>
+  </data>
+  <data name="Automatic, AI-driven translation into 28 languages for global reach." xml:space="preserve">
+    <value>Tradução automática, orientada por IA, para 28 idiomas para um alcance global.</value>
+  </data>
+  <data name="Average Load" xml:space="preserve">
+    <value>Carga Média</value>
+  </data>
+  <data name="Avg Load" xml:space="preserve">
+    <value>Carga Média</value>
+  </data>
+  <data name="Boot at" xml:space="preserve">
+    <value>Início do sistema</value>
+  </data>
+  <data name="Built-in User Management" xml:space="preserve">
+    <value>Gestão de Utilizadores Integrada</value>
+  </data>
+  <data name="Comes with full Docker support for simplified, consistent, and reliable deployments." xml:space="preserve">
+    <value>Inclui suporte completo para Docker para implementações simplificadas, consistentes e fiáveis.</value>
+  </data>
+  <data name="Comprehensive Documentation" xml:space="preserve">
+    <value>Documentação Abrangente</value>
+  </data>
+  <data name="Containers" xml:space="preserve">
+    <value>Containers</value>
+  </data>
+  <data name="CPU Usage" xml:space="preserve">
+    <value>Utilização da CPU</value>
+  </data>
+  <data name="Critical or Warning" xml:space="preserve">
+    <value>Crítico ou Aviso</value>
+  </data>
+  <data name="Cumulative" xml:space="preserve">
+    <value>Acumulado</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Detalhes</value>
+  </data>
+  <data name="Disk Read" xml:space="preserve">
+    <value>Leitura do Disco</value>
+  </data>
+  <data name="Disk Reading" xml:space="preserve">
+    <value>Leitura do Disco</value>
+  </data>
+  <data name="Disk Used" xml:space="preserve">
+    <value>Espaço em Disco Utilizado</value>
+  </data>
+  <data name="Disk Writing" xml:space="preserve">
+    <value>Escrita no Disco</value>
+  </data>
+  <data name="Disk Written" xml:space="preserve">
+    <value>Escrita no Disco</value>
+  </data>
+  <data name="Dockerized for Deployment" xml:space="preserve">
+    <value>Dockerizado para Implementação</value>
+  </data>
+  <data name="Dynamic Navigation Bar" xml:space="preserve">
+    <value>Barra de Navegação Dinâmica</value>
+  </data>
+  <data name="Easily switch between providers like SQLite, MySQL, SQL Server, and an in-memory database for testing." xml:space="preserve">
+    <value>Altere facilmente entre fornecedores como SQLite, MySQL, SQL Server e uma base de dados em memória para testes.</value>
+  </data>
+  <data name="Features a built-in file management system with automatic avatar compression." xml:space="preserve">
+    <value>Inclui um sistema de gestão de ficheiros integrado com compressão automática de avatares.</value>
   </data>
   <data name="Healthy" xml:space="preserve">
     <value>Saudável</value>
   </data>
+  <data name="Hello World!" xml:space="preserve">
+    <value>Olá Mundo!</value>
+  </data>
+  <data name="Includes extensive documentation and practical examples to get you started quickly." xml:space="preserve">
+    <value>Inclui documentação extensa e exemplos práticos para começar rapidamente.</value>
+  </data>
+  <data name="Integrated File Management" xml:space="preserve">
+    <value>Gestão Integrada de Ficheiros</value>
+  </data>
+  <data name="IP" xml:space="preserve">
+    <value>IP</value>
+  </data>
+  <data name="Last 30 seconds" xml:space="preserve">
+    <value>Últimos 30 segundos</value>
+  </data>
+  <data name="More" xml:space="preserve">
+    <value>Mais</value>
+  </data>
+  <data name="Multiple Database Support" xml:space="preserve">
+    <value>Suporte para Múltiplas Bases de Dados</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="Net Received" xml:space="preserve">
+    <value>Rede Recebida</value>
+  </data>
+  <data name="Net Receiving" xml:space="preserve">
+    <value>Receção de Rede</value>
+  </data>
+  <data name="Net Sending" xml:space="preserve">
+    <value>Envio de Rede</value>
+  </data>
+  <data name="Net Sent" xml:space="preserve">
+    <value>Tráfego de Rede Enviado</value>
+  </data>
+  <data name="Offline Agents" xml:space="preserve">
+    <value>Agentes Offline</value>
+  </data>
+  <data name="OpenID Connect Integration" xml:space="preserve">
+    <value>Integração OpenID Connect</value>
+  </data>
+  <data name="OS" xml:space="preserve">
+    <value>SO</value>
+  </data>
+  <data name="Out of sync" xml:space="preserve">
+    <value>Fora de sincronização</value>
+  </data>
+  <data name="RAM Usage" xml:space="preserve">
+    <value>Utilização de RAM</value>
+  </data>
+  <data name="RBAC Authorization" xml:space="preserve">
+    <value>Autorização RBAC</value>
+  </data>
+  <data name="Read the document" xml:space="preserve">
+    <value>Ler o documento</value>
+  </data>
+  <data name="Responsive Design" xml:space="preserve">
+    <value>Design Responsivo</value>
+  </data>
+  <data name="Seamlessly integrate with any OpenID Connect provider, with automatic role synchronization." xml:space="preserve">
+    <value>Integre-se perfeitamente com qualquer fornecedor OpenID Connect, com sincronização automática de funções.</value>
+  </data>
+  <data name="SKU" xml:space="preserve">
+    <value>SKU</value>
+  </data>
+  <data name="Smart dark mode that automatically adapts to the user&apos;s system settings." xml:space="preserve">
+    <value>Modo escuro inteligente que se adapta automaticamente às definições do sistema do utilizador.</value>
+  </data>
   <data name="Status" xml:space="preserve">
     <value>Estado</value>
   </data>
+  <data name="The navigation bar automatically adjusts based on user roles and permissions." xml:space="preserve">
+    <value>A barra de navegação ajusta-se automaticamente com base nas funções e permissões do utilizador.</value>
+  </data>
+  <data name="This is a template project, where we start the voyager..." xml:space="preserve">
+    <value>Este é um projeto modelo, onde iniciamos a viagem...</value>
+  </data>
+  <data name="Total Agents" xml:space="preserve">
+    <value>Agentes Totais</value>
+  </data>
+  <data name="Used at" xml:space="preserve">
+    <value>Utilizado em</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>Bem-vindo</value>
+  </data>
+  <data name="Why use the Aiursoft Template?" xml:space="preserve">
+    <value>Porquê usar o Aiursoft Template?</value>
+  </data>
 
-<data name="Containers" xml:space="preserve"><value>Containers</value></data></root>
+</root>

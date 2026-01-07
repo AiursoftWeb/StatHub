@@ -18,47 +18,47 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="Version Information" xml:space="preserve">
-    <value>Informasi Versi</value>
+      <data name="(Run as a systemd Service)" xml:space="preserve">
+    <value>(Jalankan sebagai Layanan systemd)</value>
   </data>
   <data name="Add a New agent" xml:space="preserve">
     <value>Tambahkan Agen Baru</value>
   </data>
-  <data name="(Run as a systemd Service)" xml:space="preserve">
-    <value>(Jalankan sebagai Layanan systemd)</value>
-  </data>
-  <data name="Latest agent version" xml:space="preserve">
-    <value>Versi agen terbaru</value>
-  </data>
-  <data name="Current server SDK" xml:space="preserve">
-    <value>SDK Server Saat Ini</value>
-  </data>
-  <data name="Supported Operating Systems:" xml:space="preserve">
-    <value>Sistem Operasi yang Didukung:</value>
-  </data>
   <data name="Add a new agent to monitor -" xml:space="preserve">
     <value>Tambahkan agen baru untuk dipantau -</value>
-  </data>
-  <data name="Run the following command on your Linux machine to install the agent and register it as a service. This will automatically connect it to this server." xml:space="preserve">
-    <value>Jalankan perintah berikut pada mesin Linux Anda untuk menginstal agen dan mendaftarkannya sebagai layanan. Ini akan secara otomatis menghubungkannya ke server ini.</value>
-  </data>
-  <data name="Ubuntu 20.04 and above" xml:space="preserve">
-    <value>Ubuntu 20.04 dan yang lebih baru</value>
   </data>
   <data name="AnduinOS 1.1 and above" xml:space="preserve">
     <value>AnduinOS 1.1 dan yang lebih tinggi</value>
   </data>
-  <data name="What does this script do?" xml:space="preserve">
-    <value>Apa yang dilakukan skrip ini?</value>
+  <data name="Configures the agent to report to:" xml:space="preserve">
+    <value>Mengonfigurasi agen untuk melaporkan ke:</value>
+  </data>
+  <data name="Current server SDK" xml:space="preserve">
+    <value>SDK Server Saat Ini</value>
   </data>
   <data name="Downloads the latest &lt;code&gt;Aiursoft.StatHub.Client&lt;/code&gt; agent." xml:space="preserve">
     <value>Mengunduh agen &lt;code&gt;Aiursoft.StatHub.Client&lt;/code&gt; terbaru.</value>
   </data>
-  <data name="Configures the agent to report to:" xml:space="preserve">
-    <value>Mengonfigurasi agen untuk melaporkan ke:</value>
+  <data name="Latest agent version" xml:space="preserve">
+    <value>Versi agen terbaru</value>
+  </data>
+  <data name="Run the following command on your Linux machine to install the agent and register it as a service. This will automatically connect it to this server." xml:space="preserve">
+    <value>Jalankan perintah berikut pada mesin Linux Anda untuk menginstal agen dan mendaftarkannya sebagai layanan. Ini akan secara otomatis menghubungkannya ke server ini.</value>
   </data>
   <data name="Sets up a &lt;code&gt;systemd&lt;/code&gt; service to run the agent." xml:space="preserve">
     <value>Menyiapkan layanan &lt;code&gt;systemd&lt;/code&gt; untuk menjalankan agen.</value>
+  </data>
+  <data name="Supported Operating Systems:" xml:space="preserve">
+    <value>Sistem Operasi yang Didukung:</value>
+  </data>
+  <data name="Ubuntu 20.04 and above" xml:space="preserve">
+    <value>Ubuntu 20.04 dan yang lebih baru</value>
+  </data>
+  <data name="Version Information" xml:space="preserve">
+    <value>Informasi Versi</value>
+  </data>
+  <data name="What does this script do?" xml:space="preserve">
+    <value>Apa yang dilakukan skrip ini?</value>
   </data>
 
 </root>
