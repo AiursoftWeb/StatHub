@@ -1,10 +1,11 @@
-<?xml version='1.0' encoding='utf-8'?>
-<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-    <xs:schema id="root">
-        <xs:element name="root" ns1:IsDataSet="true">
+<?xml version="1.0" encoding="utf-8"?>
 
-        </xs:element>
-    </xs:schema>
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
     <resheader name="resmimetype">
         <value>text/microsoft-resx</value>
     </resheader>
@@ -20,77 +21,107 @@
       <data name="Agent Information" xml:space="preserve">
     <value>Informații despre Agent</value>
   </data>
-  <data name="Cores-RAM-Disk" xml:space="preserve">
-    <value>Nuclee-Memorie-Disc</value>
-  </data>
-  <data name="Hardware SKU" xml:space="preserve">
-    <value>SKU hardware</value>
-  </data>
-  <data name="Client Details" xml:space="preserve">
-    <value>Detalii Client</value>
+  <data name="Agent Version" xml:space="preserve">
+    <value>Versiunea Agentului</value>
   </data>
   <data name="Back to Dashboard" xml:space="preserve">
     <value>Înapoi la Panoul de Control</value>
   </data>
-  <data name="Last Boot Time" xml:space="preserve">
-    <value>Ultima dată de pornire</value>
-  </data>
-  <data name="Last Update" xml:space="preserve">
-    <value>Ultima actualizare</value>
-  </data>
-  <data name="Operating System" xml:space="preserve">
-    <value>Sistem de operare</value>
-  </data>
-  <data name="RAM" xml:space="preserve">
-    <value>RAM</value>
-  </data>
-  <data name="Disk" xml:space="preserve">
-    <value>Disc</value>
-  </data>
-  <data name="MOTD" xml:space="preserve">
-    <value>Mesajul zilei</value>
-  </data>
-  <data name="Hardware Details" xml:space="preserve">
-    <value>Detalii Hardware</value>
-  </data>
-  <data name="Identity" xml:space="preserve">
-    <value>Identitate</value>
-  </data>
-  <data name="Last Process" xml:space="preserve">
-    <value>Ultimul Proces</value>
-  </data>
-  <data name="Cores" xml:space="preserve">
-    <value>Nuclee</value>
-  </data>
-  <data name="Runtime Info" xml:space="preserve">
-    <value>Informații de Execuție</value>
+  <data name="Client Details" xml:space="preserve">
+    <value>Detalii Client</value>
   </data>
   <data name="Client ID" xml:space="preserve">
     <value>ID client</value>
   </data>
+  <data name="Cores" xml:space="preserve">
+    <value>Nuclee</value>
+  </data>
+  <data name="Cores-RAM-Disk" xml:space="preserve">
+    <value>Nuclee-Memorie-Disc</value>
+  </data>
+  <data name="CPU %" xml:space="preserve">
+    <value>CPU %</value>
+  </data>
   <data name="CPU Usage" xml:space="preserve">
     <value>Utilizarea CPU</value>
   </data>
-  <data name="Network I/O" xml:space="preserve">
-    <value>I/O Rețea</value>
-  </data>
-  <data name="RAM Usage" xml:space="preserve">
-    <value>Utilizarea RAM</value>
-  </data>
-  <data name="System Load" xml:space="preserve">
-    <value>Încărcare Sistem</value>
+  <data name="Disk" xml:space="preserve">
+    <value>Disc</value>
   </data>
   <data name="Disk I/O" xml:space="preserve">
     <value>I/O Disc</value>
   </data>
-  <data name="Agent Version" xml:space="preserve">
-    <value>Versiunea Agentului</value>
+  <data name="Docker Containers" xml:space="preserve">
+    <value>Docker Containers</value>
   </data>
-  <data name="Mainly used by process" xml:space="preserve">
-    <value>Utilizat în principal de proces</value>
+  <data name="Hardware Details" xml:space="preserve">
+    <value>Detalii Hardware</value>
+  </data>
+  <data name="Hardware SKU" xml:space="preserve">
+    <value>SKU hardware</value>
+  </data>
+  <data name="Healthy" xml:space="preserve">
+    <value>Healthy</value>
+  </data>
+  <data name="Identity" xml:space="preserve">
+    <value>Identitate</value>
+  </data>
+  <data name="Image" xml:space="preserve">
+    <value>Image</value>
   </data>
   <data name="Kernel Version" xml:space="preserve">
     <value>Versiunea Kernel</value>
   </data>
+  <data name="Last Boot Time" xml:space="preserve">
+    <value>Ultima dată de pornire</value>
+  </data>
+  <data name="Last Process" xml:space="preserve">
+    <value>Ultimul Proces</value>
+  </data>
+  <data name="Last Update" xml:space="preserve">
+    <value>Ultima actualizare</value>
+  </data>
+  <data name="Mainly used by process" xml:space="preserve">
+    <value>Utilizat în principal de proces</value>
+  </data>
+  <data name="Memory" xml:space="preserve">
+    <value>Memory</value>
+  </data>
+  <data name="MOTD" xml:space="preserve">
+    <value>Mesajul zilei</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="Network I/O" xml:space="preserve">
+    <value>I/O Rețea</value>
+  </data>
+  <data name="Operating System" xml:space="preserve">
+    <value>Sistem de operare</value>
+  </data>
+  <data name="Ports" xml:space="preserve">
+    <value>Ports</value>
+  </data>
+  <data name="RAM" xml:space="preserve">
+    <value>RAM</value>
+  </data>
+  <data name="RAM Usage" xml:space="preserve">
+    <value>Utilizarea RAM</value>
+  </data>
+  <data name="Runtime Info" xml:space="preserve">
+    <value>Informații de Execuție</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="System Load" xml:space="preserve">
+    <value>Încărcare Sistem</value>
+  </data>
+  <data name="Unhealthy" xml:space="preserve">
+    <value>Unhealthy</value>
+  </data>
+  <data name="Uptime" xml:space="preserve">
+    <value>Uptime</value>
+  </data>
 
-<data name="Docker Containers" xml:space="preserve"><value>Docker Containers</value></data><data name="Status" xml:space="preserve"><value>Status</value></data><data name="Name" xml:space="preserve"><value>Name</value></data><data name="Image" xml:space="preserve"><value>Image</value></data><data name="CPU %" xml:space="preserve"><value>CPU %</value></data><data name="Memory" xml:space="preserve"><value>Memory</value></data><data name="Uptime" xml:space="preserve"><value>Uptime</value></data><data name="Ports" xml:space="preserve"><value>Ports</value></data><data name="Healthy" xml:space="preserve"><value>Healthy</value></data><data name="Unhealthy" xml:space="preserve"><value>Unhealthy</value></data></root>
+</root>

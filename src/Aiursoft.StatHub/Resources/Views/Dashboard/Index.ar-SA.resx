@@ -1,10 +1,11 @@
-<?xml version='1.0' encoding='utf-8'?>
-<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-    <xs:schema id="root">
-        <xs:element name="root" ns1:IsDataSet="true">
+<?xml version="1.0" encoding="utf-8"?>
 
-        </xs:element>
-    </xs:schema>
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
     <resheader name="resmimetype">
         <value>text/microsoft-resx</value>
     </resheader>
@@ -17,74 +18,32 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="Welcome" xml:space="preserve">
-    <value>مرحباً</value>
-  </data>
-  <data name="Read the document" xml:space="preserve">
-    <value>اقرأ المستند</value>
-  </data>
-  <data name="Hello World!" xml:space="preserve">
-    <value>مرحباً أيها العالم!</value>
-  </data>
-   <data name="Why use the Aiursoft Template?" xml:space="preserve">
-    <value>لماذا نستخدم قالب Aiursoft؟</value>
-  </data>
-  <data name="This is a template project, where we start the voyager..." xml:space="preserve">
-    <value>هذا مشروع قالب، حيث نبدأ رحلة المستكشف...</value>
-  </data>
-  <data name="Multiple Database Support" xml:space="preserve">
-    <value>دعم قواعد بيانات متعددة</value>
-  </data>
-  <data name="A modern, feature-rich, and highly extensible foundation for your next web application." xml:space="preserve">
-    <value>أساس حديث، غني بالميزات، وقابل للتوسعة بشكل كبير لتطبيق الويب القادم الخاص بك.</value>
-  </data>
-  <data name="OpenID Connect Integration" xml:space="preserve">
-    <value>دمج OpenID Connect</value>
-  </data>
-  <data name="Seamlessly integrate with any OpenID Connect provider, with automatic role synchronization." xml:space="preserve">
-    <value>التكامل السلس مع أي موفر OpenID Connect، مع مزامنة تلقائية للأدوار.</value>
+      <data name="(15m, Online Agents)" xml:space="preserve">
+    <value>(١٥ دقيقة، الوكلاء المتصلون)</value>
   </data>
   <data name="A built-in Role-Based Access Control (RBAC) system for fine-grained permission management." xml:space="preserve">
     <value>نظام مضمن للتحكم في الوصول القائم على الأدوار (RBAC) لإدارة دقيقة للصلاحيات.</value>
   </data>
-  <data name="AI-Powered Translations" xml:space="preserve">
-    <value>الترجمات المدعومة بالذكاء الاصطناعي</value>
-  </data>
-  <data name="RBAC Authorization" xml:space="preserve">
-    <value>الترخيص القائم على الأدوار (RBAC)</value>
-  </data>
-  <data name="Dynamic Navigation Bar" xml:space="preserve">
-    <value>شريط التنقل الديناميكي</value>
-  </data>
-  <data name="Easily switch between providers like SQLite, MySQL, SQL Server, and an in-memory database for testing." xml:space="preserve">
-    <value>يمكنك التبديل بسهولة بين مزودي قواعد البيانات مثل SQLite وMySQL وSQL Server وقاعدة البيانات المؤقتة في الذاكرة لأغراض الاختبار.</value>
-  </data>
-  <data name="The navigation bar automatically adjusts based on user roles and permissions." xml:space="preserve">
-    <value>يتم تعديل شريط التنقل تلقائيًا بناءً على أدوار المستخدمين والأذونات.</value>
-  </data>
-  <data name="Comprehensive Documentation" xml:space="preserve">
-    <value>توثيق شامل</value>
-  </data>
-  <data name="Automatic, AI-driven translation into 28 languages for global reach." xml:space="preserve">
-    <value>ترجمة آلية مدعومة بالذكاء الاصطناعي إلى 28 لغة للوصول العالمي.</value>
-  </data>
-  <data name="Built-in User Management" xml:space="preserve">
-    <value>إدارة المستخدمين المدمجة</value>
-  </data>
-  <data name="Automatic Dependency Injection" xml:space="preserve">
-    <value>حقن التبعيات التلقائي</value>
-  </data>
-  <data name="Integrated File Management" xml:space="preserve">
-    <value>إدارة الملفات المتكاملة</value>
-  </data>
-  <data name="Includes extensive documentation and practical examples to get you started quickly." xml:space="preserve">
-    <value>يحتوي على وثائق شاملة وأمثلة عملية لمساعدتك على البدء بسرعة.</value>
-  </data>
   <data name="A complete solution for user authentication and profile management right out of the box." xml:space="preserve">
     <value>حل متكامل لمصادقة المستخدم وإدارة الملفات الشخصية جاهز للاستخدام مباشرة.</value>
   </data>
-  <data name="Responsive Design" xml:space="preserve">
-    <value>تصميم متجاوب</value>
+  <data name="A fully responsive layout that looks great on both desktop and mobile devices." xml:space="preserve">
+    <value>تصميم متجاوب بالكامل يبدو رائعًا على كل من أجهزة الكمبيوتر المكتبية والهواتف المحمولة.</value>
+  </data>
+  <data name="A modern, feature-rich, and highly extensible foundation for your next web application." xml:space="preserve">
+    <value>أساس حديث، غني بالميزات، وقابل للتوسعة بشكل كبير لتطبيق الويب القادم الخاص بك.</value>
+  </data>
+  <data name="Agents Dashboard" xml:space="preserve">
+    <value>لوحة تحكم الوكلاء</value>
+  </data>
+  <data name="Agents Status Monitor" xml:space="preserve">
+    <value>مراقب حالة الوكلاء</value>
+  </data>
+  <data name="Agents with Alerts" xml:space="preserve">
+    <value>العملاء مع التنبيهات</value>
+  </data>
+  <data name="AI-Powered Translations" xml:space="preserve">
+    <value>الترجمات المدعومة بالذكاء الاصطناعي</value>
   </data>
   <data name="All dependencies are automatically registered and always available via constructor injection." xml:space="preserve">
     <value>يتم تسجيل جميع التبعيات تلقائيًا وهي متاحة دائمًا عبر حقن المُنشئ.</value>
@@ -92,38 +51,83 @@
   <data name="Automatic Dark Mode" xml:space="preserve">
     <value>الوضع الداكن التلقائي</value>
   </data>
-  <data name="Features a built-in file management system with automatic avatar compression." xml:space="preserve">
-    <value>يتميز بنظام مدمج لإدارة الملفات مع ضغط تلقائي للصور الشخصية.</value>
+  <data name="Automatic Dependency Injection" xml:space="preserve">
+    <value>حقن التبعيات التلقائي</value>
   </data>
-  <data name="Dockerized for Deployment" xml:space="preserve">
-    <value>مُحَضَّرٌ باستخدام Docker للنشر</value>
+  <data name="Automatic, AI-driven translation into 28 languages for global reach." xml:space="preserve">
+    <value>ترجمة آلية مدعومة بالذكاء الاصطناعي إلى 28 لغة للوصول العالمي.</value>
   </data>
-  <data name="Smart dark mode that automatically adapts to the user's system settings." xml:space="preserve">
-    <value>وضع الظلام الذكي الذي يتكيف تلقائيًا مع إعدادات نظام المستخدم.</value>
+  <data name="Average Load" xml:space="preserve">
+    <value>متوسط الحمل</value>
   </data>
-  <data name="A fully responsive layout that looks great on both desktop and mobile devices." xml:space="preserve">
-    <value>تصميم متجاوب بالكامل يبدو رائعًا على كل من أجهزة الكمبيوتر المكتبية والهواتف المحمولة.</value>
-  </data>
-  <data name="Comes with full Docker support for simplified, consistent, and reliable deployments." xml:space="preserve">
-    <value>يأتي مع دعم كامل لـ Docker لنشر مبسط، متسق، وموثوق.</value>
-  </data>
-  <data name="Agents Status Monitor" xml:space="preserve">
-    <value>مراقب حالة الوكلاء</value>
-  </data>
-  <data name="Cumulative" xml:space="preserve">
-    <value>تراكمي</value>
-  </data>
-  <data name="Name" xml:space="preserve">
-    <value>الاسم</value>
-  </data>
-  <data name="Agents Dashboard" xml:space="preserve">
-    <value>لوحة تحكم الوكلاء</value>
+  <data name="Avg Load" xml:space="preserve">
+    <value>متوسط الحمل</value>
   </data>
   <data name="Boot at" xml:space="preserve">
     <value>وقت الإقلاع</value>
   </data>
-  <data name="SKU" xml:space="preserve">
-    <value>المنتج</value>
+  <data name="Built-in User Management" xml:space="preserve">
+    <value>إدارة المستخدمين المدمجة</value>
+  </data>
+  <data name="Comes with full Docker support for simplified, consistent, and reliable deployments." xml:space="preserve">
+    <value>يأتي مع دعم كامل لـ Docker لنشر مبسط، متسق، وموثوق.</value>
+  </data>
+  <data name="Comprehensive Documentation" xml:space="preserve">
+    <value>توثيق شامل</value>
+  </data>
+  <data name="Containers" xml:space="preserve">
+    <value>Containers</value>
+  </data>
+  <data name="CPU Usage" xml:space="preserve">
+    <value>استخدام المعالج</value>
+  </data>
+  <data name="Critical or Warning" xml:space="preserve">
+    <value>حرج أو تحذير</value>
+  </data>
+  <data name="Cumulative" xml:space="preserve">
+    <value>تراكمي</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>التفاصيل</value>
+  </data>
+  <data name="Disk Read" xml:space="preserve">
+    <value>قراءة القرص</value>
+  </data>
+  <data name="Disk Reading" xml:space="preserve">
+    <value>قراءة القرص</value>
+  </data>
+  <data name="Disk Used" xml:space="preserve">
+    <value>المساحة المستخدمة</value>
+  </data>
+  <data name="Disk Writing" xml:space="preserve">
+    <value>كتابة القرص</value>
+  </data>
+  <data name="Disk Written" xml:space="preserve">
+    <value>البيانات المكتوبة على القرص</value>
+  </data>
+  <data name="Dockerized for Deployment" xml:space="preserve">
+    <value>مُحَضَّرٌ باستخدام Docker للنشر</value>
+  </data>
+  <data name="Dynamic Navigation Bar" xml:space="preserve">
+    <value>شريط التنقل الديناميكي</value>
+  </data>
+  <data name="Easily switch between providers like SQLite, MySQL, SQL Server, and an in-memory database for testing." xml:space="preserve">
+    <value>يمكنك التبديل بسهولة بين مزودي قواعد البيانات مثل SQLite وMySQL وSQL Server وقاعدة البيانات المؤقتة في الذاكرة لأغراض الاختبار.</value>
+  </data>
+  <data name="Features a built-in file management system with automatic avatar compression." xml:space="preserve">
+    <value>يتميز بنظام مدمج لإدارة الملفات مع ضغط تلقائي للصور الشخصية.</value>
+  </data>
+  <data name="Healthy" xml:space="preserve">
+    <value>سليم</value>
+  </data>
+  <data name="Hello World!" xml:space="preserve">
+    <value>مرحباً أيها العالم!</value>
+  </data>
+  <data name="Includes extensive documentation and practical examples to get you started quickly." xml:space="preserve">
+    <value>يحتوي على وثائق شاملة وأمثلة عملية لمساعدتك على البدء بسرعة.</value>
+  </data>
+  <data name="Integrated File Management" xml:space="preserve">
+    <value>إدارة الملفات المتكاملة</value>
   </data>
   <data name="IP" xml:space="preserve">
     <value>عنوان IP</value>
@@ -131,80 +135,80 @@
   <data name="Last 30 seconds" xml:space="preserve">
     <value>آخر 30 ثانية</value>
   </data>
-  <data name="CPU Usage" xml:space="preserve">
-    <value>استخدام المعالج</value>
+  <data name="More" xml:space="preserve">
+    <value>المزيد</value>
   </data>
-  <data name="Avg Load" xml:space="preserve">
-    <value>متوسط الحمل</value>
+  <data name="Multiple Database Support" xml:space="preserve">
+    <value>دعم قواعد بيانات متعددة</value>
   </data>
-  <data name="Used at" xml:space="preserve">
-    <value>المستخدم في</value>
-  </data>
-  <data name="Net Receiving" xml:space="preserve">
-    <value>استقبال الشبكة</value>
-  </data>
-  <data name="RAM Usage" xml:space="preserve">
-    <value>استخدام الذاكرة العشوائية</value>
-  </data>
-  <data name="Disk Used" xml:space="preserve">
-    <value>المساحة المستخدمة</value>
-  </data>
-  <data name="Disk Reading" xml:space="preserve">
-    <value>قراءة القرص</value>
-  </data>
-  <data name="Net Sending" xml:space="preserve">
-    <value>إرسال الشبكة</value>
-  </data>
-  <data name="Disk Writing" xml:space="preserve">
-    <value>كتابة القرص</value>
-  </data>
-  <data name="Disk Read" xml:space="preserve">
-    <value>قراءة القرص</value>
-  </data>
-  <data name="Net Sent" xml:space="preserve">
-    <value>البيانات المرسلة</value>
+  <data name="Name" xml:space="preserve">
+    <value>الاسم</value>
   </data>
   <data name="Net Received" xml:space="preserve">
     <value>البيانات المستلمة</value>
   </data>
-  <data name="More" xml:space="preserve">
-    <value>المزيد</value>
+  <data name="Net Receiving" xml:space="preserve">
+    <value>استقبال الشبكة</value>
   </data>
-  <data name="Details" xml:space="preserve">
-    <value>التفاصيل</value>
+  <data name="Net Sending" xml:space="preserve">
+    <value>إرسال الشبكة</value>
   </data>
-  <data name="OS" xml:space="preserve">
-    <value>نظام التشغيل</value>
-  </data>
-  <data name="Disk Written" xml:space="preserve">
-    <value>البيانات المكتوبة على القرص</value>
-  </data>
-  <data name="Healthy" xml:space="preserve">
-    <value>سليم</value>
-  </data>
-  <data name="Average Load" xml:space="preserve">
-    <value>متوسط الحمل</value>
+  <data name="Net Sent" xml:space="preserve">
+    <value>البيانات المرسلة</value>
   </data>
   <data name="Offline Agents" xml:space="preserve">
     <value>العملات غير المتصلة</value>
   </data>
+  <data name="OpenID Connect Integration" xml:space="preserve">
+    <value>دمج OpenID Connect</value>
+  </data>
+  <data name="OS" xml:space="preserve">
+    <value>نظام التشغيل</value>
+  </data>
   <data name="Out of sync" xml:space="preserve">
     <value>غير متزامن</value>
   </data>
-  <data name="Agents with Alerts" xml:space="preserve">
-    <value>العملاء مع التنبيهات</value>
+  <data name="RAM Usage" xml:space="preserve">
+    <value>استخدام الذاكرة العشوائية</value>
   </data>
-  <data name="Total Agents" xml:space="preserve">
-    <value>إجمالي الوكلاء</value>
+  <data name="RBAC Authorization" xml:space="preserve">
+    <value>الترخيص القائم على الأدوار (RBAC)</value>
   </data>
-  <data name="(15m, Online Agents)" xml:space="preserve">
-    <value>(١٥ دقيقة، الوكلاء المتصلون)</value>
+  <data name="Read the document" xml:space="preserve">
+    <value>اقرأ المستند</value>
   </data>
-  <data name="Critical or Warning" xml:space="preserve">
-    <value>حرج أو تحذير</value>
+  <data name="Responsive Design" xml:space="preserve">
+    <value>تصميم متجاوب</value>
+  </data>
+  <data name="Seamlessly integrate with any OpenID Connect provider, with automatic role synchronization." xml:space="preserve">
+    <value>التكامل السلس مع أي موفر OpenID Connect، مع مزامنة تلقائية للأدوار.</value>
+  </data>
+  <data name="SKU" xml:space="preserve">
+    <value>المنتج</value>
+  </data>
+  <data name="Smart dark mode that automatically adapts to the user&apos;s system settings." xml:space="preserve">
+    <value>وضع الظلام الذكي الذي يتكيف تلقائيًا مع إعدادات نظام المستخدم.</value>
   </data>
   <data name="Status" xml:space="preserve">
     <value>الحالة</value>
   </data>
+  <data name="The navigation bar automatically adjusts based on user roles and permissions." xml:space="preserve">
+    <value>يتم تعديل شريط التنقل تلقائيًا بناءً على أدوار المستخدمين والأذونات.</value>
+  </data>
+  <data name="This is a template project, where we start the voyager..." xml:space="preserve">
+    <value>هذا مشروع قالب، حيث نبدأ رحلة المستكشف...</value>
+  </data>
+  <data name="Total Agents" xml:space="preserve">
+    <value>إجمالي الوكلاء</value>
+  </data>
+  <data name="Used at" xml:space="preserve">
+    <value>المستخدم في</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>مرحباً</value>
+  </data>
+  <data name="Why use the Aiursoft Template?" xml:space="preserve">
+    <value>لماذا نستخدم قالب Aiursoft؟</value>
+  </data>
 
-<data name="Containers" xml:space="preserve"><value>Containers</value></data></root>
+</root>

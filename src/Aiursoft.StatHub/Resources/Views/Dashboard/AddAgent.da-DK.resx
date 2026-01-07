@@ -18,47 +18,47 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="Current server SDK" xml:space="preserve">
-    <value>Nuværende server SDK</value>
-  </data>
-  <data name="Latest agent version" xml:space="preserve">
-    <value>Seneste agentversion</value>
-  </data>
-  <data name="Version Information" xml:space="preserve">
-    <value>Versionsoplysninger</value>
+      <data name="(Run as a systemd Service)" xml:space="preserve">
+    <value>(Kør som en systemd-tjeneste)</value>
   </data>
   <data name="Add a New agent" xml:space="preserve">
     <value>Tilføj en ny agent</value>
   </data>
-  <data name="Supported Operating Systems:" xml:space="preserve">
-    <value>Understøttede operativsystemer:</value>
-  </data>
-  <data name="(Run as a systemd Service)" xml:space="preserve">
-    <value>(Kør som en systemd-tjeneste)</value>
-  </data>
   <data name="Add a new agent to monitor -" xml:space="preserve">
     <value>Tilføj en ny agent at overvåge -</value>
-  </data>
-  <data name="Run the following command on your Linux machine to install the agent and register it as a service. This will automatically connect it to this server." xml:space="preserve">
-    <value>Kør følgende kommando på din Linux-maskine for at installere agenten og registrere den som en service. Dette vil automatisk forbinde den til denne server.</value>
-  </data>
-  <data name="What does this script do?" xml:space="preserve">
-    <value>Hvad gør dette script?</value>
-  </data>
-  <data name="Configures the agent to report to:" xml:space="preserve">
-    <value>Konfigurerer agenten til at rapportere til:</value>
   </data>
   <data name="AnduinOS 1.1 and above" xml:space="preserve">
     <value>AnduinOS 1.1 og derover</value>
   </data>
-  <data name="Ubuntu 20.04 and above" xml:space="preserve">
-    <value>Ubuntu 20.04 og derover</value>
+  <data name="Configures the agent to report to:" xml:space="preserve">
+    <value>Konfigurerer agenten til at rapportere til:</value>
+  </data>
+  <data name="Current server SDK" xml:space="preserve">
+    <value>Nuværende server SDK</value>
   </data>
   <data name="Downloads the latest &lt;code&gt;Aiursoft.StatHub.Client&lt;/code&gt; agent." xml:space="preserve">
     <value>Downloader den nyeste &lt;code&gt;Aiursoft.StatHub.Client&lt;/code&gt;-agent.</value>
   </data>
+  <data name="Latest agent version" xml:space="preserve">
+    <value>Seneste agentversion</value>
+  </data>
+  <data name="Run the following command on your Linux machine to install the agent and register it as a service. This will automatically connect it to this server." xml:space="preserve">
+    <value>Kør følgende kommando på din Linux-maskine for at installere agenten og registrere den som en service. Dette vil automatisk forbinde den til denne server.</value>
+  </data>
   <data name="Sets up a &lt;code&gt;systemd&lt;/code&gt; service to run the agent." xml:space="preserve">
     <value>Opsætter en &lt;code&gt;systemd&lt;/code&gt;-tjeneste til at køre agenten.</value>
+  </data>
+  <data name="Supported Operating Systems:" xml:space="preserve">
+    <value>Understøttede operativsystemer:</value>
+  </data>
+  <data name="Ubuntu 20.04 and above" xml:space="preserve">
+    <value>Ubuntu 20.04 og derover</value>
+  </data>
+  <data name="Version Information" xml:space="preserve">
+    <value>Versionsoplysninger</value>
+  </data>
+  <data name="What does this script do?" xml:space="preserve">
+    <value>Hvad gør dette script?</value>
   </data>
 
 </root>

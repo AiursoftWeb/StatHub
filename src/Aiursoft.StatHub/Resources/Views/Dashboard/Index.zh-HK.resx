@@ -18,77 +18,32 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="Read the document" xml:space="preserve">
-    <value>閱讀文件</value>
-  </data>
-  <data name="Hello World!" xml:space="preserve">
-    <value>你好世界！</value>
-  </data>
-  <data name="Welcome" xml:space="preserve">
-    <value>歡迎</value>
-  </data>
-  <data name="This is a template project, where we start the voyager..." xml:space="preserve">
-    <value>這是一個模板項目，我們在此展開探索之旅...</value>
-  </data>
-  <data name="Why use the Aiursoft Template?" xml:space="preserve">
-    <value>點解要使用 Aiursoft 模板？</value>
-  </data>
-  <data name="Multiple Database Support" xml:space="preserve">
-    <value>多種數據庫支援</value>
-  </data>
-  <data name="A modern, feature-rich, and highly extensible foundation for your next web application." xml:space="preserve">
-    <value>一個現代化、功能豐富且高度可擴展嘅基礎，為您嘅下一個網頁應用程式提供強大支援。</value>
-  </data>
-  <data name="OpenID Connect Integration" xml:space="preserve">
-    <value>OpenID Connect 整合</value>
-  </data>
-  <data name="RBAC Authorization" xml:space="preserve">
-    <value>基於角色的存取控制授權</value>
-  </data>
-  <data name="Easily switch between providers like SQLite, MySQL, SQL Server, and an in-memory database for testing." xml:space="preserve">
-    <value>輕鬆切換不同供應商，例如 SQLite、MySQL、SQL Server 同用於測試嘅記憶體數據庫。</value>
+      <data name="(15m, Online Agents)" xml:space="preserve">
+    <value>（15分鐘，在線终端）</value>
   </data>
   <data name="A built-in Role-Based Access Control (RBAC) system for fine-grained permission management." xml:space="preserve">
     <value>內置基於角色嘅存取控制（RBAC）系統，用於精細化權限管理。</value>
   </data>
-  <data name="Seamlessly integrate with any OpenID Connect provider, with automatic role synchronization." xml:space="preserve">
-    <value>無縫整合任何 OpenID Connect 供應商，並自動同步角色權限。</value>
-  </data>
-  <data name="Dynamic Navigation Bar" xml:space="preserve">
-    <value>動態導航欄</value>
-  </data>
-  <data name="AI-Powered Translations" xml:space="preserve">
-    <value>人工智能翻譯</value>
-  </data>
-  <data name="The navigation bar automatically adjusts based on user roles and permissions." xml:space="preserve">
-    <value>導覽列會根據用戶角色和權限自動調整。</value>
-  </data>
-  <data name="Built-in User Management" xml:space="preserve">
-    <value>內建用戶管理</value>
-  </data>
-  <data name="Comprehensive Documentation" xml:space="preserve">
-    <value>完整說明文件</value>
-  </data>
-  <data name="Includes extensive documentation and practical examples to get you started quickly." xml:space="preserve">
-    <value>包含詳盡嘅說明文件同埋實用例子，助你快速上手。</value>
-  </data>
-  <data name="Automatic, AI-driven translation into 28 languages for global reach." xml:space="preserve">
-    <value>自動化、人工智能驅動嘅翻譯，支援 28 種語言，助你拓展全球市場。</value>
-  </data>
   <data name="A complete solution for user authentication and profile management right out of the box." xml:space="preserve">
     <value>一套完整的用戶認證與個人檔案管理方案，開箱即用。</value>
   </data>
-  <data name="Automatic Dependency Injection" xml:space="preserve">
-    <value>自動依賴注入</value>
+  <data name="A fully responsive layout that looks great on both desktop and mobile devices." xml:space="preserve">
+    <value>一個完全響應式嘅版面設計，喺桌面同流動裝置上都睇落好靚。</value>
   </data>
-  <data name="Integrated File Management" xml:space="preserve">
-    <value>整合式檔案管理</value>
+  <data name="A modern, feature-rich, and highly extensible foundation for your next web application." xml:space="preserve">
+    <value>一個現代化、功能豐富且高度可擴展嘅基礎，為您嘅下一個網頁應用程式提供強大支援。</value>
   </data>
-  <data name="Features a built-in file management system with automatic avatar compression." xml:space="preserve">
-    <value>內置檔案管理系統，具備自動頭像壓縮功能。</value>
+  <data name="Agents Dashboard" xml:space="preserve">
+    <value>终端儀表板</value>
   </data>
-  <data name="Responsive Design" xml:space="preserve">
-    <value>自適應設計</value>
+  <data name="Agents Status Monitor" xml:space="preserve">
+    <value>终端狀態監視器</value>
+  </data>
+  <data name="Agents with Alerts" xml:space="preserve">
+    <value>有警示嘅终端</value>
+  </data>
+  <data name="AI-Powered Translations" xml:space="preserve">
+    <value>人工智能翻譯</value>
   </data>
   <data name="All dependencies are automatically registered and always available via constructor injection." xml:space="preserve">
     <value>所有依賴項都會自動註冊，並可隨時透過構造函數注入使用。</value>
@@ -96,62 +51,50 @@
   <data name="Automatic Dark Mode" xml:space="preserve">
     <value>自動深色模式</value>
   </data>
-  <data name="Dockerized for Deployment" xml:space="preserve">
-    <value>已容器化以便部署</value>
+  <data name="Automatic Dependency Injection" xml:space="preserve">
+    <value>自動依賴注入</value>
   </data>
-  <data name="A fully responsive layout that looks great on both desktop and mobile devices." xml:space="preserve">
-    <value>一個完全響應式嘅版面設計，喺桌面同流動裝置上都睇落好靚。</value>
+  <data name="Automatic, AI-driven translation into 28 languages for global reach." xml:space="preserve">
+    <value>自動化、人工智能驅動嘅翻譯，支援 28 種語言，助你拓展全球市場。</value>
   </data>
-  <data name="Smart dark mode that automatically adapts to the user&apos;s system settings." xml:space="preserve">
-    <value>智能深色模式，會自動適應使用者嘅系統設定。</value>
-  </data>
-  <data name="Comes with full Docker support for simplified, consistent, and reliable deployments." xml:space="preserve">
-    <value>提供完整 Docker 支援，實現簡化、一致且可靠的部署流程。</value>
-  </data>
-  <data name="IP" xml:space="preserve">
-    <value>IP 地址</value>
-  </data>
-  <data name="Name" xml:space="preserve">
-    <value>名稱</value>
-  </data>
-  <data name="SKU" xml:space="preserve">
-    <value>型號</value>
-  </data>
-  <data name="Agents Status Monitor" xml:space="preserve">
-    <value>终端狀態監視器</value>
-  </data>
-  <data name="Boot at" xml:space="preserve">
-    <value>啟動時間</value>
-  </data>
-  <data name="Cumulative" xml:space="preserve">
-    <value>累計</value>
-  </data>
-  <data name="Last 30 seconds" xml:space="preserve">
-    <value>過去 30 秒</value>
-  </data>
-  <data name="Agents Dashboard" xml:space="preserve">
-    <value>终端儀表板</value>
+  <data name="Average Load" xml:space="preserve">
+    <value>平均負載</value>
   </data>
   <data name="Avg Load" xml:space="preserve">
     <value>平均負載</value>
   </data>
-  <data name="RAM Usage" xml:space="preserve">
-    <value>記憶體使用量</value>
+  <data name="Boot at" xml:space="preserve">
+    <value>啟動時間</value>
   </data>
-  <data name="Used at" xml:space="preserve">
-    <value>使用於</value>
+  <data name="Built-in User Management" xml:space="preserve">
+    <value>內建用戶管理</value>
+  </data>
+  <data name="Comes with full Docker support for simplified, consistent, and reliable deployments." xml:space="preserve">
+    <value>提供完整 Docker 支援，實現簡化、一致且可靠的部署流程。</value>
+  </data>
+  <data name="Comprehensive Documentation" xml:space="preserve">
+    <value>完整說明文件</value>
+  </data>
+  <data name="Containers" xml:space="preserve">
+    <value>容器</value>
   </data>
   <data name="CPU Usage" xml:space="preserve">
     <value>CPU 使用率</value>
   </data>
-  <data name="Disk Reading" xml:space="preserve">
+  <data name="Critical or Warning" xml:space="preserve">
+    <value>嚴重或警告</value>
+  </data>
+  <data name="Cumulative" xml:space="preserve">
+    <value>累計</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>詳細資料</value>
+  </data>
+  <data name="Disk Read" xml:space="preserve">
     <value>磁碟讀取</value>
   </data>
-  <data name="Net Receiving" xml:space="preserve">
-    <value>網絡接收</value>
-  </data>
-  <data name="Net Sending" xml:space="preserve">
-    <value>網絡傳送</value>
+  <data name="Disk Reading" xml:space="preserve">
+    <value>磁碟讀取</value>
   </data>
   <data name="Disk Used" xml:space="preserve">
     <value>磁碟使用量</value>
@@ -162,53 +105,110 @@
   <data name="Disk Written" xml:space="preserve">
     <value>磁碟寫入</value>
   </data>
-  <data name="Net Sent" xml:space="preserve">
-    <value>網絡傳送</value>
+  <data name="Dockerized for Deployment" xml:space="preserve">
+    <value>已容器化以便部署</value>
   </data>
-  <data name="Net Received" xml:space="preserve">
-    <value>網絡接收總量</value>
+  <data name="Dynamic Navigation Bar" xml:space="preserve">
+    <value>動態導航欄</value>
   </data>
-  <data name="Disk Read" xml:space="preserve">
-    <value>磁碟讀取</value>
+  <data name="Easily switch between providers like SQLite, MySQL, SQL Server, and an in-memory database for testing." xml:space="preserve">
+    <value>輕鬆切換不同供應商，例如 SQLite、MySQL、SQL Server 同用於測試嘅記憶體數據庫。</value>
   </data>
-  <data name="OS" xml:space="preserve">
-    <value>作業系統</value>
-  </data>
-  <data name="Details" xml:space="preserve">
-    <value>詳細資料</value>
-  </data>
-  <data name="More" xml:space="preserve">
-    <value>更多</value>
-  </data>
-  <data name="Out of sync" xml:space="preserve">
-    <value>失去同步</value>
+  <data name="Features a built-in file management system with automatic avatar compression." xml:space="preserve">
+    <value>內置檔案管理系統，具備自動頭像壓縮功能。</value>
   </data>
   <data name="Healthy" xml:space="preserve">
     <value>正常運作</value>
   </data>
-  <data name="Average Load" xml:space="preserve">
-    <value>平均負載</value>
+  <data name="Hello World!" xml:space="preserve">
+    <value>你好世界！</value>
   </data>
-  <data name="Total Agents" xml:space="preserve">
-    <value>總终端數目</value>
+  <data name="Includes extensive documentation and practical examples to get you started quickly." xml:space="preserve">
+    <value>包含詳盡嘅說明文件同埋實用例子，助你快速上手。</value>
   </data>
-  <data name="Critical or Warning" xml:space="preserve">
-    <value>嚴重或警告</value>
+  <data name="Integrated File Management" xml:space="preserve">
+    <value>整合式檔案管理</value>
   </data>
-  <data name="Agents with Alerts" xml:space="preserve">
-    <value>有警示嘅终端</value>
+  <data name="IP" xml:space="preserve">
+    <value>IP 地址</value>
   </data>
-  <data name="(15m, Online Agents)" xml:space="preserve">
-    <value>（15分鐘，在線终端）</value>
+  <data name="Last 30 seconds" xml:space="preserve">
+    <value>過去 30 秒</value>
+  </data>
+  <data name="More" xml:space="preserve">
+    <value>更多</value>
+  </data>
+  <data name="Multiple Database Support" xml:space="preserve">
+    <value>多種數據庫支援</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>名稱</value>
+  </data>
+  <data name="Net Received" xml:space="preserve">
+    <value>網絡接收總量</value>
+  </data>
+  <data name="Net Receiving" xml:space="preserve">
+    <value>網絡接收</value>
+  </data>
+  <data name="Net Sending" xml:space="preserve">
+    <value>網絡傳送</value>
+  </data>
+  <data name="Net Sent" xml:space="preserve">
+    <value>網絡傳送</value>
   </data>
   <data name="Offline Agents" xml:space="preserve">
     <value>離線终端</value>
   </data>
+  <data name="OpenID Connect Integration" xml:space="preserve">
+    <value>OpenID Connect 整合</value>
+  </data>
+  <data name="OS" xml:space="preserve">
+    <value>作業系統</value>
+  </data>
+  <data name="Out of sync" xml:space="preserve">
+    <value>失去同步</value>
+  </data>
+  <data name="RAM Usage" xml:space="preserve">
+    <value>記憶體使用量</value>
+  </data>
+  <data name="RBAC Authorization" xml:space="preserve">
+    <value>基於角色的存取控制授權</value>
+  </data>
+  <data name="Read the document" xml:space="preserve">
+    <value>閱讀文件</value>
+  </data>
+  <data name="Responsive Design" xml:space="preserve">
+    <value>自適應設計</value>
+  </data>
+  <data name="Seamlessly integrate with any OpenID Connect provider, with automatic role synchronization." xml:space="preserve">
+    <value>無縫整合任何 OpenID Connect 供應商，並自動同步角色權限。</value>
+  </data>
+  <data name="SKU" xml:space="preserve">
+    <value>型號</value>
+  </data>
+  <data name="Smart dark mode that automatically adapts to the user&apos;s system settings." xml:space="preserve">
+    <value>智能深色模式，會自動適應使用者嘅系統設定。</value>
+  </data>
   <data name="Status" xml:space="preserve">
     <value>狀態</value>
   </data>
-  <data name="Containers" xml:space="preserve">
-    <value>容器</value>
+  <data name="The navigation bar automatically adjusts based on user roles and permissions." xml:space="preserve">
+    <value>導覽列會根據用戶角色和權限自動調整。</value>
+  </data>
+  <data name="This is a template project, where we start the voyager..." xml:space="preserve">
+    <value>這是一個模板項目，我們在此展開探索之旅...</value>
+  </data>
+  <data name="Total Agents" xml:space="preserve">
+    <value>總终端數目</value>
+  </data>
+  <data name="Used at" xml:space="preserve">
+    <value>使用於</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>歡迎</value>
+  </data>
+  <data name="Why use the Aiursoft Template?" xml:space="preserve">
+    <value>點解要使用 Aiursoft 模板？</value>
   </data>
 
 </root>

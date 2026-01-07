@@ -1,10 +1,11 @@
-<?xml version='1.0' encoding='utf-8'?>
-<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-    <xs:schema id="root">
-        <xs:element name="root" ns1:IsDataSet="true">
+<?xml version="1.0" encoding="utf-8"?>
 
-        </xs:element>
-    </xs:schema>
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
     <resheader name="resmimetype">
         <value>text/microsoft-resx</value>
     </resheader>
@@ -17,194 +18,197 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="Read the document" xml:space="preserve">
-    <value>Læs dokumentationen</value>
-  </data>
-  <data name="Hello World!" xml:space="preserve">
-    <value>Hej Verden!</value>
-  </data>
-  <data name="Multiple Database Support" xml:space="preserve">
-    <value>Understøttelse af flere databaser</value>
-  </data>
-   <data name="Welcome" xml:space="preserve">
-    <value>Velkommen</value>
-  </data>
-  <data name="This is a template project, where we start the voyager..." xml:space="preserve">
-    <value>Dette er et skabelonprojekt, hvor vi begynder rejsen...</value>
-  </data>
-  <data name="Why use the Aiursoft Template?" xml:space="preserve">
-    <value>Hvorfor bruge Aiursoft Template?</value>
-  </data>
-  <data name="A modern, feature-rich, and highly extensible foundation for your next web application." xml:space="preserve">
-    <value>Et moderne, funktionsrigt og højgradigt udvideligt fundament til din næste webapplikation.</value>
-  </data>
-  <data name="RBAC Authorization" xml:space="preserve">
-    <value>RBAC-godkendelse</value>
-  </data>
-  <data name="OpenID Connect Integration" xml:space="preserve">
-    <value>OpenID Connect-integration</value>
-  </data>
-  <data name="Dynamic Navigation Bar" xml:space="preserve">
-    <value>Dynamisk Navigationslinje</value>
+      <data name="(15m, Online Agents)" xml:space="preserve">
+    <value>(15 min., online agenter)</value>
   </data>
   <data name="A built-in Role-Based Access Control (RBAC) system for fine-grained permission management." xml:space="preserve">
     <value>Et indbygget Role-Based Access Control (RBAC)-system til finjusteret tilladelseshåndtering.</value>
   </data>
-  <data name="Seamlessly integrate with any OpenID Connect provider, with automatic role synchronization." xml:space="preserve">
-    <value>Integrer problemfrit med enhver OpenID Connect-udbyder, med automatisk rolle-synkronisering.</value>
-  </data>
-  <data name="Easily switch between providers like SQLite, MySQL, SQL Server, and an in-memory database for testing." xml:space="preserve">
-    <value>Skift nemt mellem udbydere som SQLite, MySQL, SQL Server og en hukommelsesdatabase til test.</value>
-  </data>
-  <data name="The navigation bar automatically adjusts based on user roles and permissions." xml:space="preserve">
-    <value>Navigationslinjen tilpasser sig automatisk baseret på brugerroller og tilladelser.</value>
-  </data>
-  <data name="AI-Powered Translations" xml:space="preserve">
-    <value>AI-drevne oversættelser</value>
-  </data>
-  <data name="Automatic, AI-driven translation into 28 languages for global reach." xml:space="preserve">
-    <value>Automatisk, AI-drevet oversættelse til 28 sprog for global rækkevidde.</value>
-  </data>
-  <data name="Built-in User Management" xml:space="preserve">
-    <value>Indbygget brugeradministration</value>
-  </data>
-  <data name="Comprehensive Documentation" xml:space="preserve">
-    <value>Omfattende Dokumentation</value>
-  </data>
-  <data name="Automatic Dependency Injection" xml:space="preserve">
-    <value>Automatisk Afhængighedsinjektion</value>
-  </data>
-  <data name="Includes extensive documentation and practical examples to get you started quickly." xml:space="preserve">
-    <value>Inkluderer omfattende dokumentation og praktiske eksempler, så du kan komme i gang hurtigt.</value>
-  </data>
   <data name="A complete solution for user authentication and profile management right out of the box." xml:space="preserve">
     <value>En komplet løsning til brugerautentificering og profiladministration klar til brug ud af boksen.</value>
-  </data>
-  <data name="Integrated File Management" xml:space="preserve">
-    <value>Integreret Filhåndtering</value>
-  </data>
-  <data name="Responsive Design" xml:space="preserve">
-    <value>Responsivt Design</value>
-  </data>
-  <data name="Features a built-in file management system with automatic avatar compression." xml:space="preserve">
-    <value>Har et indbygget filstyringssystem med automatisk avatar-komprimering.</value>
-  </data>
-  <data name="Automatic Dark Mode" xml:space="preserve">
-    <value>Automatisk Mørk Tilstand</value>
-  </data>
-  <data name="All dependencies are automatically registered and always available via constructor injection." xml:space="preserve">
-    <value>Alle afhængigheder registreres automatisk og er altid tilgængelige via konstruktor-injektion.</value>
   </data>
   <data name="A fully responsive layout that looks great on both desktop and mobile devices." xml:space="preserve">
     <value>En fuldt responsiv layout, der ser fantastisk ud på både stationære og mobile enheder.</value>
   </data>
-  <data name="Dockerized for Deployment" xml:space="preserve">
-    <value>Dockeriseret til implementering</value>
-  </data>
-  <data name="Smart dark mode that automatically adapts to the user's system settings." xml:space="preserve">
-    <value>Smart mørk tilstand, der automatisk tilpasser sig brugerens systemindstillinger.</value>
-  </data>
-  <data name="Comes with full Docker support for simplified, consistent, and reliable deployments." xml:space="preserve">
-    <value>Kommer med fuld Docker-understøttelse til forenklede, konsistente og pålidelige installationer.</value>
-  </data>
-  <data name="Agents with Alerts" xml:space="preserve">
-    <value>Agenter med Advarsler</value>
-  </data>
-  <data name="Total Agents" xml:space="preserve">
-    <value>Samlede Agenter</value>
-  </data>
-  <data name="Offline Agents" xml:space="preserve">
-    <value>Offline Agenter</value>
-  </data>
-  <data name="Cumulative" xml:space="preserve">
-    <value>Kumulativ</value>
+  <data name="A modern, feature-rich, and highly extensible foundation for your next web application." xml:space="preserve">
+    <value>Et moderne, funktionsrigt og højgradigt udvideligt fundament til din næste webapplikation.</value>
   </data>
   <data name="Agents Dashboard" xml:space="preserve">
     <value>Agenter Dashboard</value>
   </data>
-  <data name="Last 30 seconds" xml:space="preserve">
-    <value>Sidste 30 sekunder</value>
+  <data name="Agents Status Monitor" xml:space="preserve">
+    <value>Agent Status Overvågning</value>
   </data>
-  <data name="Critical or Warning" xml:space="preserve">
-    <value>Kritisk eller Advarsel</value>
+  <data name="Agents with Alerts" xml:space="preserve">
+    <value>Agenter med Advarsler</value>
   </data>
-  <data name="Healthy" xml:space="preserve">
-    <value>Sund</value>
+  <data name="AI-Powered Translations" xml:space="preserve">
+    <value>AI-drevne oversættelser</value>
   </data>
-  <data name="(15m, Online Agents)" xml:space="preserve">
-    <value>(15 min., online agenter)</value>
+  <data name="All dependencies are automatically registered and always available via constructor injection." xml:space="preserve">
+    <value>Alle afhængigheder registreres automatisk og er altid tilgængelige via konstruktor-injektion.</value>
   </data>
-  <data name="Out of sync" xml:space="preserve">
-    <value>Ikke synkroniseret</value>
+  <data name="Automatic Dark Mode" xml:space="preserve">
+    <value>Automatisk Mørk Tilstand</value>
+  </data>
+  <data name="Automatic Dependency Injection" xml:space="preserve">
+    <value>Automatisk Afhængighedsinjektion</value>
+  </data>
+  <data name="Automatic, AI-driven translation into 28 languages for global reach." xml:space="preserve">
+    <value>Automatisk, AI-drevet oversættelse til 28 sprog for global rækkevidde.</value>
   </data>
   <data name="Average Load" xml:space="preserve">
+    <value>Gennemsnitlig belastning</value>
+  </data>
+  <data name="Avg Load" xml:space="preserve">
     <value>Gennemsnitlig belastning</value>
   </data>
   <data name="Boot at" xml:space="preserve">
     <value>Opstartet kl.</value>
   </data>
-  <data name="IP" xml:space="preserve">
-    <value>IP</value>
+  <data name="Built-in User Management" xml:space="preserve">
+    <value>Indbygget brugeradministration</value>
   </data>
-  <data name="Name" xml:space="preserve">
-    <value>Navn</value>
+  <data name="Comes with full Docker support for simplified, consistent, and reliable deployments." xml:space="preserve">
+    <value>Kommer med fuld Docker-understøttelse til forenklede, konsistente og pålidelige installationer.</value>
   </data>
-  <data name="SKU" xml:space="preserve">
-    <value>SKU</value>
+  <data name="Comprehensive Documentation" xml:space="preserve">
+    <value>Omfattende Dokumentation</value>
   </data>
-  <data name="Agents Status Monitor" xml:space="preserve">
-    <value>Agent Status Overvågning</value>
+  <data name="Containers" xml:space="preserve">
+    <value>Containers</value>
   </data>
   <data name="CPU Usage" xml:space="preserve">
     <value>CPU-forbrug</value>
   </data>
-  <data name="Used at" xml:space="preserve">
-    <value>Brugt kl.</value>
+  <data name="Critical or Warning" xml:space="preserve">
+    <value>Kritisk eller Advarsel</value>
   </data>
-  <data name="RAM Usage" xml:space="preserve">
-    <value>RAM-forbrug</value>
-  </data>
-  <data name="Avg Load" xml:space="preserve">
-    <value>Gennemsnitlig belastning</value>
-  </data>
-  <data name="Net Receiving" xml:space="preserve">
-    <value>Net modtagelse</value>
-  </data>
-  <data name="Disk Used" xml:space="preserve">
-    <value>Diskplads brugt</value>
-  </data>
-  <data name="Disk Reading" xml:space="preserve">
-    <value>Disklæsning</value>
-  </data>
-  <data name="Net Sending" xml:space="preserve">
-    <value>Nettoafsendelse</value>
-  </data>
-  <data name="Disk Writing" xml:space="preserve">
-    <value>Diskskrivning</value>
-  </data>
-  <data name="Net Sent" xml:space="preserve">
-    <value>Net Sendt</value>
-  </data>
-  <data name="Net Received" xml:space="preserve">
-    <value>Net modtaget</value>
-  </data>
-  <data name="Disk Read" xml:space="preserve">
-    <value>Disk Læst</value>
-  </data>
-  <data name="More" xml:space="preserve">
-    <value>Flere</value>
-  </data>
-  <data name="OS" xml:space="preserve">
-    <value>Styresystem</value>
-  </data>
-  <data name="Disk Written" xml:space="preserve">
-    <value>Disk Skrevet</value>
+  <data name="Cumulative" xml:space="preserve">
+    <value>Kumulativ</value>
   </data>
   <data name="Details" xml:space="preserve">
     <value>Detaljer</value>
   </data>
+  <data name="Disk Read" xml:space="preserve">
+    <value>Disk Læst</value>
+  </data>
+  <data name="Disk Reading" xml:space="preserve">
+    <value>Disklæsning</value>
+  </data>
+  <data name="Disk Used" xml:space="preserve">
+    <value>Diskplads brugt</value>
+  </data>
+  <data name="Disk Writing" xml:space="preserve">
+    <value>Diskskrivning</value>
+  </data>
+  <data name="Disk Written" xml:space="preserve">
+    <value>Disk Skrevet</value>
+  </data>
+  <data name="Dockerized for Deployment" xml:space="preserve">
+    <value>Dockeriseret til implementering</value>
+  </data>
+  <data name="Dynamic Navigation Bar" xml:space="preserve">
+    <value>Dynamisk Navigationslinje</value>
+  </data>
+  <data name="Easily switch between providers like SQLite, MySQL, SQL Server, and an in-memory database for testing." xml:space="preserve">
+    <value>Skift nemt mellem udbydere som SQLite, MySQL, SQL Server og en hukommelsesdatabase til test.</value>
+  </data>
+  <data name="Features a built-in file management system with automatic avatar compression." xml:space="preserve">
+    <value>Har et indbygget filstyringssystem med automatisk avatar-komprimering.</value>
+  </data>
+  <data name="Healthy" xml:space="preserve">
+    <value>Sund</value>
+  </data>
+  <data name="Hello World!" xml:space="preserve">
+    <value>Hej Verden!</value>
+  </data>
+  <data name="Includes extensive documentation and practical examples to get you started quickly." xml:space="preserve">
+    <value>Inkluderer omfattende dokumentation og praktiske eksempler, så du kan komme i gang hurtigt.</value>
+  </data>
+  <data name="Integrated File Management" xml:space="preserve">
+    <value>Integreret Filhåndtering</value>
+  </data>
+  <data name="IP" xml:space="preserve">
+    <value>IP</value>
+  </data>
+  <data name="Last 30 seconds" xml:space="preserve">
+    <value>Sidste 30 sekunder</value>
+  </data>
+  <data name="More" xml:space="preserve">
+    <value>Flere</value>
+  </data>
+  <data name="Multiple Database Support" xml:space="preserve">
+    <value>Understøttelse af flere databaser</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Navn</value>
+  </data>
+  <data name="Net Received" xml:space="preserve">
+    <value>Net modtaget</value>
+  </data>
+  <data name="Net Receiving" xml:space="preserve">
+    <value>Net modtagelse</value>
+  </data>
+  <data name="Net Sending" xml:space="preserve">
+    <value>Nettoafsendelse</value>
+  </data>
+  <data name="Net Sent" xml:space="preserve">
+    <value>Net Sendt</value>
+  </data>
+  <data name="Offline Agents" xml:space="preserve">
+    <value>Offline Agenter</value>
+  </data>
+  <data name="OpenID Connect Integration" xml:space="preserve">
+    <value>OpenID Connect-integration</value>
+  </data>
+  <data name="OS" xml:space="preserve">
+    <value>Styresystem</value>
+  </data>
+  <data name="Out of sync" xml:space="preserve">
+    <value>Ikke synkroniseret</value>
+  </data>
+  <data name="RAM Usage" xml:space="preserve">
+    <value>RAM-forbrug</value>
+  </data>
+  <data name="RBAC Authorization" xml:space="preserve">
+    <value>RBAC-godkendelse</value>
+  </data>
+  <data name="Read the document" xml:space="preserve">
+    <value>Læs dokumentationen</value>
+  </data>
+  <data name="Responsive Design" xml:space="preserve">
+    <value>Responsivt Design</value>
+  </data>
+  <data name="Seamlessly integrate with any OpenID Connect provider, with automatic role synchronization." xml:space="preserve">
+    <value>Integrer problemfrit med enhver OpenID Connect-udbyder, med automatisk rolle-synkronisering.</value>
+  </data>
+  <data name="SKU" xml:space="preserve">
+    <value>SKU</value>
+  </data>
+  <data name="Smart dark mode that automatically adapts to the user&apos;s system settings." xml:space="preserve">
+    <value>Smart mørk tilstand, der automatisk tilpasser sig brugerens systemindstillinger.</value>
+  </data>
   <data name="Status" xml:space="preserve">
     <value>Status</value>
   </data>
+  <data name="The navigation bar automatically adjusts based on user roles and permissions." xml:space="preserve">
+    <value>Navigationslinjen tilpasser sig automatisk baseret på brugerroller og tilladelser.</value>
+  </data>
+  <data name="This is a template project, where we start the voyager..." xml:space="preserve">
+    <value>Dette er et skabelonprojekt, hvor vi begynder rejsen...</value>
+  </data>
+  <data name="Total Agents" xml:space="preserve">
+    <value>Samlede Agenter</value>
+  </data>
+  <data name="Used at" xml:space="preserve">
+    <value>Brugt kl.</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>Velkommen</value>
+  </data>
+  <data name="Why use the Aiursoft Template?" xml:space="preserve">
+    <value>Hvorfor bruge Aiursoft Template?</value>
+  </data>
 
-<data name="Containers" xml:space="preserve"><value>Containers</value></data></root>
+</root>

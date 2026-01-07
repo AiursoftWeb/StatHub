@@ -18,197 +18,197 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="Welcome" xml:space="preserve">
-    <value>ようこそ</value>
-  </data>
-  <data name="Multiple Database Support" xml:space="preserve">
-    <value>複数データベースサポート</value>
-  </data>
-  <data name="Why use the Aiursoft Template?" xml:space="preserve">
-    <value>Aiursoftテンプレートを使用する理由</value>
-  </data>
-  <data name="Hello World!" xml:space="preserve">
-    <value>こんにちは、世界！</value>
-  </data>
-  <data name="Read the document" xml:space="preserve">
-    <value>ドキュメントを読む</value>
-  </data>
-  <data name="This is a template project, where we start the voyager..." xml:space="preserve">
-    <value>これはテンプレートプロジェクトです。ここから航海が始まります...</value>
-  </data>
-  <data name="OpenID Connect Integration" xml:space="preserve">
-    <value>OpenID Connect連携</value>
-  </data>
-  <data name="A modern, feature-rich, and highly extensible foundation for your next web application." xml:space="preserve">
-    <value>モダンで機能豊富、そして高い拡張性を備えた、次世代のWebアプリケーションの基盤。</value>
-  </data>
-  <data name="Easily switch between providers like SQLite, MySQL, SQL Server, and an in-memory database for testing." xml:space="preserve">
-    <value>SQLite、MySQL、SQL Server、およびテスト用のインメモリデータベースなどのプロバイダーを簡単に切り替えられます。</value>
-  </data>
-  <data name="RBAC Authorization" xml:space="preserve">
-    <value>RBAC認可</value>
-  </data>
-  <data name="Dynamic Navigation Bar" xml:space="preserve">
-    <value>動的ナビゲーションバー</value>
-  </data>
-  <data name="AI-Powered Translations" xml:space="preserve">
-    <value>AIによる翻訳</value>
+      <data name="(15m, Online Agents)" xml:space="preserve">
+    <value>（15分、オンラインエージェント）</value>
   </data>
   <data name="A built-in Role-Based Access Control (RBAC) system for fine-grained permission management." xml:space="preserve">
     <value>きめ細かい権限管理のための組み込みロールベースアクセス制御(RBAC)システム。</value>
   </data>
-  <data name="Seamlessly integrate with any OpenID Connect provider, with automatic role synchronization." xml:space="preserve">
-    <value>あらゆるOpenID Connectプロバイダーとシームレスに統合し、ロールの自動同期を実現します。</value>
-  </data>
-  <data name="The navigation bar automatically adjusts based on user roles and permissions." xml:space="preserve">
-    <value>ナビゲーションバーはユーザーの役割と権限に基づいて自動的に調整されます。</value>
-  </data>
-  <data name="Automatic, AI-driven translation into 28 languages for global reach." xml:space="preserve">
-    <value>28言語への自動AI翻訳で、グローバルな展開を実現。</value>
-  </data>
-  <data name="Comprehensive Documentation" xml:space="preserve">
-    <value>包括的なドキュメント</value>
-  </data>
-  <data name="Integrated File Management" xml:space="preserve">
-    <value>統合ファイル管理</value>
-  </data>
-  <data name="Includes extensive documentation and practical examples to get you started quickly." xml:space="preserve">
-    <value>豊富なドキュメントと実用的なサンプルが含まれており、素早く使い始めることができます。</value>
-  </data>
-  <data name="Built-in User Management" xml:space="preserve">
-    <value>組み込みユーザー管理</value>
-  </data>
-  <data name="Automatic Dependency Injection" xml:space="preserve">
-    <value>自動依存性注入</value>
-  </data>
-  <data name="All dependencies are automatically registered and always available via constructor injection." xml:space="preserve">
-    <value>すべての依存関係は自動的に登録され、コンストラクタインジェクションを通じて常に利用可能です。</value>
-  </data>
   <data name="A complete solution for user authentication and profile management right out of the box." xml:space="preserve">
     <value>すぐに使える、ユーザー認証とプロファイル管理のための完全なソリューションです。</value>
-  </data>
-  <data name="Responsive Design" xml:space="preserve">
-    <value>レスポンシブデザイン</value>
-  </data>
-  <data name="Automatic Dark Mode" xml:space="preserve">
-    <value>自動ダークモード</value>
-  </data>
-  <data name="Smart dark mode that automatically adapts to the user&apos;s system settings." xml:space="preserve">
-    <value>ユーザーのシステム設定に自動的に適応するスマートダークモード。</value>
-  </data>
-  <data name="Features a built-in file management system with automatic avatar compression." xml:space="preserve">
-    <value>アバターの自動圧縮機能を備えた組み込みファイル管理システムを搭載しています。</value>
   </data>
   <data name="A fully responsive layout that looks great on both desktop and mobile devices." xml:space="preserve">
     <value>デスクトップとモバイルデバイスの両方で美しく表示される、完全なレスポンシブレイアウト。</value>
   </data>
-  <data name="Dockerized for Deployment" xml:space="preserve">
-    <value>Docker化によるデプロイ</value>
-  </data>
-  <data name="Comes with full Docker support for simplified, consistent, and reliable deployments." xml:space="preserve">
-    <value>完全なDockerサポートにより、簡素化された一貫性のある信頼性の高いデプロイを実現します。</value>
-  </data>
-  <data name="Name" xml:space="preserve">
-    <value>名前</value>
-  </data>
-  <data name="Cumulative" xml:space="preserve">
-    <value>累計</value>
+  <data name="A modern, feature-rich, and highly extensible foundation for your next web application." xml:space="preserve">
+    <value>モダンで機能豊富、そして高い拡張性を備えた、次世代のWebアプリケーションの基盤。</value>
   </data>
   <data name="Agents Dashboard" xml:space="preserve">
     <value>エージェントダッシュボード</value>
   </data>
-  <data name="Last 30 seconds" xml:space="preserve">
-    <value>過去30秒間</value>
-  </data>
-  <data name="Boot at" xml:space="preserve">
-    <value>起動時刻</value>
-  </data>
   <data name="Agents Status Monitor" xml:space="preserve">
     <value>エージェントステータスモニター</value>
-  </data>
-  <data name="SKU" xml:space="preserve">
-    <value>SKU</value>
-  </data>
-  <data name="IP" xml:space="preserve">
-    <value>IPアドレス</value>
-  </data>
-  <data name="Avg Load" xml:space="preserve">
-    <value>平均負荷</value>
-  </data>
-  <data name="Used at" xml:space="preserve">
-    <value>使用日時</value>
-  </data>
-  <data name="CPU Usage" xml:space="preserve">
-    <value>CPU使用率</value>
-  </data>
-  <data name="Net Receiving" xml:space="preserve">
-    <value>ネット受信</value>
-  </data>
-  <data name="RAM Usage" xml:space="preserve">
-    <value>メモリ使用量</value>
-  </data>
-  <data name="Disk Used" xml:space="preserve">
-    <value>ディスク使用量</value>
-  </data>
-  <data name="Disk Reading" xml:space="preserve">
-    <value>ディスク読み込み</value>
-  </data>
-  <data name="Net Sending" xml:space="preserve">
-    <value>ネット送信</value>
-  </data>
-  <data name="Disk Writing" xml:space="preserve">
-    <value>ディスク書き込み</value>
-  </data>
-  <data name="Net Sent" xml:space="preserve">
-    <value>ネット送信</value>
-  </data>
-  <data name="Disk Written" xml:space="preserve">
-    <value>ディスク書き込み</value>
-  </data>
-  <data name="Net Received" xml:space="preserve">
-    <value>ネット受信済み</value>
-  </data>
-  <data name="Disk Read" xml:space="preserve">
-    <value>ディスク読み込み</value>
-  </data>
-  <data name="OS" xml:space="preserve">
-    <value>OS</value>
-  </data>
-  <data name="Details" xml:space="preserve">
-    <value>詳細</value>
-  </data>
-  <data name="More" xml:space="preserve">
-    <value>詳細</value>
-  </data>
-  <data name="Healthy" xml:space="preserve">
-    <value>正常</value>
-  </data>
-  <data name="Average Load" xml:space="preserve">
-    <value>平均負荷</value>
-  </data>
-  <data name="Offline Agents" xml:space="preserve">
-    <value>オフライン エージェント</value>
-  </data>
-  <data name="Critical or Warning" xml:space="preserve">
-    <value>重大または警告</value>
-  </data>
-  <data name="Total Agents" xml:space="preserve">
-    <value>エージェント総数</value>
   </data>
   <data name="Agents with Alerts" xml:space="preserve">
     <value>アラートのあるエージェント</value>
   </data>
+  <data name="AI-Powered Translations" xml:space="preserve">
+    <value>AIによる翻訳</value>
+  </data>
+  <data name="All dependencies are automatically registered and always available via constructor injection." xml:space="preserve">
+    <value>すべての依存関係は自動的に登録され、コンストラクタインジェクションを通じて常に利用可能です。</value>
+  </data>
+  <data name="Automatic Dark Mode" xml:space="preserve">
+    <value>自動ダークモード</value>
+  </data>
+  <data name="Automatic Dependency Injection" xml:space="preserve">
+    <value>自動依存性注入</value>
+  </data>
+  <data name="Automatic, AI-driven translation into 28 languages for global reach." xml:space="preserve">
+    <value>28言語への自動AI翻訳で、グローバルな展開を実現。</value>
+  </data>
+  <data name="Average Load" xml:space="preserve">
+    <value>平均負荷</value>
+  </data>
+  <data name="Avg Load" xml:space="preserve">
+    <value>平均負荷</value>
+  </data>
+  <data name="Boot at" xml:space="preserve">
+    <value>起動時刻</value>
+  </data>
+  <data name="Built-in User Management" xml:space="preserve">
+    <value>組み込みユーザー管理</value>
+  </data>
+  <data name="Comes with full Docker support for simplified, consistent, and reliable deployments." xml:space="preserve">
+    <value>完全なDockerサポートにより、簡素化された一貫性のある信頼性の高いデプロイを実現します。</value>
+  </data>
+  <data name="Comprehensive Documentation" xml:space="preserve">
+    <value>包括的なドキュメント</value>
+  </data>
+  <data name="Containers" xml:space="preserve">
+    <value>コンテナ</value>
+  </data>
+  <data name="CPU Usage" xml:space="preserve">
+    <value>CPU使用率</value>
+  </data>
+  <data name="Critical or Warning" xml:space="preserve">
+    <value>重大または警告</value>
+  </data>
+  <data name="Cumulative" xml:space="preserve">
+    <value>累計</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>詳細</value>
+  </data>
+  <data name="Disk Read" xml:space="preserve">
+    <value>ディスク読み込み</value>
+  </data>
+  <data name="Disk Reading" xml:space="preserve">
+    <value>ディスク読み込み</value>
+  </data>
+  <data name="Disk Used" xml:space="preserve">
+    <value>ディスク使用量</value>
+  </data>
+  <data name="Disk Writing" xml:space="preserve">
+    <value>ディスク書き込み</value>
+  </data>
+  <data name="Disk Written" xml:space="preserve">
+    <value>ディスク書き込み</value>
+  </data>
+  <data name="Dockerized for Deployment" xml:space="preserve">
+    <value>Docker化によるデプロイ</value>
+  </data>
+  <data name="Dynamic Navigation Bar" xml:space="preserve">
+    <value>動的ナビゲーションバー</value>
+  </data>
+  <data name="Easily switch between providers like SQLite, MySQL, SQL Server, and an in-memory database for testing." xml:space="preserve">
+    <value>SQLite、MySQL、SQL Server、およびテスト用のインメモリデータベースなどのプロバイダーを簡単に切り替えられます。</value>
+  </data>
+  <data name="Features a built-in file management system with automatic avatar compression." xml:space="preserve">
+    <value>アバターの自動圧縮機能を備えた組み込みファイル管理システムを搭載しています。</value>
+  </data>
+  <data name="Healthy" xml:space="preserve">
+    <value>正常</value>
+  </data>
+  <data name="Hello World!" xml:space="preserve">
+    <value>こんにちは、世界！</value>
+  </data>
+  <data name="Includes extensive documentation and practical examples to get you started quickly." xml:space="preserve">
+    <value>豊富なドキュメントと実用的なサンプルが含まれており、素早く使い始めることができます。</value>
+  </data>
+  <data name="Integrated File Management" xml:space="preserve">
+    <value>統合ファイル管理</value>
+  </data>
+  <data name="IP" xml:space="preserve">
+    <value>IPアドレス</value>
+  </data>
+  <data name="Last 30 seconds" xml:space="preserve">
+    <value>過去30秒間</value>
+  </data>
+  <data name="More" xml:space="preserve">
+    <value>詳細</value>
+  </data>
+  <data name="Multiple Database Support" xml:space="preserve">
+    <value>複数データベースサポート</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>名前</value>
+  </data>
+  <data name="Net Received" xml:space="preserve">
+    <value>ネット受信済み</value>
+  </data>
+  <data name="Net Receiving" xml:space="preserve">
+    <value>ネット受信</value>
+  </data>
+  <data name="Net Sending" xml:space="preserve">
+    <value>ネット送信</value>
+  </data>
+  <data name="Net Sent" xml:space="preserve">
+    <value>ネット送信</value>
+  </data>
+  <data name="Offline Agents" xml:space="preserve">
+    <value>オフライン エージェント</value>
+  </data>
+  <data name="OpenID Connect Integration" xml:space="preserve">
+    <value>OpenID Connect連携</value>
+  </data>
+  <data name="OS" xml:space="preserve">
+    <value>OS</value>
+  </data>
   <data name="Out of sync" xml:space="preserve">
     <value>同期が取れていません</value>
   </data>
-  <data name="(15m, Online Agents)" xml:space="preserve">
-    <value>（15分、オンラインエージェント）</value>
+  <data name="RAM Usage" xml:space="preserve">
+    <value>メモリ使用量</value>
+  </data>
+  <data name="RBAC Authorization" xml:space="preserve">
+    <value>RBAC認可</value>
+  </data>
+  <data name="Read the document" xml:space="preserve">
+    <value>ドキュメントを読む</value>
+  </data>
+  <data name="Responsive Design" xml:space="preserve">
+    <value>レスポンシブデザイン</value>
+  </data>
+  <data name="Seamlessly integrate with any OpenID Connect provider, with automatic role synchronization." xml:space="preserve">
+    <value>あらゆるOpenID Connectプロバイダーとシームレスに統合し、ロールの自動同期を実現します。</value>
+  </data>
+  <data name="SKU" xml:space="preserve">
+    <value>SKU</value>
+  </data>
+  <data name="Smart dark mode that automatically adapts to the user&apos;s system settings." xml:space="preserve">
+    <value>ユーザーのシステム設定に自動的に適応するスマートダークモード。</value>
   </data>
   <data name="Status" xml:space="preserve">
     <value>ステータス</value>
   </data>
-  <data name="Containers" xml:space="preserve">
-    <value>コンテナ</value>
+  <data name="The navigation bar automatically adjusts based on user roles and permissions." xml:space="preserve">
+    <value>ナビゲーションバーはユーザーの役割と権限に基づいて自動的に調整されます。</value>
+  </data>
+  <data name="This is a template project, where we start the voyager..." xml:space="preserve">
+    <value>これはテンプレートプロジェクトです。ここから航海が始まります...</value>
+  </data>
+  <data name="Total Agents" xml:space="preserve">
+    <value>エージェント総数</value>
+  </data>
+  <data name="Used at" xml:space="preserve">
+    <value>使用日時</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>ようこそ</value>
+  </data>
+  <data name="Why use the Aiursoft Template?" xml:space="preserve">
+    <value>Aiursoftテンプレートを使用する理由</value>
   </data>
 
 </root>

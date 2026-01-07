@@ -21,107 +21,107 @@
       <data name="Agent Information" xml:space="preserve">
     <value>エージェント情報</value>
   </data>
+  <data name="Agent Version" xml:space="preserve">
+    <value>エージェントバージョン</value>
+  </data>
   <data name="Back to Dashboard" xml:space="preserve">
     <value>ダッシュボードに戻る</value>
-  </data>
-  <data name="Last Update" xml:space="preserve">
-    <value>最終更新</value>
-  </data>
-  <data name="Operating System" xml:space="preserve">
-    <value>オペレーティングシステム</value>
-  </data>
-  <data name="Hardware SKU" xml:space="preserve">
-    <value>ハードウェアSKU</value>
-  </data>
-  <data name="Last Boot Time" xml:space="preserve">
-    <value>最終起動時刻</value>
   </data>
   <data name="Client Details" xml:space="preserve">
     <value>クライアント詳細</value>
   </data>
-  <data name="Cores-RAM-Disk" xml:space="preserve">
-    <value>コア数・RAM・ディスク</value>
-  </data>
-  <data name="RAM" xml:space="preserve">
-    <value>RAM</value>
-  </data>
-  <data name="Disk" xml:space="preserve">
-    <value>ディスク</value>
+  <data name="Client ID" xml:space="preserve">
+    <value>クライアントID</value>
   </data>
   <data name="Cores" xml:space="preserve">
     <value>コア数</value>
   </data>
-  <data name="Runtime Info" xml:space="preserve">
-    <value>ランタイム情報</value>
-  </data>
-  <data name="MOTD" xml:space="preserve">
-    <value>MOTD</value>
-  </data>
-  <data name="Last Process" xml:space="preserve">
-    <value>最終プロセス</value>
-  </data>
-  <data name="Identity" xml:space="preserve">
-    <value>識別情報</value>
-  </data>
-  <data name="Hardware Details" xml:space="preserve">
-    <value>ハードウェア詳細</value>
-  </data>
-  <data name="RAM Usage" xml:space="preserve">
-    <value>メモリ使用量</value>
-  </data>
-  <data name="Client ID" xml:space="preserve">
-    <value>クライアントID</value>
-  </data>
-  <data name="CPU Usage" xml:space="preserve">
-    <value>CPU使用率</value>
-  </data>
-  <data name="Disk I/O" xml:space="preserve">
-    <value>ディスクI/O</value>
-  </data>
-  <data name="System Load" xml:space="preserve">
-    <value>システム負荷</value>
-  </data>
-  <data name="Network I/O" xml:space="preserve">
-    <value>ネットワークI/O</value>
-  </data>
-  <data name="Agent Version" xml:space="preserve">
-    <value>エージェントバージョン</value>
-  </data>
-  <data name="Mainly used by process" xml:space="preserve">
-    <value>主にプロセスによって使用</value>
-  </data>
-  <data name="Kernel Version" xml:space="preserve">
-    <value>カーネルバージョン</value>
-  </data>
-  <data name="Docker Containers" xml:space="preserve">
-    <value>Dockerコンテナ</value>
-  </data>
-  <data name="Status" xml:space="preserve">
-    <value>ステータス</value>
-  </data>
-  <data name="Name" xml:space="preserve">
-    <value>名前</value>
-  </data>
-  <data name="Image" xml:space="preserve">
-    <value>イメージ</value>
+  <data name="Cores-RAM-Disk" xml:space="preserve">
+    <value>コア数・RAM・ディスク</value>
   </data>
   <data name="CPU %" xml:space="preserve">
     <value>CPU %</value>
   </data>
-  <data name="Memory" xml:space="preserve">
-    <value>メモリ</value>
+  <data name="CPU Usage" xml:space="preserve">
+    <value>CPU使用率</value>
   </data>
-  <data name="Uptime" xml:space="preserve">
-    <value>稼働時間</value>
+  <data name="Disk" xml:space="preserve">
+    <value>ディスク</value>
   </data>
-  <data name="Ports" xml:space="preserve">
-    <value>ポート</value>
+  <data name="Disk I/O" xml:space="preserve">
+    <value>ディスクI/O</value>
+  </data>
+  <data name="Docker Containers" xml:space="preserve">
+    <value>Dockerコンテナ</value>
+  </data>
+  <data name="Hardware Details" xml:space="preserve">
+    <value>ハードウェア詳細</value>
+  </data>
+  <data name="Hardware SKU" xml:space="preserve">
+    <value>ハードウェアSKU</value>
   </data>
   <data name="Healthy" xml:space="preserve">
     <value>正常</value>
   </data>
+  <data name="Identity" xml:space="preserve">
+    <value>識別情報</value>
+  </data>
+  <data name="Image" xml:space="preserve">
+    <value>イメージ</value>
+  </data>
+  <data name="Kernel Version" xml:space="preserve">
+    <value>カーネルバージョン</value>
+  </data>
+  <data name="Last Boot Time" xml:space="preserve">
+    <value>最終起動時刻</value>
+  </data>
+  <data name="Last Process" xml:space="preserve">
+    <value>最終プロセス</value>
+  </data>
+  <data name="Last Update" xml:space="preserve">
+    <value>最終更新</value>
+  </data>
+  <data name="Mainly used by process" xml:space="preserve">
+    <value>主にプロセスによって使用</value>
+  </data>
+  <data name="Memory" xml:space="preserve">
+    <value>メモリ</value>
+  </data>
+  <data name="MOTD" xml:space="preserve">
+    <value>MOTD</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>名前</value>
+  </data>
+  <data name="Network I/O" xml:space="preserve">
+    <value>ネットワークI/O</value>
+  </data>
+  <data name="Operating System" xml:space="preserve">
+    <value>オペレーティングシステム</value>
+  </data>
+  <data name="Ports" xml:space="preserve">
+    <value>ポート</value>
+  </data>
+  <data name="RAM" xml:space="preserve">
+    <value>RAM</value>
+  </data>
+  <data name="RAM Usage" xml:space="preserve">
+    <value>メモリ使用量</value>
+  </data>
+  <data name="Runtime Info" xml:space="preserve">
+    <value>ランタイム情報</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>ステータス</value>
+  </data>
+  <data name="System Load" xml:space="preserve">
+    <value>システム負荷</value>
+  </data>
   <data name="Unhealthy" xml:space="preserve">
     <value>異常</value>
+  </data>
+  <data name="Uptime" xml:space="preserve">
+    <value>稼働時間</value>
   </data>
 
 </root>

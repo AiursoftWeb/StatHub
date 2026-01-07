@@ -18,110 +18,110 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="Operating System" xml:space="preserve">
-    <value>操作系统</value>
-  </data>
-  <data name="Agent Information" xml:space="preserve">
+      <data name="Agent Information" xml:space="preserve">
     <value>终端信息</value>
-  </data>
-  <data name="Client Details" xml:space="preserve">
-    <value>客户端详情</value>
-  </data>
-  <data name="Back to Dashboard" xml:space="preserve">
-    <value>返回仪表盘</value>
-  </data>
-  <data name="Hardware SKU" xml:space="preserve">
-    <value>硬件型号</value>
-  </data>
-  <data name="Last Boot Time" xml:space="preserve">
-    <value>最后启动时间</value>
-  </data>
-  <data name="Cores-RAM-Disk" xml:space="preserve">
-    <value>核心数-内存-硬盘</value>
-  </data>
-  <data name="Last Update" xml:space="preserve">
-    <value>最后更新</value>
-  </data>
-  <data name="RAM" xml:space="preserve">
-    <value>内存</value>
-  </data>
-  <data name="Cores" xml:space="preserve">
-    <value>核心数</value>
-  </data>
-  <data name="Hardware Details" xml:space="preserve">
-    <value>硬件详细信息</value>
-  </data>
-  <data name="MOTD" xml:space="preserve">
-    <value>当日消息</value>
-  </data>
-  <data name="Identity" xml:space="preserve">
-    <value>身份标识</value>
-  </data>
-  <data name="Disk" xml:space="preserve">
-    <value>磁盘</value>
-  </data>
-  <data name="Runtime Info" xml:space="preserve">
-    <value>运行时信息</value>
-  </data>
-  <data name="Last Process" xml:space="preserve">
-    <value>最后进程</value>
-  </data>
-  <data name="RAM Usage" xml:space="preserve">
-    <value>内存使用率</value>
-  </data>
-  <data name="CPU Usage" xml:space="preserve">
-    <value>CPU 使用率</value>
-  </data>
-  <data name="Client ID" xml:space="preserve">
-    <value>客户端 ID</value>
-  </data>
-  <data name="Network I/O" xml:space="preserve">
-    <value>网络 I/O</value>
-  </data>
-  <data name="System Load" xml:space="preserve">
-    <value>系统负载</value>
-  </data>
-  <data name="Disk I/O" xml:space="preserve">
-    <value>磁盘 I/O</value>
-  </data>
-  <data name="Mainly used by process" xml:space="preserve">
-    <value>主要被进程使用</value>
   </data>
   <data name="Agent Version" xml:space="preserve">
     <value>终端版本</value>
   </data>
-  <data name="Kernel Version" xml:space="preserve">
-    <value>内核版本</value>
+  <data name="Back to Dashboard" xml:space="preserve">
+    <value>返回仪表盘</value>
   </data>
-  <data name="Docker Containers" xml:space="preserve">
-    <value>Docker 容器</value>
+  <data name="Client Details" xml:space="preserve">
+    <value>客户端详情</value>
   </data>
-  <data name="Status" xml:space="preserve">
-    <value>状态</value>
+  <data name="Client ID" xml:space="preserve">
+    <value>客户端 ID</value>
   </data>
-  <data name="Name" xml:space="preserve">
-    <value>名称</value>
+  <data name="Cores" xml:space="preserve">
+    <value>核心数</value>
   </data>
-  <data name="Image" xml:space="preserve">
-    <value>镜像</value>
+  <data name="Cores-RAM-Disk" xml:space="preserve">
+    <value>核心数-内存-硬盘</value>
   </data>
   <data name="CPU %" xml:space="preserve">
     <value>CPU %</value>
   </data>
-  <data name="Memory" xml:space="preserve">
-    <value>内存</value>
+  <data name="CPU Usage" xml:space="preserve">
+    <value>CPU 使用率</value>
   </data>
-  <data name="Uptime" xml:space="preserve">
-    <value>运行时间</value>
+  <data name="Disk" xml:space="preserve">
+    <value>磁盘</value>
   </data>
-  <data name="Ports" xml:space="preserve">
-    <value>端口</value>
+  <data name="Disk I/O" xml:space="preserve">
+    <value>磁盘 I/O</value>
+  </data>
+  <data name="Docker Containers" xml:space="preserve">
+    <value>Docker 容器</value>
+  </data>
+  <data name="Hardware Details" xml:space="preserve">
+    <value>硬件详细信息</value>
+  </data>
+  <data name="Hardware SKU" xml:space="preserve">
+    <value>硬件型号</value>
   </data>
   <data name="Healthy" xml:space="preserve">
     <value>健康</value>
   </data>
+  <data name="Identity" xml:space="preserve">
+    <value>身份标识</value>
+  </data>
+  <data name="Image" xml:space="preserve">
+    <value>镜像</value>
+  </data>
+  <data name="Kernel Version" xml:space="preserve">
+    <value>内核版本</value>
+  </data>
+  <data name="Last Boot Time" xml:space="preserve">
+    <value>最后启动时间</value>
+  </data>
+  <data name="Last Process" xml:space="preserve">
+    <value>最后进程</value>
+  </data>
+  <data name="Last Update" xml:space="preserve">
+    <value>最后更新</value>
+  </data>
+  <data name="Mainly used by process" xml:space="preserve">
+    <value>主要被进程使用</value>
+  </data>
+  <data name="Memory" xml:space="preserve">
+    <value>内存</value>
+  </data>
+  <data name="MOTD" xml:space="preserve">
+    <value>当日消息</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>名称</value>
+  </data>
+  <data name="Network I/O" xml:space="preserve">
+    <value>网络 I/O</value>
+  </data>
+  <data name="Operating System" xml:space="preserve">
+    <value>操作系统</value>
+  </data>
+  <data name="Ports" xml:space="preserve">
+    <value>端口</value>
+  </data>
+  <data name="RAM" xml:space="preserve">
+    <value>内存</value>
+  </data>
+  <data name="RAM Usage" xml:space="preserve">
+    <value>内存使用率</value>
+  </data>
+  <data name="Runtime Info" xml:space="preserve">
+    <value>运行时信息</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>状态</value>
+  </data>
+  <data name="System Load" xml:space="preserve">
+    <value>系统负载</value>
+  </data>
   <data name="Unhealthy" xml:space="preserve">
     <value>不健康</value>
+  </data>
+  <data name="Uptime" xml:space="preserve">
+    <value>运行时间</value>
   </data>
 
 </root>
