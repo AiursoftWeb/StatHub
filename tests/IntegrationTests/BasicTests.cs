@@ -56,6 +56,8 @@ public class BasicTests
     {
         var response = await _http.GetAsync(url);
         response.EnsureSuccessStatusCode();
+        var html = await response.Content.ReadAsStringAsync();
+        Assert.Contains("href=\"/Deploy/SelfHost\"", html);
     }
 
     [TestMethod]
