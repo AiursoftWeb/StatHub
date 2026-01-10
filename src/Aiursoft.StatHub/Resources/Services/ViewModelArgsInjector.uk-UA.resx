@@ -69,6 +69,9 @@
   <data name="Delete User" xml:space="preserve">
     <value>Видалити користувача</value>
   </data>
+  <data name="Deploy" xml:space="preserve">
+    <value>Розгорнути</value>
+  </data>
   <data name="Directory" xml:space="preserve">
     <value>Каталог</value>
   </data>
@@ -114,11 +117,17 @@
   <data name="Register" xml:space="preserve">
     <value>Реєстрація</value>
   </data>
+  <data name="Resources" xml:space="preserve">
+    <value>Ресурси</value>
+  </data>
   <data name="Role Details" xml:space="preserve">
     <value>Деталі ролі</value>
   </data>
   <data name="Roles" xml:space="preserve">
     <value>Ролі</value>
+  </data>
+  <data name="Self host a new server" xml:space="preserve">
+    <value>Самостійно розгорнути новий сервер</value>
   </data>
   <data name="Servers" xml:space="preserve">
     <value>Сервери</value>

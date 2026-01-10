@@ -69,6 +69,9 @@
   <data name="Delete User" xml:space="preserve">
     <value>उपयोगकर्ता हटाएं</value>
   </data>
+  <data name="Deploy" xml:space="preserve">
+    <value>डेप्लॉय</value>
+  </data>
   <data name="Directory" xml:space="preserve">
     <value>निर्देशिका</value>
   </data>
@@ -114,11 +117,17 @@
   <data name="Register" xml:space="preserve">
     <value>पंजीकरण करें</value>
   </data>
+  <data name="Resources" xml:space="preserve">
+    <value>संसाधन</value>
+  </data>
   <data name="Role Details" xml:space="preserve">
     <value>भूमिका विवरण</value>
   </data>
   <data name="Roles" xml:space="preserve">
     <value>भूमिकाएँ</value>
+  </data>
+  <data name="Self host a new server" xml:space="preserve">
+    <value>एक नया सर्वर सेल्फ होस्ट करें</value>
   </data>
   <data name="Servers" xml:space="preserve">
     <value>सर्वर</value>

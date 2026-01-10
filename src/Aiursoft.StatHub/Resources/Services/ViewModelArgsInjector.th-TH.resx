@@ -72,6 +72,9 @@
   <data name="Delete User" xml:space="preserve">
     <value>ลบผู้ใช้</value>
   </data>
+  <data name="Deploy" xml:space="preserve">
+    <value>เผยแพร่</value>
+  </data>
   <data name="Directory" xml:space="preserve">
     <value>ไดเรกทอรี</value>
   </data>
@@ -117,11 +120,17 @@
   <data name="Register" xml:space="preserve">
     <value>สมัครสมาชิก</value>
   </data>
+  <data name="Resources" xml:space="preserve">
+    <value>ทรัพยากร</value>
+  </data>
   <data name="Role Details" xml:space="preserve">
     <value>รายละเอียดบทบาท</value>
   </data>
   <data name="Roles" xml:space="preserve">
     <value>บทบาท</value>
+  </data>
+  <data name="Self host a new server" xml:space="preserve">
+    <value>ตั้งค่าเซิร์ฟเวอร์ใหม่เอง</value>
   </data>
   <data name="Servers" xml:space="preserve">
     <value>เซิร์ฟเวอร์</value>

@@ -48,6 +48,9 @@
   <data name="Sets up a &lt;code&gt;systemd&lt;/code&gt; service to run the agent." xml:space="preserve">
     <value>에이전트를 실행하기 위해 &lt;code&gt;systemd&lt;/code&gt; 서비스를 설정합니다.</value>
   </data>
+  <data name="Sets up a &lt;code&gt;systemd&lt;/code&gt; timer to automatically update the agent daily." xml:space="preserve">
+    <value>매일 에이전트를 자동으로 업데이트하기 위해 &lt;code&gt;systemd&lt;/code&gt; 타이머를 설정합니다.</value>
+  </data>
   <data name="Supported Operating Systems:" xml:space="preserve">
     <value>지원 운영 체제:</value>
   </data>

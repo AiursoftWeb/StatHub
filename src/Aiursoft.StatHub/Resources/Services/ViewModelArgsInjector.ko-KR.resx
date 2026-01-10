@@ -72,6 +72,9 @@
   <data name="Delete User" xml:space="preserve">
     <value>사용자 삭제</value>
   </data>
+  <data name="Deploy" xml:space="preserve">
+    <value>배포</value>
+  </data>
   <data name="Directory" xml:space="preserve">
     <value>디렉터리</value>
   </data>
@@ -117,11 +120,17 @@
   <data name="Register" xml:space="preserve">
     <value>회원가입</value>
   </data>
+  <data name="Resources" xml:space="preserve">
+    <value>자원</value>
+  </data>
   <data name="Role Details" xml:space="preserve">
     <value>역할 상세 정보</value>
   </data>
   <data name="Roles" xml:space="preserve">
     <value>역할</value>
+  </data>
+  <data name="Self host a new server" xml:space="preserve">
+    <value>새 서버를 자체 호스팅하기</value>
   </data>
   <data name="Servers" xml:space="preserve">
     <value>서버</value>

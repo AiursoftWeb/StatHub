@@ -69,6 +69,9 @@
   <data name="Delete User" xml:space="preserve">
     <value>حذف المستخدم</value>
   </data>
+  <data name="Deploy" xml:space="preserve">
+    <value>نشر</value>
+  </data>
   <data name="Directory" xml:space="preserve">
     <value>دليل</value>
   </data>
@@ -114,11 +117,17 @@
   <data name="Register" xml:space="preserve">
     <value>تسجيل</value>
   </data>
+  <data name="Resources" xml:space="preserve">
+    <value>الموارد</value>
+  </data>
   <data name="Role Details" xml:space="preserve">
     <value>تفاصيل الدور</value>
   </data>
   <data name="Roles" xml:space="preserve">
     <value>الأدوار</value>
+  </data>
+  <data name="Self host a new server" xml:space="preserve">
+    <value>استضافة ذاتية لخادم جديد</value>
   </data>
   <data name="Servers" xml:space="preserve">
     <value>الخوادم</value>
