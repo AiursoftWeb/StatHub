@@ -67,6 +67,10 @@ public class ViewModelArgsInjector(
         _ = localizer["Error"];
         _ = localizer["Agents"];
         _ = localizer["Add an agent"];
+    
+        _ = localizer["Deploy"];
+        _ = localizer["Resources"];
+        _ = localizer["Self host a new server"];
     }
 
     public void InjectSimple(

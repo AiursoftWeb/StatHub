@@ -57,21 +57,29 @@ public class DockerService(
                 return [];
             }
 
-            var statsResult = await commandService.RunCommandAsync("docker", "stats --no-stream --format {{.ID}}|{{.CPUPerc}}|{{.MemUsage}}|{{.MemLimit}}", Path.GetTempPath());
+            var statsResult = await commandService.RunCommandAsync("docker", "stats --no-stream --format {{.ID}}|{{.CPUPerc}}|{{.MemUsage}}", Path.GetTempPath());
             if (statsResult.code == 0)
             {
                 var statsLines = statsResult.output.Replace("\r", "").Split("\n", StringSplitOptions.RemoveEmptyEntries);
                 foreach (var statsLine in statsLines)
                 {
                     var parts = statsLine.Split("|");
-                    if (parts.Length < 4) continue;
+                    if (parts.Length < 3) continue;
 
                     var container = containers.FirstOrDefault(c => c.Id.StartsWith(parts[0]));
                     if (container != null)
                     {
                         container.CpuPercentage = double.Parse(parts[1].Replace("%", ""), CultureInfo.InvariantCulture);
-                        container.MemoryUsage = ParseDockerSize(parts[2]);
-                        container.MemoryLimit = ParseDockerSize(parts[3]);
+                        // MemUsage contains both usage and limit in format "usage / limit"
+                        // ParseDockerSize already handles splitting on '/' to extract usage
+                        var memUsageAndLimit = parts[2];
+                        container.MemoryUsage = ParseDockerSize(memUsageAndLimit);
+                        // Extract the limit part (after the '/')
+                        if (memUsageAndLimit.Contains('/'))
+                        {
+                            var limitPart = memUsageAndLimit.Split('/')[1].Trim();
+                            container.MemoryLimit = ParseDockerSize(limitPart);
+                        }
                     }
                 }
             }
