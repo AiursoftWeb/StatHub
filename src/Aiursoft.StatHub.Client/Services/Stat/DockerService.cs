@@ -43,7 +43,7 @@ public class DockerService(
                 {
                     Id = parts[0],
                     Name = parts[1],
-                    Image = parts[2],
+                    Image = parts[2].Split('@')[0].Trim(),
                     State = parts[3],
                     Status = parts[4],
                     Ports = parts[5],
