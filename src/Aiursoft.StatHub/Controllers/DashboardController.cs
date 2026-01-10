@@ -93,10 +93,36 @@ KillSignal=SIGINT
 [Install]
 WantedBy=multi-user.target"" | sudo tee /etc/systemd/system/stathub.service
 
+echo ""[Unit]
+Description=Stathub Client Update
+
+[Service]
+Type=oneshot
+User=root
+ExecStart=/usr/bin/dotnet tool update Aiursoft.StatHub.Client --tool-path /opt/stathub-client
+ExecStartPost=/usr/bin/systemctl restart stathub.service
+
+[Install]
+WantedBy=multi-user.target"" | sudo tee /etc/systemd/system/stathub-update.service
+
+echo ""[Unit]
+Description=Run Stathub Client Update daily
+
+[Timer]
+OnCalendar=daily
+RandomizedDelaySec=4h
+Persistent=true
+
+[Install]
+WantedBy=timers.target"" | sudo tee /etc/systemd/system/stathub-update.timer
+
 sudo systemctl daemon-reload
 sudo systemctl enable stathub.service
 sudo systemctl stop stathub.service > /dev/null 2>&1
-sudo systemctl start stathub.service";
+sudo systemctl start stathub.service
+
+sudo systemctl enable stathub-update.timer
+sudo systemctl start stathub-update.timer" ;
         return Content(installScript, "text/plain");
     }
 }
