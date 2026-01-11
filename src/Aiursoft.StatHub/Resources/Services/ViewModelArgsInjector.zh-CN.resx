@@ -25,7 +25,7 @@
     <value>添加服务器</value>
   </data>
   <data name="Add an agent" xml:space="preserve">
-    <value>添加一个代理</value>
+    <value>添加一个终端</value>
   </data>
   <data name="Admin" xml:space="preserve">
     <value>管理员</value>
@@ -34,7 +34,7 @@
     <value>管理</value>
   </data>
   <data name="Agents" xml:space="preserve">
-    <value>代理</value>
+    <value>终端</value>
   </data>
   <data name="Aiursoft StatHub" xml:space="preserve">
     <value>Aiursoft StatHub</value>
