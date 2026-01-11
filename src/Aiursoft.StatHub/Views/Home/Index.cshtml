@@ -20,7 +20,7 @@
                     <a asp-controller="Dashboard" asp-action="Index" class="btn btn-outline-primary btn-lg btn-pill">
                         <i class="align-middle" data-lucide="grid"></i> @Localizer["Go to dashboard"]
                     </a>
-                    <a href="https://github.com/aiursoftweb/stathub" class="btn btn-primary btn-lg btn-pill" target="_blank">
+                    <a asp-controller="Deploy" asp-action="SelfHost" class="btn btn-primary btn-lg btn-pill">
                         <i class="align-middle" data-lucide="server"></i> @Localizer["Self host your own"]
                     </a>
                 </div>
