@@ -111,6 +111,7 @@ public class MetricsTests
         Assert.Contains(kernelVersion, detailsHtml);
         Assert.Contains("test-container", detailsHtml);
         Assert.Contains("test-image", detailsHtml);
+        Assert.Contains("data-sort=\"10485760\"", detailsHtml); // 10MB in bytes
     }
 
     private async Task LoginAsAdminAsync()
