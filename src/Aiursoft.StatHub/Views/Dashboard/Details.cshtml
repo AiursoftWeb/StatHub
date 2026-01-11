@@ -284,7 +284,7 @@
                                         @foreach (var container in agent.Containers)
                                         {
                                             <tr class="align-middle">
-                                                <td>
+                                                <td data-sort="@(container.IsHealthy ? 1 : 0)">
                                                     @if (container.IsHealthy)
                                                     {
                                                         <span class="badge badge-subtle-success">
@@ -304,8 +304,8 @@
                                                 </td>
                                                 <td><strong>@container.Name</strong><br /><small class="text-muted">@container.Id.SafeSubstring(12)</small></td>
                                                 <td style="max-width: 150px;" class="text-truncate" title="@container.Image">@container.Image</td>
-                                                <td>@container.CpuPercentage.ToString("F2")%</td>
-                                                <td>
+                                                <td data-sort="@container.CpuPercentage">@container.CpuPercentage.ToString("F2")%</td>
+                                                <td data-sort="@container.MemoryUsage">
                                                     <div class="d-flex flex-column" style="min-width: 100px;">
                                                         <span>@container.MemoryUsage.HumanReadableSize()</span>
                                                         <div class="progress progress-xs w-100" style="height: 4px;">
