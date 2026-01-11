@@ -69,6 +69,9 @@
   <data name="Delete User" xml:space="preserve">
     <value>Gebruiker verwijderen</value>
   </data>
+  <data name="Deploy" xml:space="preserve">
+    <value>Implementeer</value>
+  </data>
   <data name="Directory" xml:space="preserve">
     <value>Map</value>
   </data>
@@ -114,11 +117,17 @@
   <data name="Register" xml:space="preserve">
     <value>Registreren</value>
   </data>
+  <data name="Resources" xml:space="preserve">
+    <value>Resources</value>
+  </data>
   <data name="Role Details" xml:space="preserve">
     <value>Rolgegevens</value>
   </data>
   <data name="Roles" xml:space="preserve">
     <value>Rollen</value>
+  </data>
+  <data name="Self host a new server" xml:space="preserve">
+    <value>Zelf een nieuwe server hosten</value>
   </data>
   <data name="Servers" xml:space="preserve">
     <value>Servers</value>

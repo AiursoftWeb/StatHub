@@ -72,6 +72,9 @@
   <data name="Delete User" xml:space="preserve">
     <value>删除用户</value>
   </data>
+  <data name="Deploy" xml:space="preserve">
+    <value>部署</value>
+  </data>
   <data name="Directory" xml:space="preserve">
     <value>目录</value>
   </data>
@@ -117,11 +120,17 @@
   <data name="Register" xml:space="preserve">
     <value>注册</value>
   </data>
+  <data name="Resources" xml:space="preserve">
+    <value>资源</value>
+  </data>
   <data name="Role Details" xml:space="preserve">
     <value>角色详情</value>
   </data>
   <data name="Roles" xml:space="preserve">
     <value>角色</value>
+  </data>
+  <data name="Self host a new server" xml:space="preserve">
+    <value>自托管新服务器</value>
   </data>
   <data name="Servers" xml:space="preserve">
     <value>服务器</value>

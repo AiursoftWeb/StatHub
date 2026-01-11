@@ -72,6 +72,9 @@
   <data name="Delete User" xml:space="preserve">
     <value>Xóa Người Dùng</value>
   </data>
+  <data name="Deploy" xml:space="preserve">
+    <value>Triển khai</value>
+  </data>
   <data name="Directory" xml:space="preserve">
     <value>Thư mục</value>
   </data>
@@ -117,11 +120,17 @@
   <data name="Register" xml:space="preserve">
     <value>Đăng ký</value>
   </data>
+  <data name="Resources" xml:space="preserve">
+    <value>Tài nguyên</value>
+  </data>
   <data name="Role Details" xml:space="preserve">
     <value>Chi tiết Vai trò</value>
   </data>
   <data name="Roles" xml:space="preserve">
     <value>Vai trò</value>
+  </data>
+  <data name="Self host a new server" xml:space="preserve">
+    <value>Tự host một máy chủ mới</value>
   </data>
   <data name="Servers" xml:space="preserve">
     <value>Máy chủ</value>

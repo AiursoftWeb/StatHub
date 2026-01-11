@@ -48,6 +48,9 @@
   <data name="Sets up a &lt;code&gt;systemd&lt;/code&gt; service to run the agent." xml:space="preserve">
     <value>設定一個 &lt;code&gt;systemd&lt;/code&gt; 服務來運行终端程式。</value>
   </data>
+  <data name="Sets up a &lt;code&gt;systemd&lt;/code&gt; timer to automatically update the agent daily." xml:space="preserve">
+    <value>設定一個 &lt;code&gt;systemd&lt;/code&gt; 定時器，每日自動更新代理程式。</value>
+  </data>
   <data name="Supported Operating Systems:" xml:space="preserve">
     <value>支援的作業系統：</value>
   </data>

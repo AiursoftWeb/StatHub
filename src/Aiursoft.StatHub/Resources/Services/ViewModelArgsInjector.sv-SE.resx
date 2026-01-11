@@ -69,6 +69,9 @@
   <data name="Delete User" xml:space="preserve">
     <value>Ta bort användare</value>
   </data>
+  <data name="Deploy" xml:space="preserve">
+    <value>Distribuera</value>
+  </data>
   <data name="Directory" xml:space="preserve">
     <value>Katalog</value>
   </data>
@@ -114,11 +117,17 @@
   <data name="Register" xml:space="preserve">
     <value>Registrera</value>
   </data>
+  <data name="Resources" xml:space="preserve">
+    <value>Resurser</value>
+  </data>
   <data name="Role Details" xml:space="preserve">
     <value>Rollinformation</value>
   </data>
   <data name="Roles" xml:space="preserve">
     <value>Roller</value>
+  </data>
+  <data name="Self host a new server" xml:space="preserve">
+    <value>Självvärd en ny server</value>
   </data>
   <data name="Servers" xml:space="preserve">
     <value>Servrar</value>

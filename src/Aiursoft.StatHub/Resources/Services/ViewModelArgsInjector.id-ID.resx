@@ -69,6 +69,9 @@
   <data name="Delete User" xml:space="preserve">
     <value>Hapus Pengguna</value>
   </data>
+  <data name="Deploy" xml:space="preserve">
+    <value>Deploy</value>
+  </data>
   <data name="Directory" xml:space="preserve">
     <value>Direktori</value>
   </data>
@@ -114,11 +117,17 @@
   <data name="Register" xml:space="preserve">
     <value>Daftar</value>
   </data>
+  <data name="Resources" xml:space="preserve">
+    <value>Sumber Daya</value>
+  </data>
   <data name="Role Details" xml:space="preserve">
     <value>Detail Peran</value>
   </data>
   <data name="Roles" xml:space="preserve">
     <value>Peran</value>
+  </data>
+  <data name="Self host a new server" xml:space="preserve">
+    <value>Host sendiri server baru</value>
   </data>
   <data name="Servers" xml:space="preserve">
     <value>Server</value>
