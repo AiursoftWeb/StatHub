@@ -16,6 +16,11 @@
         </div>
 
         <div class="col-auto ms-auto text-end mt-n1">
+            <form asp-controller="Dashboard" asp-action="Abandon" asp-route-id="@agent.ClientId" method="post" class="d-inline">
+                <button type="submit" class="btn btn-danger shadow-sm me-1" onclick="return confirm('@Localizer["Abandoning is not deletion. If this agent persists in submitting, it will appear again soon. Please use systemd command to stop the agent."]')">
+                    <i class="align-middle" data-lucide="trash-2"></i> @Localizer["Abandon"]
+                </button>
+            </form>
             <a asp-action="Index" class="btn btn-light bg-white shadow-sm">
                 <i class="align-middle" data-lucide="arrow-left"></i> @Localizer["Back to Dashboard"]
             </a>
