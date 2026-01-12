@@ -33,6 +33,12 @@
   <data name="A modern, feature-rich, and highly extensible foundation for your next web application." xml:space="preserve">
     <value>Сучасна, багатофункціональна та високо розширювана основа для вашої наступної веб-програми.</value>
   </data>
+  <data name="Abandon" xml:space="preserve">
+    <value>Покинути</value>
+  </data>
+  <data name="Abandoning is not deletion. If this agent persists in submitting, it will appear again soon. Please use systemd command to stop the agent." xml:space="preserve">
+    <value>Покидання не є видаленням. Якщо цей агент продовжуватиме надсилати дані, він з&apos;явиться знову найближчим часом. Будь ласка, використовуйте команду systemd, щоб зупинити агент.</value>
+  </data>
   <data name="Agents Dashboard" xml:space="preserve">
     <value>Панель керування агентами</value>
   </data>

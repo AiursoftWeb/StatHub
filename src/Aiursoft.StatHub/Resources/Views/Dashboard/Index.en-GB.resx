@@ -33,6 +33,12 @@
   <data name="A modern, feature-rich, and highly extensible foundation for your next web application." xml:space="preserve">
     <value>A modern, feature-rich, and highly extensible foundation for your next web application.</value>
   </data>
+  <data name="Abandon" xml:space="preserve">
+    <value>Abandon</value>
+  </data>
+  <data name="Abandoning is not deletion. If this agent persists in submitting, it will appear again soon. Please use systemd command to stop the agent." xml:space="preserve">
+    <value>Abandoning is not deletion. If this agent continues to submit data, it will reappear shortly. Please use the systemd command to stop the agent.</value>
+  </data>
   <data name="Agents Dashboard" xml:space="preserve">
     <value>Agents Dashboard</value>
   </data>

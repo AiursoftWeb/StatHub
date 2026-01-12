@@ -33,6 +33,12 @@
   <data name="A modern, feature-rich, and highly extensible foundation for your next web application." xml:space="preserve">
     <value>Một nền tảng hiện đại, đầy đủ tính năng và có khả năng mở rộng cao cho ứng dụng web tiếp theo của bạn.</value>
   </data>
+  <data name="Abandon" xml:space="preserve">
+    <value>Bỏ rơi</value>
+  </data>
+  <data name="Abandoning is not deletion. If this agent persists in submitting, it will appear again soon. Please use systemd command to stop the agent." xml:space="preserve">
+    <value>Việc từ bỏ không đồng nghĩa với xóa bỏ. Nếu tác nhân này tiếp tục gửi dữ liệu, nó sẽ xuất hiện trở lại sớm. Vui lòng sử dụng lệnh systemd để dừng tác nhân.</value>
+  </data>
   <data name="Agents Dashboard" xml:space="preserve">
     <value>Bảng điều khiển Tác nhân</value>
   </data>
