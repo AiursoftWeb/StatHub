@@ -33,6 +33,12 @@
   <data name="A modern, feature-rich, and highly extensible foundation for your next web application." xml:space="preserve">
     <value>Μια σύγχρονη, πλούσια σε λειτουργίες και εξαιρετικά επεκτάσιμη βάση για την επόμενη εφαρμογή σας στον ιστό.</value>
   </data>
+  <data name="Abandon" xml:space="preserve">
+    <value>Απορρίψτε</value>
+  </data>
+  <data name="Abandoning is not deletion. If this agent persists in submitting, it will appear again soon. Please use systemd command to stop the agent." xml:space="preserve">
+    <value>Η απόρριψη δεν είναι διαγραφή. Αν αυτός ο εξυπηρετητής συνεχίσει να υποβάλλει αναφορές, θα εμφανιστεί ξανά σύντομα. Παρακαλώ χρησιμοποιήστε την εντολή systemd για να τον σταματήσετε.</value>
+  </data>
   <data name="Agents Dashboard" xml:space="preserve">
     <value>Πίνακας Ελέγχου Παρακόντων</value>
   </data>

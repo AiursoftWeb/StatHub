@@ -33,6 +33,12 @@
   <data name="A modern, feature-rich, and highly extensible foundation for your next web application." xml:space="preserve">
     <value>Nykyaikainen, ominaisuuksiltaan monipuolinen ja erittäin laajennettavissa oleva perusta seuraavalle verkkosovelluksellesi.</value>
   </data>
+  <data name="Abandon" xml:space="preserve">
+    <value>Jätä käyttämättä</value>
+  </data>
+  <data name="Abandoning is not deletion. If this agent persists in submitting, it will appear again soon. Please use systemd command to stop the agent." xml:space="preserve">
+    <value>Lopettaminen ei ole poistaminen. Jos tämä agentti jatkaa lähettämistä, se näkyy pian uudelleen. Käytä systemd-komentoa pysäyttääksesi agentin.</value>
+  </data>
   <data name="Agents Dashboard" xml:space="preserve">
     <value>Agenttien kojelauta</value>
   </data>

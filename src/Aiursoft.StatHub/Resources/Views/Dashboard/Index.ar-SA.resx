@@ -33,6 +33,12 @@
   <data name="A modern, feature-rich, and highly extensible foundation for your next web application." xml:space="preserve">
     <value>أساس حديث، غني بالميزات، وقابل للتوسعة بشكل كبير لتطبيق الويب القادم الخاص بك.</value>
   </data>
+  <data name="Abandon" xml:space="preserve">
+    <value>إلغاء</value>
+  </data>
+  <data name="Abandoning is not deletion. If this agent persists in submitting, it will appear again soon. Please use systemd command to stop the agent." xml:space="preserve">
+    <value>إلغاء التكليف ليس حذفًا. إذا استمر هذا الوكيل في الإرسال، فسيظهر مرة أخرى قريبًا. يُرجى استخدام أمر systemd لإيقاف الوكيل.</value>
+  </data>
   <data name="Agents Dashboard" xml:space="preserve">
     <value>لوحة تحكم الوكلاء</value>
   </data>

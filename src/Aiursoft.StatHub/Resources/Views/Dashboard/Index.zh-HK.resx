@@ -33,6 +33,12 @@
   <data name="A modern, feature-rich, and highly extensible foundation for your next web application." xml:space="preserve">
     <value>一個現代化、功能豐富且高度可擴展嘅基礎，為您嘅下一個網頁應用程式提供強大支援。</value>
   </data>
+  <data name="Abandon" xml:space="preserve">
+    <value>放棄</value>
+  </data>
+  <data name="Abandoning is not deletion. If this agent persists in submitting, it will appear again soon. Please use systemd command to stop the agent." xml:space="preserve">
+    <value>放棄並非刪除。若此代理持續提交資料，將會很快再次出現。請使用 systemd 命令停止代理。</value>
+  </data>
   <data name="Agents Dashboard" xml:space="preserve">
     <value>终端儀表板</value>
   </data>
