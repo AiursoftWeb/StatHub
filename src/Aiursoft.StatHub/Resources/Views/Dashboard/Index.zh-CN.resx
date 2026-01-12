@@ -210,5 +210,11 @@
   <data name="Why use the Aiursoft Template?" xml:space="preserve">
     <value>为何选择 Aiursoft 模板？</value>
   </data>
+  <data name="Abandon" xml:space="preserve">
+    <value>放弃</value>
+  </data>
+  <data name="Abandoning is not deletion. If this agent persists in submitting, it will appear again soon. Please use systemd command to stop the agent." xml:space="preserve">
+    <value>放弃不是删除。如果这个Agent坚持继续提交，它还是很快会出现。请使用systemd命令停止Agent。</value>
+  </data>
 
 </root>
