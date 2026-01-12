@@ -46,6 +46,15 @@ public class DashboardController(InMemoryDatabase database) : Controller
     }
 
     [Authorize(Policy = AppPermissionNames.CanViewDashboard)]
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public IActionResult Abandon([FromRoute] string id)
+    {
+        database.RemoveAgent(id);
+        return RedirectToAction(nameof(Index));
+    }
+
+    [Authorize(Policy = AppPermissionNames.CanViewDashboard)]
     [RenderInNavBar(
         NavGroupName = "Features",
         NavGroupOrder = 1,

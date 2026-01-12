@@ -286,9 +286,16 @@
                                         <td class="d-none d-xl-table-cell" data-bs-toggle="tooltip" title="@agent.KernelVersion">@osFirstTwoWords</td>
 
                                         <td>
-                                            <a class="btn btn-light btn-sm" asp-controller="Dashboard" asp-action="Details" asp-route-id="@agent.ClientId">
-                                            @Localizer["Details"]
-                                            </a>
+                                            <div class="btn-group">
+                                                <a class="btn btn-light btn-sm" asp-controller="Dashboard" asp-action="Details" asp-route-id="@agent.ClientId">
+                                                    @Localizer["Details"]
+                                                </a>
+                                                <form asp-controller="Dashboard" asp-action="Abandon" asp-route-id="@agent.ClientId" method="post" class="d-inline">
+                                                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('@Localizer["Abandoning is not deletion. If this agent persists in submitting, it will appear again soon. Please use systemd command to stop the agent."]')">
+                                                        @Localizer["Abandon"]
+                                                    </button>
+                                                </form>
+                                            </div>
                                         </td>
                                     </tr>
                             }

@@ -26,4 +26,9 @@ public class InMemoryDatabase : ISingletonDependency
     {
         return Agents.Select(c => c.Value).ToArray();
     }
+
+    public void RemoveAgent(string clientId)
+    {
+        Agents.TryRemove(clientId, out _);
+    }
 }
