@@ -18,7 +18,13 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="Agent Information" xml:space="preserve">
+      <data name="Abandon" xml:space="preserve">
+    <value>Tinggalkan</value>
+  </data>
+  <data name="Abandoning is not deletion. If this agent persists in submitting, it will appear again soon. Please use systemd command to stop the agent." xml:space="preserve">
+    <value>Meninggalkan bukan penghapusan. Jika agen ini terus mengirimkan data, akan muncul kembali segera. Harap gunakan perintah systemd untuk menghentikan agen ini.</value>
+  </data>
+  <data name="Agent Information" xml:space="preserve">
     <value>Informasi Agen</value>
   </data>
   <data name="Agent Version" xml:space="preserve">
