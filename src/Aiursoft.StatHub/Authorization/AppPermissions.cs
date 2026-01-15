@@ -63,7 +63,7 @@ public class AppPermissions
                 localizer["Grants permission to restart the application instance. May cause availability interruptions but all settings and cache will be reloaded."]),
             new (AppPermissionNames.CanViewDashboard,
                 localizer["View server dashboard to see server metrics."],
-                localizer["Allows viewing server dashboard to see server metrics."])
+                localizer["Allows viewing server dashboard to see server metrics."]),
             new(AppPermissionNames.CanViewBackgroundJobs,
                 localizer["View Background Jobs"],
                 localizer["Allows viewing the background job dashboard and managing jobs."]),
