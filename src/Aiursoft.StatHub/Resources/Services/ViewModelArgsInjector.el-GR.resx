@@ -42,6 +42,9 @@
   <data name="Anonymous" xml:space="preserve">
     <value>Ανώνυμος</value>
   </data>
+  <data name="Background Jobs" xml:space="preserve">
+    <value>Ημικρατούμενες εργασίες</value>
+  </data>
   <data name="Change Avatar" xml:space="preserve">
     <value>Αλλαγή Avatar</value>
   </data>
@@ -87,6 +90,9 @@
   <data name="Features" xml:space="preserve">
     <value>Λειτουργίες</value>
   </data>
+  <data name="Global Settings" xml:space="preserve">
+    <value>Καθολικές Ρυθμίσεις</value>
+  </data>
   <data name="Home" xml:space="preserve">
     <value>Αρχική</value>
   </data>
@@ -104,6 +110,9 @@
   </data>
   <data name="Manage" xml:space="preserve">
     <value>Διαχείριση</value>
+  </data>
+  <data name="Permissions" xml:space="preserve">
+    <value>Εξουσιοδοτήσεις</value>
   </data>
   <data name="Personal" xml:space="preserve">
     <value>Προσωπικά</value>

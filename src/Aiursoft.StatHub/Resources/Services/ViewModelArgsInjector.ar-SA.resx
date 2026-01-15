@@ -42,6 +42,9 @@
   <data name="Anonymous" xml:space="preserve">
     <value>مجهول</value>
   </data>
+  <data name="Background Jobs" xml:space="preserve">
+    <value>مهام الخلفية</value>
+  </data>
   <data name="Change Avatar" xml:space="preserve">
     <value>تغيير الصورة الشخصية</value>
   </data>
@@ -87,6 +90,9 @@
   <data name="Features" xml:space="preserve">
     <value>الميزات</value>
   </data>
+  <data name="Global Settings" xml:space="preserve">
+    <value>الإعدادات العامة</value>
+  </data>
   <data name="Home" xml:space="preserve">
     <value>الرئيسية</value>
   </data>
@@ -104,6 +110,9 @@
   </data>
   <data name="Manage" xml:space="preserve">
     <value>إدارة</value>
+  </data>
+  <data name="Permissions" xml:space="preserve">
+    <value>الصلاحيات</value>
   </data>
   <data name="Personal" xml:space="preserve">
     <value>شخصي</value>

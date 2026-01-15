@@ -39,11 +39,20 @@
   <data name="Allows the permanent deletion of user accounts." xml:space="preserve">
     <value>อนุญาตให้ลบบัญชีผู้ใช้อย่างถาวร</value>
   </data>
+  <data name="Allows viewing and modifying global application settings." xml:space="preserve">
+    <value>อนุญาตให้ดูและแก้ไขการตั้งค่าแอปพลิเคชันระดับโลก</value>
+  </data>
   <data name="Allows viewing server dashboard to see server metrics." xml:space="preserve">
     <value>อนุญาตให้ดูแผงควบคุมเซิร์ฟเวอร์เพื่อดูเมตริกของเซิร์ฟเวอร์</value>
   </data>
   <data name="Allows viewing system-level information and settings." xml:space="preserve">
     <value>อนุญาตให้ดูข้อมูลและการตั้งค่าระดับระบบ</value>
+  </data>
+  <data name="Allows viewing the background job dashboard and managing jobs." xml:space="preserve">
+    <value>อนุญาตให้ดูแดชบอร์ดงานหลังบ้านและจัดการงาน</value>
+  </data>
+  <data name="Allows viewing the list of all permissions and their assignments to roles and users." xml:space="preserve">
+    <value>อนุญาตให้ดูรายการสิทธิ์ทั้งหมดและบทบาทการกำหนดสิทธิ์ให้กับผู้ใช้และบทบาท</value>
   </data>
   <data name="Allows viewing the list of all users." xml:space="preserve">
     <value>อนุญาตให้ดูรายชื่อผู้ใช้ทั้งหมด</value>
@@ -75,6 +84,12 @@
   <data name="Grants permission to restart the application instance. May cause availability interruptions but all settings and cache will be reloaded." xml:space="preserve">
     <value>ให้สิทธิ์ในการรีสตาร์ทอินสแตนซ์แอปพลิเคชัน อาจทำให้เกิดการขัดจังหวะในการให้บริการ แต่การตั้งค่าและแคชทั้งหมดจะถูกโหลดใหม่</value>
   </data>
+  <data name="Manage Global Settings" xml:space="preserve">
+    <value>จัดการตั้งค่าทั่วโลก</value>
+  </data>
+  <data name="Read Permissions" xml:space="preserve">
+    <value>อ่านสิทธิ์การเข้าถึง</value>
+  </data>
   <data name="Read Roles" xml:space="preserve">
     <value>อ่านบทบาท</value>
   </data>
@@ -83,6 +98,9 @@
   </data>
   <data name="Reboot This App" xml:space="preserve">
     <value>รีบูตแอปนี้</value>
+  </data>
+  <data name="View Background Jobs" xml:space="preserve">
+    <value>ดูงานพื้นหลัง</value>
   </data>
   <data name="View server dashboard to see server metrics." xml:space="preserve">
     <value>ดูแดชบอร์ดเซิร์ฟเวอร์เพื่อดูเมตริกเซิร์ฟเวอร์</value>

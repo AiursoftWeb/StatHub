@@ -42,6 +42,9 @@
   <data name="Anonymous" xml:space="preserve">
     <value>Anonimo</value>
   </data>
+  <data name="Background Jobs" xml:space="preserve">
+    <value>Lavori in background</value>
+  </data>
   <data name="Change Avatar" xml:space="preserve">
     <value>Cambia Avatar</value>
   </data>
@@ -87,6 +90,9 @@
   <data name="Features" xml:space="preserve">
     <value>Funzionalità</value>
   </data>
+  <data name="Global Settings" xml:space="preserve">
+    <value>Impostazioni globali</value>
+  </data>
   <data name="Home" xml:space="preserve">
     <value>Home</value>
   </data>
@@ -104,6 +110,9 @@
   </data>
   <data name="Manage" xml:space="preserve">
     <value>Gestisci</value>
+  </data>
+  <data name="Permissions" xml:space="preserve">
+    <value>Permessi</value>
   </data>
   <data name="Personal" xml:space="preserve">
     <value>Personale</value>

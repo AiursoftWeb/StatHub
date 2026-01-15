@@ -42,6 +42,9 @@
   <data name="Anonymous" xml:space="preserve">
     <value>Anonyymi</value>
   </data>
+  <data name="Background Jobs" xml:space="preserve">
+    <value>Taustatehtävät</value>
+  </data>
   <data name="Change Avatar" xml:space="preserve">
     <value>Vaihda avataria</value>
   </data>
@@ -87,6 +90,9 @@
   <data name="Features" xml:space="preserve">
     <value>Ominaisuudet</value>
   </data>
+  <data name="Global Settings" xml:space="preserve">
+    <value>Globaali asetukset</value>
+  </data>
   <data name="Home" xml:space="preserve">
     <value>Koti</value>
   </data>
@@ -104,6 +110,9 @@
   </data>
   <data name="Manage" xml:space="preserve">
     <value>Hallinnoi</value>
+  </data>
+  <data name="Permissions" xml:space="preserve">
+    <value>Oikeudet</value>
   </data>
   <data name="Personal" xml:space="preserve">
     <value>Henkilökohtainen</value>
