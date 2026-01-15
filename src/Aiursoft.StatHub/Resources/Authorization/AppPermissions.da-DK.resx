@@ -39,11 +39,20 @@
   <data name="Allows the permanent deletion of user accounts." xml:space="preserve">
     <value>Giver mulighed for den permanente sletning af brugerkonti.</value>
   </data>
+  <data name="Allows viewing and modifying global application settings." xml:space="preserve">
+    <value>Tillader visning og ændring af globale programindstillinger.</value>
+  </data>
   <data name="Allows viewing server dashboard to see server metrics." xml:space="preserve">
     <value>Giver mulighed for at se serverdashboard for at se serverstatistikker.</value>
   </data>
   <data name="Allows viewing system-level information and settings." xml:space="preserve">
     <value>Giver mulighed for at se systemniveauoplysninger og -indstillinger.</value>
+  </data>
+  <data name="Allows viewing the background job dashboard and managing jobs." xml:space="preserve">
+    <value>Tillader visning af baggrundsjob-dashboardet og håndtering af jobs.</value>
+  </data>
+  <data name="Allows viewing the list of all permissions and their assignments to roles and users." xml:space="preserve">
+    <value>Tillader visning af listen over alle tilladelser og deres tilknytning til roller og brugere.</value>
   </data>
   <data name="Allows viewing the list of all users." xml:space="preserve">
     <value>Giver mulighed for at se listen over alle brugere.</value>
@@ -75,6 +84,12 @@
   <data name="Grants permission to restart the application instance. May cause availability interruptions but all settings and cache will be reloaded." xml:space="preserve">
     <value>Giver tilladelse til at genstarte applikationsinstansen. Kan forårsage afbrydelser i tilgængeligheden, men alle indstillinger og cache vil blive genindlæst.</value>
   </data>
+  <data name="Manage Global Settings" xml:space="preserve">
+    <value>Håndtér globale indstillinger</value>
+  </data>
+  <data name="Read Permissions" xml:space="preserve">
+    <value>Læs tilladelser</value>
+  </data>
   <data name="Read Roles" xml:space="preserve">
     <value>Læs Roller</value>
   </data>
@@ -83,6 +98,9 @@
   </data>
   <data name="Reboot This App" xml:space="preserve">
     <value>Genstart denne app</value>
+  </data>
+  <data name="View Background Jobs" xml:space="preserve">
+    <value>Vis baggrundsjob</value>
   </data>
   <data name="View server dashboard to see server metrics." xml:space="preserve">
     <value>Se serverdashboard for at se servermålinger.</value>

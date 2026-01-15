@@ -39,11 +39,20 @@
   <data name="Allows the permanent deletion of user accounts." xml:space="preserve">
     <value>Permite a eliminação permanente de contas de utilizador.</value>
   </data>
+  <data name="Allows viewing and modifying global application settings." xml:space="preserve">
+    <value>Permite visualizar e modificar as definições globais da aplicação.</value>
+  </data>
   <data name="Allows viewing server dashboard to see server metrics." xml:space="preserve">
     <value>Permite visualizar o dashboard do servidor para ver as métricas do servidor.</value>
   </data>
   <data name="Allows viewing system-level information and settings." xml:space="preserve">
     <value>Permite visualizar informações e definições a nível do sistema.</value>
+  </data>
+  <data name="Allows viewing the background job dashboard and managing jobs." xml:space="preserve">
+    <value>Permite visualizar o painel de controlo dos trabalhos em segundo plano e gerir trabalhos.</value>
+  </data>
+  <data name="Allows viewing the list of all permissions and their assignments to roles and users." xml:space="preserve">
+    <value>Permite visualizar a lista de todas as permissões e as suas atribuições a funções e utilizadores.</value>
   </data>
   <data name="Allows viewing the list of all users." xml:space="preserve">
     <value>Permite visualizar a lista de todos os utilizadores.</value>
@@ -75,6 +84,12 @@
   <data name="Grants permission to restart the application instance. May cause availability interruptions but all settings and cache will be reloaded." xml:space="preserve">
     <value>Concede permissão para reiniciar a instância da aplicação. Pode causar interrupções na disponibilidade, mas todas as definições e a cache serão recarregadas.</value>
   </data>
+  <data name="Manage Global Settings" xml:space="preserve">
+    <value>Gerir Definições Globais</value>
+  </data>
+  <data name="Read Permissions" xml:space="preserve">
+    <value>Ler Permissões</value>
+  </data>
   <data name="Read Roles" xml:space="preserve">
     <value>Ler Funções</value>
   </data>
@@ -83,6 +98,9 @@
   </data>
   <data name="Reboot This App" xml:space="preserve">
     <value>Reiniciar Esta Aplicação</value>
+  </data>
+  <data name="View Background Jobs" xml:space="preserve">
+    <value>Ver Trabalhos em Segundo Plano</value>
   </data>
   <data name="View server dashboard to see server metrics." xml:space="preserve">
     <value>Ver o dashboard do servidor para ver as métricas do servidor.</value>
