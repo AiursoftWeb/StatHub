@@ -1,15 +1,6 @@
 namespace Aiursoft.StatHub.Authorization;
 
 /// <summary>
-/// A fake localizer that returns the input string as is.
-/// This is used to trick auto scanning tools to detect these strings for localization.
-/// </summary>
-public class FakeLocalizer
-{
-    public string this[string name] => name;
-}
-
-/// <summary>
 /// A static class that provides all application permissions.
 /// It uses a fake localizer to ensure permission names and descriptions are picked up by localization tools.
 /// This class serves as the single source of truth for all permissions in the application.
