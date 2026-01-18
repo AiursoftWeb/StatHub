@@ -75,6 +75,10 @@ public class ViewModelArgsInjector(
         _ = localizer["Background Jobs"];
         _ = localizer["Global Settings"];
         _ = localizer["Permissions"];
+        _ = localizer["Error"];
+        _ = localizer["Permissions"];
+        _ = localizer["Background Jobs"];
+        _ = localizer["Global Settings"];
     }
 
     public void InjectSimple(
@@ -158,7 +162,8 @@ public class ViewModelArgsInjector(
                             var hrefController = l.Href.TrimStart('/').Split('/').FirstOrDefault();
                             // Exact match to avoid false positives like "Manage" matching "ManagePayroll"
                             return string.Equals(hrefController, currentViewingController, StringComparison.OrdinalIgnoreCase);
-                        }),                        Links = linksForView
+                        }),
+                        Links = linksForView
                     });
                 }
             }
