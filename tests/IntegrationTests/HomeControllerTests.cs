@@ -10,4 +10,12 @@ public class HomeControllerTests : TestBase
         var response = await Http.GetAsync(url);
         response.EnsureSuccessStatusCode();
     }
+
+    [TestMethod]
+    public async Task GetSelfHost()
+    {
+        var url = "/Home/SelfHost";
+        var response = await Http.GetAsync(url);
+        response.EnsureSuccessStatusCode();
+    }
 }

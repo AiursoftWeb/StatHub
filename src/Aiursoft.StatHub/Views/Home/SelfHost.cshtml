@@ -1,8 +1,10 @@
-@model Aiursoft.StatHub.Models.DeployViewModels.SelfHostViewModel
+@model Aiursoft.StatHub.Models.HomeViewModels.SelfHostViewModel
 
-<div class="container-fluid p-0">
-    <div class="row mb-2 mb-xl-3">
-        <div class="col-auto d-none d-sm-block">
+<vc:marketing-navbar></vc:marketing-navbar>
+
+<div class="container py-5">
+    <div class="row mb-4">
+        <div class="col-auto">
             <h3><strong>@Localizer["Deploy"]</strong> @Localizer["Anywhere"]</h3>
         </div>
 
@@ -200,3 +202,5 @@
         </div>
     </div>
 </div>
+
+<vc:marketing-footer></vc:marketing-footer>
