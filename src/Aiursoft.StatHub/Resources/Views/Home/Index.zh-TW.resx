@@ -30,6 +30,9 @@
   <data name="A modern, feature-rich, and highly extensible foundation for your next web application." xml:space="preserve">
     <value>一個現代化、功能豐富且高度可擴展的基礎架構，為您的下一個網頁應用程式提供堅實根基。</value>
   </data>
+  <data name="A simple, real-time server monitoring system designed for local deployment." xml:space="preserve">
+    <value>一個簡單、即時的伺服器監控系統，專為本地部署設計。</value>
+  </data>
   <data name="Achieve more with Aiursoft Template" xml:space="preserve">
     <value>使用 Aiursoft Template 成就更多</value>
   </data>
@@ -66,8 +69,23 @@
   <data name="Comprehensive Documentation" xml:space="preserve">
     <value>完整說明文件</value>
   </data>
+  <data name="Containerized" xml:space="preserve">
+    <value>容器化</value>
+  </data>
+  <data name="Core Features" xml:space="preserve">
+    <value>核心功能</value>
+  </data>
   <data name="Dashboard Website" xml:space="preserve">
     <value>儀表板網站</value>
+  </data>
+  <data name="Data stays on your servers. Authentication and authorization ensure only you can access your metrics." xml:space="preserve">
+    <value>資料留在您的伺服器上。驗證與授權確保僅您能存取您的量測資料。</value>
+  </data>
+  <data name="Deploy in seconds with Docker. Designed for modern cloud-native environments." xml:space="preserve">
+    <value>幾秒內即可透過 Docker 部署。專為現代雲原生環境設計。</value>
+  </data>
+  <data name="Developer Friendly" xml:space="preserve">
+    <value>開發者友善</value>
   </data>
   <data name="Discussions page" xml:space="preserve">
     <value>討論頁面</value>
@@ -83,6 +101,9 @@
   </data>
   <data name="Easily switch between providers like SQLite, MySQL, SQL Server, and an in-memory database for testing." xml:space="preserve">
     <value>可輕鬆切換不同的資料庫供應商，例如 SQLite、MySQL、SQL Server 以及用於測試的記憶體資料庫。</value>
+  </data>
+  <data name="Enter Dashboard" xml:space="preserve">
+    <value>進入儀表板</value>
   </data>
   <data name="FAQ" xml:space="preserve">
     <value>常見問題</value>
@@ -105,6 +126,9 @@
   <data name="Frequently asked questions" xml:space="preserve">
     <value>常見問題</value>
   </data>
+  <data name="Get up-to-the-second updates on your server&apos;s CPU, memory, disk, and network usage." xml:space="preserve">
+    <value>即時取得伺服器 CPU、記憶體、磁碟與網路使用狀況的更新。</value>
+  </data>
   <data name="Go to dashboard" xml:space="preserve">
     <value>前往儀表板</value>
   </data>
@@ -126,6 +150,9 @@
   <data name="Includes extensive documentation and practical examples to get you started quickly." xml:space="preserve">
     <value>包含豐富的文件與實用範例，助您快速上手。</value>
   </data>
+  <data name="Instant Alerts" xml:space="preserve">
+    <value>即時警示</value>
+  </data>
   <data name="Integrated File Management" xml:space="preserve">
     <value>整合式檔案管理</value>
   </data>
@@ -141,20 +168,44 @@
   <data name="Join our community and start monitoring today!" xml:space="preserve">
     <value>立即加入我們的社群，開始監控吧！</value>
   </data>
+  <data name="Join the community of developers monitoring their infrastructure with StatHub." xml:space="preserve">
+    <value>加入開發者社群，使用 StatHub 監控您的基礎設施。</value>
+  </data>
+  <data name="Keep an eye on your infrastructure with intuitive dashboards and detailed metrics." xml:space="preserve">
+    <value>隨時掌握您的基礎設施狀況，透過直覺式的儀表板與詳細的指標。</value>
+  </data>
+  <data name="Lightweight Agents" xml:space="preserve">
+    <value>輕量級代理</value>
+  </data>
+  <data name="Live Demo" xml:space="preserve">
+    <value>即時演示</value>
+  </data>
+  <data name="Low-overhead agents collect metrics without impacting your server&apos;s performance." xml:space="preserve">
+    <value>低負載的代理程式會收集指標，而不會影響您伺服器的效能。</value>
+  </data>
   <data name="Markdown To HTML" xml:space="preserve">
     <value>Markdown 轉 HTML</value>
   </data>
   <data name="MIT Licence" xml:space="preserve">
     <value>MIT 授權</value>
   </data>
+  <data name="Monitor multiple servers from a single centralized dashboard. Scale as your infrastructure grows." xml:space="preserve">
+    <value>從單一中央控制面板監控多台伺服器。隨著您的基礎架構擴展而自動擴充。</value>
+  </data>
   <data name="Monitor your servers," xml:space="preserve">
     <value>監控您的伺服器，</value>
+  </data>
+  <data name="Multi-Node" xml:space="preserve">
+    <value>多節點</value>
   </data>
   <data name="Multiple Database Support" xml:space="preserve">
     <value>多種資料庫支援</value>
   </data>
   <data name="Music Tools" xml:space="preserve">
     <value>音樂工具</value>
+  </data>
+  <data name="Open API allows for easy integration with your existing tools and workflows." xml:space="preserve">
+    <value>Open API 可輕鬆整合至您現有的工具與工作流程。</value>
   </data>
   <data name="Open Source" xml:space="preserve">
     <value>開放原始碼</value>
@@ -168,6 +219,12 @@
   <data name="Read the document" xml:space="preserve">
     <value>閱讀文件</value>
   </data>
+  <data name="Ready to get started?" xml:space="preserve">
+    <value>準備好開始了嗎？</value>
+  </data>
+  <data name="Real-time" xml:space="preserve">
+    <value>即時</value>
+  </data>
   <data name="Responsive Design" xml:space="preserve">
     <value>響應式設計</value>
   </data>
@@ -177,8 +234,23 @@
   <data name="Seamlessly integrate with any OpenID Connect provider, with automatic role synchronization." xml:space="preserve">
     <value>無縫整合任何 OpenID Connect 提供者，並自動同步角色權限。</value>
   </data>
+  <data name="Secure" xml:space="preserve">
+    <value>安全</value>
+  </data>
+  <data name="See the status of all your nodes at a glance. Identify issues before they become outages." xml:space="preserve">
+    <value>一眼掌握所有節點的狀態。在問題演變成中斷前就及時發現。</value>
+  </data>
+  <data name="Self Host" xml:space="preserve">
+    <value>自行主機</value>
+  </data>
   <data name="Self host your own" xml:space="preserve">
     <value>自行託管</value>
+  </data>
+  <data name="Self-Hosted" xml:space="preserve">
+    <value>自行主機</value>
+  </data>
+  <data name="Simplicity by Design" xml:space="preserve">
+    <value>簡約設計</value>
   </data>
   <data name="Smart dark mode that automatically adapts to the user&apos;s system settings." xml:space="preserve">
     <value>智慧深色模式，可自動適應使用者的系統設定。</value>
@@ -188,6 +260,9 @@
   </data>
   <data name="Technical Lead" xml:space="preserve">
     <value>技術負責人</value>
+  </data>
+  <data name="The essential tool for monitoring your servers&apos; health and performance." xml:space="preserve">
+    <value>監控伺服器健康狀態與效能的必備工具。</value>
   </data>
   <data name="The navigation bar automatically adjusts based on user roles and permissions." xml:space="preserve">
     <value>導覽列會根據使用者角色和權限自動調整顯示內容。</value>
@@ -207,6 +282,9 @@
   <data name="Use it as a foundation for your SaaS, a backend for your mobile app, a corporate website, or a personal blog. The possibilities are endless." xml:space="preserve">
     <value>無論是作為您 SaaS 的基礎架構、行動應用程式的後端、企業網站或個人部落格，都能完美適用。可能性永無止境。</value>
   </data>
+  <data name="View on GitHub" xml:space="preserve">
+    <value>在 GitHub 上檢視</value>
+  </data>
   <data name="View Source on GitHub" xml:space="preserve">
     <value>在 GitHub 上檢視原始碼</value>
   </data>
@@ -219,6 +297,9 @@
   <data name="What our developers say" xml:space="preserve">
     <value>我們的開發者怎麼說</value>
   </data>
+  <data name="Why Choose StatHub?" xml:space="preserve">
+    <value>為什麼選擇 StatHub？</value>
+  </data>
   <data name="Why use the Aiursoft Template?" xml:space="preserve">
     <value>為什麼使用 Aiursoft 模板？</value>
   </data>
@@ -230,6 +311,9 @@
   </data>
   <data name="You&apos;ll need the .NET 10 SDK, npm and your favorite IDE, like Visual Studio or JetBrains Rider. You can find the full setup guide in our documentation." xml:space="preserve">
     <value>您需要安裝 .NET 10 SDK、npm 以及您喜愛的 IDE，例如 Visual Studio 或 JetBrains Rider。您可以在我們的文件中找到完整的設定指南。</value>
+  </data>
+  <data name="Your Server Status" xml:space="preserve">
+    <value>你的伺服器狀態</value>
   </data>
 
 </root>

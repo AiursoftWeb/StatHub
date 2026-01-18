@@ -30,6 +30,9 @@
   <data name="A modern, feature-rich, and highly extensible foundation for your next web application." xml:space="preserve">
     <value>Nykyaikainen, ominaisuuksiltaan monipuolinen ja erittäin laajennettava perusta seuraavaa verkkosovellustasi varten.</value>
   </data>
+  <data name="A simple, real-time server monitoring system designed for local deployment." xml:space="preserve">
+    <value>Yksinkertainen, reaaliaikainen palvelinvalvontajärjestelmä, joka on suunniteltu paikalliseen käyttöön.</value>
+  </data>
   <data name="Achieve more with Aiursoft Template" xml:space="preserve">
     <value>Saavuta enemmän Aiursoft Templatella</value>
   </data>
@@ -66,8 +69,23 @@
   <data name="Comprehensive Documentation" xml:space="preserve">
     <value>Kattava dokumentaatio</value>
   </data>
+  <data name="Containerized" xml:space="preserve">
+    <value>Säiliössä oleva</value>
+  </data>
+  <data name="Core Features" xml:space="preserve">
+    <value>Ydinominaisuudet</value>
+  </data>
   <data name="Dashboard Website" xml:space="preserve">
     <value>Kojelauta-sivusto</value>
+  </data>
+  <data name="Data stays on your servers. Authentication and authorization ensure only you can access your metrics." xml:space="preserve">
+    <value>Tiedot pysyvät palvelimillasi. Todennus ja oikeuksien hallinta varmistavat, että vain sinä voit käyttää mittausarvojasi.</value>
+  </data>
+  <data name="Deploy in seconds with Docker. Designed for modern cloud-native environments." xml:space="preserve">
+    <value>Käynnistä sekunteissa Dockerilla. Suunniteltu nykyaikaisiin pilviin perustuviin ympäristöihin.</value>
+  </data>
+  <data name="Developer Friendly" xml:space="preserve">
+    <value>Kehittäjäystävällinen</value>
   </data>
   <data name="Discussions page" xml:space="preserve">
     <value>Keskustelusivu</value>
@@ -83,6 +101,9 @@
   </data>
   <data name="Easily switch between providers like SQLite, MySQL, SQL Server, and an in-memory database for testing." xml:space="preserve">
     <value>Vaihda helposti tietokantapalveluntarjoajien, kuten SQLite, MySQL, SQL Server ja testaukseen tarkoitetun muistissa olevan tietokannan, välillä.</value>
+  </data>
+  <data name="Enter Dashboard" xml:space="preserve">
+    <value>Mene hallintapaneeliin</value>
   </data>
   <data name="FAQ" xml:space="preserve">
     <value>UKK</value>
@@ -105,6 +126,9 @@
   <data name="Frequently asked questions" xml:space="preserve">
     <value>Usein kysytyt kysymykset</value>
   </data>
+  <data name="Get up-to-the-second updates on your server&apos;s CPU, memory, disk, and network usage." xml:space="preserve">
+    <value>Saapu uusimpiin päivityksiin palvelimesi CPU-, muisti-, levy- ja verkkokäytön suhteen.</value>
+  </data>
   <data name="Go to dashboard" xml:space="preserve">
     <value>Siirry kojelautaan</value>
   </data>
@@ -126,6 +150,9 @@
   <data name="Includes extensive documentation and practical examples to get you started quickly." xml:space="preserve">
     <value>Sisältää laajan dokumentaation ja käytännön esimerkit, joiden avulla pääset nopeasti alkuun.</value>
   </data>
+  <data name="Instant Alerts" xml:space="preserve">
+    <value>Hetkelliset varoitukset</value>
+  </data>
   <data name="Integrated File Management" xml:space="preserve">
     <value>Integroitu tiedostonhallinta</value>
   </data>
@@ -141,20 +168,44 @@
   <data name="Join our community and start monitoring today!" xml:space="preserve">
     <value>Liity yhteisöömme ja aloita palvelinten seuranta tänään!</value>
   </data>
+  <data name="Join the community of developers monitoring their infrastructure with StatHub." xml:space="preserve">
+    <value>Liity kehittäjien yhteisöön, jotka seuraavat infrastruktuurinsa tilaa StatHubilla.</value>
+  </data>
+  <data name="Keep an eye on your infrastructure with intuitive dashboards and detailed metrics." xml:space="preserve">
+    <value>Seuraa infrastruktuuriasi helppokäyttöisillä paneeleilla ja tarkkaillaan mittauksilla.</value>
+  </data>
+  <data name="Lightweight Agents" xml:space="preserve">
+    <value>Kevyt agentit</value>
+  </data>
+  <data name="Live Demo" xml:space="preserve">
+    <value>Live Demo</value>
+  </data>
+  <data name="Low-overhead agents collect metrics without impacting your server&apos;s performance." xml:space="preserve">
+    <value>Vähän kuormitusta aiheuttavat agentit keräävät mittauksia ilman, että ne vaikuttavat palvelimen suorituskykyyn.</value>
+  </data>
   <data name="Markdown To HTML" xml:space="preserve">
     <value>Markdownista HTML:ksi</value>
   </data>
   <data name="MIT Licence" xml:space="preserve">
     <value>MIT-lisenssi</value>
   </data>
+  <data name="Monitor multiple servers from a single centralized dashboard. Scale as your infrastructure grows." xml:space="preserve">
+    <value>Seuraa useita palvelimia yhdestä keskitetystä仪表-alueesta. Skalaa infrastruktuurisi kasvaessa.</value>
+  </data>
   <data name="Monitor your servers," xml:space="preserve">
     <value>Seuraa palvelimiasi,</value>
+  </data>
+  <data name="Multi-Node" xml:space="preserve">
+    <value>Useita solmuja</value>
   </data>
   <data name="Multiple Database Support" xml:space="preserve">
     <value>Usean tietokannan tuki</value>
   </data>
   <data name="Music Tools" xml:space="preserve">
     <value>Musiikkityökalut</value>
+  </data>
+  <data name="Open API allows for easy integration with your existing tools and workflows." xml:space="preserve">
+    <value>Avoin sovellusliittymä mahdollistaa helpon integroinnin olemassa oleviin työkaluihin ja työvirtoihin.</value>
   </data>
   <data name="Open Source" xml:space="preserve">
     <value>Avoin lähdekoodi</value>
@@ -168,6 +219,12 @@
   <data name="Read the document" xml:space="preserve">
     <value>Lue dokumentti</value>
   </data>
+  <data name="Ready to get started?" xml:space="preserve">
+    <value>Valmis aloittamaan?</value>
+  </data>
+  <data name="Real-time" xml:space="preserve">
+    <value>Reaaliaikainen</value>
+  </data>
   <data name="Responsive Design" xml:space="preserve">
     <value>Responsiivinen suunnittelu</value>
   </data>
@@ -177,8 +234,23 @@
   <data name="Seamlessly integrate with any OpenID Connect provider, with automatic role synchronization." xml:space="preserve">
     <value>Saatumattomasti integroi minkä tahansa OpenID Connect -palveluntarjoajan kanssa, automaattisen roolisynkronoinnin avulla.</value>
   </data>
+  <data name="Secure" xml:space="preserve">
+    <value>Turvallinen</value>
+  </data>
+  <data name="See the status of all your nodes at a glance. Identify issues before they become outages." xml:space="preserve">
+    <value>Näe kaikkien solujesi tila heti silmään. Huomaa ongelmat ennen kuin ne muuttuvat lopettamisiksi.</value>
+  </data>
+  <data name="Self Host" xml:space="preserve">
+    <value>Omistuspalvelu</value>
+  </data>
   <data name="Self host your own" xml:space="preserve">
     <value>Isännöi omaa palvelintasi</value>
+  </data>
+  <data name="Self-Hosted" xml:space="preserve">
+    <value>Itseisesti isännöidytty</value>
+  </data>
+  <data name="Simplicity by Design" xml:space="preserve">
+    <value>Yksinkertaisuus suunnittelun mukaan</value>
   </data>
   <data name="Smart dark mode that automatically adapts to the user&apos;s system settings." xml:space="preserve">
     <value>Älykäs tumma tila, joka mukautuu automaattisesti käyttäjän järjestelmäasetuksiin.</value>
@@ -188,6 +260,9 @@
   </data>
   <data name="Technical Lead" xml:space="preserve">
     <value>Tekninen Päällikkö</value>
+  </data>
+  <data name="The essential tool for monitoring your servers&apos; health and performance." xml:space="preserve">
+    <value>Välttämätön työkalu palvelimiasi koskevan terveyden ja suorituskyvyn seurantaan.</value>
   </data>
   <data name="The navigation bar automatically adjusts based on user roles and permissions." xml:space="preserve">
     <value>Navigointipalkki sopeutuu automaattisesti käyttäjän roolien ja käyttöoikeuksien perusteella.</value>
@@ -207,6 +282,9 @@
   <data name="Use it as a foundation for your SaaS, a backend for your mobile app, a corporate website, or a personal blog. The possibilities are endless." xml:space="preserve">
     <value>Käytä sitä perustana SaaS-palvelullesi, mobiilisovelluksesi taustajärjestelmänä, yrityssivustona tai henkilökohtaisena blogina. Mahdollisuudet ovat rajattomat.</value>
   </data>
+  <data name="View on GitHub" xml:space="preserve">
+    <value>Näytä GitHubissa</value>
+  </data>
   <data name="View Source on GitHub" xml:space="preserve">
     <value>Näytä lähdekoodi GitHubissa</value>
   </data>
@@ -219,6 +297,9 @@
   <data name="What our developers say" xml:space="preserve">
     <value>Mitä kehittäjämme sanovat</value>
   </data>
+  <data name="Why Choose StatHub?" xml:space="preserve">
+    <value>Miksi valita StatHub?</value>
+  </data>
   <data name="Why use the Aiursoft Template?" xml:space="preserve">
     <value>Miksi käyttää Aiursoft Templatea?</value>
   </data>
@@ -230,6 +311,9 @@
   </data>
   <data name="You&apos;ll need the .NET 10 SDK, npm and your favorite IDE, like Visual Studio or JetBrains Rider. You can find the full setup guide in our documentation." xml:space="preserve">
     <value>Tarvitset .NET 10 SDK:n, npm:n ja suosikki-IDE:si, kuten Visual Studion tai JetBrains Riderin. Löydät täydellisen asennusoppaan dokumentaatiostamme.</value>
+  </data>
+  <data name="Your Server Status" xml:space="preserve">
+    <value>Palvelimesi tila</value>
   </data>
 
 </root>

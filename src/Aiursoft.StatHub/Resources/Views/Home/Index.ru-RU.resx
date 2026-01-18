@@ -30,6 +30,9 @@
   <data name="A modern, feature-rich, and highly extensible foundation for your next web application." xml:space="preserve">
     <value>Современная, многофункциональная и легко расширяемая основа для вашего следующего веб-приложения.</value>
   </data>
+  <data name="A simple, real-time server monitoring system designed for local deployment." xml:space="preserve">
+    <value>Простая система мониторинга серверов в реальном времени, разработанная для локального развертывания.</value>
+  </data>
   <data name="Achieve more with Aiursoft Template" xml:space="preserve">
     <value>Достигайте большего с Aiursoft Template</value>
   </data>
@@ -66,8 +69,23 @@
   <data name="Comprehensive Documentation" xml:space="preserve">
     <value>Полная документация</value>
   </data>
+  <data name="Containerized" xml:space="preserve">
+    <value>Контейнеризированный</value>
+  </data>
+  <data name="Core Features" xml:space="preserve">
+    <value>Основные функции</value>
+  </data>
   <data name="Dashboard Website" xml:space="preserve">
     <value>Веб-сайт панели управления</value>
+  </data>
+  <data name="Data stays on your servers. Authentication and authorization ensure only you can access your metrics." xml:space="preserve">
+    <value>Данные остаются на ваших серверах. Аутентификация и авторизация обеспечивают, что доступ к вашим метрикам имеют только вы.</value>
+  </data>
+  <data name="Deploy in seconds with Docker. Designed for modern cloud-native environments." xml:space="preserve">
+    <value>Развертывайте за считанные секунды с помощью Docker. Создано для современных облачных сред.</value>
+  </data>
+  <data name="Developer Friendly" xml:space="preserve">
+    <value>Дружелюбно к разработчикам</value>
   </data>
   <data name="Discussions page" xml:space="preserve">
     <value>Страница обсуждений</value>
@@ -83,6 +101,9 @@
   </data>
   <data name="Easily switch between providers like SQLite, MySQL, SQL Server, and an in-memory database for testing." xml:space="preserve">
     <value>Легко переключайтесь между поставщиками, такими как SQLite, MySQL, SQL Server, и используйте базу данных в памяти для тестирования.</value>
+  </data>
+  <data name="Enter Dashboard" xml:space="preserve">
+    <value>Перейти в панель управления</value>
   </data>
   <data name="FAQ" xml:space="preserve">
     <value>ЧАВО</value>
@@ -105,6 +126,9 @@
   <data name="Frequently asked questions" xml:space="preserve">
     <value>Часто задаваемые вопросы</value>
   </data>
+  <data name="Get up-to-the-second updates on your server&apos;s CPU, memory, disk, and network usage." xml:space="preserve">
+    <value>Получайте обновления в режиме реального времени о загрузке ЦП, памяти, диска и сети вашего сервера.</value>
+  </data>
   <data name="Go to dashboard" xml:space="preserve">
     <value>Перейти в панель управления</value>
   </data>
@@ -126,6 +150,9 @@
   <data name="Includes extensive documentation and practical examples to get you started quickly." xml:space="preserve">
     <value>Включает обширную документацию и практические примеры для быстрого начала работы.</value>
   </data>
+  <data name="Instant Alerts" xml:space="preserve">
+    <value>Мгновенные оповещения</value>
+  </data>
   <data name="Integrated File Management" xml:space="preserve">
     <value>Интегрированное управление файлами</value>
   </data>
@@ -141,20 +168,44 @@
   <data name="Join our community and start monitoring today!" xml:space="preserve">
     <value>Присоединяйтесь к нашему сообществу и начните мониторинг уже сегодня!</value>
   </data>
+  <data name="Join the community of developers monitoring their infrastructure with StatHub." xml:space="preserve">
+    <value>Присоединяйтесь к сообществу разработчиков, отслеживающих свою инфраструктуру с помощью StatHub.</value>
+  </data>
+  <data name="Keep an eye on your infrastructure with intuitive dashboards and detailed metrics." xml:space="preserve">
+    <value>Следите за состоянием своей инфраструктуры с удобными панелями мониторинга и подробными метриками.</value>
+  </data>
+  <data name="Lightweight Agents" xml:space="preserve">
+    <value>Легковесные агенты</value>
+  </data>
+  <data name="Live Demo" xml:space="preserve">
+    <value>Живая демонстрация</value>
+  </data>
+  <data name="Low-overhead agents collect metrics without impacting your server&apos;s performance." xml:space="preserve">
+    <value>Небольшие агенты собирают метрики, не влияя на производительность вашего сервера.</value>
+  </data>
   <data name="Markdown To HTML" xml:space="preserve">
     <value>Markdown в HTML</value>
   </data>
   <data name="MIT Licence" xml:space="preserve">
     <value>Лицензия MIT</value>
   </data>
+  <data name="Monitor multiple servers from a single centralized dashboard. Scale as your infrastructure grows." xml:space="preserve">
+    <value>Мониторьте несколько серверов с единого централизованного панели управления. Масштабируйтесь по мере роста вашей инфраструктуры.</value>
+  </data>
   <data name="Monitor your servers," xml:space="preserve">
     <value>Мониторьте свои серверы,</value>
+  </data>
+  <data name="Multi-Node" xml:space="preserve">
+    <value>Многоузловая</value>
   </data>
   <data name="Multiple Database Support" xml:space="preserve">
     <value>Поддержка нескольких баз данных</value>
   </data>
   <data name="Music Tools" xml:space="preserve">
     <value>Музыкальные инструменты</value>
+  </data>
+  <data name="Open API allows for easy integration with your existing tools and workflows." xml:space="preserve">
+    <value>Открытый API позволяет легко интегрировать систему с вашими существующими инструментами и рабочими процессами.</value>
   </data>
   <data name="Open Source" xml:space="preserve">
     <value>Открытое ПО</value>
@@ -168,6 +219,12 @@
   <data name="Read the document" xml:space="preserve">
     <value>Прочитать документацию</value>
   </data>
+  <data name="Ready to get started?" xml:space="preserve">
+    <value>Готовы приступить к работе?</value>
+  </data>
+  <data name="Real-time" xml:space="preserve">
+    <value>В реальном времени</value>
+  </data>
   <data name="Responsive Design" xml:space="preserve">
     <value>Адаптивный дизайн</value>
   </data>
@@ -177,8 +234,23 @@
   <data name="Seamlessly integrate with any OpenID Connect provider, with automatic role synchronization." xml:space="preserve">
     <value>Беспрепятственно интегрируйтесь с любым провайдером OpenID Connect с автоматической синхронизацией ролей.</value>
   </data>
+  <data name="Secure" xml:space="preserve">
+    <value>Безопасно</value>
+  </data>
+  <data name="See the status of all your nodes at a glance. Identify issues before they become outages." xml:space="preserve">
+    <value>Просмотрите состояние всех ваших узлов одним взглядом. Выявляйте проблемы до того, как они приведут к сбоям.</value>
+  </data>
+  <data name="Self Host" xml:space="preserve">
+    <value>Самостоятельная установка</value>
+  </data>
   <data name="Self host your own" xml:space="preserve">
     <value>Разверните свою собственную версию</value>
+  </data>
+  <data name="Self-Hosted" xml:space="preserve">
+    <value>Самостоятельная развертка</value>
+  </data>
+  <data name="Simplicity by Design" xml:space="preserve">
+    <value>Простота по дизайну</value>
   </data>
   <data name="Smart dark mode that automatically adapts to the user&apos;s system settings." xml:space="preserve">
     <value>Умный тёмный режим, который автоматически подстраивается под системные настройки пользователя.</value>
@@ -188,6 +260,9 @@
   </data>
   <data name="Technical Lead" xml:space="preserve">
     <value>Ведущий разработчик</value>
+  </data>
+  <data name="The essential tool for monitoring your servers&apos; health and performance." xml:space="preserve">
+    <value>Необходимый инструмент для мониторинга состояния и производительности ваших серверов.</value>
   </data>
   <data name="The navigation bar automatically adjusts based on user roles and permissions." xml:space="preserve">
     <value>Панель навигации автоматически настраивается в зависимости от ролей и разрешений пользователя.</value>
@@ -207,6 +282,9 @@
   <data name="Use it as a foundation for your SaaS, a backend for your mobile app, a corporate website, or a personal blog. The possibilities are endless." xml:space="preserve">
     <value>Используйте его как основу для вашего SaaS, бэкенд для мобильного приложения, корпоративный сайт или личный блог. Возможности безграничны.</value>
   </data>
+  <data name="View on GitHub" xml:space="preserve">
+    <value>Просмотреть на GitHub</value>
+  </data>
   <data name="View Source on GitHub" xml:space="preserve">
     <value>Просмотреть исходный код на GitHub</value>
   </data>
@@ -219,6 +297,9 @@
   <data name="What our developers say" xml:space="preserve">
     <value>Что говорят наши разработчики</value>
   </data>
+  <data name="Why Choose StatHub?" xml:space="preserve">
+    <value>Почему выбирают StatHub?</value>
+  </data>
   <data name="Why use the Aiursoft Template?" xml:space="preserve">
     <value>Почему стоит использовать шаблон Aiursoft?</value>
   </data>
@@ -230,6 +311,9 @@
   </data>
   <data name="You&apos;ll need the .NET 10 SDK, npm and your favorite IDE, like Visual Studio or JetBrains Rider. You can find the full setup guide in our documentation." xml:space="preserve">
     <value>Вам понадобятся .NET 10 SDK, npm и ваша любимая IDE, например Visual Studio или JetBrains Rider. Полное руководство по настройке вы найдёте в нашей документации.</value>
+  </data>
+  <data name="Your Server Status" xml:space="preserve">
+    <value>Ваше состояние сервера</value>
   </data>
 
 </root>
