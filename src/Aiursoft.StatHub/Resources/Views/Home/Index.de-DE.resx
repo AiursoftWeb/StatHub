@@ -30,6 +30,9 @@
   <data name="A modern, feature-rich, and highly extensible foundation for your next web application." xml:space="preserve">
     <value>Eine moderne, funktionsreiche und hochgradig erweiterbare Grundlage für Ihre nächste Webanwendung.</value>
   </data>
+  <data name="A simple, real-time server monitoring system designed for local deployment." xml:space="preserve">
+    <value>Ein einfaches, Echtzeit-Server-Monitoring-System, das für die lokale Bereitstellung konzipiert ist.</value>
+  </data>
   <data name="Achieve more with Aiursoft Template" xml:space="preserve">
     <value>Erreichen Sie mehr mit Aiursoft Template</value>
   </data>
@@ -66,8 +69,23 @@
   <data name="Comprehensive Documentation" xml:space="preserve">
     <value>Umfassende Dokumentation</value>
   </data>
+  <data name="Containerized" xml:space="preserve">
+    <value>Containerisiert</value>
+  </data>
+  <data name="Core Features" xml:space="preserve">
+    <value>Kernfunktionen</value>
+  </data>
   <data name="Dashboard Website" xml:space="preserve">
     <value>Dashboard-Website</value>
+  </data>
+  <data name="Data stays on your servers. Authentication and authorization ensure only you can access your metrics." xml:space="preserve">
+    <value>Daten bleiben auf Ihren Servern. Authentifizierung und Autorisierung stellen sicher, dass nur Sie auf Ihre Metriken zugreifen können.</value>
+  </data>
+  <data name="Deploy in seconds with Docker. Designed for modern cloud-native environments." xml:space="preserve">
+    <value>In Sekunden mit Docker bereitstellen. Für moderne cloud-native Umgebungen konzipiert.</value>
+  </data>
+  <data name="Developer Friendly" xml:space="preserve">
+    <value>Entwicklerfreundlich</value>
   </data>
   <data name="Discussions page" xml:space="preserve">
     <value>Diskussionsseite</value>
@@ -83,6 +101,9 @@
   </data>
   <data name="Easily switch between providers like SQLite, MySQL, SQL Server, and an in-memory database for testing." xml:space="preserve">
     <value>Wechseln Sie problemlos zwischen Anbietern wie SQLite, MySQL, SQL Server und einer In-Memory-Datenbank für Tests.</value>
+  </data>
+  <data name="Enter Dashboard" xml:space="preserve">
+    <value>Zum Dashboard wechseln</value>
   </data>
   <data name="FAQ" xml:space="preserve">
     <value>FAQ</value>
@@ -105,6 +126,9 @@
   <data name="Frequently asked questions" xml:space="preserve">
     <value>Häufig gestellte Fragen</value>
   </data>
+  <data name="Get up-to-the-second updates on your server&apos;s CPU, memory, disk, and network usage." xml:space="preserve">
+    <value>Erhalten Sie aktuelle Aktualisierungen zu CPU, Speicher, Festplatte und Netzwerknutzung Ihres Servers.</value>
+  </data>
   <data name="Go to dashboard" xml:space="preserve">
     <value>Zum Dashboard</value>
   </data>
@@ -126,6 +150,9 @@
   <data name="Includes extensive documentation and practical examples to get you started quickly." xml:space="preserve">
     <value>Umfasst umfangreiche Dokumentation und praktische Beispiele, um Ihnen einen schnellen Einstieg zu ermöglichen.</value>
   </data>
+  <data name="Instant Alerts" xml:space="preserve">
+    <value>Sofortbenachrichtigungen</value>
+  </data>
   <data name="Integrated File Management" xml:space="preserve">
     <value>Integriertes Dateimanagement</value>
   </data>
@@ -141,20 +168,44 @@
   <data name="Join our community and start monitoring today!" xml:space="preserve">
     <value>Treten Sie unserer Community bei und starten Sie noch heute mit der Überwachung!</value>
   </data>
+  <data name="Join the community of developers monitoring their infrastructure with StatHub." xml:space="preserve">
+    <value>Treten Sie der Community von Entwicklern bei, die ihre Infrastruktur mit StatHub überwachen.</value>
+  </data>
+  <data name="Keep an eye on your infrastructure with intuitive dashboards and detailed metrics." xml:space="preserve">
+    <value>Achten Sie auf Ihre Infrastruktur mit intuitiven Dashboards und detaillierten Metriken.</value>
+  </data>
+  <data name="Lightweight Agents" xml:space="preserve">
+    <value>Leichte Agenten</value>
+  </data>
+  <data name="Live Demo" xml:space="preserve">
+    <value>Live Demo</value>
+  </data>
+  <data name="Low-overhead agents collect metrics without impacting your server&apos;s performance." xml:space="preserve">
+    <value>Leichte Agenten sammeln Metriken ein, ohne die Leistung Ihres Servers zu beeinträchtigen.</value>
+  </data>
   <data name="Markdown To HTML" xml:space="preserve">
     <value>Markdown zu HTML</value>
   </data>
   <data name="MIT Licence" xml:space="preserve">
     <value>MIT-Lizenz</value>
   </data>
+  <data name="Monitor multiple servers from a single centralized dashboard. Scale as your infrastructure grows." xml:space="preserve">
+    <value>Überwachen Sie mehrere Server von einer einzigen zentralen Dashboard aus. Skalieren Sie mit Ihrem Infrastrukturbau.</value>
+  </data>
   <data name="Monitor your servers," xml:space="preserve">
     <value>Überwachen Sie Ihre Server,</value>
+  </data>
+  <data name="Multi-Node" xml:space="preserve">
+    <value>Mehrere Knoten</value>
   </data>
   <data name="Multiple Database Support" xml:space="preserve">
     <value>Unterstützung mehrerer Datenbanken</value>
   </data>
   <data name="Music Tools" xml:space="preserve">
     <value>Musik-Tools</value>
+  </data>
+  <data name="Open API allows for easy integration with your existing tools and workflows." xml:space="preserve">
+    <value>Open API ermöglicht eine einfache Integration in Ihre bestehenden Tools und Workflows.</value>
   </data>
   <data name="Open Source" xml:space="preserve">
     <value>Open Source</value>
@@ -168,6 +219,12 @@
   <data name="Read the document" xml:space="preserve">
     <value>Dokumentation lesen</value>
   </data>
+  <data name="Ready to get started?" xml:space="preserve">
+    <value>Bereit, loszulegen?</value>
+  </data>
+  <data name="Real-time" xml:space="preserve">
+    <value>Echtzeit</value>
+  </data>
   <data name="Responsive Design" xml:space="preserve">
     <value>Responsives Design</value>
   </data>
@@ -177,8 +234,23 @@
   <data name="Seamlessly integrate with any OpenID Connect provider, with automatic role synchronization." xml:space="preserve">
     <value>Nahtlose Integration mit jedem OpenID Connect-Anbieter, mit automatischer Rollensynchronisierung.</value>
   </data>
+  <data name="Secure" xml:space="preserve">
+    <value>Sicher</value>
+  </data>
+  <data name="See the status of all your nodes at a glance. Identify issues before they become outages." xml:space="preserve">
+    <value>Sehen Sie den Status aller Ihre Knoten auf einen Blick. Identifizieren Sie Probleme, bevor sie zu Ausfällen werden.</value>
+  </data>
+  <data name="Self Host" xml:space="preserve">
+    <value>Selbst hosten</value>
+  </data>
   <data name="Self host your own" xml:space="preserve">
     <value>Eigenes Hosting betreiben</value>
+  </data>
+  <data name="Self-Hosted" xml:space="preserve">
+    <value>Selbst gehostet</value>
+  </data>
+  <data name="Simplicity by Design" xml:space="preserve">
+    <value>Einfachheit durch Gestaltung</value>
   </data>
   <data name="Smart dark mode that automatically adapts to the user&apos;s system settings." xml:space="preserve">
     <value>Intelligenter Dunkelmodus, der sich automatisch an die Systemeinstellungen des Benutzers anpasst.</value>
@@ -188,6 +260,9 @@
   </data>
   <data name="Technical Lead" xml:space="preserve">
     <value>Technischer Leiter</value>
+  </data>
+  <data name="The essential tool for monitoring your servers&apos; health and performance." xml:space="preserve">
+    <value>Das unverzichtbare Werkzeug zur Überwachung der Gesundheit und Leistung Ihrer Server.</value>
   </data>
   <data name="The navigation bar automatically adjusts based on user roles and permissions." xml:space="preserve">
     <value>Die Navigationsleiste passt sich automatisch basierend auf Benutzerrollen und Berechtigungen an.</value>
@@ -207,6 +282,9 @@
   <data name="Use it as a foundation for your SaaS, a backend for your mobile app, a corporate website, or a personal blog. The possibilities are endless." xml:space="preserve">
     <value>Nutzen Sie es als Grundlage für Ihr SaaS, als Backend für Ihre mobile App, als Unternehmenswebsite oder als persönlichen Blog. Die Möglichkeiten sind endlos.</value>
   </data>
+  <data name="View on GitHub" xml:space="preserve">
+    <value>Auf GitHub ansehen</value>
+  </data>
   <data name="View Source on GitHub" xml:space="preserve">
     <value>Quellcode auf GitHub anzeigen</value>
   </data>
@@ -219,6 +297,9 @@
   <data name="What our developers say" xml:space="preserve">
     <value>Was unsere Entwickler sagen</value>
   </data>
+  <data name="Why Choose StatHub?" xml:space="preserve">
+    <value>Warum StatHub wählen?</value>
+  </data>
   <data name="Why use the Aiursoft Template?" xml:space="preserve">
     <value>Warum das Aiursoft Template verwenden?</value>
   </data>
@@ -230,6 +311,9 @@
   </data>
   <data name="You&apos;ll need the .NET 10 SDK, npm and your favorite IDE, like Visual Studio or JetBrains Rider. You can find the full setup guide in our documentation." xml:space="preserve">
     <value>Sie benötigen das .NET 10 SDK, npm und Ihre bevorzugte IDE, wie Visual Studio oder JetBrains Rider. Die vollständige Anleitung zur Einrichtung finden Sie in unserer Dokumentation.</value>
+  </data>
+  <data name="Your Server Status" xml:space="preserve">
+    <value>Ihr Serverstatus</value>
   </data>
 
 </root>

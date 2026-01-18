@@ -30,6 +30,9 @@
   <data name="A modern, feature-rich, and highly extensible foundation for your next web application." xml:space="preserve">
     <value>현대적이고, 기능이 풍부하며, 매우 확장 가능한 기반을 제공하여 차세대 웹 애플리케이션을 구축할 수 있습니다.</value>
   </data>
+  <data name="A simple, real-time server monitoring system designed for local deployment." xml:space="preserve">
+    <value>간단하고 실시간으로 작동하는 서버 모니터링 시스템으로, 로컬 배포를 위해 설계되었습니다.</value>
+  </data>
   <data name="Achieve more with Aiursoft Template" xml:space="preserve">
     <value>Aiursoft 템플릿으로 더 많은 성과를 이루세요</value>
   </data>
@@ -66,8 +69,23 @@
   <data name="Comprehensive Documentation" xml:space="preserve">
     <value>포괄적인 문서</value>
   </data>
+  <data name="Containerized" xml:space="preserve">
+    <value>컨테이너화됨</value>
+  </data>
+  <data name="Core Features" xml:space="preserve">
+    <value>핵심 기능</value>
+  </data>
   <data name="Dashboard Website" xml:space="preserve">
     <value>대시보드 웹사이트</value>
+  </data>
+  <data name="Data stays on your servers. Authentication and authorization ensure only you can access your metrics." xml:space="preserve">
+    <value>데이터는 귀하의 서버에만 저장됩니다. 인증 및 권한 부여를 통해 귀하만이 메트릭을 접근할 수 있습니다.</value>
+  </data>
+  <data name="Deploy in seconds with Docker. Designed for modern cloud-native environments." xml:space="preserve">
+    <value>Docker로 몇 초 만에 배포하세요. 현대적인 클라우드 네이티브 환경을 위한 설계입니다.</value>
+  </data>
+  <data name="Developer Friendly" xml:space="preserve">
+    <value>개발자 친화적</value>
   </data>
   <data name="Discussions page" xml:space="preserve">
     <value>토론 페이지</value>
@@ -83,6 +101,9 @@
   </data>
   <data name="Easily switch between providers like SQLite, MySQL, SQL Server, and an in-memory database for testing." xml:space="preserve">
     <value>SQLite, MySQL, SQL Server 및 테스트용 인메모리 데이터베이스와 같은 프로바이더 간에 쉽게 전환할 수 있습니다.</value>
+  </data>
+  <data name="Enter Dashboard" xml:space="preserve">
+    <value>대시보드로 이동</value>
   </data>
   <data name="FAQ" xml:space="preserve">
     <value>자주 묻는 질문</value>
@@ -105,6 +126,9 @@
   <data name="Frequently asked questions" xml:space="preserve">
     <value>자주 묻는 질문</value>
   </data>
+  <data name="Get up-to-the-second updates on your server&apos;s CPU, memory, disk, and network usage." xml:space="preserve">
+    <value>서버의 CPU, 메모리, 디스크 및 네트워크 사용량에 대한 실시간 업데이트를 확인하세요.</value>
+  </data>
   <data name="Go to dashboard" xml:space="preserve">
     <value>대시보드로 이동</value>
   </data>
@@ -126,6 +150,9 @@
   <data name="Includes extensive documentation and practical examples to get you started quickly." xml:space="preserve">
     <value>풍부한 문서와 실용적인 예제를 포함하여 빠르게 시작할 수 있도록 합니다.</value>
   </data>
+  <data name="Instant Alerts" xml:space="preserve">
+    <value>즉시 알림</value>
+  </data>
   <data name="Integrated File Management" xml:space="preserve">
     <value>통합 파일 관리</value>
   </data>
@@ -141,20 +168,44 @@
   <data name="Join our community and start monitoring today!" xml:space="preserve">
     <value>지금 커뮤니티에 참여하고 모니터링을 시작하세요!</value>
   </data>
+  <data name="Join the community of developers monitoring their infrastructure with StatHub." xml:space="preserve">
+    <value>StatHub로 자신의 인프라를 모니터링하는 개발자 커뮤니티에 가입하세요.</value>
+  </data>
+  <data name="Keep an eye on your infrastructure with intuitive dashboards and detailed metrics." xml:space="preserve">
+    <value>직관적인 대시보드와 상세한 메트릭을 통해 인프라를 꾸준히 모니터링하세요.</value>
+  </data>
+  <data name="Lightweight Agents" xml:space="preserve">
+    <value>경량 에이전트</value>
+  </data>
+  <data name="Live Demo" xml:space="preserve">
+    <value>라이브 데모</value>
+  </data>
+  <data name="Low-overhead agents collect metrics without impacting your server&apos;s performance." xml:space="preserve">
+    <value>저부하 에이전트가 서버 성능에 영향을 주지 않고 메트릭을 수집합니다.</value>
+  </data>
   <data name="Markdown To HTML" xml:space="preserve">
     <value>마크다운을 HTML로 변환</value>
   </data>
   <data name="MIT Licence" xml:space="preserve">
     <value>MIT 라이선스</value>
   </data>
+  <data name="Monitor multiple servers from a single centralized dashboard. Scale as your infrastructure grows." xml:space="preserve">
+    <value>단일 중앙 집중형 대시보드에서 여러 서버를 모니터링하세요. 인프라가 확장될수록 스케일하세요.</value>
+  </data>
   <data name="Monitor your servers," xml:space="preserve">
     <value>서버를 모니터링하세요,</value>
+  </data>
+  <data name="Multi-Node" xml:space="preserve">
+    <value>다중 노드</value>
   </data>
   <data name="Multiple Database Support" xml:space="preserve">
     <value>다중 데이터베이스 지원</value>
   </data>
   <data name="Music Tools" xml:space="preserve">
     <value>음악 도구</value>
+  </data>
+  <data name="Open API allows for easy integration with your existing tools and workflows." xml:space="preserve">
+    <value>오픈 API는 기존 도구 및 워크플로우와의 간편한 통합을 가능하게 합니다.</value>
   </data>
   <data name="Open Source" xml:space="preserve">
     <value>오픈 소스</value>
@@ -168,6 +219,12 @@
   <data name="Read the document" xml:space="preserve">
     <value>문서 읽기</value>
   </data>
+  <data name="Ready to get started?" xml:space="preserve">
+    <value>시작하시겠습니까?</value>
+  </data>
+  <data name="Real-time" xml:space="preserve">
+    <value>실시간</value>
+  </data>
   <data name="Responsive Design" xml:space="preserve">
     <value>반응형 디자인</value>
   </data>
@@ -177,8 +234,23 @@
   <data name="Seamlessly integrate with any OpenID Connect provider, with automatic role synchronization." xml:space="preserve">
     <value>어떤 OpenID Connect 공급자와도 원활하게 통합되며, 자동 역할 동기화를 지원합니다.</value>
   </data>
+  <data name="Secure" xml:space="preserve">
+    <value>보안</value>
+  </data>
+  <data name="See the status of all your nodes at a glance. Identify issues before they become outages." xml:space="preserve">
+    <value>모든 노드의 상태를 한눈에 확인하세요. 장애가 발생하기 전에 문제를 조기에 발견하세요.</value>
+  </data>
+  <data name="Self Host" xml:space="preserve">
+    <value>자체 호스팅</value>
+  </data>
   <data name="Self host your own" xml:space="preserve">
     <value>자체 호스팅하기</value>
+  </data>
+  <data name="Self-Hosted" xml:space="preserve">
+    <value>자체 호스팅</value>
+  </data>
+  <data name="Simplicity by Design" xml:space="preserve">
+    <value>디자인의 단순함</value>
   </data>
   <data name="Smart dark mode that automatically adapts to the user&apos;s system settings." xml:space="preserve">
     <value>사용자의 시스템 설정에 자동으로 적응하는 스마트 다크 모드.</value>
@@ -188,6 +260,9 @@
   </data>
   <data name="Technical Lead" xml:space="preserve">
     <value>기술 리드</value>
+  </data>
+  <data name="The essential tool for monitoring your servers&apos; health and performance." xml:space="preserve">
+    <value>서버의 상태와 성능을 모니터링하는 핵심 도구입니다.</value>
   </data>
   <data name="The navigation bar automatically adjusts based on user roles and permissions." xml:space="preserve">
     <value>네비게이션 바는 사용자 역할과 권한에 따라 자동으로 조정됩니다.</value>
@@ -207,6 +282,9 @@
   <data name="Use it as a foundation for your SaaS, a backend for your mobile app, a corporate website, or a personal blog. The possibilities are endless." xml:space="preserve">
     <value>SaaS의 기반, 모바일 앱의 백엔드, 기업 웹사이트 또는 개인 블로그로 활용하세요. 가능성은 무궁무진합니다.</value>
   </data>
+  <data name="View on GitHub" xml:space="preserve">
+    <value>GitHub에서 보기</value>
+  </data>
   <data name="View Source on GitHub" xml:space="preserve">
     <value>GitHub에서 소스 보기</value>
   </data>
@@ -219,6 +297,9 @@
   <data name="What our developers say" xml:space="preserve">
     <value>개발자들의 평가</value>
   </data>
+  <data name="Why Choose StatHub?" xml:space="preserve">
+    <value>StatHub를 선택해야 하는 이유는?</value>
+  </data>
   <data name="Why use the Aiursoft Template?" xml:space="preserve">
     <value>Aiursoft 템플릿을 사용하는 이유</value>
   </data>
@@ -230,6 +311,9 @@
   </data>
   <data name="You&apos;ll need the .NET 10 SDK, npm and your favorite IDE, like Visual Studio or JetBrains Rider. You can find the full setup guide in our documentation." xml:space="preserve">
     <value>.NET 10 SDK, npm 그리고 Visual Studio나 JetBrains Rider와 같은 선호하는 IDE가 필요합니다. 전체 설정 가이드는 저희 문서에서 확인하실 수 있습니다.</value>
+  </data>
+  <data name="Your Server Status" xml:space="preserve">
+    <value>당신의 서버 상태</value>
   </data>
 
 </root>

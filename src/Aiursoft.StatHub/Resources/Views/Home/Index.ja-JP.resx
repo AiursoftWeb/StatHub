@@ -30,6 +30,9 @@
   <data name="A modern, feature-rich, and highly extensible foundation for your next web application." xml:space="preserve">
     <value>モダンで機能豊富、かつ高度に拡張可能な基盤を、あなたの次のWebアプリケーションに提供します。</value>
   </data>
+  <data name="A simple, real-time server monitoring system designed for local deployment." xml:space="preserve">
+    <value>ローカルデプロイメントを想定した、シンプルでリアルタイムのサーバー監視システム。</value>
+  </data>
   <data name="Achieve more with Aiursoft Template" xml:space="preserve">
     <value>Aiursoft Templateでさらに多くのことを実現</value>
   </data>
@@ -66,8 +69,23 @@
   <data name="Comprehensive Documentation" xml:space="preserve">
     <value>包括的なドキュメント</value>
   </data>
+  <data name="Containerized" xml:space="preserve">
+    <value>コンテナ化</value>
+  </data>
+  <data name="Core Features" xml:space="preserve">
+    <value>コア機能</value>
+  </data>
   <data name="Dashboard Website" xml:space="preserve">
     <value>ダッシュボードウェブサイト</value>
+  </data>
+  <data name="Data stays on your servers. Authentication and authorization ensure only you can access your metrics." xml:space="preserve">
+    <value>データはあなたのサーバー上に留まります。認証と承認により、あなた以外の誰もメトリクスにアクセスできません。</value>
+  </data>
+  <data name="Deploy in seconds with Docker. Designed for modern cloud-native environments." xml:space="preserve">
+    <value>Dockerで数秒でデプロイ。現代のクラウドネイティブ環境向けに設計されています。</value>
+  </data>
+  <data name="Developer Friendly" xml:space="preserve">
+    <value>開発者向け</value>
   </data>
   <data name="Discussions page" xml:space="preserve">
     <value>ディスカッションページ</value>
@@ -83,6 +101,9 @@
   </data>
   <data name="Easily switch between providers like SQLite, MySQL, SQL Server, and an in-memory database for testing." xml:space="preserve">
     <value>SQLite、MySQL、SQL Server、およびテスト用のインメモリデータベースなどのプロバイダーを簡単に切り替えられます。</value>
+  </data>
+  <data name="Enter Dashboard" xml:space="preserve">
+    <value>ダッシュボードへ入る</value>
   </data>
   <data name="FAQ" xml:space="preserve">
     <value>よくある質問</value>
@@ -105,6 +126,9 @@
   <data name="Frequently asked questions" xml:space="preserve">
     <value>よくある質問</value>
   </data>
+  <data name="Get up-to-the-second updates on your server&apos;s CPU, memory, disk, and network usage." xml:space="preserve">
+    <value>サーバーのCPU、メモリ、ディスク、ネットワーク使用状況の最新情報を即時取得できます。</value>
+  </data>
   <data name="Go to dashboard" xml:space="preserve">
     <value>ダッシュボードへ</value>
   </data>
@@ -126,6 +150,9 @@
   <data name="Includes extensive documentation and practical examples to get you started quickly." xml:space="preserve">
     <value>豊富なドキュメントと実用的な例を含んでいるため、すぐに使い始めることができます。</value>
   </data>
+  <data name="Instant Alerts" xml:space="preserve">
+    <value>即時アラート</value>
+  </data>
   <data name="Integrated File Management" xml:space="preserve">
     <value>統合ファイル管理</value>
   </data>
@@ -141,20 +168,44 @@
   <data name="Join our community and start monitoring today!" xml:space="preserve">
     <value>コミュニティに参加して、今すぐ監視を始めましょう！</value>
   </data>
+  <data name="Join the community of developers monitoring their infrastructure with StatHub." xml:space="preserve">
+    <value>StatHubでインフラ構成を監視している開発者コミュニティに参加しましょう。</value>
+  </data>
+  <data name="Keep an eye on your infrastructure with intuitive dashboards and detailed metrics." xml:space="preserve">
+    <value>直感的なダッシュボードと詳細なメトリクスで、インフラストラクチャを常に監視しましょう。</value>
+  </data>
+  <data name="Lightweight Agents" xml:space="preserve">
+    <value>軽量エージェント</value>
+  </data>
+  <data name="Live Demo" xml:space="preserve">
+    <value>ライブデモ</value>
+  </data>
+  <data name="Low-overhead agents collect metrics without impacting your server&apos;s performance." xml:space="preserve">
+    <value>低負荷のエージェントが、サーバーのパフォーマンスに影響を与えることなくメトリクスを収集します。</value>
+  </data>
   <data name="Markdown To HTML" xml:space="preserve">
     <value>MarkdownからHTMLへ</value>
   </data>
   <data name="MIT Licence" xml:space="preserve">
     <value>MITライセンス</value>
   </data>
+  <data name="Monitor multiple servers from a single centralized dashboard. Scale as your infrastructure grows." xml:space="preserve">
+    <value>1つの集中型ダッシュボードから複数のサーバーを監視できます。インフラストラクチャの拡大に伴ってスケーリングできます。</value>
+  </data>
   <data name="Monitor your servers," xml:space="preserve">
     <value>サーバーを監視し、</value>
+  </data>
+  <data name="Multi-Node" xml:space="preserve">
+    <value>マルチノード</value>
   </data>
   <data name="Multiple Database Support" xml:space="preserve">
     <value>複数データベースサポート</value>
   </data>
   <data name="Music Tools" xml:space="preserve">
     <value>音楽ツール</value>
+  </data>
+  <data name="Open API allows for easy integration with your existing tools and workflows." xml:space="preserve">
+    <value>Open API を使用すると、既存のツールやワークフローとの統合が簡単にできます。</value>
   </data>
   <data name="Open Source" xml:space="preserve">
     <value>オープンソース</value>
@@ -168,6 +219,12 @@
   <data name="Read the document" xml:space="preserve">
     <value>ドキュメントを読む</value>
   </data>
+  <data name="Ready to get started?" xml:space="preserve">
+    <value>始められますか？</value>
+  </data>
+  <data name="Real-time" xml:space="preserve">
+    <value>リアルタイム</value>
+  </data>
   <data name="Responsive Design" xml:space="preserve">
     <value>レスポンシブデザイン</value>
   </data>
@@ -177,8 +234,23 @@
   <data name="Seamlessly integrate with any OpenID Connect provider, with automatic role synchronization." xml:space="preserve">
     <value>あらゆるOpenID Connectプロバイダーとシームレスに統合し、自動的なロール同期を実現します。</value>
   </data>
+  <data name="Secure" xml:space="preserve">
+    <value>セキュア</value>
+  </data>
+  <data name="See the status of all your nodes at a glance. Identify issues before they become outages." xml:space="preserve">
+    <value>すべてのノードの状態を一目で確認できます。障害になる前に問題を早期に発見できます。</value>
+  </data>
+  <data name="Self Host" xml:space="preserve">
+    <value>セルフホスト</value>
+  </data>
   <data name="Self host your own" xml:space="preserve">
     <value>自分でホストする</value>
+  </data>
+  <data name="Self-Hosted" xml:space="preserve">
+    <value>セルフホスト</value>
+  </data>
+  <data name="Simplicity by Design" xml:space="preserve">
+    <value>設計によるシンプルさ</value>
   </data>
   <data name="Smart dark mode that automatically adapts to the user&apos;s system settings." xml:space="preserve">
     <value>ユーザーのシステム設定に自動的に適応するスマートダークモード。</value>
@@ -188,6 +260,9 @@
   </data>
   <data name="Technical Lead" xml:space="preserve">
     <value>テクニカルリード</value>
+  </data>
+  <data name="The essential tool for monitoring your servers&apos; health and performance." xml:space="preserve">
+    <value>サーバーの健全性とパフォーマンスを監視するための必須ツール。</value>
   </data>
   <data name="The navigation bar automatically adjusts based on user roles and permissions." xml:space="preserve">
     <value>ナビゲーションバーは、ユーザーの役割と権限に基づいて自動的に調整されます。</value>
@@ -207,6 +282,9 @@
   <data name="Use it as a foundation for your SaaS, a backend for your mobile app, a corporate website, or a personal blog. The possibilities are endless." xml:space="preserve">
     <value>SaaSの基盤として、モバイルアプリのバックエンドとして、コーポレートサイトとして、個人ブログとしてお使いいただけます。可能性は無限大です。</value>
   </data>
+  <data name="View on GitHub" xml:space="preserve">
+    <value>GitHubで表示</value>
+  </data>
   <data name="View Source on GitHub" xml:space="preserve">
     <value>GitHubでソースを表示</value>
   </data>
@@ -219,6 +297,9 @@
   <data name="What our developers say" xml:space="preserve">
     <value>開発者の声</value>
   </data>
+  <data name="Why Choose StatHub?" xml:space="preserve">
+    <value>StatHub を選ぶ理由は？</value>
+  </data>
   <data name="Why use the Aiursoft Template?" xml:space="preserve">
     <value>Aiursoftテンプレートを使用する理由</value>
   </data>
@@ -230,6 +311,9 @@
   </data>
   <data name="You&apos;ll need the .NET 10 SDK, npm and your favorite IDE, like Visual Studio or JetBrains Rider. You can find the full setup guide in our documentation." xml:space="preserve">
     <value>.NET 10 SDK、npm、そしてVisual StudioやJetBrains Riderのようなお好みのIDEが必要です。完全なセットアップガイドはドキュメントでご覧いただけます。</value>
+  </data>
+  <data name="Your Server Status" xml:space="preserve">
+    <value>あなたのサーバーの状態</value>
   </data>
 
 </root>

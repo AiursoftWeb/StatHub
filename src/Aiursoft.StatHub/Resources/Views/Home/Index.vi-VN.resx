@@ -30,6 +30,9 @@
   <data name="A modern, feature-rich, and highly extensible foundation for your next web application." xml:space="preserve">
     <value>Một nền tảng hiện đại, giàu tính năng và có khả năng mở rộng cao cho ứng dụng web tiếp theo của bạn.</value>
   </data>
+  <data name="A simple, real-time server monitoring system designed for local deployment." xml:space="preserve">
+    <value>Một hệ thống giám sát máy chủ đơn giản, thời gian thực, được thiết kế để triển khai cục bộ.</value>
+  </data>
   <data name="Achieve more with Aiursoft Template" xml:space="preserve">
     <value>Đạt được nhiều hơn với Aiursoft Template</value>
   </data>
@@ -66,8 +69,23 @@
   <data name="Comprehensive Documentation" xml:space="preserve">
     <value>Tài liệu Toàn diện</value>
   </data>
+  <data name="Containerized" xml:space="preserve">
+    <value>Được đóng gói trong container</value>
+  </data>
+  <data name="Core Features" xml:space="preserve">
+    <value>Tính năng chính</value>
+  </data>
   <data name="Dashboard Website" xml:space="preserve">
     <value>Trang Tổng quan</value>
+  </data>
+  <data name="Data stays on your servers. Authentication and authorization ensure only you can access your metrics." xml:space="preserve">
+    <value>Dữ liệu luôn nằm trên máy chủ của bạn. Xác thực và ủy quyền đảm bảo chỉ bạn mới có thể truy cập các chỉ số của mình.</value>
+  </data>
+  <data name="Deploy in seconds with Docker. Designed for modern cloud-native environments." xml:space="preserve">
+    <value>Cài đặt trong vài giây với Docker. Được thiết kế cho môi trường đám mây hiện đại.</value>
+  </data>
+  <data name="Developer Friendly" xml:space="preserve">
+    <value>Thân thiện với nhà phát triển</value>
   </data>
   <data name="Discussions page" xml:space="preserve">
     <value>Trang Thảo luận</value>
@@ -83,6 +101,9 @@
   </data>
   <data name="Easily switch between providers like SQLite, MySQL, SQL Server, and an in-memory database for testing." xml:space="preserve">
     <value>Dễ dàng chuyển đổi giữa các nhà cung cấp như SQLite, MySQL, SQL Server và cơ sở dữ liệu trong bộ nhớ để kiểm thử.</value>
+  </data>
+  <data name="Enter Dashboard" xml:space="preserve">
+    <value>Vào bảng điều khiển</value>
   </data>
   <data name="FAQ" xml:space="preserve">
     <value>Câu hỏi thường gặp</value>
@@ -105,6 +126,9 @@
   <data name="Frequently asked questions" xml:space="preserve">
     <value>Các câu hỏi thường gặp</value>
   </data>
+  <data name="Get up-to-the-second updates on your server&apos;s CPU, memory, disk, and network usage." xml:space="preserve">
+    <value>Nhận cập nhật tức thì về mức sử dụng CPU, bộ nhớ, ổ đĩa và mạng của máy chủ của bạn.</value>
+  </data>
   <data name="Go to dashboard" xml:space="preserve">
     <value>Truy cập bảng điều khiển</value>
   </data>
@@ -126,6 +150,9 @@
   <data name="Includes extensive documentation and practical examples to get you started quickly." xml:space="preserve">
     <value>Bao gồm tài liệu phong phú và các ví dụ thực tế để giúp bạn bắt đầu nhanh chóng.</value>
   </data>
+  <data name="Instant Alerts" xml:space="preserve">
+    <value>Cảnh báo tức thì</value>
+  </data>
   <data name="Integrated File Management" xml:space="preserve">
     <value>Quản lý Tập tin Tích hợp</value>
   </data>
@@ -141,20 +168,44 @@
   <data name="Join our community and start monitoring today!" xml:space="preserve">
     <value>Hãy tham gia cộng đồng của chúng tôi và bắt đầu giám sát ngay hôm nay!</value>
   </data>
+  <data name="Join the community of developers monitoring their infrastructure with StatHub." xml:space="preserve">
+    <value>Tham gia cộng đồng các nhà phát triển đang theo dõi hạ tầng của họ với StatHub.</value>
+  </data>
+  <data name="Keep an eye on your infrastructure with intuitive dashboards and detailed metrics." xml:space="preserve">
+    <value>Theo dõi cơ sở hạ tầng của bạn một cách dễ dàng với bảng điều khiển trực quan và các chỉ số chi tiết.</value>
+  </data>
+  <data name="Lightweight Agents" xml:space="preserve">
+    <value>Các tác nhân nhẹ</value>
+  </data>
+  <data name="Live Demo" xml:space="preserve">
+    <value>Demo trực tiếp</value>
+  </data>
+  <data name="Low-overhead agents collect metrics without impacting your server&apos;s performance." xml:space="preserve">
+    <value>Các tác nhân có chi phí thấp thu thập các chỉ số mà không ảnh hưởng đến hiệu suất máy chủ của bạn.</value>
+  </data>
   <data name="Markdown To HTML" xml:space="preserve">
     <value>Chuyển Đổi Markdown Sang HTML</value>
   </data>
   <data name="MIT Licence" xml:space="preserve">
     <value>Giấy phép MIT</value>
   </data>
+  <data name="Monitor multiple servers from a single centralized dashboard. Scale as your infrastructure grows." xml:space="preserve">
+    <value>Theo dõi nhiều máy chủ từ một bảng điều khiển tập trung duy nhất. Mở rộng theo sự phát triển của hạ tầng của bạn.</value>
+  </data>
   <data name="Monitor your servers," xml:space="preserve">
     <value>Giám sát máy chủ của bạn,</value>
+  </data>
+  <data name="Multi-Node" xml:space="preserve">
+    <value>Đa nút</value>
   </data>
   <data name="Multiple Database Support" xml:space="preserve">
     <value>Hỗ trợ Đa Cơ sở Dữ liệu</value>
   </data>
   <data name="Music Tools" xml:space="preserve">
     <value>Công cụ Âm nhạc</value>
+  </data>
+  <data name="Open API allows for easy integration with your existing tools and workflows." xml:space="preserve">
+    <value>API mở cho phép tích hợp dễ dàng với các công cụ và quy trình làm việc hiện có của bạn.</value>
   </data>
   <data name="Open Source" xml:space="preserve">
     <value>Mã nguồn mở</value>
@@ -168,6 +219,12 @@
   <data name="Read the document" xml:space="preserve">
     <value>Đọc tài liệu</value>
   </data>
+  <data name="Ready to get started?" xml:space="preserve">
+    <value>Sẵn sàng bắt đầu chưa?</value>
+  </data>
+  <data name="Real-time" xml:space="preserve">
+    <value>Thời gian thực</value>
+  </data>
   <data name="Responsive Design" xml:space="preserve">
     <value>Thiết kế đáp ứng</value>
   </data>
@@ -177,8 +234,23 @@
   <data name="Seamlessly integrate with any OpenID Connect provider, with automatic role synchronization." xml:space="preserve">
     <value>Tích hợp liền mạch với bất kỳ nhà cung cấp OpenID Connect nào, đồng thời tự động đồng bộ hóa vai trò.</value>
   </data>
+  <data name="Secure" xml:space="preserve">
+    <value>Bảo mật</value>
+  </data>
+  <data name="See the status of all your nodes at a glance. Identify issues before they become outages." xml:space="preserve">
+    <value>Xem trạng thái của tất cả nút của bạn chỉ trong một cái nhìn. Phát hiện sự cố trước khi chúng trở thành sự cố ngừng hoạt động.</value>
+  </data>
+  <data name="Self Host" xml:space="preserve">
+    <value>Tự host</value>
+  </data>
   <data name="Self host your own" xml:space="preserve">
     <value>Tự lưu trữ phiên bản của bạn</value>
+  </data>
+  <data name="Self-Hosted" xml:space="preserve">
+    <value>Tự host</value>
+  </data>
+  <data name="Simplicity by Design" xml:space="preserve">
+    <value>Đơn giản vì thiết kế</value>
   </data>
   <data name="Smart dark mode that automatically adapts to the user&apos;s system settings." xml:space="preserve">
     <value>Chế độ tối thông minh tự động điều chỉnh theo cài đặt hệ thống của người dùng.</value>
@@ -188,6 +260,9 @@
   </data>
   <data name="Technical Lead" xml:space="preserve">
     <value>Trưởng nhóm Kỹ thuật</value>
+  </data>
+  <data name="The essential tool for monitoring your servers&apos; health and performance." xml:space="preserve">
+    <value>Công cụ thiết yếu để giám sát sức khỏe và hiệu suất máy chủ của bạn.</value>
   </data>
   <data name="The navigation bar automatically adjusts based on user roles and permissions." xml:space="preserve">
     <value>Thanh điều hướng tự động điều chỉnh dựa trên vai trò và quyền của người dùng.</value>
@@ -207,6 +282,9 @@
   <data name="Use it as a foundation for your SaaS, a backend for your mobile app, a corporate website, or a personal blog. The possibilities are endless." xml:space="preserve">
     <value>Hãy sử dụng nó làm nền tảng cho SaaS của bạn, backend cho ứng dụng di động, trang web doanh nghiệp, hoặc blog cá nhân. Các khả năng là vô tận.</value>
   </data>
+  <data name="View on GitHub" xml:space="preserve">
+    <value>Xem trên GitHub</value>
+  </data>
   <data name="View Source on GitHub" xml:space="preserve">
     <value>Xem mã nguồn trên GitHub</value>
   </data>
@@ -219,6 +297,9 @@
   <data name="What our developers say" xml:space="preserve">
     <value>Những gì nhà phát triển của chúng tôi nói</value>
   </data>
+  <data name="Why Choose StatHub?" xml:space="preserve">
+    <value>Tại sao chọn StatHub?</value>
+  </data>
   <data name="Why use the Aiursoft Template?" xml:space="preserve">
     <value>Tại sao nên sử dụng Mẫu Aiursoft?</value>
   </data>
@@ -230,6 +311,9 @@
   </data>
   <data name="You&apos;ll need the .NET 10 SDK, npm and your favorite IDE, like Visual Studio or JetBrains Rider. You can find the full setup guide in our documentation." xml:space="preserve">
     <value>Bạn sẽ cần .NET 10 SDK, npm và IDE yêu thích của bạn, như Visual Studio hoặc JetBrains Rider. Bạn có thể tìm thấy hướng dẫn thiết lập đầy đủ trong tài liệu của chúng tôi.</value>
+  </data>
+  <data name="Your Server Status" xml:space="preserve">
+    <value>Tình trạng máy chủ của bạn</value>
   </data>
 
 </root>
