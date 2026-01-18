@@ -25,6 +25,9 @@
                     <a asp-controller="Dashboard" asp-action="Index" class="btn btn-primary btn-lg btn-pill">
                         <i class="align-middle" data-lucide="layout-dashboard"></i> @Localizer["Live Demo"]
                     </a>
+                    <a asp-controller="Home" asp-action="SelfHost" class="btn btn-outline-primary btn-lg btn-pill">
+                        <i class="align-middle" data-lucide="server"></i> @Localizer["Self Host"]
+                    </a>
                     <a href="https://github.com/AiursoftWeb/StatHub" class="btn btn-outline-primary btn-lg btn-pill">
                         <i class="align-middle" data-lucide="github"></i> @Localizer["View on GitHub"]
                     </a>
@@ -144,7 +147,7 @@
                     <i class="align-middle me-1" data-lucide="layout-dashboard"></i>
                     <span>@Localizer["Enter Dashboard"]</span>
                 </a>
-                <a asp-controller="Deploy" asp-action="SelfHost" class="btn btn-outline-primary btn-pill btn-lg">
+                <a asp-controller="Home" asp-action="SelfHost" class="btn btn-outline-primary btn-pill btn-lg">
                     <i class="align-middle me-1" data-lucide="server"></i>
                     <span>@Localizer["Self Host"]</span>
                 </a>
