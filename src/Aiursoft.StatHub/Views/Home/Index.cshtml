@@ -1,3 +1,5 @@
+@using Aiursoft.StatHub.Models.HomeViewModels
+@model IndexViewModel
 @* ReSharper disable once Razor.SectionNotResolved *@
 @section styles {
     <link rel="stylesheet" href="~/styles/site.css" xmlns="http://www.w3.org/1999/html"/>
@@ -10,25 +12,119 @@
         <div class="row align-items-center h-100">
             <div class="col-lg-5 mx-auto">
                 <span class="badge badge-subtle-primary p-1">@Localizer["Open Source"]</span>
-                <span class="badge badge-subtle-primary p-1">@Localizer["Free"]</span>
+                <span class="badge badge-subtle-primary p-1">@Localizer["Self-Hosted"]</span>
                 <span class="badge badge-subtle-primary p-1">@Localizer["MIT Licence"]</span>
                 <h1 id="main-slogan" class="my-4 text-white" style="font-size: 3rem;">
-                    @Localizer["Monitor your servers,"] <span class='text-primary'>@Localizer["easier"]</span>
+                    StatHub: <span class='text-primary'>@Localizer["Your Server Status"]</span>
                 </h1>
-                <p class="text-lg text-white-50">@Localizer["StatHub is a simple server stat statistics system. It can collect server stats and display them in a simple way."]</p>
+                <p class="text-lg text-white-50">
+                    @Localizer["A simple, real-time server monitoring system designed for local deployment."]
+                    @Localizer["Keep an eye on your infrastructure with intuitive dashboards and detailed metrics."]
+                </p>
                 <div class="my-4">
-                    <a asp-controller="Dashboard" asp-action="Index" class="btn btn-outline-primary btn-lg btn-pill">
-                        <i class="align-middle" data-lucide="grid"></i> @Localizer["Go to dashboard"]
+                    <a asp-controller="Dashboard" asp-action="Index" class="btn btn-primary btn-lg btn-pill">
+                        <i class="align-middle" data-lucide="layout-dashboard"></i> @Localizer["Live Demo"]
                     </a>
-                    <a asp-controller="Deploy" asp-action="SelfHost" class="btn btn-primary btn-lg btn-pill">
-                        <i class="align-middle" data-lucide="server"></i> @Localizer["Self host your own"]
+                    <a href="https://github.com/AiursoftWeb/StatHub" class="btn btn-outline-primary btn-lg btn-pill">
+                        <i class="align-middle" data-lucide="github"></i> @Localizer["View on GitHub"]
                     </a>
                 </div>
             </div>
             <div class="col-lg-7 d-none d-lg-flex mx-auto text-center">
                 <div class="landing-intro-screenshot">
-                    <img src="~/images/screenshot.png" alt="Aiursoft Template Main screenshot" class="img-fluid" />
+                    <img src="~/images/screenshot.png" alt="StatHub Screenshot" class="img-fluid rounded shadow-lg" />
                 </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-6">
+    <div class="container">
+        <div class="mb-5 text-center">
+            <span class="text-uppercase text-primary text-sm fw-medium mb-1 d-block">@Localizer["Core Features"]</span>
+            <h2 class="h1">@Localizer["Why Choose StatHub?"]</h2>
+            <p class="text-muted fs-lg">@Localizer["The essential tool for monitoring your servers' health and performance."]</p>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-3 d-flex">
+                <div class="card border-0 shadow-none bg-transparent">
+                    <div class="card-body p-3">
+                        <div class="landing-feature mb-3 text-primary">
+                            <i data-lucide="activity" style="width: 32px; height: 32px;"></i>
+                        </div>
+                        <h4 class="mt-0">@Localizer["Real-time"]</h4>
+                        <p class="text-muted">@Localizer["Get up-to-the-second updates on your server's CPU, memory, disk, and network usage."]</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 d-flex">
+                <div class="card border-0 shadow-none bg-transparent">
+                    <div class="card-body p-3">
+                        <div class="landing-feature mb-3 text-success">
+                            <i data-lucide="server" style="width: 32px; height: 32px;"></i>
+                        </div>
+                        <h4 class="mt-0">@Localizer["Multi-Node"]</h4>
+                        <p class="text-muted">@Localizer["Monitor multiple servers from a single centralized dashboard. Scale as your infrastructure grows."]</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 d-flex">
+                <div class="card border-0 shadow-none bg-transparent">
+                    <div class="card-body p-3">
+                        <div class="landing-feature mb-3 text-info">
+                            <i data-lucide="shield-check" style="width: 32px; height: 32px;"></i>
+                        </div>
+                        <h4 class="mt-0">@Localizer["Secure"]</h4>
+                        <p class="text-muted">@Localizer["Data stays on your servers. Authentication and authorization ensure only you can access your metrics."]</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 d-flex">
+                <div class="card border-0 shadow-none bg-transparent">
+                    <div class="card-body p-3">
+                        <div class="landing-feature mb-3 text-warning">
+                            <i data-lucide="container" style="width: 32px; height: 32px;"></i>
+                        </div>
+                        <h4 class="mt-0">@Localizer["Containerized"]</h4>
+                        <p class="text-muted">@Localizer["Deploy in seconds with Docker. Designed for modern cloud-native environments."]</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-6 bg-white border-top border-bottom">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <h2 class="h1 mb-4">@Localizer["Simplicity by Design"]</h2>
+                <div class="d-flex mb-3">
+                    <div class="me-3 text-primary"><i data-lucide="cpu"></i></div>
+                    <div>
+                        <h5>@Localizer["Lightweight Agents"]</h5>
+                        <p class="text-muted">@Localizer["Low-overhead agents collect metrics without impacting your server's performance."]</p>
+                    </div>
+                </div>
+                <div class="d-flex mb-3">
+                    <div class="me-3 text-primary"><i data-lucide="zap"></i></div>
+                    <div>
+                        <h5>@Localizer["Instant Alerts"]</h5>
+                        <p class="text-muted">@Localizer["See the status of all your nodes at a glance. Identify issues before they become outages."]</p>
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <div class="me-3 text-primary"><i data-lucide="code"></i></div>
+                    <div>
+                        <h5>@Localizer["Developer Friendly"]</h5>
+                        <p class="text-muted">@Localizer["Open API allows for easy integration with your existing tools and workflows."]</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 text-center">
+                <i class="text-primary opacity-10" data-lucide="bar-chart-2" style="width: 300px; height: 300px;"></i>
             </div>
         </div>
     </div>
@@ -39,15 +135,18 @@
         <div class="row">
             <div class="col-12 col-md-10 col-lg-9 col-xl-8 mx-auto">
                 <h2 class="h1 mb-3">
-                    @Localizer["Join our community and start monitoring today!"]
+                    @Localizer["Ready to get started?"]
                 </h2>
-                <a href="https://github.com/aiursoftweb/stathub/discussions" class="align-middle btn btn-dark btn-pill btn-lg mt-n1" target="_blank">
-                    <i class="fa-brands fa-github"></i>
-                    <span class="ms-1">@Localizer["Join Discussions"]</span>
+                <p class="text-muted fs-lg mb-4">
+                    @Localizer["Join the community of developers monitoring their infrastructure with StatHub."]
+                </p>
+                <a asp-controller="Dashboard" asp-action="Index" class="btn btn-primary btn-pill btn-lg">
+                    <i class="align-middle me-1" data-lucide="layout-dashboard"></i>
+                    <span>@Localizer["Enter Dashboard"]</span>
                 </a>
-                <a href="https://github.com/aiursoftweb/stathub" class="align-middle btn btn-outline-dark btn-pill btn-lg mt-3 mt-lg-0" target="_blank">
-                    <i class="fa-brands fa-github"></i>
-                    <span class="ms-1">@Localizer["View Source on GitHub"]</span>
+                <a asp-controller="Deploy" asp-action="SelfHost" class="btn btn-outline-primary btn-pill btn-lg">
+                    <i class="align-middle me-1" data-lucide="server"></i>
+                    <span>@Localizer["Self Host"]</span>
                 </a>
             </div>
         </div>
