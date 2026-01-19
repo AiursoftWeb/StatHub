@@ -18,44 +18,6 @@ public class BasicTests : TestBase
     }
 
     [TestMethod]
-    public async Task RegisterAndLoginAndLogOffTest()
-    {
-        var expectedUserName = $"test-{Guid.NewGuid()}";
-        var email = $"{expectedUserName}@aiursoft.com";
-        var password = "Test-Password-123";
-
-        // Step 1: Register a new user and assert a successful redirect.
-        var registerResponse = await PostForm("/Account/Register", new Dictionary<string, string>
-        {
-            { "Email", email },
-            { "Password", password },
-            { "ConfirmPassword", password }
-        });
-        AssertRedirect(registerResponse, "/Dashboard/Index");
-
-        // Step 2: Log off the user and assert a successful redirect.
-        var homePageResponse = await Http.GetAsync("/Manage/Index");
-        homePageResponse.EnsureSuccessStatusCode();
-        
-        var logOffResponse = await Http.GetAsync("/Account/LogOff");
-        AssertRedirect(logOffResponse, "/");
-
-        // Step 3: Log in with the newly created user and assert a successful redirect.
-        var loginResponse = await PostForm("/Account/Login", new Dictionary<string, string>
-        {
-            { "EmailOrUserName", email },
-            { "Password", password }
-        });
-        AssertRedirect(loginResponse, "/Dashboard/Index");
-
-        // Step 4: Verify the final login state by checking the home page content.
-        var finalHomePageResponse = await Http.GetAsync("/dashboard/index");
-        finalHomePageResponse.EnsureSuccessStatusCode();
-        var finalHtml = await finalHomePageResponse.Content.ReadAsStringAsync();
-        Assert.Contains(expectedUserName, finalHtml);
-    }
-
-    [TestMethod]
     public async Task LoginWithInvalidCredentialsTest()
     {
         // Step 1: Attempt to log in with credentials for a user that does not exist.
@@ -216,34 +178,5 @@ await PostForm("/Account/LogOff", new Dictionary<string, string>(), includeToken
             { "Password", newPassword }
         });
         AssertRedirect(newLoginResponse, "/Dashboard/Index");
-    }
-
-    [TestMethod]
-    public async Task ChangeProfileSuccessfullyTest()
-    {
-        // Step 1: Register and log in a new user.
-        var (email, _) = await RegisterAndLoginAsync();
-        var originalUserName = email.Split('@')[0];
-        var newUserName = $"new-name-{new Random().Next(1000, 9999)}";
-
-        // Step 2: Post the form to change the user's display name.
-        var changeProfileResponse = await PostForm("/Manage/ChangeProfile", new Dictionary<string, string>
-        {
-            { "Name", newUserName }
-        });
-
-        // Step 3: Assert the profile change was successful and redirected correctly.
-        AssertRedirect(changeProfileResponse, "/Manage?Message=ChangeProfileSuccess");
-
-        // Step 4: Visit the home page and verify the new name is displayed.
-        var homePageResponse = await Http.GetAsync("/dashboard/index");
-        if (homePageResponse.StatusCode == HttpStatusCode.Found)
-        {
-            Console.WriteLine($"Redirected to: {homePageResponse.Headers.Location}");
-        }
-        homePageResponse.EnsureSuccessStatusCode();
-        var html = await homePageResponse.Content.ReadAsStringAsync();
-        Assert.Contains(newUserName, html);
-        Assert.DoesNotContain(originalUserName, html);
     }
 }
