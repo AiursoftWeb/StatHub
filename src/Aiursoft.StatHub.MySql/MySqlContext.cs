@@ -6,4 +6,4 @@ namespace Aiursoft.StatHub.MySql;
 
 [ExcludeFromCodeCoverage]
 
-public class MySqlContext(DbContextOptions<MySqlContext> options) : TemplateDbContext(options);
+public class MySqlContext(DbContextOptions<MySqlContext> options) : StatHubDbContext(options);

@@ -237,6 +237,10 @@ await PostForm("/Account/LogOff", new Dictionary<string, string>(), includeToken
 
         // Step 4: Visit the home page and verify the new name is displayed.
         var homePageResponse = await Http.GetAsync("/dashboard/index");
+        if (homePageResponse.StatusCode == HttpStatusCode.Found)
+        {
+            Console.WriteLine($"Redirected to: {homePageResponse.Headers.Location}");
+        }
         homePageResponse.EnsureSuccessStatusCode();
         var html = await homePageResponse.Content.ReadAsStringAsync();
         Assert.Contains(newUserName, html);

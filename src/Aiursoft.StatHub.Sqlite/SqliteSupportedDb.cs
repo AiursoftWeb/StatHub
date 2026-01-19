@@ -7,7 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 namespace Aiursoft.StatHub.Sqlite;
 
 [ExcludeFromCodeCoverage]
-public class SqliteSupportedDb(bool allowCache, bool splitQuery) : SupportedDatabaseType<TemplateDbContext>
+public class SqliteSupportedDb(bool allowCache, bool splitQuery) : SupportedDatabaseType<StatHubDbContext>
 {
     public override string DbType => "Sqlite";
 
@@ -19,7 +19,7 @@ public class SqliteSupportedDb(bool allowCache, bool splitQuery) : SupportedData
             allowCache: allowCache);
     }
 
-    public override TemplateDbContext ContextResolver(IServiceProvider serviceProvider)
+    public override StatHubDbContext ContextResolver(IServiceProvider serviceProvider)
     {
         return serviceProvider.GetRequiredService<SqliteContext>();
     }

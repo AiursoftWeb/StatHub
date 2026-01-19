@@ -6,7 +6,7 @@ namespace Aiursoft.StatHub.Sqlite;
 
 [ExcludeFromCodeCoverage]
 
-public class SqliteContext(DbContextOptions<SqliteContext> options) : TemplateDbContext(options)
+public class SqliteContext(DbContextOptions<SqliteContext> options) : StatHubDbContext(options)
 {
     public override Task<bool> CanConnectAsync()
     {

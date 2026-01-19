@@ -10,7 +10,7 @@ namespace Aiursoft.StatHub;
 
 public static class ProgramExtends
 {
-    private static async Task<bool> ShouldSeedAsync(TemplateDbContext dbContext)
+    private static async Task<bool> ShouldSeedAsync(StatHubDbContext dbContext)
     {
         var haveUsers = await dbContext.Users.AnyAsync();
         var haveRoles = await dbContext.Roles.AnyAsync();
@@ -52,7 +52,7 @@ public static class ProgramExtends
     {
         using var scope = host.Services.CreateScope();
         var services = scope.ServiceProvider;
-        var db = services.GetRequiredService<TemplateDbContext>();
+        var db = services.GetRequiredService<StatHubDbContext>();
         var logger = services.GetRequiredService<ILogger<Program>>();
         
         var settingsService = services.GetRequiredService<GlobalSettingsService>();
@@ -101,6 +101,35 @@ public static class ProgramExtends
             };
             _ = await userManager.CreateAsync(user, "admin123");
             await userManager.AddToRoleAsync(user, "Administrators");
+        }
+
+        // Seed default 'User' role
+        var userRole = await roleManager.FindByNameAsync("User");
+        if (userRole == null)
+        {
+            userRole = new IdentityRole("User");
+            await roleManager.CreateAsync(userRole);
+        }
+
+        var userExistingClaims = await roleManager.GetClaimsAsync(userRole);
+        var userExistingClaimValues = userExistingClaims
+            .Where(c => c.Type == AppPermissions.Type)
+            .Select(c => c.Value)
+            .ToHashSet();
+
+        var basicPermissions = new[] 
+        { 
+            AppPermissionNames.CanViewDashboard,
+            AppPermissionNames.CanViewBackgroundJobs // Maybe? safer to add generic ones
+        };
+
+        foreach (var permissionKey in basicPermissions)
+        {
+            if (!userExistingClaimValues.Contains(permissionKey))
+            {
+                var claim = new Claim(AppPermissions.Type, permissionKey);
+                await roleManager.AddClaimAsync(userRole, claim);
+            }
         }
 
         return host;

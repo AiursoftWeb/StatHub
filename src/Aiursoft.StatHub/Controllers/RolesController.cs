@@ -19,7 +19,7 @@ namespace Aiursoft.StatHub.Controllers;
 [LimitPerMin]
 public class RolesController(
     UserManager<User> userManager,
-    TemplateDbContext context,
+    StatHubDbContext context,
     RoleManager<IdentityRole> roleManager)
     : Controller
 {

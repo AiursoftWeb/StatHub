@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Aiursoft.StatHub.Services;
 
-public class GlobalSettingsService(TemplateDbContext dbContext, IConfiguration configuration) : IScopedDependency
+public class GlobalSettingsService(StatHubDbContext dbContext, IConfiguration configuration) : IScopedDependency
 {
     public async Task<string> GetSettingValueAsync(string key)
     {
