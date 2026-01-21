@@ -39,7 +39,7 @@ public static class AuthenticationExtensions
                     options.Password.RequireUppercase = true;
                 }
             })
-            .AddEntityFrameworkStores<StatHubDbContext>()
+            .AddEntityFrameworkStores<TemplateDbContext>()
             .AddDefaultTokenProviders();
 
         services.AddScoped<IUserClaimsPrincipalFactory<User>, UserClaimsPrincipalFactory>();
@@ -84,7 +84,8 @@ public static class AuthenticationExtensions
 
                 options.Events = new OpenIdConnectEvents
                 {
-                    OnTokenValidated = SyncOidcContext
+                    OnTokenValidated = SyncOidcContext,
+                    OnRemoteFailure = HandleRemoteFailure
                 };
             });
         }
@@ -99,6 +100,37 @@ public static class AuthenticationExtensions
             }
         });
         return services;
+    }
+
+    /// <summary>
+    /// Handle OIDC remote failures (fallback logic for correlation failures or invalid grants)
+    /// </summary>
+    private static async Task HandleRemoteFailure(RemoteFailureContext context)
+    {
+        var logger = context.HttpContext.RequestServices.GetRequiredService<ILogger<Startup>>();
+        
+        // Check if the exception is an OIDC protocol exception
+        if (context.Failure is OpenIdConnectProtocolException)
+        {
+            logger.LogWarning(context.Failure, "OIDC protocol error detected (likely invalid_grant or dirty cookie). Initiating cleanup and redirect.");
+
+            // 1. Mark the exception as handled to prevent the yellow screen of death
+            context.HandleResponse();
+
+            // 2. Force cleanup of local cookies
+            // Clear External Scheme (temporary cookie used by OIDC middleware)
+            await context.HttpContext.SignOutAsync(IdentityConstants.ExternalScheme);
+            // Clear Application Scheme (to prevent stale login state)
+            await context.HttpContext.SignOutAsync(IdentityConstants.ApplicationScheme);
+
+            // 3. Redirect back to login page to let user retry with a fresh request
+            context.Response.Redirect("/Account/Login");
+        }
+        else
+        {
+            // If it's a different type of error, log it and allow default behavior
+            logger.LogError(context.Failure, "An unexpected error occurred during OIDC remote authentication.");
+        }
     }
 
     private static async Task SyncOidcContext(TokenValidatedContext context)

@@ -21,7 +21,9 @@ public class AvatarTests : TestBase
         var multipartContent = new MultipartFormDataContent();
         multipartContent.Add(fileContent, "file", "avatar.gif");
 
-        var uploadResponse = await Http.PostAsync("/upload/avatars", multipartContent);
+        var storage = GetService<StorageService>();
+        var uploadUrl = storage.GetUploadUrl("avatars", isVault: false);
+        var uploadResponse = await Http.PostAsync(uploadUrl, multipartContent);
         uploadResponse.EnsureSuccessStatusCode();
 
         var uploadResult = await uploadResponse.Content.ReadFromJsonAsync<UploadResult>();
@@ -52,7 +54,9 @@ public class AvatarTests : TestBase
         var multipartContent = new MultipartFormDataContent();
         multipartContent.Add(fileContent, "file", "avatar.gif");
 
-        var uploadResponse = await Http.PostAsync("/upload/avatars", multipartContent);
+        var storage = GetService<StorageService>();
+        var uploadUrl = storage.GetUploadUrl("avatars", isVault: false);
+        var uploadResponse = await Http.PostAsync(uploadUrl, multipartContent);
         uploadResponse.EnsureSuccessStatusCode();
 
         var uploadResult = await uploadResponse.Content.ReadFromJsonAsync<UploadResult>();
@@ -85,7 +89,9 @@ public class AvatarTests : TestBase
         var multipartContent = new MultipartFormDataContent();
         multipartContent.Add(fileContent, "file", "avatar.png");
 
-        var uploadResponse = await Http.PostAsync("/upload/avatars", multipartContent);
+        var storage = GetService<StorageService>();
+        var uploadUrl = storage.GetUploadUrl("avatars", isVault: false);
+        var uploadResponse = await Http.PostAsync(uploadUrl, multipartContent);
         uploadResponse.EnsureSuccessStatusCode();
 
         var uploadResult = await uploadResponse.Content.ReadFromJsonAsync<UploadResult>();
@@ -121,7 +127,9 @@ public class AvatarTests : TestBase
         var multipartContent = new MultipartFormDataContent();
         multipartContent.Add(fileContent, "file", "avatar.png");
 
-        var uploadResponse = await Http.PostAsync("/upload/avatars", multipartContent);
+        var storage = GetService<StorageService>();
+        var uploadUrl = storage.GetUploadUrl("avatars", isVault: false);
+        var uploadResponse = await Http.PostAsync(uploadUrl, multipartContent);
         uploadResponse.EnsureSuccessStatusCode();
 
         var uploadResult = await uploadResponse.Content.ReadFromJsonAsync<UploadResult>();
@@ -156,7 +164,9 @@ public class AvatarTests : TestBase
         var multipartContent = new MultipartFormDataContent();
         multipartContent.Add(fileContent, "file", "avatar.png");
 
-        var uploadResponse = await Http.PostAsync("/upload/avatars", multipartContent);
+        var storage = GetService<StorageService>();
+        var uploadUrl = storage.GetUploadUrl("avatars", isVault: false);
+        var uploadResponse = await Http.PostAsync(uploadUrl, multipartContent);
         uploadResponse.EnsureSuccessStatusCode();
 
         var uploadResult = await uploadResponse.Content.ReadFromJsonAsync<UploadResult>();
