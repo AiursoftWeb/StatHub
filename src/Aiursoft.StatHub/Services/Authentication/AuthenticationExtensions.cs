@@ -2,6 +2,7 @@ using System.Diagnostics.CodeAnalysis;
 using Aiursoft.StatHub.Authorization;
 using Aiursoft.StatHub.Configuration;
 using Aiursoft.StatHub.Entities;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
@@ -39,7 +40,7 @@ public static class AuthenticationExtensions
                     options.Password.RequireUppercase = true;
                 }
             })
-            .AddEntityFrameworkStores<TemplateDbContext>()
+            .AddEntityFrameworkStores<StatHubDbContext>()
             .AddDefaultTokenProviders();
 
         services.AddScoped<IUserClaimsPrincipalFactory<User>, UserClaimsPrincipalFactory>();
@@ -108,7 +109,7 @@ public static class AuthenticationExtensions
     private static async Task HandleRemoteFailure(RemoteFailureContext context)
     {
         var logger = context.HttpContext.RequestServices.GetRequiredService<ILogger<Startup>>();
-        
+
         // Check if the exception is an OIDC protocol exception
         if (context.Failure is OpenIdConnectProtocolException)
         {

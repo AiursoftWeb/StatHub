@@ -1,3 +1,5 @@
+using Aiursoft.StatHub.Services.FileStorage;
+
 namespace Aiursoft.StatHub.Tests.IntegrationTests;
 
 // JB scanner bug. Not a warning.
