@@ -46,6 +46,18 @@ public class DashboardController(InMemoryDatabase database) : Controller
     }
 
     [Authorize(Policy = AppPermissionNames.CanViewDashboard)]
+    [HttpGet("Dashboard/Go-IP/{ip}")]
+    public IActionResult GoIP([FromRoute] string ip)
+    {
+        var agent = database.GetAgents().FirstOrDefault(a => a.Ip == ip);
+        if (agent == null)
+        {
+            return NotFound();
+        }
+        return RedirectToAction(nameof(Details), new { id = agent.ClientId });
+    }
+
+    [Authorize(Policy = AppPermissionNames.CanViewDashboard)]
     [HttpPost]
     [ValidateAntiForgeryToken]
     public IActionResult Abandon([FromRoute] string id)
