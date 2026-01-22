@@ -1,6 +1,5 @@
 using System.Net;
 using Aiursoft.StatHub.Data;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace Aiursoft.StatHub.Tests.IntegrationTests;
 
