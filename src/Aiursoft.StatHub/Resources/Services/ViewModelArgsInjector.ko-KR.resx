@@ -18,7 +18,10 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="Account Settings" xml:space="preserve">
+      <data name="Access Denied" xml:space="preserve">
+    <value>액세스 거부됨</value>
+  </data>
+  <data name="Account Settings" xml:space="preserve">
     <value>계정 설정</value>
   </data>
   <data name="Add a server" xml:space="preserve">
@@ -47,6 +50,9 @@
   </data>
   <data name="Background Jobs" xml:space="preserve">
     <value>백그라운드 작업</value>
+  </data>
+  <data name="Bad Request" xml:space="preserve">
+    <value>잘못된 요청</value>
   </data>
   <data name="Change Avatar" xml:space="preserve">
     <value>아바타 변경</value>
@@ -105,6 +111,12 @@
   <data name="Info" xml:space="preserve">
     <value>정보</value>
   </data>
+  <data name="Internal Server Error" xml:space="preserve">
+    <value>내부 서버 오류</value>
+  </data>
+  <data name="Lockout" xml:space="preserve">
+    <value>잠금 해제</value>
+  </data>
   <data name="Login" xml:space="preserve">
     <value>로그인</value>
   </data>
@@ -113,6 +125,12 @@
   </data>
   <data name="Manage" xml:space="preserve">
     <value>관리</value>
+  </data>
+  <data name="Not Found" xml:space="preserve">
+    <value>찾을 수 없음</value>
+  </data>
+  <data name="Permission Details" xml:space="preserve">
+    <value>권한 세부 정보</value>
   </data>
   <data name="Permissions" xml:space="preserve">
     <value>권한</value>
@@ -138,8 +156,14 @@
   <data name="Roles" xml:space="preserve">
     <value>역할</value>
   </data>
+  <data name="Self Host" xml:space="preserve">
+    <value>자체 호스팅</value>
+  </data>
   <data name="Self host a new server" xml:space="preserve">
     <value>새 서버를 자체 호스팅하기</value>
+  </data>
+  <data name="Server Details" xml:space="preserve">
+    <value>서버 세부 정보</value>
   </data>
   <data name="Servers" xml:space="preserve">
     <value>서버</value>

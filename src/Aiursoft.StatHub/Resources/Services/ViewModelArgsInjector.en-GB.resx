@@ -18,7 +18,10 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="Account Settings" xml:space="preserve">
+      <data name="Access Denied" xml:space="preserve">
+    <value>Access Denied</value>
+  </data>
+  <data name="Account Settings" xml:space="preserve">
     <value>Account Settings</value>
   </data>
   <data name="Add a server" xml:space="preserve">
@@ -47,6 +50,9 @@
   </data>
   <data name="Background Jobs" xml:space="preserve">
     <value>Background Jobs</value>
+  </data>
+  <data name="Bad Request" xml:space="preserve">
+    <value>Bad Request</value>
   </data>
   <data name="Change Avatar" xml:space="preserve">
     <value>Change Profile Picture</value>
@@ -105,6 +111,12 @@
   <data name="Info" xml:space="preserve">
     <value>Information</value>
   </data>
+  <data name="Internal Server Error" xml:space="preserve">
+    <value>Internal Server Error</value>
+  </data>
+  <data name="Lockout" xml:space="preserve">
+    <value>Lockout</value>
+  </data>
   <data name="Login" xml:space="preserve">
     <value>Log in</value>
   </data>
@@ -113,6 +125,12 @@
   </data>
   <data name="Manage" xml:space="preserve">
     <value>Manage</value>
+  </data>
+  <data name="Not Found" xml:space="preserve">
+    <value>Not Found</value>
+  </data>
+  <data name="Permission Details" xml:space="preserve">
+    <value>Permission Details</value>
   </data>
   <data name="Permissions" xml:space="preserve">
     <value>Permissions</value>
@@ -138,8 +156,14 @@
   <data name="Roles" xml:space="preserve">
     <value>Roles</value>
   </data>
+  <data name="Self Host" xml:space="preserve">
+    <value>Self Host</value>
+  </data>
   <data name="Self host a new server" xml:space="preserve">
     <value>Self-host a new server</value>
+  </data>
+  <data name="Server Details" xml:space="preserve">
+    <value>Server Details</value>
   </data>
   <data name="Servers" xml:space="preserve">
     <value>Servers</value>
