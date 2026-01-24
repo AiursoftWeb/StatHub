@@ -18,7 +18,10 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="Account Settings" xml:space="preserve">
+      <data name="Access Denied" xml:space="preserve">
+    <value>การเข้าถึงถูกปฏิเสธ</value>
+  </data>
+  <data name="Account Settings" xml:space="preserve">
     <value>การตั้งค่าบัญชี</value>
   </data>
   <data name="Add a server" xml:space="preserve">
@@ -47,6 +50,9 @@
   </data>
   <data name="Background Jobs" xml:space="preserve">
     <value>งานเบื้องหลัง</value>
+  </data>
+  <data name="Bad Request" xml:space="preserve">
+    <value>คำขอผิดพลาด</value>
   </data>
   <data name="Change Avatar" xml:space="preserve">
     <value>เปลี่ยนรูปโปรไฟล์</value>
@@ -105,6 +111,12 @@
   <data name="Info" xml:space="preserve">
     <value>ข้อมูล</value>
   </data>
+  <data name="Internal Server Error" xml:space="preserve">
+    <value>ข้อผิดพลาดภายในเซิร์ฟเวอร์</value>
+  </data>
+  <data name="Lockout" xml:space="preserve">
+    <value>การล็อกเอาต์</value>
+  </data>
   <data name="Login" xml:space="preserve">
     <value>เข้าสู่ระบบ</value>
   </data>
@@ -113,6 +125,12 @@
   </data>
   <data name="Manage" xml:space="preserve">
     <value>จัดการ</value>
+  </data>
+  <data name="Not Found" xml:space="preserve">
+    <value>ไม่พบ</value>
+  </data>
+  <data name="Permission Details" xml:space="preserve">
+    <value>รายละเอียดสิทธิ์</value>
   </data>
   <data name="Permissions" xml:space="preserve">
     <value>สิทธิ์การเข้าถึง</value>
@@ -138,8 +156,14 @@
   <data name="Roles" xml:space="preserve">
     <value>บทบาท</value>
   </data>
+  <data name="Self Host" xml:space="preserve">
+    <value>โฮสต์เอง</value>
+  </data>
   <data name="Self host a new server" xml:space="preserve">
     <value>ตั้งค่าเซิร์ฟเวอร์ใหม่เอง</value>
+  </data>
+  <data name="Server Details" xml:space="preserve">
+    <value>รายละเอียดเซิร์ฟเวอร์</value>
   </data>
   <data name="Servers" xml:space="preserve">
     <value>เซิร์ฟเวอร์</value>

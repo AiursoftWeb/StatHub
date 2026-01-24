@@ -18,7 +18,10 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="Add a server" xml:space="preserve">
+      <data name="Access Denied" xml:space="preserve">
+    <value>Acesso Negado</value>
+  </data>
+  <data name="Add a server" xml:space="preserve">
     <value>Adicionar um servidor</value>
   </data>
   <data name="Add an agent" xml:space="preserve">
@@ -44,6 +47,9 @@
   </data>
   <data name="Background Jobs" xml:space="preserve">
     <value>Tarefas em segundo plano</value>
+  </data>
+  <data name="Bad Request" xml:space="preserve">
+    <value>Requisição Inválida</value>
   </data>
   <data name="Change Avatar" xml:space="preserve">
     <value>Alterar Avatar</value>
@@ -102,6 +108,12 @@
   <data name="Info" xml:space="preserve">
     <value>Informações</value>
   </data>
+  <data name="Internal Server Error" xml:space="preserve">
+    <value>Erro Interno do Servidor</value>
+  </data>
+  <data name="Lockout" xml:space="preserve">
+    <value>Bloqueio</value>
+  </data>
   <data name="Login" xml:space="preserve">
     <value>Entrar</value>
   </data>
@@ -110,6 +122,12 @@
   </data>
   <data name="Manage" xml:space="preserve">
     <value>Gerenciar</value>
+  </data>
+  <data name="Not Found" xml:space="preserve">
+    <value>Não Encontrado</value>
+  </data>
+  <data name="Permission Details" xml:space="preserve">
+    <value>Detalhes da Permissão</value>
   </data>
   <data name="Permissions" xml:space="preserve">
     <value>Permissões</value>
@@ -135,8 +153,14 @@
   <data name="Roles" xml:space="preserve">
     <value>Funções</value>
   </data>
+  <data name="Self Host" xml:space="preserve">
+    <value>Auto-hospedar</value>
+  </data>
   <data name="Self host a new server" xml:space="preserve">
     <value>Auto-hospede um novo servidor</value>
+  </data>
+  <data name="Server Details" xml:space="preserve">
+    <value>Detalhes do Servidor</value>
   </data>
   <data name="Servers" xml:space="preserve">
     <value>Servidores</value>

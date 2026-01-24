@@ -18,7 +18,10 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="Add a server" xml:space="preserve">
+      <data name="Access Denied" xml:space="preserve">
+    <value>Erişim Engellendi</value>
+  </data>
+  <data name="Add a server" xml:space="preserve">
     <value>Bir sunucu ekle</value>
   </data>
   <data name="Add an agent" xml:space="preserve">
@@ -44,6 +47,9 @@
   </data>
   <data name="Background Jobs" xml:space="preserve">
     <value>Arka Plan Görevleri</value>
+  </data>
+  <data name="Bad Request" xml:space="preserve">
+    <value>Geçersiz İstek</value>
   </data>
   <data name="Change Avatar" xml:space="preserve">
     <value>Profil Resmini Değiştir</value>
@@ -102,6 +108,12 @@
   <data name="Info" xml:space="preserve">
     <value>Bilgi</value>
   </data>
+  <data name="Internal Server Error" xml:space="preserve">
+    <value>İç Sunucu Hatası</value>
+  </data>
+  <data name="Lockout" xml:space="preserve">
+    <value>Kilitlendi</value>
+  </data>
   <data name="Login" xml:space="preserve">
     <value>Giriş Yap</value>
   </data>
@@ -110,6 +122,12 @@
   </data>
   <data name="Manage" xml:space="preserve">
     <value>Yönet</value>
+  </data>
+  <data name="Not Found" xml:space="preserve">
+    <value>Bulunamadı</value>
+  </data>
+  <data name="Permission Details" xml:space="preserve">
+    <value>İzin Detayları</value>
   </data>
   <data name="Permissions" xml:space="preserve">
     <value>İzinler</value>
@@ -135,8 +153,14 @@
   <data name="Roles" xml:space="preserve">
     <value>Roller</value>
   </data>
+  <data name="Self Host" xml:space="preserve">
+    <value>Kendi Sunucunu Kur</value>
+  </data>
   <data name="Self host a new server" xml:space="preserve">
     <value>Yeni bir sunucuyu kendi sunucunuzda çalıştırın</value>
+  </data>
+  <data name="Server Details" xml:space="preserve">
+    <value>Sunucu Detayları</value>
   </data>
   <data name="Servers" xml:space="preserve">
     <value>Sunucular</value>

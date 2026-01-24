@@ -18,7 +18,10 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="Add a server" xml:space="preserve">
+      <data name="Access Denied" xml:space="preserve">
+    <value>Akses Ditolak</value>
+  </data>
+  <data name="Add a server" xml:space="preserve">
     <value>Tambahkan server</value>
   </data>
   <data name="Add an agent" xml:space="preserve">
@@ -44,6 +47,9 @@
   </data>
   <data name="Background Jobs" xml:space="preserve">
     <value>Pekerjaan Latar Belakang</value>
+  </data>
+  <data name="Bad Request" xml:space="preserve">
+    <value>Permintaan Buruk</value>
   </data>
   <data name="Change Avatar" xml:space="preserve">
     <value>Ubah Avatar</value>
@@ -102,6 +108,12 @@
   <data name="Info" xml:space="preserve">
     <value>Informasi</value>
   </data>
+  <data name="Internal Server Error" xml:space="preserve">
+    <value>Kesalahan Server Internal</value>
+  </data>
+  <data name="Lockout" xml:space="preserve">
+    <value>Blokir</value>
+  </data>
   <data name="Login" xml:space="preserve">
     <value>Masuk</value>
   </data>
@@ -110,6 +122,12 @@
   </data>
   <data name="Manage" xml:space="preserve">
     <value>Kelola</value>
+  </data>
+  <data name="Not Found" xml:space="preserve">
+    <value>Tidak Ditemukan</value>
+  </data>
+  <data name="Permission Details" xml:space="preserve">
+    <value>Detail Izin</value>
   </data>
   <data name="Permissions" xml:space="preserve">
     <value>Izin</value>
@@ -135,8 +153,14 @@
   <data name="Roles" xml:space="preserve">
     <value>Peran</value>
   </data>
+  <data name="Self Host" xml:space="preserve">
+    <value>Sendiri Host</value>
+  </data>
   <data name="Self host a new server" xml:space="preserve">
     <value>Host sendiri server baru</value>
+  </data>
+  <data name="Server Details" xml:space="preserve">
+    <value>Detail Server</value>
   </data>
   <data name="Servers" xml:space="preserve">
     <value>Server</value>

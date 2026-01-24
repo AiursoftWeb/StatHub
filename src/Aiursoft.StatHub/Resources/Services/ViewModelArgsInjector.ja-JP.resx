@@ -18,7 +18,10 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="Account Settings" xml:space="preserve">
+      <data name="Access Denied" xml:space="preserve">
+    <value>アクセス拒否</value>
+  </data>
+  <data name="Account Settings" xml:space="preserve">
     <value>アカウント設定</value>
   </data>
   <data name="Add a server" xml:space="preserve">
@@ -47,6 +50,9 @@
   </data>
   <data name="Background Jobs" xml:space="preserve">
     <value>バックグラウンドジョブ</value>
+  </data>
+  <data name="Bad Request" xml:space="preserve">
+    <value>Bad Request</value>
   </data>
   <data name="Change Avatar" xml:space="preserve">
     <value>アバターを変更</value>
@@ -105,6 +111,12 @@
   <data name="Info" xml:space="preserve">
     <value>情報</value>
   </data>
+  <data name="Internal Server Error" xml:space="preserve">
+    <value>内部サーバーエラー</value>
+  </data>
+  <data name="Lockout" xml:space="preserve">
+    <value>ロックアウト</value>
+  </data>
   <data name="Login" xml:space="preserve">
     <value>ログイン</value>
   </data>
@@ -113,6 +125,12 @@
   </data>
   <data name="Manage" xml:space="preserve">
     <value>管理</value>
+  </data>
+  <data name="Not Found" xml:space="preserve">
+    <value>Not Found</value>
+  </data>
+  <data name="Permission Details" xml:space="preserve">
+    <value>権限の詳細</value>
   </data>
   <data name="Permissions" xml:space="preserve">
     <value>権限</value>
@@ -138,8 +156,14 @@
   <data name="Roles" xml:space="preserve">
     <value>ロール</value>
   </data>
+  <data name="Self Host" xml:space="preserve">
+    <value>セルフホスト</value>
+  </data>
   <data name="Self host a new server" xml:space="preserve">
     <value>新しいサーバーをセルフホストする</value>
+  </data>
+  <data name="Server Details" xml:space="preserve">
+    <value>サーバーの詳細</value>
   </data>
   <data name="Servers" xml:space="preserve">
     <value>サーバー</value>
