@@ -42,7 +42,7 @@ public class DockerService(
                 containers.Add(new ContainerInfo
                 {
                     Id = parts[0],
-                    Name = parts[1],
+                    Name = parts[1].Split('.')[0],
                     Image = parts[2].Split('@')[0].Trim(),
                     State = parts[3],
                     Status = parts[4],
