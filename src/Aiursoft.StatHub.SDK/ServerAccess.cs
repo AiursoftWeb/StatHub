@@ -33,6 +33,7 @@ public class ServerAccess(
         int ramInGb,
         int usedRoot,
         int totalRoot,
+        DiskSpaceInfo[] disks,
         string? motd,
         DstatResult[] stats,
         ContainerInfo[] containers)
@@ -51,6 +52,7 @@ public class ServerAccess(
             RamInGb = ramInGb,
             UsedRoot = usedRoot,
             TotalRoot = totalRoot,
+            Disks = disks,
             Motd = motd,
             Stats = stats,
             Containers = containers

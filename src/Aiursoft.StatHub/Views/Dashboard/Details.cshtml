@@ -155,20 +155,44 @@
                              style="width: @(mem.CacheRate)%"></div>
                     </div>
                     <div class="mb-3"></div>
-                    <h6 class="h6 card-title" style="font-size: 0.8rem;">
-                        @Localizer["Disk"] (@agent.UsedRoot GB / @agent.TotalRoot GB)
-                    </h6>
-                    <div class="progress progress-sm w-100">
-                        <div class="progress-bar @health.DiskColorClass" role="progressbar"
-                             style="width: @(health.DiskUseRatio * 100)%"
-                             aria-valuenow="@(health.DiskUseRatio * 100)"
-                             aria-valuemin="0"
-                             aria-valuemax="100"
-                             data-bs-toggle="tooltip"
-                             data-placement="bottom"
-                             title="@health.DiskPrompt">
+                    @if (agent.Disks.Any())
+                    {
+                        @foreach (var disk in agent.Disks)
+                        {
+                            <h6 class="h6 card-title" style="font-size: 0.8rem;">
+                                @Localizer["Disk"] (@disk.Name: @disk.Used GB / @disk.Total GB)
+                            </h6>
+                            <div class="progress progress-sm w-100 mb-3">
+                                <div class="progress-bar @(disk.Total > 0 && disk.Used / (double)disk.Total > 0.7 ? "bg-danger" : disk.Total > 0 && disk.Used / (double)disk.Total > 0.6 ? "bg-warning" : "bg-success")"
+                                     role="progressbar"
+                                     style="width: @(disk.Total > 0 ? disk.Used * 100.0 / disk.Total : 0)%"
+                                     aria-valuenow="@(disk.Total > 0 ? disk.Used * 100.0 / disk.Total : 0)"
+                                     aria-valuemin="0"
+                                     aria-valuemax="100"
+                                     data-bs-toggle="tooltip"
+                                     data-placement="bottom"
+                                     title="@disk.Name: @disk.Used GB / @disk.Total GB">
+                                </div>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <h6 class="h6 card-title" style="font-size: 0.8rem;">
+                            @Localizer["Disk"] (@agent.UsedRoot GB / @agent.TotalRoot GB)
+                        </h6>
+                        <div class="progress progress-sm w-100">
+                            <div class="progress-bar @health.DiskColorClass" role="progressbar"
+                                 style="width: @(health.DiskUseRatio * 100)%"
+                                 aria-valuenow="@(health.DiskUseRatio * 100)"
+                                 aria-valuemin="0"
+                                 aria-valuemax="100"
+                                 data-bs-toggle="tooltip"
+                                 data-placement="bottom"
+                                 title="@health.DiskPrompt">
+                            </div>
                         </div>
-                    </div>
+                    }
                 </div>
                 <hr class="my-0"/>
                 <div class="card-body">

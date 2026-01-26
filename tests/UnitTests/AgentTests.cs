@@ -94,4 +94,26 @@ public class AgentTests
         StringAssert.Contains(report.Reason, "CPU critical");
         StringAssert.Contains(report.Reason, "Disk critical");
     }
+
+    [TestMethod]
+    public void TestGetHealthReport_MultipleDisks()
+    {
+        var agent = new Agent("test-client")
+        {
+            LastUpdate = DateTime.UtcNow,
+            CpuCores = 4,
+            TotalRoot = 100,
+            UsedRoot = 10,
+            Disks = new List<DiskSpaceInfo>
+            {
+                new() { Name = "/", Total = 100, Used = 10 },
+                new() { Name = "/data", Total = 100, Used = 90 }
+            }
+        };
+
+        var report = agent.GetHealthReport();
+        Assert.AreEqual(AgentStatus.Critical, report.Status);
+        Assert.AreEqual(0.9, report.DiskUseRatio);
+        StringAssert.Contains(report.Reason, "Disk critical");
+    }
 }

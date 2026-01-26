@@ -48,6 +48,7 @@ public class ApiController(
         entity.RamInGb = model.RamInGb;
         entity.UsedRoot = model.UsedRoot;
         entity.TotalRoot = model.TotalRoot;
+        entity.Disks = model.Disks.ToList();
         entity.Motd = model.Motd!;
         entity.Containers = model.Containers?.ToList() ?? new List<ContainerInfo>();
 

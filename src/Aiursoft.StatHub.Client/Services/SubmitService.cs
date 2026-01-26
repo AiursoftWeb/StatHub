@@ -50,7 +50,8 @@ public class SubmitService(
         logger.LogTrace($"Total RAM: {totalRam}.");
 
         var (totalRoot, usedRoot) = await skuInfoService.GetRootDriveSizeInGb();
-        logger.LogTrace($"Disk size: {usedRoot}/{totalRoot}.");
+        var disks = await skuInfoService.GetDisksSpace();
+        logger.LogTrace($"Disk size: {usedRoot}/{totalRoot}. Found {disks.Length} disks.");
 
         var clientId = await clientIdService.GetClientId();
         logger.LogTrace($"Client id: {clientId}.");
@@ -77,6 +78,7 @@ public class SubmitService(
                     totalRam,
                     usedRoot,
                     totalRoot,
+                    disks,
                     motd,
                     statResults,
                     containers);
