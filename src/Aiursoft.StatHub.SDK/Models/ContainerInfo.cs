@@ -11,6 +11,7 @@ public class ContainerInfo
     public long MemoryUsage { get; set; }
     public long MemoryLimit { get; set; }
     public string Uptime { get; set; } = null!;
+    public DateTime CreatedTime { get; set; }
     public string Ports { get; set; } = null!;
     public bool IsHealthy { get; set; }
 }

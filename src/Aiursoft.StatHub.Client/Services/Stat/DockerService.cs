@@ -21,7 +21,7 @@ public class DockerService(
             }
 
             // Do NOT use spaces in the format string. If there are no spaces, it works better with some command runners.
-            var psResult = await commandService.RunCommandAsync("docker", "ps --format {{.ID}}|{{.Names}}|{{.Image}}|{{.State}}|{{.Status}}|{{.Ports}}|{{.RunningFor}} --no-trunc", Path.GetTempPath());
+            var psResult = await commandService.RunCommandAsync("docker", "ps --format {{.ID}}|{{.Names}}|{{.Image}}|{{.State}}|{{.Status}}|{{.Ports}}|{{.RunningFor}}|{{.CreatedAt}} --no-trunc", Path.GetTempPath());
             if (psResult.code != 0)
             {
                 logger.LogWarning($"docker ps failed with exit code {psResult.code}. Error: {psResult.error}");
@@ -33,10 +33,25 @@ public class DockerService(
             foreach (var line in lines)
             {
                 var parts = line.Split("|");
-                if (parts.Length < 7)
+                if (parts.Length < 8)
                 {
-                    logger.LogDebug($"Failed to parse docker ps line: {line}. Expected at least 7 parts but got {parts.Length}.");
+                    logger.LogDebug($"Failed to parse docker ps line: {line}. Expected at least 8 parts but got {parts.Length}.");
                     continue;
+                }
+
+                var createdTimeStr = parts[7];
+                // Example: 2024-05-22 14:12:57 +0800 CST
+                if (!DateTime.TryParse(createdTimeStr, out var createdTime))
+                {
+                    // Fallback: try to parse the first 19 characters (yyyy-MM-dd HH:mm:ss)
+                    if (createdTimeStr.Length >= 19 && DateTime.TryParse(createdTimeStr[..19], out var fallbackTime))
+                    {
+                        createdTime = fallbackTime;
+                    }
+                    else
+                    {
+                        createdTime = DateTime.MinValue;
+                    }
                 }
 
                 containers.Add(new ContainerInfo
@@ -48,6 +63,7 @@ public class DockerService(
                     Status = parts[4],
                     Ports = parts[5],
                     Uptime = parts[6],
+                    CreatedTime = createdTime,
                     IsHealthy = parts[4].Contains("(healthy)") || !parts[4].Contains("(unhealthy)") && parts[3] == "running"
                 });
             }
