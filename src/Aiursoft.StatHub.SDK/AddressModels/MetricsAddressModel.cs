@@ -61,6 +61,9 @@ public class MetricsAddressModel
     [JsonProperty("totalRoot")]
     public int TotalRoot { get; set; }
 
+    [JsonProperty("disks")]
+    public DiskSpaceInfo[] Disks { get; set; } = [];
+
     [JsonProperty("motd")]
     public string? Motd { get; set; }
 

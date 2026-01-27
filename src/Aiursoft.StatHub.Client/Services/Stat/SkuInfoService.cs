@@ -1,6 +1,7 @@
 ﻿using System.Globalization;
 using Aiursoft.Canon;
 using Aiursoft.CSTools.Services;
+using Aiursoft.StatHub.SDK.Models;
 
 namespace Aiursoft.StatHub.Client.Services.Stat;
 
@@ -58,6 +59,44 @@ public class SkuInfoService(
             var rootDriveUsedInGbInt = Math.Ceiling(rootDriveUsedInGb);
             
             return ((int)rootDriveSizeInGbInt, (int)rootDriveUsedInGbInt);
+        }, cachedMinutes: _ => TimeSpan.FromMinutes(10));
+    }
+
+    public Task<DiskSpaceInfo[]> GetDisksSpace()
+    {
+        return cacheService.RunWithCache("disks-space", async () =>
+        {
+            // In docker, this will return the disks space of the host machine if the host's / is mounted to the container's /.
+            var dfResult = await commandService.RunCommandAsync("df", "-PT", Path.GetTempPath());
+            var lines = dfResult.output.Split('\n', StringSplitOptions.RemoveEmptyEntries).Skip(1);
+            var results = new List<DiskSpaceInfo>();
+            foreach (var line in lines)
+            {
+                var parts = line.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+                if (parts.Length < 7) continue;
+
+                var type = parts[1];
+                var mountedOn = parts[6];
+
+                if (type == "tmpfs" || type == "devtmpfs" || type == "overlay" || type == "vfat" || type == "squashfs")
+                {
+                    continue;
+                }
+
+                if (!long.TryParse(parts[2], CultureInfo.InvariantCulture, out var totalBlocks) ||
+                    !long.TryParse(parts[3], CultureInfo.InvariantCulture, out var usedBlocks))
+                {
+                    continue;
+                }
+
+                results.Add(new DiskSpaceInfo
+                {
+                    Name = mountedOn,
+                    Total = (int)Math.Ceiling(totalBlocks / 1024.0 / 1024.0),
+                    Used = (int)Math.Ceiling(usedBlocks / 1024.0 / 1024.0)
+                });
+            }
+            return results.ToArray();
         }, cachedMinutes: _ => TimeSpan.FromMinutes(10));
     }
 }

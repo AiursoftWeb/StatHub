@@ -155,6 +155,7 @@ public class Agent
     public int RamInGb { get; set; }
     public int TotalRoot { get; set; }
     public int UsedRoot { get; set; }
+    public List<DiskSpaceInfo> Disks { get; set; } = new();
     public string? CountryName { get; set; }
     public string? CountryCode { get; set; }
     public string? Motd { get; set; }
@@ -163,13 +164,24 @@ public class Agent
 
     public string GetSku()
     {
-        return $"{CpuCores}C-{RamInGb}G-{TotalRoot}G";
+        var totalDisk = TotalRoot;
+        if (Disks.Any())
+        {
+            totalDisk = Disks.Sum(d => d.Total);
+        }
+        return $"{CpuCores}C-{RamInGb}G-{totalDisk}G";
     }
 
     public int GetSkuInNumber()
     {
-        return CpuCores * 1000
-               + RamInGb;
+        var totalDisk = TotalRoot;
+        if (Disks.Any())
+        {
+            totalDisk = Disks.Sum(d => d.Total);
+        }
+        return CpuCores * 1000000
+               + RamInGb * 1000
+               + totalDisk;
     }
 
     public bool IsPrivateIp()
@@ -237,6 +249,11 @@ public class Agent
 
         var diskUseRatio = UsedRoot > 0 && TotalRoot > 0 ?
             UsedRoot / (double)TotalRoot : 0;
+        
+        if (Disks.Any())
+        {
+            diskUseRatio = Math.Max(diskUseRatio, Disks.Max(d => d.Total > 0 ? d.Used / (double)d.Total : 0));
+        }
 
         // 2. 状态逻辑
         AgentStatus status;
@@ -270,7 +287,11 @@ public class Agent
         // 3. Tooltips
         var loadPrompt = $"Load:\n1 min: {load.Load1M}\n5 min: {load.Load5M}\n15 min: {load.Load15M}";
         var cpuPrompt = $"CPU Usage:\nUser: {cpu.Usr}%\nSystem: {cpu.Sys}%\nIdle: {cpu.Idl}%\nWait: {cpu.Wai}%\nSteal: {cpu.Stl}%";
-        var diskPrompt = $"{UsedRoot}GB / {TotalRoot}GB";
+        var diskPrompt = $"/: {UsedRoot}GB / {TotalRoot}GB";
+        if (Disks.Any())
+        {
+            diskPrompt = string.Join("\n", Disks.Select(d => $"{d.Name}: {d.Used}GB / {d.Total}GB"));
+        }
 
         // 4. 返回报告
         return new AgentHealthReport
