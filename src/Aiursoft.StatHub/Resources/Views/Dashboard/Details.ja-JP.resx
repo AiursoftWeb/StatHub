@@ -57,6 +57,9 @@
   <data name="Disk I/O" xml:space="preserve">
     <value>ディスクI/O</value>
   </data>
+  <data name="Disk Usage" xml:space="preserve">
+    <value>ディスク使用量</value>
+  </data>
   <data name="Docker Containers" xml:space="preserve">
     <value>Dockerコンテナ</value>
   </data>
