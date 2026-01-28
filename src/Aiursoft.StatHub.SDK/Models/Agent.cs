@@ -1,4 +1,4 @@
-﻿using Aiursoft.AiurObserver;
+using Aiursoft.AiurObserver;
 using Aiursoft.AiurObserver.DefaultConsumers;
 
 namespace Aiursoft.StatHub.SDK.Models;
@@ -164,21 +164,13 @@ public class Agent
 
     public string GetSku()
     {
-        var totalDisk = TotalRoot;
-        if (Disks.Any())
-        {
-            totalDisk = Disks.Sum(d => d.Total);
-        }
+        var totalDisk = Disks.Any() ? Disks.Sum(d => d.Total) : TotalRoot;
         return $"{CpuCores}C-{RamInGb}G-{totalDisk}G";
     }
 
     public int GetSkuInNumber()
     {
-        var totalDisk = TotalRoot;
-        if (Disks.Any())
-        {
-            totalDisk = Disks.Sum(d => d.Total);
-        }
+        var totalDisk = Disks.Any() ? Disks.Sum(d => d.Total) : TotalRoot;
         return CpuCores * 1000000
                + RamInGb * 1000
                + totalDisk;
@@ -247,12 +239,14 @@ public class Agent
         var cpu = GetCpuUsage();
         var cpuRate = cpu.Ratio;
 
-        var diskUseRatio = UsedRoot > 0 && TotalRoot > 0 ?
-            UsedRoot / (double)TotalRoot : 0;
-        
+        var diskUseRatio = 0.0;
         if (Disks.Any())
         {
-            diskUseRatio = Math.Max(diskUseRatio, Disks.Max(d => d.Total > 0 ? d.Used / (double)d.Total : 0));
+            diskUseRatio = Disks.Max(d => d.Total > 0 ? d.Used / (double)d.Total : 0);
+        }
+        else if (TotalRoot > 0)
+        {
+            diskUseRatio = UsedRoot / (double)TotalRoot;
         }
 
         // 2. 状态逻辑
@@ -287,10 +281,14 @@ public class Agent
         // 3. Tooltips
         var loadPrompt = $"Load:\n1 min: {load.Load1M}\n5 min: {load.Load5M}\n15 min: {load.Load15M}";
         var cpuPrompt = $"CPU Usage:\nUser: {cpu.Usr}%\nSystem: {cpu.Sys}%\nIdle: {cpu.Idl}%\nWait: {cpu.Wai}%\nSteal: {cpu.Stl}%";
-        var diskPrompt = $"/: {UsedRoot}GB / {TotalRoot}GB";
+        var diskPrompt = string.Empty;
         if (Disks.Any())
         {
             diskPrompt = string.Join("\n", Disks.Select(d => $"{d.Name}: {d.Used}GB / {d.Total}GB"));
+        }
+        else
+        {
+            diskPrompt = $"/: {UsedRoot}GB / {TotalRoot}GB";
         }
 
         // 4. 返回报告

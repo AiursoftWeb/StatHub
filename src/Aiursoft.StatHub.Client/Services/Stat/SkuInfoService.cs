@@ -38,30 +38,6 @@ public class SkuInfoService(
         }, cachedMinutes: _ => TimeSpan.FromDays(1));
     }
 
-    public Task<(int total, int used)> GetRootDriveSizeInGb()
-    {
-        return cacheService.RunWithCache("root-drive-size", async () =>
-        {
-            // In docker, this will return the root drive size of the host machine.
-            var rootDriveSize = await commandService.RunCommandAsync("df", "/", Path.GetTempPath());
-            var rootDriveSizeInGb = double.Parse(rootDriveSize.output
-                .Split('\n', StringSplitOptions.RemoveEmptyEntries)[1]
-                .Split(' ', StringSplitOptions.RemoveEmptyEntries)[1], CultureInfo.InvariantCulture) / 1024 / 1024;
-            
-            // Hack here. Because 16 GB ram will be 15.6 GB in Linux.
-            var rootDriveSizeInGbInt = Math.Ceiling(rootDriveSizeInGb);
-            
-            var rootDriveUsedInGb = double.Parse(rootDriveSize.output
-                .Split('\n', StringSplitOptions.RemoveEmptyEntries)[1]
-                .Split(' ', StringSplitOptions.RemoveEmptyEntries)[2], CultureInfo.InvariantCulture) / 1024 / 1024;
-            
-            // Hack here. Because 16 GB ram will be 15.6 GB in Linux.
-            var rootDriveUsedInGbInt = Math.Ceiling(rootDriveUsedInGb);
-            
-            return ((int)rootDriveSizeInGbInt, (int)rootDriveUsedInGbInt);
-        }, cachedMinutes: _ => TimeSpan.FromMinutes(10));
-    }
-
     public Task<DiskSpaceInfo[]> GetDisksSpace()
     {
         return cacheService.RunWithCache("disks-space", async () =>
@@ -78,7 +54,7 @@ public class SkuInfoService(
                 var type = parts[1];
                 var mountedOn = parts[6];
 
-                if (type == "tmpfs" || type == "devtmpfs" || type == "overlay" || type == "vfat" || type == "squashfs")
+                if (type == "tmpfs" || type == "devtmpfs" || type == "overlay" || type == "vfat" || type == "squashfs" || type == "iso9660")
                 {
                     continue;
                 }
@@ -96,7 +72,7 @@ public class SkuInfoService(
                     Used = (int)Math.Ceiling(usedBlocks / 1024.0 / 1024.0)
                 });
             }
-            return results.ToArray();
+            return results.OrderBy(r => r.Name).ToArray();
         }, cachedMinutes: _ => TimeSpan.FromMinutes(10));
     }
 }

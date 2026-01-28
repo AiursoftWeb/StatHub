@@ -49,8 +49,10 @@ public class SubmitService(
         var totalRam = await skuInfoService.GetTotalRamInGb();
         logger.LogTrace($"Total RAM: {totalRam}.");
 
-        var (totalRoot, usedRoot) = await skuInfoService.GetRootDriveSizeInGb();
         var disks = await skuInfoService.GetDisksSpace();
+        var rootDisk = disks.FirstOrDefault(d => d.Name == "/") ?? disks.FirstOrDefault();
+        var totalRoot = rootDisk?.Total ?? 0;
+        var usedRoot = rootDisk?.Used ?? 0;
         logger.LogTrace($"Disk size: {usedRoot}/{totalRoot}. Found {disks.Length} disks.");
 
         var clientId = await clientIdService.GetClientId();
