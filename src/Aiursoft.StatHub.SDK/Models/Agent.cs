@@ -281,7 +281,7 @@ public class Agent
         // 3. Tooltips
         var loadPrompt = $"Load:\n1 min: {load.Load1M}\n5 min: {load.Load5M}\n15 min: {load.Load15M}";
         var cpuPrompt = $"CPU Usage:\nUser: {cpu.Usr}%\nSystem: {cpu.Sys}%\nIdle: {cpu.Idl}%\nWait: {cpu.Wai}%\nSteal: {cpu.Stl}%";
-        var diskPrompt = string.Empty;
+        string diskPrompt;
         if (Disks.Any())
         {
             diskPrompt = string.Join("\n", Disks.Select(d => $"{d.Name}: {d.Used}GB / {d.Total}GB"));
