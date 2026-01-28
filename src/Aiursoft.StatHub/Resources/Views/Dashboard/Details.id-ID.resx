@@ -57,6 +57,9 @@
   <data name="Disk I/O" xml:space="preserve">
     <value>I/O Disk</value>
   </data>
+  <data name="Disk Usage" xml:space="preserve">
+    <value>Penggunaan Disk</value>
+  </data>
   <data name="Docker Containers" xml:space="preserve">
     <value>Docker Containers</value>
   </data>
