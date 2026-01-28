@@ -155,13 +155,14 @@
                              style="width: @(mem.CacheRate)%"></div>
                     </div>
                     <div class="mb-3"></div>
+                    <h6 class="h6 card-title" style="font-size: 0.8rem;">
+                        @Localizer["Disk Usage"]
+                    </h6>
                     @if (agent.Disks.Any())
                     {
                         @foreach (var disk in agent.Disks)
                         {
-                            <h6 class="h6 card-title" style="font-size: 0.8rem;">
-                                @Localizer["Disk"] (@disk.Name: @disk.Used GB / @disk.Total GB)
-                            </h6>
+                            <p class="mb-1 small text-muted">@disk.Name (@disk.Used GB / @disk.Total GB)</p>
                             <div class="progress progress-sm w-100 mb-3">
                                 <div class="progress-bar @(disk.Total > 0 && disk.Used / (double)disk.Total > 0.7 ? "bg-danger" : disk.Total > 0 && disk.Used / (double)disk.Total > 0.6 ? "bg-warning" : "bg-success")"
                                      role="progressbar"
@@ -178,9 +179,7 @@
                     }
                     else
                     {
-                        <h6 class="h6 card-title" style="font-size: 0.8rem;">
-                            @Localizer["Disk"] (@agent.UsedRoot GB / @agent.TotalRoot GB)
-                        </h6>
+                        <p class="mb-1 small text-muted">/ (@agent.UsedRoot GB / @agent.TotalRoot GB)</p>
                         <div class="progress progress-sm w-100">
                             <div class="progress-bar @health.DiskColorClass" role="progressbar"
                                  style="width: @(health.DiskUseRatio * 100)%"
