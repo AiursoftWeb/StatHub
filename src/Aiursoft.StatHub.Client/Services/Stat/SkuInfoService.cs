@@ -54,7 +54,7 @@ public class SkuInfoService(
                 var type = parts[1];
                 var mountedOn = parts[6];
 
-                if (type == "tmpfs" || type == "devtmpfs" || type == "overlay" || type == "vfat" || type == "squashfs" || type == "iso9660")
+                if (type == "tmpfs" || type == "devtmpfs" || type == "overlay" || type == "vfat" || type == "squashfs" || type == "iso9660" || type == "efivarfs")
                 {
                     continue;
                 }
