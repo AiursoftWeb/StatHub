@@ -14,4 +14,5 @@ public class ContainerInfo
     public DateTime CreatedTime { get; set; }
     public string Ports { get; set; } = null!;
     public bool IsHealthy { get; set; }
+    public bool HasHealthCheck { get; set; }
 }
