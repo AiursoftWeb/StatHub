@@ -314,6 +314,16 @@
                             <tbody>
                                 @foreach (var container in agent.Containers)
                                 {
+                                    var statusTextClass = "text-muted";
+                                    if (container.Status.Contains("(healthy)"))
+                                    {
+                                        statusTextClass = "text-success";
+                                    }
+                                    else if (container.Status.Contains("(unhealthy)"))
+                                    {
+                                        statusTextClass = "text-danger";
+                                    }
+
                                     <tr class="align-middle">
                                         <td data-sort="@(container.IsHealthy ? 1 : 0)">
                                             @if (container.HasHealthCheck)
@@ -351,7 +361,7 @@
                                                 }
                                             }
                                             <br/>
-                                            <span class="text-muted small">@container.State (@container.Status)</span>
+                                            <span class="@statusTextClass small">@container.State (@container.Status)</span>
                                         </td>
                                         <td><strong>@container.Name.Split('.')[0]</strong><br /><small class="text-muted">@container.Id.SafeSubstring(12)</small></td>
                                         <td style="max-width: 150px;" class="text-truncate" title="@container.Image">@container.Image</td>
