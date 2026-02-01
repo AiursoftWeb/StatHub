@@ -117,11 +117,17 @@
   <data name="RAM Usage" xml:space="preserve">
     <value>記憶體使用量</value>
   </data>
+  <data name="Running" xml:space="preserve">
+    <value>執行中</value>
+  </data>
   <data name="Runtime Info" xml:space="preserve">
     <value>執行階段資訊</value>
   </data>
   <data name="Status" xml:space="preserve">
     <value>狀態</value>
+  </data>
+  <data name="Stopped" xml:space="preserve">
+    <value>已停止</value>
   </data>
   <data name="System Load" xml:space="preserve">
     <value>系統負載</value>

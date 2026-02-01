@@ -117,11 +117,17 @@
   <data name="RAM Usage" xml:space="preserve">
     <value>Penggunaan RAM</value>
   </data>
+  <data name="Running" xml:space="preserve">
+    <value>Berjalan</value>
+  </data>
   <data name="Runtime Info" xml:space="preserve">
     <value>Informasi Runtime</value>
   </data>
   <data name="Status" xml:space="preserve">
     <value>Status</value>
+  </data>
+  <data name="Stopped" xml:space="preserve">
+    <value>Dihentikan</value>
   </data>
   <data name="System Load" xml:space="preserve">
     <value>Beban Sistem</value>
