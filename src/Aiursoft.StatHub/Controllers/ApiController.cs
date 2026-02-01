@@ -37,19 +37,19 @@ public class ApiController(
         var entity = database.GetOrAddClient(model.ClientId!);
         entity.ClientId = model.ClientId!;
         entity.BootTime = model.BootTime;
-        entity.Hostname = model.Hostname!;
-        entity.Ip = HttpContext.Connection.RemoteIpAddress?.ToString()!;
+        entity.Hostname = model.Hostname ?? "Unknown";
+        entity.Ip = HttpContext.Connection.RemoteIpAddress?.ToString() ?? "Unknown";
         entity.LastUpdate = DateTime.UtcNow;
-        entity.Version = model.Version!;
-        entity.Process = model.Process!;
-        entity.OsName = model.OsName!;
+        entity.Version = model.Version ?? "Unknown";
+        entity.Process = model.Process ?? "Unknown";
+        entity.OsName = model.OsName ?? "Unknown";
         entity.KernelVersion = model.KernelVersion;
         entity.CpuCores = model.CpuCores;
         entity.RamInGb = model.RamInGb;
         entity.UsedRoot = model.UsedRoot;
         entity.TotalRoot = model.TotalRoot;
         entity.Disks = model.Disks.ToList();
-        entity.Motd = model.Motd!;
+        entity.Motd = model.Motd;
         entity.Containers = model.Containers?.ToList() ?? new List<ContainerInfo>();
 
         // Get country information if not already set

@@ -116,4 +116,15 @@ public class AgentTests
         Assert.AreEqual(0.9, report.DiskUseRatio);
         StringAssert.Contains(report.Reason, "Disk critical");
     }
+
+    [TestMethod]
+    public void TestAgentDefaults()
+    {
+        var agent = new Agent("test-client");
+        Assert.AreEqual("Unknown", agent.Hostname);
+        Assert.AreEqual("Unknown", agent.OsName);
+        Assert.AreEqual("Unknown", agent.Ip);
+        Assert.AreEqual("Unknown", agent.Version);
+        Assert.AreEqual("Unknown", agent.Process);
+    }
 }
