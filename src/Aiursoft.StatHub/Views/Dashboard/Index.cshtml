@@ -177,7 +177,7 @@
                                 var mem = agent.GetMemUsed();
                                 var net = showLast30 ? agent.GetNetworkLast30Seconds() : agent.GetNetwork();
                                 var disk = showLast30 ? agent.GetDiskLast30Seconds() : agent.GetDisk();
-                                var osFirstTwoWords = string.Join(" ", (agent.OsName ?? "Unknown").Split(' ').Take(2)).Trim();
+                                var osFirstTwoWords = string.Join(" ", agent.OsName.Split(' ').Take(2)).Trim();
                                     <tr>
                                         <td data-sort="@health.Status">
                                             <label data-bs-toggle="tooltip" data-placement="bottom" title="@health.Reason">
