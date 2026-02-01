@@ -54,17 +54,20 @@ public class DockerService(
                     }
                 }
 
+                var status = parts[4];
+                var hasHealthCheck = status.Contains("(healthy)") || status.Contains("(unhealthy)") || status.Contains("health: starting");
                 containers.Add(new ContainerInfo
                 {
                     Id = parts[0],
                     Name = parts[1].Split('.')[0],
                     Image = parts[2].Split('@')[0].Trim(),
                     State = parts[3],
-                    Status = parts[4],
+                    Status = status,
                     Ports = parts[5],
                     Uptime = parts[6],
                     CreatedTime = createdTime,
-                    IsHealthy = parts[4].Contains("(healthy)") || !parts[4].Contains("(unhealthy)") && parts[3] == "running"
+                    HasHealthCheck = hasHealthCheck,
+                    IsHealthy = hasHealthCheck ? status.Contains("(healthy)") : parts[3] == "running"
                 });
             }
 
