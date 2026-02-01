@@ -117,11 +117,17 @@
   <data name="RAM Usage" xml:space="preserve">
     <value>Bellek Kullanımı</value>
   </data>
+  <data name="Running" xml:space="preserve">
+    <value>Çalışıyor</value>
+  </data>
   <data name="Runtime Info" xml:space="preserve">
     <value>Çalışma Zamanı Bilgisi</value>
   </data>
   <data name="Status" xml:space="preserve">
     <value>Status</value>
+  </data>
+  <data name="Stopped" xml:space="preserve">
+    <value>Durduruldu</value>
   </data>
   <data name="System Load" xml:space="preserve">
     <value>Sistem Yükü</value>

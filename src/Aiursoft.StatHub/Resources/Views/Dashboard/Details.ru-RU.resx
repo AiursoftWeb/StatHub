@@ -117,11 +117,17 @@
   <data name="RAM Usage" xml:space="preserve">
     <value>Использование ОЗУ</value>
   </data>
+  <data name="Running" xml:space="preserve">
+    <value>Работает</value>
+  </data>
   <data name="Runtime Info" xml:space="preserve">
     <value>Информация о времени выполнения</value>
   </data>
   <data name="Status" xml:space="preserve">
     <value>Status</value>
+  </data>
+  <data name="Stopped" xml:space="preserve">
+    <value>Остановлен</value>
   </data>
   <data name="System Load" xml:space="preserve">
     <value>Нагрузка системы</value>

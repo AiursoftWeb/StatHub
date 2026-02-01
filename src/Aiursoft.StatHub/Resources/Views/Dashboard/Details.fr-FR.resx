@@ -117,11 +117,17 @@
   <data name="RAM Usage" xml:space="preserve">
     <value>Utilisation de la RAM</value>
   </data>
+  <data name="Running" xml:space="preserve">
+    <value>En cours d&apos;exécution</value>
+  </data>
   <data name="Runtime Info" xml:space="preserve">
     <value>Informations d&apos;exécution</value>
   </data>
   <data name="Status" xml:space="preserve">
     <value>Status</value>
+  </data>
+  <data name="Stopped" xml:space="preserve">
+    <value>Arrêté</value>
   </data>
   <data name="System Load" xml:space="preserve">
     <value>Charge du système</value>
