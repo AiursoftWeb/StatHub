@@ -95,10 +95,10 @@ public class Agent
     }
 
     public string ClientId { get; set; }
-    public string Hostname { get; set; } = null!;
-    public string OsName { get; set; } = null!;
+    public string Hostname { get; set; } = "Unknown";
+    public string OsName { get; set; } = "Unknown";
     public string? KernelVersion { get; set; }
-    public string Ip { get; set; } = null!;
+    public string Ip { get; set; } = "Unknown";
 
     public DateTime BootTime { get; set; } = DateTime.MinValue;
 
@@ -147,8 +147,8 @@ public class Agent
 
     public DateTime LastUpdate { get; set; } = DateTime.UtcNow;
 
-    public string Version { get; set; } = null!;
-    public string Process { get; set; } = null!;
+    public string Version { get; set; } = "Unknown";
+    public string Process { get; set; } = "Unknown";
 
     public AsyncObservable<DstatResult> Stats { get; set; }
     public int CpuCores { get; set; }
