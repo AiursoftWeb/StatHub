@@ -2,11 +2,15 @@ using Aiursoft.Scanner.Abstractions;
 using Aiursoft.StatHub.Configuration;
 using Aiursoft.StatHub.Entities;
 using Aiursoft.StatHub.Models;
+using Aiursoft.StatHub.Services.FileStorage;
 using Microsoft.EntityFrameworkCore;
 
 namespace Aiursoft.StatHub.Services;
 
-public class GlobalSettingsService(StatHubDbContext dbContext, IConfiguration configuration) : IScopedDependency
+public class GlobalSettingsService(
+    StatHubDbContext dbContext, 
+    IConfiguration configuration,
+    StorageService storageService) : IScopedDependency
 {
     public async Task<string> GetSettingValueAsync(string key)
     {
@@ -77,6 +81,25 @@ public class GlobalSettingsService(StatHubDbContext dbContext, IConfiguration co
                 if (definition.ChoiceOptions != null && !definition.ChoiceOptions.ContainsKey(value))
                 {
                     throw new InvalidOperationException($"Value '{value}' is not a valid choice for setting {key}.");
+                }
+                break;
+            case SettingType.File:
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    throw new InvalidOperationException($"File path cannot be empty for setting {key}.");
+                }
+                // Validate that the file exists and path is secure using StorageService
+                try
+                {
+                    var physicalPath = storageService.GetFilePhysicalPath(value, isVault: false);
+                    if (!File.Exists(physicalPath))
+                    {
+                        throw new InvalidOperationException($"File not found for setting {key}.");
+                    }
+                }
+                catch (ArgumentException)
+                {
+                    throw new InvalidOperationException($"Invalid file path for setting {key}.");
                 }
                 break;
             case SettingType.Text:
