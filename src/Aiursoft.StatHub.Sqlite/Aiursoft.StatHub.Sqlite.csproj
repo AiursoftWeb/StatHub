@@ -13,6 +13,6 @@
     <ProjectReference Include="..\Aiursoft.StatHub.Entities\Aiursoft.StatHub.Entities.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Aiursoft.DbTools.Sqlite" Version="10.0.12" />
+    <PackageReference Include="Aiursoft.DbTools.Sqlite" Version="10.0.13" />
   </ItemGroup>
 </Project>
