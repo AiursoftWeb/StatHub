@@ -24,7 +24,7 @@ public class DockerService(
             var psResult = await commandService.RunCommandAsync("docker", "ps --format {{.ID}}|{{.Names}}|{{.Image}}|{{.State}}|{{.Status}}|{{.Ports}}|{{.RunningFor}}|{{.CreatedAt}} --no-trunc", Path.GetTempPath());
             if (psResult.code != 0)
             {
-                logger.LogWarning($"docker ps failed with exit code {psResult.code}. Error: {psResult.error}");
+                logger.LogWarning("docker ps failed with exit code {Code}. Error: {Error}", psResult.code, psResult.error);
                 return [];
             }
 
@@ -35,7 +35,7 @@ public class DockerService(
                 var parts = line.Split("|");
                 if (parts.Length < 8)
                 {
-                    logger.LogDebug($"Failed to parse docker ps line: {line}. Expected at least 8 parts but got {parts.Length}.");
+                    logger.LogDebug("Failed to parse docker ps line: {Line}. Expected at least 8 parts but got {Length}.", line, parts.Length);
                     continue;
                 }
 
@@ -104,7 +104,7 @@ public class DockerService(
             }
             else
             {
-                logger.LogWarning($"docker stats failed with exit code {statsResult.code}. Error: {statsResult.error}");
+                logger.LogWarning("docker stats failed with exit code {Code}. Error: {Error}", statsResult.code, statsResult.error);
             }
 
             return containers.ToArray();

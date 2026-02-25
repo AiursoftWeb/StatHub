@@ -10,10 +10,7 @@ public class InMemoryDatabase : ISingletonDependency
 
     public Agent GetOrAddClient(string clientId)
     {
-        lock (Agents)
-        {
-            return Agents.GetOrAdd(clientId, _ => new Agent(clientId));
-        }
+        return Agents.GetOrAdd(clientId, _ => new Agent(clientId));
     }
 
     public Agent? GetClient(string clientId)
