@@ -258,19 +258,19 @@ public class Agent
             status = AgentStatus.Offline;
             reason = "Server is out of sync.";
         }
-        else if (loadRate > 100 || cpuRate > 40 || diskUseRatio > 0.7)
+        else if (loadRate > 100 || cpuRate > 40 || diskUseRatio > 0.92)
         {
             status = AgentStatus.Critical;
             reason = (loadRate > 100 ? "Load critical. " : "") +
                      (cpuRate > 40 ? "CPU critical. " : "") +
-                     (diskUseRatio > 0.7 ? "Disk critical. " : "");
+                     (diskUseRatio > 0.92 ? "Disk critical. " : "");
         }
-        else if (loadRate > 70 || cpuRate > 20 || diskUseRatio > 0.6)
+        else if (loadRate > 70 || cpuRate > 20 || diskUseRatio > 0.8)
         {
             status = AgentStatus.Warning;
             reason = (loadRate > 70 ? "Load warning. " : "") +
                      (cpuRate > 20 ? "CPU warning. " : "") +
-                     (diskUseRatio > 0.6 ? "Disk warning. " : "");
+                     (diskUseRatio > 0.8 ? "Disk warning. " : "");
         }
         else
         {

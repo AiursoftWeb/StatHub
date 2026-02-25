@@ -28,8 +28,8 @@ public record AgentHealthReport
         CpuRate < 20 ? "bg-secondary" :
         CpuRate < 40 ? "bg-warning" : "bg-danger";
 
-    public string DiskColorClass => DiskUseRatio < 0.6 ? "bg-success" :
-        DiskUseRatio < 0.7 ? "bg-warning" : "bg-danger";
+    public string DiskColorClass => DiskUseRatio < 0.8 ? "bg-success" :
+        DiskUseRatio < 0.92 ? "bg-warning" : "bg-danger";
 
     // 4. 模板样式 (用于详情页卡片 和 主页状态图标)
     public string BadgeClass => Status switch
