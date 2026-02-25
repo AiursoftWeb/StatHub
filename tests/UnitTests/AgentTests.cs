@@ -78,7 +78,7 @@ public class AgentTests
             LastUpdate = DateTime.UtcNow,
             CpuCores = 1,
             TotalRoot = 100,
-            UsedRoot = 80
+            UsedRoot = 95
         };
         await agent.Stats.BroadcastAsync(new DstatResult
         {
@@ -107,14 +107,39 @@ public class AgentTests
             Disks = new List<DiskSpaceInfo>
             {
                 new() { Name = "/", Total = 100, Used = 10 },
-                new() { Name = "/data", Total = 100, Used = 90 }
+                new() { Name = "/data", Total = 100, Used = 95 }
             }
         };
 
         var report = agent.GetHealthReport();
         Assert.AreEqual(AgentStatus.Critical, report.Status);
-        Assert.AreEqual(0.9, report.DiskUseRatio);
+        Assert.AreEqual(0.95, report.DiskUseRatio);
         StringAssert.Contains(report.Reason, "Disk critical");
+    }
+
+    [TestMethod]
+    public async Task TestGetHealthReport_Warning()
+    {
+        var agent = new Agent("test-client")
+        {
+            LastUpdate = DateTime.UtcNow,
+            CpuCores = 4,
+            TotalRoot = 100,
+            UsedRoot = 85
+        };
+        await agent.Stats.BroadcastAsync(new DstatResult
+        {
+            CpuUsr = 1,
+            CpuSys = 1,
+            CpuIdl = 98,
+            Load15M = 0.3 
+        });
+
+        var report = agent.GetHealthReport();
+        Assert.AreEqual(AgentStatus.Warning, report.Status);
+        Assert.AreEqual(0.85, report.DiskUseRatio);
+        StringAssert.Contains(report.Reason, "Disk warning");
+        Assert.AreEqual("bg-warning", report.DiskColorClass);
     }
 
     [TestMethod]

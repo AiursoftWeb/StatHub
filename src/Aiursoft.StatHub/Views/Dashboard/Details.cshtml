@@ -164,7 +164,7 @@
                         {
                             <p class="mb-1 small text-muted">@disk.Name (@disk.Used GB / @disk.Total GB)</p>
                             <div class="progress progress-sm w-100 mb-3">
-                                <div class="progress-bar @(disk.Total > 0 && disk.Used / (double)disk.Total > 0.7 ? "bg-danger" : disk.Total > 0 && disk.Used / (double)disk.Total > 0.6 ? "bg-warning" : "bg-success")"
+                                <div class="progress-bar @(disk.Total > 0 && disk.Used / (double)disk.Total > 0.92 ? "bg-danger" : disk.Total > 0 && disk.Used / (double)disk.Total > 0.8 ? "bg-warning" : "bg-success")"
                                      role="progressbar"
                                      style="width: @(disk.Total > 0 ? disk.Used * 100.0 / disk.Total : 0)%"
                                      aria-valuenow="@(disk.Total > 0 ? disk.Used * 100.0 / disk.Total : 0)"
