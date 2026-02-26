@@ -396,11 +396,12 @@
     <script src="~/scripts/metrics.js" asp-append-version="true"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            startCpuClient("@Model.Agent.ClientId");
-            startRamClient("@Model.Agent.ClientId", @Model.Agent.RamInGb);
-            startLoadChart("@Model.Agent.ClientId");
-            startNetworkChart("@Model.Agent.ClientId");
-            startDiskChart("@Model.Agent.ClientId");
+            const clientId = "@Model.Agent.ClientId";
+            startCpuClient(clientId);
+            startRamClient(clientId, @Model.Agent.RamInGb);
+            startLoadChart(clientId);
+            startNetworkChart(clientId);
+            startDiskChart(clientId);
 
             if ($("#containersTable").length > 0) {
                 $('#containersTable').DataTable({
