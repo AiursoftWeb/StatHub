@@ -181,41 +181,35 @@ public class Agent
         if (string.IsNullOrWhiteSpace(Ip))
             return true;
 
-        // Check for localhost
-        if (Ip == "::1" || Ip == "127.0.0.1" || Ip.StartsWith("127."))
+        if (!System.Net.IPAddress.TryParse(Ip, out var ipAddress))
             return true;
 
-        // Parse IP address
-        if (System.Net.IPAddress.TryParse(Ip, out var ipAddress))
+        if (System.Net.IPAddress.IsLoopback(ipAddress))
+            return true;
+
+        var bytes = ipAddress.GetAddressBytes();
+
+        // IPv4 private ranges
+        if (ipAddress.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
         {
-            var bytes = ipAddress.GetAddressBytes();
-
-            // IPv4 private ranges
-            if (ipAddress.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+            return bytes[0] switch
             {
-                // 10.0.0.0 - 10.255.255.255
-                if (bytes[0] == 10)
-                    return true;
+                10 => true,
+                172 => bytes[1] >= 16 && bytes[1] <= 31,
+                192 => bytes[1] == 168,
+                _ => false
+            };
+        }
+        
+        // IPv6 private ranges
+        if (ipAddress.AddressFamily == System.Net.Sockets.AddressFamily.InterNetworkV6)
+        {
+            // Check for link-local (fe80::/10)
+            if (bytes[0] == 0xfe && (bytes[1] & 0xc0) == 0x80)
+                return true;
 
-                // 172.16.0.0 - 172.31.255.255
-                if (bytes[0] == 172 && bytes[1] >= 16 && bytes[1] <= 31)
-                    return true;
-
-                // 192.168.0.0 - 192.168.255.255
-                if (bytes[0] == 192 && bytes[1] == 168)
-                    return true;
-            }
-            // IPv6 private ranges
-            else if (ipAddress.AddressFamily == System.Net.Sockets.AddressFamily.InterNetworkV6)
-            {
-                // Check for link-local (fe80::/10)
-                if (bytes[0] == 0xfe && (bytes[1] & 0xc0) == 0x80)
-                    return true;
-
-                // Check for unique local (fc00::/7)
-                if ((bytes[0] & 0xfe) == 0xfc)
-                    return true;
-            }
+            // Check for unique local (fc00::/7)
+            return (bytes[0] & 0xfe) == 0xfc;
         }
 
         return false;

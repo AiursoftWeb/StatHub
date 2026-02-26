@@ -16,7 +16,9 @@ public class IpGeolocationService(
 
     private async Task<(string CountryName, string CountryCode)?> GetLocationFromServiceProviderAsync(string ip)
     {
-        if (string.IsNullOrWhiteSpace(ip) || ip == "::1" || ip == "127.0.0.1")
+        if (string.IsNullOrWhiteSpace(ip) || 
+            !System.Net.IPAddress.TryParse(ip, out var ipAddress) || 
+            System.Net.IPAddress.IsLoopback(ipAddress))
         {
             return null;
         }
