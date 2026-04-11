@@ -24,7 +24,7 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Aiursoft.AiurObserver.Command" Version="10.0.5" />
+    <PackageReference Include="Aiursoft.AiurObserver.Command" Version="10.0.6" />
     <PackageReference Include="Aiursoft.CommandFramework" Version="10.0.7" />
     <None Include="..\..\README.md" Pack="true" PackagePath="." />
   </ItemGroup>
