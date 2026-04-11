@@ -1,8 +1,6 @@
 using Aiursoft.StatHub.Services;
 using Aiursoft.StatHub.Tests.MockServices;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 
 namespace Aiursoft.StatHub.Tests;
 

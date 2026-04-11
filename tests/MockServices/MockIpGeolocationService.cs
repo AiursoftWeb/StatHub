@@ -1,10 +1,11 @@
+using Aiursoft.Canon;
 using Aiursoft.StatHub.Services;
 using Microsoft.Extensions.Logging;
 
 namespace Aiursoft.StatHub.Tests.MockServices;
 
 public class MockIpGeolocationService(
-    Aiursoft.Canon.CacheService cacheService,
+    CacheService cacheService,
     IHttpClientFactory httpClientFactory,
     ILogger<IpGeolocationService> logger)
     : IpGeolocationService(cacheService, httpClientFactory, logger)
