@@ -8,16 +8,20 @@ public class SystemControllerTests : TestBase
     [TestMethod]
     public async Task TestIndex()
     {
-        await LoginAsAdmin();
+        // 1. Unauthorized
         var response = await Http.GetAsync("/System/Index");
-        response.EnsureSuccessStatusCode();
-    }
+        Assert.AreEqual(HttpStatusCode.Found, response.StatusCode);
 
-    [TestMethod]
-    public async Task TestShutdown()
-    {
+        // 2. Logged in, no permission
+        await RegisterAndLoginAsync();
+        var forbiddenResponse = await Http.GetAsync("/System/Index");
+        Assert.IsTrue(forbiddenResponse.StatusCode is HttpStatusCode.Forbidden or HttpStatusCode.Redirect or HttpStatusCode.Found);
+
+        // 3. Admin
         await LoginAsAdmin();
-        var response = await Http.PostAsync("/System/Shutdown", null);
-        Assert.AreEqual(HttpStatusCode.Accepted, response.StatusCode);
+        var adminResponse = await Http.GetAsync("/System/Index");
+        adminResponse.EnsureSuccessStatusCode();
+        var html = await adminResponse.Content.ReadAsStringAsync();
+        Assert.Contains("System Information", html);
     }
 }

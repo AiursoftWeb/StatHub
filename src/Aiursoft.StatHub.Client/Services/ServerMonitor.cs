@@ -8,7 +8,7 @@ namespace Aiursoft.StatHub.Client.Services;
 
 [ExcludeFromCodeCoverage] // This class is not a part of our test.
 public class ServerMonitor(
-    SubmitService submitService,
+    AgentChannelService agentChannelService,
     LongCommandRunner commandService,
     ILogger<ServerMonitor> logger)
 {
@@ -19,6 +19,7 @@ public class ServerMonitor(
         try
         {
             logger.LogInformation("Starting to monitor server...");
+            await agentChannelService.StartAsync();
             _subscription = commandService
                 .Output
                 .Filter(t => !string.IsNullOrWhiteSpace(t))
@@ -32,7 +33,7 @@ public class ServerMonitor(
                 .Throttle(TimeSpan.FromSeconds(9)) // Max speed is every 9 seconds one request.
                 .InNewThread(e => { logger.LogCritical(e, "Failed to submit to server.");})
                 .Pipe(result => { logger.LogTrace("Sending {Count} metrics.", result.Length); })
-                .Subscribe(submitService);
+                .Subscribe(agentChannelService);
 
             var args = "--cpu --mem --disk --net --load --nocolor --noheaders";
             if (onlyOneTrigger)

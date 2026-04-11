@@ -28,46 +28,4 @@ public class ApiController(
     {
         return this.Protocol(Code.ResultShown, $"Welcome to this StatHub server!");
     }
-
-    [HttpPost("metrics")]
-    public async Task<IActionResult> Metrics([FromBody] MetricsAddressModel model)
-    {
-        logger.LogInformation("Received metrics from {Identity}.", model.ClientId);
-
-        var entity = database.GetOrAddClient(model.ClientId!);
-        entity.ClientId = model.ClientId!;
-        entity.BootTime = model.BootTime;
-        entity.Hostname = model.Hostname ?? "Unknown";
-        entity.Ip = HttpContext.Connection.RemoteIpAddress?.ToString() ?? "Unknown";
-        entity.LastUpdate = DateTime.UtcNow;
-        entity.Version = model.Version ?? "Unknown";
-        entity.Process = model.Process ?? "Unknown";
-        entity.OsName = model.OsName ?? "Unknown";
-        entity.KernelVersion = model.KernelVersion;
-        entity.CpuCores = model.CpuCores;
-        entity.RamInGb = model.RamInGb;
-        entity.UsedRoot = model.UsedRoot;
-        entity.TotalRoot = model.TotalRoot;
-        entity.Disks = model.Disks.ToList();
-        entity.Motd = model.Motd;
-        entity.Containers = model.Containers?.ToList() ?? new List<ContainerInfo>();
-
-        // Get country information if not already set
-        if (string.IsNullOrWhiteSpace(entity.CountryCode) && !string.IsNullOrWhiteSpace(entity.Ip))
-        {
-            var location = await ipGeolocationService.GetLocationAsync(entity.Ip);
-            if (location != null)
-            {
-                entity.CountryName = location.Value.CountryName;
-                entity.CountryCode = location.Value.CountryCode;
-            }
-        }
-
-        foreach (var stat in model.Stats ?? [])
-        {
-            await entity.Stats.BroadcastAsync(stat);
-        }
-        return this.Protocol(Code.JobDone, $"Got!");
-    }
-
 }

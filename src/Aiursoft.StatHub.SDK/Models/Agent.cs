@@ -1,5 +1,6 @@
 using Aiursoft.AiurObserver;
 using Aiursoft.AiurObserver.DefaultConsumers;
+using System.Collections.Concurrent;
 
 namespace Aiursoft.StatHub.SDK.Models;
 
@@ -36,6 +37,8 @@ public class Agent
     {
         ClientId = clientId;
         Stats = new AsyncObservable<DstatResult>();
+        PendingCommands = new AsyncObservable<Command>();
+        CommandHistory = new ConcurrentDictionary<Guid, CommandExecution>();
 
         // NOTE: 更新构造函数以初始化公共字段
         CpuUsr = new MessageStageLast<int>();
@@ -151,6 +154,8 @@ public class Agent
     public string Process { get; set; } = "Unknown";
 
     public AsyncObservable<DstatResult> Stats { get; set; }
+    public AsyncObservable<Command> PendingCommands { get; set; }
+    public ConcurrentDictionary<Guid, CommandExecution> CommandHistory { get; set; }
     public int CpuCores { get; set; }
     public int RamInGb { get; set; }
     public int TotalRoot { get; set; }

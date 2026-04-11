@@ -20,45 +20,4 @@ public class ServerAccess(
         var url = new AiurApiEndpoint(host: _serverLocator.Instance, route: "/api/info", param: new { });
         return http.Get<AiurResponse>(url);
     }
-
-    public Task<AiurResponse> MetricsAsync(
-        string clientId,
-        string hostname,
-        DateTime bootTime,
-        string version,
-        string process,
-        string osName,
-        string kernelVersion,
-        int cpuCores,
-        int ramInGb,
-        int usedRoot,
-        int totalRoot,
-        DiskSpaceInfo[] disks,
-        string? motd,
-        DstatResult[] stats,
-        ContainerInfo[] containers)
-    {
-        var url = new AiurApiEndpoint(_serverLocator.Instance, "/api/metrics", new { });
-        var form = new AiurApiPayload(new MetricsAddressModel
-        {
-            ClientId = clientId,
-            Hostname = hostname,
-            BootTime = bootTime,
-            Version = version,
-            Process = process,
-            OsName = osName,
-            KernelVersion = kernelVersion,
-            CpuCores = cpuCores,
-            RamInGb = ramInGb,
-            UsedRoot = usedRoot,
-            TotalRoot = totalRoot,
-            Disks = disks,
-            Motd = motd,
-            Stats = stats,
-            Containers = containers
-        });
-        logger.LogInformation("Sending metrics to endpoint: '{Endpoint}'", url);
-        return http.Post<AiurResponse>(url, form, BodyFormat.HttpJsonBody, autoRetry: false,
-            enforceSameVersion: false);
-    }
 }

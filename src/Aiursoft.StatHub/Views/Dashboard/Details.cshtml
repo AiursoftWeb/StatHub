@@ -287,6 +287,91 @@
                     </div>
                 </div>
             </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title mb-0">@Localizer["Execute Command"]</h5>
+                        </div>
+                        <div class="card-body">
+                            <form asp-action="SendCommand" asp-route-id="@agent.ClientId" method="post">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">bash -c</span>
+                                    <input type="text" name="commandText" class="form-control" placeholder="@Localizer["Enter shell command..."]" required>
+                                    <button class="btn btn-primary" type="submit">@Localizer["Execute"]</button>
+                                </div>
+                            </form>
+
+                            @if (agent.CommandHistory.Any())
+                            {
+                                <div class="table-responsive">
+                                    <table class="table table-sm table-hover mt-3">
+                                        <thead>
+                                            <tr>
+                                                <th>@Localizer["Command"]</th>
+                                                <th>@Localizer["Status"]</th>
+                                                <th>@Localizer["Exit"]</th>
+                                                <th>@Localizer["Started"]</th>
+                                                <th>@Localizer["Output"]</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var exec in agent.CommandHistory.Values.OrderByDescending(x => x.StartedAt))
+                                            {
+                                                <tr>
+                                                    <td class="text-truncate" style="max-width: 200px;" title="@exec.Text">
+                                                        <code>@exec.Text</code>
+                                                    </td>
+                                                    <td>
+                                                        @if (exec.IsRunning)
+                                                        {
+                                                            <span class="badge bg-warning">@Localizer["Running"]</span>
+                                                        }
+                                                        else if (exec.ExitCode == 0)
+                                                        {
+                                                            <span class="badge bg-success">@Localizer["Success"]</span>
+                                                        }
+                                                        else
+                                                        {
+                                                            <span class="badge bg-danger">@Localizer["Failed"]</span>
+                                                        }
+                                                    </td>
+                                                    <td>@(exec.ExitCode?.ToString() ?? "-")</td>
+                                                    <td>@exec.StartedAt.ToString("HH:mm:ss")</td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#output-@exec.CommandId">
+                                                            @Localizer["View"]
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr class="collapse" id="output-@exec.CommandId">
+                                                    <td colspan="5" class="bg-light">
+                                                        @if (!string.IsNullOrEmpty(exec.Stdout))
+                                                        {
+                                                            <h6 class="small fw-bold">STDOUT:</h6>
+                                                            <pre class="small mb-2" style="max-height: 200px; overflow-y: auto;">@exec.Stdout</pre>
+                                                        }
+                                                        @if (!string.IsNullOrEmpty(exec.Stderr))
+                                                        {
+                                                            <h6 class="small fw-bold text-danger">STDERR:</h6>
+                                                            <pre class="small text-danger" style="max-height: 200px; overflow-y: auto;">@exec.Stderr</pre>
+                                                        }
+                                                        @if (string.IsNullOrEmpty(exec.Stdout) && string.IsNullOrEmpty(exec.Stderr))
+                                                        {
+                                                            <i class="text-muted small">@Localizer["No output yet..."]</i>
+                                                        }
+                                                    </td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

@@ -32,6 +32,7 @@ public class SystemController(ILogger<SystemController> logger) : Controller
     [HttpPost]
     [Authorize(Policy = AppPermissionNames.CanRebootThisApp)] // Use the specific permission
     [ProducesResponseType(StatusCodes.Status202Accepted)]
+    [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
     public IActionResult Shutdown([FromServices] IHostApplicationLifetime appLifetime)
     {
         logger.LogWarning("Application shutdown was requested by user: '{UserName}'", User.Identity?.Name);

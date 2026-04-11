@@ -1,6 +1,7 @@
 using Aiursoft.StatHub.Authorization;
 using Aiursoft.StatHub.Data;
 using Aiursoft.StatHub.Models.DashboardViewModels;
+using Aiursoft.StatHub.SDK.Models;
 using Aiursoft.StatHub.Services;
 using Aiursoft.UiStack.Navigation;
 using Aiursoft.WebTools.Attributes;
@@ -55,6 +56,78 @@ public class DashboardController(InMemoryDatabase database) : Controller
             return NotFound();
         }
         return RedirectToAction(nameof(Details), new { id = agent.ClientId });
+    }
+
+    [Authorize(Policy = AppPermissionNames.CanViewDashboard)]
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> SendCommand([FromRoute] string id, [FromForm] string commandText)
+    {
+        var agent = database.GetClient(id);
+        if (agent == null)
+        {
+            return NotFound();
+        }
+
+        if (string.IsNullOrWhiteSpace(commandText))
+        {
+            return RedirectToAction(nameof(Details), new { id });
+        }
+
+        var command = new Command
+        {
+            Text = commandText
+        };
+
+        var exec = new CommandExecution
+        {
+            CommandId = command.Id,
+            Text = commandText,
+            IsRunning = true,
+            StartedAt = DateTime.UtcNow
+        };
+
+        agent.CommandHistory.TryAdd(command.Id, exec);
+        
+        // Limit history size to 100
+        if (agent.CommandHistory.Count > 100)
+        {
+            var oldest = agent.CommandHistory.Values.OrderBy(x => x.StartedAt).FirstOrDefault();
+            if (oldest != null)
+            {
+                agent.CommandHistory.TryRemove(oldest.CommandId, out _);
+            }
+        }
+
+        await agent.PendingCommands.BroadcastAsync(command);
+
+        return RedirectToAction(nameof(Details), new { id });
+    }
+
+    [Authorize(Policy = AppPermissionNames.CanViewDashboard)]
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> CancelCommand([FromRoute] string id, [FromRoute] Guid commandId)
+    {
+        var agent = database.GetClient(id);
+        if (agent == null)
+        {
+            return NotFound();
+        }
+
+        if (agent.CommandHistory.TryGetValue(commandId, out var exec))
+        {
+            // Future: Implement cancel message to agent
+            // For now, just mark it as finished/cancelled locally if it was running
+            if (exec.IsRunning)
+            {
+                exec.IsRunning = false;
+                exec.FinishedAt = DateTime.UtcNow;
+                exec.ExitCode = -1; 
+            }
+        }
+
+        return RedirectToAction(nameof(Details), new { id });
     }
 
     [Authorize(Policy = AppPermissionNames.CanViewDashboard)]
