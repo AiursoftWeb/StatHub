@@ -7,7 +7,6 @@ using Aiursoft.StatHub.Data;
 using Aiursoft.StatHub.Entities;
 using Aiursoft.StatHub.SDK.Models;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
 using static Aiursoft.WebTools.Extends;
@@ -39,7 +38,13 @@ public class MetricsTests
     [TestInitialize]
     public async Task CreateServer()
     {
-        _server = await AppAsync<Startup>([], port: _port);
+        _server = await AppAsync<TestStartup>([], port: _port);
+        using (var scope = _server.Services.CreateScope())
+        {
+            var dbContext = scope.ServiceProvider.GetRequiredService<StatHubDbContext>();
+            await dbContext.Database.EnsureDeletedAsync();
+            await dbContext.Database.EnsureCreatedAsync();
+        }
         await _server.UpdateDbAsync<StatHubDbContext>();
         await _server.SeedAsync();
         await _server.StartAsync();

@@ -1,10 +1,6 @@
 using Aiursoft.AiurProtocol.Models;
 using Aiursoft.AiurProtocol.Server;
 using Aiursoft.AiurProtocol.Server.Attributes;
-using Aiursoft.StatHub.SDK.AddressModels;
-using Aiursoft.StatHub.SDK.Models;
-using Aiursoft.StatHub.Data;
-using Aiursoft.StatHub.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,12 +12,7 @@ namespace Aiursoft.StatHub.Controllers;
 [ApiExceptionHandler(
     PassthroughRemoteErrors = true,
     PassthroughAiurServerException = true)]
-public class ApiController(
-    InMemoryDatabase database,
-    IpGeolocationService ipGeolocationService,
-    ILogger<ApiController> logger)
-    : ControllerBase
-
+public class ApiController : ControllerBase
 {
     [HttpGet("info")]
     public IActionResult Info()

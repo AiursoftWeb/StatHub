@@ -107,7 +107,7 @@ public class DashboardController(InMemoryDatabase database) : Controller
     [Authorize(Policy = AppPermissionNames.CanViewDashboard)]
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> CancelCommand([FromRoute] string id, [FromRoute] Guid commandId)
+    public IActionResult CancelCommand([FromRoute] string id, [FromRoute] Guid commandId)
     {
         var agent = database.GetClient(id);
         if (agent == null)
@@ -216,7 +216,33 @@ sudo systemctl stop stathub.service > /dev/null 2>&1
 sudo systemctl start stathub.service
 
 sudo systemctl enable stathub-update.timer
-sudo systemctl start stathub-update.timer" ;
+sudo systemctl start stathub-update.timer
+
+echo 'StatHub Client installed successfully! You can uninstall it by running: curl -sL ""{Request.Scheme}://{Request.Host}/uninstall.sh"" | sudo bash'" ;
         return Content(installScript, "text/plain");
+    }
+
+    [HttpGet("uninstall.sh")]
+    [AllowAnonymous]
+    public IActionResult GetUninstallScript()
+    {
+        var uninstallScript = @"
+sudo systemctl stop stathub.service
+sudo systemctl disable stathub.service
+sudo systemctl stop stathub-update.timer
+sudo systemctl disable stathub-update.timer
+sudo systemctl stop stathub-update.service
+sudo systemctl disable stathub-update.service
+
+sudo rm /etc/systemd/system/stathub.service
+sudo rm /etc/systemd/system/stathub-update.service
+sudo rm /etc/systemd/system/stathub-update.timer
+sudo systemctl daemon-reload
+
+sudo rm -rf /opt/stathub-client
+sudo rm -rf /root/.local/share/StatHubClient
+
+echo 'StatHub Client uninstalled successfully!'";
+        return Content(uninstallScript, "text/plain");
     }
 }

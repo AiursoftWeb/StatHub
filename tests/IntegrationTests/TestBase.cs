@@ -31,7 +31,13 @@ public abstract class TestBase
     [TestInitialize]
     public virtual async Task CreateServer()
     {
-        Server = await AppAsync<Startup>([], port: Port);
+        Server = await AppAsync<TestStartup>([], port: Port);
+        using (var scope = Server.Services.CreateScope())
+        {
+            var dbContext = scope.ServiceProvider.GetRequiredService<StatHubDbContext>();
+            await dbContext.Database.EnsureDeletedAsync();
+            await dbContext.Database.EnsureCreatedAsync();
+        }
         await Server.UpdateDbAsync<StatHubDbContext>();
         await Server.SeedAsync();
         await Server.StartAsync();

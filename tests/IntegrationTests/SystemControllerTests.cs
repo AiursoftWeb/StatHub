@@ -15,7 +15,7 @@ public class SystemControllerTests : TestBase
         // 2. Logged in, no permission
         await RegisterAndLoginAsync();
         var forbiddenResponse = await Http.GetAsync("/System/Index");
-        Assert.IsTrue(forbiddenResponse.StatusCode is HttpStatusCode.Forbidden or HttpStatusCode.Redirect or HttpStatusCode.Found);
+        Assert.IsTrue(forbiddenResponse.StatusCode == HttpStatusCode.Forbidden || forbiddenResponse.StatusCode == HttpStatusCode.Found);
 
         // 3. Admin
         await LoginAsAdmin();

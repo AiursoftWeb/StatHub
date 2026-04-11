@@ -23,7 +23,6 @@ public class AgentChannelService(
     HostnameService hostnameService,
     BootTimeService bootTimeService,
     DockerService dockerService,
-    ServerAccess serverAccess,
     ServerConfig serverConfig,
     ILogger<AgentChannelService> logger)
     : IConsumer<DstatResult[]>
@@ -32,10 +31,10 @@ public class AgentChannelService(
     private readonly CancellationTokenSource _cts = new();
     private bool _isConnected;
 
-    public async Task StartAsync()
+    public Task StartAsync()
     {
         _ = Task.Run(ConnectAndListenLoop, _cts.Token);
-        await Task.CompletedTask;
+        return Task.CompletedTask;
     }
 
     private async Task ConnectAndListenLoop()
@@ -93,12 +92,12 @@ public class AgentChannelService(
         }
     }
 
-    private async Task HandleMessage(string messageJson)
+    private Task HandleMessage(string messageJson)
     {
         try
         {
             var rpcMessage = JsonConvert.DeserializeObject<JsonRpcMessage>(messageJson);
-            if (rpcMessage == null) return;
+            if (rpcMessage == null) return Task.CompletedTask;
 
             if (rpcMessage.Method == "exec")
             {
@@ -114,6 +113,7 @@ public class AgentChannelService(
         {
             logger.LogError(ex, "Error handling message from server.");
         }
+        return Task.CompletedTask;
     }
 
     private async Task ExecuteCommand(string id, string cmd)

@@ -18,7 +18,7 @@ public class PermissionsControllerTests : TestBase
         var forbiddenResponse = await Http.GetAsync("/Permissions/Index");
         // Actually Aiursoft apps usually redirect to an access denied page or home when forbidden
         // Let's see how it behaves. If it has [Authorize(Policy = ...)] it might return 403 or redirect.
-        Assert.IsTrue(forbiddenResponse.StatusCode is HttpStatusCode.Forbidden or HttpStatusCode.Redirect or HttpStatusCode.Found);
+        Assert.IsTrue(forbiddenResponse.StatusCode == HttpStatusCode.Forbidden || forbiddenResponse.StatusCode == HttpStatusCode.Found);
 
         // 3. Admin access
         await LoginAsAdmin();
