@@ -7,6 +7,7 @@ using Aiursoft.StatHub.SDK;
 using Aiursoft.StatHub.SDK.AddressModels;
 using Aiursoft.StatHub.SDK.Models;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -23,10 +24,11 @@ public class AgentChannelService(
     HostnameService hostnameService,
     BootTimeService bootTimeService,
     DockerService dockerService,
-    ServerConfig serverConfig,
+    IOptions<ServerConfig> serverConfigOptions,
     ILogger<AgentChannelService> logger)
     : IConsumer<DstatResult[]>
 {
+    private readonly ServerConfig _serverConfig = serverConfigOptions.Value;
     private ClientWebSocket? _webSocket;
     private readonly CancellationTokenSource _cts = new();
     private bool _isConnected;
@@ -41,7 +43,7 @@ public class AgentChannelService(
     {
         var retryDelay = TimeSpan.FromSeconds(1);
         var clientId = await clientIdService.GetClientId();
-        var wsUrl = serverConfig.Instance.Replace("http://", "ws://").Replace("https://", "wss://").TrimEnd('/') + $"/api/agent/channel?clientId={clientId}";
+        var wsUrl = _serverConfig.Instance.Replace("http://", "ws://").Replace("https://", "wss://").TrimEnd('/') + $"/api/agent/channel?clientId={clientId}";
 
         while (!_cts.Token.IsCancellationRequested)
         {
