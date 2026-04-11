@@ -158,4 +158,57 @@ public class MetricsTests : TestBase
         Assert.AreEqual(0, exec.ExitCode);
         Assert.AreEqual("hello world\n", exec.Stdout);
     }
+
+    [TestMethod]
+    public async Task TestHighFrequencyCommandOutput()
+    {
+        var clientId = Guid.NewGuid().ToString();
+        var commandText = "high-freq-log";
+
+        using (var ws = new System.Net.WebSockets.ClientWebSocket())
+        {
+            await ws.ConnectAsync(new Uri($"ws://localhost:{Port}/api/agent/channel?clientId={clientId}"), CancellationToken.None);
+            
+            await LoginAsAdmin();
+            var token = await GetAntiCsrfToken($"/Dashboard/Details/{clientId}");
+            await Http.PostAsync($"/Dashboard/SendCommand/{clientId}", new FormUrlEncodedContent(new Dictionary<string, string>
+            {
+                { "commandText", commandText },
+                { "__RequestVerificationToken", token }
+            }));
+
+            // Agent side: Receive exec
+            var buffer = new byte[1024 * 4];
+            var result = await ws.ReceiveAsync(new ArraySegment<byte>(buffer), CancellationToken.None);
+            var rpcRequest = Newtonsoft.Json.JsonConvert.DeserializeObject<JsonRpcMessage>(Encoding.UTF8.GetString(buffer, 0, result.Count));
+            var cmdId = rpcRequest!.Id;
+
+            // 模拟高频大量输出 (并发发送 50 个 chunk)
+            var tasks = Enumerable.Range(0, 50).Select(i => 
+            {
+                var chunk = new
+                {
+                    jsonrpc = "2.0",
+                    method = "stdout-chunk",
+                    @params = new { id = cmdId, data = $"line-{i}\n" }
+                };
+                var json = Newtonsoft.Json.JsonConvert.SerializeObject(chunk);
+                return ws.SendAsync(new ArraySegment<byte>(Encoding.UTF8.GetBytes(json)), System.Net.WebSockets.WebSocketMessageType.Text, true, CancellationToken.None);
+            });
+            await Task.WhenAll(tasks);
+
+            await Task.Delay(1000); // 等待服务器处理
+            await ws.CloseAsync(System.Net.WebSockets.WebSocketCloseStatus.NormalClosure, "Done", CancellationToken.None);
+        }
+
+        var database = GetService<Aiursoft.StatHub.Data.InMemoryDatabase>();
+        var agent = database.GetClient(clientId);
+        var exec = Enumerable.FirstOrDefault(agent!.CommandHistory.Values);
+        
+        // 验证 50 行是否全部到达（顺序不重要，因为是异步并发发送，但完整性重要）
+        for (int i = 0; i < 50; i++)
+        {
+            Assert.IsTrue(exec!.Stdout.Contains($"line-{i}\n"), $"Missing line-{i}");
+        }
+    }
 }

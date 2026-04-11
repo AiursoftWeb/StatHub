@@ -1,7 +1,6 @@
-using System.Diagnostics;
-using System.Net.WebSockets;
-using System.Text;
 using Aiursoft.AiurObserver;
+using Aiursoft.AiurObserver.WebSocket;
+using Aiursoft.AiurObserver.Command;
 using Aiursoft.StatHub.Client.Services.Stat;
 using Aiursoft.StatHub.SDK;
 using Aiursoft.StatHub.SDK.AddressModels;
@@ -29,7 +28,7 @@ public class AgentChannelService(
     : IConsumer<DstatResult[]>
 {
     private readonly ServerConfig _serverConfig = serverConfigOptions.Value;
-    private ClientWebSocket? _webSocket;
+    private ObservableWebSocket? _webSocket;
     private readonly CancellationTokenSource _cts = new();
     private bool _isConnected;
 
@@ -50,13 +49,26 @@ public class AgentChannelService(
             try
             {
                 logger.LogInformation("Connecting to server WebSocket at {Url}...", wsUrl);
-                _webSocket = new ClientWebSocket();
-                await _webSocket.ConnectAsync(new Uri(wsUrl), _cts.Token);
+                _webSocket = await wsUrl.ConnectAsWebSocketServer();
                 _isConnected = true;
                 retryDelay = TimeSpan.FromSeconds(1);
-                logger.LogInformation("Connected to server WebSocket.");
+                logger.LogInformation("Connected to server WebSocket via AiurObserver.");
 
-                await ListenLoop();
+                // 订阅上行消息（处理来自服务器的命令）
+                using var incomingSub = _webSocket
+                    .Map(m => JsonConvert.DeserializeObject<JsonRpcMessage>(m))
+                    .Filter(m => m != null && m.Method == "exec")
+                    .Subscribe(async rpcMessage =>
+                    {
+                        var id = rpcMessage!.Id;
+                        var cmd = rpcMessage.Params?["cmd"]?.ToString();
+                        if (id != null && !string.IsNullOrWhiteSpace(cmd))
+                        {
+                            await ExecuteCommandReactive(id, cmd);
+                        }
+                    });
+
+                await _webSocket.Listen(_cts.Token);
             }
             catch (Exception ex)
             {
@@ -68,130 +80,57 @@ public class AgentChannelService(
         }
     }
 
-    private async Task ListenLoop()
+    private async Task ExecuteCommandReactive(string id, string cmd)
     {
-        var buffer = new byte[1024 * 4];
-        while (_webSocket?.State == WebSocketState.Open && !_cts.Token.IsCancellationRequested)
-        {
-            using var ms = new MemoryStream();
-            WebSocketReceiveResult result;
-            do
-            {
-                result = await _webSocket.ReceiveAsync(new ArraySegment<byte>(buffer), _cts.Token);
-                if (result.MessageType == WebSocketMessageType.Close)
-                {
-                    await _webSocket.CloseAsync(WebSocketCloseStatus.NormalClosure, "Closing", _cts.Token);
-                    _isConnected = false;
-                    return;
-                }
-                ms.Write(buffer, 0, result.Count);
-            } while (!result.EndOfMessage);
+        logger.LogInformation("Executing command {Id} reactively: {Cmd}", id, cmd);
+        var runner = new LongCommandRunner(Microsoft.Extensions.Logging.Abstractions.NullLogger<LongCommandRunner>.Instance);
 
-            ms.Seek(0, SeekOrigin.Begin);
-            using var reader = new StreamReader(ms, Encoding.UTF8);
-            var message = await reader.ReadToEndAsync();
-            await HandleMessage(message);
-        }
-    }
+        // 1. 将 STDOUT 桥接到 WebSocket
+        using var outSub = runner.Output
+            .Map(line => new JsonRpcMessage { Method = "stdout-chunk", Params = JToken.FromObject(new { id, data = line + "\n" }) })
+            .Map(JsonConvert.SerializeObject)
+            .Subscribe(_webSocket!);
 
-    private Task HandleMessage(string messageJson)
-    {
+        // 2. 将 STDERR 桥接到 WebSocket
+        using var errSub = runner.Error
+            .Map(line => new JsonRpcMessage { Method = "stderr-chunk", Params = JToken.FromObject(new { id, data = line + "\n" }) })
+            .Map(JsonConvert.SerializeObject)
+            .Subscribe(_webSocket!);
+
         try
         {
-            var rpcMessage = JsonConvert.DeserializeObject<JsonRpcMessage>(messageJson);
-            if (rpcMessage == null) return Task.CompletedTask;
-
-            if (rpcMessage.Method == "exec")
-            {
-                var id = rpcMessage.Id;
-                var cmd = rpcMessage.Params?["cmd"]?.ToString();
-                if (id != null && !string.IsNullOrWhiteSpace(cmd))
-                {
-                    _ = Task.Run(() => ExecuteCommand(id, cmd), _cts.Token);
-                }
-            }
-        }
-        catch (Exception ex)
-        {
-            logger.LogError(ex, "Error handling message from server.");
-        }
-        return Task.CompletedTask;
-    }
-
-    private async Task ExecuteCommand(string id, string cmd)
-    {
-        logger.LogInformation("Executing command {Id}: {Cmd}", id, cmd);
-        try
-        {
-            var process = new Process
-            {
-                StartInfo = new ProcessStartInfo
-                {
-                    FileName = "bash",
-                    Arguments = $"-c \"{cmd.Replace("\"", "\\\"")}\"",
-                    RedirectStandardOutput = true,
-                    RedirectStandardError = true,
-                    UseShellExecute = false,
-                    CreateNoWindow = true
-                }
+            await runner.Run("bash", $"-c \"{cmd.Replace("\"", "\\\"")}\"", Directory.GetCurrentDirectory());
+            
+            // 3. 执行结束
+            var doneMessage = new JsonRpcMessage 
+            { 
+                Method = "exec-done", 
+                Params = JToken.FromObject(new { id, exitCode = 0 }) 
             };
-
-            process.OutputDataReceived += async (_, e) =>
-            {
-                if (e.Data != null)
-                {
-                    await SendRpcMessage("stdout-chunk", new { id, data = e.Data + "\n" });
-                }
-            };
-
-            process.ErrorDataReceived += async (_, e) =>
-            {
-                if (e.Data != null)
-                {
-                    await SendRpcMessage("stderr-chunk", new { id, data = e.Data + "\n" });
-                }
-            };
-
-            process.Start();
-            process.BeginOutputReadLine();
-            process.BeginErrorReadLine();
-
-            await process.WaitForExitAsync(_cts.Token);
-            await SendRpcMessage("exec-done", new { id, exitCode = process.ExitCode });
-            logger.LogInformation("Command {Id} finished with exit code {ExitCode}.", id, process.ExitCode);
+            await _webSocket!.Send(JsonConvert.SerializeObject(doneMessage));
         }
         catch (Exception ex)
         {
             logger.LogError(ex, "Error executing command {Id}.", id);
-            await SendRpcMessage("stderr-chunk", new { id, data = $"Error: {ex.Message}\n" });
-            await SendRpcMessage("exec-done", new { id, exitCode = -1 });
-        }
-    }
-
-    private async Task SendRpcMessage(string method, object @params)
-    {
-        if (!_isConnected || _webSocket?.State != WebSocketState.Open) return;
-
-        try
-        {
-            var message = new JsonRpcMessage
-            {
-                Method = method,
-                Params = JToken.FromObject(@params)
+            var errorMessage = new JsonRpcMessage 
+            { 
+                Method = "stderr-chunk", 
+                Params = JToken.FromObject(new { id, data = $"Error: {ex.Message}\n" }) 
             };
-            var json = JsonConvert.SerializeObject(message);
-            var buffer = Encoding.UTF8.GetBytes(json);
-            await _webSocket.SendAsync(new ArraySegment<byte>(buffer), WebSocketMessageType.Text, true, _cts.Token);
-        }
-        catch (Exception ex)
-        {
-            logger.LogError(ex, "Error sending RPC message {Method}.", method);
+            await _webSocket!.Send(JsonConvert.SerializeObject(errorMessage));
+            
+            var doneMessage = new JsonRpcMessage 
+            { 
+                Method = "exec-done", 
+                Params = JToken.FromObject(new { id, exitCode = -1 }) 
+            };
+            await _webSocket!.Send(JsonConvert.SerializeObject(doneMessage));
         }
     }
 
     public async Task Consume(DstatResult[] items)
     {
-        if (!_isConnected)
+        if (!_isConnected || _webSocket == null)
         {
             logger.LogWarning("Skipping metrics submission because WebSocket is not connected.");
             return;
@@ -200,8 +139,13 @@ public class AgentChannelService(
         try
         {
             var metrics = await GatherMetrics(items);
-            await SendRpcMessage("metrics", metrics);
-            logger.LogInformation("Metrics sent via WebSocket.");
+            var message = new JsonRpcMessage
+            {
+                Method = "metrics",
+                Params = JToken.FromObject(metrics)
+            };
+            await _webSocket.Send(JsonConvert.SerializeObject(message));
+            logger.LogInformation("Metrics sent via AiurObserver WebSocket.");
         }
         catch (Exception ex)
         {

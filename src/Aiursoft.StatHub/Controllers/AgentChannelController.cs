@@ -1,6 +1,5 @@
-using System.Net.WebSockets;
-using System.Text;
 using Aiursoft.AiurObserver;
+using Aiursoft.AiurObserver.WebSocket.Server;
 using Aiursoft.StatHub.Data;
 using Aiursoft.StatHub.SDK.AddressModels;
 using Aiursoft.StatHub.SDK.Models;
@@ -31,100 +30,79 @@ public class AgentChannelController(
         }
 
         var agent = database.GetOrAddClient(clientId);
-        var webSocket = await HttpContext.WebSockets.AcceptWebSocketAsync();
-        logger.LogInformation("Agent {ClientId} connected via WebSocket.", clientId);
+        var pusher = await HttpContext.AcceptWebSocketClient();
+        logger.LogInformation("Agent {ClientId} connected via ObservableWebSocket.", clientId);
 
-        var cts = CancellationTokenSource.CreateLinkedTokenSource(HttpContext.RequestAborted);
-
-        // Copy variables to local to avoid "Captured variable is disposed" warning
-        var socketForLambda = webSocket;
-        var tokenForLambda = cts.Token;
-
-        // Task to send pending commands to the agent
-        var sendTask = agent.PendingCommands
-            .InNewThread()
-            .Subscribe(async command =>
+        // 下行流：待处理命令 -> JSON-RPC -> 推送
+        using var downSubscription = agent.PendingCommands
+            .Map(command => new JsonRpcMessage
             {
-                if (socketForLambda.State == WebSocketState.Open)
-                {
-                    var message = new JsonRpcMessage
-                    {
-                        Method = "exec",
-                        Id = command.Id.ToString(),
-                        Params = JToken.FromObject(new { cmd = command.Text })
-                    };
-                    var json = JsonConvert.SerializeObject(message);
-                    var bytes = Encoding.UTF8.GetBytes(json);
-                    await socketForLambda.SendAsync(new ArraySegment<byte>(bytes), WebSocketMessageType.Text, true, tokenForLambda);
-                }
-            });
+                Method = "exec",
+                Id = command.Id.ToString(),
+                Params = JToken.FromObject(new { cmd = command.Text })
+            })
+            .Map(JsonConvert.SerializeObject)
+            .Subscribe(pusher);
 
-        // Task to listen for messages from the agent
-        var buffer = new byte[1024 * 4];
+        // 上行流：WebSocket 输入 -> 反序列化 -> Handler
+        using var upSubscription = pusher
+            .Map(m => JsonConvert.DeserializeObject<JsonRpcMessage>(m))
+            .Filter(m => m != null)
+            .Subscribe(async rpcMessage => await HandleRpcMessage(agent, rpcMessage!));
+
         try
         {
-            while (webSocket.State == WebSocketState.Open && !cts.Token.IsCancellationRequested)
+            await pusher.Listen(HttpContext.RequestAborted);
+        }
+        catch (Exception ex)
+        {
+            logger.LogInformation("Agent {ClientId} connection closed: {Message}", clientId, ex.Message);
+        }
+    }
+
+    private async Task HandleRpcMessage(Agent agent, JsonRpcMessage rpcMessage)
+    {
+        try
+        {
+            var p = rpcMessage.Params;
+            switch (rpcMessage.Method)
             {
-                using var ms = new MemoryStream();
-                WebSocketReceiveResult result;
-                do
-                {
-                    result = await webSocket.ReceiveAsync(new ArraySegment<byte>(buffer), cts.Token);
-                    if (result.MessageType == WebSocketMessageType.Close)
-                    {
-                        await webSocket.CloseAsync(WebSocketCloseStatus.NormalClosure, "Closing", cts.Token);
-                        return;
-                    }
-                    ms.Write(buffer, 0, result.Count);
-                } while (!result.EndOfMessage);
-
-                ms.Seek(0, SeekOrigin.Begin);
-                using var reader = new StreamReader(ms, Encoding.UTF8);
-                var message = await reader.ReadToEndAsync();
-                try
-                {
-                    var rpcMessage = JsonConvert.DeserializeObject<JsonRpcMessage>(message);
-                    if (rpcMessage == null) continue;
-
-                    switch (rpcMessage.Method)
-                    {
-                        case "metrics":
-                            await HandleMetrics(agent, rpcMessage.Params);
-                            break;
-                        case "stdout-chunk":
-                            HandleStdoutChunk(agent, rpcMessage.Params);
-                            break;
-                        case "stderr-chunk":
-                            HandleStderrChunk(agent, rpcMessage.Params);
-                            break;
-                        case "exec-done":
-                            HandleExecDone(agent, rpcMessage.Params);
-                            break;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    logger.LogError(ex, "Error handling message from agent {ClientId}.", clientId);
-                }
+                case "metrics":
+                    await HandleMetricsPipe(agent, p?.ToObject<MetricsAddressModel>());
+                    break;
+                case "stdout-chunk":
+                    await HandleOutputChunk(agent, p, true);
+                    break;
+                case "stderr-chunk":
+                    await HandleOutputChunk(agent, p, false);
+                    break;
+                case "exec-done":
+                    HandleExecDone(agent, p);
+                    break;
             }
         }
         catch (Exception ex)
         {
-            logger.LogInformation("Agent {ClientId} disconnected: {Message}", clientId, ex.Message);
-        }
-        finally
-        {
-            sendTask.Unsubscribe();
-            cts.Dispose();
-            webSocket.Dispose();
+            logger.LogError(ex, "Error handling RPC message.");
         }
     }
 
-    private async Task HandleMetrics(Agent agent, JToken? paramsToken)
+    private async Task HandleMetricsPipe(Agent agent, MetricsAddressModel? model)
     {
-        var model = paramsToken?.ToObject<MetricsAddressModel>();
         if (model == null) return;
 
+        // 基础信息同步 (同步调用)
+        SyncAgentMetadata(agent, model);
+
+        // 核心：将 Stats 数组转化为流并行广播 (纯粹的 AiurObserver 风格)
+        if (model.Stats != null)
+        {
+            await Task.WhenAll(model.Stats.Select(s => agent.Stats.BroadcastAsync(s)));
+        }
+    }
+
+    private void SyncAgentMetadata(Agent agent, MetricsAddressModel model)
+    {
         agent.BootTime = model.BootTime;
         agent.Hostname = model.Hostname ?? "Unknown";
         agent.Ip = HttpContext.Connection.RemoteIpAddress?.ToString() ?? "Unknown";
@@ -143,52 +121,41 @@ public class AgentChannelController(
 
         if (string.IsNullOrWhiteSpace(agent.CountryCode) && !string.IsNullOrWhiteSpace(agent.Ip))
         {
-            var location = await ipGeolocationService.GetLocationAsync(agent.Ip);
-            if (location != null)
+            _ = Task.Run(async () =>
             {
-                agent.CountryName = location.Value.CountryName;
-                agent.CountryCode = location.Value.CountryCode;
-            }
-        }
-
-        foreach (var stat in model.Stats ?? [])
-        {
-            await agent.Stats.BroadcastAsync(stat);
+                var location = await ipGeolocationService.GetLocationAsync(agent.Ip);
+                if (location != null)
+                {
+                    agent.CountryName = location.Value.CountryName;
+                    agent.CountryCode = location.Value.CountryCode;
+                }
+            });
         }
     }
 
-    private void HandleStdoutChunk(Agent agent, JToken? paramsToken)
+    private async Task HandleOutputChunk(Agent agent, JToken? p, bool isStdout)
     {
-        var idString = paramsToken?["id"]?.ToString();
-        var data = paramsToken?["data"]?.ToString();
+        var idString = p?["id"]?.ToString();
+        var data = p?["data"]?.ToString();
         if (Guid.TryParse(idString, out var id) && agent.CommandHistory.TryGetValue(id, out var exec))
         {
-            exec.StdoutBuilder.Append(data);
-            exec.UpdateStrings();
+            // 不再手动操作 StringBuilder，而是推入对应的响应式管道
+            if (isStdout)
+                await exec.StdoutStream.BroadcastAsync(data ?? string.Empty);
+            else
+                await exec.StderrStream.BroadcastAsync(data ?? string.Empty);
         }
     }
 
-    private void HandleStderrChunk(Agent agent, JToken? paramsToken)
+    private void HandleExecDone(Agent agent, JToken? p)
     {
-        var idString = paramsToken?["id"]?.ToString();
-        var data = paramsToken?["data"]?.ToString();
-        if (Guid.TryParse(idString, out var id) && agent.CommandHistory.TryGetValue(id, out var exec))
-        {
-            exec.StderrBuilder.Append(data);
-            exec.UpdateStrings();
-        }
-    }
-
-    private void HandleExecDone(Agent agent, JToken? paramsToken)
-    {
-        var idString = paramsToken?["id"]?.ToString();
-        var exitCode = paramsToken?["exitCode"]?.ToObject<int>();
+        var idString = p?["id"]?.ToString();
+        var exitCode = p?["exitCode"]?.ToObject<int>();
         if (Guid.TryParse(idString, out var id) && agent.CommandHistory.TryGetValue(id, out var exec))
         {
             exec.ExitCode = exitCode;
             exec.FinishedAt = DateTime.UtcNow;
             exec.IsRunning = false;
-            exec.UpdateStrings();
         }
     }
 }
