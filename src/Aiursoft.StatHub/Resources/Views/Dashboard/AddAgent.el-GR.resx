@@ -45,6 +45,9 @@
   <data name="Run the following command on your Linux machine to install the agent and register it as a service. This will automatically connect it to this server." xml:space="preserve">
     <value>Εκτελέστε την ακόλουθη εντολή στη μηχανή Linux σας για να εγκαταστήσετε τον πράκτορα και να τον καταχωρίσετε ως υπηρεσία. Αυτό θα τον συνδέσει αυτόματα με αυτόν τον διακομιστή.</value>
   </data>
+  <data name="Run the following command on your Linux machine to uninstall the agent and remove all associated files and services." xml:space="preserve">
+    <value>Εκτελέστε την παρακάτω εντολή στον υπολογιστή σας Linux για να καταργήσετε το πρόγραμμα παρακολούθησης και να αφαιρέσετε όλα τα συναφή αρχεία και υπηρεσίες.</value>
+  </data>
   <data name="Sets up a &lt;code&gt;systemd&lt;/code&gt; service to run the agent." xml:space="preserve">
     <value>Ρυθμίζει μια υπηρεσία &lt;code&gt;systemd&lt;/code&gt; για να εκτελεί τον πράκτορα.</value>
   </data>
@@ -56,6 +59,9 @@
   </data>
   <data name="Ubuntu 20.04 and above" xml:space="preserve">
     <value>Ubuntu 20.04 και νεότερες εκδόσεις</value>
+  </data>
+  <data name="Uninstall the agent" xml:space="preserve">
+    <value>Απεγκατάσταση του πράκτορα</value>
   </data>
   <data name="Version Information" xml:space="preserve">
     <value>Πληροφορίες Έκδοσης</value>

@@ -45,6 +45,9 @@
   <data name="Run the following command on your Linux machine to install the agent and register it as a service. This will automatically connect it to this server." xml:space="preserve">
     <value>Виконайте наступну команду на вашому Linux-пристрої, щоб встановити агента та зареєструвати його як службу. Це автоматично під&apos;єднає його до цього сервера.</value>
   </data>
+  <data name="Run the following command on your Linux machine to uninstall the agent and remove all associated files and services." xml:space="preserve">
+    <value>Виконайте наступну команду на вашому Linux-комп&apos;ютері, щоб видалити агент і видалити всі пов&apos;язані з ним файли та служби.</value>
+  </data>
   <data name="Sets up a &lt;code&gt;systemd&lt;/code&gt; service to run the agent." xml:space="preserve">
     <value>Налаштовує службу &lt;code&gt;systemd&lt;/code&gt; для запуску агента.</value>
   </data>
@@ -56,6 +59,9 @@
   </data>
   <data name="Ubuntu 20.04 and above" xml:space="preserve">
     <value>Ubuntu 20.04 та новіші версії</value>
+  </data>
+  <data name="Uninstall the agent" xml:space="preserve">
+    <value>Видалити агент</value>
   </data>
   <data name="Version Information" xml:space="preserve">
     <value>Інформація про версію</value>

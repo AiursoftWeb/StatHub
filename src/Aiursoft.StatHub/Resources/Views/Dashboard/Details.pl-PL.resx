@@ -39,6 +39,9 @@
   <data name="Client ID" xml:space="preserve">
     <value>Identyfikator klienta</value>
   </data>
+  <data name="Command" xml:space="preserve">
+    <value>Polecenie</value>
+  </data>
   <data name="Cores" xml:space="preserve">
     <value>Rdzenie</value>
   </data>
@@ -62,6 +65,21 @@
   </data>
   <data name="Docker Containers" xml:space="preserve">
     <value>Docker Containers</value>
+  </data>
+  <data name="Enter shell command..." xml:space="preserve">
+    <value>Wpisz polecenie powłoki...</value>
+  </data>
+  <data name="Execute" xml:space="preserve">
+    <value>Wykonaj</value>
+  </data>
+  <data name="Execute Command" xml:space="preserve">
+    <value>Wykonaj polecenie</value>
+  </data>
+  <data name="Exit" xml:space="preserve">
+    <value>Kod wyjścia</value>
+  </data>
+  <data name="Failed" xml:space="preserve">
+    <value>Niepowodzenie</value>
   </data>
   <data name="Hardware Details" xml:space="preserve">
     <value>Szczegóły sprzętu</value>
@@ -105,8 +123,14 @@
   <data name="Network I/O" xml:space="preserve">
     <value>Wejście/Wyjście sieci</value>
   </data>
+  <data name="No output yet..." xml:space="preserve">
+    <value>Brak jeszcze wyników...</value>
+  </data>
   <data name="Operating System" xml:space="preserve">
     <value>System operacyjny</value>
+  </data>
+  <data name="Output" xml:space="preserve">
+    <value>Wyjście</value>
   </data>
   <data name="Ports" xml:space="preserve">
     <value>Ports</value>
@@ -123,11 +147,17 @@
   <data name="Runtime Info" xml:space="preserve">
     <value>Informacje o środowisku uruchomieniowym</value>
   </data>
+  <data name="Started" xml:space="preserve">
+    <value>Włączono</value>
+  </data>
   <data name="Status" xml:space="preserve">
     <value>Status</value>
   </data>
   <data name="Stopped" xml:space="preserve">
     <value>Zatrzymany</value>
+  </data>
+  <data name="Success" xml:space="preserve">
+    <value>Sukces</value>
   </data>
   <data name="System Load" xml:space="preserve">
     <value>Obciążenie systemu</value>
@@ -137,6 +167,9 @@
   </data>
   <data name="Uptime" xml:space="preserve">
     <value>Uptime</value>
+  </data>
+  <data name="View" xml:space="preserve">
+    <value>Zobacz</value>
   </data>
 
 </root>
