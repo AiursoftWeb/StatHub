@@ -31,17 +31,21 @@ public class AgentChannelController(
         }
 
         var agent = database.GetOrAddClient(clientId);
-        using var webSocket = await HttpContext.WebSockets.AcceptWebSocketAsync();
+        var webSocket = await HttpContext.WebSockets.AcceptWebSocketAsync();
         logger.LogInformation("Agent {ClientId} connected via WebSocket.", clientId);
 
-        using var cts = CancellationTokenSource.CreateLinkedTokenSource(HttpContext.RequestAborted);
+        var cts = CancellationTokenSource.CreateLinkedTokenSource(HttpContext.RequestAborted);
+
+        // Copy variables to local to avoid "Captured variable is disposed" warning
+        var socketForLambda = webSocket;
+        var tokenForLambda = cts.Token;
 
         // Task to send pending commands to the agent
         var sendTask = agent.PendingCommands
             .InNewThread()
             .Subscribe(async command =>
             {
-                if (webSocket.State == WebSocketState.Open)
+                if (socketForLambda.State == WebSocketState.Open)
                 {
                     var message = new JsonRpcMessage
                     {
@@ -51,7 +55,7 @@ public class AgentChannelController(
                     };
                     var json = JsonConvert.SerializeObject(message);
                     var bytes = Encoding.UTF8.GetBytes(json);
-                    await webSocket.SendAsync(new ArraySegment<byte>(bytes), WebSocketMessageType.Text, true, cts.Token);
+                    await socketForLambda.SendAsync(new ArraySegment<byte>(bytes), WebSocketMessageType.Text, true, tokenForLambda);
                 }
             });
 
@@ -111,6 +115,8 @@ public class AgentChannelController(
         finally
         {
             sendTask.Unsubscribe();
+            cts.Dispose();
+            webSocket.Dispose();
         }
     }
 

@@ -1,5 +1,7 @@
 using System.Net;
+// ReSharper disable RedundantUsingDirective
 using Aiursoft.StatHub.Authorization;
+// ReSharper restore RedundantUsingDirective
 
 namespace Aiursoft.StatHub.Tests.IntegrationTests;
 

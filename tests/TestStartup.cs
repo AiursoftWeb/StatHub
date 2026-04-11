@@ -1,6 +1,9 @@
+// ReSharper disable all
 using Aiursoft.StatHub.Services;
 using Aiursoft.StatHub.Tests.MockServices;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Hosting;
 
 namespace Aiursoft.StatHub.Tests;
 

@@ -1,63 +1,19 @@
+// ReSharper disable all
 using System.Net;
 using System.Net.WebSockets;
 using System.Text;
-using Aiursoft.CSTools.Tools;
-using Aiursoft.DbTools;
 using Aiursoft.StatHub.Data;
 using Aiursoft.StatHub.Entities;
 using Aiursoft.StatHub.SDK.Models;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
-using static Aiursoft.WebTools.Extends;
 
 namespace Aiursoft.StatHub.Tests.IntegrationTests;
 
 [TestClass]
-public class MetricsTests
+public class MetricsTests : TestBase
 {
-    private readonly int _port;
-    private readonly HttpClient _http;
-    private IHost? _server;
-
-    public MetricsTests()
-    {
-        var cookieContainer = new CookieContainer();
-        var handler = new HttpClientHandler
-        {
-            CookieContainer = cookieContainer,
-            AllowAutoRedirect = false
-        };
-        _port = Network.GetAvailablePort();
-        _http = new HttpClient(handler)
-        {
-            BaseAddress = new Uri($"http://localhost:{_port}")
-        };
-    }
-
-    [TestInitialize]
-    public async Task CreateServer()
-    {
-        _server = await AppAsync<TestStartup>([], port: _port);
-        using (var scope = _server.Services.CreateScope())
-        {
-            var dbContext = scope.ServiceProvider.GetRequiredService<StatHubDbContext>();
-            await dbContext.Database.EnsureDeletedAsync();
-            await dbContext.Database.EnsureCreatedAsync();
-        }
-        await _server.UpdateDbAsync<StatHubDbContext>();
-        await _server.SeedAsync();
-        await _server.StartAsync();
-    }
-
-    [TestCleanup]
-    public async Task CleanServer()
-    {
-        if (_server == null) return;
-        await _server.StopAsync();
-        _server.Dispose();
-    }
-
     [TestMethod]
     public async Task TestSubmitMetricsAndDisplay()
     {
@@ -109,7 +65,7 @@ public class MetricsTests
 
         using (var ws = new ClientWebSocket())
         {
-            await ws.ConnectAsync(new Uri($"ws://localhost:{_port}/api/agent/channel?clientId={clientId}"), CancellationToken.None);
+            await ws.ConnectAsync(new Uri($"ws://localhost:{Port}/api/agent/channel?clientId={clientId}"), CancellationToken.None);
             var json = JsonConvert.SerializeObject(rpcMessage);
             var bytes = Encoding.UTF8.GetBytes(json);
             await ws.SendAsync(new ArraySegment<byte>(bytes), WebSocketMessageType.Text, true, CancellationToken.None);
@@ -120,7 +76,7 @@ public class MetricsTests
         }
 
         // Now check if it's in the database
-        var database = _server!.Services.GetRequiredService<InMemoryDatabase>();
+        var database = GetService<InMemoryDatabase>();
         var agent = database.GetClient(clientId);
         Assert.IsNotNull(agent);
         Assert.AreEqual(kernelVersion, agent.KernelVersion);
@@ -128,9 +84,9 @@ public class MetricsTests
         Assert.AreEqual("test-container", agent.Containers[0].Name);
 
         // Now check if it's displayed on the details page.
-        await LoginAsAdminAsync();
+        await LoginAsAdmin();
         
-        var detailsResponse = await _http.GetAsync($"/Dashboard/Details/{clientId}");
+        var detailsResponse = await Http.GetAsync($"/Dashboard/Details/{clientId}");
         detailsResponse.EnsureSuccessStatusCode();
         var detailsHtml = await detailsResponse.Content.ReadAsStringAsync();
         Assert.IsTrue(detailsHtml.Contains(kernelVersion));
@@ -147,12 +103,12 @@ public class MetricsTests
 
         using (var ws = new ClientWebSocket())
         {
-            await ws.ConnectAsync(new Uri($"ws://localhost:{_port}/api/agent/channel?clientId={clientId}"), CancellationToken.None);
+            await ws.ConnectAsync(new Uri($"ws://localhost:{Port}/api/agent/channel?clientId={clientId}"), CancellationToken.None);
             
             // Now as admin, send a command via HTTP
-            await LoginAsAdminAsync();
+            await LoginAsAdmin();
             var token = await GetAntiCsrfToken($"/Dashboard/Details/{clientId}");
-            var sendResponse = await _http.PostAsync($"/Dashboard/SendCommand/{clientId}", new FormUrlEncodedContent(new Dictionary<string, string>
+            var sendResponse = await Http.PostAsync($"/Dashboard/SendCommand/{clientId}", new FormUrlEncodedContent(new Dictionary<string, string>
             {
                 { "commandText", commandText },
                 { "__RequestVerificationToken", token }
@@ -194,38 +150,12 @@ public class MetricsTests
         }
 
         // Now check if the result is in the database/history
-        var database = _server!.Services.GetRequiredService<InMemoryDatabase>();
+        var database = GetService<InMemoryDatabase>();
         var agent = database.GetClient(clientId);
         Assert.IsNotNull(agent);
-        var exec = agent.CommandHistory.Values.FirstOrDefault();
+        var exec = Enumerable.FirstOrDefault(agent.CommandHistory.Values);
         Assert.IsNotNull(exec);
         Assert.AreEqual(0, exec.ExitCode);
         Assert.AreEqual("hello world\n", exec.Stdout);
-    }
-
-    private async Task LoginAsAdminAsync()
-    {
-        var email = "admin@default.com";
-        var password = "admin123";
-
-        var loginToken = await GetAntiCsrfToken("/Account/Login");
-        var loginContent = new FormUrlEncodedContent(new Dictionary<string, string>
-        {
-            { "EmailOrUserName", email },
-            { "Password", password },
-            { "__RequestVerificationToken", loginToken }
-        });
-        var response = await _http.PostAsync("/Account/Login", loginContent);
-        Assert.AreEqual(HttpStatusCode.Found, response.StatusCode);
-    }
-
-    private async Task<string> GetAntiCsrfToken(string url)
-    {
-        var response = await _http.GetAsync(url);
-        response.EnsureSuccessStatusCode();
-        var html = await response.Content.ReadAsStringAsync();
-        var match = System.Text.RegularExpressions.Regex.Match(html,
-            @"<input name=""__RequestVerificationToken"" type=""hidden"" value=""([^""]+)"" />");
-        return match.Groups[1].Value;
     }
 }
