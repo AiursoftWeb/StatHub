@@ -45,6 +45,9 @@
   <data name="Run the following command on your Linux machine to install the agent and register it as a service. This will automatically connect it to this server." xml:space="preserve">
     <value>รันคำสั่งต่อไปนี้บนเครื่อง Linux ของคุณเพื่อติดตั้งเอเจนต์และลงทะเบียนเป็นบริการ ซึ่งจะทำให้เชื่อมต่อกับเซิร์ฟเวอร์นี้โดยอัตโนมัติ</value>
   </data>
+  <data name="Run the following command on your Linux machine to uninstall the agent and remove all associated files and services." xml:space="preserve">
+    <value>รันคำสั่งต่อไปนี้บนเครื่อง Linux ของคุณเพื่อถอนการติดตั้งตัวตรวจสอบและลบไฟล์และบริการที่เกี่ยวข้องทั้งหมด</value>
+  </data>
   <data name="Sets up a &lt;code&gt;systemd&lt;/code&gt; service to run the agent." xml:space="preserve">
     <value>ตั้งค่าเซอร์วิส &lt;code&gt;systemd&lt;/code&gt; เพื่อรันเอเจนต์</value>
   </data>
@@ -56,6 +59,9 @@
   </data>
   <data name="Ubuntu 20.04 and above" xml:space="preserve">
     <value>Ubuntu 20.04 ขึ้นไป</value>
+  </data>
+  <data name="Uninstall the agent" xml:space="preserve">
+    <value>ถอนการติดตั้งเอเจนต์</value>
   </data>
   <data name="Version Information" xml:space="preserve">
     <value>ข้อมูลเวอร์ชัน</value>

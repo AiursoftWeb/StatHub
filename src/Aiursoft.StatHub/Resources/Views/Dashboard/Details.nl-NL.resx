@@ -39,6 +39,9 @@
   <data name="Client ID" xml:space="preserve">
     <value>Client-ID</value>
   </data>
+  <data name="Command" xml:space="preserve">
+    <value>Opdracht</value>
+  </data>
   <data name="Cores" xml:space="preserve">
     <value>Kernen</value>
   </data>
@@ -62,6 +65,21 @@
   </data>
   <data name="Docker Containers" xml:space="preserve">
     <value>Docker Containers</value>
+  </data>
+  <data name="Enter shell command..." xml:space="preserve">
+    <value>Voer shell-opdracht in...</value>
+  </data>
+  <data name="Execute" xml:space="preserve">
+    <value>Uitvoeren</value>
+  </data>
+  <data name="Execute Command" xml:space="preserve">
+    <value>Opdracht uitvoeren</value>
+  </data>
+  <data name="Exit" xml:space="preserve">
+    <value>Terugkeer</value>
+  </data>
+  <data name="Failed" xml:space="preserve">
+    <value>Mislukt</value>
   </data>
   <data name="Hardware Details" xml:space="preserve">
     <value>Hardwaregegevens</value>
@@ -105,8 +123,14 @@
   <data name="Network I/O" xml:space="preserve">
     <value>Netwerk I/O</value>
   </data>
+  <data name="No output yet..." xml:space="preserve">
+    <value>Nog geen uitvoer...</value>
+  </data>
   <data name="Operating System" xml:space="preserve">
     <value>Besturingssysteem</value>
+  </data>
+  <data name="Output" xml:space="preserve">
+    <value>Uitvoer</value>
   </data>
   <data name="Ports" xml:space="preserve">
     <value>Ports</value>
@@ -123,11 +147,17 @@
   <data name="Runtime Info" xml:space="preserve">
     <value>Runtime-informatie</value>
   </data>
+  <data name="Started" xml:space="preserve">
+    <value>Gestart</value>
+  </data>
   <data name="Status" xml:space="preserve">
     <value>Status</value>
   </data>
   <data name="Stopped" xml:space="preserve">
     <value>Gestopt</value>
+  </data>
+  <data name="Success" xml:space="preserve">
+    <value>Succes</value>
   </data>
   <data name="System Load" xml:space="preserve">
     <value>Systeembelasting</value>
@@ -137,6 +167,9 @@
   </data>
   <data name="Uptime" xml:space="preserve">
     <value>Uptime</value>
+  </data>
+  <data name="View" xml:space="preserve">
+    <value>Bekijken</value>
   </data>
 
 </root>

@@ -45,6 +45,9 @@
   <data name="Run the following command on your Linux machine to install the agent and register it as a service. This will automatically connect it to this server." xml:space="preserve">
     <value>Run the following command on your Linux machine to install the agent and register it as a service. This will automatically connect it to this server.</value>
   </data>
+  <data name="Run the following command on your Linux machine to uninstall the agent and remove all associated files and services." xml:space="preserve">
+    <value>Run the following command on your Linux machine to uninstall the agent and remove all associated files and services.</value>
+  </data>
   <data name="Sets up a &lt;code&gt;systemd&lt;/code&gt; service to run the agent." xml:space="preserve">
     <value>Sets up a &lt;code&gt;systemd&lt;/code&gt; service to run the agent.</value>
   </data>
@@ -56,6 +59,9 @@
   </data>
   <data name="Ubuntu 20.04 and above" xml:space="preserve">
     <value>Ubuntu 20.04 and above</value>
+  </data>
+  <data name="Uninstall the agent" xml:space="preserve">
+    <value>Uninstall the agent</value>
   </data>
   <data name="Version Information" xml:space="preserve">
     <value>Version Information</value>

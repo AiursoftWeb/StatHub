@@ -45,6 +45,9 @@
   <data name="Run the following command on your Linux machine to install the agent and register it as a service. This will automatically connect it to this server." xml:space="preserve">
     <value>Chạy lệnh sau trên máy Linux của bạn để cài đặt agent và đăng ký nó như một dịch vụ. Điều này sẽ tự động kết nối nó tới máy chủ này.</value>
   </data>
+  <data name="Run the following command on your Linux machine to uninstall the agent and remove all associated files and services." xml:space="preserve">
+    <value>Chạy lệnh sau trên máy Linux của bạn để gỡ bỏ agent và xóa tất cả các tệp và dịch vụ liên quan.</value>
+  </data>
   <data name="Sets up a &lt;code&gt;systemd&lt;/code&gt; service to run the agent." xml:space="preserve">
     <value>Thiết lập một dịch vụ &lt;code&gt;systemd&lt;/code&gt; để chạy agent.</value>
   </data>
@@ -56,6 +59,9 @@
   </data>
   <data name="Ubuntu 20.04 and above" xml:space="preserve">
     <value>Ubuntu 20.04 trở lên</value>
+  </data>
+  <data name="Uninstall the agent" xml:space="preserve">
+    <value>Gỡ bỏ agent</value>
   </data>
   <data name="Version Information" xml:space="preserve">
     <value>Thông Tin Phiên Bản</value>

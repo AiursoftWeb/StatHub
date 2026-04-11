@@ -45,6 +45,9 @@
   <data name="Run the following command on your Linux machine to install the agent and register it as a service. This will automatically connect it to this server." xml:space="preserve">
     <value>在您的 Linux 机器上运行以下命令以安装终端并将其注册为服务。这将自动将其连接到此服务器。</value>
   </data>
+  <data name="Run the following command on your Linux machine to uninstall the agent and remove all associated files and services." xml:space="preserve">
+    <value>请在您的 Linux 机器上运行以下命令以卸载代理并删除所有关联的文件和服务。</value>
+  </data>
   <data name="Sets up a &lt;code&gt;systemd&lt;/code&gt; service to run the agent." xml:space="preserve">
     <value>设置一个 &lt;code&gt;systemd&lt;/code&gt; 服务来运行终端程序。</value>
   </data>
@@ -56,6 +59,9 @@
   </data>
   <data name="Ubuntu 20.04 and above" xml:space="preserve">
     <value>Ubuntu 20.04 及以上版本</value>
+  </data>
+  <data name="Uninstall the agent" xml:space="preserve">
+    <value>卸载代理</value>
   </data>
   <data name="Version Information" xml:space="preserve">
     <value>版本信息</value>

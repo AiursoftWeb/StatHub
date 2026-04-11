@@ -39,6 +39,9 @@
   <data name="Client ID" xml:space="preserve">
     <value>İstemci Kimliği</value>
   </data>
+  <data name="Command" xml:space="preserve">
+    <value>Komut</value>
+  </data>
   <data name="Cores" xml:space="preserve">
     <value>Çekirdekler</value>
   </data>
@@ -62,6 +65,21 @@
   </data>
   <data name="Docker Containers" xml:space="preserve">
     <value>Docker Containers</value>
+  </data>
+  <data name="Enter shell command..." xml:space="preserve">
+    <value>Kabuk komutu girin...</value>
+  </data>
+  <data name="Execute" xml:space="preserve">
+    <value>Çalıştır</value>
+  </data>
+  <data name="Execute Command" xml:space="preserve">
+    <value>Komut Çalıştır</value>
+  </data>
+  <data name="Exit" xml:space="preserve">
+    <value>Çıkış</value>
+  </data>
+  <data name="Failed" xml:space="preserve">
+    <value>Başarısız</value>
   </data>
   <data name="Hardware Details" xml:space="preserve">
     <value>Donanım Detayları</value>
@@ -105,8 +123,14 @@
   <data name="Network I/O" xml:space="preserve">
     <value>Ağ G/Ç</value>
   </data>
+  <data name="No output yet..." xml:space="preserve">
+    <value>Henüz çıktı yok...</value>
+  </data>
   <data name="Operating System" xml:space="preserve">
     <value>İşletim Sistemi</value>
+  </data>
+  <data name="Output" xml:space="preserve">
+    <value>Çıktı</value>
   </data>
   <data name="Ports" xml:space="preserve">
     <value>Ports</value>
@@ -123,11 +147,17 @@
   <data name="Runtime Info" xml:space="preserve">
     <value>Çalışma Zamanı Bilgisi</value>
   </data>
+  <data name="Started" xml:space="preserve">
+    <value>Başlangıç</value>
+  </data>
   <data name="Status" xml:space="preserve">
     <value>Status</value>
   </data>
   <data name="Stopped" xml:space="preserve">
     <value>Durduruldu</value>
+  </data>
+  <data name="Success" xml:space="preserve">
+    <value>Başarılı</value>
   </data>
   <data name="System Load" xml:space="preserve">
     <value>Sistem Yükü</value>
@@ -137,6 +167,9 @@
   </data>
   <data name="Uptime" xml:space="preserve">
     <value>Uptime</value>
+  </data>
+  <data name="View" xml:space="preserve">
+    <value>Görüntüle</value>
   </data>
 
 </root>
