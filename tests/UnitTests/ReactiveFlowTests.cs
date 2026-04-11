@@ -1,5 +1,4 @@
 using Aiursoft.StatHub.SDK.Models;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Aiursoft.StatHub.Tests.UnitTests;
 
