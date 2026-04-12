@@ -56,10 +56,10 @@ public class MetricsAddressModel
     public int CpuCores { get; set; }
 
     [JsonProperty("usedRoot")]
-    public int UsedRoot { get; set; }
+    public double UsedRoot { get; set; }
     
     [JsonProperty("totalRoot")]
-    public int TotalRoot { get; set; }
+    public double TotalRoot { get; set; }
 
     [JsonProperty("disks")]
     public DiskSpaceInfo[] Disks { get; set; } = [];

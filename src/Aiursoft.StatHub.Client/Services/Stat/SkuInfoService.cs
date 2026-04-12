@@ -68,8 +68,8 @@ public class SkuInfoService(
                 results.Add(new DiskSpaceInfo
                 {
                     Name = mountedOn,
-                    Total = (int)Math.Ceiling(totalBlocks / 1024.0 / 1024.0),
-                    Used = (int)Math.Ceiling(usedBlocks / 1024.0 / 1024.0)
+                    Total = totalBlocks / 1024.0 / 1024.0,
+                    Used = usedBlocks / 1024.0 / 1024.0
                 });
             }
             return results.OrderBy(r => r.Name).ToArray();
