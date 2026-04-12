@@ -158,8 +158,8 @@ public class Agent
     public ConcurrentDictionary<Guid, CommandExecution> CommandHistory { get; set; }
     public int CpuCores { get; set; }
     public int RamInGb { get; set; }
-    public int TotalRoot { get; set; }
-    public int UsedRoot { get; set; }
+    public double TotalRoot { get; set; }
+    public double UsedRoot { get; set; }
     public List<DiskSpaceInfo> Disks { get; set; } = new();
     public string? CountryName { get; set; }
     public string? CountryCode { get; set; }
@@ -170,7 +170,7 @@ public class Agent
     public string GetSku()
     {
         var totalDisk = Disks.Any() ? Disks.Sum(d => d.Total) : TotalRoot;
-        return $"{CpuCores}C-{RamInGb}G-{totalDisk}G";
+        return $"{CpuCores}C-{RamInGb}G-{(int)Math.Round(totalDisk)}G";
     }
 
     public int GetSkuInNumber()
@@ -178,7 +178,7 @@ public class Agent
         var totalDisk = Disks.Any() ? Disks.Sum(d => d.Total) : TotalRoot;
         return CpuCores * 1000000
                + RamInGb * 1000
-               + totalDisk;
+               + (int)Math.Round(totalDisk);
     }
 
     public bool IsPrivateIp()
@@ -283,11 +283,11 @@ public class Agent
         string diskPrompt;
         if (Disks.Any())
         {
-            diskPrompt = string.Join("\n", Disks.Select(d => $"{d.Name}: {d.Used}GB / {d.Total}GB"));
+            diskPrompt = string.Join("\n", Disks.Select(d => $"{d.Name}: {d.Used:0.##}GB / {d.Total:0.##}GB"));
         }
         else
         {
-            diskPrompt = $"/: {UsedRoot}GB / {TotalRoot}GB";
+            diskPrompt = $"/: {UsedRoot:0.##}GB / {TotalRoot:0.##}GB";
         }
 
         // 4. 返回报告

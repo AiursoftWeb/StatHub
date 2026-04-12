@@ -162,9 +162,9 @@
                     {
                         @foreach (var disk in agent.Disks)
                         {
-                            <p class="mb-1 small text-muted">@disk.Name (@disk.Used GB / @disk.Total GB)</p>
+                            <p class="mb-1 small text-muted">@disk.Name (@disk.Used.ToString("0.##") GB / @disk.Total.ToString("0.##") GB)</p>
                             <div class="progress progress-sm w-100 mb-3">
-                                <div class="progress-bar @(disk.Total > 0 && disk.Used / (double)disk.Total > 0.92 ? "bg-danger" : disk.Total > 0 && disk.Used / (double)disk.Total > 0.8 ? "bg-warning" : "bg-success")"
+                                <div class="progress-bar @(disk.Total > 0 && disk.Used / disk.Total > 0.92 ? "bg-danger" : disk.Total > 0 && disk.Used / disk.Total > 0.8 ? "bg-warning" : "bg-success")"
                                      role="progressbar"
                                      style="width: @(disk.Total > 0 ? disk.Used * 100.0 / disk.Total : 0)%"
                                      aria-valuenow="@(disk.Total > 0 ? disk.Used * 100.0 / disk.Total : 0)"
@@ -172,14 +172,14 @@
                                      aria-valuemax="100"
                                      data-bs-toggle="tooltip"
                                      data-placement="bottom"
-                                     title="@disk.Name: @disk.Used GB / @disk.Total GB">
+                                     title="@disk.Name: @disk.Used.ToString("0.##") GB / @disk.Total.ToString("0.##") GB">
                                 </div>
                             </div>
                         }
                     }
                     else
                     {
-                        <p class="mb-1 small text-muted">/ (@agent.UsedRoot GB / @agent.TotalRoot GB)</p>
+                        <p class="mb-1 small text-muted">/ (@agent.UsedRoot.ToString("0.##") GB / @agent.TotalRoot.ToString("0.##") GB)</p>
                         <div class="progress progress-sm w-100">
                             <div class="progress-bar @health.DiskColorClass" role="progressbar"
                                  style="width: @(health.DiskUseRatio * 100)%"
