@@ -241,11 +241,11 @@ public class Agent
         var diskUseRatio = 0.0;
         if (Disks.Any())
         {
-            diskUseRatio = Disks.Max(d => d.Total > 0 ? d.Used / (double)d.Total : 0);
+            diskUseRatio = Disks.Max(d => d.Total > 0 ? d.Used / d.Total : 0);
         }
         else if (TotalRoot > 0)
         {
-            diskUseRatio = UsedRoot / (double)TotalRoot;
+            diskUseRatio = UsedRoot / TotalRoot;
         }
 
         // 2. 状态逻辑
