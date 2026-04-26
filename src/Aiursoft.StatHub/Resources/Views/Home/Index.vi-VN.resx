@@ -255,6 +255,9 @@
   <data name="Smart dark mode that automatically adapts to the user&apos;s system settings." xml:space="preserve">
     <value>Chế độ tối thông minh tự động điều chỉnh theo cài đặt hệ thống của người dùng.</value>
   </data>
+  <data name="Source code on GitHub" xml:space="preserve">
+    <value>Mã nguồn trên GitHub</value>
+  </data>
   <data name="StatHub is a simple server stat statistics system. It can collect server stats and display them in a simple way." xml:space="preserve">
     <value>StatHub là một hệ thống thống kê số liệu máy chủ đơn giản. Nó có thể thu thập các số liệu máy chủ và hiển thị chúng một cách dễ hiểu.</value>
   </data>
@@ -284,6 +287,9 @@
   </data>
   <data name="View on GitHub" xml:space="preserve">
     <value>Xem trên GitHub</value>
+  </data>
+  <data name="View Servers Stat" xml:space="preserve">
+    <value>Xem thống kê máy chủ</value>
   </data>
   <data name="View Source on GitHub" xml:space="preserve">
     <value>Xem mã nguồn trên GitHub</value>

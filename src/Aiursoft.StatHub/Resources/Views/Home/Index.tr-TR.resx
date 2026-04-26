@@ -255,6 +255,9 @@
   <data name="Smart dark mode that automatically adapts to the user&apos;s system settings." xml:space="preserve">
     <value>Kullanıcının sistem ayarlarına otomatik olarak uyum sağlayan akıllı karanlık mod.</value>
   </data>
+  <data name="Source code on GitHub" xml:space="preserve">
+    <value>Kaynak kodu GitHub&apos;da</value>
+  </data>
   <data name="StatHub is a simple server stat statistics system. It can collect server stats and display them in a simple way." xml:space="preserve">
     <value>StatHub, basit bir sunucu istatistik sistemi istatistik sistemidir. Sunucu istatistiklerini toplayabilir ve bunları basit bir şekilde görüntüleyebilir.</value>
   </data>
@@ -284,6 +287,9 @@
   </data>
   <data name="View on GitHub" xml:space="preserve">
     <value>GitHub&apos;da Görüntüle</value>
+  </data>
+  <data name="View Servers Stat" xml:space="preserve">
+    <value>Sunucu Durumlarını Görüntüle</value>
   </data>
   <data name="View Source on GitHub" xml:space="preserve">
     <value>GitHub&apos;da Kaynağı Görüntüle</value>

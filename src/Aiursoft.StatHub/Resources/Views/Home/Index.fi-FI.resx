@@ -255,6 +255,9 @@
   <data name="Smart dark mode that automatically adapts to the user&apos;s system settings." xml:space="preserve">
     <value>Älykäs tumma tila, joka mukautuu automaattisesti käyttäjän järjestelmäasetuksiin.</value>
   </data>
+  <data name="Source code on GitHub" xml:space="preserve">
+    <value>Lähdekoodi GitHubissa</value>
+  </data>
   <data name="StatHub is a simple server stat statistics system. It can collect server stats and display them in a simple way." xml:space="preserve">
     <value>StatHub on yksinkertainen palvelintilastojen seurantajärjestelmä. Se kerää palvelintilastoja ja näyttää ne yksinkertaisella tavalla.</value>
   </data>
@@ -284,6 +287,9 @@
   </data>
   <data name="View on GitHub" xml:space="preserve">
     <value>Näytä GitHubissa</value>
+  </data>
+  <data name="View Servers Stat" xml:space="preserve">
+    <value>Näytä palvelimien tilastot</value>
   </data>
   <data name="View Source on GitHub" xml:space="preserve">
     <value>Näytä lähdekoodi GitHubissa</value>
