@@ -255,6 +255,9 @@
   <data name="Smart dark mode that automatically adapts to the user&apos;s system settings." xml:space="preserve">
     <value>智慧深色模式，可自動適應使用者的系統設定。</value>
   </data>
+  <data name="Source code on GitHub" xml:space="preserve">
+    <value>GitHub 上的原始碼</value>
+  </data>
   <data name="StatHub is a simple server stat statistics system. It can collect server stats and display them in a simple way." xml:space="preserve">
     <value>StatHub 是一個簡易的伺服器統計系統，能夠收集伺服器數據並以簡單的方式呈現。</value>
   </data>
@@ -284,6 +287,9 @@
   </data>
   <data name="View on GitHub" xml:space="preserve">
     <value>在 GitHub 上檢視</value>
+  </data>
+  <data name="View Servers Stat" xml:space="preserve">
+    <value>查看伺服器狀態</value>
   </data>
   <data name="View Source on GitHub" xml:space="preserve">
     <value>在 GitHub 上檢視原始碼</value>
