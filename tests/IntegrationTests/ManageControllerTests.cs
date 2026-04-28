@@ -29,7 +29,7 @@ public class ManageControllerTests : TestBase
         // 3. ChangePassword (POST)
         var changePasswordResponse = await PostForm("/Manage/ChangePassword", new Dictionary<string, string>
         {
-            { "OldPassword", "admin123" },
+            { "OldPassword", "Admin@123456!" },
             { "NewPassword", "NewAdmin123!" },
             { "ConfirmPassword", "NewAdmin123!" }
         });
