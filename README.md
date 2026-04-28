@@ -11,7 +11,7 @@ StatHub is a simple server stat statistics system. It can collect server stats a
 
 ![screenshot](./screenshot.png)
 
-Default user name is `admin@default.com` and default password is `admin123`.
+Default user name is `admin@default.com` and default password is `Admin@123456!`.
 
 ## Try
 
