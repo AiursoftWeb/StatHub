@@ -15,4 +15,14 @@ public class ContainerInfo
     public string Ports { get; set; } = null!;
     public bool IsHealthy { get; set; }
     public bool HasHealthCheck { get; set; }
+    public string BlockIo { get; set; } = string.Empty;
+    public long BlockIoRead { get; set; }
+    public long BlockIoWrite { get; set; }
+    public string NetIo { get; set; } = string.Empty;
+    public long NetIoIn { get; set; }
+    public long NetIoOut { get; set; }
+    public string DiskUsage { get; set; } = string.Empty;
+    public long DiskUsageBytes { get; set; }
+    public string ImageSize { get; set; } = string.Empty;
+    public long ImageSizeBytes { get; set; }
 }

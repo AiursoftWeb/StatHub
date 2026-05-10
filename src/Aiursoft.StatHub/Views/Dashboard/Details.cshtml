@@ -392,6 +392,10 @@
                                     <th>@Localizer["Image"]</th>
                                     <th>@Localizer["CPU %"]</th>
                                     <th>@Localizer["Memory"]</th>
+                                    <th>@Localizer["Disk R/W"]</th>
+                                    <th>@Localizer["Net I/O"]</th>
+                                    <th>@Localizer["Disk Usage"]</th>
+                                    <th>@Localizer["Image Size"]</th>
                                     <th>@Localizer["Uptime"]</th>
                                     <th>@Localizer["Ports"]</th>
                                 </tr>
@@ -460,6 +464,10 @@
                                                 </div>
                                             </div>
                                         </td>
+                                        <td data-sort="@(container.BlockIoRead + container.BlockIoWrite)">@container.BlockIo</td>
+                                        <td data-sort="@(container.NetIoIn + container.NetIoOut)">@container.NetIo</td>
+                                        <td data-sort="@container.DiskUsageBytes">@container.DiskUsage</td>
+                                        <td data-sort="@container.ImageSizeBytes">@container.ImageSize</td>
                                         <td data-sort="@container.CreatedTime.Ticks">@container.Uptime</td>
                                         <td style="max-width: 150px;" class="text-truncate" title="@container.Ports"><small>@container.Ports</small></td>
                                     </tr>
