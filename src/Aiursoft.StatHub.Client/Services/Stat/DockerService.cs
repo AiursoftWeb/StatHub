@@ -21,7 +21,7 @@ public class DockerService(
             }
 
             // Do NOT use spaces in the format string. If there are no spaces, it works better with some command runners.
-            var psResult = await commandService.RunCommandAsync("docker", "ps --format {{.ID}}|{{.Names}}|{{.Image}}|{{.State}}|{{.Status}}|{{.Ports}}|{{.RunningFor}}|{{.CreatedAt}} --no-trunc", Path.GetTempPath());
+            var psResult = await commandService.RunCommandAsync("docker", "ps -s --format {{.ID}}|{{.Names}}|{{.Image}}|{{.State}}|{{.Status}}|{{.Ports}}|{{.RunningFor}}|{{.CreatedAt}}|{{.Size}} --no-trunc", Path.GetTempPath());
             if (psResult.code != 0)
             {
                 logger.LogWarning("docker ps failed with exit code {Code}. Error: {Error}", psResult.code, psResult.error);
@@ -33,9 +33,9 @@ public class DockerService(
             foreach (var line in lines)
             {
                 var parts = line.Split("|");
-                if (parts.Length < 8)
+                if (parts.Length < 9)
                 {
-                    logger.LogDebug("Failed to parse docker ps line: {Line}. Expected at least 8 parts but got {Length}.", line, parts.Length);
+                    logger.LogDebug("Failed to parse docker ps line: {Line}. Expected at least 9 parts but got {Length}.", line, parts.Length);
                     continue;
                 }
 
@@ -56,6 +56,17 @@ public class DockerService(
 
                 var status = parts[4];
                 var hasHealthCheck = status.Contains("(healthy)") || status.Contains("(unhealthy)") || status.Contains("health: starting");
+                
+                var sizePart = parts[8];
+                var diskUsage = sizePart;
+                var imageSize = string.Empty;
+                if (sizePart.Contains(" (virtual "))
+                {
+                    var sizeParts = sizePart.Split(" (virtual ");
+                    diskUsage = sizeParts[0];
+                    imageSize = sizeParts[1].TrimEnd(')');
+                }
+                
                 containers.Add(new ContainerInfo
                 {
                     Id = parts[0],
@@ -66,6 +77,8 @@ public class DockerService(
                     Ports = parts[5],
                     Uptime = parts[6],
                     CreatedTime = createdTime,
+                    DiskUsage = diskUsage,
+                    ImageSize = imageSize,
                     HasHealthCheck = hasHealthCheck,
                     IsHealthy = hasHealthCheck ? status.Contains("(healthy)") : parts[3] == "running"
                 });
@@ -76,14 +89,14 @@ public class DockerService(
                 return [];
             }
 
-            var statsResult = await commandService.RunCommandAsync("docker", "stats --no-stream --format {{.ID}}|{{.CPUPerc}}|{{.MemUsage}}", Path.GetTempPath());
+            var statsResult = await commandService.RunCommandAsync("docker", "stats --no-stream --format {{.ID}}|{{.CPUPerc}}|{{.MemUsage}}|{{.BlockIO}}|{{.NetIO}}", Path.GetTempPath());
             if (statsResult.code == 0)
             {
                 var statsLines = statsResult.output.Replace("\r", "").Split("\n", StringSplitOptions.RemoveEmptyEntries);
                 foreach (var statsLine in statsLines)
                 {
                     var parts = statsLine.Split("|");
-                    if (parts.Length < 3) continue;
+                    if (parts.Length < 5) continue;
 
                     var container = containers.FirstOrDefault(c => c.Id.StartsWith(parts[0]));
                     if (container != null)
@@ -99,6 +112,8 @@ public class DockerService(
                             var limitPart = memUsageAndLimit.Split('/')[1].Trim();
                             container.MemoryLimit = ParseDockerSize(limitPart);
                         }
+                        container.BlockIo = parts[3];
+                        container.NetIo = parts[4];
                     }
                 }
             }

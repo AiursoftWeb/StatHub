@@ -15,4 +15,8 @@ public class ContainerInfo
     public string Ports { get; set; } = null!;
     public bool IsHealthy { get; set; }
     public bool HasHealthCheck { get; set; }
+    public string BlockIo { get; set; } = string.Empty;
+    public string NetIo { get; set; } = string.Empty;
+    public string DiskUsage { get; set; } = string.Empty;
+    public string ImageSize { get; set; } = string.Empty;
 }
