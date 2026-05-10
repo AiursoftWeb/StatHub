@@ -78,7 +78,9 @@ public class DockerService(
                     Uptime = parts[6],
                     CreatedTime = createdTime,
                     DiskUsage = diskUsage,
+                    DiskUsageBytes = DockerNumberProcessor.ParseDockerSize(diskUsage),
                     ImageSize = imageSize,
+                    ImageSizeBytes = DockerNumberProcessor.ParseDockerSize(imageSize),
                     HasHealthCheck = hasHealthCheck,
                     IsHealthy = hasHealthCheck ? status.Contains("(healthy)") : parts[3] == "running"
                 });
@@ -101,19 +103,35 @@ public class DockerService(
                     var container = containers.FirstOrDefault(c => c.Id.StartsWith(parts[0]));
                     if (container != null)
                     {
-                        container.CpuPercentage = double.Parse(parts[1].Replace("%", ""), CultureInfo.InvariantCulture);
+                        if (double.TryParse(parts[1].Replace("%", ""), CultureInfo.InvariantCulture, out var cpu))
+                        {
+                            container.CpuPercentage = cpu;
+                        }
+                        
                         // MemUsage contains both usage and limit in format "usage / limit"
-                        // ParseDockerSize already handles splitting on '/' to extract usage
                         var memUsageAndLimit = parts[2];
-                        container.MemoryUsage = ParseDockerSize(memUsageAndLimit);
-                        // Extract the limit part (after the '/')
+                        container.MemoryUsage = DockerNumberProcessor.ParseDockerSize(memUsageAndLimit);
                         if (memUsageAndLimit.Contains('/'))
                         {
                             var limitPart = memUsageAndLimit.Split('/')[1].Trim();
-                            container.MemoryLimit = ParseDockerSize(limitPart);
+                            container.MemoryLimit = DockerNumberProcessor.ParseDockerSize(limitPart);
                         }
+                        
                         container.BlockIo = parts[3];
+                        if (parts[3].Contains('/'))
+                        {
+                            var ioParts = parts[3].Split('/');
+                            container.BlockIoRead = DockerNumberProcessor.ParseDockerSize(ioParts[0].Trim());
+                            container.BlockIoWrite = DockerNumberProcessor.ParseDockerSize(ioParts[1].Trim());
+                        }
+
                         container.NetIo = parts[4];
+                        if (parts[4].Contains('/'))
+                        {
+                            var netParts = parts[4].Split('/');
+                            container.NetIoIn = DockerNumberProcessor.ParseDockerSize(netParts[0].Trim());
+                            container.NetIoOut = DockerNumberProcessor.ParseDockerSize(netParts[1].Trim());
+                        }
                     }
                 }
             }
@@ -128,31 +146,6 @@ public class DockerService(
         {
             logger.LogDebug(ex, "Failed to get docker containers. Maybe docker is not installed?");
             return [];
-        }
-    }
-
-    private static long ParseDockerSize(string size)
-    {
-        try
-        {
-            if (size.Contains('/'))
-            {
-                size = size.Split('/')[0];
-            }
-            size = size.Trim().ToUpper();
-            if (size.EndsWith("KIB")) return (long)(double.Parse(size[..^3].Trim(), CultureInfo.InvariantCulture) * 1024);
-            if (size.EndsWith("MIB")) return (long)(double.Parse(size[..^3].Trim(), CultureInfo.InvariantCulture) * 1024 * 1024);
-            if (size.EndsWith("GIB")) return (long)(double.Parse(size[..^3].Trim(), CultureInfo.InvariantCulture) * 1024 * 1024 * 1024);
-            if (size.EndsWith("TIB")) return (long)(double.Parse(size[..^3].Trim(), CultureInfo.InvariantCulture) * 1024L * 1024 * 1024 * 1024);
-            if (size.EndsWith("KB")) return (long)(double.Parse(size[..^2].Trim(), CultureInfo.InvariantCulture) * 1000);
-            if (size.EndsWith("MB")) return (long)(double.Parse(size[..^2].Trim(), CultureInfo.InvariantCulture) * 1000 * 1000);
-            if (size.EndsWith("GB")) return (long)(double.Parse(size[..^2].Trim(), CultureInfo.InvariantCulture) * 1000 * 1000 * 1000);
-            if (size.EndsWith("B")) return (long)double.Parse(size[..^1].Trim(), CultureInfo.InvariantCulture);
-            return (long)double.Parse(size, CultureInfo.InvariantCulture);
-        }
-        catch
-        {
-            return 0;
         }
     }
 }
