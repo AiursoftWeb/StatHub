@@ -60,6 +60,9 @@
   <data name="Disk I/O" xml:space="preserve">
     <value>디스크 입출력</value>
   </data>
+  <data name="Disk R/W" xml:space="preserve">
+    <value>디스크 R/W</value>
+  </data>
   <data name="Disk Usage" xml:space="preserve">
     <value>디스크 사용량</value>
   </data>
@@ -96,6 +99,9 @@
   <data name="Image" xml:space="preserve">
     <value>이미지</value>
   </data>
+  <data name="Image Size" xml:space="preserve">
+    <value>이미지 크기</value>
+  </data>
   <data name="Kernel Version" xml:space="preserve">
     <value>커널 버전</value>
   </data>
@@ -119,6 +125,9 @@
   </data>
   <data name="Name" xml:space="preserve">
     <value>이름</value>
+  </data>
+  <data name="Net I/O" xml:space="preserve">
+    <value>네트워크 I/O</value>
   </data>
   <data name="Network I/O" xml:space="preserve">
     <value>네트워크 입출력</value>

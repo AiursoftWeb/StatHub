@@ -60,6 +60,9 @@
   <data name="Disk I/O" xml:space="preserve">
     <value>磁碟 I/O</value>
   </data>
+  <data name="Disk R/W" xml:space="preserve">
+    <value>磁碟讀寫</value>
+  </data>
   <data name="Disk Usage" xml:space="preserve">
     <value>磁碟使用情況</value>
   </data>
@@ -96,6 +99,9 @@
   <data name="Image" xml:space="preserve">
     <value>鏡像</value>
   </data>
+  <data name="Image Size" xml:space="preserve">
+    <value>影像大小</value>
+  </data>
   <data name="Kernel Version" xml:space="preserve">
     <value>核心版本</value>
   </data>
@@ -119,6 +125,9 @@
   </data>
   <data name="Name" xml:space="preserve">
     <value>名稱</value>
+  </data>
+  <data name="Net I/O" xml:space="preserve">
+    <value>網絡 I/O</value>
   </data>
   <data name="Network I/O" xml:space="preserve">
     <value>網絡 I/O</value>
