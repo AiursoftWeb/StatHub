@@ -60,6 +60,9 @@
   <data name="Disk I/O" xml:space="preserve">
     <value>Είσοδος/Έξοδος Δίσκου</value>
   </data>
+  <data name="Disk R/W" xml:space="preserve">
+    <value>Δisk Εγγραφής/Ανάγνωσης</value>
+  </data>
   <data name="Disk Usage" xml:space="preserve">
     <value>Χρήση δίσκου</value>
   </data>
@@ -96,6 +99,9 @@
   <data name="Image" xml:space="preserve">
     <value>Image</value>
   </data>
+  <data name="Image Size" xml:space="preserve">
+    <value>Μέγεθος Εικόνας</value>
+  </data>
   <data name="Kernel Version" xml:space="preserve">
     <value>Έκδοση Πυρήνα</value>
   </data>
@@ -119,6 +125,9 @@
   </data>
   <data name="Name" xml:space="preserve">
     <value>Name</value>
+  </data>
+  <data name="Net I/O" xml:space="preserve">
+    <value>Δίκτυο I/O</value>
   </data>
   <data name="Network I/O" xml:space="preserve">
     <value>Δικτυακή Εισ/Εξ</value>
