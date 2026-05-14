@@ -24,4 +24,28 @@ public class SystemControllerTests : TestBase
         var html = await adminResponse.Content.ReadAsStringAsync();
         Assert.Contains("System Information", html);
     }
+
+    [TestMethod]
+    public async Task TestIndexContainsTableCounts()
+    {
+        await LoginAsAdmin();
+        var response = await Http.GetAsync("/System/Index");
+        response.EnsureSuccessStatusCode();
+
+        var html = await response.Content.ReadAsStringAsync();
+        Assert.Contains("Database Table Counts", html);
+        Assert.Contains("Users", html);
+    }
+
+    [TestMethod]
+    public async Task TestIndexContainsMigrationInfo()
+    {
+        await LoginAsAdmin();
+        var response = await Http.GetAsync("/System/Index");
+        response.EnsureSuccessStatusCode();
+
+        var html = await response.Content.ReadAsStringAsync();
+        Assert.Contains("Database Migrations", html);
+        Assert.Contains("Applied / Defined", html);
+    }
 }
