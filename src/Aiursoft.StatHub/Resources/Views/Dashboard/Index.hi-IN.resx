@@ -195,6 +195,9 @@
   <data name="Smart dark mode that automatically adapts to the user&apos;s system settings." xml:space="preserve">
     <value>स्मार्ट डार्क मोड जो स्वचालित रूप से उपयोगकर्ता की सिस्टम सेटिंग्स के अनुकूल हो जाता है।</value>
   </data>
+  <data name="SSH Keys" xml:space="preserve">
+    <value>SSH कुंजियाँ</value>
+  </data>
   <data name="Status" xml:space="preserve">
     <value>स्थिति</value>
   </data>

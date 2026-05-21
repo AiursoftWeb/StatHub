@@ -195,6 +195,9 @@
   <data name="Smart dark mode that automatically adapts to the user&apos;s system settings." xml:space="preserve">
     <value>Mod întunecat inteligent care se adaptează automat la setările de sistem ale utilizatorului.</value>
   </data>
+  <data name="SSH Keys" xml:space="preserve">
+    <value>Chei SSH</value>
+  </data>
   <data name="Status" xml:space="preserve">
     <value>Stare</value>
   </data>

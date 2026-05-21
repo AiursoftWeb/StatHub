@@ -195,6 +195,9 @@
   <data name="Smart dark mode that automatically adapts to the user&apos;s system settings." xml:space="preserve">
     <value>Розумний темний режим, який автоматично адаптується до системних налаштувань користувача.</value>
   </data>
+  <data name="SSH Keys" xml:space="preserve">
+    <value>SSH-ключі</value>
+  </data>
   <data name="Status" xml:space="preserve">
     <value>Статус</value>
   </data>

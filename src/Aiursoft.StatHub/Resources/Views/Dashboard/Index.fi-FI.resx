@@ -195,6 +195,9 @@
   <data name="Smart dark mode that automatically adapts to the user&apos;s system settings." xml:space="preserve">
     <value>Älykäs tumma tila, joka mukautuu automaattisesti käyttäjän järjestelmäasetuksiin.</value>
   </data>
+  <data name="SSH Keys" xml:space="preserve">
+    <value>SSH-avaimet</value>
+  </data>
   <data name="Status" xml:space="preserve">
     <value>Tila</value>
   </data>
