@@ -167,6 +167,8 @@ public class Agent
 
     public List<ContainerInfo> Containers { get; set; } = new();
 
+    public int SshKeyCount { get; set; }
+
     public string GetSku()
     {
         var totalDisk = Disks.Any() ? Disks.Sum(d => d.Total) : TotalRoot;

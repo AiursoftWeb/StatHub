@@ -23,6 +23,7 @@ public class AgentChannelService(
     HostnameService hostnameService,
     BootTimeService bootTimeService,
     DockerService dockerService,
+    SshKeyService sshKeyService,
     IOptions<ServerConfig> serverConfigOptions,
     ILogger<AgentChannelService> logger)
     : IConsumer<DstatResult[]>
@@ -170,6 +171,7 @@ public class AgentChannelService(
         var clientId = await clientIdService.GetClientId();
         var motd = await motdService.GetMotdFirstLine();
         var containers = await dockerService.GetDockerContainersAsync();
+        var sshKeyCount = await sshKeyService.GetSshKeyCountAsync();
 
         return new MetricsAddressModel
         {
@@ -187,7 +189,8 @@ public class AgentChannelService(
             Disks = disks,
             Motd = motd,
             Stats = statResults,
-            Containers = containers
+            Containers = containers,
+            SshKeyCount = sshKeyCount
         };
     }
 }
