@@ -195,6 +195,9 @@
   <data name="Smart dark mode that automatically adapts to the user&apos;s system settings." xml:space="preserve">
     <value>智能深色模式，會自動適應使用者嘅系統設定。</value>
   </data>
+  <data name="SSH Keys" xml:space="preserve">
+    <value>SSH 金鑰</value>
+  </data>
   <data name="Status" xml:space="preserve">
     <value>狀態</value>
   </data>

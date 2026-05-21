@@ -195,6 +195,9 @@
   <data name="Smart dark mode that automatically adapts to the user&apos;s system settings." xml:space="preserve">
     <value>Έξυπνη λειτουργία σκούρου θέματος που προσαρμόζεται αυτόματα στις ρυθμίσεις του συστήματος του χρήστη.</value>
   </data>
+  <data name="SSH Keys" xml:space="preserve">
+    <value>Κλειδιά SSH</value>
+  </data>
   <data name="Status" xml:space="preserve">
     <value>Κατάσταση</value>
   </data>
