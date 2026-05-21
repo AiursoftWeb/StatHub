@@ -69,4 +69,8 @@ public class MetricsAddressModel
 
     [JsonProperty("containers")]
     public ContainerInfo[]? Containers { get; set; }
+
+    [JsonProperty("sshKeyCount")]
+    [Range(0, int.MaxValue)]
+    public int SshKeyCount { get; set; }
 }
