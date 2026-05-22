@@ -84,6 +84,9 @@
   <data name="Failed" xml:space="preserve">
     <value>Niepowodzenie</value>
   </data>
+  <data name="File" xml:space="preserve">
+    <value>Plik</value>
+  </data>
   <data name="Hardware Details" xml:space="preserve">
     <value>Szczegóły sprzętu</value>
   </data>

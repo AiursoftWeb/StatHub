@@ -84,6 +84,9 @@
   <data name="Failed" xml:space="preserve">
     <value>Αποτυχία</value>
   </data>
+  <data name="File" xml:space="preserve">
+    <value>Αρχείο</value>
+  </data>
   <data name="Hardware Details" xml:space="preserve">
     <value>Λεπτομέρειες Υλικού</value>
   </data>
