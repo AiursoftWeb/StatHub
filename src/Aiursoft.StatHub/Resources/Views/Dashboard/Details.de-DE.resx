@@ -120,6 +120,9 @@
   <data name="Memory" xml:space="preserve">
     <value>Memory</value>
   </data>
+  <data name="Modified" xml:space="preserve">
+    <value>Geändert</value>
+  </data>
   <data name="MOTD" xml:space="preserve">
     <value>MOTD</value>
   </data>
@@ -141,8 +144,14 @@
   <data name="Output" xml:space="preserve">
     <value>Ausgabe</value>
   </data>
+  <data name="Owner" xml:space="preserve">
+    <value>Eigentümer</value>
+  </data>
   <data name="Ports" xml:space="preserve">
     <value>Ports</value>
+  </data>
+  <data name="Preview" xml:space="preserve">
+    <value>Vorschau</value>
   </data>
   <data name="RAM" xml:space="preserve">
     <value>RAM</value>
@@ -155,6 +164,9 @@
   </data>
   <data name="Runtime Info" xml:space="preserve">
     <value>Laufzeitinformationen</value>
+  </data>
+  <data name="SSH Keys" xml:space="preserve">
+    <value>SSH-Schlüssel</value>
   </data>
   <data name="Started" xml:space="preserve">
     <value>Startzeit</value>

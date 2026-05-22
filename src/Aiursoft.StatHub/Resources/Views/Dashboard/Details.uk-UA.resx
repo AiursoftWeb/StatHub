@@ -120,6 +120,9 @@
   <data name="Memory" xml:space="preserve">
     <value>Memory</value>
   </data>
+  <data name="Modified" xml:space="preserve">
+    <value>Змінено</value>
+  </data>
   <data name="MOTD" xml:space="preserve">
     <value>Повідомлення дня</value>
   </data>
@@ -141,8 +144,14 @@
   <data name="Output" xml:space="preserve">
     <value>Вивід</value>
   </data>
+  <data name="Owner" xml:space="preserve">
+    <value>Власник</value>
+  </data>
   <data name="Ports" xml:space="preserve">
     <value>Ports</value>
+  </data>
+  <data name="Preview" xml:space="preserve">
+    <value>Перегляд</value>
   </data>
   <data name="RAM" xml:space="preserve">
     <value>ОЗП</value>
@@ -155,6 +164,9 @@
   </data>
   <data name="Runtime Info" xml:space="preserve">
     <value>Інформація про середовище виконання</value>
+  </data>
+  <data name="SSH Keys" xml:space="preserve">
+    <value>SSH-ключі</value>
   </data>
   <data name="Started" xml:space="preserve">
     <value>Початок</value>

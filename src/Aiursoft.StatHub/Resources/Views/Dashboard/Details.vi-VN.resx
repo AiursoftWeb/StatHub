@@ -120,6 +120,9 @@
   <data name="Memory" xml:space="preserve">
     <value>Memory</value>
   </data>
+  <data name="Modified" xml:space="preserve">
+    <value>Sửa đổi</value>
+  </data>
   <data name="MOTD" xml:space="preserve">
     <value>Thông điệp trong ngày</value>
   </data>
@@ -141,8 +144,14 @@
   <data name="Output" xml:space="preserve">
     <value>Kết quả</value>
   </data>
+  <data name="Owner" xml:space="preserve">
+    <value>Chủ sở hữu</value>
+  </data>
   <data name="Ports" xml:space="preserve">
     <value>Ports</value>
+  </data>
+  <data name="Preview" xml:space="preserve">
+    <value>Xem trước</value>
   </data>
   <data name="RAM" xml:space="preserve">
     <value>RAM</value>
@@ -155,6 +164,9 @@
   </data>
   <data name="Runtime Info" xml:space="preserve">
     <value>Thông tin Thời gian chạy</value>
+  </data>
+  <data name="SSH Keys" xml:space="preserve">
+    <value>Chìa khóa SSH</value>
   </data>
   <data name="Started" xml:space="preserve">
     <value>Bắt đầu</value>

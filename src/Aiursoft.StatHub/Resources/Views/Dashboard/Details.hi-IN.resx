@@ -120,6 +120,9 @@
   <data name="Memory" xml:space="preserve">
     <value>Memory</value>
   </data>
+  <data name="Modified" xml:space="preserve">
+    <value>संशोधित</value>
+  </data>
   <data name="MOTD" xml:space="preserve">
     <value>संदेश दिवस</value>
   </data>
@@ -141,8 +144,14 @@
   <data name="Output" xml:space="preserve">
     <value>आउटपुट</value>
   </data>
+  <data name="Owner" xml:space="preserve">
+    <value>मालिक</value>
+  </data>
   <data name="Ports" xml:space="preserve">
     <value>Ports</value>
+  </data>
+  <data name="Preview" xml:space="preserve">
+    <value>पूर्वावलोकन</value>
   </data>
   <data name="RAM" xml:space="preserve">
     <value>रैम</value>
@@ -155,6 +164,9 @@
   </data>
   <data name="Runtime Info" xml:space="preserve">
     <value>रनटाइम जानकारी</value>
+  </data>
+  <data name="SSH Keys" xml:space="preserve">
+    <value>SSH कुंजियाँ</value>
   </data>
   <data name="Started" xml:space="preserve">
     <value>शुरू</value>
