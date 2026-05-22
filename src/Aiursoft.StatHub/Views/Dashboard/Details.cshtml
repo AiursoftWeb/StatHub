@@ -193,6 +193,34 @@
                         </div>
                     }
                 </div>
+                @if (agent.SshKeys.Any())
+                {
+                    <hr class="my-0"/>
+                    <div class="card-body">
+                        <h5 class="h6 card-title">@Localizer["SSH Keys"] (@agent.SshKeyCount)</h5>
+                        <div class="table-responsive" style="max-height: 300px; overflow-y: auto;">
+                            <table class="table table-sm table-borderless mb-0">
+                                <thead>
+                                    <tr>
+                                        <th class="small text-muted">@Localizer["Owner"]</th>
+                                        <th class="small text-muted">@Localizer["Preview"]</th>
+                                        <th class="small text-muted">@Localizer["Modified"]</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var key in agent.SshKeys)
+                                    {
+                                        <tr>
+                                            <td class="small" title="@key.FilePath">@key.Owner</td>
+                                            <td><code class="small" title="@key.FilePath">@key.Preview</code></td>
+                                            <td class="small text-muted" data-bs-toggle="tooltip" title="Created: @key.Created.ToString("g")&#xA;Accessed: @key.LastAccessed.ToString("g")">@key.LastModified.ToString("g")</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                }
                 <hr class="my-0"/>
                 <div class="card-body">
                     <h5 class="h6 card-title">@Localizer["Runtime Info"]</h5>

@@ -171,7 +171,7 @@ public class AgentChannelService(
         var clientId = await clientIdService.GetClientId();
         var motd = await motdService.GetMotdFirstLine();
         var containers = await dockerService.GetDockerContainersAsync();
-        var sshKeyCount = await sshKeyService.GetSshKeyCountAsync();
+        var sshKeys = await sshKeyService.GetSshKeysAsync();
 
         return new MetricsAddressModel
         {
@@ -190,7 +190,7 @@ public class AgentChannelService(
             Motd = motd,
             Stats = statResults,
             Containers = containers,
-            SshKeyCount = sshKeyCount
+            SshKeys = sshKeys
         };
     }
 }
