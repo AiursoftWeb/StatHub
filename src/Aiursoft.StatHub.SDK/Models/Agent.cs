@@ -167,7 +167,8 @@ public class Agent
 
     public List<ContainerInfo> Containers { get; set; } = new();
 
-    public int SshKeyCount { get; set; }
+    public List<SshKeyInfo> SshKeys { get; set; } = new();
+    public int SshKeyCount => SshKeys.Count;
 
     public string GetSku()
     {

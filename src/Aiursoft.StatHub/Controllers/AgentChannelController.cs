@@ -118,7 +118,7 @@ public class AgentChannelController(
         agent.Disks = model.Disks.ToList();
         agent.Motd = model.Motd;
         agent.Containers = model.Containers?.ToList() ?? new List<ContainerInfo>();
-        agent.SshKeyCount = model.SshKeyCount;
+        agent.SshKeys = model.SshKeys?.ToList() ?? new List<SshKeyInfo>();
 
         if (string.IsNullOrWhiteSpace(agent.CountryCode) && !string.IsNullOrWhiteSpace(agent.Ip))
         {
