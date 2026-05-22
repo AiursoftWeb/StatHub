@@ -22,21 +22,6 @@ public class SshKeyService(CacheService cacheService)
                 var authKeysDir = Path.Combine(home, ".ssh");
                 if (!Directory.Exists(authKeysDir)) continue;
 
-                foreach (var keyFile in Directory.GetFiles(authKeysDir, "*.pub"))
-                {
-                    var fileInfo = new FileInfo(keyFile);
-                    var content = await File.ReadAllTextAsync(keyFile);
-                    keys.Add(new SshKeyInfo
-                    {
-                        FilePath = keyFile,
-                        Preview = content.Length > 30 ? content[..30] : content,
-                        Owner = username,
-                        LastModified = fileInfo.LastWriteTimeUtc,
-                        LastAccessed = fileInfo.LastAccessTimeUtc,
-                        Created = fileInfo.CreationTimeUtc
-                    });
-                }
-
                 var authorizedKeys = Path.Combine(authKeysDir, "authorized_keys");
                 if (!File.Exists(authorizedKeys)) continue;
 

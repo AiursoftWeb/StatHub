@@ -203,6 +203,7 @@
                                 <thead>
                                     <tr>
                                         <th class="small text-muted">@Localizer["Owner"]</th>
+                                        <th class="small text-muted">@Localizer["File"]</th>
                                         <th class="small text-muted">@Localizer["Preview"]</th>
                                         <th class="small text-muted">@Localizer["Modified"]</th>
                                     </tr>
@@ -211,8 +212,9 @@
                                     @foreach (var key in agent.SshKeys)
                                     {
                                         <tr>
-                                            <td class="small" title="@key.FilePath">@key.Owner</td>
-                                            <td><code class="small" title="@key.FilePath">@key.Preview</code></td>
+                                            <td class="small">@key.Owner</td>
+                                            <td class="small text-muted text-truncate" style="max-width: 200px;" title="@key.FilePath"><code class="small">@key.FilePath</code></td>
+                                            <td><code class="small">@key.Preview</code></td>
                                             <td class="small text-muted" data-bs-toggle="tooltip" title="Created: @key.Created.ToString("g")&#xA;Accessed: @key.LastAccessed.ToString("g")">@key.LastModified.ToString("g")</td>
                                         </tr>
                                     }
