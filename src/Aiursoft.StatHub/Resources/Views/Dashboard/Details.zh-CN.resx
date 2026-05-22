@@ -120,6 +120,9 @@
   <data name="Memory" xml:space="preserve">
     <value>内存</value>
   </data>
+  <data name="Modified" xml:space="preserve">
+    <value>修改时间</value>
+  </data>
   <data name="MOTD" xml:space="preserve">
     <value>当日消息</value>
   </data>
@@ -141,8 +144,14 @@
   <data name="Output" xml:space="preserve">
     <value>输出</value>
   </data>
+  <data name="Owner" xml:space="preserve">
+    <value>所有者</value>
+  </data>
   <data name="Ports" xml:space="preserve">
     <value>端口</value>
+  </data>
+  <data name="Preview" xml:space="preserve">
+    <value>预览</value>
   </data>
   <data name="RAM" xml:space="preserve">
     <value>内存</value>
@@ -155,6 +164,9 @@
   </data>
   <data name="Runtime Info" xml:space="preserve">
     <value>运行时信息</value>
+  </data>
+  <data name="SSH Keys" xml:space="preserve">
+    <value>SSH 密钥</value>
   </data>
   <data name="Started" xml:space="preserve">
     <value>启动时间</value>

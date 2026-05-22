@@ -120,6 +120,9 @@
   <data name="Memory" xml:space="preserve">
     <value>메모리</value>
   </data>
+  <data name="Modified" xml:space="preserve">
+    <value>수정됨</value>
+  </data>
   <data name="MOTD" xml:space="preserve">
     <value>로그인 시 환영 메시지</value>
   </data>
@@ -141,8 +144,14 @@
   <data name="Output" xml:space="preserve">
     <value>출력</value>
   </data>
+  <data name="Owner" xml:space="preserve">
+    <value>소유자</value>
+  </data>
   <data name="Ports" xml:space="preserve">
     <value>포트</value>
+  </data>
+  <data name="Preview" xml:space="preserve">
+    <value>미리보기</value>
   </data>
   <data name="RAM" xml:space="preserve">
     <value>램</value>
@@ -155,6 +164,9 @@
   </data>
   <data name="Runtime Info" xml:space="preserve">
     <value>런타임 정보</value>
+  </data>
+  <data name="SSH Keys" xml:space="preserve">
+    <value>SSH 키</value>
   </data>
   <data name="Started" xml:space="preserve">
     <value>시작 시간</value>

@@ -120,6 +120,9 @@
   <data name="Memory" xml:space="preserve">
     <value>Memory</value>
   </data>
+  <data name="Modified" xml:space="preserve">
+    <value>Muokattu</value>
+  </data>
   <data name="MOTD" xml:space="preserve">
     <value>Päivän viesti</value>
   </data>
@@ -141,8 +144,14 @@
   <data name="Output" xml:space="preserve">
     <value>Tuloste</value>
   </data>
+  <data name="Owner" xml:space="preserve">
+    <value>Omistaja</value>
+  </data>
   <data name="Ports" xml:space="preserve">
     <value>Ports</value>
+  </data>
+  <data name="Preview" xml:space="preserve">
+    <value>Esikatselu</value>
   </data>
   <data name="RAM" xml:space="preserve">
     <value>RAM</value>
@@ -155,6 +164,9 @@
   </data>
   <data name="Runtime Info" xml:space="preserve">
     <value>Käyttöajon tiedot</value>
+  </data>
+  <data name="SSH Keys" xml:space="preserve">
+    <value>SSH-avaimet</value>
   </data>
   <data name="Started" xml:space="preserve">
     <value>Aloitettu</value>
