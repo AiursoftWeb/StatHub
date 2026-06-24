@@ -225,6 +225,44 @@
                 }
                 <hr class="my-0"/>
                 <div class="card-body">
+                    <h5 class="h6 card-title">@Localizer["Firewall Status"]</h5>
+                    @if (agent.UfwStatus == null || !agent.UfwStatus.IsEnabled)
+                    {
+                        <p class="mb-0">
+                            <span class="badge badge-subtle-danger">
+                                <i class="align-middle me-1" data-lucide="shield-off" style="width: 14px; height: 14px;"></i>
+                                @Localizer["Disabled"]
+                            </span>
+                        </p>
+                    }
+                    else
+                    {
+                        <p class="mb-1">
+                            <span class="badge badge-subtle-success">
+                                <i class="align-middle me-1" data-lucide="shield-check" style="width: 14px; height: 14px;"></i>
+                                @Localizer["Enabled"]
+                            </span>
+                        </p>
+                        @if (agent.UfwStatus.OpenPorts.Count > 0)
+                        {
+                            <ul class="list-unstyled mb-0 small">
+                                @foreach (var port in agent.UfwStatus.OpenPorts)
+                                {
+                                    <li class="mb-1">
+                                        <i class="align-middle me-1 text-success" data-lucide="unlock" style="width: 12px; height: 12px;"></i>
+                                        @port
+                                    </li>
+                                }
+                            </ul>
+                        }
+                        else
+                        {
+                            <p class="text-muted small mb-0">@Localizer["No open ports"]</p>
+                        }
+                    }
+                </div>
+                <hr class="my-0"/>
+                <div class="card-body">
                     <h5 class="h6 card-title">@Localizer["Runtime Info"]</h5>
                     <ul class="list-unstyled mb-0">
                         @if (!string.IsNullOrWhiteSpace(agent.Process))
