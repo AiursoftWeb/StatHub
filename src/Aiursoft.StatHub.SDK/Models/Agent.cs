@@ -170,6 +170,8 @@ public class Agent
     public List<SshKeyInfo> SshKeys { get; set; } = new();
     public int SshKeyCount => SshKeys.Count;
 
+    public UfwStatus? UfwStatus { get; set; }
+
     public string GetSku()
     {
         var totalDisk = Disks.Any() ? Disks.Sum(d => d.Total) : TotalRoot;

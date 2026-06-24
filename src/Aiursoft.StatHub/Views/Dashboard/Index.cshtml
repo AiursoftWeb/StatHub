@@ -146,6 +146,7 @@
                             <th class="d-none d-lg-table-cell">@Localizer["SKU"]</th>
                             <th class="d-none d-lg-table-cell">@Localizer["Containers"]</th>
                             <th class="d-none d-lg-table-cell">@Localizer["SSH Keys"]</th>
+                            <th>@Localizer["Firewall"]</th>
                             <th class="d-none d-xl-table-cell">@Localizer["Boot at"]</th>
                             <th>@Localizer["Avg Load"]</th>
                             <th>@Localizer["CPU Usage"]</th>
@@ -229,6 +230,24 @@
                                             else
                                             {
                                                 <span class="text-muted">0</span>
+                                            }
+                                        </td>
+                                        <td data-sort="@(agent.UfwStatus?.IsEnabled == true ? agent.UfwStatus.OpenPorts.Count : -1)">
+                                            @if (agent.UfwStatus?.IsEnabled == true)
+                                            {
+                                                var portsTooltip = agent.UfwStatus.OpenPorts.Count > 0
+                                                    ? string.Join(", ", agent.UfwStatus.OpenPorts)
+                                                    : "No open ports";
+                                                <span data-bs-toggle="tooltip" data-placement="bottom" title="@Localizer["Open ports:"] @portsTooltip">
+                                                    <i class="align-middle text-success me-1" data-lucide="shield-check" style="width: 14px; height: 14px;"></i>
+                                                    <span class="text-success fw-bold">@agent.UfwStatus.OpenPorts.Count</span>
+                                                </span>
+                                            }
+                                            else
+                                            {
+                                                <span data-bs-toggle="tooltip" data-placement="bottom" title="@Localizer["Firewall is disabled"]">
+                                                    <i class="align-middle text-danger" data-lucide="shield-x" style="width: 14px; height: 14px;"></i>
+                                                </span>
                                             }
                                         </td>
                                         <td class="d-none d-xl-table-cell" data-utc-time="@agent.BootTime.ToHtmlDateTime()" data-sort="@agent.BootTime.Ticks">

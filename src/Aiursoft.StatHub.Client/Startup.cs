@@ -27,6 +27,7 @@ public class Startup : IStartUp
         services.AddSingleton<ExpensiveProcessService>();
         services.AddSingleton<DockerService>();
         services.AddSingleton<SshKeyService>();
+        services.AddSingleton<UfwService>();
         services.AddSingleton<CommandService>();
     }
 }

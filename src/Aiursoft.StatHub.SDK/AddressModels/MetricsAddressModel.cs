@@ -72,4 +72,7 @@ public class MetricsAddressModel
 
     [JsonProperty("sshKeys")]
     public List<SshKeyInfo>? SshKeys { get; set; }
+
+    [JsonProperty("ufwStatus")]
+    public UfwStatus? UfwStatus { get; set; }
 }
