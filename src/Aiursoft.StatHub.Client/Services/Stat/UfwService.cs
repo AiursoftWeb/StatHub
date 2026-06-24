@@ -17,7 +17,7 @@ public class UfwService(
             try
             {
                 var result = await commandService.RunCommandAsync("ufw", "status", Path.GetTempPath());
-                var output = result.output?.Trim() ?? string.Empty;
+                var output = result.output.Trim();
 
                 if (result.code != 0 || string.IsNullOrWhiteSpace(output))
                 {
