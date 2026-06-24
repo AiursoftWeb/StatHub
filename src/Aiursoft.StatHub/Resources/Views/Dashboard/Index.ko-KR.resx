@@ -123,6 +123,12 @@
   <data name="Features a built-in file management system with automatic avatar compression." xml:space="preserve">
     <value>내장된 파일 관리 시스템과 자동 아바타 압축 기능을 제공합니다.</value>
   </data>
+  <data name="Firewall" xml:space="preserve">
+    <value>방화벽</value>
+  </data>
+  <data name="Firewall is disabled" xml:space="preserve">
+    <value>방화벽이 비활성화되었습니다</value>
+  </data>
   <data name="Healthy" xml:space="preserve">
     <value>정상</value>
   </data>
@@ -164,6 +170,9 @@
   </data>
   <data name="Offline Agents" xml:space="preserve">
     <value>오프라인 에이전트</value>
+  </data>
+  <data name="Open ports:" xml:space="preserve">
+    <value>열린 포트:</value>
   </data>
   <data name="OpenID Connect Integration" xml:space="preserve">
     <value>OpenID Connect 연동</value>

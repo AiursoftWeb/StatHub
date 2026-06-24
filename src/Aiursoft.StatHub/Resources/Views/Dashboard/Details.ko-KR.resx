@@ -54,6 +54,9 @@
   <data name="CPU Usage" xml:space="preserve">
     <value>CPU 사용률</value>
   </data>
+  <data name="Disabled" xml:space="preserve">
+    <value>비활성화됨</value>
+  </data>
   <data name="Disk" xml:space="preserve">
     <value>디스크</value>
   </data>
@@ -68,6 +71,9 @@
   </data>
   <data name="Docker Containers" xml:space="preserve">
     <value>Docker 컨테이너</value>
+  </data>
+  <data name="Enabled" xml:space="preserve">
+    <value>사용 중</value>
   </data>
   <data name="Enter shell command..." xml:space="preserve">
     <value>쉘 명령을 입력하세요...</value>
@@ -86,6 +92,9 @@
   </data>
   <data name="File" xml:space="preserve">
     <value>파일</value>
+  </data>
+  <data name="Firewall Status" xml:space="preserve">
+    <value>방화벽 상태</value>
   </data>
   <data name="Hardware Details" xml:space="preserve">
     <value>하드웨어 상세 정보</value>
@@ -137,6 +146,9 @@
   </data>
   <data name="Network I/O" xml:space="preserve">
     <value>네트워크 입출력</value>
+  </data>
+  <data name="No open ports" xml:space="preserve">
+    <value>열려 있는 포트 없음</value>
   </data>
   <data name="No output yet..." xml:space="preserve">
     <value>아직 출력된 내용이 없습니다...</value>

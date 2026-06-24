@@ -54,6 +54,9 @@
   <data name="CPU Usage" xml:space="preserve">
     <value>CPU 使用率</value>
   </data>
+  <data name="Disabled" xml:space="preserve">
+    <value>已停用</value>
+  </data>
   <data name="Disk" xml:space="preserve">
     <value>硬碟</value>
   </data>
@@ -68,6 +71,9 @@
   </data>
   <data name="Docker Containers" xml:space="preserve">
     <value>Docker 容器</value>
+  </data>
+  <data name="Enabled" xml:space="preserve">
+    <value>已啟用</value>
   </data>
   <data name="Enter shell command..." xml:space="preserve">
     <value>輸入 Shell 指令...</value>
@@ -86,6 +92,9 @@
   </data>
   <data name="File" xml:space="preserve">
     <value>檔案</value>
+  </data>
+  <data name="Firewall Status" xml:space="preserve">
+    <value>防火牆狀態</value>
   </data>
   <data name="Hardware Details" xml:space="preserve">
     <value>硬體詳細資訊</value>
@@ -137,6 +146,9 @@
   </data>
   <data name="Network I/O" xml:space="preserve">
     <value>網路 I/O</value>
+  </data>
+  <data name="No open ports" xml:space="preserve">
+    <value>沒有開放的連接埠</value>
   </data>
   <data name="No output yet..." xml:space="preserve">
     <value>尚未有輸出...</value>

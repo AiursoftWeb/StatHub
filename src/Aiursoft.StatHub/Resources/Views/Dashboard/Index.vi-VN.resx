@@ -123,6 +123,12 @@
   <data name="Features a built-in file management system with automatic avatar compression." xml:space="preserve">
     <value>Tích hợp hệ thống quản lý tập tin với tính năng nén avatar tự động.</value>
   </data>
+  <data name="Firewall" xml:space="preserve">
+    <value>Bộ lọc Firewall</value>
+  </data>
+  <data name="Firewall is disabled" xml:space="preserve">
+    <value>Tường lửa đã bị tắt</value>
+  </data>
   <data name="Healthy" xml:space="preserve">
     <value>Ổn định</value>
   </data>
@@ -164,6 +170,9 @@
   </data>
   <data name="Offline Agents" xml:space="preserve">
     <value>Máy chủ Ngoại tuyến</value>
+  </data>
+  <data name="Open ports:" xml:space="preserve">
+    <value>Cổng mở:</value>
   </data>
   <data name="OpenID Connect Integration" xml:space="preserve">
     <value>Tích hợp OpenID Connect</value>

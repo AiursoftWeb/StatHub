@@ -54,6 +54,9 @@
   <data name="CPU Usage" xml:space="preserve">
     <value>Mức sử dụng CPU</value>
   </data>
+  <data name="Disabled" xml:space="preserve">
+    <value>Vô hiệu hóa</value>
+  </data>
   <data name="Disk" xml:space="preserve">
     <value>Ổ cứng</value>
   </data>
@@ -68,6 +71,9 @@
   </data>
   <data name="Docker Containers" xml:space="preserve">
     <value>Docker Containers</value>
+  </data>
+  <data name="Enabled" xml:space="preserve">
+    <value>Đã bật</value>
   </data>
   <data name="Enter shell command..." xml:space="preserve">
     <value>Nhập lệnh shell...</value>
@@ -86,6 +92,9 @@
   </data>
   <data name="File" xml:space="preserve">
     <value>Tệp</value>
+  </data>
+  <data name="Firewall Status" xml:space="preserve">
+    <value>Trạng thái tường lửa</value>
   </data>
   <data name="Hardware Details" xml:space="preserve">
     <value>Thông Tin Phần Cứng</value>
@@ -137,6 +146,9 @@
   </data>
   <data name="Network I/O" xml:space="preserve">
     <value>Lượng I/O Mạng</value>
+  </data>
+  <data name="No open ports" xml:space="preserve">
+    <value>Không có cổng mở</value>
   </data>
   <data name="No output yet..." xml:space="preserve">
     <value>Chưa có đầu ra...</value>
