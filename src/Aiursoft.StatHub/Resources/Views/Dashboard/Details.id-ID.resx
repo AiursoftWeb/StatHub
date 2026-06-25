@@ -54,6 +54,9 @@
   <data name="CPU Usage" xml:space="preserve">
     <value>Penggunaan CPU</value>
   </data>
+  <data name="Disabled" xml:space="preserve">
+    <value>Nonaktif</value>
+  </data>
   <data name="Disk" xml:space="preserve">
     <value>Disk</value>
   </data>
@@ -68,6 +71,9 @@
   </data>
   <data name="Docker Containers" xml:space="preserve">
     <value>Docker Containers</value>
+  </data>
+  <data name="Enabled" xml:space="preserve">
+    <value>Diaktifkan</value>
   </data>
   <data name="Enter shell command..." xml:space="preserve">
     <value>Masukkan perintah shell...</value>
@@ -86,6 +92,9 @@
   </data>
   <data name="File" xml:space="preserve">
     <value>File</value>
+  </data>
+  <data name="Firewall Status" xml:space="preserve">
+    <value>Status Tembok Api</value>
   </data>
   <data name="Hardware Details" xml:space="preserve">
     <value>Rincian Perangkat Keras</value>
@@ -137,6 +146,9 @@
   </data>
   <data name="Network I/O" xml:space="preserve">
     <value>I/O Jaringan</value>
+  </data>
+  <data name="No open ports" xml:space="preserve">
+    <value>Tidak ada port terbuka</value>
   </data>
   <data name="No output yet..." xml:space="preserve">
     <value>Belum ada output...</value>

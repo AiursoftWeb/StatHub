@@ -54,6 +54,9 @@
   <data name="CPU Usage" xml:space="preserve">
     <value>استخدام المعالج</value>
   </data>
+  <data name="Disabled" xml:space="preserve">
+    <value>معطل</value>
+  </data>
   <data name="Disk" xml:space="preserve">
     <value>القرص</value>
   </data>
@@ -68,6 +71,9 @@
   </data>
   <data name="Docker Containers" xml:space="preserve">
     <value>Docker Containers</value>
+  </data>
+  <data name="Enabled" xml:space="preserve">
+    <value>تمكين</value>
   </data>
   <data name="Enter shell command..." xml:space="preserve">
     <value>أدخل أمر المحرك...</value>
@@ -86,6 +92,9 @@
   </data>
   <data name="File" xml:space="preserve">
     <value>ملف</value>
+  </data>
+  <data name="Firewall Status" xml:space="preserve">
+    <value>حالة جدار الحماية</value>
   </data>
   <data name="Hardware Details" xml:space="preserve">
     <value>تفاصيل العتاد</value>
@@ -137,6 +146,9 @@
   </data>
   <data name="Network I/O" xml:space="preserve">
     <value>إدخال/إخراج الشبكة</value>
+  </data>
+  <data name="No open ports" xml:space="preserve">
+    <value>لا توجد منافذ مفتوحة</value>
   </data>
   <data name="No output yet..." xml:space="preserve">
     <value>لا توجد مخرجات بعد...</value>

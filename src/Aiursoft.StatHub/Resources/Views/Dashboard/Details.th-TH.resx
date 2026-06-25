@@ -54,6 +54,9 @@
   <data name="CPU Usage" xml:space="preserve">
     <value>การใช้ซีพียู</value>
   </data>
+  <data name="Disabled" xml:space="preserve">
+    <value>ปิดใช้งาน</value>
+  </data>
   <data name="Disk" xml:space="preserve">
     <value>ดิสก์</value>
   </data>
@@ -68,6 +71,9 @@
   </data>
   <data name="Docker Containers" xml:space="preserve">
     <value>Docker Containers</value>
+  </data>
+  <data name="Enabled" xml:space="preserve">
+    <value>เปิดใช้งาน</value>
   </data>
   <data name="Enter shell command..." xml:space="preserve">
     <value>ป้อนคำสั่ง shell...</value>
@@ -86,6 +92,9 @@
   </data>
   <data name="File" xml:space="preserve">
     <value>ไฟล์</value>
+  </data>
+  <data name="Firewall Status" xml:space="preserve">
+    <value>สถานะไฟร์วอลล์</value>
   </data>
   <data name="Hardware Details" xml:space="preserve">
     <value>รายละเอียดฮาร์ดแวร์</value>
@@ -137,6 +146,9 @@
   </data>
   <data name="Network I/O" xml:space="preserve">
     <value>เครือข่าย I/O</value>
+  </data>
+  <data name="No open ports" xml:space="preserve">
+    <value>ไม่มีการเปิดพอร์ตใดๆ</value>
   </data>
   <data name="No output yet..." xml:space="preserve">
     <value>ยังไม่มีการแสดงผล...</value>

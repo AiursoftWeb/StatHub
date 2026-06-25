@@ -123,6 +123,12 @@
   <data name="Features a built-in file management system with automatic avatar compression." xml:space="preserve">
     <value>يتميز بنظام مدمج لإدارة الملفات مع ضغط تلقائي للصور الشخصية.</value>
   </data>
+  <data name="Firewall" xml:space="preserve">
+    <value>الجدار الناري</value>
+  </data>
+  <data name="Firewall is disabled" xml:space="preserve">
+    <value>تم تعطيل جدار الحماية</value>
+  </data>
   <data name="Healthy" xml:space="preserve">
     <value>سليم</value>
   </data>
@@ -164,6 +170,9 @@
   </data>
   <data name="Offline Agents" xml:space="preserve">
     <value>العملات غير المتصلة</value>
+  </data>
+  <data name="Open ports:" xml:space="preserve">
+    <value>المنافذ المفتوحة:</value>
   </data>
   <data name="OpenID Connect Integration" xml:space="preserve">
     <value>دمج OpenID Connect</value>

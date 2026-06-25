@@ -123,6 +123,12 @@
   <data name="Features a built-in file management system with automatic avatar compression." xml:space="preserve">
     <value>स्वचालित अवतार संपीड़न के साथ एक अंतर्निहित फ़ाइल प्रबंधन प्रणाली की सुविधा प्रदान करता है।</value>
   </data>
+  <data name="Firewall" xml:space="preserve">
+    <value>फायरवॉल</value>
+  </data>
+  <data name="Firewall is disabled" xml:space="preserve">
+    <value>फायरवॉल अक्षम है</value>
+  </data>
   <data name="Healthy" xml:space="preserve">
     <value>स्वस्थ</value>
   </data>
@@ -164,6 +170,9 @@
   </data>
   <data name="Offline Agents" xml:space="preserve">
     <value>ऑफ़लाइन एजेंट</value>
+  </data>
+  <data name="Open ports:" xml:space="preserve">
+    <value>खुले पोर्ट:</value>
   </data>
   <data name="OpenID Connect Integration" xml:space="preserve">
     <value>ओपनआईडी कनेक्ट एकीकरण</value>

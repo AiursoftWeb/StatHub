@@ -54,6 +54,9 @@
   <data name="CPU Usage" xml:space="preserve">
     <value>Використання процесора</value>
   </data>
+  <data name="Disabled" xml:space="preserve">
+    <value>Вимкнено</value>
+  </data>
   <data name="Disk" xml:space="preserve">
     <value>Диск</value>
   </data>
@@ -68,6 +71,9 @@
   </data>
   <data name="Docker Containers" xml:space="preserve">
     <value>Docker Containers</value>
+  </data>
+  <data name="Enabled" xml:space="preserve">
+    <value>Увімкнено</value>
   </data>
   <data name="Enter shell command..." xml:space="preserve">
     <value>Введіть команду оболонки...</value>
@@ -86,6 +92,9 @@
   </data>
   <data name="File" xml:space="preserve">
     <value>Файл</value>
+  </data>
+  <data name="Firewall Status" xml:space="preserve">
+    <value>Стан брандмауера</value>
   </data>
   <data name="Hardware Details" xml:space="preserve">
     <value>Апаратні характеристики</value>
@@ -137,6 +146,9 @@
   </data>
   <data name="Network I/O" xml:space="preserve">
     <value>Мережевий ввід/вивід</value>
+  </data>
+  <data name="No open ports" xml:space="preserve">
+    <value>Немає відкритих портів</value>
   </data>
   <data name="No output yet..." xml:space="preserve">
     <value>Виводу ще немає...</value>

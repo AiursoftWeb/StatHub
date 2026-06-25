@@ -54,6 +54,9 @@
   <data name="CPU Usage" xml:space="preserve">
     <value>CPU-forbrug</value>
   </data>
+  <data name="Disabled" xml:space="preserve">
+    <value>Deaktiveret</value>
+  </data>
   <data name="Disk" xml:space="preserve">
     <value>Disk</value>
   </data>
@@ -68,6 +71,9 @@
   </data>
   <data name="Docker Containers" xml:space="preserve">
     <value>Docker Containers</value>
+  </data>
+  <data name="Enabled" xml:space="preserve">
+    <value>Aktiveret</value>
   </data>
   <data name="Enter shell command..." xml:space="preserve">
     <value>Indtast shell-kommando...</value>
@@ -86,6 +92,9 @@
   </data>
   <data name="File" xml:space="preserve">
     <value>Fil</value>
+  </data>
+  <data name="Firewall Status" xml:space="preserve">
+    <value>Fyrværkeristatus</value>
   </data>
   <data name="Hardware Details" xml:space="preserve">
     <value>Hardwareoplysninger</value>
@@ -137,6 +146,9 @@
   </data>
   <data name="Network I/O" xml:space="preserve">
     <value>Netværks-I/O</value>
+  </data>
+  <data name="No open ports" xml:space="preserve">
+    <value>Ingen åbne porte</value>
   </data>
   <data name="No output yet..." xml:space="preserve">
     <value>Ingen output endnu...</value>

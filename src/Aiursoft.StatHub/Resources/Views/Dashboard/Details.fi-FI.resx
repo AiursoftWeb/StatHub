@@ -54,6 +54,9 @@
   <data name="CPU Usage" xml:space="preserve">
     <value>Suorittimen käyttöaste</value>
   </data>
+  <data name="Disabled" xml:space="preserve">
+    <value>Pois käytöstä</value>
+  </data>
   <data name="Disk" xml:space="preserve">
     <value>Levyke</value>
   </data>
@@ -68,6 +71,9 @@
   </data>
   <data name="Docker Containers" xml:space="preserve">
     <value>Docker Containers</value>
+  </data>
+  <data name="Enabled" xml:space="preserve">
+    <value>Oletettu</value>
   </data>
   <data name="Enter shell command..." xml:space="preserve">
     <value>Syötä komentorivikomento...</value>
@@ -86,6 +92,9 @@
   </data>
   <data name="File" xml:space="preserve">
     <value>Tiedosto</value>
+  </data>
+  <data name="Firewall Status" xml:space="preserve">
+    <value>Palomuurin tila</value>
   </data>
   <data name="Hardware Details" xml:space="preserve">
     <value>Laitteiston yksityiskohdat</value>
@@ -137,6 +146,9 @@
   </data>
   <data name="Network I/O" xml:space="preserve">
     <value>Verkon I/O</value>
+  </data>
+  <data name="No open ports" xml:space="preserve">
+    <value>Ei avoimia portteja</value>
   </data>
   <data name="No output yet..." xml:space="preserve">
     <value>Ei vielä tuottoa...</value>

@@ -54,6 +54,9 @@
   <data name="CPU Usage" xml:space="preserve">
     <value>Utilisation du processeur</value>
   </data>
+  <data name="Disabled" xml:space="preserve">
+    <value>Désactivé</value>
+  </data>
   <data name="Disk" xml:space="preserve">
     <value>Disque</value>
   </data>
@@ -68,6 +71,9 @@
   </data>
   <data name="Docker Containers" xml:space="preserve">
     <value>Docker Containers</value>
+  </data>
+  <data name="Enabled" xml:space="preserve">
+    <value>Activé</value>
   </data>
   <data name="Enter shell command..." xml:space="preserve">
     <value>Entrez une commande shell...</value>
@@ -86,6 +92,9 @@
   </data>
   <data name="File" xml:space="preserve">
     <value>Fichier</value>
+  </data>
+  <data name="Firewall Status" xml:space="preserve">
+    <value>État du pare-feu</value>
   </data>
   <data name="Hardware Details" xml:space="preserve">
     <value>Détails du matériel</value>
@@ -137,6 +146,9 @@
   </data>
   <data name="Network I/O" xml:space="preserve">
     <value>E/S réseau</value>
+  </data>
+  <data name="No open ports" xml:space="preserve">
+    <value>Aucun port ouvert</value>
   </data>
   <data name="No output yet..." xml:space="preserve">
     <value>Aucun résultat pour le moment...</value>

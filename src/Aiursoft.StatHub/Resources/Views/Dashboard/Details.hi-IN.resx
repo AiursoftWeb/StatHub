@@ -54,6 +54,9 @@
   <data name="CPU Usage" xml:space="preserve">
     <value>सीपीयू उपयोग</value>
   </data>
+  <data name="Disabled" xml:space="preserve">
+    <value>अक्षम</value>
+  </data>
   <data name="Disk" xml:space="preserve">
     <value>डिस्क</value>
   </data>
@@ -68,6 +71,9 @@
   </data>
   <data name="Docker Containers" xml:space="preserve">
     <value>Docker Containers</value>
+  </data>
+  <data name="Enabled" xml:space="preserve">
+    <value>सक्रिय</value>
   </data>
   <data name="Enter shell command..." xml:space="preserve">
     <value>शेल कमांड दर्ज करें...</value>
@@ -86,6 +92,9 @@
   </data>
   <data name="File" xml:space="preserve">
     <value>फ़ाइल</value>
+  </data>
+  <data name="Firewall Status" xml:space="preserve">
+    <value>अग्निबंद स्थिति</value>
   </data>
   <data name="Hardware Details" xml:space="preserve">
     <value>हार्डवेयर विवरण</value>
@@ -137,6 +146,9 @@
   </data>
   <data name="Network I/O" xml:space="preserve">
     <value>नेटवर्क I/O</value>
+  </data>
+  <data name="No open ports" xml:space="preserve">
+    <value>कोई खुले पोर्ट नहीं</value>
   </data>
   <data name="No output yet..." xml:space="preserve">
     <value>अभी तक कोई आउटपुट नहीं...</value>
