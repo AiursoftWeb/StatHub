@@ -54,6 +54,9 @@
   <data name="CPU Usage" xml:space="preserve">
     <value>İşlemci Kullanımı</value>
   </data>
+  <data name="Disabled" xml:space="preserve">
+    <value>Devre Dışı</value>
+  </data>
   <data name="Disk" xml:space="preserve">
     <value>Disk</value>
   </data>
@@ -68,6 +71,9 @@
   </data>
   <data name="Docker Containers" xml:space="preserve">
     <value>Docker Containers</value>
+  </data>
+  <data name="Enabled" xml:space="preserve">
+    <value>Etkin</value>
   </data>
   <data name="Enter shell command..." xml:space="preserve">
     <value>Kabuk komutu girin...</value>
@@ -86,6 +92,9 @@
   </data>
   <data name="File" xml:space="preserve">
     <value>Dosya</value>
+  </data>
+  <data name="Firewall Status" xml:space="preserve">
+    <value>Güvenlik Duvarı Durumu</value>
   </data>
   <data name="Hardware Details" xml:space="preserve">
     <value>Donanım Detayları</value>
@@ -137,6 +146,9 @@
   </data>
   <data name="Network I/O" xml:space="preserve">
     <value>Ağ G/Ç</value>
+  </data>
+  <data name="No open ports" xml:space="preserve">
+    <value>Açık port yok</value>
   </data>
   <data name="No output yet..." xml:space="preserve">
     <value>Henüz çıktı yok...</value>

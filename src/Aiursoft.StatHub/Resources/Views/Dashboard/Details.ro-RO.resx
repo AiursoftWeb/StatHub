@@ -54,6 +54,9 @@
   <data name="CPU Usage" xml:space="preserve">
     <value>Utilizarea CPU</value>
   </data>
+  <data name="Disabled" xml:space="preserve">
+    <value>Dezactivat</value>
+  </data>
   <data name="Disk" xml:space="preserve">
     <value>Disc</value>
   </data>
@@ -68,6 +71,9 @@
   </data>
   <data name="Docker Containers" xml:space="preserve">
     <value>Docker Containers</value>
+  </data>
+  <data name="Enabled" xml:space="preserve">
+    <value>Activat</value>
   </data>
   <data name="Enter shell command..." xml:space="preserve">
     <value>Introduceți comanda shell...</value>
@@ -86,6 +92,9 @@
   </data>
   <data name="File" xml:space="preserve">
     <value>Fișier</value>
+  </data>
+  <data name="Firewall Status" xml:space="preserve">
+    <value>Starea firewall-ului</value>
   </data>
   <data name="Hardware Details" xml:space="preserve">
     <value>Detalii Hardware</value>
@@ -137,6 +146,9 @@
   </data>
   <data name="Network I/O" xml:space="preserve">
     <value>I/O Rețea</value>
+  </data>
+  <data name="No open ports" xml:space="preserve">
+    <value>Niciun port deschis</value>
   </data>
   <data name="No output yet..." xml:space="preserve">
     <value>Nu există încă ieșire...</value>

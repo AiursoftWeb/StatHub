@@ -54,6 +54,9 @@
   <data name="CPU Usage" xml:space="preserve">
     <value>Χρήση CPU</value>
   </data>
+  <data name="Disabled" xml:space="preserve">
+    <value>Ανενεργό</value>
+  </data>
   <data name="Disk" xml:space="preserve">
     <value>Δίσκος</value>
   </data>
@@ -68,6 +71,9 @@
   </data>
   <data name="Docker Containers" xml:space="preserve">
     <value>Docker Containers</value>
+  </data>
+  <data name="Enabled" xml:space="preserve">
+    <value>Ενεργοποιημένο</value>
   </data>
   <data name="Enter shell command..." xml:space="preserve">
     <value>Εισαγάγετε εντολή κελύφους...</value>
@@ -86,6 +92,9 @@
   </data>
   <data name="File" xml:space="preserve">
     <value>Αρχείο</value>
+  </data>
+  <data name="Firewall Status" xml:space="preserve">
+    <value>Κατάσταση Φυλακισμένου</value>
   </data>
   <data name="Hardware Details" xml:space="preserve">
     <value>Λεπτομέρειες Υλικού</value>
@@ -137,6 +146,9 @@
   </data>
   <data name="Network I/O" xml:space="preserve">
     <value>Δικτυακή Εισ/Εξ</value>
+  </data>
+  <data name="No open ports" xml:space="preserve">
+    <value>Δεν υπάρχουν ανοιχτές θύρες</value>
   </data>
   <data name="No output yet..." xml:space="preserve">
     <value>Δεν υπάρχει έξοδος ακόμα...</value>

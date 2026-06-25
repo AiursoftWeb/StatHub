@@ -123,6 +123,12 @@
   <data name="Features a built-in file management system with automatic avatar compression." xml:space="preserve">
     <value>Sisältää sisäänrakennetun tiedostonhallintajärjestelmän automaattisella avatar-pakkauksella.</value>
   </data>
+  <data name="Firewall" xml:space="preserve">
+    <value>Palomuuri</value>
+  </data>
+  <data name="Firewall is disabled" xml:space="preserve">
+    <value>Palomuuri on poissa käytöstä</value>
+  </data>
   <data name="Healthy" xml:space="preserve">
     <value>Kunnossa</value>
   </data>
@@ -164,6 +170,9 @@
   </data>
   <data name="Offline Agents" xml:space="preserve">
     <value>Poissa olevat agentit</value>
+  </data>
+  <data name="Open ports:" xml:space="preserve">
+    <value>Avoinna olevat portit:</value>
   </data>
   <data name="OpenID Connect Integration" xml:space="preserve">
     <value>OpenID Connect -integraatio</value>

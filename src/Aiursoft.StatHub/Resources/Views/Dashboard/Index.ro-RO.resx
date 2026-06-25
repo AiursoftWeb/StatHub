@@ -123,6 +123,12 @@
   <data name="Features a built-in file management system with automatic avatar compression." xml:space="preserve">
     <value>Dispune de un sistem integrat de gestionare a fișierelor cu compresie automată a avatarurilor.</value>
   </data>
+  <data name="Firewall" xml:space="preserve">
+    <value>Zid de protecție</value>
+  </data>
+  <data name="Firewall is disabled" xml:space="preserve">
+    <value>Zidul de protecție este dezactivat</value>
+  </data>
   <data name="Healthy" xml:space="preserve">
     <value>Sănătos</value>
   </data>
@@ -164,6 +170,9 @@
   </data>
   <data name="Offline Agents" xml:space="preserve">
     <value>Agenți Offline</value>
+  </data>
+  <data name="Open ports:" xml:space="preserve">
+    <value>Porturi deschise:</value>
   </data>
   <data name="OpenID Connect Integration" xml:space="preserve">
     <value>Integrare OpenID Connect</value>
