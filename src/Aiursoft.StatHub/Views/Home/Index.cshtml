@@ -21,7 +21,7 @@
                     @Localizer["A simple, real-time server monitoring system designed for local deployment."]
                     @Localizer["Keep an eye on your infrastructure with intuitive dashboards and detailed metrics."]
                 </p>
-                <div class="my-4">
+                <div class="my-4 d-flex gap-2 flex-wrap">
                     <a asp-controller="Dashboard" asp-action="Index" class="btn btn-primary btn-lg btn-pill">
                         <i class="align-middle" data-lucide="layout-dashboard"></i> @Localizer["View Servers Stat"]
                     </a>
@@ -143,14 +143,16 @@
                 <p class="text-muted fs-lg mb-4">
                     @Localizer["Join the community of developers monitoring their infrastructure with StatHub."]
                 </p>
-                <a asp-controller="Dashboard" asp-action="Index" class="btn btn-primary btn-pill btn-lg">
-                    <i class="align-middle me-1" data-lucide="layout-dashboard"></i>
-                    <span>@Localizer["Enter Dashboard"]</span>
-                </a>
-                <a asp-controller="Home" asp-action="SelfHost" class="btn btn-outline-primary btn-pill btn-lg">
-                    <i class="align-middle me-1" data-lucide="server"></i>
-                    <span>@Localizer["Self Host"]</span>
-                </a>
+                <div class="d-flex gap-2 flex-wrap justify-content-center">
+                    <a asp-controller="Dashboard" asp-action="Index" class="btn btn-primary btn-pill btn-lg">
+                        <i class="align-middle me-1" data-lucide="layout-dashboard"></i>
+                        <span>@Localizer["Enter Dashboard"]</span>
+                    </a>
+                    <a asp-controller="Home" asp-action="SelfHost" class="btn btn-outline-primary btn-pill btn-lg">
+                        <i class="align-middle me-1" data-lucide="server"></i>
+                        <span>@Localizer["Self Host"]</span>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
