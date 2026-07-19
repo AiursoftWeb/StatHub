@@ -193,7 +193,7 @@ public class ManageController(
     [HttpGet]
     public IActionResult DeleteAccount()
     {
-        return this.StackView(new Aiursoft.UiStack.Layout.UiStackLayoutViewModel());
+        return StackView(new Aiursoft.UiStack.Layout.UiStackLayoutViewModel());
     }
 
     //
