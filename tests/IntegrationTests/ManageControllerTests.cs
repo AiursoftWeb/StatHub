@@ -3,7 +3,6 @@ using Aiursoft.StatHub.Services;
 
 using Aiursoft.StatHub.Entities;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.Extensions.DependencyInjection;
 namespace Aiursoft.StatHub.Tests.IntegrationTests;
 
 [TestClass]
