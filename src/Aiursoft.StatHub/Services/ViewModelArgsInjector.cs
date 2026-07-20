@@ -91,6 +91,8 @@ public class ViewModelArgsInjector(
         _ = localizer["Register"];
         _ = localizer["Self Host"];
         _ = localizer["Server Details"];
+    
+        _ = localizer["Delete Account"];
     }
 
     public void InjectSimple(
