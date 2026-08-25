@@ -28,6 +28,7 @@
     <PackageReference Include="Aiursoft.AiurObserver.WebSocket" Version="10.0.12" />
     <PackageReference Include="Aiursoft.CommandFramework" Version="10.0.14" />
     <None Include="..\..\README.md" Pack="true" PackagePath="." />
+    <PackageReference Include="Aiursoft.CSTools" Version="10.0.6" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Aiursoft.StatHub.SDK\Aiursoft.StatHub.SDK.csproj" />
