@@ -1,7 +1,6 @@
 // ReSharper disable all
 using System.Net;
 using System.Text.RegularExpressions;
-using Aiursoft.CSTools.Tools;
 using Aiursoft.DbTools;
 using Aiursoft.StatHub.Entities;
 using Microsoft.Extensions.DependencyInjection;
@@ -13,7 +12,7 @@ namespace Aiursoft.StatHub.Tests.IntegrationTests;
 
 public abstract class TestBase
 {
-    protected readonly int Port;
+    protected int Port => Http.BaseAddress!.Port;
     protected readonly HttpClient Http;
     protected IHost? Server;
 
@@ -25,26 +24,34 @@ public abstract class TestBase
             CookieContainer = cookieContainer,
             AllowAutoRedirect = false
         };
-        Port = Network.GetAvailablePort();
-        Http = new HttpClient(handler)
-        {
-            BaseAddress = new Uri($"http://localhost:{Port}")
-        };
+        Http = new HttpClient(handler);
     }
 
     [TestInitialize]
     public virtual async Task CreateServer()
     {
-        Server = await AppAsync<TestStartup>([], port: Port);
-        using (var scope = Server.Services.CreateScope())
+        using var reservation = new TestPortReservation();
+        Http.BaseAddress = new Uri($"http://localhost:{reservation.Port}");
+        Server = await AppAsync<TestStartup>([], port: reservation.Port);
+        try
         {
-            var dbContext = scope.ServiceProvider.GetRequiredService<StatHubDbContext>();
-            await dbContext.Database.EnsureDeletedAsync();
-            await dbContext.Database.EnsureCreatedAsync();
+            reservation.ConfigureServer(Server);
+            using (var scope = Server.Services.CreateScope())
+            {
+                var dbContext = scope.ServiceProvider.GetRequiredService<StatHubDbContext>();
+                await dbContext.Database.EnsureDeletedAsync();
+                await dbContext.Database.EnsureCreatedAsync();
+            }
+            await Server.UpdateDbAsync<StatHubDbContext>();
+            await Server.SeedAsync();
+            await Server.StartAsync();
         }
-        await Server.UpdateDbAsync<StatHubDbContext>();
-        await Server.SeedAsync();
-        await Server.StartAsync();
+        catch
+        {
+            Server.Dispose();
+            Server = null;
+            throw;
+        }
     }
 
     [TestCleanup]
