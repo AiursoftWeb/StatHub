@@ -1,0 +1,72 @@
+@model Aiursoft.StatHub.Models.Monitoring.MonitoringViewModel
+@using Aiursoft.StatHub.Entities.Monitoring
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h3>@Localizer["AlertCenter monitoring"]</h3>
+    @if (User.HasClaim(Aiursoft.StatHub.Authorization.AppPermissions.Type, Aiursoft.StatHub.Authorization.AppPermissionNames.CanManageGlobalSettings))
+    {
+        <a asp-controller="GlobalSettings" asp-action="Index" class="btn btn-outline-primary">@Localizer["Connection settings"]</a>
+    }
+</div>
+<p class="text-muted">@Localizer["Configure the AlertCenter connection in Global Settings. Environment variables can override those settings. Monitoring rules do not store credentials."]</p>
+<form asp-action="SavePolicy" method="post">
+    <input type="hidden" name="Version" value="@Model.Policy.Version" />
+    <div class="card mb-3">
+        <div class="card-header"><h5 class="card-title mb-0">@Localizer["Monitoring policy"]</h5></div>
+        <div class="card-body">
+            <div class="form-check mb-2"><input class="form-check-input" type="checkbox" id="enabled" name="IsEnabled" value="true" checked="@Model.Policy.IsEnabled" /><label class="form-check-label" for="enabled">@Localizer["Enable monitoring policy"]</label></div>
+            <div class="form-check mb-2"><input class="form-check-input" type="checkbox" id="all" name="MonitorAllServers" value="true" checked="@Model.Policy.MonitorAllServers" /><label class="form-check-label" for="all">@Localizer["Monitor all servers, including newly connected servers"]</label></div>
+            <div class="form-check"><input class="form-check-input" type="checkbox" id="green" name="AutoResolveOnGreen" value="true" checked="@Model.Policy.AutoResolveOnGreen" /><label class="form-check-label" for="green">@Localizer["Immediately resolve all incidents managed by this integration for a server when a healthy sample is received"]</label></div>
+        </div>
+    </div>
+    <div class="card mb-3">
+        <div class="card-header"><h5 class="card-title">@Localizer["Server selection"]</h5><p class="card-subtitle">@Localizer["Excluded servers always take precedence. When all servers are monitored, individual inclusions are unnecessary."]</p></div>
+        <div class="table-responsive"><table class="table mb-0">
+            <thead><tr><th>@Localizer["Server"]</th><th>@Localizer["Include"]</th><th>@Localizer["Exclude"]</th><th>@Localizer["State"]</th><th>@Localizer["Last report (UTC)"]</th></tr></thead>
+            <tbody>
+            @foreach (var agent in Model.Agents)
+            {
+                var selection = Model.Policy.Targets.SingleOrDefault(item => item.ClientId == agent.ClientId);
+                <tr>
+                    <td>@agent.Hostname <small class="d-block text-muted">@agent.ClientId</small></td>
+                    <td><input type="checkbox" class="form-check-input" name="Included" value="@agent.ClientId" checked="@(selection is { IsExcluded: false })" aria-label="@Localizer["Include server"]" /></td>
+                    <td><input type="checkbox" class="form-check-input" name="Excluded" value="@agent.ClientId" checked="@(selection is { IsExcluded: true })" aria-label="@Localizer["Exclude server"]" /></td>
+                    <td>@(agent.CurrentState switch { "green" => Localizer["Green"], "yellow" => Localizer["Yellow"], "red" => Localizer["Red"], "grey" => Localizer["Grey (offline)"], _ => Localizer["Unknown"] })</td>
+                    <td>@agent.LastReportedAtUtc.ToString("u")</td>
+                </tr>
+            }
+            </tbody>
+        </table></div>
+        <div class="card-footer"><button type="submit" class="btn btn-primary">@Localizer["Save policy and server selection"]</button></div>
+    </div>
+</form>
+<div class="card">
+    <div class="card-header"><h5 class="card-title">@Localizer["Sustained state rules"]</h5><p class="card-subtitle">@Localizer["Zero minutes means immediately. The most severe matching rule wins. A color change resets its timer; an existing incident is only escalated. Grey begins after one minute without a valid report."]</p></div>
+    <div class="card-body">
+    @foreach (var rule in Model.Policy.Rules.OrderBy(item => item.State).ThenBy(item => item.DurationMinutes).Append(new MonitoringRule { Id = Guid.Empty }))
+    {
+        var isNew = rule.Id == Guid.Empty;
+        <div class="border rounded p-3 mb-3">
+            <form asp-action="SaveRule" method="post" class="row g-2 align-items-end">
+                <input type="hidden" name="version" value="@Model.Policy.Version" />
+                @if (!isNew) { <input type="hidden" name="id" value="@rule.Id" /> }
+                <div class="col-md-3"><label class="form-label">@Localizer["State"]</label><select name="state" class="form-select" aria-label="@Localizer["State"]">
+                    <option value="yellow" selected="@(rule.State == "yellow")">@Localizer["Yellow"]</option>
+                    <option value="red" selected="@(rule.State == "red")">@Localizer["Red"]</option>
+                    <option value="grey" selected="@(rule.State == "grey")">@Localizer["Grey (offline)"]</option>
+                </select></div>
+                <div class="col-md-3"><label class="form-label">@Localizer["Continuous minutes"]</label><input class="form-control" type="number" min="0" max="525600" name="durationMinutes" value="@rule.DurationMinutes" required aria-label="@Localizer["Continuous minutes"]" /></div>
+                <div class="col-md-2"><label class="form-label">@Localizer["Severity"]</label><select class="form-select" name="severity" aria-label="@Localizer["Severity"]">
+                    @foreach (var level in new[] { "sev0", "sev1", "sev2", "sev3", "sev4" }) { <option value="@level" selected="@(rule.Severity == level)">@level</option> }
+                </select></div>
+                <div class="col-md-2"><label class="form-check-label"><input class="form-check-input" type="checkbox" name="isEnabled" value="true" checked="@rule.IsEnabled" /> @Localizer["Enabled"]</label></div>
+                <div class="col-md-2"><button type="submit" class="btn btn-primary">@(isNew ? Localizer["Add rule"] : Localizer["Save rule"])</button></div>
+            </form>
+            @if (!isNew)
+            {
+                <form asp-action="DeleteRule" method="post" class="mt-2"><input type="hidden" name="version" value="@Model.Policy.Version" /><input type="hidden" name="id" value="@rule.Id" /><button type="submit" class="btn btn-outline-danger btn-sm">@Localizer["Delete rule"]</button></form>
+            }
+        </div>
+    }
+    </div>
+</div>

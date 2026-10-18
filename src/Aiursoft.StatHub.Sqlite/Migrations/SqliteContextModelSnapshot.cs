@@ -9,15 +9,13 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Aiursoft.StatHub.Sqlite.Migrations
 {
-    // THIS FILE IS AUTO GENERATED AND MAINTAINED BY ENTITY FRAMEWORK!
-    // NEVER EDIT THIS FILE MANUALLY!!!
     [DbContext(typeof(SqliteContext))]
     partial class SqliteContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-            modelBuilder.HasAnnotation("ProductVersion", "10.0.2");
+            modelBuilder.HasAnnotation("ProductVersion", "10.0.13");
 
             modelBuilder.Entity("Aiursoft.StatHub.Entities.GlobalSetting", b =>
                 {
@@ -30,6 +28,120 @@ namespace Aiursoft.StatHub.Sqlite.Migrations
                     b.HasKey("Key");
 
                     b.ToTable("GlobalSettings");
+                });
+
+            modelBuilder.Entity("Aiursoft.StatHub.Entities.Monitoring.AgentMonitoringState", b =>
+                {
+                    b.Property<string>("ClientId")
+                        .HasMaxLength(200)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("CurrentState")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Hostname")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("LastReportedAtUtc")
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid>("NextReportId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid>("ObservationSessionId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime?>("PendingRecoveryAtUtc")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("StateSinceUtc")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("ClientId");
+
+                    b.ToTable("AgentMonitoringStates");
+                });
+
+            modelBuilder.Entity("Aiursoft.StatHub.Entities.Monitoring.MonitoringPolicy", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool>("AutoResolveOnGreen")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool>("IsEnabled")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool>("MonitorAllServers")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid>("Version")
+                        .IsConcurrencyToken()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("AlertMonitoringPolicies");
+                });
+
+            modelBuilder.Entity("Aiursoft.StatHub.Entities.Monitoring.MonitoringRule", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("DurationMinutes")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool>("IsEnabled")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("PolicyId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Severity")
+                        .IsRequired()
+                        .HasMaxLength(4)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("State")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PolicyId");
+
+                    b.ToTable("AlertMonitoringRules");
+                });
+
+            modelBuilder.Entity("Aiursoft.StatHub.Entities.Monitoring.MonitoringTarget", b =>
+                {
+                    b.Property<int>("PolicyId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("ClientId")
+                        .HasMaxLength(200)
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("IsExcluded")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("PolicyId", "ClientId");
+
+                    b.ToTable("AlertMonitoringTargets");
                 });
 
             modelBuilder.Entity("Aiursoft.StatHub.Entities.User", b =>
@@ -237,6 +349,28 @@ namespace Aiursoft.StatHub.Sqlite.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("Aiursoft.StatHub.Entities.Monitoring.MonitoringRule", b =>
+                {
+                    b.HasOne("Aiursoft.StatHub.Entities.Monitoring.MonitoringPolicy", "Policy")
+                        .WithMany("Rules")
+                        .HasForeignKey("PolicyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Policy");
+                });
+
+            modelBuilder.Entity("Aiursoft.StatHub.Entities.Monitoring.MonitoringTarget", b =>
+                {
+                    b.HasOne("Aiursoft.StatHub.Entities.Monitoring.MonitoringPolicy", "Policy")
+                        .WithMany("Targets")
+                        .HasForeignKey("PolicyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Policy");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -286,6 +420,13 @@ namespace Aiursoft.StatHub.Sqlite.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Aiursoft.StatHub.Entities.Monitoring.MonitoringPolicy", b =>
+                {
+                    b.Navigation("Rules");
+
+                    b.Navigation("Targets");
                 });
 #pragma warning restore 612, 618
         }

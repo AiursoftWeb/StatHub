@@ -1,6 +1,7 @@
 using Aiursoft.AiurObserver;
 using Aiursoft.AiurObserver.WebSocket.Server;
 using Aiursoft.StatHub.Data;
+using Aiursoft.StatHub.Services.Monitoring;
 using Aiursoft.StatHub.SDK.AddressModels;
 using Aiursoft.StatHub.SDK.Models;
 using Aiursoft.StatHub.Services;
@@ -16,6 +17,7 @@ namespace Aiursoft.StatHub.Controllers;
 [Route("api/agent")]
 public class AgentChannelController(
     InMemoryDatabase database,
+    IServiceScopeFactory scopeFactory,
     IpGeolocationService ipGeolocationService,
     ILogger<AgentChannelController> logger) : ControllerBase
 {
@@ -94,10 +96,23 @@ public class AgentChannelController(
         // 基础信息同步 (同步调用)
         SyncAgentMetadata(agent, model);
 
-        // 核心：将 Stats 数组转化为流并行广播 (纯粹的 AiurObserver 风格)
+        // Preserve sample order so monitoring observes transient recovery within a batch.
         if (model.Stats != null)
         {
-            await Task.WhenAll(model.Stats.Select(s => agent.Stats.BroadcastAsync(s)));
+            var observations = new List<string>();
+            foreach (var sample in model.Stats)
+            {
+                await agent.Stats.BroadcastAsync(sample);
+                if (agent.CpuCores <= 0 || sample.CpuIdl is < 0 or > 100) continue;
+                observations.Add(agent.GetHealthReport().Status switch
+                {
+                    AgentStatus.Healthy => "green", AgentStatus.Warning => "yellow",
+                    AgentStatus.Critical => "red", _ => "unknown"
+                });
+            }
+            using var scope = scopeFactory.CreateScope();
+            await scope.ServiceProvider.GetRequiredService<MonitoringService>()
+                .ObserveAsync(agent.ClientId, agent.Hostname, observations);
         }
     }
 

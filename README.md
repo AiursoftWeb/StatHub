@@ -81,3 +81,11 @@ There are many ways to contribute to the project: logging bugs, submitting pull 
 Even if you with push rights on the repository, you should create a personal fork and create feature branches there when you need them. This keeps the main repository clean and your workflow cruft out of sight.
 
 We're also interested in your feedback on the future of this project. You can submit a suggestion or feature request through the issue tracker. To make this process more effective, we're asking that these include more information to help define them more clearly.
+
+## AlertCenter monitoring
+
+Users with **Manage AlertCenter integration** permission can configure sustained health rules and server selection at `/AlertMonitoring`. Monitoring defaults to all known and future reporting servers with no exclusions. Exclusions override inclusions. The default rules are yellow for 20/100 minutes → sev3/sev2, red for 20/100 minutes → sev2/sev1, and grey for 15 minutes → sev2. Zero minutes means immediate; rules can be changed, disabled or deleted without being recreated at restart.
+
+A valid green sample immediately resolves this integration's active incidents for that server by default; this behavior can be disabled. A new color resets its continuous timer. Existing incidents are escalated rather than duplicated and are never automatically downgraded. Grey starts one minute after the last valid report. Restart interrupts unobserved yellow/red continuity; the persisted last-report time still detects offline servers.
+
+Configure the endpoint, secret application key and this StatHub instance's public base URL in Global Settings, then enable synchronization. The key needs query, create, resolve and change-severity scopes. Environment variables `GlobalSettings__AlertCenter_Enabled`, `GlobalSettings__AlertCenter_Endpoint`, `GlobalSettings__AlertCenter_ApiKey` and `GlobalSettings__AlertCenter_PublicBaseUrl` override the same settings. Synchronization is disabled until configured.
