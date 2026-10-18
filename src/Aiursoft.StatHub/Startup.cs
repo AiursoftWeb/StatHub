@@ -1,3 +1,5 @@
+using Aiursoft.StatHub.Services.Monitoring;
+using Aiursoft.AiurProtocol;
 using Aiursoft.AiurProtocol.Server;
 using Aiursoft.CSTools.Tools;
 using Aiursoft.DbTools.Switchable;
@@ -56,11 +58,19 @@ public class Startup : IWebStartup
         services.AddSingleton<NavigationState<Startup>>();
 
         services.AddSingleton<InMemoryDatabase>();
+        services.AddSingleton(TimeProvider.System);
+        services.AddSingleton<MonitoringCoordinator>();
+        services.AddScoped<MonitoringService>();
+        services.AddScoped<IAlertCenterSettingsProvider, AlertCenterSettingsProvider>();
+        services.AddScoped<IMonitoringIncidentClient, MonitoringIncidentClient>();
+        services.AddAiurProtocolClient();
 
         // Background job queue
         services.AddTaskQueueEngine();
         services.AddScheduledTaskEngine();
         services.RegisterBackgroundJob<Services.BackgroundJobs.DummyJob>();
+        var monitoringJob = services.RegisterBackgroundJob<Services.BackgroundJobs.MonitoringJob>();
+        services.RegisterScheduledTask(registration: monitoringJob, period: TimeSpan.FromSeconds(30), startDelay: TimeSpan.FromSeconds(10));
         var orphanAvatarCleanupJob = services.RegisterBackgroundJob<Services.BackgroundJobs.OrphanAvatarCleanupJob>();
         services.RegisterScheduledTask(registration: orphanAvatarCleanupJob, period: TimeSpan.FromHours(6), startDelay: TimeSpan.FromMinutes(5));
 

@@ -5,6 +5,8 @@ namespace Aiursoft.StatHub.Authorization;
 /// </summary>
 public static class AppPermissionNames
 {
+    public const string CanManageAlertCenterIntegration = nameof(CanManageAlertCenterIntegration);
+
     // Dashbaord Management
     public const string CanViewDashboard = nameof(CanViewDashboard);
 

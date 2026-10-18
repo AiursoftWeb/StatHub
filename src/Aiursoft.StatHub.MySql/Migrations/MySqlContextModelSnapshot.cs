@@ -10,8 +10,6 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Aiursoft.StatHub.MySql.Migrations
 {
-    // THIS FILE IS AUTO GENERATED AND MAINTAINED BY ENTITY FRAMEWORK!
-    // NEVER EDIT THIS FILE MANUALLY!!!
     [DbContext(typeof(MySqlContext))]
     partial class MySqlContextModelSnapshot : ModelSnapshot
     {
@@ -19,7 +17,7 @@ namespace Aiursoft.StatHub.MySql.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "10.0.2")
+                .HasAnnotation("ProductVersion", "10.0.13")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
@@ -35,6 +33,122 @@ namespace Aiursoft.StatHub.MySql.Migrations
                     b.HasKey("Key");
 
                     b.ToTable("GlobalSettings");
+                });
+
+            modelBuilder.Entity("Aiursoft.StatHub.Entities.Monitoring.AgentMonitoringState", b =>
+                {
+                    b.Property<string>("ClientId")
+                        .HasMaxLength(200)
+                        .HasColumnType("varchar(200)");
+
+                    b.Property<string>("CurrentState")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("varchar(10)");
+
+                    b.Property<string>("Hostname")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("varchar(200)");
+
+                    b.Property<DateTime>("LastReportedAtUtc")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<Guid>("NextReportId")
+                        .HasColumnType("char(36)");
+
+                    b.Property<Guid>("ObservationSessionId")
+                        .HasColumnType("char(36)");
+
+                    b.Property<DateTime?>("PendingRecoveryAtUtc")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<DateTime>("StateSinceUtc")
+                        .HasColumnType("datetime(6)");
+
+                    b.HasKey("ClientId");
+
+                    b.ToTable("AgentMonitoringStates");
+                });
+
+            modelBuilder.Entity("Aiursoft.StatHub.Entities.Monitoring.MonitoringPolicy", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<bool>("AutoResolveOnGreen")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("IsEnabled")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("MonitorAllServers")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<Guid>("Version")
+                        .IsConcurrencyToken()
+                        .HasColumnType("char(36)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("AlertMonitoringPolicies");
+                });
+
+            modelBuilder.Entity("Aiursoft.StatHub.Entities.Monitoring.MonitoringRule", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<int>("DurationMinutes")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsEnabled")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<int>("PolicyId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Severity")
+                        .IsRequired()
+                        .HasMaxLength(4)
+                        .HasColumnType("varchar(4)");
+
+                    b.Property<string>("State")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("varchar(10)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PolicyId");
+
+                    b.ToTable("AlertMonitoringRules");
+                });
+
+            modelBuilder.Entity("Aiursoft.StatHub.Entities.Monitoring.MonitoringTarget", b =>
+                {
+                    b.Property<int>("PolicyId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ClientId")
+                        .HasMaxLength(200)
+                        .HasColumnType("varchar(200)");
+
+                    b.Property<bool>("IsExcluded")
+                        .HasColumnType("tinyint(1)");
+
+                    b.HasKey("PolicyId", "ClientId");
+
+                    b.ToTable("AlertMonitoringTargets");
                 });
 
             modelBuilder.Entity("Aiursoft.StatHub.Entities.User", b =>
@@ -246,6 +360,28 @@ namespace Aiursoft.StatHub.MySql.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("Aiursoft.StatHub.Entities.Monitoring.MonitoringRule", b =>
+                {
+                    b.HasOne("Aiursoft.StatHub.Entities.Monitoring.MonitoringPolicy", "Policy")
+                        .WithMany("Rules")
+                        .HasForeignKey("PolicyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Policy");
+                });
+
+            modelBuilder.Entity("Aiursoft.StatHub.Entities.Monitoring.MonitoringTarget", b =>
+                {
+                    b.HasOne("Aiursoft.StatHub.Entities.Monitoring.MonitoringPolicy", "Policy")
+                        .WithMany("Targets")
+                        .HasForeignKey("PolicyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Policy");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -295,6 +431,13 @@ namespace Aiursoft.StatHub.MySql.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Aiursoft.StatHub.Entities.Monitoring.MonitoringPolicy", b =>
+                {
+                    b.Navigation("Rules");
+
+                    b.Navigation("Targets");
                 });
 #pragma warning restore 612, 618
         }

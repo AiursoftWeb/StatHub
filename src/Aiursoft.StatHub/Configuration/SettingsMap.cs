@@ -4,6 +4,10 @@ namespace Aiursoft.StatHub.Configuration;
 
 public class SettingsMap
 {
+    public const string AlertCenterEnabled = "AlertCenter_Enabled";
+    public const string AlertCenterEndpoint = "AlertCenter_Endpoint";
+    public const string AlertCenterApiKey = "AlertCenter_ApiKey";
+    public const string AlertCenterPublicBaseUrl = "AlertCenter_PublicBaseUrl";
     public const string ProjectName = "ProjectName";
     public const string BrandName = "BrandName";
     public const string BrandHomeUrl = "BrandHomeUrl";
@@ -20,6 +24,39 @@ public class SettingsMap
 
     public static readonly List<GlobalSettingDefinition> Definitions = new()
     {
+        new GlobalSettingDefinition
+        {
+            Key = AlertCenterEnabled,
+            Name = Localizer["Enable AlertCenter synchronization"],
+            Description = Localizer["Synchronize server health incidents with AlertCenter."],
+            Type = SettingType.Bool,
+            DefaultValue = "False"
+        },
+        new GlobalSettingDefinition
+        {
+            Key = AlertCenterEndpoint,
+            Name = Localizer["AlertCenter endpoint"],
+            Description = Localizer["The HTTP(S) base URL of AlertCenter."],
+            Type = SettingType.Text,
+            DefaultValue = "https://alertcenter.aiursoft.com"
+        },
+        new GlobalSettingDefinition
+        {
+            Key = AlertCenterApiKey,
+            Name = Localizer["AlertCenter API key"],
+            Description = Localizer["An application API key with query, create, change severity, and resolve permissions."],
+            Type = SettingType.Secret,
+            DefaultValue = ""
+        },
+        new GlobalSettingDefinition
+        {
+            Key = AlertCenterPublicBaseUrl,
+            Name = Localizer["StatHub public base URL"],
+            Description = Localizer["The public base URL of this StatHub instance, used in incident links."],
+            Type = SettingType.Text,
+            DefaultValue = "https://stathub.aiursoft.com"
+        },
+
         new GlobalSettingDefinition
         {
             Key = ProjectName,

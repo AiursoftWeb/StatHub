@@ -25,6 +25,9 @@ public class AppPermissions
         var localizer = new FakeLocalizer();
         List<PermissionDescriptor> allPermission =
         [
+            new(AppPermissionNames.CanManageAlertCenterIntegration,
+                localizer["Manage AlertCenter integration"],
+                localizer["Allows managing monitoring rules and server inclusion and exclusion for AlertCenter."]),
             new(AppPermissionNames.CanReadUsers,
                 localizer["Read Users"],
                 localizer["Allows viewing the list of all users."]),
