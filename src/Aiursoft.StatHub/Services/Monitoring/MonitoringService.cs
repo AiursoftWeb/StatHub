@@ -39,10 +39,39 @@ public sealed class MonitoringService(StatHubDbContext db, MonitoringCoordinator
         return target?.IsExcluded != true && (policy.MonitorAllServers || target != null);
     }
 
+    private static DateTime? Since(AgentMonitoringState state, string threshold) => threshold switch
+    {
+        "yellow" => state.YellowOrWorseSinceUtc,
+        "red" => state.RedOrWorseSinceUtc,
+        "grey" when state.CurrentState == "grey" => state.StateSinceUtc,
+        _ => null
+    };
+
+    private static MonitoringRule? MatchingRule(MonitoringPolicy policy, AgentMonitoringState state, DateTime now) =>
+        policy.Rules.Where(rule => rule.IsEnabled && Since(state, rule.State) is { } since &&
+                now - since >= TimeSpan.FromMinutes(rule.DurationMinutes))
+            .OrderBy(rule => rule.Severity).ThenBy(rule => rule.DurationMinutes).ThenBy(rule => rule.Id).FirstOrDefault();
+
     public static string? Severity(MonitoringPolicy policy, AgentMonitoringState state, DateTime now) =>
-        policy.Rules.Where(rule => rule.IsEnabled && rule.State == state.CurrentState &&
-                now - state.StateSinceUtc >= TimeSpan.FromMinutes(rule.DurationMinutes))
-            .OrderBy(rule => rule.Severity).Select(rule => rule.Severity).FirstOrDefault();
+        MatchingRule(policy, state, now)?.Severity;
+
+    private static void Transition(AgentMonitoringState state, string color, DateTime at)
+    {
+        state.YellowOrWorseSinceUtc = color is "yellow" or "red" or "grey" ? state.YellowOrWorseSinceUtc ?? at : null;
+        state.RedOrWorseSinceUtc = color is "red" or "grey" ? state.RedOrWorseSinceUtc ?? at : null;
+        if (state.CurrentState != color) state.StateSinceUtc = at;
+        state.CurrentState = color;
+    }
+
+    private void ResetUnobservedContinuity(AgentMonitoringState state)
+    {
+        // A process restart cannot prove live colors stayed unhealthy while observations were lost.
+        // Persisted offline continuity is known from the last report and remains valid.
+        if (state.ObservationSessionId == coordinator.SessionId || state.CurrentState == "grey") return;
+        state.YellowOrWorseSinceUtc = null;
+        state.RedOrWorseSinceUtc = null;
+        state.CurrentState = "unknown";
+    }
 
     public async Task ObserveAsync(string clientId, string hostname, IReadOnlyList<string> observations)
     {
@@ -59,12 +88,12 @@ public sealed class MonitoringService(StatHubDbContext db, MonitoringCoordinator
                 state = new AgentMonitoringState { ClientId = clientId, StateSinceUtc = now };
                 db.AgentMonitoringStates.Add(state);
             }
-            var interrupted = state.ObservationSessionId != coordinator.SessionId || now - state.LastReportedAtUtc > OfflineTimeout;
+            ResetUnobservedContinuity(state);
+            if (state.LastReportedAtUtc != default && now >= state.LastReportedAtUtc + OfflineTimeout)
+                Transition(state, "grey", state.LastReportedAtUtc + OfflineTimeout);
             foreach (var color in colors)
             {
-                if (interrupted || state.CurrentState != color) state.StateSinceUtc = now;
-                interrupted = false;
-                state.CurrentState = color;
+                Transition(state, color, now);
                 // Retain even a transient green inside one ten-sample report until recovery succeeds.
                 if (color == "green" && policy.IsEnabled && Includes(policy, clientId) && policy.AutoResolveOnGreen)
                     state.PendingRecoveryAtUtc = now;
@@ -92,8 +121,8 @@ public sealed class MonitoringService(StatHubDbContext db, MonitoringCoordinator
                 var offlineAt = state.LastReportedAtUtc + OfflineTimeout;
                 if (now >= offlineAt && state.CurrentState != "grey")
                 {
-                    state.CurrentState = "grey";
-                    state.StateSinceUtc = offlineAt;
+                    ResetUnobservedContinuity(state);
+                    Transition(state, "grey", offlineAt);
                 }
             }
             await db.SaveChangesAsync();
@@ -140,7 +169,8 @@ public sealed class MonitoringService(StatHubDbContext db, MonitoringCoordinator
                         state.PendingRecoveryAtUtc = null;
                         await db.SaveChangesAsync();
                     }
-                    var severity = Severity(policy, state, now);
+                    var matchedRule = MatchingRule(policy, state, now);
+                    var severity = matchedRule?.Severity;
                     if (severity == null || (state.CurrentState != "grey" && state.ObservationSessionId != coordinator.SessionId)) continue;
                     if (owned.Count == 0)
                     {
@@ -148,7 +178,7 @@ public sealed class MonitoringService(StatHubDbContext db, MonitoringCoordinator
                         await client.CreateAsync(new CreateIncidentRequest
                         {
                             ReportId = state.NextReportId, Title = title.Length > 200 ? title[..200] : title,
-                            Level = severity, OccurredAtUtc = new DateTimeOffset(DateTime.SpecifyKind(state.StateSinceUtc, DateTimeKind.Utc)),
+                            Level = severity, OccurredAtUtc = new DateTimeOffset(DateTime.SpecifyKind(Since(state, matchedRule!.State)!.Value, DateTimeKind.Utc)),
                             Content = Describe(policy, state, severity, now, settings),
                             Context = new JObject { ["source"] = Source, ["clientId"] = state.ClientId,
                                 ["hostname"] = state.Hostname, ["state"] = state.CurrentState }
@@ -163,7 +193,7 @@ public sealed class MonitoringService(StatHubDbContext db, MonitoringCoordinator
                             await client.ChangeSeverityAsync(incident.IncidentId, new ChangeIncidentSeverityRequest
                             {
                                 Version = incident.Version, Level = severity,
-                                Reason = $"StatHub state {state.CurrentState} since {state.StateSinceUtc:O} now meets {severity}."
+                                Reason = $"StatHub has remained {matchedRule!.State} or worse since {Since(state, matchedRule.State):O}; the {matchedRule.DurationMinutes}-minute rule now meets {severity}. Current state: {state.CurrentState}."
                             });
                     }
                 }
@@ -175,13 +205,12 @@ public sealed class MonitoringService(StatHubDbContext db, MonitoringCoordinator
 
     private string Describe(MonitoringPolicy policy, AgentMonitoringState state, string severity, DateTime now, AlertCenterSettings settings)
     {
-        var rule = policy.Rules.Where(item => item.IsEnabled && item.State == state.CurrentState &&
-                item.Severity == severity && now - state.StateSinceUtc >= TimeSpan.FromMinutes(item.DurationMinutes))
-            .OrderBy(item => item.DurationMinutes).First();
-        var elapsed = (now - state.StateSinceUtc).TotalMinutes;
-        var summary = string.Create(System.Globalization.CultureInfo.InvariantCulture, $"Server {state.Hostname} has remained {state.CurrentState} for {elapsed:F1} minutes. " +
-            $"The configured rule triggers {severity} after {rule.DurationMinutes} continuous minutes.\n" +
-            $"State started (UTC): {state.StateSinceUtc:O}\nLast report (UTC): {state.LastReportedAtUtc:O}\n");
+        var rule = MatchingRule(policy, state, now)!;
+        var since = Since(state, rule.State)!.Value;
+        var elapsed = (now - since).TotalMinutes;
+        var summary = string.Create(System.Globalization.CultureInfo.InvariantCulture, $"Server {state.Hostname} has remained {rule.State} or worse for {elapsed:F1} minutes. " +
+            $"The configured rule triggers {severity} after {rule.DurationMinutes} continuous minutes. Current state: {state.CurrentState}.\n" +
+            $"Threshold exceeded since (UTC): {since:O}\nCurrent color since (UTC): {state.StateSinceUtc:O}\nLast report (UTC): {state.LastReportedAtUtc:O}\n");
         string evidence;
         string action;
         if (state.CurrentState == "grey")

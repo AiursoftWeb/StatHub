@@ -63,7 +63,13 @@ namespace Aiursoft.StatHub.MySql.Migrations
                     b.Property<DateTime?>("PendingRecoveryAtUtc")
                         .HasColumnType("datetime(6)");
 
+                    b.Property<DateTime?>("RedOrWorseSinceUtc")
+                        .HasColumnType("datetime(6)");
+
                     b.Property<DateTime>("StateSinceUtc")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<DateTime?>("YellowOrWorseSinceUtc")
                         .HasColumnType("datetime(6)");
 
                     b.HasKey("ClientId");

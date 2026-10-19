@@ -6,6 +6,8 @@ using Aiursoft.StatHub.Entities.Monitoring;
 using Aiursoft.StatHub.Services.Monitoring;
 using Aiursoft.StatHub.Sqlite;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.Extensions.Logging.Abstractions;
 using Newtonsoft.Json.Linq;
 
@@ -47,6 +49,142 @@ public sealed class MonitoringTests
             _clock.Advance(TimeSpan.FromSeconds(30));
             await Observe(color);
         }
+    }
+
+    [TestMethod]
+    public async Task MigrationSeedsOnlyKnownIntervalsAndPreservesThemOnReload()
+    {
+        var migrator = _db.GetService<IMigrator>();
+        await migrator.MigrateAsync("20261018174435_AlertCenterMonitoring");
+        var since = _clock.GetUtcNow().UtcDateTime;
+        foreach (var color in new[] { "green", "yellow", "red", "grey" })
+        {
+            var id = Guid.NewGuid();
+            var session = _coordinator.SessionId;
+            await _db.Database.ExecuteSqlInterpolatedAsync($"INSERT INTO AgentMonitoringStates (ClientId, Hostname, CurrentState, LastReportedAtUtc, StateSinceUtc, ObservationSessionId, NextReportId) VALUES ({color}, {color}, {color}, {since}, {since}, {session}, {id})");
+        }
+        await migrator.MigrateAsync();
+        _db.ChangeTracker.Clear();
+        foreach (var state in await _db.AgentMonitoringStates.ToListAsync())
+        {
+            Assert.AreEqual(state.CurrentState == "green" ? null : (DateTime?)since, state.YellowOrWorseSinceUtc);
+            Assert.AreEqual(state.CurrentState is "red" or "grey" ? (DateTime?)since : null, state.RedOrWorseSinceUtc);
+        }
+    }
+
+    [TestMethod]
+    public async Task AlternatingYellowAndRedTriggersYellowThresholdWithoutContinuousRed()
+    {
+        await Observe("yellow");
+        for (var i = 0; i < 7; i++) await Continue(i % 2 == 0 ? "yellow" : "red", 5);
+        Assert.AreEqual("sev3", _client.Incidents.Single().Level);
+        Assert.Contains("yellow or worse", _client.Created.Single().Content!);
+        for (var i = 0; i < 13; i++) await Continue(i % 2 == 0 ? "red" : "yellow", 5);
+        Assert.AreEqual("sev2", _client.Incidents.Single().Level);
+        Assert.AreEqual(1, _client.Escalations);
+    }
+
+    [TestMethod]
+    public async Task RedThenOfflinePreservesRedTimerAndMatchesSeveralRulesWithoutDuplicates()
+    {
+        await Observe("red");
+        await Continue("red", 20);
+        _clock.Advance(TimeSpan.FromMinutes(15));
+        await _service.CheckAsync();
+        Assert.AreEqual("sev2", _client.Incidents.Single().Level);
+        Assert.Contains("red or worse", _client.Created.Single().Content!);
+        _clock.Advance(TimeSpan.FromMinutes(1));
+        await _service.CheckAsync();
+        Assert.AreEqual(1, _client.Incidents.Count);
+        _clock.Advance(TimeSpan.FromMinutes(64));
+        await _service.CheckAsync();
+        Assert.AreEqual("sev1", _client.Incidents.Single().Level);
+        Assert.AreEqual(1, _client.Escalations);
+    }
+
+    [TestMethod]
+    public async Task ReconnectionWithoutOfflineSweepStillCountsGreyAndResetsOnlyRecoveredThresholds()
+    {
+        await Observe("red");
+        await Continue("red", 20);
+        var redStart = (await _db.AgentMonitoringStates.SingleAsync()).RedOrWorseSinceUtc;
+        _clock.Advance(TimeSpan.FromMinutes(10));
+        await Observe("red");
+        Assert.AreEqual(redStart, (await _db.AgentMonitoringStates.SingleAsync()).RedOrWorseSinceUtc);
+        await Continue("red", 5);
+        Assert.AreEqual("sev2", _client.Incidents.Single().Level);
+        await Observe("yellow");
+        var state = await _db.AgentMonitoringStates.SingleAsync();
+        Assert.IsNull(state.RedOrWorseSinceUtc);
+        Assert.AreEqual(redStart, state.YellowOrWorseSinceUtc);
+        Assert.AreEqual("sev2", _client.Incidents.Single().Level);
+    }
+
+    [TestMethod]
+    public async Task GreyToRedResetsGreyTimerButRetainsLowerThresholdsAcrossRestart()
+    {
+        await Observe("green");
+        _clock.Advance(TimeSpan.FromMinutes(10));
+        await _service.CheckAsync();
+        var state = await _db.AgentMonitoringStates.SingleAsync();
+        var start = state.RedOrWorseSinceUtc;
+        Assert.AreEqual(state.StateSinceUtc, start);
+        _db.ChangeTracker.Clear();
+        _coordinator.Dispose();
+        _coordinator = new MonitoringCoordinator();
+        _service = Service();
+        await Observe("red");
+        state = await _db.AgentMonitoringStates.SingleAsync();
+        Assert.AreEqual(start, state.RedOrWorseSinceUtc);
+        Assert.AreEqual("red", state.CurrentState);
+        await Continue("red", 26);
+        Assert.AreEqual("sev2", _client.Incidents.Single().Level);
+        Assert.Contains("red or worse", _client.Created.Single().Content!);
+    }
+
+    [TestMethod]
+    public async Task EveryLiveColorTransitionKeepsOnlyApplicableTimers()
+    {
+        foreach (var from in new[] { "green", "yellow", "red", "grey" })
+        foreach (var to in new[] { "green", "yellow", "red" })
+        {
+            var id = $"{from}-{to}";
+            await _service.ObserveAsync(id, id, [from == "grey" ? "green" : from]);
+            if (from == "grey")
+            {
+                _clock.Advance(TimeSpan.FromMinutes(2));
+                await _service.CheckAsync();
+            }
+            var before = await _db.AgentMonitoringStates.FindAsync(id);
+            var yellow = before!.YellowOrWorseSinceUtc;
+            var red = before.RedOrWorseSinceUtc;
+            _clock.Advance(TimeSpan.FromSeconds(30));
+            await _service.ObserveAsync(id, id, [to]);
+            var now = _clock.GetUtcNow().UtcDateTime;
+            Assert.AreEqual(to == "green" ? null : yellow ?? now, before.YellowOrWorseSinceUtc, id);
+            Assert.AreEqual(to == "red" ? red ?? now : null, before.RedOrWorseSinceUtc, id);
+        }
+    }
+
+    [TestMethod]
+    public async Task PersistedTimersAndCustomDisabledRulesAreRespected()
+    {
+        var policy = await _service.PolicyAsync();
+        foreach (var rule in policy.Rules) rule.IsEnabled = false;
+        _db.AlertMonitoringRules.Add(new MonitoringRule { Policy = policy, State = "yellow", DurationMinutes = 2, Severity = "sev4" });
+        await _db.SaveChangesAsync();
+        await Observe("red");
+        await Continue("red", 1);
+        _db.ChangeTracker.Clear();
+        _service = Service();
+        await Continue("yellow", 1);
+        Assert.AreEqual("sev4", _client.Incidents.Single().Level);
+        await Observe("green", "red");
+        Assert.AreEqual("resolved", _client.Incidents.Single().Status);
+        await Continue("red", 1);
+        Assert.AreEqual(1, _client.Incidents.Count);
+        await Continue("red", 1);
+        Assert.AreEqual(2, _client.Incidents.Count);
     }
 
     [TestMethod]
