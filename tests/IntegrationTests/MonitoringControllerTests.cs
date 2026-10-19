@@ -1,5 +1,6 @@
 using System.Net;
 using Aiursoft.StatHub.Entities;
+using Aiursoft.StatHub.Entities.Monitoring;
 using Microsoft.EntityFrameworkCore;
 
 namespace Aiursoft.StatHub.Tests.IntegrationTests;
@@ -15,7 +16,7 @@ public sealed class MonitoringControllerTests : TestBase
         using var scope = Server!.Services.CreateScope();
         var db = scope.ServiceProvider.GetRequiredService<StatHubDbContext>();
         var policy = await db.AlertMonitoringPolicies.SingleAsync();
-        db.AlertMonitoringTargets.Add(new Aiursoft.StatHub.Entities.Monitoring.MonitoringTarget
+        db.AlertMonitoringTargets.Add(new MonitoringTarget
         {
             PolicyId = policy.Id, ClientId = "offline-excluded-server", IsExcluded = true
         });
