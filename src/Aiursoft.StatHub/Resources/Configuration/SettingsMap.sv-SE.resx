@@ -18,17 +18,29 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="Allow User Adjust Nickname" xml:space="preserve">
+      <data name="AlertCenter API key" xml:space="preserve">
+    <value>AlertCenter API-nyckel</value>
+  </data>
+  <data name="AlertCenter endpoint" xml:space="preserve">
+    <value>AlertCenter-slutpunkt</value>
+  </data>
+  <data name="Allow User Adjust Nickname" xml:space="preserve">
     <value>Tillåt Användare Ändra Smeknamn</value>
   </data>
   <data name="Allow users to adjust their nickname in the profile management page." xml:space="preserve">
     <value>Tillåt användare att justera sin smeknamn på sidan för profilhantering.</value>
+  </data>
+  <data name="An application API key with query, create, change severity, and resolve permissions." xml:space="preserve">
+    <value>En API-nyckel för applikationen med behörighet att söka, skapa, ändra allvarlighetsgrad och lösa incidenter.</value>
   </data>
   <data name="Brand Home URL" xml:space="preserve">
     <value>Varumärkesstartsida URL</value>
   </data>
   <data name="Brand Name" xml:space="preserve">
     <value>Varumärke</value>
+  </data>
+  <data name="Enable AlertCenter synchronization" xml:space="preserve">
+    <value>Aktivera synkronisering med AlertCenter</value>
   </data>
   <data name="ICP Number" xml:space="preserve">
     <value>ICP-nummer</value>
@@ -39,8 +51,17 @@
   <data name="Project Name" xml:space="preserve">
     <value>Projektnamn</value>
   </data>
+  <data name="StatHub public base URL" xml:space="preserve">
+    <value>StatHubs offentliga bas-URL</value>
+  </data>
+  <data name="Synchronize server health incidents with AlertCenter." xml:space="preserve">
+    <value>Synkronisera serverns hälsorelaterade incidenter med AlertCenter.</value>
+  </data>
   <data name="The brand name of the company or project. E.g. Aiursoft." xml:space="preserve">
     <value>Det är varumärkesnamnet för företaget eller projektet. T.ex. Aiursoft.</value>
+  </data>
+  <data name="The HTTP(S) base URL of AlertCenter." xml:space="preserve">
+    <value>Den HTTP(S)-bas-URL för AlertCenter.</value>
   </data>
   <data name="The ICP license number for China mainland users. Leave empty to hide." xml:space="preserve">
     <value>ICP-licensnummer för användare i Kina (fastlandet). Lämna tomt för att dölja.</value>
@@ -50,6 +71,9 @@
   </data>
   <data name="The name of the project displayed in the frontend." xml:space="preserve">
     <value>Projektets namn som visas i användargränssnittet.</value>
+  </data>
+  <data name="The public base URL of this StatHub instance, used in incident links." xml:space="preserve">
+    <value>Den offentliga bas-URL:en för den här StatHub-instansen, som används i incidentlänkar.</value>
   </data>
   <data name="The URL of the company or project. E.g. https://www.aiursoft.com" xml:space="preserve">
     <value>URL:n för företaget eller projektet. Till exempel https://www.aiursoft.com</value>

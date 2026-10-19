@@ -27,6 +27,9 @@
   <data name="Allows assigning or removing roles for any user." xml:space="preserve">
     <value>Permite atribuirea sau eliminarea rolurilor pentru orice utilizator.</value>
   </data>
+  <data name="Allows managing monitoring rules and server inclusion and exclusion for AlertCenter." xml:space="preserve">
+    <value>Permite gestionarea regulilor de monitorizare și includerea și excluderea serverelor pentru AlertCenter.</value>
+  </data>
   <data name="Allows modification of role names and their assigned permissions." xml:space="preserve">
     <value>Permite modificarea numelor rolurilor și a permisiunilor atribuite acestora.</value>
   </data>
@@ -83,6 +86,9 @@
   </data>
   <data name="Grants permission to restart the application instance. May cause availability interruptions but all settings and cache will be reloaded." xml:space="preserve">
     <value>Acordă permisiunea de a reporni instanța aplicației. Poate cauza întreruperi de disponibilitate, dar toate setările și memoria cache vor fi reîncărcate.</value>
+  </data>
+  <data name="Manage AlertCenter integration" xml:space="preserve">
+    <value>Gestionați integrarea AlertCenter</value>
   </data>
   <data name="Manage Global Settings" xml:space="preserve">
     <value>Gestionează Setările Globale</value>

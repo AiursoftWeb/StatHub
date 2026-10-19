@@ -18,17 +18,29 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="Allow User Adjust Nickname" xml:space="preserve">
+      <data name="AlertCenter API key" xml:space="preserve">
+    <value>Cheia API AlertCenter</value>
+  </data>
+  <data name="AlertCenter endpoint" xml:space="preserve">
+    <value>Punct final AlertCenter</value>
+  </data>
+  <data name="Allow User Adjust Nickname" xml:space="preserve">
     <value>Permite utilizatorului să-și modifice pseudonimul</value>
   </data>
   <data name="Allow users to adjust their nickname in the profile management page." xml:space="preserve">
     <value>Permite utilizatorilor să-și ajusteze nickname-ul în pagina de gestionare a profilului.</value>
+  </data>
+  <data name="An application API key with query, create, change severity, and resolve permissions." xml:space="preserve">
+    <value>O cheie API de aplicație cu permisiuni de interogare, creare, modificare a gravității și rezolvare.</value>
   </data>
   <data name="Brand Home URL" xml:space="preserve">
     <value>URL site web al brandului</value>
   </data>
   <data name="Brand Name" xml:space="preserve">
     <value>Numele mărcii</value>
+  </data>
+  <data name="Enable AlertCenter synchronization" xml:space="preserve">
+    <value>Activează sincronizarea cu AlertCenter</value>
   </data>
   <data name="ICP Number" xml:space="preserve">
     <value>Număr ICP</value>
@@ -39,8 +51,17 @@
   <data name="Project Name" xml:space="preserve">
     <value>Numele proiectului</value>
   </data>
+  <data name="StatHub public base URL" xml:space="preserve">
+    <value>URL de bază publică StatHub</value>
+  </data>
+  <data name="Synchronize server health incidents with AlertCenter." xml:space="preserve">
+    <value>Sincronizează incidentele de sănătate a serverului cu AlertCenter.</value>
+  </data>
   <data name="The brand name of the company or project. E.g. Aiursoft." xml:space="preserve">
     <value>Numele de brand al companiei sau proiectului. De exemplu: Aiursoft.</value>
+  </data>
+  <data name="The HTTP(S) base URL of AlertCenter." xml:space="preserve">
+    <value>URL-ul de bază HTTP(S) al AlertCenter.</value>
   </data>
   <data name="The ICP license number for China mainland users. Leave empty to hide." xml:space="preserve">
     <value>Numărul de înregistrare ICP pentru utilizatorii din China continentală. Lăsați gol pentru a ascunde.</value>
@@ -50,6 +71,9 @@
   </data>
   <data name="The name of the project displayed in the frontend." xml:space="preserve">
     <value>Numele proiectului afișat în interfața utilizatorului.</value>
+  </data>
+  <data name="The public base URL of this StatHub instance, used in incident links." xml:space="preserve">
+    <value>URL-ul public de bază al acestei instanțe StatHub, utilizat în link-urile incidentelor.</value>
   </data>
   <data name="The URL of the company or project. E.g. https://www.aiursoft.com" xml:space="preserve">
     <value>Adresa URL a companiei sau a proiectului. De exemplu: https://www.aiursoft.com</value>

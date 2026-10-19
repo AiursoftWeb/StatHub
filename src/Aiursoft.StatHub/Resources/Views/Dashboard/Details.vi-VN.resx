@@ -24,6 +24,9 @@
   <data name="Abandoning is not deletion. If this agent persists in submitting, it will appear again soon. Please use systemd command to stop the agent." xml:space="preserve">
     <value>Việc từ chối không đồng nghĩa với việc xóa bỏ. Nếu tác nhân này tiếp tục gửi dữ liệu, nó sẽ xuất hiện trở lại trong thời gian ngắn. Vui lòng sử dụng lệnh systemd để dừng tác nhân này.</value>
   </data>
+  <data name="Accessed" xml:space="preserve">
+    <value>Truy cập lần cuối</value>
+  </data>
   <data name="Agent Information" xml:space="preserve">
     <value>Thông Tin Agent</value>
   </data>
@@ -53,6 +56,9 @@
   </data>
   <data name="CPU Usage" xml:space="preserve">
     <value>Mức sử dụng CPU</value>
+  </data>
+  <data name="Created" xml:space="preserve">
+    <value>Được tạo</value>
   </data>
   <data name="Disabled" xml:space="preserve">
     <value>Vô hiệu hóa</value>
@@ -134,6 +140,9 @@
   </data>
   <data name="Modified" xml:space="preserve">
     <value>Sửa đổi</value>
+  </data>
+  <data name="More times" xml:space="preserve">
+    <value>Thêm thời gian</value>
   </data>
   <data name="MOTD" xml:space="preserve">
     <value>Thông điệp trong ngày</value>

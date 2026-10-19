@@ -42,6 +42,9 @@
   <data name="Aiursoft Template" xml:space="preserve">
     <value>Aiursoft Πρότυπο</value>
   </data>
+  <data name="AlertCenter monitoring" xml:space="preserve">
+    <value>Παρακολούθηση AlertCenter</value>
+  </data>
   <data name="Anonymous" xml:space="preserve">
     <value>Ανώνυμος</value>
   </data>
@@ -125,6 +128,9 @@
   </data>
   <data name="Manage" xml:space="preserve">
     <value>Διαχείριση</value>
+  </data>
+  <data name="Monitoring" xml:space="preserve">
+    <value>Παρακολούθηση</value>
   </data>
   <data name="Not Found" xml:space="preserve">
     <value>Δεν βρέθηκε</value>

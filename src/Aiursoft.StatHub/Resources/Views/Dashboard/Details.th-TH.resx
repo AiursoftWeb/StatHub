@@ -24,6 +24,9 @@
   <data name="Abandoning is not deletion. If this agent persists in submitting, it will appear again soon. Please use systemd command to stop the agent." xml:space="preserve">
     <value>การยกเลิกไม่ใช่การลบออก หากเอเจนต์นี้ยังคงส่งข้อมูลต่อไป มันจะปรากฏขึ้นอีกในไม่ช้า กรุณาใช้คำสั่ง systemd เพื่อปิดการทำงานของเอเจนต์</value>
   </data>
+  <data name="Accessed" xml:space="preserve">
+    <value>เข้าถึงเมื่อ</value>
+  </data>
   <data name="Agent Information" xml:space="preserve">
     <value>ข้อมูลเอเจนต์</value>
   </data>
@@ -53,6 +56,9 @@
   </data>
   <data name="CPU Usage" xml:space="preserve">
     <value>การใช้ซีพียู</value>
+  </data>
+  <data name="Created" xml:space="preserve">
+    <value>สร้างเมื่อ</value>
   </data>
   <data name="Disabled" xml:space="preserve">
     <value>ปิดใช้งาน</value>
@@ -134,6 +140,9 @@
   </data>
   <data name="Modified" xml:space="preserve">
     <value>แก้ไขล่าสุด</value>
+  </data>
+  <data name="More times" xml:space="preserve">
+    <value>เวลาเพิ่มเติม</value>
   </data>
   <data name="MOTD" xml:space="preserve">
     <value>ข้อความต้อนรับ (MOTD)</value>

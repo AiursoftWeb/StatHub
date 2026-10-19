@@ -18,17 +18,29 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="Allow User Adjust Nickname" xml:space="preserve">
+      <data name="AlertCenter API key" xml:space="preserve">
+    <value>AlertCenter API 키</value>
+  </data>
+  <data name="AlertCenter endpoint" xml:space="preserve">
+    <value>AlertCenter 엔드포인트</value>
+  </data>
+  <data name="Allow User Adjust Nickname" xml:space="preserve">
     <value>사용자 닉네임 조정 허용</value>
   </data>
   <data name="Allow users to adjust their nickname in the profile management page." xml:space="preserve">
     <value>프로필 관리 페이지에서 사용자가 닉네임을 수정할 수 있도록 허용합니다.</value>
+  </data>
+  <data name="An application API key with query, create, change severity, and resolve permissions." xml:space="preserve">
+    <value>조회, 생성, 심각도 변경, 및 해결 권한이 있는 애플리케이션 API 키입니다.</value>
   </data>
   <data name="Brand Home URL" xml:space="preserve">
     <value>브랜드 홈 URL</value>
   </data>
   <data name="Brand Name" xml:space="preserve">
     <value>브랜드 이름</value>
+  </data>
+  <data name="Enable AlertCenter synchronization" xml:space="preserve">
+    <value>AlertCenter 동기화 사용</value>
   </data>
   <data name="ICP Number" xml:space="preserve">
     <value>ICP 번호</value>
@@ -39,8 +51,17 @@
   <data name="Project Name" xml:space="preserve">
     <value>프로젝트 이름</value>
   </data>
+  <data name="StatHub public base URL" xml:space="preserve">
+    <value>StatHub 공개 기본 URL</value>
+  </data>
+  <data name="Synchronize server health incidents with AlertCenter." xml:space="preserve">
+    <value>서버 상태 인시던트를 AlertCenter와 동기화합니다.</value>
+  </data>
   <data name="The brand name of the company or project. E.g. Aiursoft." xml:space="preserve">
     <value>회사 또는 프로젝트의 브랜드 이름입니다. 예: Aiursoft.</value>
+  </data>
+  <data name="The HTTP(S) base URL of AlertCenter." xml:space="preserve">
+    <value>AlertCenter의 HTTP(S) 기본 URL입니다.</value>
   </data>
   <data name="The ICP license number for China mainland users. Leave empty to hide." xml:space="preserve">
     <value>중국 대륙 사용자를 위한 ICP 라이선스 번호입니다. 숨기려면 비워 두세요.</value>
@@ -50,6 +71,9 @@
   </data>
   <data name="The name of the project displayed in the frontend." xml:space="preserve">
     <value>프론트엔드에 표시되는 프로젝트의 이름입니다.</value>
+  </data>
+  <data name="The public base URL of this StatHub instance, used in incident links." xml:space="preserve">
+    <value>장애 발생 링크에 사용되는 이 StatHub 인스턴스의 공개 기본 URL입니다.</value>
   </data>
   <data name="The URL of the company or project. E.g. https://www.aiursoft.com" xml:space="preserve">
     <value>회사 또는 프로젝트의 URL입니다. 예: https://www.aiursoft.com</value>

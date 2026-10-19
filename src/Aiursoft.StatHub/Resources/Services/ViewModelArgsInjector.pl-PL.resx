@@ -42,6 +42,9 @@
   <data name="Aiursoft Template" xml:space="preserve">
     <value>Aiursoft Template</value>
   </data>
+  <data name="AlertCenter monitoring" xml:space="preserve">
+    <value>Monitorowanie AlertCenter</value>
+  </data>
   <data name="Anonymous" xml:space="preserve">
     <value>Anonimowy</value>
   </data>
@@ -125,6 +128,9 @@
   </data>
   <data name="Manage" xml:space="preserve">
     <value>Zarządzaj</value>
+  </data>
+  <data name="Monitoring" xml:space="preserve">
+    <value>Monitorowanie</value>
   </data>
   <data name="Not Found" xml:space="preserve">
     <value>Nie znaleziono</value>

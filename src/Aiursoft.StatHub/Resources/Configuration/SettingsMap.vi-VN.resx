@@ -18,17 +18,29 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="Allow User Adjust Nickname" xml:space="preserve">
+      <data name="AlertCenter API key" xml:space="preserve">
+    <value>Khóa API của AlertCenter</value>
+  </data>
+  <data name="AlertCenter endpoint" xml:space="preserve">
+    <value>Điểm cuối AlertCenter</value>
+  </data>
+  <data name="Allow User Adjust Nickname" xml:space="preserve">
     <value>Cho phép người dùng chỉnh sửa biệt danh</value>
   </data>
   <data name="Allow users to adjust their nickname in the profile management page." xml:space="preserve">
     <value>Cho phép người dùng điều chỉnh biệt danh của họ trên trang quản lý hồ sơ.</value>
+  </data>
+  <data name="An application API key with query, create, change severity, and resolve permissions." xml:space="preserve">
+    <value>Khóa API ứng dụng có quyền truy vấn, tạo, thay đổi mức độ nghiêm trọng và xử lý sự cố.</value>
   </data>
   <data name="Brand Home URL" xml:space="preserve">
     <value>URL trang chủ thương hiệu</value>
   </data>
   <data name="Brand Name" xml:space="preserve">
     <value>Tên thương hiệu</value>
+  </data>
+  <data name="Enable AlertCenter synchronization" xml:space="preserve">
+    <value>Bật đồng bộ hóa AlertCenter</value>
   </data>
   <data name="ICP Number" xml:space="preserve">
     <value>Số ICP</value>
@@ -39,8 +51,17 @@
   <data name="Project Name" xml:space="preserve">
     <value>Tên dự án</value>
   </data>
+  <data name="StatHub public base URL" xml:space="preserve">
+    <value>URL cơ bản công khai của StatHub</value>
+  </data>
+  <data name="Synchronize server health incidents with AlertCenter." xml:space="preserve">
+    <value>Đồng bộ các sự cố sức khỏe máy chủ với AlertCenter.</value>
+  </data>
   <data name="The brand name of the company or project. E.g. Aiursoft." xml:space="preserve">
     <value>Tên thương hiệu của công ty hoặc dự án. Ví dụ: Aiursoft.</value>
+  </data>
+  <data name="The HTTP(S) base URL of AlertCenter." xml:space="preserve">
+    <value>URL gốc HTTP(S) của AlertCenter.</value>
   </data>
   <data name="The ICP license number for China mainland users. Leave empty to hide." xml:space="preserve">
     <value>Số giấy phép ICP dành cho người dùng Trung Quốc đại lục. Để trống để ẩn.</value>
@@ -50,6 +71,9 @@
   </data>
   <data name="The name of the project displayed in the frontend." xml:space="preserve">
     <value>Tên của dự án được hiển thị trên giao diện người dùng</value>
+  </data>
+  <data name="The public base URL of this StatHub instance, used in incident links." xml:space="preserve">
+    <value>URL gốc công khai của instance StatHub này, được sử dụng trong các liên kết sự cố.</value>
   </data>
   <data name="The URL of the company or project. E.g. https://www.aiursoft.com" xml:space="preserve">
     <value>Địa chỉ URL của công ty hoặc dự án. Ví dụ: https://www.aiursoft.com</value>

@@ -18,17 +18,29 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="Allow User Adjust Nickname" xml:space="preserve">
+      <data name="AlertCenter API key" xml:space="preserve">
+    <value>AlertCenter APIキー</value>
+  </data>
+  <data name="AlertCenter endpoint" xml:space="preserve">
+    <value>AlertCenter エンドポイント</value>
+  </data>
+  <data name="Allow User Adjust Nickname" xml:space="preserve">
     <value>ユーザーがニックネームを変更できるようにする</value>
   </data>
   <data name="Allow users to adjust their nickname in the profile management page." xml:space="preserve">
     <value>プロフィール管理ページでユーザーがニックネームを変更できるようにする。</value>
+  </data>
+  <data name="An application API key with query, create, change severity, and resolve permissions." xml:space="preserve">
+    <value>検索、作成、重大度の変更、解決の権限を持つアプリケーション API キー。</value>
   </data>
   <data name="Brand Home URL" xml:space="preserve">
     <value>ブランド ホーム URL</value>
   </data>
   <data name="Brand Name" xml:space="preserve">
     <value>ブランド名</value>
+  </data>
+  <data name="Enable AlertCenter synchronization" xml:space="preserve">
+    <value>AlertCenterとの同期を有効にする</value>
   </data>
   <data name="ICP Number" xml:space="preserve">
     <value>ICP番号</value>
@@ -39,8 +51,17 @@
   <data name="Project Name" xml:space="preserve">
     <value>プロジェクト名</value>
   </data>
+  <data name="StatHub public base URL" xml:space="preserve">
+    <value>StatHub 公開ベースURL</value>
+  </data>
+  <data name="Synchronize server health incidents with AlertCenter." xml:space="preserve">
+    <value>AlertCenter とサーバーヘルスインシデントを同期します。</value>
+  </data>
   <data name="The brand name of the company or project. E.g. Aiursoft." xml:space="preserve">
     <value>会社またはプロジェクトのブランド名。例：Aiursoft。</value>
+  </data>
+  <data name="The HTTP(S) base URL of AlertCenter." xml:space="preserve">
+    <value>AlertCenterのHTTP(S)ベースURL。</value>
   </data>
   <data name="The ICP license number for China mainland users. Leave empty to hide." xml:space="preserve">
     <value>中国本土ユーザー向けのICP許可証番号。非表示にするには空欄のままにしてください。</value>
@@ -50,6 +71,9 @@
   </data>
   <data name="The name of the project displayed in the frontend." xml:space="preserve">
     <value>フロントエンドに表示されるプロジェクト名です。</value>
+  </data>
+  <data name="The public base URL of this StatHub instance, used in incident links." xml:space="preserve">
+    <value>インシデントへのリンクに使用する、この StatHub インスタンスの公開ベース URL。</value>
   </data>
   <data name="The URL of the company or project. E.g. https://www.aiursoft.com" xml:space="preserve">
     <value>企業またはプロジェクトのURL。例: https://www.aiursoft.com</value>

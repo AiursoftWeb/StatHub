@@ -18,17 +18,29 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="Allow User Adjust Nickname" xml:space="preserve">
+      <data name="AlertCenter API key" xml:space="preserve">
+    <value>AlertCenter API anahtarı</value>
+  </data>
+  <data name="AlertCenter endpoint" xml:space="preserve">
+    <value>AlertCenter uç noktası</value>
+  </data>
+  <data name="Allow User Adjust Nickname" xml:space="preserve">
     <value>Kullanıcı Adını Ayarlamaya İzin Ver</value>
   </data>
   <data name="Allow users to adjust their nickname in the profile management page." xml:space="preserve">
     <value>Kullanıcıların profili yönetimi sayfasında takma isimlerini ayarlamasına izin verin.</value>
+  </data>
+  <data name="An application API key with query, create, change severity, and resolve permissions." xml:space="preserve">
+    <value>Sorgulama, oluşturma, önem derecesini değiştirme ve çözme izinlerine sahip bir uygulama API anahtarı.</value>
   </data>
   <data name="Brand Home URL" xml:space="preserve">
     <value>Marka Ana Sayfa URL&apos;si</value>
   </data>
   <data name="Brand Name" xml:space="preserve">
     <value>Marka Adı</value>
+  </data>
+  <data name="Enable AlertCenter synchronization" xml:space="preserve">
+    <value>AlertCenter eşitlemesini etkinleştir</value>
   </data>
   <data name="ICP Number" xml:space="preserve">
     <value>ICP Numarası</value>
@@ -39,8 +51,17 @@
   <data name="Project Name" xml:space="preserve">
     <value>Proje Adı</value>
   </data>
+  <data name="StatHub public base URL" xml:space="preserve">
+    <value>StatHub herkese açık temel URL&apos;si</value>
+  </data>
+  <data name="Synchronize server health incidents with AlertCenter." xml:space="preserve">
+    <value>Sunucunun sağlık olaylarını AlertCenter ile senkronize edin.</value>
+  </data>
   <data name="The brand name of the company or project. E.g. Aiursoft." xml:space="preserve">
     <value>Şirketin veya projenin marka adı. Örnek: Aiursoft.</value>
+  </data>
+  <data name="The HTTP(S) base URL of AlertCenter." xml:space="preserve">
+    <value>AlertCenter&apos;ın HTTP(S) temel URL&apos;si.</value>
   </data>
   <data name="The ICP license number for China mainland users. Leave empty to hide." xml:space="preserve">
     <value>Çin ana karasına yönelik ICP lisans numarası. Gizlemek için boş bırakın.</value>
@@ -50,6 +71,9 @@
   </data>
   <data name="The name of the project displayed in the frontend." xml:space="preserve">
     <value>Ön yüzte görüntülenen proje adı.</value>
+  </data>
+  <data name="The public base URL of this StatHub instance, used in incident links." xml:space="preserve">
+    <value>Bu StatHub örneğinin, olay bağlantılarında kullanılan genel halka açık temel URL&apos;si.</value>
   </data>
   <data name="The URL of the company or project. E.g. https://www.aiursoft.com" xml:space="preserve">
     <value>Şirketin veya projenin URL&apos;si. Örnek: https://www.aiursoft.com</value>

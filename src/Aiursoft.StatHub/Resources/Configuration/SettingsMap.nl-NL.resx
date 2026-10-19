@@ -18,17 +18,29 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="Allow User Adjust Nickname" xml:space="preserve">
+      <data name="AlertCenter API key" xml:space="preserve">
+    <value>AlertCenter API-sleutel</value>
+  </data>
+  <data name="AlertCenter endpoint" xml:space="preserve">
+    <value>AlertCenter-eindpunt</value>
+  </data>
+  <data name="Allow User Adjust Nickname" xml:space="preserve">
     <value>Gebruiker toestaan om bijnaam aan te passen</value>
   </data>
   <data name="Allow users to adjust their nickname in the profile management page." xml:space="preserve">
     <value>Gebruikers toestaan hun bijnaam aan te passen op de pagina voor profielfuncties.</value>
+  </data>
+  <data name="An application API key with query, create, change severity, and resolve permissions." xml:space="preserve">
+    <value>Een applicatie-API-sleutel met query-, aanmaak-, wijzigings- en oplosrechten.</value>
   </data>
   <data name="Brand Home URL" xml:space="preserve">
     <value>Brand Startpagina URL</value>
   </data>
   <data name="Brand Name" xml:space="preserve">
     <value>Merkenaam</value>
+  </data>
+  <data name="Enable AlertCenter synchronization" xml:space="preserve">
+    <value>AlertCenter-synchronisatie inschakelen</value>
   </data>
   <data name="ICP Number" xml:space="preserve">
     <value>ICP-nummer</value>
@@ -39,8 +51,17 @@
   <data name="Project Name" xml:space="preserve">
     <value>Projectnaam</value>
   </data>
+  <data name="StatHub public base URL" xml:space="preserve">
+    <value>Openbare basis-URL van StatHub</value>
+  </data>
+  <data name="Synchronize server health incidents with AlertCenter." xml:space="preserve">
+    <value>Synchroniseer incidenten met betrekking tot de serverstatus met AlertCenter.</value>
+  </data>
   <data name="The brand name of the company or project. E.g. Aiursoft." xml:space="preserve">
     <value>De merknaam van het bedrijf of project. Bijv. Aiursoft.</value>
+  </data>
+  <data name="The HTTP(S) base URL of AlertCenter." xml:space="preserve">
+    <value>De basis-URL via HTTP(S) van AlertCenter.</value>
   </data>
   <data name="The ICP license number for China mainland users. Leave empty to hide." xml:space="preserve">
     <value>Het ICP-licentienummer voor gebruikers in het Chinese vasteland. Leeg laten om te verbergen.</value>
@@ -50,6 +71,9 @@
   </data>
   <data name="The name of the project displayed in the frontend." xml:space="preserve">
     <value>De naam van het project die wordt weergegeven in de frontend.</value>
+  </data>
+  <data name="The public base URL of this StatHub instance, used in incident links." xml:space="preserve">
+    <value>De openbare basis-URL van deze StatHub-instantie, gebruikt in incidentlinks.</value>
   </data>
   <data name="The URL of the company or project. E.g. https://www.aiursoft.com" xml:space="preserve">
     <value>De URL van het bedrijf of project. Bijv. https://www.aiursoft.com</value>
