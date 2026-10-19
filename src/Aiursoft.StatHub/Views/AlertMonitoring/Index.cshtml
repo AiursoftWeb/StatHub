@@ -19,7 +19,7 @@
         <div class="card-body">
             <div class="form-check mb-2"><input class="form-check-input" type="checkbox" id="enabled" name="IsEnabled" value="true" checked="@Model.Policy.IsEnabled" /><label class="form-check-label" for="enabled">@Localizer["Enable monitoring policy"]</label></div>
             <div class="form-check mb-2"><input class="form-check-input" type="checkbox" id="all" name="MonitorAllServers" value="true" checked="@Model.Policy.MonitorAllServers" /><label class="form-check-label" for="all">@Localizer["Monitor all servers, including newly connected servers"]</label></div>
-            <div class="form-check"><input class="form-check-input" type="checkbox" id="green" name="AutoResolveOnGreen" value="true" checked="@Model.Policy.AutoResolveOnGreen" /><label class="form-check-label" for="green">@Localizer["Immediately resolve all incidents managed by this integration for a server when a healthy sample is received"]</label></div>
+            <div class="form-check"><input class="form-check-input" type="checkbox" id="green" name="AutoResolveOnGreen" value="true" checked="@Model.Policy.AutoResolveOnGreen" /><label class="form-check-label" for="green">@Localizer["Immediately mitigate all incidents managed by this integration for a server when a healthy sample is received"]</label></div>
         </div>
     </div>
     <div class="card mb-3">
@@ -114,7 +114,7 @@
                 <div class="border-top pt-3">
                     <h5 class="h6">@Localizer["One incident, with recovery"]</h5>
                     <p class="small mb-2">@Localizer["Matching more rules escalates the existing incident when needed; it does not create another incident or automatically lower its severity."]</p>
-                    <p class="small mb-0">@Localizer["A green sample resets every timer. It also resolves this server's incidents when automatic resolution on green is enabled, even if green appears only briefly."]</p>
+                    <p class="small mb-0">@Localizer["A green sample resets every timer. It also mitigates this server's incidents when automatic mitigation on green is enabled, even if green appears only briefly."]</p>
                 </div>
             </div>
         </div>
