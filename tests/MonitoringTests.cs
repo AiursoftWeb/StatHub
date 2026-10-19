@@ -382,8 +382,46 @@ public sealed class MonitoringTests
         await _db.SaveChangesAsync();
         await Observe("green");
         Assert.AreEqual(0, _client.Resolutions);
-        Assert.IsFalse(MonitoringService.Includes(policy, "server-1"));
-        Assert.IsTrue(MonitoringService.Includes(policy, "new-server"));
+        await _service.ObserveAsync("new-server", "New server", ["yellow"]);
+        await _service.CheckAsync();
+        Assert.AreEqual(2, _client.Incidents.Count);
+    }
+
+    [TestMethod]
+    [DataRow(false)]
+    [DataRow(true)]
+    public async Task SelectionRefreshPreservesExclusionPrecedenceAndRecovery(bool monitorAll)
+    {
+        var policy = await _service.PolicyAsync();
+        policy.MonitorAllServers = monitorAll;
+        _db.AlertMonitoringRules.Add(new MonitoringRule { Policy = policy, State = "yellow", DurationMinutes = 0, Severity = "sev4" });
+        policy.Targets.Add(new MonitoringTarget { ClientId = "selected" });
+        policy.Targets.Add(new MonitoringTarget { ClientId = "excluded", IsExcluded = true });
+        await _db.SaveChangesAsync();
+        foreach (var id in new[] { "selected", "excluded", "unlisted" })
+            await _service.ObserveAsync(id, id, ["yellow"]);
+        await _service.CheckAsync();
+        Assert.AreEqual(monitorAll ? 2 : 1, _client.Incidents.Count);
+        Assert.IsFalse(_client.Incidents.Any(incident => incident.Context!.Value<string>("clientId") == "excluded"));
+
+        // The next pass must see an edited selection, including recovery eligibility.
+        policy.Targets.Single(target => target.ClientId == "selected").IsExcluded = true;
+        policy.Targets.Single(target => target.ClientId == "excluded").IsExcluded = false;
+        await _db.SaveChangesAsync();
+        await _service.ObserveAsync("selected", "selected", ["green"]);
+        await _service.CheckAsync();
+        Assert.AreEqual(0, _client.Resolutions);
+        Assert.AreEqual(monitorAll ? 3 : 2, _client.Incidents.Count);
+        Assert.IsFalse(await _service.ObserveAsync("selected", "selected", ["red", "green"]));
+        Assert.IsTrue(await _service.ObserveAsync("excluded", "excluded", ["green"]));
+        await _service.CheckAsync();
+        Assert.AreEqual(1, _client.Resolutions);
+
+        policy.Targets.Single(target => target.ClientId == "selected").IsExcluded = false;
+        await _db.SaveChangesAsync();
+        await _service.ObserveAsync("selected", "selected", ["green"]);
+        await _service.CheckAsync();
+        Assert.AreEqual(2, _client.Resolutions);
     }
 
     [TestMethod]
