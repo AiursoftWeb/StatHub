@@ -18,6 +18,7 @@ public class Startup : IStartUp
         services.AddSingleton<ServerMonitor>();
         services.AddSingleton<LongCommandRunner>();
         services.AddSingleton<AgentChannelService>();
+        services.AddSingleton<AgentChannelConnection>();
         services.AddSingleton<SkuInfoService>();
         services.AddSingleton<BootTimeService>();
         services.AddSingleton<HostnameService>();

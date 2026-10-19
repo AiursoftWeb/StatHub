@@ -37,8 +37,29 @@ public class AgentChannelController(
         var agent = database.GetOrAddClient(clientId);
         var pusher = await HttpContext.AcceptWebSocketClient();
         logger.LogInformation("Agent {ClientId} connected via ObservableWebSocket.", clientId);
+        var sendGate = new SemaphoreSlim(1, 1);
+        async Task Reply(string message)
+        {
+            using var timeout = CancellationTokenSource.CreateLinkedTokenSource(HttpContext.RequestAborted);
+            timeout.CancelAfter(TimeSpan.FromSeconds(30));
+            try
+            {
+                await sendGate.WaitAsync(timeout.Token);
+                try
+                {
+                    await pusher.Send(message, timeout.Token).WaitAsync(timeout.Token);
+                    if (!pusher.Connected) throw new IOException("The agent connection closed during send.");
+                }
+                finally { sendGate.Release(); }
+            }
+            catch
+            {
+                HttpContext.Abort();
+                throw;
+            }
+        }
 
-        // 下行流：待处理命令 -> JSON-RPC -> 推送
+        // Commands and acknowledgements share one serialized writer.
         using var downSubscription = agent.PendingCommands
             .Map(command => new JsonRpcMessage
             {
@@ -47,13 +68,13 @@ public class AgentChannelController(
                 Params = JToken.FromObject(new { cmd = command.Text })
             })
             .Map(JsonConvert.SerializeObject)
-            .Subscribe(pusher);
+            .Subscribe(Reply);
 
         // 上行流：WebSocket 输入 -> 反序列化 -> Handler
         using var upSubscription = pusher
             .Map(m => JsonConvert.DeserializeObject<JsonRpcMessage>(m))
             .Filter(m => m != null)
-            .Subscribe(async rpcMessage => await HandleRpcMessage(agent, rpcMessage!));
+            .Subscribe(async rpcMessage => await HandleRpcMessage(agent, rpcMessage!, Reply));
 
         try
         {
@@ -65,7 +86,7 @@ public class AgentChannelController(
         }
     }
 
-    private async Task HandleRpcMessage(Agent agent, JsonRpcMessage rpcMessage)
+    private async Task HandleRpcMessage(Agent agent, JsonRpcMessage rpcMessage, Func<string, Task> reply)
     {
         try
         {
@@ -73,7 +94,13 @@ public class AgentChannelController(
             switch (rpcMessage.Method)
             {
                 case "metrics":
-                    await HandleMetricsPipe(agent, p?.ToObject<MetricsAddressModel>());
+                    var metrics = p?.ToObject<MetricsAddressModel>();
+                    await HandleMetricsPipe(agent, metrics);
+                    if (metrics?.Stats != null && !string.IsNullOrWhiteSpace(rpcMessage.Id))
+                        await reply(JsonConvert.SerializeObject(new JsonRpcMessage
+                        {
+                            Id = rpcMessage.Id, Method = "metrics-ack"
+                        }));
                     break;
                 case "stdout-chunk":
                     await HandleOutputChunk(agent, p, true);

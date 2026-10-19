@@ -5,6 +5,7 @@ using System.Text;
 using Aiursoft.StatHub.Data;
 using Aiursoft.StatHub.Entities;
 using Aiursoft.StatHub.SDK.Models;
+using Aiursoft.StatHub.Services.Monitoring;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
@@ -60,6 +61,7 @@ public class MetricsTests : TestBase
         {
             jsonrpc = "2.0",
             method = "metrics",
+            id = "metrics-acceptance",
             @params = metricsPayload
         };
 
@@ -70,8 +72,14 @@ public class MetricsTests : TestBase
             var bytes = Encoding.UTF8.GetBytes(json);
             await ws.SendAsync(new ArraySegment<byte>(bytes), WebSocketMessageType.Text, true, CancellationToken.None);
             
-            // Give the server some time to process the message
-            await Task.Delay(500);
+            using var timeout = new CancellationTokenSource(TimeSpan.FromSeconds(5));
+            var ackBuffer = new byte[4096];
+            var ackResult = await ws.ReceiveAsync(ackBuffer, timeout.Token);
+            var acknowledgement = JsonConvert.DeserializeObject<JsonRpcMessage>(Encoding.UTF8.GetString(ackBuffer, 0, ackResult.Count));
+            Assert.IsNotNull(acknowledgement);
+            Assert.AreEqual("metrics-ack", acknowledgement.Method);
+            Assert.AreEqual("metrics-acceptance", acknowledgement.Id);
+            Assert.IsTrue(GetService<MonitoringCoordinator>().Snapshot().Any(state => state.ClientId == clientId));
             await ws.CloseAsync(WebSocketCloseStatus.NormalClosure, "Closing", CancellationToken.None);
         }
 
