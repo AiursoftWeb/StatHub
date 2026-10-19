@@ -1,5 +1,7 @@
 using Aiursoft.AlertCenter.SDK.Models;
 using Aiursoft.StatHub.Configuration;
+using Aiursoft.StatHub.Data;
+using Aiursoft.StatHub.SDK.Models;
 using Aiursoft.StatHub.Entities.Monitoring;
 using Aiursoft.StatHub.Services.Monitoring;
 using Aiursoft.StatHub.Sqlite;
@@ -18,6 +20,7 @@ public sealed class MonitoringTests
     private RecordingClient _client = null!;
     private MonitoringService _service = null!;
     private readonly SettingsProvider _settings = new();
+    private readonly InMemoryDatabase _agents = new();
 
     [TestInitialize]
     public async Task Initialize()
@@ -30,7 +33,7 @@ public sealed class MonitoringTests
         _service = Service();
     }
 
-    private MonitoringService Service() => new(_db, _coordinator, _settings, _client, _clock, NullLogger<MonitoringService>.Instance);
+    private MonitoringService Service() => new(_db, _coordinator, _settings, _client, _clock, NullLogger<MonitoringService>.Instance, _agents);
 
     [TestCleanup]
     public async Task Cleanup() { await _db.DisposeAsync(); _coordinator.Dispose(); }
@@ -44,6 +47,58 @@ public sealed class MonitoringTests
             _clock.Advance(TimeSpan.FromSeconds(30));
             await Observe(color);
         }
+    }
+
+    [TestMethod]
+    public async Task DescriptionIncludesRuleLiveEvidenceActionsAndRecovery()
+    {
+        var agent = _agents.GetOrAddClient("server-1");
+        agent.CpuCores = 24;
+        agent.TotalRoot = 100;
+        agent.UsedRoot = 40;
+        await agent.Stats.BroadcastAsync(new DstatResult { CpuIdl = 22, Load15M = 25.31 });
+        await Observe("red");
+        await Continue("red", 34);
+        agent.LastUpdate = _clock.GetUtcNow().UtcDateTime.AddMinutes(1);
+        await Continue("red", 1);
+        var content = _client.Created.Single().Content!;
+        Assert.Contains("35 continuous minutes", content);
+        Assert.Contains("CPU busy: 78%", content);
+        Assert.Contains("25.31 across 24", content);
+        Assert.Contains("40.0", content);
+        Assert.Contains("Next steps:", content);
+        Assert.Contains("automatically resolves", content);
+        Assert.Contains("/Dashboard/Details/server-1", content);
+        Assert.IsTrue(content.Length <= 4000);
+    }
+
+    [TestMethod]
+    public async Task OfflineDescriptionDoesNotPresentOldMetricsAsLive()
+    {
+        var agent = _agents.GetOrAddClient("server-1");
+        agent.CpuCores = 24;
+        await Observe("red");
+        _clock.Advance(TimeSpan.FromMinutes(16));
+        await _service.CheckAsync();
+        var content = _client.Created.Single().Content!;
+        Assert.Contains("15 continuous minutes", content);
+        Assert.Contains("No agent reports", content);
+        Assert.Contains("Last report (UTC):", content);
+        Assert.DoesNotContain("CPU busy:", content);
+        Assert.Contains("host reachability", content);
+    }
+
+    [TestMethod]
+    public async Task MissingMetricsAndDisabledRecoveryAreExplained()
+    {
+        var policy = await _service.PolicyAsync();
+        policy.AutoResolveOnGreen = false;
+        await _db.SaveChangesAsync();
+        await Observe("yellow");
+        await Continue("yellow", 35);
+        var content = _client.Created.Single().Content!;
+        Assert.Contains("Live metric details are unavailable", content);
+        Assert.Contains("resolve the incident manually", content);
     }
 
     [TestMethod]
@@ -229,6 +284,7 @@ public sealed class MonitoringTests
     private sealed class RecordingClient(TestClock clock) : IMonitoringIncidentClient
     {
         public List<IncidentDetails> Incidents { get; } = [];
+        public List<CreateIncidentRequest> Created { get; } = [];
         public int Queries { get; private set; }
         public int Escalations { get; private set; }
         public int Resolutions { get; private set; }
@@ -246,6 +302,7 @@ public sealed class MonitoringTests
         }
         public Task<CreateIncidentResponse> CreateAsync(CreateIncidentRequest request)
         {
+            Created.Add(request);
             var incident = Incidents.SingleOrDefault(item => item.ReportId == request.ReportId);
             if (incident == null)
             {
