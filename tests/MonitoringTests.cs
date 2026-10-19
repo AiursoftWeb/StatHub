@@ -52,7 +52,7 @@ public sealed class MonitoringTests
         var policy = await _service.PolicyAsync();
         Assert.IsTrue(policy.IsEnabled && policy.MonitorAllServers && policy.AutoResolveOnGreen);
         Assert.AreEqual(5, policy.Rules.Count);
-        CollectionAssert.AreEquivalent(new[] { "yellow:20:sev3", "yellow:100:sev2", "red:20:sev2", "red:100:sev1", "grey:15:sev2" },
+        CollectionAssert.AreEquivalent(new[] { "yellow:35:sev3", "yellow:100:sev2", "red:35:sev2", "red:100:sev1", "grey:15:sev2" },
             policy.Rules.Select(rule => $"{rule.State}:{rule.DurationMinutes}:{rule.Severity}").ToArray());
         Assert.IsEmpty(policy.Targets);
         _db.AlertMonitoringRules.RemoveRange(policy.Rules);
@@ -67,12 +67,12 @@ public sealed class MonitoringTests
     public async Task SustainedRulesCreateEscalateDeduplicateAndRecreateAfterHumanClosure(string color, string first, string second)
     {
         await Observe(color);
-        await Continue(color, 19);
+        await Continue(color, 34);
         Assert.IsEmpty(_client.Incidents);
         await Continue(color, 1);
         var incident = _client.Incidents.Single();
         Assert.AreEqual(first, incident.Level);
-        await Continue(color, 80);
+        await Continue(color, 65);
         Assert.AreEqual(second, incident.Level);
         Assert.AreEqual(1, _client.Incidents.Count);
         Assert.AreEqual(1, _client.Escalations);
@@ -86,7 +86,7 @@ public sealed class MonitoringTests
     public async Task AnyGreenInBatchResolvesAllOwnedIncidentsAndResetsTimer()
     {
         await Observe("yellow");
-        await Continue("yellow", 20);
+        await Continue("yellow", 35);
         var duplicate = _client.Copy(_client.Incidents.Single());
         var foreign = _client.Copy(duplicate);
         foreign.Context!["source"] = "Different integration";
@@ -94,7 +94,7 @@ public sealed class MonitoringTests
         Assert.AreEqual(2, _client.Resolutions);
         Assert.AreEqual("new", foreign.Status);
         Assert.AreEqual("red", (await _db.AgentMonitoringStates.SingleAsync()).CurrentState);
-        await Continue("red", 19);
+        await Continue("red", 34);
         Assert.AreEqual(3, _client.Incidents.Count);
         await Continue("red", 1);
         Assert.AreEqual(4, _client.Incidents.Count);
@@ -108,9 +108,9 @@ public sealed class MonitoringTests
         policy.AutoResolveOnGreen = false;
         await _db.SaveChangesAsync();
         await Observe("red");
-        await Continue("red", 20);
+        await Continue("red", 35);
         await Observe("green", "red");
-        await Continue("red", 19);
+        await Continue("red", 34);
         Assert.AreEqual(0, _client.Resolutions);
         Assert.AreEqual(1, _client.Incidents.Count);
         Assert.AreEqual("sev2", _client.Incidents.Single().Level);
@@ -120,7 +120,7 @@ public sealed class MonitoringTests
     public async Task RecoveryFailureSurvivesNextColorAndIsRetried()
     {
         await Observe("red");
-        await Continue("red", 20);
+        await Continue("red", 35);
         _client.FailResolution = true;
         await Observe("green", "yellow");
         Assert.IsNotNull((await _db.AgentMonitoringStates.SingleAsync()).PendingRecoveryAtUtc);
@@ -135,7 +135,7 @@ public sealed class MonitoringTests
     {
         _client.LoseCreateResponse = true;
         await Observe("yellow");
-        await Continue("yellow", 21);
+        await Continue("yellow", 36);
         Assert.AreEqual(1, _client.Incidents.Count);
         _client.Incidents.Single().Status = "resolved";
         await Observe("yellow");
@@ -147,7 +147,7 @@ public sealed class MonitoringTests
     public async Task RestartPreservesOfflineDeadlineButDoesNotInventContinuousRed()
     {
         await Observe("red");
-        await Continue("red", 19);
+        await Continue("red", 34);
         _coordinator.Dispose();
         _coordinator = new MonitoringCoordinator();
         _service = Service();
@@ -206,7 +206,7 @@ public sealed class MonitoringTests
     {
         _settings.Value.Enabled = false;
         await Observe("green", "red");
-        await Continue("red", 21);
+        await Continue("red", 36);
         await _service.CheckAsync();
         Assert.AreEqual(0, _client.Queries);
         Assert.IsEmpty(_client.Incidents);
