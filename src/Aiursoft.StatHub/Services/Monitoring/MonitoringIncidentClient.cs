@@ -11,7 +11,7 @@ public interface IMonitoringIncidentClient
     Task<QueryIncidentsResponse> QueryAsync(QueryIncidentsRequest request);
     Task<CreateIncidentResponse> CreateAsync(CreateIncidentRequest request);
     Task<ChangeIncidentSeverityResponse> ChangeSeverityAsync(Guid incidentId, ChangeIncidentSeverityRequest request);
-    Task<ResolveIncidentResponse> ResolveAsync(Guid incidentId, ResolveIncidentRequest request);
+    Task<MitigateIncidentResponse> MitigateAsync(Guid incidentId, MitigateIncidentRequest request);
 }
 
 public sealed class MonitoringIncidentClient(AiurProtocolClient http, IAlertCenterSettingsProvider settingsProvider) : IMonitoringIncidentClient
@@ -34,8 +34,8 @@ public sealed class MonitoringIncidentClient(AiurProtocolClient http, IAlertCent
         await (await GetClientAsync()).QueryIncidentsAsync(request);
     public async Task<CreateIncidentResponse> CreateAsync(CreateIncidentRequest request) =>
         await (await GetClientAsync()).CreateIncidentAsync(request);
-    public async Task<ResolveIncidentResponse> ResolveAsync(Guid incidentId, ResolveIncidentRequest request) =>
-        await (await GetClientAsync()).ResolveIncidentAsync(incidentId, request);
+    public async Task<MitigateIncidentResponse> MitigateAsync(Guid incidentId, MitigateIncidentRequest request) =>
+        await (await GetClientAsync()).MitigateIncidentAsync(incidentId, request);
 
     public async Task<ChangeIncidentSeverityResponse> ChangeSeverityAsync(Guid incidentId, ChangeIncidentSeverityRequest request) =>
         await (await GetClientAsync()).ChangeIncidentSeverityAsync(incidentId, request);

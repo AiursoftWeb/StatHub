@@ -172,7 +172,7 @@ public sealed class MonitoringService(StatHubDbContext db, MonitoringCoordinator
                         // Occurrence time also covers a create completed after a concurrent green report.
                         foreach (var incident in owned.Where(item => item.OccurredAtUtc.UtcDateTime <= state.PendingRecoveryAtUtc.Value).ToList())
                         {
-                            await client.ResolveAsync(incident.IncidentId, new ResolveIncidentRequest
+                            await client.MitigateAsync(incident.IncidentId, new MitigateIncidentRequest
                             {
                                 Version = incident.Version,
                                 Reason = $"StatHub received a healthy sample at {state.PendingRecoveryAtUtc:O}."
@@ -271,8 +271,8 @@ public sealed class MonitoringService(StatHubDbContext db, MonitoringCoordinator
                 "A resource-pressure alert alone does not prove a service outage.";
         }
         var recovery = policy.AutoResolveOnGreen
-            ? "One healthy (green) sample automatically resolves this server's active StatHub incidents."
-            : "Automatic resolution on green is disabled. Verify recovery and resolve the incident manually.";
+            ? "One healthy (green) sample automatically mitigates this server's active StatHub incidents."
+            : "Automatic mitigation on green is disabled. Verify recovery and mitigate the incident manually.";
         var footer = $"\n\nNext steps: {action}\nRecovery: {recovery}\n" +
             $"Server details: {settings.PublicBaseUrl.TrimEnd('/')}/Dashboard/Details/{Uri.EscapeDataString(state.ClientId)}";
         var content = summary + "\nObserved evidence: " + evidence;

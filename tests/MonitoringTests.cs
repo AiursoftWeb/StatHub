@@ -186,7 +186,7 @@ public sealed class MonitoringTests
         await Continue("yellow", 1);
         Assert.AreEqual("sev4", _client.Incidents.Single().Level);
         await Observe("green", "red");
-        Assert.AreEqual("resolved", _client.Incidents.Single().Status);
+        Assert.AreEqual("mitigated", _client.Incidents.Single().Status);
         await Continue("red", 1);
         Assert.AreEqual(1, _client.Incidents.Count);
         await Continue("red", 1);
@@ -211,7 +211,7 @@ public sealed class MonitoringTests
         Assert.Contains("25.31 across 24", content);
         Assert.Contains("40.0", content);
         Assert.Contains("Next steps:", content);
-        Assert.Contains("automatically resolves", content);
+        Assert.Contains("automatically mitigates", content);
         Assert.Contains("/Dashboard/Details/server-1", content);
         Assert.IsTrue(content.Length <= 4000);
     }
@@ -242,7 +242,7 @@ public sealed class MonitoringTests
         await Continue("yellow", 35);
         var content = _client.Created.Single().Content!;
         Assert.Contains("Live metric details are unavailable", content);
-        Assert.Contains("resolve the incident manually", content);
+        Assert.Contains("mitigate the incident manually", content);
     }
 
     [TestMethod]
@@ -275,14 +275,14 @@ public sealed class MonitoringTests
         Assert.AreEqual(second, incident.Level);
         Assert.AreEqual(1, _client.Incidents.Count);
         Assert.AreEqual(1, _client.Escalations);
-        incident.Status = "resolved";
+        incident.Status = "mitigated";
         await Continue(color, 1);
         Assert.AreEqual(2, _client.Incidents.Count);
         Assert.AreEqual(second, _client.Incidents.Last().Level);
     }
 
     [TestMethod]
-    public async Task AnyGreenInBatchResolvesAllOwnedIncidentsAndResetsTimer()
+    public async Task AnyGreenInBatchMitigatesAllOwnedIncidentsAndResetsTimer()
     {
         await Observe("yellow");
         await Continue("yellow", 35);
@@ -290,7 +290,7 @@ public sealed class MonitoringTests
         var foreign = _client.Copy(duplicate);
         foreign.Context!["source"] = "Different integration";
         await Observe("yellow", "green", "red");
-        Assert.AreEqual(2, _client.Resolutions);
+        Assert.AreEqual(2, _client.Mitigations);
         Assert.AreEqual("new", foreign.Status);
         Assert.AreEqual("red", _coordinator.Snapshot().Single().CurrentState);
         await Continue("red", 34);
@@ -310,7 +310,7 @@ public sealed class MonitoringTests
         await Continue("red", 35);
         await Observe("green", "red");
         await Continue("red", 34);
-        Assert.AreEqual(0, _client.Resolutions);
+        Assert.AreEqual(0, _client.Mitigations);
         Assert.AreEqual(1, _client.Incidents.Count);
         Assert.AreEqual("sev2", _client.Incidents.Single().Level);
     }
@@ -320,26 +320,28 @@ public sealed class MonitoringTests
     {
         await Observe("red");
         await Continue("red", 35);
-        _client.FailResolution = true;
+        _client.FailMitigation = true;
         await Observe("green", "yellow");
         Assert.IsNotNull(_coordinator.Snapshot().Single().PendingRecoveryAtUtc);
-        _client.FailResolution = false;
+        _client.FailMitigation = false;
         await _service.CheckAsync();
-        Assert.AreEqual("resolved", _client.Incidents.Single().Status);
+        Assert.AreEqual("mitigated", _client.Incidents.Single().Status);
         Assert.IsNull(_coordinator.Snapshot().Single().PendingRecoveryAtUtc);
     }
 
     [TestMethod]
-    public async Task LostCreateResponseDoesNotDuplicateAndAllowsRecreation()
+    [DataRow("mitigated")]
+    [DataRow("resolved")]
+    public async Task LostCreateResponseDoesNotDuplicateAndAllowsRecreation(string inactiveStatus)
     {
         _client.LoseCreateResponse = true;
         await Observe("yellow");
         await Continue("yellow", 36);
         Assert.AreEqual(1, _client.Incidents.Count);
-        _client.Incidents.Single().Status = "resolved";
+        _client.Incidents.Single().Status = inactiveStatus;
         await Observe("yellow");
         Assert.AreEqual(2, _client.Incidents.Count);
-        Assert.AreEqual(1, _client.Incidents.Count(item => item.Status != "resolved"));
+        Assert.AreEqual(1, _client.Incidents.Count(item => item.Status is not ("mitigated" or "resolved")));
     }
 
     [TestMethod]
@@ -381,7 +383,7 @@ public sealed class MonitoringTests
         policy.Targets.Single().IsExcluded = true;
         await _db.SaveChangesAsync();
         await Observe("green");
-        Assert.AreEqual(0, _client.Resolutions);
+        Assert.AreEqual(0, _client.Mitigations);
         await _service.ObserveAsync("new-server", "New server", ["yellow"]);
         await _service.CheckAsync();
         Assert.AreEqual(2, _client.Incidents.Count);
@@ -410,22 +412,22 @@ public sealed class MonitoringTests
         await _db.SaveChangesAsync();
         await _service.ObserveAsync("selected", "selected", ["green"]);
         await _service.CheckAsync();
-        Assert.AreEqual(0, _client.Resolutions);
+        Assert.AreEqual(0, _client.Mitigations);
         Assert.AreEqual(monitorAll ? 3 : 2, _client.Incidents.Count);
         Assert.IsFalse(await _service.ObserveAsync("selected", "selected", ["red", "green"]));
         Assert.IsTrue(await _service.ObserveAsync("excluded", "excluded", ["green"]));
         await _service.CheckAsync();
-        Assert.AreEqual(1, _client.Resolutions);
+        Assert.AreEqual(1, _client.Mitigations);
 
         policy.Targets.Single(target => target.ClientId == "selected").IsExcluded = false;
         await _db.SaveChangesAsync();
         await _service.ObserveAsync("selected", "selected", ["green"]);
         await _service.CheckAsync();
-        Assert.AreEqual(2, _client.Resolutions);
+        Assert.AreEqual(2, _client.Mitigations);
     }
 
     [TestMethod]
-    public async Task MissingValidSamplesNeverResetOfflineDeadlineOrResolveIncidents()
+    public async Task MissingValidSamplesNeverResetOfflineDeadlineOrMitigateIncidents()
     {
         await Observe("red");
         var lastReport = _coordinator.Snapshot().Single().LastReportedAtUtc;
@@ -435,7 +437,7 @@ public sealed class MonitoringTests
         await _service.CheckAsync();
         Assert.AreEqual("grey", _coordinator.Snapshot().Single().CurrentState);
         Assert.AreEqual(1, _client.Incidents.Count);
-        Assert.AreEqual(0, _client.Resolutions);
+        Assert.AreEqual(0, _client.Mitigations);
     }
 
     [TestMethod]
@@ -495,13 +497,13 @@ public sealed class MonitoringTests
         await _service.ObserveAsync("server-1", "Server", ["green", "red"]).WaitAsync(TimeSpan.FromSeconds(1));
         release.SetResult();
         await sync;
-        Assert.AreEqual("resolved", _client.Incidents.Single().Status);
+        Assert.AreEqual("mitigated", _client.Incidents.Single().Status);
         Assert.AreEqual("red", _coordinator.Snapshot().Single().CurrentState);
         Assert.IsNull(_coordinator.Snapshot().Single().PendingRecoveryAtUtc);
     }
 
     [TestMethod]
-    public async Task GreenDuringCreateResolvesTheIncidentEvenIfItsResponseArrivesLater()
+    public async Task GreenDuringCreateMitigatesTheIncidentEvenIfItsResponseArrivesLater()
     {
         await Observe("red");
         await Continue("red", 34);
@@ -514,12 +516,12 @@ public sealed class MonitoringTests
         await Continue("red", 1);
         Assert.AreEqual(1, _client.Incidents.Count);
         await _service.CheckAsync();
-        Assert.AreEqual("resolved", _client.Incidents.Single().Status);
-        Assert.AreEqual(1, _client.Resolutions);
+        Assert.AreEqual("mitigated", _client.Incidents.Single().Status);
+        Assert.AreEqual(1, _client.Mitigations);
     }
 
     [TestMethod]
-    public async Task RestartReconcilesExistingIncidentsWithoutRecreatingOrResolvingBeforeObservation()
+    public async Task RestartReconcilesExistingIncidentsWithoutRecreatingOrMitigatingBeforeObservation()
     {
         await Observe("red");
         await Continue("red", 35);
@@ -533,7 +535,7 @@ public sealed class MonitoringTests
         await Continue("red", 35);
         Assert.AreEqual(1, _client.Incidents.Count);
         await Observe("green");
-        Assert.AreEqual("resolved", _client.Incidents.Single().Status);
+        Assert.AreEqual("mitigated", _client.Incidents.Single().Status);
     }
 
     private sealed class TestClock : TimeProvider
@@ -555,16 +557,16 @@ public sealed class MonitoringTests
         public List<CreateIncidentRequest> Created { get; } = [];
         public int Queries { get; private set; }
         public int Escalations { get; private set; }
-        public int Resolutions { get; private set; }
+        public int Mitigations { get; private set; }
         public Func<Task>? BeforeQuery { get; set; }
         public Func<Task>? BeforeCreate { get; set; }
-        public bool FailResolution { get; set; }
+        public bool FailMitigation { get; set; }
         public bool LoseCreateResponse { get; set; }
         public async Task<QueryIncidentsResponse> QueryAsync(QueryIncidentsRequest request)
         {
             Queries++;
             if (BeforeQuery != null) await BeforeQuery();
-            var active = Incidents.Where(item => item.Status != "resolved").ToList();
+            var active = Incidents.Where(item => item.Status is not ("mitigated" or "resolved")).ToList();
             return new QueryIncidentsResponse
             {
                 Page = request.Page, PageSize = request.PageSize, TotalCount = active.Count,
@@ -586,14 +588,14 @@ public sealed class MonitoringTests
             if (LoseCreateResponse) { LoseCreateResponse = false; throw new HttpRequestException("Lost response"); }
             return new CreateIncidentResponse { IncidentId = incident.IncidentId };
         }
-        public Task<ResolveIncidentResponse> ResolveAsync(Guid incidentId, ResolveIncidentRequest request)
+        public Task<MitigateIncidentResponse> MitigateAsync(Guid incidentId, MitigateIncidentRequest request)
         {
-            if (FailResolution) throw new HttpRequestException("Offline");
+            if (FailMitigation) throw new HttpRequestException("Offline");
             var incident = Incidents.Single(item => item.IncidentId == incidentId);
             Assert.AreEqual(incident.Version, request.Version);
-            incident.Status = "resolved";
-            Resolutions++;
-            return Task.FromResult(new ResolveIncidentResponse { IncidentId = incidentId });
+            incident.Status = "mitigated";
+            Mitigations++;
+            return Task.FromResult(new MitigateIncidentResponse { IncidentId = incidentId });
         }
         public Task<ChangeIncidentSeverityResponse> ChangeSeverityAsync(Guid incidentId, ChangeIncidentSeverityRequest request)
         {
