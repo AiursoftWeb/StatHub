@@ -5,8 +5,6 @@ using Aiursoft.StatHub.Client.Services;
 using Aiursoft.StatHub.SDK;
 using Aiursoft.StatHub.SDK.AddressModels;
 using Aiursoft.StatHub.SDK.Models;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Logging.Abstractions;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
