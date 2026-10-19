@@ -18,17 +18,29 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="Allow User Adjust Nickname" xml:space="preserve">
+      <data name="AlertCenter API key" xml:space="preserve">
+    <value>Κλειδί API του AlertCenter</value>
+  </data>
+  <data name="AlertCenter endpoint" xml:space="preserve">
+    <value>Τελικό σημείο του AlertCenter</value>
+  </data>
+  <data name="Allow User Adjust Nickname" xml:space="preserve">
     <value>Επιτρέψτε στον Χρήστη να Τροποποιήσει το Κωδικό Όνομα</value>
   </data>
   <data name="Allow users to adjust their nickname in the profile management page." xml:space="preserve">
     <value>Επιτρέψτε στους χρήστες να τροποποιήσουν το ψευδώνυμό τους στη σελίδα διαχείρισης προφίλ.</value>
+  </data>
+  <data name="An application API key with query, create, change severity, and resolve permissions." xml:space="preserve">
+    <value>Ένα κλειδί API εφαρμογής με δικαιώματα αναζήτησης, δημιουργίας, αλλαγής σοβαρότητας και επίλυσης.</value>
   </data>
   <data name="Brand Home URL" xml:space="preserve">
     <value>URL Αρχικής Σελίδας Μάρκας</value>
   </data>
   <data name="Brand Name" xml:space="preserve">
     <value>Όνομα Εταιρείας</value>
+  </data>
+  <data name="Enable AlertCenter synchronization" xml:space="preserve">
+    <value>Ενεργοποίηση συγχρονισμού AlertCenter</value>
   </data>
   <data name="ICP Number" xml:space="preserve">
     <value>Αριθμός ICP</value>
@@ -39,8 +51,17 @@
   <data name="Project Name" xml:space="preserve">
     <value>Όνομα Έργου</value>
   </data>
+  <data name="StatHub public base URL" xml:space="preserve">
+    <value>Δημόσιο βασικό URL του StatHub</value>
+  </data>
+  <data name="Synchronize server health incidents with AlertCenter." xml:space="preserve">
+    <value>Συγχρονίστε τα περιστατικά υγείας του διακομιστή με το AlertCenter.</value>
+  </data>
   <data name="The brand name of the company or project. E.g. Aiursoft." xml:space="preserve">
     <value>Το όνομα της εταιρείας ή του έργου. Π.χ. Aiursoft.</value>
+  </data>
+  <data name="The HTTP(S) base URL of AlertCenter." xml:space="preserve">
+    <value>Η βασική διεύθυνση URL HTTP(S) του AlertCenter.</value>
   </data>
   <data name="The ICP license number for China mainland users. Leave empty to hide." xml:space="preserve">
     <value>Ο αριθμός άδειας ICP για χρήστες της κυρίως Κίνας. Αφήστε κενό για να κρυφτεί.</value>
@@ -50,6 +71,9 @@
   </data>
   <data name="The name of the project displayed in the frontend." xml:space="preserve">
     <value>Το όνομα του έργου που εμφανίζεται στην εμφάνιση της εφαρμογής.</value>
+  </data>
+  <data name="The public base URL of this StatHub instance, used in incident links." xml:space="preserve">
+    <value>Η δημόσια βασική διεύθυνση URL αυτής της εγκατάστασης του StatHub, που χρησιμοποιείται στους συνδέσμους συμβάντων.</value>
   </data>
   <data name="The URL of the company or project. E.g. https://www.aiursoft.com" xml:space="preserve">
     <value>Η διεύθυνση URL της εταιρείας ή του έργου. Π.χ. https://www.aiursoft.com</value>

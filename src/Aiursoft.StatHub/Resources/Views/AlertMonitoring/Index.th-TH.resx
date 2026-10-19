@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="A green sample resets every timer. It also resolves this server&apos;s incidents when automatic resolution on green is enabled, even if green appears only briefly." xml:space="preserve">
+    <value>ตัวอย่างสถานะสีเขียวจะรีเซ็ตตัวจับเวลาทั้งหมด และยังปิดเหตุขัดข้องของเซิร์ฟเวอร์นี้ด้วย หากเปิดใช้การปิดเหตุขัดข้องอัตโนมัติเมื่อสถานะเป็นสีเขียว แม้สถานะสีเขียวจะปรากฏขึ้นเพียงชั่วครู่ก็ตาม</value>
+  </data>
+  <data name="A yellow-or-worse rule set to 35 minutes would trigger. A red-or-worse rule set to 35 minutes would not. The rules you save determine the alert severity." xml:space="preserve">
+    <value>กฎระดับเหลืองหรือรุนแรงกว่าที่ตั้งไว้ 35 นาทีจะทำงาน ส่วนกฎระดับแดงหรือรุนแรงกว่าที่ตั้งไว้ 35 นาทีจะไม่ทำงาน กฎที่คุณบันทึกไว้จะเป็นตัวกำหนดระดับความรุนแรงของการแจ้งเตือน</value>
+  </data>
+  <data name="Add rule" xml:space="preserve">
+    <value>เพิ่มกฎ</value>
+  </data>
+  <data name="AlertCenter monitoring" xml:space="preserve">
+    <value>การตรวจสอบ AlertCenter</value>
+  </data>
+  <data name="Configure the AlertCenter connection in Global Settings. Environment variables can override those settings. Monitoring rules do not store credentials." xml:space="preserve">
+    <value>กำหนดค่าการเชื่อมต่อ AlertCenter ในการตั้งค่าทั่วไป ตัวแปรสภาพแวดล้อมสามารถลบล้างการตั้งค่าเหล่านั้นได้ กฎการตรวจสอบไม่จัดเก็บข้อมูลรับรอง</value>
+  </data>
+  <data name="Connection settings" xml:space="preserve">
+    <value>การตั้งค่าการเชื่อมต่อ</value>
+  </data>
+  <data name="Continuous minutes" xml:space="preserve">
+    <value>นาทีต่อเนื่อง</value>
+  </data>
+  <data name="Counts red and grey. Yellow or green resets this timer." xml:space="preserve">
+    <value>นับสีแดงและสีเทา สีเหลืองหรือสีเขียวรีเซ็ตตัวจับเวลานี้</value>
+  </data>
+  <data name="Counts time offline. Any live color resets this timer. Grey starts after one minute without a valid report." xml:space="preserve">
+    <value>นับเวลาที่ออฟไลน์ สีใดๆ ที่แสดงสถานะออนไลน์จะรีเซ็ตตัวจับเวลานี้ สถานะสีเทาจะเริ่มขึ้นเมื่อไม่มีรายงานที่ถูกต้องเป็นเวลาหนึ่งนาที</value>
+  </data>
+  <data name="Counts yellow, red and grey. Only green resets this timer." xml:space="preserve">
+    <value>นับสีเหลือง สีแดง และสีเทา เฉพาะสีเขียวเท่านั้นที่จะรีเซ็ตตัวจับเวลานี้</value>
+  </data>
+  <data name="Delete rule" xml:space="preserve">
+    <value>ลบกฎ</value>
+  </data>
+  <data name="Enable monitoring policy" xml:space="preserve">
+    <value>เปิดใช้งานนโยบายการตรวจสอบ</value>
+  </data>
+  <data name="Enabled" xml:space="preserve">
+    <value>เปิดใช้งาน</value>
+  </data>
+  <data name="Example: alternating colors" xml:space="preserve">
+    <value>ตัวอย่าง: สลับสี</value>
+  </data>
+  <data name="Exclude" xml:space="preserve">
+    <value>ยกเว้น</value>
+  </data>
+  <data name="Exclude server" xml:space="preserve">
+    <value>ยกเว้นเซิร์ฟเวอร์</value>
+  </data>
+  <data name="Excluded servers always take precedence. When all servers are monitored, individual inclusions are unnecessary." xml:space="preserve">
+    <value>เซิร์ฟเวอร์ที่ยกเว้นจะมีลำดับความสำคัญสูงกว่าเสมอ หากตรวจสอบเซิร์ฟเวอร์ทั้งหมด ก็ไม่จำเป็นต้องระบุเซิร์ฟเวอร์ที่จะรวมไว้เป็นรายเครื่อง</value>
+  </data>
+  <data name="From most to least severe" xml:space="preserve">
+    <value>เรียงจากรุนแรงที่สุดไปน้อยที่สุด</value>
+  </data>
+  <data name="Getting worse keeps a timer running. Improving below its threshold resets it." xml:space="preserve">
+    <value>เมื่อสถานะแย่ลง ตัวจับเวลาจะยังคงทำงานอยู่ แต่เมื่อสถานะดีขึ้นจนต่ำกว่าเกณฑ์ที่กำหนด ตัวจับเวลาจะถูกรีเซ็ต</value>
+  </data>
+  <data name="Green" xml:space="preserve">
+    <value>เขียว</value>
+  </data>
+  <data name="Grey (offline)" xml:space="preserve">
+    <value>สีเทา (ออฟไลน์)</value>
+  </data>
+  <data name="Grey only" xml:space="preserve">
+    <value>สีเทาเท่านั้น</value>
+  </data>
+  <data name="How alert timers work" xml:space="preserve">
+    <value>การทำงานของตัวจับเวลาการแจ้งเตือน</value>
+  </data>
+  <data name="Immediately resolve all incidents managed by this integration for a server when a healthy sample is received" xml:space="preserve">
+    <value>แก้ไขปัญหาทั้งหมดที่การเชื่อมต่อนี้จัดการอยู่สำหรับเซิร์ฟเวอร์ทันทีเมื่อได้รับตัวอย่างการทำงานปกติ</value>
+  </data>
+  <data name="Include" xml:space="preserve">
+    <value>รวม</value>
+  </data>
+  <data name="Include server" xml:space="preserve">
+    <value>รวมเซิร์ฟเวอร์</value>
+  </data>
+  <data name="Last report" xml:space="preserve">
+    <value>รายงานล่าสุด</value>
+  </data>
+  <data name="Matching more rules escalates the existing incident when needed; it does not create another incident or automatically lower its severity." xml:space="preserve">
+    <value>เมื่อเข้าเงื่อนไขของกฎเพิ่มเติม ระบบจะยกระดับเหตุการณ์เดิมตามความจำเป็น โดยจะไม่สร้างเหตุการณ์ใหม่หรือปรับลดระดับความรุนแรงโดยอัตโนมัติ</value>
+  </data>
+  <data name="Monitor all servers, including newly connected servers" xml:space="preserve">
+    <value>ตรวจสอบเซิร์ฟเวอร์ทั้งหมด รวมถึงเซิร์ฟเวอร์ที่เชื่อมต่อใหม่</value>
+  </data>
+  <data name="Monitoring policy" xml:space="preserve">
+    <value>นโยบายการตรวจสอบ</value>
+  </data>
+  <data name="One incident, with recovery" xml:space="preserve">
+    <value>เหตุการณ์เดียว พร้อมการกู้คืน</value>
+  </data>
+  <data name="Red" xml:space="preserve">
+    <value>สีแดง</value>
+  </data>
+  <data name="Red or worse" xml:space="preserve">
+    <value>สีแดงหรือแย่กว่า</value>
+  </data>
+  <data name="Rules measure how long a server stays at or above a health threshold. Each threshold has its own timer." xml:space="preserve">
+    <value>กฎจะวัดระยะเวลาที่เซิร์ฟเวอร์มีสถานะอยู่ที่ระดับเกณฑ์สุขภาพหรือสูงกว่า แต่ละเกณฑ์จะมีตัวจับเวลาของตัวเอง</value>
+  </data>
+  <data name="Save policy and server selection" xml:space="preserve">
+    <value>บันทึกนโยบายและการเลือกเซิร์ฟเวอร์</value>
+  </data>
+  <data name="Save rule" xml:space="preserve">
+    <value>บันทึกกฎ</value>
+  </data>
+  <data name="Server" xml:space="preserve">
+    <value>เซิร์ฟเวอร์</value>
+  </data>
+  <data name="Server selection" xml:space="preserve">
+    <value>การเลือกเซิร์ฟเวอร์</value>
+  </data>
+  <data name="Severity" xml:space="preserve">
+    <value>ระดับความรุนแรง</value>
+  </data>
+  <data name="State" xml:space="preserve">
+    <value>สถานะ</value>
+  </data>
+  <data name="Sustained state rules" xml:space="preserve">
+    <value>กฎสำหรับสถานะที่คงอยู่อย่างต่อเนื่อง</value>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>ไม่ทราบ</value>
+  </data>
+  <data name="Yellow" xml:space="preserve">
+    <value>เหลือง</value>
+  </data>
+  <data name="Yellow for 15 minutes, then red for 10, then yellow for 10: yellow or worse has lasted 35 minutes. Red lasted only 10 minutes and its timer reset when yellow returned." xml:space="preserve">
+    <value>สีเหลืองนาน 15 นาที จากนั้นสีแดงนาน 10 นาที แล้วสีเหลืองอีก 10 นาที: สภาวะสีเหลืองหรือแย่กว่านั้นได้ดำเนินต่อเนื่องมาแล้ว 35 นาที สภาวะสีแดงดำเนินอยู่เพียง 10 นาที และตัวจับเวลาของมันถูกรีเซ็ตเมื่อกลับมาเป็นสีเหลืองอีกครั้ง</value>
+  </data>
+  <data name="Yellow or worse" xml:space="preserve">
+    <value>สีเหลืองหรือแย่กว่านั้น</value>
+  </data>
+  <data name="Zero minutes means immediately. The most severe matching rule wins. See the guide for how severity thresholds accumulate." xml:space="preserve">
+    <value>0 นาทีหมายถึงดำเนินการทันที กฎที่ตรงกันและมีระดับความรุนแรงสูงสุดจะมีผล โปรดดูคู่มือเกี่ยวกับวิธีการสะสมเกณฑ์ระดับความรุนแรง</value>
+  </data>
+
+</root>

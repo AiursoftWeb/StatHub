@@ -27,6 +27,9 @@
   <data name="Allows assigning or removing roles for any user." xml:space="preserve">
     <value>모든 사용자에게 역할을 할당하거나 제거할 수 있습니다.</value>
   </data>
+  <data name="Allows managing monitoring rules and server inclusion and exclusion for AlertCenter." xml:space="preserve">
+    <value>AlertCenter의 모니터링 규칙과 서버 포함 및 제외를 관리할 수 있습니다.</value>
+  </data>
   <data name="Allows modification of role names and their assigned permissions." xml:space="preserve">
     <value>역할 이름과 할당된 권한을 수정할 수 있습니다.</value>
   </data>
@@ -83,6 +86,9 @@
   </data>
   <data name="Grants permission to restart the application instance. May cause availability interruptions but all settings and cache will be reloaded." xml:space="preserve">
     <value>애플리케이션 인스턴스를 재시작할 수 있는 권한을 부여합니다. 가용성 중단을 초래할 수 있으나 모든 설정과 캐시가 다시 로드됩니다.</value>
+  </data>
+  <data name="Manage AlertCenter integration" xml:space="preserve">
+    <value>AlertCenter 연동 관리</value>
   </data>
   <data name="Manage Global Settings" xml:space="preserve">
     <value>전역 설정 관리</value>

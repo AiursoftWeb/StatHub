@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="A green sample resets every timer. It also resolves this server&apos;s incidents when automatic resolution on green is enabled, even if green appears only briefly." xml:space="preserve">
+    <value>グリーン状態の検出ではすべてのタイマーがリセットされます。また、グリーン時の自動解決が有効な場合、グリーンが一時的に出現しただけであっても、このサーバーのインシデントが解決されます。</value>
+  </data>
+  <data name="A yellow-or-worse rule set to 35 minutes would trigger. A red-or-worse rule set to 35 minutes would not. The rules you save determine the alert severity." xml:space="preserve">
+    <value>「黄色以上」のルールを35分に設定すると発動します。「赤以上」のルールを35分に設定しても発動しません。保存したルールによって、アラートの重大度が決まります。</value>
+  </data>
+  <data name="Add rule" xml:space="preserve">
+    <value>ルールを追加</value>
+  </data>
+  <data name="AlertCenter monitoring" xml:space="preserve">
+    <value>AlertCenter の監視</value>
+  </data>
+  <data name="Configure the AlertCenter connection in Global Settings. Environment variables can override those settings. Monitoring rules do not store credentials." xml:space="preserve">
+    <value>グローバル設定でAlertCenterとの接続を設定します。環境変数でこれらの設定を上書きできます。監視ルールには認証情報は保存されません。</value>
+  </data>
+  <data name="Connection settings" xml:space="preserve">
+    <value>接続設定</value>
+  </data>
+  <data name="Continuous minutes" xml:space="preserve">
+    <value>連続時間（分）</value>
+  </data>
+  <data name="Counts red and grey. Yellow or green resets this timer." xml:space="preserve">
+    <value>レッドとグレイをカウントします。イエローまたはグリーンでこのタイマーがリセットされます。</value>
+  </data>
+  <data name="Counts time offline. Any live color resets this timer. Grey starts after one minute without a valid report." xml:space="preserve">
+    <value>オフライン状態の時間を計測します。オンライン状態を示す色に変わると、このタイマーはリセットされます。有効なレポートが1分間届かないと、グレーになります。</value>
+  </data>
+  <data name="Counts yellow, red and grey. Only green resets this timer." xml:space="preserve">
+    <value>黄色、赤色、灰色の時間をカウントします。緑色になった場合のみ、このタイマーがリセットされます。</value>
+  </data>
+  <data name="Delete rule" xml:space="preserve">
+    <value>ルールを削除</value>
+  </data>
+  <data name="Enable monitoring policy" xml:space="preserve">
+    <value>監視ポリシーを有効にする</value>
+  </data>
+  <data name="Enabled" xml:space="preserve">
+    <value>有効化</value>
+  </data>
+  <data name="Example: alternating colors" xml:space="preserve">
+    <value>例: 交互の色</value>
+  </data>
+  <data name="Exclude" xml:space="preserve">
+    <value>除外</value>
+  </data>
+  <data name="Exclude server" xml:space="preserve">
+    <value>サーバーを除外</value>
+  </data>
+  <data name="Excluded servers always take precedence. When all servers are monitored, individual inclusions are unnecessary." xml:space="preserve">
+    <value>除外されたサーバーは常に優先されます。すべてのサーバーが監視対象になっている場合、個別の含め指定は不要です。</value>
+  </data>
+  <data name="From most to least severe" xml:space="preserve">
+    <value>深刻度の高い順</value>
+  </data>
+  <data name="Getting worse keeps a timer running. Improving below its threshold resets it." xml:space="preserve">
+    <value>状態が悪化してもタイマーは継続します。しきい値を下回るまで改善すると、タイマーはリセットされます。</value>
+  </data>
+  <data name="Green" xml:space="preserve">
+    <value>正常</value>
+  </data>
+  <data name="Grey (offline)" xml:space="preserve">
+    <value>グレー（オフライン）</value>
+  </data>
+  <data name="Grey only" xml:space="preserve">
+    <value>グレーのみ</value>
+  </data>
+  <data name="How alert timers work" xml:space="preserve">
+    <value>アラートタイマーの仕組み</value>
+  </data>
+  <data name="Immediately resolve all incidents managed by this integration for a server when a healthy sample is received" xml:space="preserve">
+    <value>健全なサンプルを受信した場合、この統合が管理するサーバーのすべてのインシデントを即座に解決します</value>
+  </data>
+  <data name="Include" xml:space="preserve">
+    <value>含める</value>
+  </data>
+  <data name="Include server" xml:space="preserve">
+    <value>サーバーを含める</value>
+  </data>
+  <data name="Last report" xml:space="preserve">
+    <value>最終報告</value>
+  </data>
+  <data name="Matching more rules escalates the existing incident when needed; it does not create another incident or automatically lower its severity." xml:space="preserve">
+    <value>より多くのルールに一致すると、必要に応じて既存のインシデントがエスカレーションされます。別のインシデントを作成したり、重要度を自動的に下げたりすることはありません。</value>
+  </data>
+  <data name="Monitor all servers, including newly connected servers" xml:space="preserve">
+    <value>新たに接続されたサーバーを含む、すべてのサーバーを監視する</value>
+  </data>
+  <data name="Monitoring policy" xml:space="preserve">
+    <value>監視ポリシー</value>
+  </data>
+  <data name="One incident, with recovery" xml:space="preserve">
+    <value>1件のインシデント、復旧あり</value>
+  </data>
+  <data name="Red" xml:space="preserve">
+    <value>赤</value>
+  </data>
+  <data name="Red or worse" xml:space="preserve">
+    <value>赤以上</value>
+  </data>
+  <data name="Rules measure how long a server stays at or above a health threshold. Each threshold has its own timer." xml:space="preserve">
+    <value>ルールでは、サーバーの状態が健全性のしきい値以上に保たれている時間を計測します。しきい値ごとに個別のタイマーがあります。</value>
+  </data>
+  <data name="Save policy and server selection" xml:space="preserve">
+    <value>ポリシーとサーバー選択を保存</value>
+  </data>
+  <data name="Save rule" xml:space="preserve">
+    <value>ルールを保存</value>
+  </data>
+  <data name="Server" xml:space="preserve">
+    <value>サーバー</value>
+  </data>
+  <data name="Server selection" xml:space="preserve">
+    <value>サーバー選択</value>
+  </data>
+  <data name="Severity" xml:space="preserve">
+    <value>重大度</value>
+  </data>
+  <data name="State" xml:space="preserve">
+    <value>状態</value>
+  </data>
+  <data name="Sustained state rules" xml:space="preserve">
+    <value>持続状態ルール</value>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>不明</value>
+  </data>
+  <data name="Yellow" xml:space="preserve">
+    <value>黄色</value>
+  </data>
+  <data name="Yellow for 15 minutes, then red for 10, then yellow for 10: yellow or worse has lasted 35 minutes. Red lasted only 10 minutes and its timer reset when yellow returned." xml:space="preserve">
+    <value>イエローが15分間、次にレッドが10分間、その後イエローが10分間：イエローまたはそれ以下の状態が35分間続いています。レッドはわずか10分間しか続かず、イエローに戻った時点でそのタイマーはリセットされました。</value>
+  </data>
+  <data name="Yellow or worse" xml:space="preserve">
+    <value>イエローまたはそれ以上</value>
+  </data>
+  <data name="Zero minutes means immediately. The most severe matching rule wins. See the guide for how severity thresholds accumulate." xml:space="preserve">
+    <value>0分は即時を意味します。該当するルールの中で最も重大度の高いものが適用されます。重大度のしきい値がどのように累積するかについては、ガイドを参照してください。</value>
+  </data>
+
+</root>

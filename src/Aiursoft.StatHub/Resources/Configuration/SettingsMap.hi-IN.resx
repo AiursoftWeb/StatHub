@@ -18,17 +18,29 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="Allow User Adjust Nickname" xml:space="preserve">
+      <data name="AlertCenter API key" xml:space="preserve">
+    <value>AlertCenter API कुंजी</value>
+  </data>
+  <data name="AlertCenter endpoint" xml:space="preserve">
+    <value>AlertCenter endpoint</value>
+  </data>
+  <data name="Allow User Adjust Nickname" xml:space="preserve">
     <value>उपयोगकर्ता नाम समायोजित करने की अनुमति दें</value>
   </data>
   <data name="Allow users to adjust their nickname in the profile management page." xml:space="preserve">
     <value>प्रोफ़ाइल प्रबंधन पृष्ठ पर उपयोगकर्ताओं को अपना निकनेम समायोजित करने की अनुमति दें।</value>
+  </data>
+  <data name="An application API key with query, create, change severity, and resolve permissions." xml:space="preserve">
+    <value>एक ऐप्लिकेशन API कुंजी जिसमें क्वेरी, क्रिएट, गंभीरता परिवर्तन और रिज़ॉल्व की अनुमतियाँ हैं।</value>
   </data>
   <data name="Brand Home URL" xml:space="preserve">
     <value>ब्रांड होम यूआरएल</value>
   </data>
   <data name="Brand Name" xml:space="preserve">
     <value>ब्रांड नाम</value>
+  </data>
+  <data name="Enable AlertCenter synchronization" xml:space="preserve">
+    <value>AlertCenter सिंक सक्षम करें</value>
   </data>
   <data name="ICP Number" xml:space="preserve">
     <value>आईसीपी नंबर</value>
@@ -39,8 +51,17 @@
   <data name="Project Name" xml:space="preserve">
     <value>प्रोजेक्ट नाम</value>
   </data>
+  <data name="StatHub public base URL" xml:space="preserve">
+    <value>StatHub का सार्वजनिक बेस URL</value>
+  </data>
+  <data name="Synchronize server health incidents with AlertCenter." xml:space="preserve">
+    <value>सर्वर की स्वास्थ्य संबंधी घटनाओं को AlertCenter के साथ सिंक्रनाइज़ करें।</value>
+  </data>
   <data name="The brand name of the company or project. E.g. Aiursoft." xml:space="preserve">
     <value>कंपनी या प्रोजेक्ट का ब्रांड नाम। उदाहरण: Aiursoft।</value>
+  </data>
+  <data name="The HTTP(S) base URL of AlertCenter." xml:space="preserve">
+    <value>AlertCenter का HTTP(S) बेस URL।</value>
   </data>
   <data name="The ICP license number for China mainland users. Leave empty to hide." xml:space="preserve">
     <value>चीन मुख्यभूमि के उपयोगकर्ताओं के लिए ICP लाइसेंस संख्या। छिपाने के लिए खाली छोड़ें।</value>
@@ -50,6 +71,9 @@
   </data>
   <data name="The name of the project displayed in the frontend." xml:space="preserve">
     <value>फ्रंटएंड में दिखाए जाने वाले प्रोजेक्ट का नाम।</value>
+  </data>
+  <data name="The public base URL of this StatHub instance, used in incident links." xml:space="preserve">
+    <value>इस StatHub इंस्टेंस का सार्वजनिक बेस URL, जो इन्सिडेंट लिंक में उपयोग किया जाता है।</value>
   </data>
   <data name="The URL of the company or project. E.g. https://www.aiursoft.com" xml:space="preserve">
     <value>कंपनी या प्रोजेक्ट का URL। उदाहरण: https://www.aiursoft.com</value>

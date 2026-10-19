@@ -42,6 +42,9 @@
   <data name="Aiursoft Template" xml:space="preserve">
     <value>قالب Aiursoft</value>
   </data>
+  <data name="AlertCenter monitoring" xml:space="preserve">
+    <value>مراقبة AlertCenter</value>
+  </data>
   <data name="Anonymous" xml:space="preserve">
     <value>مجهول</value>
   </data>
@@ -125,6 +128,9 @@
   </data>
   <data name="Manage" xml:space="preserve">
     <value>إدارة</value>
+  </data>
+  <data name="Monitoring" xml:space="preserve">
+    <value>المراقبة</value>
   </data>
   <data name="Not Found" xml:space="preserve">
     <value>غير موجود</value>

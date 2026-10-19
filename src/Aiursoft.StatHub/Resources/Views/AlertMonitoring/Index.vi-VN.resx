@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="A green sample resets every timer. It also resolves this server&apos;s incidents when automatic resolution on green is enabled, even if green appears only briefly." xml:space="preserve">
+    <value>Một mẫu xanh sẽ đặt lại tất cả bộ hẹn giờ. Mẫu này cũng giải quyết các sự cố của máy chủ này khi tính năng tự động giải quyết sự cố khi có trạng thái xanh được bật, ngay cả khi trạng thái xanh chỉ xuất hiện trong thời gian ngắn.</value>
+  </data>
+  <data name="A yellow-or-worse rule set to 35 minutes would trigger. A red-or-worse rule set to 35 minutes would not. The rules you save determine the alert severity." xml:space="preserve">
+    <value>Một quy tắc vàng trở lên được đặt ở 35 phút sẽ kích hoạt. Một quy tắc đỏ trở lên được đặt ở 35 phút sẽ không kích hoạt. Các quy tắc bạn lưu sẽ xác định mức độ nghiêm trọng của cảnh báo.</value>
+  </data>
+  <data name="Add rule" xml:space="preserve">
+    <value>Thêm quy tắc</value>
+  </data>
+  <data name="AlertCenter monitoring" xml:space="preserve">
+    <value>Giám sát AlertCenter</value>
+  </data>
+  <data name="Configure the AlertCenter connection in Global Settings. Environment variables can override those settings. Monitoring rules do not store credentials." xml:space="preserve">
+    <value>Cấu hình kết nối AlertCenter trong Cài đặt toàn cục. Biến môi trường có thể ghi đè các cài đặt đó. Quy tắc giám sát không lưu trữ thông tin xác thực.</value>
+  </data>
+  <data name="Connection settings" xml:space="preserve">
+    <value>Cài đặt kết nối</value>
+  </data>
+  <data name="Continuous minutes" xml:space="preserve">
+    <value>Số phút liên tục</value>
+  </data>
+  <data name="Counts red and grey. Yellow or green resets this timer." xml:space="preserve">
+    <value>Tính thời gian ở mức đỏ và xám. Vàng hoặc xanh lá sẽ đặt lại bộ đếm thời gian này.</value>
+  </data>
+  <data name="Counts time offline. Any live color resets this timer. Grey starts after one minute without a valid report." xml:space="preserve">
+    <value>Đếm thời gian ngoại tuyến. Bất kỳ màu nào hoạt động đều đặt lại bộ đếm thời gian này. Màu xám bắt đầu sau một phút không có báo cáo hợp lệ.</value>
+  </data>
+  <data name="Counts yellow, red and grey. Only green resets this timer." xml:space="preserve">
+    <value>Tính thời gian ở mức vàng, đỏ và xám. Chỉ màu xanh lá mới đặt lại bộ hẹn giờ này.</value>
+  </data>
+  <data name="Delete rule" xml:space="preserve">
+    <value>Xóa quy tắc</value>
+  </data>
+  <data name="Enable monitoring policy" xml:space="preserve">
+    <value>Bật chính sách giám sát</value>
+  </data>
+  <data name="Enabled" xml:space="preserve">
+    <value>Đã bật</value>
+  </data>
+  <data name="Example: alternating colors" xml:space="preserve">
+    <value>Ví dụ: các màu xen kẽ</value>
+  </data>
+  <data name="Exclude" xml:space="preserve">
+    <value>Loại trừ</value>
+  </data>
+  <data name="Exclude server" xml:space="preserve">
+    <value>Loại trừ máy chủ</value>
+  </data>
+  <data name="Excluded servers always take precedence. When all servers are monitored, individual inclusions are unnecessary." xml:space="preserve">
+    <value>Các máy chủ bị loại trừ luôn được ưu tiên. Khi tất cả máy chủ đều được giám sát, không cần thêm từng máy chủ vào danh sách bao gồm.</value>
+  </data>
+  <data name="From most to least severe" xml:space="preserve">
+    <value>Từ mức nghiêm trọng nhất đến ít nghiêm trọng nhất</value>
+  </data>
+  <data name="Getting worse keeps a timer running. Improving below its threshold resets it." xml:space="preserve">
+    <value>Khi tình trạng trở nên nghiêm trọng hơn, bộ đếm thời gian vẫn tiếp tục chạy. Khi tình trạng cải thiện xuống dưới ngưỡng, bộ đếm sẽ được đặt lại.</value>
+  </data>
+  <data name="Green" xml:space="preserve">
+    <value>Xanh lá</value>
+  </data>
+  <data name="Grey (offline)" xml:space="preserve">
+    <value>Xám (ngoại tuyến)</value>
+  </data>
+  <data name="Grey only" xml:space="preserve">
+    <value>Chỉ màu xám</value>
+  </data>
+  <data name="How alert timers work" xml:space="preserve">
+    <value>Cách hoạt động của bộ hẹn giờ cảnh báo</value>
+  </data>
+  <data name="Immediately resolve all incidents managed by this integration for a server when a healthy sample is received" xml:space="preserve">
+    <value>Giải quyết ngay lập tức tất cả các sự cố do tích hợp này quản lý cho một máy chủ khi nhận được mẫu hoạt động bình thường</value>
+  </data>
+  <data name="Include" xml:space="preserve">
+    <value>Bao gồm</value>
+  </data>
+  <data name="Include server" xml:space="preserve">
+    <value>Bao gồm máy chủ</value>
+  </data>
+  <data name="Last report" xml:space="preserve">
+    <value>Báo cáo gần nhất</value>
+  </data>
+  <data name="Matching more rules escalates the existing incident when needed; it does not create another incident or automatically lower its severity." xml:space="preserve">
+    <value>Việc khớp thêm các quy tắc sẽ nâng cấp sự cố hiện có khi cần thiết; nó không tạo ra một sự cố khác hoặc tự động hạ mức độ nghiêm trọng của sự cố đó.</value>
+  </data>
+  <data name="Monitor all servers, including newly connected servers" xml:space="preserve">
+    <value>Theo dõi tất cả máy chủ, bao gồm cả máy chủ mới được kết nối</value>
+  </data>
+  <data name="Monitoring policy" xml:space="preserve">
+    <value>Chính sách giám sát</value>
+  </data>
+  <data name="One incident, with recovery" xml:space="preserve">
+    <value>Một sự cố, có khôi phục</value>
+  </data>
+  <data name="Red" xml:space="preserve">
+    <value>Đỏ</value>
+  </data>
+  <data name="Red or worse" xml:space="preserve">
+    <value>Đỏ hoặc nặng hơn</value>
+  </data>
+  <data name="Rules measure how long a server stays at or above a health threshold. Each threshold has its own timer." xml:space="preserve">
+    <value>Quy tắc đo lường thời gian máy chủ duy trì ở mức hoặc trên ngưỡng sức khỏe. Mỗi ngưỡng có bộ đếm thời gian riêng.</value>
+  </data>
+  <data name="Save policy and server selection" xml:space="preserve">
+    <value>Lưu chính sách và lựa chọn máy chủ</value>
+  </data>
+  <data name="Save rule" xml:space="preserve">
+    <value>Lưu quy tắc</value>
+  </data>
+  <data name="Server" xml:space="preserve">
+    <value>Máy chủ</value>
+  </data>
+  <data name="Server selection" xml:space="preserve">
+    <value>Chọn máy chủ</value>
+  </data>
+  <data name="Severity" xml:space="preserve">
+    <value>Mức độ nghiêm trọng</value>
+  </data>
+  <data name="State" xml:space="preserve">
+    <value>Trạng thái</value>
+  </data>
+  <data name="Sustained state rules" xml:space="preserve">
+    <value>Quy tắc trạng thái kéo dài</value>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>Không xác định</value>
+  </data>
+  <data name="Yellow" xml:space="preserve">
+    <value>Vàng</value>
+  </data>
+  <data name="Yellow for 15 minutes, then red for 10, then yellow for 10: yellow or worse has lasted 35 minutes. Red lasted only 10 minutes and its timer reset when yellow returned." xml:space="preserve">
+    <value>Vàng trong 15 phút, sau đó đỏ trong 10 phút, rồi vàng trong 10 phút: tình trạng vàng hoặc tệ hơn đã kéo dài 35 phút. Tình trạng đỏ chỉ kéo dài 10 phút và bộ đếm thời gian của nó đã được đặt lại khi tình trạng vàng quay trở lại.</value>
+  </data>
+  <data name="Yellow or worse" xml:space="preserve">
+    <value>Vàng hoặc nghiêm trọng hơn</value>
+  </data>
+  <data name="Zero minutes means immediately. The most severe matching rule wins. See the guide for how severity thresholds accumulate." xml:space="preserve">
+    <value>Không phút nào có nghĩa là ngay lập tức. Quy tắc phù hợp nghiêm trọng nhất sẽ được áp dụng. Xem hướng dẫn để biết cách các ngưỡng mức độ nghiêm trọng được tích lũy.</value>
+  </data>
+
+</root>
