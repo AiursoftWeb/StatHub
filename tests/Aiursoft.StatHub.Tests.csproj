@@ -19,5 +19,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\src\Aiursoft.StatHub\Aiursoft.StatHub.csproj" />
+    <ProjectReference Include="..\src\Aiursoft.StatHub.Client\Aiursoft.StatHub.Client.csproj" />
   </ItemGroup>
 </Project>
