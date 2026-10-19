@@ -40,7 +40,11 @@ public sealed class MonitoringTests
     [TestCleanup]
     public async Task Cleanup() { await _db.DisposeAsync(); _coordinator.Dispose(); }
 
-    private Task Observe(params string[] colors) => _service.ObserveAsync("server-1", "Test server", colors);
+    private async Task Observe(params string[] colors)
+    {
+        await _service.ObserveAsync("server-1", "Test server", colors);
+        await _service.CheckAsync();
+    }
 
     private async Task Continue(string color, int minutes)
     {
@@ -52,24 +56,22 @@ public sealed class MonitoringTests
     }
 
     [TestMethod]
-    public async Task MigrationSeedsOnlyKnownIntervalsAndPreservesThemOnReload()
+    public async Task MigrationRemovesRuntimeStateAndPreservesRules()
     {
         var migrator = _db.GetService<IMigrator>();
-        await migrator.MigrateAsync("20261018174435_AlertCenterMonitoring");
+        await migrator.MigrateAsync("20261019063634_SeverityThresholdTimers");
         var since = _clock.GetUtcNow().UtcDateTime;
-        foreach (var color in new[] { "green", "yellow", "red", "grey" })
-        {
-            var id = Guid.NewGuid();
-            var session = _coordinator.SessionId;
-            await _db.Database.ExecuteSqlInterpolatedAsync($"INSERT INTO AgentMonitoringStates (ClientId, Hostname, CurrentState, LastReportedAtUtc, StateSinceUtc, ObservationSessionId, NextReportId) VALUES ({color}, {color}, {color}, {since}, {since}, {session}, {id})");
-        }
+        var id = Guid.NewGuid();
+        await _db.Database.ExecuteSqlInterpolatedAsync($"INSERT INTO AgentMonitoringStates (ClientId, Hostname, CurrentState, LastReportedAtUtc, StateSinceUtc, ObservationSessionId, NextReportId) VALUES ('old', 'old', 'red', {since}, {since}, {id}, {id})");
+        var policy = await _service.PolicyAsync();
+        policy.Rules.Single(rule => rule.State == "yellow" && rule.DurationMinutes == 35).DurationMinutes = 42;
+        await _db.SaveChangesAsync();
         await migrator.MigrateAsync();
-        _db.ChangeTracker.Clear();
-        foreach (var state in await _db.AgentMonitoringStates.ToListAsync())
-        {
-            Assert.AreEqual(state.CurrentState == "green" ? null : since, state.YellowOrWorseSinceUtc);
-            Assert.AreEqual(state.CurrentState is "red" or "grey" ? since : null, state.RedOrWorseSinceUtc);
-        }
+        using var command = _db.Database.GetDbConnection().CreateCommand();
+        command.CommandText = "SELECT COUNT(*) FROM sqlite_master WHERE type='table' AND name='AgentMonitoringStates'";
+        Assert.AreEqual(0L, await command.ExecuteScalarAsync());
+        Assert.AreEqual(5, await _db.AlertMonitoringRules.CountAsync());
+        Assert.IsTrue(await _db.AlertMonitoringRules.AnyAsync(rule => rule.DurationMinutes == 42));
     }
 
     [TestMethod]
@@ -107,26 +109,26 @@ public sealed class MonitoringTests
     {
         await Observe("red");
         await Continue("red", 20);
-        var redStart = (await _db.AgentMonitoringStates.SingleAsync()).RedOrWorseSinceUtc;
+        var redStart = _coordinator.Snapshot().Single().RedOrWorseSinceUtc;
         _clock.Advance(TimeSpan.FromMinutes(10));
         await Observe("red");
-        Assert.AreEqual(redStart, (await _db.AgentMonitoringStates.SingleAsync()).RedOrWorseSinceUtc);
+        Assert.AreEqual(redStart, _coordinator.Snapshot().Single().RedOrWorseSinceUtc);
         await Continue("red", 5);
         Assert.AreEqual("sev2", _client.Incidents.Single().Level);
         await Observe("yellow");
-        var state = await _db.AgentMonitoringStates.SingleAsync();
+        var state = _coordinator.Snapshot().Single();
         Assert.IsNull(state.RedOrWorseSinceUtc);
         Assert.AreEqual(redStart, state.YellowOrWorseSinceUtc);
         Assert.AreEqual("sev2", _client.Incidents.Single().Level);
     }
 
     [TestMethod]
-    public async Task GreyToRedResetsGreyTimerButRetainsLowerThresholdsAcrossRestart()
+    public async Task RestartDiscardsOldGreyAndBeginsFreshObservation()
     {
         await Observe("green");
         _clock.Advance(TimeSpan.FromMinutes(10));
         await _service.CheckAsync();
-        var state = await _db.AgentMonitoringStates.SingleAsync();
+        var state = _coordinator.Snapshot().Single();
         var start = state.RedOrWorseSinceUtc;
         Assert.AreEqual(state.StateSinceUtc, start);
         _db.ChangeTracker.Clear();
@@ -134,10 +136,13 @@ public sealed class MonitoringTests
         _coordinator = new MonitoringCoordinator();
         _service = Service();
         await Observe("red");
-        state = await _db.AgentMonitoringStates.SingleAsync();
-        Assert.AreEqual(start, state.RedOrWorseSinceUtc);
+        state = _coordinator.Snapshot().Single();
+        Assert.AreNotEqual(start, state.RedOrWorseSinceUtc);
+        Assert.AreEqual(_clock.GetUtcNow().UtcDateTime, state.RedOrWorseSinceUtc);
         Assert.AreEqual("red", state.CurrentState);
-        await Continue("red", 26);
+        await Continue("red", 34);
+        Assert.IsEmpty(_client.Incidents);
+        await Continue("red", 1);
         Assert.AreEqual("sev2", _client.Incidents.Single().Level);
         Assert.Contains("red or worse", _client.Created.Single().Content!);
     }
@@ -155,11 +160,12 @@ public sealed class MonitoringTests
                 _clock.Advance(TimeSpan.FromMinutes(2));
                 await _service.CheckAsync();
             }
-            var before = await _db.AgentMonitoringStates.FindAsync(id);
-            var yellow = before!.YellowOrWorseSinceUtc;
+            var before = _coordinator.Snapshot().Single(item => item.ClientId == id);
+            var yellow = before.YellowOrWorseSinceUtc;
             var red = before.RedOrWorseSinceUtc;
             _clock.Advance(TimeSpan.FromSeconds(30));
             await _service.ObserveAsync(id, id, [to]);
+            before = _coordinator.Snapshot().Single(item => item.ClientId == id);
             var now = _clock.GetUtcNow().UtcDateTime;
             Assert.AreEqual(to == "green" ? null : yellow ?? now, before.YellowOrWorseSinceUtc, id);
             Assert.AreEqual(to == "red" ? red ?? now : null, before.RedOrWorseSinceUtc, id);
@@ -167,7 +173,7 @@ public sealed class MonitoringTests
     }
 
     [TestMethod]
-    public async Task PersistedTimersAndCustomDisabledRulesAreRespected()
+    public async Task MemoryTimersSurviveRequestScopesAndRespectCustomDisabledRules()
     {
         var policy = await _service.PolicyAsync();
         foreach (var rule in policy.Rules) rule.IsEnabled = false;
@@ -286,7 +292,7 @@ public sealed class MonitoringTests
         await Observe("yellow", "green", "red");
         Assert.AreEqual(2, _client.Resolutions);
         Assert.AreEqual("new", foreign.Status);
-        Assert.AreEqual("red", (await _db.AgentMonitoringStates.SingleAsync()).CurrentState);
+        Assert.AreEqual("red", _coordinator.Snapshot().Single().CurrentState);
         await Continue("red", 34);
         Assert.AreEqual(3, _client.Incidents.Count);
         await Continue("red", 1);
@@ -316,11 +322,11 @@ public sealed class MonitoringTests
         await Continue("red", 35);
         _client.FailResolution = true;
         await Observe("green", "yellow");
-        Assert.IsNotNull((await _db.AgentMonitoringStates.SingleAsync()).PendingRecoveryAtUtc);
+        Assert.IsNotNull(_coordinator.Snapshot().Single().PendingRecoveryAtUtc);
         _client.FailResolution = false;
         await _service.CheckAsync();
         Assert.AreEqual("resolved", _client.Incidents.Single().Status);
-        Assert.IsNull((await _db.AgentMonitoringStates.SingleAsync()).PendingRecoveryAtUtc);
+        Assert.IsNull(_coordinator.Snapshot().Single().PendingRecoveryAtUtc);
     }
 
     [TestMethod]
@@ -337,7 +343,7 @@ public sealed class MonitoringTests
     }
 
     [TestMethod]
-    public async Task RestartPreservesOfflineDeadlineButDoesNotInventContinuousRed()
+    public async Task RestartStartsFreshTimersAndDetectsSubsequentOffline()
     {
         await Observe("red");
         await Continue("red", 34);
@@ -353,7 +359,7 @@ public sealed class MonitoringTests
         _clock.Advance(TimeSpan.FromMinutes(1));
         await _service.CheckAsync();
         Assert.AreEqual("sev2", _client.Incidents.Single().Level);
-        Assert.AreEqual("grey", (await _db.AgentMonitoringStates.SingleAsync()).CurrentState);
+        Assert.AreEqual("grey", _coordinator.Snapshot().Single().CurrentState);
         await _service.CheckAsync();
         Assert.AreEqual(1, _client.Incidents.Count);
     }
@@ -384,12 +390,12 @@ public sealed class MonitoringTests
     public async Task MissingValidSamplesNeverResetOfflineDeadlineOrResolveIncidents()
     {
         await Observe("red");
-        var lastReport = (await _db.AgentMonitoringStates.SingleAsync()).LastReportedAtUtc;
+        var lastReport = _coordinator.Snapshot().Single().LastReportedAtUtc;
         _clock.Advance(TimeSpan.FromMinutes(16));
         await Observe("unknown");
-        Assert.AreEqual(lastReport, (await _db.AgentMonitoringStates.SingleAsync()).LastReportedAtUtc);
+        Assert.AreEqual(lastReport, _coordinator.Snapshot().Single().LastReportedAtUtc);
         await _service.CheckAsync();
-        Assert.AreEqual("grey", (await _db.AgentMonitoringStates.SingleAsync()).CurrentState);
+        Assert.AreEqual("grey", _coordinator.Snapshot().Single().CurrentState);
         Assert.AreEqual(1, _client.Incidents.Count);
         Assert.AreEqual(0, _client.Resolutions);
     }
@@ -403,7 +409,93 @@ public sealed class MonitoringTests
         await _service.CheckAsync();
         Assert.AreEqual(0, _client.Queries);
         Assert.IsEmpty(_client.Incidents);
-        Assert.AreEqual("red", (await _db.AgentMonitoringStates.SingleAsync()).CurrentState);
+        Assert.AreEqual("red", _coordinator.Snapshot().Single().CurrentState);
+    }
+
+    [TestMethod]
+    public async Task ReportsNeedNoDatabaseOrNetworkAndKeepOnlyOneStatePerServer()
+    {
+        // Closing the SQLite in-memory database makes any accidental SQL access fail.
+        await _db.Database.CloseConnectionAsync();
+        var start = _clock.GetUtcNow().UtcDateTime;
+        for (var sample = 0; sample < 1000; sample++)
+        {
+            for (var server = 0; server < 100; server++)
+                await _service.ObserveAsync($"server-{server}", "Server", [sample % 2 == 0 ? "yellow" : "red"]);
+            _clock.Advance(TimeSpan.FromSeconds(1));
+        }
+        Assert.AreEqual(100, _coordinator.Snapshot().Count);
+        Assert.IsTrue(_coordinator.Snapshot().All(state => state.YellowOrWorseSinceUtc == start));
+        Assert.AreEqual(0, _client.Queries);
+        Assert.IsEmpty(_client.Created);
+    }
+
+    [TestMethod]
+    public async Task OneSyncQueriesOnceForAllServersAndWarmHealthyReportsDoNotWakeJobs()
+    {
+        for (var server = 0; server < 100; server++)
+            Assert.IsFalse(await _service.ObserveAsync($"server-{server}", "Server", ["green"]));
+        await _service.CheckAsync();
+        Assert.AreEqual(1, _client.Queries);
+        for (var server = 0; server < 100; server++)
+            Assert.IsFalse(await _service.ObserveAsync($"server-{server}", "Server", ["green"]));
+        Assert.AreEqual(1, _client.Queries);
+    }
+
+    [TestMethod]
+    public async Task RecoveryWakeIsCoalescedAndTransientGreenSurvivesSlowQuery()
+    {
+        await Observe("red");
+        await Continue("red", 35);
+        Assert.IsTrue(await _service.ObserveAsync("server-1", "Server", ["green", "red"]));
+        Assert.IsFalse(await _service.ObserveAsync("server-1", "Server", ["green", "red"]));
+        var started = new TaskCompletionSource(TaskCreationOptions.RunContinuationsAsynchronously);
+        var release = new TaskCompletionSource(TaskCreationOptions.RunContinuationsAsynchronously);
+        _client.BeforeQuery = async () => { started.SetResult(); await release.Task; };
+        var sync = _service.CheckAsync();
+        await started.Task.WaitAsync(TimeSpan.FromSeconds(5));
+        await _service.ObserveAsync("server-1", "Server", ["green", "red"]).WaitAsync(TimeSpan.FromSeconds(1));
+        release.SetResult();
+        await sync;
+        Assert.AreEqual("resolved", _client.Incidents.Single().Status);
+        Assert.AreEqual("red", _coordinator.Snapshot().Single().CurrentState);
+        Assert.IsNull(_coordinator.Snapshot().Single().PendingRecoveryAtUtc);
+    }
+
+    [TestMethod]
+    public async Task GreenDuringCreateResolvesTheIncidentEvenIfItsResponseArrivesLater()
+    {
+        await Observe("red");
+        await Continue("red", 34);
+        _client.BeforeCreate = async () =>
+        {
+            _clock.Advance(TimeSpan.FromSeconds(1));
+            await _service.ObserveAsync("server-1", "Server", ["green", "red"]);
+            _clock.Advance(TimeSpan.FromSeconds(1));
+        };
+        await Continue("red", 1);
+        Assert.AreEqual(1, _client.Incidents.Count);
+        await _service.CheckAsync();
+        Assert.AreEqual("resolved", _client.Incidents.Single().Status);
+        Assert.AreEqual(1, _client.Resolutions);
+    }
+
+    [TestMethod]
+    public async Task RestartReconcilesExistingIncidentsWithoutRecreatingOrResolvingBeforeObservation()
+    {
+        await Observe("red");
+        await Continue("red", 35);
+        _coordinator.Dispose();
+        _coordinator = new MonitoringCoordinator();
+        _service = Service();
+        await _service.CheckAsync();
+        Assert.AreEqual("new", _client.Incidents.Single().Status);
+        Assert.IsEmpty(_coordinator.Snapshot());
+        await Observe("red");
+        await Continue("red", 35);
+        Assert.AreEqual(1, _client.Incidents.Count);
+        await Observe("green");
+        Assert.AreEqual("resolved", _client.Incidents.Single().Status);
     }
 
     private sealed class TestClock : TimeProvider
@@ -426,31 +518,35 @@ public sealed class MonitoringTests
         public int Queries { get; private set; }
         public int Escalations { get; private set; }
         public int Resolutions { get; private set; }
+        public Func<Task>? BeforeQuery { get; set; }
+        public Func<Task>? BeforeCreate { get; set; }
         public bool FailResolution { get; set; }
         public bool LoseCreateResponse { get; set; }
-        public Task<QueryIncidentsResponse> QueryAsync(QueryIncidentsRequest request)
+        public async Task<QueryIncidentsResponse> QueryAsync(QueryIncidentsRequest request)
         {
             Queries++;
+            if (BeforeQuery != null) await BeforeQuery();
             var active = Incidents.Where(item => item.Status != "resolved").ToList();
-            return Task.FromResult(new QueryIncidentsResponse
+            return new QueryIncidentsResponse
             {
                 Page = request.Page, PageSize = request.PageSize, TotalCount = active.Count,
                 Items = active.Skip((request.Page - 1) * request.PageSize).Take(request.PageSize).ToList()
-            });
+            };
         }
-        public Task<CreateIncidentResponse> CreateAsync(CreateIncidentRequest request)
+        public async Task<CreateIncidentResponse> CreateAsync(CreateIncidentRequest request)
         {
+            if (BeforeCreate != null) await BeforeCreate();
             Created.Add(request);
             var incident = Incidents.SingleOrDefault(item => item.ReportId == request.ReportId);
             if (incident == null)
             {
                 incident = new IncidentDetails { IncidentId = Guid.NewGuid(), Version = Guid.NewGuid(),
                     ReportId = request.ReportId, Title = request.Title, Level = request.Level, Status = "new",
-                    Context = request.Context, ReceivedAtUtc = clock.GetUtcNow() };
+                    Context = request.Context, ReceivedAtUtc = clock.GetUtcNow(), OccurredAtUtc = request.OccurredAtUtc };
                 Incidents.Add(incident);
             }
             if (LoseCreateResponse) { LoseCreateResponse = false; throw new HttpRequestException("Lost response"); }
-            return Task.FromResult(new CreateIncidentResponse { IncidentId = incident.IncidentId });
+            return new CreateIncidentResponse { IncidentId = incident.IncidentId };
         }
         public Task<ResolveIncidentResponse> ResolveAsync(Guid incidentId, ResolveIncidentRequest request)
         {
@@ -473,7 +569,7 @@ public sealed class MonitoringTests
         public IncidentDetails Copy(IncidentDetails original)
         {
             var copy = new IncidentDetails { IncidentId = Guid.NewGuid(), Version = Guid.NewGuid(), ReportId = Guid.NewGuid(),
-                Level = original.Level, Status = "new", ReceivedAtUtc = original.ReceivedAtUtc, Context = (JObject)original.Context!.DeepClone() };
+                Level = original.Level, Status = "new", OccurredAtUtc = original.OccurredAtUtc, ReceivedAtUtc = original.ReceivedAtUtc, Context = (JObject)original.Context!.DeepClone() };
             Incidents.Add(copy);
             return copy;
         }

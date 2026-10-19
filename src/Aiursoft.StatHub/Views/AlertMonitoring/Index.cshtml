@@ -35,7 +35,16 @@
                     <td><input type="checkbox" class="form-check-input" name="Included" value="@agent.ClientId" checked="@(selection is { IsExcluded: false })" aria-label="@Localizer["Include server"]" /></td>
                     <td><input type="checkbox" class="form-check-input" name="Excluded" value="@agent.ClientId" checked="@(selection is { IsExcluded: true })" aria-label="@Localizer["Exclude server"]" /></td>
                     <td>@(agent.CurrentState switch { "green" => @Localizer["Green"], "yellow" => @Localizer["Yellow"], "red" => @Localizer["Red"], "grey" => @Localizer["Grey (offline)"], _ => @Localizer["Unknown"] })</td>
-                    <td><span data-utc-time="@agent.LastReportedAtUtc.ToHtmlDateTime()"></span></td>
+                    <td>
+                        @if (agent.LastReportedAtUtc == default)
+                        {
+                            <span class="text-muted">@Localizer["No report since restart"]</span>
+                        }
+                        else
+                        {
+                            <span data-utc-time="@agent.LastReportedAtUtc.ToHtmlDateTime()"></span>
+                        }
+                    </td>
                 </tr>
             }
             </tbody>
@@ -80,6 +89,7 @@
                 <div class="text-center mb-3"><i data-lucide="timer" class="text-primary" aria-hidden="true"></i></div>
                 <h4 class="h5" id="monitoring-guide-title">@Localizer["How alert timers work"]</h4>
                 <p class="text-muted small">@Localizer["Rules measure how long a server stays at or above a health threshold. Each threshold has its own timer."]</p>
+                <p class="text-muted small">@Localizer["Timers and known servers are kept in memory, with no sample history stored in the database. After StatHub restarts, servers are observed again when they report, and their timers start fresh. Rules and connection settings remain saved."]</p>
                 <h5 class="h6">@Localizer["From most to least severe"]</h5>
                 <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
                     <span class="badge bg-secondary">@Localizer["Grey (offline)"]</span><span aria-hidden="true">&gt;</span>

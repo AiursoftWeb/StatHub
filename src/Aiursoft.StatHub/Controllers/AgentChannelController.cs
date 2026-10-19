@@ -1,4 +1,6 @@
 using Aiursoft.AiurObserver;
+using Aiursoft.Canon.BackgroundJobs;
+using Aiursoft.StatHub.Services.BackgroundJobs;
 using Aiursoft.AiurObserver.WebSocket.Server;
 using Aiursoft.StatHub.Data;
 using Aiursoft.StatHub.Services.Monitoring;
@@ -18,6 +20,7 @@ namespace Aiursoft.StatHub.Controllers;
 public class AgentChannelController(
     InMemoryDatabase database,
     IServiceScopeFactory scopeFactory,
+    BackgroundJobRegistry backgroundJobs,
     IpGeolocationService ipGeolocationService,
     ILogger<AgentChannelController> logger) : ControllerBase
 {
@@ -111,8 +114,9 @@ public class AgentChannelController(
                 });
             }
             using var scope = scopeFactory.CreateScope();
-            await scope.ServiceProvider.GetRequiredService<MonitoringService>()
+            var wakeRecovery = await scope.ServiceProvider.GetRequiredService<MonitoringService>()
                 .ObserveAsync(agent.ClientId, agent.Hostname, observations);
+            if (wakeRecovery) backgroundJobs.TriggerNow<MonitoringJob>();
         }
     }
 

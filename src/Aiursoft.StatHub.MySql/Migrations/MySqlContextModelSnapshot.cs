@@ -35,48 +35,6 @@ namespace Aiursoft.StatHub.MySql.Migrations
                     b.ToTable("GlobalSettings");
                 });
 
-            modelBuilder.Entity("Aiursoft.StatHub.Entities.Monitoring.AgentMonitoringState", b =>
-                {
-                    b.Property<string>("ClientId")
-                        .HasMaxLength(200)
-                        .HasColumnType("varchar(200)");
-
-                    b.Property<string>("CurrentState")
-                        .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("varchar(10)");
-
-                    b.Property<string>("Hostname")
-                        .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("varchar(200)");
-
-                    b.Property<DateTime>("LastReportedAtUtc")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<Guid>("NextReportId")
-                        .HasColumnType("char(36)");
-
-                    b.Property<Guid>("ObservationSessionId")
-                        .HasColumnType("char(36)");
-
-                    b.Property<DateTime?>("PendingRecoveryAtUtc")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<DateTime?>("RedOrWorseSinceUtc")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<DateTime>("StateSinceUtc")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<DateTime?>("YellowOrWorseSinceUtc")
-                        .HasColumnType("datetime(6)");
-
-                    b.HasKey("ClientId");
-
-                    b.ToTable("AgentMonitoringStates");
-                });
-
             modelBuilder.Entity("Aiursoft.StatHub.Entities.Monitoring.MonitoringPolicy", b =>
                 {
                     b.Property<int>("Id")

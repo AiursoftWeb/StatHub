@@ -1,5 +1,6 @@
 using System.Net;
 using Aiursoft.StatHub.Entities;
+using Aiursoft.StatHub.Entities.Monitoring;
 using Microsoft.EntityFrameworkCore;
 
 namespace Aiursoft.StatHub.Tests.IntegrationTests;
@@ -7,6 +8,31 @@ namespace Aiursoft.StatHub.Tests.IntegrationTests;
 [TestClass]
 public sealed class MonitoringControllerTests : TestBase
 {
+    [TestMethod]
+    public async Task ConfiguredExclusionsRemainVisibleAndEditableBeforeServersReportAfterRestart()
+    {
+        await LoginAsAdmin();
+        await Http.GetStringAsync("/AlertMonitoring");
+        using var scope = Server!.Services.CreateScope();
+        var db = scope.ServiceProvider.GetRequiredService<StatHubDbContext>();
+        var policy = await db.AlertMonitoringPolicies.SingleAsync();
+        db.AlertMonitoringTargets.Add(new MonitoringTarget
+        {
+            PolicyId = policy.Id, ClientId = "offline-excluded-server", IsExcluded = true
+        });
+        await db.SaveChangesAsync();
+        var html = await Http.GetStringAsync("/AlertMonitoring");
+        Assert.Contains("offline-excluded-server", html);
+        Assert.Contains("No report since restart", html);
+        using var saved = await PostForm("/AlertMonitoring/SavePolicy", new()
+        {
+            ["Version"] = policy.Version.ToString(), ["MonitorAllServers"] = "true",
+            ["IsEnabled"] = "true", ["AutoResolveOnGreen"] = "true", ["Excluded"] = "offline-excluded-server"
+        }, "/AlertMonitoring");
+        Assert.AreEqual(HttpStatusCode.Redirect, saved.StatusCode);
+        Assert.IsTrue(await db.AlertMonitoringTargets.AnyAsync(item => item.ClientId == "offline-excluded-server" && item.IsExcluded));
+    }
+
     [TestMethod]
     public async Task MonitoringPageRequiresItsPermission()
     {
