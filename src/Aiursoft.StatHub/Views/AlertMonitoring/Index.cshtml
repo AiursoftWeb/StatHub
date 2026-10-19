@@ -34,7 +34,7 @@
                     <td>@agent.Hostname <small class="d-block text-muted">@agent.ClientId</small></td>
                     <td><input type="checkbox" class="form-check-input" name="Included" value="@agent.ClientId" checked="@(selection is { IsExcluded: false })" aria-label="@Localizer["Include server"]" /></td>
                     <td><input type="checkbox" class="form-check-input" name="Excluded" value="@agent.ClientId" checked="@(selection is { IsExcluded: true })" aria-label="@Localizer["Exclude server"]" /></td>
-                    <td>@(agent.CurrentState switch { "green" => Localizer["Green"], "yellow" => Localizer["Yellow"], "red" => Localizer["Red"], "grey" => Localizer["Grey (offline)"], _ => Localizer["Unknown"] })</td>
+                    <td>@(agent.CurrentState switch { "green" => @Localizer["Green"], "yellow" => @Localizer["Yellow"], "red" => @Localizer["Red"], "grey" => @Localizer["Grey (offline)"], _ => @Localizer["Unknown"] })</td>
                     <td><span data-utc-time="@agent.LastReportedAtUtc.ToHtmlDateTime()"></span></td>
                 </tr>
             }
@@ -63,7 +63,7 @@
                     @foreach (var level in new[] { "sev0", "sev1", "sev2", "sev3", "sev4" }) { <option value="@level" selected="@(rule.Severity == level)">@level</option> }
                 </select></div>
                 <div class="col-md-4 col-xxl-2"><label class="form-check-label"><input class="form-check-input" type="checkbox" name="isEnabled" value="true" checked="@rule.IsEnabled" /> @Localizer["Enabled"]</label></div>
-                <div class="col-md-4 col-xxl-2"><button type="submit" class="btn btn-primary">@(isNew ? Localizer["Add rule"] : Localizer["Save rule"])</button></div>
+                <div class="col-md-4 col-xxl-2"><button type="submit" class="btn btn-primary">@(isNew ? @Localizer["Add rule"] : @Localizer["Save rule"])</button></div>
             </form>
             @if (!isNew)
             {
