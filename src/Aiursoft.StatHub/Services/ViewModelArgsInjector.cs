@@ -93,6 +93,9 @@ public class ViewModelArgsInjector(
         _ = localizer["Server Details"];
     
         _ = localizer["Delete Account"];
+
+        _ = localizer["AlertCenter monitoring"];
+        _ = localizer["Monitoring"];
     }
 
     public void InjectSimple(

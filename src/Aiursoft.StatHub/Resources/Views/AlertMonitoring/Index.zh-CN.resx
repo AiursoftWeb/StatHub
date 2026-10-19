@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="A green sample resets every timer. It also resolves this server&apos;s incidents when automatic resolution on green is enabled, even if green appears only briefly." xml:space="preserve">
+    <value>每次检测到绿色状态都会重置所有计时器。如果启用了绿色状态时自动解决事件，此服务器的事件也会随之解决，即使绿色状态只短暂出现。</value>
+  </data>
+  <data name="A yellow-or-worse rule set to 35 minutes would trigger. A red-or-worse rule set to 35 minutes would not. The rules you save determine the alert severity." xml:space="preserve">
+    <value>设置为 35 分钟的“黄色或更严重”规则会触发。设置为 35 分钟的“红色或更严重”规则则不会触发。您保存的规则决定了警报的严重级别。</value>
+  </data>
+  <data name="Add rule" xml:space="preserve">
+    <value>添加规则</value>
+  </data>
+  <data name="AlertCenter monitoring" xml:space="preserve">
+    <value>AlertCenter 监控</value>
+  </data>
+  <data name="Configure the AlertCenter connection in Global Settings. Environment variables can override those settings. Monitoring rules do not store credentials." xml:space="preserve">
+    <value>在全局设置中配置 AlertCenter 连接。环境变量可以覆盖这些设置。监控规则不存储凭据。</value>
+  </data>
+  <data name="Connection settings" xml:space="preserve">
+    <value>连接设置</value>
+  </data>
+  <data name="Continuous minutes" xml:space="preserve">
+    <value>连续分钟数</value>
+  </data>
+  <data name="Counts red and grey. Yellow or green resets this timer." xml:space="preserve">
+    <value>统计红色和灰色。黄色或绿色会重置此计时器。</value>
+  </data>
+  <data name="Counts time offline. Any live color resets this timer. Grey starts after one minute without a valid report." xml:space="preserve">
+    <value>统计离线时间。任何在线状态都会重置此计时器。在超过一分钟未收到有效报告后，状态将变为灰色。</value>
+  </data>
+  <data name="Counts yellow, red and grey. Only green resets this timer." xml:space="preserve">
+    <value>统计黄色、红色和灰色。仅绿色会重置此计时器。</value>
+  </data>
+  <data name="Delete rule" xml:space="preserve">
+    <value>删除规则</value>
+  </data>
+  <data name="Enable monitoring policy" xml:space="preserve">
+    <value>启用监控策略</value>
+  </data>
+  <data name="Enabled" xml:space="preserve">
+    <value>已启用</value>
+  </data>
+  <data name="Example: alternating colors" xml:space="preserve">
+    <value>示例：颜色交替</value>
+  </data>
+  <data name="Exclude" xml:space="preserve">
+    <value>排除</value>
+  </data>
+  <data name="Exclude server" xml:space="preserve">
+    <value>排除服务器</value>
+  </data>
+  <data name="Excluded servers always take precedence. When all servers are monitored, individual inclusions are unnecessary." xml:space="preserve">
+    <value>被排除的服务器始终优先。当所有服务器均被监控时，无需单独包含特定服务器。</value>
+  </data>
+  <data name="From most to least severe" xml:space="preserve">
+    <value>从最严重到最轻微</value>
+  </data>
+  <data name="Getting worse keeps a timer running. Improving below its threshold resets it." xml:space="preserve">
+    <value>情况恶化时，计时器会继续运行。改善到低于其阈值时，计时器会重置。</value>
+  </data>
+  <data name="Green" xml:space="preserve">
+    <value>绿色</value>
+  </data>
+  <data name="Grey (offline)" xml:space="preserve">
+    <value>灰色（离线）</value>
+  </data>
+  <data name="Grey only" xml:space="preserve">
+    <value>仅灰色</value>
+  </data>
+  <data name="How alert timers work" xml:space="preserve">
+    <value>警报计时器的工作原理</value>
+  </data>
+  <data name="Immediately resolve all incidents managed by this integration for a server when a healthy sample is received" xml:space="preserve">
+    <value>收到健康样本时，立即解决该服务器由此集成管理的所有事件</value>
+  </data>
+  <data name="Include" xml:space="preserve">
+    <value>包含</value>
+  </data>
+  <data name="Include server" xml:space="preserve">
+    <value>包含服务器</value>
+  </data>
+  <data name="Last report" xml:space="preserve">
+    <value>最近一次报告</value>
+  </data>
+  <data name="Matching more rules escalates the existing incident when needed; it does not create another incident or automatically lower its severity." xml:space="preserve">
+    <value>当需要时，匹配更多规则会升级现有事件；它不会创建另一个事件，也不会自动降低其严重程度。</value>
+  </data>
+  <data name="Monitor all servers, including newly connected servers" xml:space="preserve">
+    <value>监控所有服务器，包括新连接的服务器</value>
+  </data>
+  <data name="Monitoring policy" xml:space="preserve">
+    <value>监控策略</value>
+  </data>
+  <data name="One incident, with recovery" xml:space="preserve">
+    <value>单次事件及恢复</value>
+  </data>
+  <data name="Red" xml:space="preserve">
+    <value>红色</value>
+  </data>
+  <data name="Red or worse" xml:space="preserve">
+    <value>红色或更严重</value>
+  </data>
+  <data name="Rules measure how long a server stays at or above a health threshold. Each threshold has its own timer." xml:space="preserve">
+    <value>规则用于衡量服务器的健康状态维持在某个阈值或以上的时长。每个阈值都有自己的计时器。</value>
+  </data>
+  <data name="Save policy and server selection" xml:space="preserve">
+    <value>保存策略和服务器选择</value>
+  </data>
+  <data name="Save rule" xml:space="preserve">
+    <value>保存规则</value>
+  </data>
+  <data name="Server" xml:space="preserve">
+    <value>服务器</value>
+  </data>
+  <data name="Server selection" xml:space="preserve">
+    <value>服务器选择</value>
+  </data>
+  <data name="Severity" xml:space="preserve">
+    <value>严重性</value>
+  </data>
+  <data name="State" xml:space="preserve">
+    <value>状态</value>
+  </data>
+  <data name="Sustained state rules" xml:space="preserve">
+    <value>持续状态规则</value>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>未知</value>
+  </data>
+  <data name="Yellow" xml:space="preserve">
+    <value>黄色</value>
+  </data>
+  <data name="Yellow for 15 minutes, then red for 10, then yellow for 10: yellow or worse has lasted 35 minutes. Red lasted only 10 minutes and its timer reset when yellow returned." xml:space="preserve">
+    <value>黄色持续 15 分钟，接着红色持续 10 分钟，然后黄色持续 10 分钟：黄色或更严重状态已持续 35 分钟。红色仅持续了 10 分钟，黄色恢复时其计时器便重置了。</value>
+  </data>
+  <data name="Yellow or worse" xml:space="preserve">
+    <value>黄色或更严重</value>
+  </data>
+  <data name="Zero minutes means immediately. The most severe matching rule wins. See the guide for how severity thresholds accumulate." xml:space="preserve">
+    <value>零分钟表示立即生效。最严重的匹配规则优先。有关严重性阈值如何累积，请参阅指南。</value>
+  </data>
+
+</root>

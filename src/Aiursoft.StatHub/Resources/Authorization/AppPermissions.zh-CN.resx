@@ -27,6 +27,9 @@
   <data name="Allows assigning or removing roles for any user." xml:space="preserve">
     <value>允许为任何用户分配或移除角色。</value>
   </data>
+  <data name="Allows managing monitoring rules and server inclusion and exclusion for AlertCenter." xml:space="preserve">
+    <value>允许管理 AlertCenter 的监控规则以及服务器的包含与排除。</value>
+  </data>
   <data name="Allows modification of role names and their assigned permissions." xml:space="preserve">
     <value>允许修改角色名称及其分配的权限。</value>
   </data>
@@ -83,6 +86,9 @@
   </data>
   <data name="Grants permission to restart the application instance. May cause availability interruptions but all settings and cache will be reloaded." xml:space="preserve">
     <value>授予重启应用程序实例的权限。可能导致服务中断，但所有设置和缓存都将重新加载。</value>
+  </data>
+  <data name="Manage AlertCenter integration" xml:space="preserve">
+    <value>管理 AlertCenter 集成</value>
   </data>
   <data name="Manage Global Settings" xml:space="preserve">
     <value>管理全局设置</value>

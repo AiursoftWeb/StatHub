@@ -24,6 +24,9 @@
   <data name="Abandoning is not deletion. If this agent persists in submitting, it will appear again soon. Please use systemd command to stop the agent." xml:space="preserve">
     <value>放弃不会删除。如果此代理持续提交，它将很快再次出现。请使用 systemd 命令停止该代理。</value>
   </data>
+  <data name="Accessed" xml:space="preserve">
+    <value>访问时间</value>
+  </data>
   <data name="Agent Information" xml:space="preserve">
     <value>终端信息</value>
   </data>
@@ -53,6 +56,9 @@
   </data>
   <data name="CPU Usage" xml:space="preserve">
     <value>CPU 使用率</value>
+  </data>
+  <data name="Created" xml:space="preserve">
+    <value>创建时间</value>
   </data>
   <data name="Disabled" xml:space="preserve">
     <value>已禁用</value>
@@ -134,6 +140,9 @@
   </data>
   <data name="Modified" xml:space="preserve">
     <value>修改时间</value>
+  </data>
+  <data name="More times" xml:space="preserve">
+    <value>更多时间</value>
   </data>
   <data name="MOTD" xml:space="preserve">
     <value>当日消息</value>
