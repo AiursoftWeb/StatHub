@@ -33,12 +33,6 @@ public sealed class MonitoringService(StatHubDbContext db, MonitoringCoordinator
     private static MonitoringRule Rule(string state, int minutes, string severity) =>
         new() { State = state, DurationMinutes = minutes, Severity = severity };
 
-    public static bool Includes(MonitoringPolicy policy, string clientId)
-    {
-        var target = policy.Targets.SingleOrDefault(item => item.ClientId == clientId);
-        return target?.IsExcluded != true && (policy.MonitorAllServers || target != null);
-    }
-
     private static DateTime? Since(AgentMonitoringState state, string threshold) => threshold switch
     {
         "yellow" => state.YellowOrWorseSinceUtc,
@@ -144,6 +138,12 @@ public sealed class MonitoringService(StatHubDbContext db, MonitoringCoordinator
 
     private async Task SynchronizeAsync(MonitoringPolicy policy, AlertCenterSettings settings)
     {
+        // Build once per pass: both incident recovery and server selection use the same configuration.
+        var targets = policy.Targets.ToDictionary(target => target.ClientId, target => target.IsExcluded, StringComparer.Ordinal);
+        bool Includes(string clientId) => targets.TryGetValue(clientId, out var excluded)
+            ? !excluded
+            : policy.MonitorAllServers;
+
         // One paginated snapshot for all servers, including human closures and lost responses.
         var active = await LoadActiveAsync();
         var byClient = active.Where(item => item.Context?.Value<string>("source") == Source)
@@ -154,12 +154,12 @@ public sealed class MonitoringService(StatHubDbContext db, MonitoringCoordinator
         {
             coordinator.RecoveryCandidates.Clear();
             if (policy.AutoResolveOnGreen)
-                foreach (var id in byClient.Select(group => group.Key).OfType<string>().Where(id => Includes(policy, id)))
+                foreach (var id in byClient.Select(group => group.Key).OfType<string>().Where(Includes))
                     coordinator.RecoveryCandidates.Add(id);
             MarkOffline(now);
             states = coordinator.States.Values.Select(state => state.Snapshot()).ToList();
         }
-        foreach (var state in states.Where(state => Includes(policy, state.ClientId)))
+        foreach (var state in states.Where(state => Includes(state.ClientId)))
         {
             try
             {
