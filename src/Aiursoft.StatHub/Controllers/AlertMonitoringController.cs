@@ -25,10 +25,15 @@ public sealed class AlertMonitoringController(StatHubDbContext db, MonitoringSer
         await coordinator.Gate.WaitAsync();
         try
         {
+            var policy = await monitoring.PolicyAsync();
+            var states = coordinator.Snapshot();
+            var known = states.Select(item => item.ClientId).ToHashSet();
+            states.AddRange(policy.Targets.Where(target => !known.Contains(target.ClientId))
+                .Select(target => new AgentMonitoringState { ClientId = target.ClientId, Hostname = target.ClientId }));
             return this.StackView(new MonitoringViewModel
             {
-                Policy = await monitoring.PolicyAsync(),
-                Agents = await db.AgentMonitoringStates.AsNoTracking().OrderBy(item => item.Hostname).ToListAsync()
+                Policy = policy,
+                Agents = states.OrderBy(item => item.Hostname).ToList()
             });
         }
         finally { coordinator.Gate.Release(); }
@@ -43,7 +48,7 @@ public sealed class AlertMonitoringController(StatHubDbContext db, MonitoringSer
         {
             var policy = await monitoring.PolicyAsync();
             if (policy.Version != input.Version) return Conflict(localizer["The monitoring policy changed. Refresh before saving."].Value);
-            var known = await db.AgentMonitoringStates.Select(item => item.ClientId).ToListAsync();
+            var known = coordinator.Snapshot().Select(item => item.ClientId).Concat(policy.Targets.Select(item => item.ClientId)).ToHashSet();
             if (input.Included.Concat(input.Excluded).Any(id => !known.Contains(id)))
                 return BadRequest(localizer["Select only known servers."].Value);
             var selections = input.Included.Distinct().ToDictionary(id => id, _ => false);

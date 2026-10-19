@@ -30,48 +30,6 @@ namespace Aiursoft.StatHub.Sqlite.Migrations
                     b.ToTable("GlobalSettings");
                 });
 
-            modelBuilder.Entity("Aiursoft.StatHub.Entities.Monitoring.AgentMonitoringState", b =>
-                {
-                    b.Property<string>("ClientId")
-                        .HasMaxLength(200)
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("CurrentState")
-                        .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Hostname")
-                        .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("LastReportedAtUtc")
-                        .HasColumnType("TEXT");
-
-                    b.Property<Guid>("NextReportId")
-                        .HasColumnType("TEXT");
-
-                    b.Property<Guid>("ObservationSessionId")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime?>("PendingRecoveryAtUtc")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime?>("RedOrWorseSinceUtc")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("StateSinceUtc")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime?>("YellowOrWorseSinceUtc")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("ClientId");
-
-                    b.ToTable("AgentMonitoringStates");
-                });
-
             modelBuilder.Entity("Aiursoft.StatHub.Entities.Monitoring.MonitoringPolicy", b =>
                 {
                     b.Property<int>("Id")

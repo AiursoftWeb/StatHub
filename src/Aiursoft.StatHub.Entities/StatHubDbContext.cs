@@ -13,7 +13,6 @@ public abstract class StatHubDbContext(DbContextOptions options) : IdentityDbCon
     public DbSet<MonitoringPolicy> AlertMonitoringPolicies => Set<MonitoringPolicy>();
     public DbSet<MonitoringRule> AlertMonitoringRules => Set<MonitoringRule>();
     public DbSet<MonitoringTarget> AlertMonitoringTargets => Set<MonitoringTarget>();
-    public DbSet<AgentMonitoringState> AgentMonitoringStates => Set<AgentMonitoringState>();
 
     protected override void OnModelCreating(ModelBuilder builder)
     {

@@ -1,5 +1,6 @@
 using Aiursoft.StatHub.Entities.Monitoring;
 using Aiursoft.UiStack.Layout;
+using Aiursoft.StatHub.Services.Monitoring;
 
 namespace Aiursoft.StatHub.Models.Monitoring;
 

@@ -63,49 +63,48 @@ public sealed class MonitoringService(StatHubDbContext db, MonitoringCoordinator
         state.CurrentState = color;
     }
 
-    private void ResetUnobservedContinuity(AgentMonitoringState state)
+    public Task<bool> ObserveAsync(string clientId, string hostname, IReadOnlyList<string> observations)
     {
-        // A process restart cannot prove live colors stayed unhealthy while observations were lost.
-        // Persisted offline continuity is known from the last report and remains valid.
-        if (state.ObservationSessionId == coordinator.SessionId || state.CurrentState == "grey") return;
-        state.YellowOrWorseSinceUtc = null;
-        state.RedOrWorseSinceUtc = null;
-        state.CurrentState = "unknown";
-    }
-
-    public async Task ObserveAsync(string clientId, string hostname, IReadOnlyList<string> observations)
-    {
-        var colors = observations.Where(color => color is "green" or "yellow" or "red").ToArray();
-        if (string.IsNullOrWhiteSpace(clientId) || clientId.Length > 200 || colors.Length == 0) return;
-        await coordinator.Gate.WaitAsync();
-        try
+        if (string.IsNullOrWhiteSpace(clientId) || clientId.Length > 200) return Task.FromResult(false);
+        var wakeRecovery = false;
+        lock (coordinator.StateLock)
         {
             var now = clock.GetUtcNow().UtcDateTime;
-            var policy = await PolicyAsync();
-            var state = await db.AgentMonitoringStates.FindAsync(clientId);
-            if (state == null)
+            AgentMonitoringState? state = null;
+            foreach (var color in observations)
             {
-                state = new AgentMonitoringState { ClientId = clientId, StateSinceUtc = now };
-                db.AgentMonitoringStates.Add(state);
-            }
-            ResetUnobservedContinuity(state);
-            if (state.LastReportedAtUtc != default && now >= state.LastReportedAtUtc + OfflineTimeout)
-                Transition(state, "grey", state.LastReportedAtUtc + OfflineTimeout);
-            foreach (var color in colors)
-            {
+                if (color is not ("green" or "yellow" or "red")) continue;
+                if (state == null)
+                {
+                    if (!coordinator.States.TryGetValue(clientId, out state))
+                    {
+                        state = new AgentMonitoringState { ClientId = clientId, StateSinceUtc = now };
+                        coordinator.States.Add(clientId, state);
+                    }
+                    if (state.LastReportedAtUtc != default && now >= state.LastReportedAtUtc + OfflineTimeout)
+                        Transition(state, "grey", state.LastReportedAtUtc + OfflineTimeout);
+                }
+                if (color == "green" && state.CurrentState != "green" &&
+                    coordinator.RecoveryCandidates.Contains(clientId) && !coordinator.RecoveryWakeQueued)
+                {
+                    coordinator.RecoveryWakeQueued = true;
+                    wakeRecovery = true;
+                }
                 Transition(state, color, now);
-                // Retain even a transient green inside one ten-sample report until recovery succeeds.
-                if (color == "green" && policy.IsEnabled && Includes(policy, clientId) && policy.AutoResolveOnGreen)
+                // A later red sample must not hide even one green sample from the sync worker.
+                if (color == "green")
+                {
                     state.PendingRecoveryAtUtc = now;
+                    state.RecoverySequence++;
+                }
             }
-            state.Hostname = hostname.Length > 200 ? hostname[..200] : hostname;
-            state.LastReportedAtUtc = now;
-            state.ObservationSessionId = coordinator.SessionId;
-            await db.SaveChangesAsync();
-            if (state.PendingRecoveryAtUtc.HasValue || Severity(policy, state, now) != null)
-                await SynchronizeAsync(policy, [state], now);
+            if (state != null)
+            {
+                state.Hostname = hostname.Length > 200 ? hostname[..200] : hostname;
+                state.LastReportedAtUtc = now;
+            }
         }
-        finally { coordinator.Gate.Release(); }
+        return Task.FromResult(wakeRecovery);
     }
 
     public async Task CheckAsync()
@@ -113,94 +112,128 @@ public sealed class MonitoringService(StatHubDbContext db, MonitoringCoordinator
         await coordinator.Gate.WaitAsync();
         try
         {
-            var now = clock.GetUtcNow().UtcDateTime;
+            MarkOffline(clock.GetUtcNow().UtcDateTime);
+            // Configuration is read once per existing 30-second background pass, never per report.
             var policy = await PolicyAsync();
-            var states = await db.AgentMonitoringStates.ToListAsync();
-            foreach (var state in states)
-            {
-                var offlineAt = state.LastReportedAtUtc + OfflineTimeout;
-                if (now >= offlineAt && state.CurrentState != "grey")
-                {
-                    ResetUnobservedContinuity(state);
-                    Transition(state, "grey", offlineAt);
-                }
-            }
-            await db.SaveChangesAsync();
-            await SynchronizeAsync(policy, states.Where(state => state.CurrentState == "grey" ||
-                state.ObservationSessionId == coordinator.SessionId || state.PendingRecoveryAtUtc.HasValue).ToList(), now);
-        }
-        finally { coordinator.Gate.Release(); }
-    }
-
-    private async Task SynchronizeAsync(MonitoringPolicy policy, IReadOnlyList<AgentMonitoringState> states, DateTime now)
-    {
-        try
-        {
             var settings = await settingsProvider.GetAsync();
-            if (!settings.Enabled || !policy.IsEnabled) return;
-            settings.Validate();
-            var active = await LoadActiveAsync();
-            foreach (var state in states.Where(state => Includes(policy, state.ClientId)))
+            if (!settings.Enabled || !policy.IsEnabled)
             {
-                try
-                {
-                    var owned = active.Where(item => item.Context?.Value<string>("source") == Source &&
-                        item.Context.Value<string>("clientId") == state.ClientId).ToList();
-                    // A successful query also confirms a create whose response was lost.
-                    if (owned.Any(item => item.ReportId == state.NextReportId))
-                    {
-                        state.NextReportId = Guid.NewGuid();
-                        await db.SaveChangesAsync();
-                    }
-                    if (state.PendingRecoveryAtUtc.HasValue)
-                    {
-                        if (policy.AutoResolveOnGreen)
-                        {
-                            foreach (var incident in owned.Where(item => item.ReceivedAtUtc.UtcDateTime <= state.PendingRecoveryAtUtc.Value).ToList())
-                            {
-                                await client.ResolveAsync(incident.IncidentId, new ResolveIncidentRequest
-                                {
-                                    Version = incident.Version,
-                                    Reason = $"StatHub received a healthy sample at {state.PendingRecoveryAtUtc:O}."
-                                });
-                                owned.Remove(incident);
-                            }
-                        }
-                        state.PendingRecoveryAtUtc = null;
-                        await db.SaveChangesAsync();
-                    }
-                    var matchedRule = MatchingRule(policy, state, now);
-                    var severity = matchedRule?.Severity;
-                    if (severity == null || (state.CurrentState != "grey" && state.ObservationSessionId != coordinator.SessionId)) continue;
-                    if (owned.Count == 0)
-                    {
-                        var title = $"{state.Hostname}: {state.CurrentState} server health";
-                        await client.CreateAsync(new CreateIncidentRequest
-                        {
-                            ReportId = state.NextReportId, Title = title.Length > 200 ? title[..200] : title,
-                            Level = severity, OccurredAtUtc = new DateTimeOffset(DateTime.SpecifyKind(Since(state, matchedRule!.State)!.Value, DateTimeKind.Utc)),
-                            Content = Describe(policy, state, severity, now, settings),
-                            Context = new JObject { ["source"] = Source, ["clientId"] = state.ClientId,
-                                ["hostname"] = state.Hostname, ["state"] = state.CurrentState }
-                        });
-                        // Persist a fresh receipt for the next incident if a human closes this one.
-                        state.NextReportId = Guid.NewGuid();
-                        await db.SaveChangesAsync();
-                    }
-                    else
-                    {
-                        foreach (var incident in owned.Where(item => string.CompareOrdinal(severity, item.Level) < 0))
-                            await client.ChangeSeverityAsync(incident.IncidentId, new ChangeIncidentSeverityRequest
-                            {
-                                Version = incident.Version, Level = severity,
-                                Reason = $"StatHub has remained {matchedRule!.State} or worse since {Since(state, matchedRule.State):O}; the {matchedRule.DurationMinutes}-minute rule now meets {severity}. Current state: {state.CurrentState}."
-                            });
-                    }
-                }
-                catch (Exception ex) { logger.LogError(ex, "Could not synchronize monitoring for agent {ClientId}", state.ClientId); }
+                lock (coordinator.StateLock) coordinator.RecoveryCandidates.Clear();
+                return;
             }
+            settings.Validate();
+            await SynchronizeAsync(policy, settings);
         }
         catch (Exception ex) { logger.LogError(ex, "AlertCenter monitoring synchronization failed; retained state for retry"); }
+        finally
+        {
+            lock (coordinator.StateLock) coordinator.RecoveryWakeQueued = false;
+            coordinator.Gate.Release();
+        }
+    }
+
+    private void MarkOffline(DateTime now)
+    {
+        lock (coordinator.StateLock)
+            foreach (var state in coordinator.States.Values)
+            {
+                var offlineAt = state.LastReportedAtUtc + OfflineTimeout;
+                if (now >= offlineAt && state.CurrentState != "grey") Transition(state, "grey", offlineAt);
+            }
+    }
+
+    private async Task SynchronizeAsync(MonitoringPolicy policy, AlertCenterSettings settings)
+    {
+        // One paginated snapshot for all servers, including human closures and lost responses.
+        var active = await LoadActiveAsync();
+        var byClient = active.Where(item => item.Context?.Value<string>("source") == Source)
+            .ToLookup(item => item.Context!.Value<string>("clientId"));
+        var now = clock.GetUtcNow().UtcDateTime;
+        List<AgentMonitoringState> states;
+        lock (coordinator.StateLock)
+        {
+            coordinator.RecoveryCandidates.Clear();
+            if (policy.AutoResolveOnGreen)
+                foreach (var id in byClient.Select(group => group.Key).OfType<string>().Where(id => Includes(policy, id)))
+                    coordinator.RecoveryCandidates.Add(id);
+            MarkOffline(now);
+            states = coordinator.States.Values.Select(state => state.Snapshot()).ToList();
+        }
+        foreach (var state in states.Where(state => Includes(policy, state.ClientId)))
+        {
+            try
+            {
+                var owned = byClient[state.ClientId].ToList();
+                if (owned.Any(item => item.ReportId == state.NextReportId)) AdvanceReceipt(state);
+                if (state.PendingRecoveryAtUtc.HasValue)
+                {
+                    if (policy.AutoResolveOnGreen)
+                    {
+                        // Occurrence time also covers a create completed after a concurrent green report.
+                        foreach (var incident in owned.Where(item => item.OccurredAtUtc.UtcDateTime <= state.PendingRecoveryAtUtc.Value).ToList())
+                        {
+                            await client.ResolveAsync(incident.IncidentId, new ResolveIncidentRequest
+                            {
+                                Version = incident.Version,
+                                Reason = $"StatHub received a healthy sample at {state.PendingRecoveryAtUtc:O}."
+                            });
+                            owned.Remove(incident);
+                        }
+                    }
+                    lock (coordinator.StateLock)
+                    {
+                        var current = coordinator.States[state.ClientId];
+                        if (current.RecoverySequence == state.RecoverySequence) current.PendingRecoveryAtUtc = null;
+                    }
+                }
+                var matchedRule = MatchingRule(policy, state, now);
+                var severity = matchedRule?.Severity;
+                if (severity == null) continue;
+                // A green report received during network I/O invalidates this unhealthy snapshot.
+                lock (coordinator.StateLock)
+                {
+                    var current = coordinator.States[state.ClientId];
+                    var currentSeverity = Severity(policy, current, clock.GetUtcNow().UtcDateTime);
+                    if (current.RecoverySequence != state.RecoverySequence || currentSeverity == null ||
+                        string.CompareOrdinal(currentSeverity, severity) > 0) continue;
+                }
+                if (owned.Count == 0)
+                {
+                    var title = $"{state.Hostname}: {state.CurrentState} server health";
+                    await client.CreateAsync(new CreateIncidentRequest
+                    {
+                        ReportId = state.NextReportId, Title = title.Length > 200 ? title[..200] : title,
+                        Level = severity, OccurredAtUtc = new DateTimeOffset(DateTime.SpecifyKind(Since(state, matchedRule!.State)!.Value, DateTimeKind.Utc)),
+                        Content = Describe(policy, state, severity, now, settings),
+                        Context = new JObject { ["source"] = Source, ["clientId"] = state.ClientId,
+                            ["hostname"] = state.Hostname, ["state"] = state.CurrentState }
+                    });
+                    AdvanceReceipt(state);
+                    if (policy.AutoResolveOnGreen)
+                        lock (coordinator.StateLock) coordinator.RecoveryCandidates.Add(state.ClientId);
+                }
+                else
+                {
+                    foreach (var incident in owned.Where(item => string.CompareOrdinal(severity, item.Level) < 0))
+                        await client.ChangeSeverityAsync(incident.IncidentId, new ChangeIncidentSeverityRequest
+                        {
+                            Version = incident.Version, Level = severity,
+                            Reason = $"StatHub has remained {matchedRule!.State} or worse since {Since(state, matchedRule.State):O}; the {matchedRule.DurationMinutes}-minute rule now meets {severity}. Current state: {state.CurrentState}."
+                        });
+                }
+            }
+            catch (Exception ex) { logger.LogError(ex, "Could not synchronize monitoring for agent {ClientId}", state.ClientId); }
+        }
+    }
+
+    private void AdvanceReceipt(AgentMonitoringState snapshot)
+    {
+        lock (coordinator.StateLock)
+        {
+            var state = coordinator.States[snapshot.ClientId];
+            state.NextReportId = Guid.NewGuid();
+            snapshot.NextReportId = state.NextReportId;
+        }
     }
 
     private string Describe(MonitoringPolicy policy, AgentMonitoringState state, string severity, DateTime now, AlertCenterSettings settings)
