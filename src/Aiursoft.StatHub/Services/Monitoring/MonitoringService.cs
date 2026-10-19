@@ -1,5 +1,6 @@
 using Aiursoft.AlertCenter.SDK.Models;
 using Aiursoft.StatHub.Configuration;
+using Aiursoft.StatHub.Data;
 using Aiursoft.StatHub.Entities;
 using Aiursoft.StatHub.Entities.Monitoring;
 using Microsoft.EntityFrameworkCore;
@@ -9,7 +10,7 @@ namespace Aiursoft.StatHub.Services.Monitoring;
 
 public sealed class MonitoringService(StatHubDbContext db, MonitoringCoordinator coordinator,
     IAlertCenterSettingsProvider settingsProvider, IMonitoringIncidentClient client,
-    TimeProvider clock, ILogger<MonitoringService> logger)
+    TimeProvider clock, ILogger<MonitoringService> logger, InMemoryDatabase agents)
 {
     private const string Source = "StatHub.HealthMonitoring";
     public static readonly TimeSpan OfflineTimeout = TimeSpan.FromMinutes(1);
@@ -148,7 +149,7 @@ public sealed class MonitoringService(StatHubDbContext db, MonitoringCoordinator
                         {
                             ReportId = state.NextReportId, Title = title.Length > 200 ? title[..200] : title,
                             Level = severity, OccurredAtUtc = new DateTimeOffset(DateTime.SpecifyKind(state.StateSinceUtc, DateTimeKind.Utc)),
-                            Content = $"State {state.CurrentState} since {state.StateSinceUtc:O}.\n\nServer: {settings.PublicBaseUrl.TrimEnd('/')}/Dashboard/Details/{Uri.EscapeDataString(state.ClientId)}",
+                            Content = Describe(policy, state, severity, now, settings),
                             Context = new JObject { ["source"] = Source, ["clientId"] = state.ClientId,
                                 ["hostname"] = state.Hostname, ["state"] = state.CurrentState }
                         });
@@ -170,6 +171,50 @@ public sealed class MonitoringService(StatHubDbContext db, MonitoringCoordinator
             }
         }
         catch (Exception ex) { logger.LogError(ex, "AlertCenter monitoring synchronization failed; retained state for retry"); }
+    }
+
+    private string Describe(MonitoringPolicy policy, AgentMonitoringState state, string severity, DateTime now, AlertCenterSettings settings)
+    {
+        var rule = policy.Rules.Where(item => item.IsEnabled && item.State == state.CurrentState &&
+                item.Severity == severity && now - state.StateSinceUtc >= TimeSpan.FromMinutes(item.DurationMinutes))
+            .OrderBy(item => item.DurationMinutes).First();
+        var elapsed = (now - state.StateSinceUtc).TotalMinutes;
+        var summary = string.Create(System.Globalization.CultureInfo.InvariantCulture, $"Server {state.Hostname} has remained {state.CurrentState} for {elapsed:F1} minutes. " +
+            $"The configured rule triggers {severity} after {rule.DurationMinutes} continuous minutes.\n" +
+            $"State started (UTC): {state.StateSinceUtc:O}\nLast report (UTC): {state.LastReportedAtUtc:O}\n");
+        string evidence;
+        string action;
+        if (state.CurrentState == "grey")
+        {
+            evidence = "No agent reports have arrived for at least one minute, so StatHub marked the server offline. " +
+                "This may indicate an agent, network or host problem; it does not by itself confirm a business outage.";
+            action = "Check host reachability, the StatHub agent and its connection to StatHub. Then verify the services on this host.";
+        }
+        else
+        {
+            var agent = agents.GetClient(state.ClientId);
+            evidence = "Live metric details are unavailable. Open the server page to inspect the latest observations.";
+            if (agent != null && now - agent.LastUpdate <= OfflineTimeout && agent.CpuCores > 0)
+            {
+                var health = agent.GetHealthReport();
+                var load = agent.GetLoad();
+                evidence = string.Create(System.Globalization.CultureInfo.InvariantCulture, $"Latest available sample (UTC): {agent.LastUpdate:O}\n" +
+                    $"CPU busy: {health.CpuRate}%; 15-minute load: {load.Load15M:F2} across {agent.CpuCores} logical CPUs " +
+                    $"({health.LoadRate:F1}% per CPU); busiest disk: {health.DiskUseRatio:P1}.\n") +
+                    "Red thresholds: CPU busy > 40%, load per CPU > 100%, or disk usage > 92%. " +
+                    "Yellow thresholds: CPU busy > 20%, load per CPU > 70%, or disk usage > 80%, unless already red. " +
+                    "These are the latest values, not a claim that one metric stayed above its threshold for the entire interval.";
+            }
+            action = "Inspect CPU-heavy processes and running builds, disk space and I/O, then check affected service responses. " +
+                "A resource-pressure alert alone does not prove a service outage.";
+        }
+        var recovery = policy.AutoResolveOnGreen
+            ? "One healthy (green) sample automatically resolves this server's active StatHub incidents."
+            : "Automatic resolution on green is disabled. Verify recovery and resolve the incident manually.";
+        var footer = $"\n\nNext steps: {action}\nRecovery: {recovery}\n" +
+            $"Server details: {settings.PublicBaseUrl.TrimEnd('/')}/Dashboard/Details/{Uri.EscapeDataString(state.ClientId)}";
+        var content = summary + "\nObserved evidence: " + evidence;
+        return content[..Math.Min(content.Length, Math.Max(0, 4000 - footer.Length))] + footer;
     }
 
     private async Task<List<IncidentDetails>> LoadActiveAsync()
