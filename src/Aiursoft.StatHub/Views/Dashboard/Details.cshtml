@@ -106,8 +106,8 @@
                 <div class="card-body py-4">
                     <div class="d-flex align-items-start">
                         <div class="flex-grow-1">
-                            <h3 class="mb-2" data-bs-toggle="tooltip" title="@agent.BootTime.ToString("F")">
-                                @agent.BootTime.ToString("g")
+                            <h3 class="mb-2">
+                                <span data-utc-time="@agent.BootTime.ToHtmlDateTime()"></span>
                             </h3>
                             <p class="mb-2">@Localizer["Last Boot Time"]</p>
                             <div class="mb-0">
@@ -215,7 +215,7 @@
                                             <td class="small">@key.Owner</td>
                                             <td class="small text-muted text-truncate" style="max-width: 200px;" title="@key.FilePath"><code class="small">@key.FilePath</code></td>
                                             <td><code class="small">@key.Preview</code></td>
-                                            <td class="small text-muted" data-bs-toggle="tooltip" title="Created: @key.Created.ToString("g")&#xA;Accessed: @key.LastAccessed.ToString("g")">@key.LastModified.ToString("g")</td>
+                                            <td class="small text-muted"><span data-utc-time="@key.LastModified.ToHtmlDateTime()"></span><details><summary>@Localizer["More times"]</summary><div>@Localizer["Created"]: <span data-utc-time="@key.Created.ToHtmlDateTime()"></span></div><div>@Localizer["Accessed"]: <span data-utc-time="@key.LastAccessed.ToHtmlDateTime()"></span></div></details></td>
                                         </tr>
                                     }
                                 </tbody>

@@ -1,3 +1,4 @@
+@using Aiursoft.WebTools
 @model Aiursoft.StatHub.Models.Monitoring.MonitoringViewModel
 @using Aiursoft.StatHub.Entities.Monitoring
 
@@ -22,7 +23,7 @@
     <div class="card mb-3">
         <div class="card-header"><h5 class="card-title">@Localizer["Server selection"]</h5><p class="card-subtitle">@Localizer["Excluded servers always take precedence. When all servers are monitored, individual inclusions are unnecessary."]</p></div>
         <div class="table-responsive"><table class="table mb-0">
-            <thead><tr><th>@Localizer["Server"]</th><th>@Localizer["Include"]</th><th>@Localizer["Exclude"]</th><th>@Localizer["State"]</th><th>@Localizer["Last report (UTC)"]</th></tr></thead>
+            <thead><tr><th>@Localizer["Server"]</th><th>@Localizer["Include"]</th><th>@Localizer["Exclude"]</th><th>@Localizer["State"]</th><th>@Localizer["Last report"]</th></tr></thead>
             <tbody>
             @foreach (var agent in Model.Agents)
             {
@@ -32,7 +33,7 @@
                     <td><input type="checkbox" class="form-check-input" name="Included" value="@agent.ClientId" checked="@(selection is { IsExcluded: false })" aria-label="@Localizer["Include server"]" /></td>
                     <td><input type="checkbox" class="form-check-input" name="Excluded" value="@agent.ClientId" checked="@(selection is { IsExcluded: true })" aria-label="@Localizer["Exclude server"]" /></td>
                     <td>@(agent.CurrentState switch { "green" => Localizer["Green"], "yellow" => Localizer["Yellow"], "red" => Localizer["Red"], "grey" => Localizer["Grey (offline)"], _ => Localizer["Unknown"] })</td>
-                    <td>@agent.LastReportedAtUtc.ToString("u")</td>
+                    <td><span data-utc-time="@agent.LastReportedAtUtc.ToHtmlDateTime()"></span></td>
                 </tr>
             }
             </tbody>
