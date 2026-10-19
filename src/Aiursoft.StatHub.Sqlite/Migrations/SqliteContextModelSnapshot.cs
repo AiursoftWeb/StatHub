@@ -58,7 +58,13 @@ namespace Aiursoft.StatHub.Sqlite.Migrations
                     b.Property<DateTime?>("PendingRecoveryAtUtc")
                         .HasColumnType("TEXT");
 
+                    b.Property<DateTime?>("RedOrWorseSinceUtc")
+                        .HasColumnType("TEXT");
+
                     b.Property<DateTime>("StateSinceUtc")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime?>("YellowOrWorseSinceUtc")
                         .HasColumnType("TEXT");
 
                     b.HasKey("ClientId");

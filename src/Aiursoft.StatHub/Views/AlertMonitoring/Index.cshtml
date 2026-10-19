@@ -42,7 +42,7 @@
     </div>
 </form>
 <div class="card">
-    <div class="card-header"><h5 class="card-title">@Localizer["Sustained state rules"]</h5><p class="card-subtitle">@Localizer["Zero minutes means immediately. The most severe matching rule wins. A color change resets its timer; an existing incident is only escalated. Grey begins after one minute without a valid report."]</p></div>
+    <div class="card-header"><h5 class="card-title">@Localizer["Sustained state rules"]</h5><p class="card-subtitle">@Localizer["Zero minutes means immediately. The most severe matching rule wins. Grey is worse than red, and red is worse than yellow. Yellow rules count yellow, red and grey; red rules count red and grey. Each timer resets only when health improves below its threshold. An existing incident is only escalated. Grey begins after one minute without a valid report."]</p></div>
     <div class="card-body">
     @foreach (var rule in Model.Policy.Rules.OrderBy(item => item.State).ThenBy(item => item.DurationMinutes).Append(new MonitoringRule { Id = Guid.Empty }))
     {
@@ -52,8 +52,8 @@
                 <input type="hidden" name="version" value="@Model.Policy.Version" />
                 @if (!isNew) { <input type="hidden" name="id" value="@rule.Id" /> }
                 <div class="col-md-3"><label class="form-label">@Localizer["State"]</label><select name="state" class="form-select" aria-label="@Localizer["State"]">
-                    <option value="yellow" selected="@(rule.State == "yellow")">@Localizer["Yellow"]</option>
-                    <option value="red" selected="@(rule.State == "red")">@Localizer["Red"]</option>
+                    <option value="yellow" selected="@(rule.State == "yellow")">@Localizer["Yellow or worse"]</option>
+                    <option value="red" selected="@(rule.State == "red")">@Localizer["Red or worse"]</option>
                     <option value="grey" selected="@(rule.State == "grey")">@Localizer["Grey (offline)"]</option>
                 </select></div>
                 <div class="col-md-3"><label class="form-label">@Localizer["Continuous minutes"]</label><input class="form-control" type="number" min="0" max="525600" name="durationMinutes" value="@rule.DurationMinutes" required aria-label="@Localizer["Continuous minutes"]" /></div>
