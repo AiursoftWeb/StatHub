@@ -67,8 +67,8 @@ public sealed class MonitoringTests
         _db.ChangeTracker.Clear();
         foreach (var state in await _db.AgentMonitoringStates.ToListAsync())
         {
-            Assert.AreEqual(state.CurrentState == "green" ? null : (DateTime?)since, state.YellowOrWorseSinceUtc);
-            Assert.AreEqual(state.CurrentState is "red" or "grey" ? (DateTime?)since : null, state.RedOrWorseSinceUtc);
+            Assert.AreEqual(state.CurrentState == "green" ? null : since, state.YellowOrWorseSinceUtc);
+            Assert.AreEqual(state.CurrentState is "red" or "grey" ? since : null, state.RedOrWorseSinceUtc);
         }
     }
 
