@@ -11,6 +11,7 @@ public interface IMonitoringIncidentClient
     Task<QueryIncidentsResponse> QueryAsync(QueryIncidentsRequest request);
     Task<CreateIncidentResponse> CreateAsync(CreateIncidentRequest request);
     Task<ChangeIncidentSeverityResponse> ChangeSeverityAsync(Guid incidentId, ChangeIncidentSeverityRequest request);
+    Task<ReopenIncidentResponse> ReopenAsync(Guid incidentId, ReopenIncidentRequest request);
     Task<MitigateIncidentResponse> MitigateAsync(Guid incidentId, MitigateIncidentRequest request);
 }
 
@@ -34,6 +35,9 @@ public sealed class MonitoringIncidentClient(AiurProtocolClient http, IAlertCent
         await (await GetClientAsync()).QueryIncidentsAsync(request);
     public async Task<CreateIncidentResponse> CreateAsync(CreateIncidentRequest request) =>
         await (await GetClientAsync()).CreateIncidentAsync(request);
+    public async Task<ReopenIncidentResponse> ReopenAsync(Guid incidentId, ReopenIncidentRequest request) =>
+        await (await GetClientAsync()).ReopenIncidentAsync(incidentId, request);
+
     public async Task<MitigateIncidentResponse> MitigateAsync(Guid incidentId, MitigateIncidentRequest request) =>
         await (await GetClientAsync()).MitigateIncidentAsync(incidentId, request);
 
