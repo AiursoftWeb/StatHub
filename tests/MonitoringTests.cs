@@ -239,7 +239,7 @@ public sealed class MonitoringTests
         using var command = _db.Database.GetDbConnection().CreateCommand();
         command.CommandText = "SELECT COUNT(*) FROM sqlite_master WHERE type='table' AND name='AgentMonitoringStates'";
         Assert.AreEqual(0L, await command.ExecuteScalarAsync());
-        Assert.AreEqual(5, await _db.AlertMonitoringRules.CountAsync());
+        Assert.AreEqual(6, await _db.AlertMonitoringRules.CountAsync());
         Assert.IsTrue(await _db.AlertMonitoringRules.AnyAsync(rule => rule.DurationMinutes == 42));
     }
 
@@ -417,12 +417,60 @@ public sealed class MonitoringTests
     }
 
     [TestMethod]
+    public async Task GreyCreatesAtFifteenMinutesAndEscalatesSameIncidentAtThirtyFive()
+    {
+        await Observe("green");
+        _clock.Advance(MonitoringService.OfflineTimeout + TimeSpan.FromMinutes(15) - TimeSpan.FromSeconds(1));
+        await _service.CheckAsync();
+        Assert.IsEmpty(_client.Incidents);
+        _clock.Advance(TimeSpan.FromSeconds(1));
+        await _service.CheckAsync();
+        var incident = _client.Incidents.Single();
+        Assert.AreEqual("sev3", incident.Level);
+        Assert.AreEqual(_clock.GetUtcNow().AddMinutes(-15), incident.OccurredAtUtc);
+        Assert.Contains("15 continuous minutes", _client.Created.Single().Content!);
+        _clock.Advance(TimeSpan.FromMinutes(20) - TimeSpan.FromSeconds(1));
+        await _service.CheckAsync();
+        Assert.AreEqual("sev3", incident.Level);
+        Assert.AreEqual(0, _client.Escalations);
+        _clock.Advance(TimeSpan.FromSeconds(1));
+        await _service.CheckAsync();
+        Assert.AreEqual("sev2", incident.Level);
+        Assert.AreEqual(1, _client.Escalations);
+        await _service.CheckAsync();
+        Assert.AreSame(incident, _client.Incidents.Single());
+        Assert.AreEqual(1, _client.Escalations);
+        await Observe("green");
+        Assert.AreEqual("mitigated", incident.Status);
+    }
+
+    [TestMethod]
+    public async Task GreenBeforeGreyEscalationResetsTheGreyTimer()
+    {
+        await Observe("green");
+        _clock.Advance(MonitoringService.OfflineTimeout + TimeSpan.FromMinutes(15));
+        await _service.CheckAsync();
+        var incident = _client.Incidents.Single();
+        await Observe("green");
+        _clock.Advance(MonitoringService.OfflineTimeout + TimeSpan.FromMinutes(15) - TimeSpan.FromSeconds(1));
+        await _service.CheckAsync();
+        Assert.AreEqual("mitigated", incident.Status);
+        Assert.AreEqual(0, _client.Reopens);
+        _clock.Advance(TimeSpan.FromSeconds(1));
+        await _service.CheckAsync();
+        Assert.AreEqual(1, _client.Reopens);
+        Assert.AreEqual("sev3", incident.Level);
+        Assert.AreEqual(0, _client.Escalations);
+        Assert.AreEqual(1, _client.Incidents.Count);
+    }
+
+    [TestMethod]
     public async Task DefaultRulesSeedOnceAndDeletedRulesStayDeleted()
     {
         var policy = await _service.PolicyAsync();
         Assert.IsTrue(policy.IsEnabled && policy.MonitorAllServers && policy.AutoResolveOnGreen);
-        Assert.AreEqual(5, policy.Rules.Count);
-        CollectionAssert.AreEquivalent(new[] { "yellow:35:sev3", "yellow:100:sev2", "red:35:sev2", "red:100:sev1", "grey:15:sev2" },
+        Assert.AreEqual(6, policy.Rules.Count);
+        CollectionAssert.AreEquivalent(new[] { "yellow:35:sev3", "yellow:100:sev2", "red:35:sev2", "red:100:sev1", "grey:15:sev3", "grey:35:sev2" },
             policy.Rules.Select(rule => $"{rule.State}:{rule.DurationMinutes}:{rule.Severity}").ToArray());
         Assert.IsEmpty(policy.Targets);
         _db.AlertMonitoringRules.RemoveRange(policy.Rules);
@@ -540,7 +588,7 @@ public sealed class MonitoringTests
         Assert.IsEmpty(_client.Incidents);
         _clock.Advance(TimeSpan.FromMinutes(1));
         await _service.CheckAsync();
-        Assert.AreEqual("sev2", _client.Incidents.Single().Level);
+        Assert.AreEqual("sev3", _client.Incidents.Single().Level);
         Assert.AreEqual("grey", _coordinator.Snapshot().Single().CurrentState);
         await _service.CheckAsync();
         Assert.AreEqual(1, _client.Incidents.Count);
