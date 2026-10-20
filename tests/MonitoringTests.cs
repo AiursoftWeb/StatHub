@@ -56,6 +56,159 @@ public sealed class MonitoringTests
     }
 
     [TestMethod]
+    [DataRow("mitigated", 14399, true)]
+    [DataRow("mitigated", 14400, true)]
+    [DataRow("mitigated", 14401, false)]
+    [DataRow("resolved", 14399, true)]
+    [DataRow("resolved", 14400, true)]
+    [DataRow("resolved", 14401, false)]
+    public async Task RecurrenceReopensWithinFourHoursAndCreatesAfterBoundary(string status, int ageSeconds, bool reopen)
+    {
+        await Observe("yellow");
+        await Continue("yellow", 35);
+        var previous = _client.Incidents.Single();
+        await Observe("green");
+        previous.Status = status;
+        if (status == "resolved") previous.ResolvedAtUtc = _clock.GetUtcNow();
+        var oldVersion = previous.Version;
+        var oldMitigated = previous.MitigatedAtUtc;
+        var oldResolved = previous.ResolvedAtUtc;
+        _clock.Advance(TimeSpan.FromSeconds(ageSeconds - 35 * 60));
+        await Observe("green");
+        // Recovery timestamps on completed incidents must never be refreshed by subsequent green samples.
+        Assert.AreEqual(oldMitigated, previous.MitigatedAtUtc);
+        Assert.AreEqual(oldResolved, previous.ResolvedAtUtc);
+        await Observe("yellow");
+        await Continue("yellow", 34);
+        Assert.AreEqual(0, _client.Reopens);
+        await Continue("yellow", 1);
+        Assert.AreEqual(reopen ? 1 : 2, _client.Incidents.Count);
+        Assert.AreEqual(reopen ? 1 : 0, _client.Reopens);
+        var current = _client.Incidents.Single(item => item.Status == "new");
+        Assert.AreEqual(reopen, current.IncidentId == previous.IncidentId);
+        Assert.AreEqual("sev3", current.Level);
+        if (!reopen)
+        {
+            Assert.AreEqual(oldVersion, previous.Version);
+            Assert.AreEqual(oldMitigated, previous.MitigatedAtUtc);
+            Assert.AreEqual(oldResolved, previous.ResolvedAtUtc);
+        }
+        await _service.CheckAsync();
+        Assert.AreEqual(reopen ? 1 : 2, _client.Incidents.Count);
+        await Continue("yellow", 65);
+        Assert.AreEqual("sev2", current.Level);
+        Assert.AreEqual(1, _client.Escalations);
+        await Observe("green");
+        Assert.AreEqual("mitigated", current.Status);
+        Assert.AreEqual(2, _client.Mitigations);
+        if (!reopen) Assert.AreEqual(oldVersion, previous.Version);
+    }
+
+    [TestMethod]
+    public async Task MostRecentlyRecoveredIncidentIsReopenedEvenWhenAnOlderIncidentWasReceivedLater()
+    {
+        await Observe("yellow");
+        await Continue("yellow", 35);
+        var latest = _client.Incidents.Single();
+        var older = _client.Copy(latest);
+        older.Status = "resolved";
+        older.MitigatedAtUtc = _clock.GetUtcNow().AddHours(-2);
+        older.ResolvedAtUtc = _clock.GetUtcNow().AddHours(-1);
+        older.ReceivedAtUtc = _clock.GetUtcNow().AddMinutes(1);
+        await Observe("green");
+        await Observe("yellow");
+        await Continue("yellow", 35);
+        Assert.AreEqual(1, _client.Reopens);
+        Assert.AreEqual("new", latest.Status);
+        Assert.AreEqual("resolved", older.Status);
+        Assert.AreEqual(2, _client.Incidents.Count);
+    }
+
+    [TestMethod]
+    public async Task RecentResolutionWinsOverEarlierMitigationAndSurvivesRestart()
+    {
+        await Observe("red");
+        await Continue("red", 35);
+        var previous = _client.Incidents.Single();
+        await Observe("green");
+        _clock.Advance(TimeSpan.FromHours(5));
+        previous.Status = "resolved";
+        previous.ResolvedAtUtc = _clock.GetUtcNow();
+        _coordinator.Dispose();
+        _coordinator = new MonitoringCoordinator();
+        _service = Service();
+        await Observe("red");
+        await Continue("red", 35);
+        Assert.AreEqual(1, _client.Incidents.Count);
+        Assert.AreEqual(1, _client.Reopens);
+        Assert.AreEqual("new", previous.Status);
+    }
+
+    [TestMethod]
+    [DataRow(false)]
+    [DataRow(true)]
+    public async Task ReopenFailureOrLostResponseNeverCreatesDuplicate(bool lostResponse)
+    {
+        await Observe("yellow");
+        await Continue("yellow", 35);
+        await Observe("green");
+        _client.FailReopen = !lostResponse;
+        _client.LoseReopenResponse = lostResponse;
+        await Observe("yellow");
+        await Continue("yellow", 35);
+        Assert.AreEqual(1, _client.Incidents.Count);
+        _client.FailReopen = false;
+        await _service.CheckAsync();
+        Assert.AreEqual(1, _client.Incidents.Count);
+        Assert.AreEqual(1, _client.Reopens);
+        Assert.AreEqual("new", _client.Incidents.Single().Status);
+    }
+
+    [TestMethod]
+    public async Task GreenDuringReopenMitigatesAgainWithoutCreatingAnotherIncident()
+    {
+        await Observe("red");
+        await Continue("red", 35);
+        await Observe("green");
+        await Observe("red");
+        await Continue("red", 34);
+        _client.BeforeReopen = async () =>
+        {
+            await _service.ObserveAsync("server-1", "Test server", ["green", "red"]);
+        };
+        await Continue("red", 1);
+        Assert.AreEqual(1, _client.Reopens);
+        await _service.CheckAsync();
+        Assert.AreEqual(1, _client.Incidents.Count);
+        Assert.AreEqual("mitigated", _client.Incidents.Single().Status);
+        Assert.AreEqual(2, _client.Mitigations);
+    }
+
+    [TestMethod]
+    [DataRow("source", "Another integration")]
+    [DataRow("clientId", "another-server")]
+    public async Task ActiveIncidentTakesPrecedenceAndForeignHistoryIsNeverReopened(string property, string value)
+    {
+        await Observe("yellow");
+        await Continue("yellow", 35);
+        var active = _client.Incidents.Single();
+        var closed = _client.Copy(active);
+        closed.Status = "mitigated";
+        closed.MitigatedAtUtc = _clock.GetUtcNow();
+        await Continue("yellow", 65);
+        Assert.AreEqual("sev2", active.Level);
+        Assert.AreEqual("sev3", closed.Level);
+        Assert.AreEqual(0, _client.Reopens);
+        await Observe("green");
+        foreach (var incident in _client.Incidents)
+            incident.Context![property] = value;
+        await Observe("yellow");
+        await Continue("yellow", 35);
+        Assert.AreEqual(3, _client.Incidents.Count);
+        Assert.AreEqual(0, _client.Reopens);
+    }
+
+    [TestMethod]
     public async Task MigrationRemovesRuntimeStateAndPreservesRules()
     {
         var migrator = _db.GetService<IMigrator>();
@@ -190,7 +343,9 @@ public sealed class MonitoringTests
         await Continue("red", 1);
         Assert.AreEqual(1, _client.Incidents.Count);
         await Continue("red", 1);
-        Assert.AreEqual(2, _client.Incidents.Count);
+        Assert.AreEqual(1, _client.Incidents.Count);
+        Assert.AreEqual(1, _client.Reopens);
+        Assert.AreEqual("new", _client.Incidents.Single().Status);
     }
 
     [TestMethod]
@@ -276,8 +431,11 @@ public sealed class MonitoringTests
         Assert.AreEqual(1, _client.Incidents.Count);
         Assert.AreEqual(1, _client.Escalations);
         incident.Status = "mitigated";
+        incident.MitigatedAtUtc = _clock.GetUtcNow();
         await Continue(color, 1);
-        Assert.AreEqual(2, _client.Incidents.Count);
+        Assert.AreEqual(1, _client.Incidents.Count);
+        Assert.AreEqual(1, _client.Reopens);
+        Assert.AreEqual("new", incident.Status);
         Assert.AreEqual(second, _client.Incidents.Last().Level);
     }
 
@@ -296,8 +454,10 @@ public sealed class MonitoringTests
         await Continue("red", 34);
         Assert.AreEqual(3, _client.Incidents.Count);
         await Continue("red", 1);
-        Assert.AreEqual(4, _client.Incidents.Count);
-        Assert.AreEqual("sev2", _client.Incidents.Last().Level);
+        Assert.AreEqual(3, _client.Incidents.Count);
+        Assert.AreEqual(1, _client.Reopens);
+        Assert.AreEqual(1, _client.Incidents.Count(item => item.Context!.Value<string>("source") == "StatHub.HealthMonitoring" && item.Status == "new"));
+        Assert.AreEqual("sev2", _client.Incidents.First(item => item.Status == "new" && item.Context!.Value<string>("source") == "StatHub.HealthMonitoring").Level);
     }
 
     [TestMethod]
@@ -338,9 +498,13 @@ public sealed class MonitoringTests
         await Observe("yellow");
         await Continue("yellow", 36);
         Assert.AreEqual(1, _client.Incidents.Count);
-        _client.Incidents.Single().Status = inactiveStatus;
+        var incident = _client.Incidents.Single();
+        incident.Status = inactiveStatus;
+        incident.MitigatedAtUtc = _clock.GetUtcNow();
+        if (inactiveStatus == "resolved") incident.ResolvedAtUtc = _clock.GetUtcNow();
         await Observe("yellow");
-        Assert.AreEqual(2, _client.Incidents.Count);
+        Assert.AreEqual(1, _client.Incidents.Count);
+        Assert.AreEqual(1, _client.Reopens);
         Assert.AreEqual(1, _client.Incidents.Count(item => item.Status is not ("mitigated" or "resolved")));
     }
 
@@ -558,6 +722,10 @@ public sealed class MonitoringTests
         public int Queries { get; private set; }
         public int Escalations { get; private set; }
         public int Mitigations { get; private set; }
+        public int Reopens { get; private set; }
+        public bool LoseReopenResponse { get; set; }
+        public bool FailReopen { get; set; }
+        public Func<Task>? BeforeReopen { get; set; }
         public Func<Task>? BeforeQuery { get; set; }
         public Func<Task>? BeforeCreate { get; set; }
         public bool FailMitigation { get; set; }
@@ -566,7 +734,7 @@ public sealed class MonitoringTests
         {
             Queries++;
             if (BeforeQuery != null) await BeforeQuery();
-            var active = Incidents.Where(item => item.Status is not ("mitigated" or "resolved")).ToList();
+            var active = Incidents.Where(item => !request.ActiveOnly || item.Status != "resolved").ToList();
             return new QueryIncidentsResponse
             {
                 Page = request.Page, PageSize = request.PageSize, TotalCount = active.Count,
@@ -593,9 +761,27 @@ public sealed class MonitoringTests
             if (FailMitigation) throw new HttpRequestException("Offline");
             var incident = Incidents.Single(item => item.IncidentId == incidentId);
             Assert.AreEqual(incident.Version, request.Version);
+            if (incident.Status == "mitigated")
+                return Task.FromResult(new MitigateIncidentResponse { IncidentId = incidentId, Version = incident.Version });
             incident.Status = "mitigated";
+            incident.MitigatedAtUtc = clock.GetUtcNow();
+            incident.Version = Guid.NewGuid();
             Mitigations++;
             return Task.FromResult(new MitigateIncidentResponse { IncidentId = incidentId });
+        }
+        public async Task<ReopenIncidentResponse> ReopenAsync(Guid incidentId, ReopenIncidentRequest request)
+        {
+            if (BeforeReopen != null) await BeforeReopen();
+            if (FailReopen) throw new HttpRequestException("Reopen unavailable");
+            var incident = Incidents.Single(item => item.IncidentId == incidentId);
+            Assert.AreEqual(incident.Version, request.Version);
+            incident.Status = "new";
+            incident.MitigatedAtUtc = null;
+            incident.ResolvedAtUtc = null;
+            incident.Version = Guid.NewGuid();
+            Reopens++;
+            if (LoseReopenResponse) { LoseReopenResponse = false; throw new HttpRequestException("Lost reopen response"); }
+            return new ReopenIncidentResponse { IncidentId = incidentId, Version = incident.Version };
         }
         public Task<ChangeIncidentSeverityResponse> ChangeSeverityAsync(Guid incidentId, ChangeIncidentSeverityRequest request)
         {

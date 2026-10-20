@@ -13,6 +13,7 @@ public sealed class MonitoringService(StatHubDbContext db, MonitoringCoordinator
     TimeProvider clock, ILogger<MonitoringService> logger, InMemoryDatabase agents)
 {
     private const string Source = "StatHub.HealthMonitoring";
+    private static readonly TimeSpan ReopenWindow = TimeSpan.FromHours(4);
     public static readonly TimeSpan OfflineTimeout = TimeSpan.FromMinutes(1);
 
     public async Task<MonitoringPolicy> PolicyAsync()
@@ -144,9 +145,9 @@ public sealed class MonitoringService(StatHubDbContext db, MonitoringCoordinator
             ? !excluded
             : policy.MonitorAllServers;
 
-        // One paginated snapshot for all servers, including human closures and lost responses.
-        var active = await LoadActiveAsync();
-        var byClient = active.Where(item => item.Context?.Value<string>("source") == Source)
+        // Include resolved history so recent human closures can be reopened without touching older incidents.
+        var incidents = await LoadIncidentsAsync();
+        var byClient = incidents.Where(item => item.Context?.Value<string>("source") == Source)
             .ToLookup(item => item.Context!.Value<string>("clientId"));
         var now = clock.GetUtcNow().UtcDateTime;
         List<AgentMonitoringState> states;
@@ -154,7 +155,7 @@ public sealed class MonitoringService(StatHubDbContext db, MonitoringCoordinator
         {
             coordinator.RecoveryCandidates.Clear();
             if (policy.AutoResolveOnGreen)
-                foreach (var id in byClient.Select(group => group.Key).OfType<string>().Where(Includes))
+                foreach (var id in byClient.Where(group => group.Any(IsOpen)).Select(group => group.Key).OfType<string>().Where(Includes))
                     coordinator.RecoveryCandidates.Add(id);
             MarkOffline(now);
             states = coordinator.States.Values.Select(state => state.Snapshot()).ToList();
@@ -163,8 +164,9 @@ public sealed class MonitoringService(StatHubDbContext db, MonitoringCoordinator
         {
             try
             {
-                var owned = byClient[state.ClientId].ToList();
-                if (owned.Any(item => item.ReportId == state.NextReportId)) AdvanceReceipt(state);
+                var history = byClient[state.ClientId].ToList();
+                var owned = history.Where(IsOpen).ToList();
+                if (history.Any(item => item.ReportId == state.NextReportId)) AdvanceReceipt(state);
                 if (state.PendingRecoveryAtUtc.HasValue)
                 {
                     if (policy.AutoResolveOnGreen)
@@ -196,6 +198,30 @@ public sealed class MonitoringService(StatHubDbContext db, MonitoringCoordinator
                     var currentSeverity = Severity(policy, current, clock.GetUtcNow().UtcDateTime);
                     if (current.RecoverySequence != state.RecoverySequence || currentSeverity == null ||
                         string.CompareOrdinal(currentSeverity, severity) > 0) continue;
+                }
+                if (owned.Count == 0)
+                {
+                    var previous = history.Where(item => !IsOpen(item) && EndedAt(item).HasValue)
+                        .OrderByDescending(EndedAt).ThenByDescending(item => item.ReceivedAtUtc)
+                        .ThenBy(item => item.IncidentId).FirstOrDefault();
+                    if (previous != null && EndedAt(previous) is { } endedAt &&
+                        now >= endedAt.UtcDateTime && now - endedAt.UtcDateTime <= ReopenWindow)
+                    {
+                        // A failed or conflicting reopen is retried from a fresh snapshot, never replaced by a create.
+                        var reopened = await client.ReopenAsync(previous.IncidentId, new ReopenIncidentRequest
+                        {
+                            Version = previous.Version,
+                            Reason = $"StatHub detected {state.CurrentState} server health again within four hours of recovery. " +
+                                $"The {matchedRule!.DurationMinutes}-minute {matchedRule.State} rule now meets {severity}."
+                        });
+                        previous.Version = reopened.Version;
+                        previous.Status = "new";
+                        previous.MitigatedAtUtc = null;
+                        previous.ResolvedAtUtc = null;
+                        owned.Add(previous);
+                        if (policy.AutoResolveOnGreen)
+                            lock (coordinator.StateLock) coordinator.RecoveryCandidates.Add(state.ClientId);
+                    }
                 }
                 if (owned.Count == 0)
                 {
@@ -279,24 +305,31 @@ public sealed class MonitoringService(StatHubDbContext db, MonitoringCoordinator
         return content[..Math.Min(content.Length, Math.Max(0, 4000 - footer.Length))] + footer;
     }
 
-    private async Task<List<IncidentDetails>> LoadActiveAsync()
+    private static bool IsOpen(IncidentDetails incident) => incident.Status is not ("mitigated" or "resolved");
+
+    private static DateTimeOffset? EndedAt(IncidentDetails incident) =>
+        incident.ResolvedAtUtc is { } resolved &&
+        (!incident.MitigatedAtUtc.HasValue || resolved >= incident.MitigatedAtUtc.Value)
+            ? resolved : incident.MitigatedAtUtc;
+
+    private async Task<List<IncidentDetails>> LoadIncidentsAsync()
     {
         var results = new List<IncidentDetails>();
         int? expectedTotal = null;
         for (var page = 1; ; page++)
         {
-            var result = await client.QueryAsync(new QueryIncidentsRequest { ActiveOnly = true, Page = page, PageSize = 100 });
+            var result = await client.QueryAsync(new QueryIncidentsRequest { ActiveOnly = false, Page = page, PageSize = 100 });
             expectedTotal ??= result.TotalCount;
             if (expectedTotal != result.TotalCount || result.Page != page || result.PageSize != 100)
-                throw new InvalidOperationException("The active incident listing changed; synchronization will retry.");
+                throw new InvalidOperationException("The incident listing changed; synchronization will retry.");
             results.AddRange(result.Items);
             if (results.Count >= expectedTotal)
             {
                 if (results.Count != expectedTotal || results.Select(item => item.IncidentId).Distinct().Count() != results.Count)
-                    throw new InvalidOperationException("The active incident pages overlap or have inconsistent totals.");
+                    throw new InvalidOperationException("The incident pages overlap or have inconsistent totals.");
                 return results;
             }
-            if (result.Items.Count == 0) throw new InvalidOperationException("The active incident listing is incomplete.");
+            if (result.Items.Count == 0) throw new InvalidOperationException("The incident listing is incomplete.");
         }
     }
 }
