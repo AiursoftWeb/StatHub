@@ -59,7 +59,7 @@ public sealed class MonitoringControllerTests : TestBase
             ["version"] = policy.Version.ToString(), ["state"] = "grey", ["durationMinutes"] = "0", ["severity"] = "sev1", ["isEnabled"] = "true"
         }, "/AlertMonitoring");
         Assert.AreEqual(HttpStatusCode.Redirect, saved.StatusCode);
-        Assert.AreEqual(6, await db.AlertMonitoringRules.CountAsync());
+        Assert.AreEqual(7, await db.AlertMonitoringRules.CountAsync());
         using var stale = await PostForm("/AlertMonitoring/SavePolicy", new() { ["Version"] = policy.Version.ToString() }, "/AlertMonitoring");
         Assert.AreEqual(HttpStatusCode.Conflict, stale.StatusCode);
         foreach (var id in await db.AlertMonitoringRules.Select(item => item.Id).ToListAsync())
