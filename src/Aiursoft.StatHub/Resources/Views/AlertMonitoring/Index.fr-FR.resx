@@ -18,7 +18,10 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="A green sample resets every timer. It also resolves this server&apos;s incidents when automatic resolution on green is enabled, even if green appears only briefly." xml:space="preserve">
+      <data name="A green sample resets every timer. It also mitigates this server&apos;s incidents when automatic mitigation on green is enabled, even if green appears only briefly." xml:space="preserve">
+    <value>Un échantillon vert réinitialise tous les minuteurs. Il atténue également les incidents de ce serveur lorsque l’atténuation automatique en cas de vert est activée, même si le vert n’apparaît que brièvement.</value>
+  </data>
+  <data name="A green sample resets every timer. It also resolves this server&apos;s incidents when automatic resolution on green is enabled, even if green appears only briefly." xml:space="preserve">
     <value>Un relevé vert réinitialise tous les minuteurs. Il résout également les incidents de ce serveur lorsque la résolution automatique au passage au vert est activée, même si le vert n’apparaît que brièvement.</value>
   </data>
   <data name="A yellow-or-worse rule set to 35 minutes would trigger. A red-or-worse rule set to 35 minutes would not. The rules you save determine the alert severity." xml:space="preserve">
@@ -87,6 +90,9 @@
   <data name="How alert timers work" xml:space="preserve">
     <value>Fonctionnement des minuteries d&apos;alerte</value>
   </data>
+  <data name="Immediately mitigate all incidents managed by this integration for a server when a healthy sample is received" xml:space="preserve">
+    <value>Résoudre immédiatement tous les incidents gérés par cette intégration pour un serveur lorsqu’une mesure saine est reçue</value>
+  </data>
   <data name="Immediately resolve all incidents managed by this integration for a server when a healthy sample is received" xml:space="preserve">
     <value>Résoudre immédiatement tous les incidents gérés par cette intégration pour un serveur dès réception d’un échantillon indiquant un état sain</value>
   </data>
@@ -107,6 +113,9 @@
   </data>
   <data name="Monitoring policy" xml:space="preserve">
     <value>Politique de surveillance</value>
+  </data>
+  <data name="No report since restart" xml:space="preserve">
+    <value>Aucun rapport depuis le redémarrage</value>
   </data>
   <data name="One incident, with recovery" xml:space="preserve">
     <value>Un incident, avec récupération</value>
@@ -140,6 +149,9 @@
   </data>
   <data name="Sustained state rules" xml:space="preserve">
     <value>Règles de persistance des états</value>
+  </data>
+  <data name="Timers and known servers are kept in memory, with no sample history stored in the database. After StatHub restarts, servers are observed again when they report, and their timers start fresh. Rules and connection settings remain saved." xml:space="preserve">
+    <value>Les minuteries et les serveurs connus sont conservés en mémoire, sans historique des échantillons stocké dans la base de données. Après le redémarrage de StatHub, les serveurs sont à nouveau observés lorsqu&apos;ils signalent, et leurs minuteries repartent à zéro. Les règles et les paramètres de connexion restent enregistrés.</value>
   </data>
   <data name="Unknown" xml:space="preserve">
     <value>Inconnu</value>

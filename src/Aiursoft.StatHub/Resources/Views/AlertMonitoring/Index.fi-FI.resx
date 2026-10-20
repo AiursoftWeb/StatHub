@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="A green sample resets every timer. It also mitigates this server&apos;s incidents when automatic mitigation on green is enabled, even if green appears only briefly." xml:space="preserve">
+    <value>Vihreä näyte nollaa kaikki ajastimet. Se lieventää myös tämän palvelimen häiriöitä, kun häiriöiden automaattinen lieventäminen vihreän tilan perusteella on käytössä, vaikka vihreä tila näkyisi vain hetken.</value>
+  </data>
+  <data name="A yellow-or-worse rule set to 35 minutes would trigger. A red-or-worse rule set to 35 minutes would not. The rules you save determine the alert severity." xml:space="preserve">
+    <value>Keltaisen tai sitä vakavamman tilan sääntö, jonka aikarajaksi on asetettu 35 minuuttia, laukeaisi. Punaisen tai sitä vakavamman tilan sääntö, jonka aikarajaksi on asetettu 35 minuuttia, ei laukeaisi. Tallentamasi säännöt määrittävät hälytyksen vakavuuden.</value>
+  </data>
+  <data name="Add rule" xml:space="preserve">
+    <value>Lisää sääntö</value>
+  </data>
+  <data name="AlertCenter monitoring" xml:space="preserve">
+    <value>AlertCenter-seuranta</value>
+  </data>
+  <data name="Configure the AlertCenter connection in Global Settings. Environment variables can override those settings. Monitoring rules do not store credentials." xml:space="preserve">
+    <value>Määritä AlertCenter-yhteys globaaleissa asetuksissa. Ympäristömuuttujat voivat ohittaa nämä asetukset. Valvontasäännöt eivät tallenna tunnuksia.</value>
+  </data>
+  <data name="Connection settings" xml:space="preserve">
+    <value>Yhteyden asetukset</value>
+  </data>
+  <data name="Continuous minutes" xml:space="preserve">
+    <value>Jatkuvat minuutit</value>
+  </data>
+  <data name="Counts red and grey. Yellow or green resets this timer." xml:space="preserve">
+    <value>Laskee punaiset ja harmaat. Keltainen tai vihreä nollaa tämän ajastimen.</value>
+  </data>
+  <data name="Counts time offline. Any live color resets this timer. Grey starts after one minute without a valid report." xml:space="preserve">
+    <value>Laskee offline-ajan. Mikä tahansa aktiivinen väri nollaa tämän ajastimen. Harmaa tila alkaa, kun kelvollista raporttia ei ole saatu minuuttiin.</value>
+  </data>
+  <data name="Counts yellow, red and grey. Only green resets this timer." xml:space="preserve">
+    <value>Laskee keltaisen, punaisen ja harmaan. Vain vihreä nollaa tämän ajastimen.</value>
+  </data>
+  <data name="Delete rule" xml:space="preserve">
+    <value>Poista sääntö</value>
+  </data>
+  <data name="Enable monitoring policy" xml:space="preserve">
+    <value>Ota valvontakäytäntö käyttöön</value>
+  </data>
+  <data name="Enabled" xml:space="preserve">
+    <value>Käytössä</value>
+  </data>
+  <data name="Example: alternating colors" xml:space="preserve">
+    <value>Esimerkki: vuorottelevat värit</value>
+  </data>
+  <data name="Exclude" xml:space="preserve">
+    <value>Poissulje</value>
+  </data>
+  <data name="Exclude server" xml:space="preserve">
+    <value>Sulje palvelin</value>
+  </data>
+  <data name="Excluded servers always take precedence. When all servers are monitored, individual inclusions are unnecessary." xml:space="preserve">
+    <value>Poissuljetut palvelimet ovat aina etusijalla. Kun kaikki palvelimet valvotaan, yksittäiset sisällytykset eivät ole tarpeen.</value>
+  </data>
+  <data name="From most to least severe" xml:space="preserve">
+    <value>Vakavuusjärjestys vakavimmasta lievimpään</value>
+  </data>
+  <data name="Getting worse keeps a timer running. Improving below its threshold resets it." xml:space="preserve">
+    <value>Heikkeneminen pitää ajastimen käynnissä. Kun tilanne paranee kynnysarvon alapuolelle, ajastin nollautuu.</value>
+  </data>
+  <data name="Green" xml:space="preserve">
+    <value>Vihreä</value>
+  </data>
+  <data name="Grey (offline)" xml:space="preserve">
+    <value>Harmaa (offline)</value>
+  </data>
+  <data name="Grey only" xml:space="preserve">
+    <value>Vain harmaa</value>
+  </data>
+  <data name="How alert timers work" xml:space="preserve">
+    <value>Miten hälytyksen ajastimet toimivat</value>
+  </data>
+  <data name="Immediately mitigate all incidents managed by this integration for a server when a healthy sample is received" xml:space="preserve">
+    <value>Vaimenna välittömästi kaikki tämän integraation hallinnoimat tapaukset palvelimelle, kun terve näyte saadaan</value>
+  </data>
+  <data name="Include" xml:space="preserve">
+    <value>Sisällytä</value>
+  </data>
+  <data name="Include server" xml:space="preserve">
+    <value>Sisällytä palvelin</value>
+  </data>
+  <data name="Last report" xml:space="preserve">
+    <value>Viimeisin raportti</value>
+  </data>
+  <data name="Matching more rules escalates the existing incident when needed; it does not create another incident or automatically lower its severity." xml:space="preserve">
+    <value>Useampaa sääntöjen täyttymistä nostaa olemassa olevan onnettomisuuden vakavuutta tarvittaessa; se ei luoda uutta onnettomuutta eikä automaattisesti laske sen vakavuutta.</value>
+  </data>
+  <data name="Monitor all servers, including newly connected servers" xml:space="preserve">
+    <value>Valvo kaikkia palvelimia, myös uusia yhdistettyjä palvelimia</value>
+  </data>
+  <data name="Monitoring policy" xml:space="preserve">
+    <value>Valvontakäytäntö</value>
+  </data>
+  <data name="No report since restart" xml:space="preserve">
+    <value>Ei raportoita uudelleenkäynnistyksestä</value>
+  </data>
+  <data name="One incident, with recovery" xml:space="preserve">
+    <value>Yksi tapaus, palautumisen kanssa</value>
+  </data>
+  <data name="Red" xml:space="preserve">
+    <value>Punainen</value>
+  </data>
+  <data name="Red or worse" xml:space="preserve">
+    <value>Punainen tai vakavampi</value>
+  </data>
+  <data name="Rules measure how long a server stays at or above a health threshold. Each threshold has its own timer." xml:space="preserve">
+    <value>Säännöt mittaavat, kuinka kauan palvelin pysyy terveyyskynnyn yläpuolella tai sen tasolla. Jokaisella kynnyksellä on oma ajastimensa.</value>
+  </data>
+  <data name="Save policy and server selection" xml:space="preserve">
+    <value>Tallenna käytäntö ja palvelinvalinnat</value>
+  </data>
+  <data name="Save rule" xml:space="preserve">
+    <value>Tallenna sääntö</value>
+  </data>
+  <data name="Server" xml:space="preserve">
+    <value>Palvelin</value>
+  </data>
+  <data name="Server selection" xml:space="preserve">
+    <value>Palvelimen valinta</value>
+  </data>
+  <data name="Severity" xml:space="preserve">
+    <value>Vakavuus</value>
+  </data>
+  <data name="State" xml:space="preserve">
+    <value>Tila</value>
+  </data>
+  <data name="Sustained state rules" xml:space="preserve">
+    <value>Yhtäjaksoisen tilan säännöt</value>
+  </data>
+  <data name="Timers and known servers are kept in memory, with no sample history stored in the database. After StatHub restarts, servers are observed again when they report, and their timers start fresh. Rules and connection settings remain saved." xml:space="preserve">
+    <value>Ajastimet ja tunnetut palvelimet säilytetään muistissa, eikä näytehistoriaa tallenneta tietokantaan. StatHubin uudelleenkäynnistyksen jälkeen palvelimia aletaan seurata uudelleen, kun ne lähettävät raportin, ja niiden ajastimet käynnistyvät alusta. Säännöt ja yhteysasetukset säilyvät tallennettuina.</value>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>Tuntematon</value>
+  </data>
+  <data name="Yellow" xml:space="preserve">
+    <value>Keltainen</value>
+  </data>
+  <data name="Yellow for 15 minutes, then red for 10, then yellow for 10: yellow or worse has lasted 35 minutes. Red lasted only 10 minutes and its timer reset when yellow returned." xml:space="preserve">
+    <value>Keltainen 15 minuuttia, sitten punainen 10 minuuttia ja sitten keltainen 10 minuuttia: keltainen tai sitä huonompi tila on kestänyt 35 minuuttia. Punainen kesti vain 10 minuuttia, ja sen ajastin nollautui, kun keltainen palasi.</value>
+  </data>
+  <data name="Yellow or worse" xml:space="preserve">
+    <value>Keltainen tai huonompi</value>
+  </data>
+  <data name="Zero minutes means immediately. The most severe matching rule wins. See the guide for how severity thresholds accumulate." xml:space="preserve">
+    <value>Nolla minuuttia tarkoittaa välitöntä. Vakavin täsmäävä sääntö voittaa. Katso oppaasta, miten vakavuusrajoitukset kerryttävät vaikutuksiaan.</value>
+  </data>
+
+</root>

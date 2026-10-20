@@ -24,6 +24,9 @@
   <data name="Abandoning is not deletion. If this agent persists in submitting, it will appear again soon. Please use systemd command to stop the agent." xml:space="preserve">
     <value>छोड़ना डिलीशन नहीं है। यदि यह एजेंट सबमिट करता रहा, तो जल्द ही वह फिर से दिखाई देगा। कृपया एजेंट को बंद करने के लिए systemd कमांड का उपयोग करें।</value>
   </data>
+  <data name="Accessed" xml:space="preserve">
+    <value>अंतिम बार एक्सेस किया गया</value>
+  </data>
   <data name="Agent Information" xml:space="preserve">
     <value>एजेंट जानकारी</value>
   </data>
@@ -53,6 +56,9 @@
   </data>
   <data name="CPU Usage" xml:space="preserve">
     <value>सीपीयू उपयोग</value>
+  </data>
+  <data name="Created" xml:space="preserve">
+    <value>निर्मित</value>
   </data>
   <data name="Disabled" xml:space="preserve">
     <value>अक्षम</value>
@@ -134,6 +140,9 @@
   </data>
   <data name="Modified" xml:space="preserve">
     <value>संशोधित</value>
+  </data>
+  <data name="More times" xml:space="preserve">
+    <value>अन्य समय</value>
   </data>
   <data name="MOTD" xml:space="preserve">
     <value>संदेश दिवस</value>

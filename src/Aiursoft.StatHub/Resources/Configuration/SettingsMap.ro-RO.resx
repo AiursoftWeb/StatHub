@@ -30,6 +30,9 @@
   <data name="Allow users to adjust their nickname in the profile management page." xml:space="preserve">
     <value>Permite utilizatorilor să-și ajusteze nickname-ul în pagina de gestionare a profilului.</value>
   </data>
+  <data name="An application API key with query, create, change severity, and mitigate permissions." xml:space="preserve">
+    <value>O cheie API de aplicație cu permisiuni de interogare, creare, modificare a gravității și atenuare.</value>
+  </data>
   <data name="An application API key with query, create, change severity, and resolve permissions." xml:space="preserve">
     <value>O cheie API de aplicație cu permisiuni de interogare, creare, modificare a gravității și rezolvare.</value>
   </data>

@@ -30,6 +30,9 @@
   <data name="Allow users to adjust their nickname in the profile management page." xml:space="preserve">
     <value>Επιτρέψτε στους χρήστες να τροποποιήσουν το ψευδώνυμό τους στη σελίδα διαχείρισης προφίλ.</value>
   </data>
+  <data name="An application API key with query, create, change severity, and mitigate permissions." xml:space="preserve">
+    <value>Ένα κλειδί API εφαρμογής με δικαιώματα ερωτήματος, δημιουργίας, αλλαγής σοβαρότητας και μετριασμού.</value>
+  </data>
   <data name="An application API key with query, create, change severity, and resolve permissions." xml:space="preserve">
     <value>Ένα κλειδί API εφαρμογής με δικαιώματα αναζήτησης, δημιουργίας, αλλαγής σοβαρότητας και επίλυσης.</value>
   </data>

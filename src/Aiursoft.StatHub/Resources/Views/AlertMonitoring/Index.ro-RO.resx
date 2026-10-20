@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="A green sample resets every timer. It also mitigates this server&apos;s incidents when automatic mitigation on green is enabled, even if green appears only briefly." xml:space="preserve">
+    <value>O eșantion verde resetează fiecare cronometru. De asemenea, atenuează incidentele acestui server atunci când atenuarea automată pe verde este activată, chiar dacă verdele apare doar pe o perioadă scurtă.</value>
+  </data>
+  <data name="A yellow-or-worse rule set to 35 minutes would trigger. A red-or-worse rule set to 35 minutes would not. The rules you save determine the alert severity." xml:space="preserve">
+    <value>O regulă pentru galben sau mai grav, setată la 35 de minute, s-ar declanșa. O regulă pentru roșu sau mai grav, setată la 35 de minute, nu s-ar declanșa. Regulile pe care le salvați determină severitatea alertei.</value>
+  </data>
+  <data name="Add rule" xml:space="preserve">
+    <value>Adaugă regulă</value>
+  </data>
+  <data name="AlertCenter monitoring" xml:space="preserve">
+    <value>Monitorizarea AlertCenter</value>
+  </data>
+  <data name="Configure the AlertCenter connection in Global Settings. Environment variables can override those settings. Monitoring rules do not store credentials." xml:space="preserve">
+    <value>Configurați conexiunea AlertCenter în Setările globale. Variabilele de mediu pot suprascrie aceste setări. Regile de monitorizare nu stochează credentiale.</value>
+  </data>
+  <data name="Connection settings" xml:space="preserve">
+    <value>Setări de conexiune</value>
+  </data>
+  <data name="Continuous minutes" xml:space="preserve">
+    <value>Minute consecutive</value>
+  </data>
+  <data name="Counts red and grey. Yellow or green resets this timer." xml:space="preserve">
+    <value>Numără roșul și griul. Galbenul sau verdele resetează acest temporizator.</value>
+  </data>
+  <data name="Counts time offline. Any live color resets this timer. Grey starts after one minute without a valid report." xml:space="preserve">
+    <value>Înregistrează timpul de offline. Orice culoare activă resetează acest cronometru. Gri începe după o minut fără un raport valid.</value>
+  </data>
+  <data name="Counts yellow, red and grey. Only green resets this timer." xml:space="preserve">
+    <value>Contorizează galbenul, roșul și griul. Doar verdele resetează acest cronometru.</value>
+  </data>
+  <data name="Delete rule" xml:space="preserve">
+    <value>Șterge regula</value>
+  </data>
+  <data name="Enable monitoring policy" xml:space="preserve">
+    <value>Activați politica de monitorizare</value>
+  </data>
+  <data name="Enabled" xml:space="preserve">
+    <value>Activat</value>
+  </data>
+  <data name="Example: alternating colors" xml:space="preserve">
+    <value>Exemplu: culori alternante</value>
+  </data>
+  <data name="Exclude" xml:space="preserve">
+    <value>Exclude</value>
+  </data>
+  <data name="Exclude server" xml:space="preserve">
+    <value>Excludere server</value>
+  </data>
+  <data name="Excluded servers always take precedence. When all servers are monitored, individual inclusions are unnecessary." xml:space="preserve">
+    <value>Serverele excluse au întotdeauna prioritate. Dacă sunt monitorizate toate serverele, nu este necesar să le includeți individual.</value>
+  </data>
+  <data name="From most to least severe" xml:space="preserve">
+    <value>De la cea mai gravă la cea mai puțin gravă</value>
+  </data>
+  <data name="Getting worse keeps a timer running. Improving below its threshold resets it." xml:space="preserve">
+    <value>Starea care se agravează menține cronometrul în funcțiune. Revenirea sub pragul său îl resetează.</value>
+  </data>
+  <data name="Green" xml:space="preserve">
+    <value>Verde</value>
+  </data>
+  <data name="Grey (offline)" xml:space="preserve">
+    <value>Gri (offline)</value>
+  </data>
+  <data name="Grey only" xml:space="preserve">
+    <value>Doar gri</value>
+  </data>
+  <data name="How alert timers work" xml:space="preserve">
+    <value>Cum funcționează temporizatoarele alertelor</value>
+  </data>
+  <data name="Immediately mitigate all incidents managed by this integration for a server when a healthy sample is received" xml:space="preserve">
+    <value>Rezolvă imediat toate incidentele gestionate de această integrare pentru un server când se primește o probă sănătoasă</value>
+  </data>
+  <data name="Include" xml:space="preserve">
+    <value>Includere</value>
+  </data>
+  <data name="Include server" xml:space="preserve">
+    <value>Incluziune server</value>
+  </data>
+  <data name="Last report" xml:space="preserve">
+    <value>Ultimul raport</value>
+  </data>
+  <data name="Matching more rules escalates the existing incident when needed; it does not create another incident or automatically lower its severity." xml:space="preserve">
+    <value>Îndeplinirea a mai multe reguli escalează incidentul existent atunci când este necesar; nu creează un alt incident și nu îi reduce automat severitatea.</value>
+  </data>
+  <data name="Monitor all servers, including newly connected servers" xml:space="preserve">
+    <value>Monitorizează toate serverele, inclusiv serverele conectate recent</value>
+  </data>
+  <data name="Monitoring policy" xml:space="preserve">
+    <value>Politica de monitorizare</value>
+  </data>
+  <data name="No report since restart" xml:space="preserve">
+    <value>Niciun raport de la repornire</value>
+  </data>
+  <data name="One incident, with recovery" xml:space="preserve">
+    <value>Un singur incident, cu revenire</value>
+  </data>
+  <data name="Red" xml:space="preserve">
+    <value>Roșu</value>
+  </data>
+  <data name="Red or worse" xml:space="preserve">
+    <value>Roșu sau mai grav</value>
+  </data>
+  <data name="Rules measure how long a server stays at or above a health threshold. Each threshold has its own timer." xml:space="preserve">
+    <value>Regulile măsoară cât timp un server rămâne la sau peste un prag de sănătate. Fiecare prag are propriul temporizator.</value>
+  </data>
+  <data name="Save policy and server selection" xml:space="preserve">
+    <value>Salvați politica și selecția serverelor</value>
+  </data>
+  <data name="Save rule" xml:space="preserve">
+    <value>Salvează regula</value>
+  </data>
+  <data name="Server" xml:space="preserve">
+    <value>Server</value>
+  </data>
+  <data name="Server selection" xml:space="preserve">
+    <value>Selecție servere</value>
+  </data>
+  <data name="Severity" xml:space="preserve">
+    <value>Severitate</value>
+  </data>
+  <data name="State" xml:space="preserve">
+    <value>Stare</value>
+  </data>
+  <data name="Sustained state rules" xml:space="preserve">
+    <value>Reguli pentru starea susținută</value>
+  </data>
+  <data name="Timers and known servers are kept in memory, with no sample history stored in the database. After StatHub restarts, servers are observed again when they report, and their timers start fresh. Rules and connection settings remain saved." xml:space="preserve">
+    <value>Cronometrele și serverele cunoscute sunt păstrate în memorie, fără ca istoricul mostrelor să fie stocat în baza de date. După repornirea StatHub, serverele sunt observate din nou când transmit date, iar cronometrele lor pornesc de la zero. Regulile și setările de conexiune rămân salvate.</value>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>Necunoscut</value>
+  </data>
+  <data name="Yellow" xml:space="preserve">
+    <value>Galben</value>
+  </data>
+  <data name="Yellow for 15 minutes, then red for 10, then yellow for 10: yellow or worse has lasted 35 minutes. Red lasted only 10 minutes and its timer reset when yellow returned." xml:space="preserve">
+    <value>Galben timp de 15 minute, apoi roșu timp de 10, apoi galben timp de 10: galben sau o stare mai gravă a durat 35 de minute. Roșu a durat doar 10 minute, iar temporizatorul său s-a resetat când a revenit galbenul.</value>
+  </data>
+  <data name="Yellow or worse" xml:space="preserve">
+    <value>Galben sau mai grav</value>
+  </data>
+  <data name="Zero minutes means immediately. The most severe matching rule wins. See the guide for how severity thresholds accumulate." xml:space="preserve">
+    <value>Zero minute înseamnă imediat. Cea mai gravă regulă corespunzătoare are prioritate. Consultați ghidul pentru a vedea cum se acumulează pragurile de gravitate.</value>
+  </data>
+
+</root>

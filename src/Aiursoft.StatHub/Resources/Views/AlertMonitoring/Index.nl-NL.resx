@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="A green sample resets every timer. It also mitigates this server&apos;s incidents when automatic mitigation on green is enabled, even if green appears only briefly." xml:space="preserve">
+    <value>Een groen meetresultaat zet alle timers terug. Het vermindert ook de incidenten van deze server wanneer automatische mitigatie bij groen is ingeschakeld, zelfs als de status maar kort groen is.</value>
+  </data>
+  <data name="A yellow-or-worse rule set to 35 minutes would trigger. A red-or-worse rule set to 35 minutes would not. The rules you save determine the alert severity." xml:space="preserve">
+    <value>Een regel voor geel of ernstiger die op 35 minuten is ingesteld, wordt geactiveerd. Een regel voor rood of ernstiger die op 35 minuten is ingesteld, wordt niet geactiveerd. De regels die je opslaat bepalen de ernst van de melding.</value>
+  </data>
+  <data name="Add rule" xml:space="preserve">
+    <value>Regel toevoegen</value>
+  </data>
+  <data name="AlertCenter monitoring" xml:space="preserve">
+    <value>AlertCenter-monitoring</value>
+  </data>
+  <data name="Configure the AlertCenter connection in Global Settings. Environment variables can override those settings. Monitoring rules do not store credentials." xml:space="preserve">
+    <value>Configureer de AlertCenter-verbinding in de globale instellingen. Omgevingsvariabelen kunnen deze instellingen overschrijven. Monitoringsregels bewaren geen inloggegevens.</value>
+  </data>
+  <data name="Connection settings" xml:space="preserve">
+    <value>Verbindingsinstellingen</value>
+  </data>
+  <data name="Continuous minutes" xml:space="preserve">
+    <value>Aaneengesloten minuten</value>
+  </data>
+  <data name="Counts red and grey. Yellow or green resets this timer." xml:space="preserve">
+    <value>Telt rood en grijs mee. Geel of groen reset deze timer.</value>
+  </data>
+  <data name="Counts time offline. Any live color resets this timer. Grey starts after one minute without a valid report." xml:space="preserve">
+    <value>Telt de tijd offline. Elke actieve kleur reset deze timer. Grijs start na één minuut zonder geldig rapport.</value>
+  </data>
+  <data name="Counts yellow, red and grey. Only green resets this timer." xml:space="preserve">
+    <value>Telt geel, rood en grijs. Alleen groen reset deze timer.</value>
+  </data>
+  <data name="Delete rule" xml:space="preserve">
+    <value>Regel verwijderen</value>
+  </data>
+  <data name="Enable monitoring policy" xml:space="preserve">
+    <value>Bewakingsbeleid inschakelen</value>
+  </data>
+  <data name="Enabled" xml:space="preserve">
+    <value>Ingeschakeld</value>
+  </data>
+  <data name="Example: alternating colors" xml:space="preserve">
+    <value>Voorbeeld: afwisselende kleuren</value>
+  </data>
+  <data name="Exclude" xml:space="preserve">
+    <value>Uitsluiten</value>
+  </data>
+  <data name="Exclude server" xml:space="preserve">
+    <value>Server uitsluiten</value>
+  </data>
+  <data name="Excluded servers always take precedence. When all servers are monitored, individual inclusions are unnecessary." xml:space="preserve">
+    <value>Uitgesloten servers hebben altijd voorrang. Wanneer alle servers worden bewaakt, zijn individuele inbegrippen niet nodig.</value>
+  </data>
+  <data name="From most to least severe" xml:space="preserve">
+    <value>Van ernstigst tot minst ernstig</value>
+  </data>
+  <data name="Getting worse keeps a timer running. Improving below its threshold resets it." xml:space="preserve">
+    <value>Wanneer de status verergert, blijft de timer doorlopen. Wanneer de status verbetert en onder de drempelwaarde daalt, wordt deze teruggezet.</value>
+  </data>
+  <data name="Green" xml:space="preserve">
+    <value>Groen</value>
+  </data>
+  <data name="Grey (offline)" xml:space="preserve">
+    <value>Grijs (offline)</value>
+  </data>
+  <data name="Grey only" xml:space="preserve">
+    <value>Alleen grijs</value>
+  </data>
+  <data name="How alert timers work" xml:space="preserve">
+    <value>Hoe waarschuwingstimers werken</value>
+  </data>
+  <data name="Immediately mitigate all incidents managed by this integration for a server when a healthy sample is received" xml:space="preserve">
+    <value>Los onmiddellijk alle incidenten op die voor een server door deze integratie worden beheerd zodra er een gezonde meting wordt ontvangen.</value>
+  </data>
+  <data name="Include" xml:space="preserve">
+    <value>Opnemen</value>
+  </data>
+  <data name="Include server" xml:space="preserve">
+    <value>Server opnemen</value>
+  </data>
+  <data name="Last report" xml:space="preserve">
+    <value>Laatste rapport</value>
+  </data>
+  <data name="Matching more rules escalates the existing incident when needed; it does not create another incident or automatically lower its severity." xml:space="preserve">
+    <value>Als er meer regels overeenkomen, wordt het bestaande incident indien nodig opgeschaald; er wordt geen nieuw incident aangemaakt en de ernst ervan wordt niet automatisch verlaagd.</value>
+  </data>
+  <data name="Monitor all servers, including newly connected servers" xml:space="preserve">
+    <value>Alle servers bewaken, ook nieuw verbonden servers</value>
+  </data>
+  <data name="Monitoring policy" xml:space="preserve">
+    <value>Monitoringsbeleid</value>
+  </data>
+  <data name="No report since restart" xml:space="preserve">
+    <value>Geen rapport sinds herstart</value>
+  </data>
+  <data name="One incident, with recovery" xml:space="preserve">
+    <value>Eén incident, met herstel</value>
+  </data>
+  <data name="Red" xml:space="preserve">
+    <value>Rood</value>
+  </data>
+  <data name="Red or worse" xml:space="preserve">
+    <value>Rood of erger</value>
+  </data>
+  <data name="Rules measure how long a server stays at or above a health threshold. Each threshold has its own timer." xml:space="preserve">
+    <value>Regels meten hoe lang een server op of boven een gezondheidsdrempel blijft. Elke drempel heeft een eigen timer.</value>
+  </data>
+  <data name="Save policy and server selection" xml:space="preserve">
+    <value>Beleid en serverselectie opslaan</value>
+  </data>
+  <data name="Save rule" xml:space="preserve">
+    <value>Regel opslaan</value>
+  </data>
+  <data name="Server" xml:space="preserve">
+    <value>Server</value>
+  </data>
+  <data name="Server selection" xml:space="preserve">
+    <value>Serverselectie</value>
+  </data>
+  <data name="Severity" xml:space="preserve">
+    <value>Zwaarte</value>
+  </data>
+  <data name="State" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="Sustained state rules" xml:space="preserve">
+    <value>Regels voor aanhoudende status</value>
+  </data>
+  <data name="Timers and known servers are kept in memory, with no sample history stored in the database. After StatHub restarts, servers are observed again when they report, and their timers start fresh. Rules and connection settings remain saved." xml:space="preserve">
+    <value>Timers en bekende servers worden in het geheugen bewaard; er wordt geen geschiedenis van metingen in de database opgeslagen. Nadat StatHub opnieuw is gestart, worden servers weer waargenomen zodra ze rapporteren en beginnen hun timers opnieuw. Regels en verbindingsinstellingen blijven bewaard.</value>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>Onbekend</value>
+  </data>
+  <data name="Yellow" xml:space="preserve">
+    <value>Geel</value>
+  </data>
+  <data name="Yellow for 15 minutes, then red for 10, then yellow for 10: yellow or worse has lasted 35 minutes. Red lasted only 10 minutes and its timer reset when yellow returned." xml:space="preserve">
+    <value>15 minuten geel, dan 10 minuten rood en vervolgens 10 minuten geel: geel of erger heeft 35 minuten geduurd. Rood duurde slechts 10 minuten en de timer werd opnieuw ingesteld toen geel terugkeerde.</value>
+  </data>
+  <data name="Yellow or worse" xml:space="preserve">
+    <value>Geel of erger</value>
+  </data>
+  <data name="Zero minutes means immediately. The most severe matching rule wins. See the guide for how severity thresholds accumulate." xml:space="preserve">
+    <value>Nul minuten betekent onmiddellijk. De strengste overeenkomende regel is doorslaggevend. Zie de handleiding voor meer informatie over hoe ernstgrenzen zich opstapelen.</value>
+  </data>
+
+</root>

@@ -30,6 +30,9 @@
   <data name="Allow users to adjust their nickname in the profile management page." xml:space="preserve">
     <value>Permitir que os utilizadores ajustem o seu apelido na página de gestão de perfil.</value>
   </data>
+  <data name="An application API key with query, create, change severity, and mitigate permissions." xml:space="preserve">
+    <value>Uma chave de API da aplicação com permissões para consultar, criar, alterar a gravidade e mitigar.</value>
+  </data>
   <data name="An application API key with query, create, change severity, and resolve permissions." xml:space="preserve">
     <value>Uma chave de API da aplicação com permissões para consultar, criar, alterar a gravidade e resolver incidentes.</value>
   </data>
