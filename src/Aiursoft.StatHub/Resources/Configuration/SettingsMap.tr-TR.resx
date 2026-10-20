@@ -30,6 +30,9 @@
   <data name="Allow users to adjust their nickname in the profile management page." xml:space="preserve">
     <value>Kullanıcıların profili yönetimi sayfasında takma isimlerini ayarlamasına izin verin.</value>
   </data>
+  <data name="An application API key with query, create, change severity, and mitigate permissions." xml:space="preserve">
+    <value>Sorgulama, oluşturma, önem derecesini değiştirme ve giderme izinlerine sahip bir uygulama API anahtarı.</value>
+  </data>
   <data name="An application API key with query, create, change severity, and resolve permissions." xml:space="preserve">
     <value>Sorgulama, oluşturma, önem derecesini değiştirme ve çözme izinlerine sahip bir uygulama API anahtarı.</value>
   </data>

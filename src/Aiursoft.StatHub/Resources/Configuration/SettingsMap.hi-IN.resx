@@ -30,6 +30,9 @@
   <data name="Allow users to adjust their nickname in the profile management page." xml:space="preserve">
     <value>प्रोफ़ाइल प्रबंधन पृष्ठ पर उपयोगकर्ताओं को अपना निकनेम समायोजित करने की अनुमति दें।</value>
   </data>
+  <data name="An application API key with query, create, change severity, and mitigate permissions." xml:space="preserve">
+    <value>एक ऐप्लिकेशन API की, जिसमें क्वेरी, बनाएं, गंभीरता बदलें, और मिटिगेट अनुमतियाँ हैं।</value>
+  </data>
   <data name="An application API key with query, create, change severity, and resolve permissions." xml:space="preserve">
     <value>एक ऐप्लिकेशन API कुंजी जिसमें क्वेरी, क्रिएट, गंभीरता परिवर्तन और रिज़ॉल्व की अनुमतियाँ हैं।</value>
   </data>

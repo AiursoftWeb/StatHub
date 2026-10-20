@@ -18,7 +18,10 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="A green sample resets every timer. It also resolves this server&apos;s incidents when automatic resolution on green is enabled, even if green appears only briefly." xml:space="preserve">
+      <data name="A green sample resets every timer. It also mitigates this server&apos;s incidents when automatic mitigation on green is enabled, even if green appears only briefly." xml:space="preserve">
+    <value>녹색 샘플은 모든 타이머를 초기화합니다. 또한 녹색에서 자동 완화가 활성화된 경우, 녹색이 잠시만 표시되더라도 이 서버의 사고를 완화합니다.</value>
+  </data>
+  <data name="A green sample resets every timer. It also resolves this server&apos;s incidents when automatic resolution on green is enabled, even if green appears only briefly." xml:space="preserve">
     <value>초록색 상태 샘플이 들어오면 모든 타이머가 초기화됩니다. 초록색일 때 자동 해결이 활성화되어 있으면, 초록색 상태가 잠깐만 나타나더라도 이 서버의 인시던트가 해결됩니다.</value>
   </data>
   <data name="A yellow-or-worse rule set to 35 minutes would trigger. A red-or-worse rule set to 35 minutes would not. The rules you save determine the alert severity." xml:space="preserve">
@@ -87,6 +90,9 @@
   <data name="How alert timers work" xml:space="preserve">
     <value>알림 타이머 작동 방식</value>
   </data>
+  <data name="Immediately mitigate all incidents managed by this integration for a server when a healthy sample is received" xml:space="preserve">
+    <value>건강한 샘플을 수신하면 해당 서버에 대해 이 통합에서 관리하는 모든 인시던트를 즉시 완화합니다</value>
+  </data>
   <data name="Immediately resolve all incidents managed by this integration for a server when a healthy sample is received" xml:space="preserve">
     <value>정상 상태 샘플이 수신되면 해당 서버에 대해 이 통합으로 관리되는 모든 인시던트를 즉시 해결합니다</value>
   </data>
@@ -107,6 +113,9 @@
   </data>
   <data name="Monitoring policy" xml:space="preserve">
     <value>모니터링 정책</value>
+  </data>
+  <data name="No report since restart" xml:space="preserve">
+    <value>재시작 이후 보고 없음</value>
   </data>
   <data name="One incident, with recovery" xml:space="preserve">
     <value>복구를 포함한 하나의 인시던트</value>
@@ -140,6 +149,9 @@
   </data>
   <data name="Sustained state rules" xml:space="preserve">
     <value>지속 상태 규칙</value>
+  </data>
+  <data name="Timers and known servers are kept in memory, with no sample history stored in the database. After StatHub restarts, servers are observed again when they report, and their timers start fresh. Rules and connection settings remain saved." xml:space="preserve">
+    <value>타이머와 알려진 서버는 메모리에 유지되며, 샘플 이력은 데이터베이스에 저장되지 않습니다. StatHub가 재시작되면 서버가 보고할 때 다시 관찰되고, 해당 타이머는 처음부터 다시 시작됩니다. 규칙과 연결 설정은 계속 저장됩니다.</value>
   </data>
   <data name="Unknown" xml:space="preserve">
     <value>알 수 없음</value>

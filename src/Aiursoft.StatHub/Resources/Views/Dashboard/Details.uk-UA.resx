@@ -24,6 +24,9 @@
   <data name="Abandoning is not deletion. If this agent persists in submitting, it will appear again soon. Please use systemd command to stop the agent." xml:space="preserve">
     <value>Відмовлення від агента не означає його видалення. Якщо цей агент продовжує надсилати дані, він з&apos;явиться знову найближчим часом. Будь ласка, використовуйте команду systemd, щоб зупинити агента.</value>
   </data>
+  <data name="Accessed" xml:space="preserve">
+    <value>Доступ</value>
+  </data>
   <data name="Agent Information" xml:space="preserve">
     <value>Інформація про агента</value>
   </data>
@@ -53,6 +56,9 @@
   </data>
   <data name="CPU Usage" xml:space="preserve">
     <value>Використання процесора</value>
+  </data>
+  <data name="Created" xml:space="preserve">
+    <value>Створено</value>
   </data>
   <data name="Disabled" xml:space="preserve">
     <value>Вимкнено</value>
@@ -134,6 +140,9 @@
   </data>
   <data name="Modified" xml:space="preserve">
     <value>Змінено</value>
+  </data>
+  <data name="More times" xml:space="preserve">
+    <value>Інші часові позначки</value>
   </data>
   <data name="MOTD" xml:space="preserve">
     <value>Повідомлення дня</value>

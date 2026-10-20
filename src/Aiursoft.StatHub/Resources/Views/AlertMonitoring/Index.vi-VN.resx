@@ -18,7 +18,10 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="A green sample resets every timer. It also resolves this server&apos;s incidents when automatic resolution on green is enabled, even if green appears only briefly." xml:space="preserve">
+      <data name="A green sample resets every timer. It also mitigates this server&apos;s incidents when automatic mitigation on green is enabled, even if green appears only briefly." xml:space="preserve">
+    <value>Một mẫu màu xanh lá sẽ đặt lại tất cả bộ đếm thời gian. Mẫu này cũng giúp giảm mức độ nghiêm trọng của các sự cố trên máy chủ này khi tính năng tự động giảm mức độ nghiêm trọng khi có màu xanh lá được bật, ngay cả khi màu xanh lá chỉ xuất hiện trong chốc lát.</value>
+  </data>
+  <data name="A green sample resets every timer. It also resolves this server&apos;s incidents when automatic resolution on green is enabled, even if green appears only briefly." xml:space="preserve">
     <value>Một mẫu xanh sẽ đặt lại tất cả bộ hẹn giờ. Mẫu này cũng giải quyết các sự cố của máy chủ này khi tính năng tự động giải quyết sự cố khi có trạng thái xanh được bật, ngay cả khi trạng thái xanh chỉ xuất hiện trong thời gian ngắn.</value>
   </data>
   <data name="A yellow-or-worse rule set to 35 minutes would trigger. A red-or-worse rule set to 35 minutes would not. The rules you save determine the alert severity." xml:space="preserve">
@@ -87,6 +90,9 @@
   <data name="How alert timers work" xml:space="preserve">
     <value>Cách hoạt động của bộ hẹn giờ cảnh báo</value>
   </data>
+  <data name="Immediately mitigate all incidents managed by this integration for a server when a healthy sample is received" xml:space="preserve">
+    <value>Tự động xử lý ngay tất cả sự cố do tích hợp này quản lý trên một máy chủ khi nhận được mẫu trạng thái khỏe mạnh</value>
+  </data>
   <data name="Immediately resolve all incidents managed by this integration for a server when a healthy sample is received" xml:space="preserve">
     <value>Giải quyết ngay lập tức tất cả các sự cố do tích hợp này quản lý cho một máy chủ khi nhận được mẫu hoạt động bình thường</value>
   </data>
@@ -107,6 +113,9 @@
   </data>
   <data name="Monitoring policy" xml:space="preserve">
     <value>Chính sách giám sát</value>
+  </data>
+  <data name="No report since restart" xml:space="preserve">
+    <value>Chưa có báo cáo kể từ lần khởi động lại</value>
   </data>
   <data name="One incident, with recovery" xml:space="preserve">
     <value>Một sự cố, có khôi phục</value>
@@ -140,6 +149,9 @@
   </data>
   <data name="Sustained state rules" xml:space="preserve">
     <value>Quy tắc trạng thái kéo dài</value>
+  </data>
+  <data name="Timers and known servers are kept in memory, with no sample history stored in the database. After StatHub restarts, servers are observed again when they report, and their timers start fresh. Rules and connection settings remain saved." xml:space="preserve">
+    <value>Các bộ đếm thời gian và máy chủ đã biết được lưu trong bộ nhớ; cơ sở dữ liệu không lưu lịch sử mẫu. Sau khi StatHub khởi động lại, các máy chủ sẽ được ghi nhận lại khi gửi báo cáo, và bộ đếm thời gian của chúng sẽ bắt đầu lại từ đầu. Các quy tắc và cài đặt kết nối vẫn được lưu.</value>
   </data>
   <data name="Unknown" xml:space="preserve">
     <value>Không xác định</value>

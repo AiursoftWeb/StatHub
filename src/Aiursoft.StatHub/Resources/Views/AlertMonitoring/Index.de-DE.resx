@@ -18,7 +18,10 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="A green sample resets every timer. It also resolves this server&apos;s incidents when automatic resolution on green is enabled, even if green appears only briefly." xml:space="preserve">
+      <data name="A green sample resets every timer. It also mitigates this server&apos;s incidents when automatic mitigation on green is enabled, even if green appears only briefly." xml:space="preserve">
+    <value>Ein grüner Messwert setzt alle Timer zurück. Wenn die automatische Entschärfung bei Grün aktiviert ist, entschärft er außerdem die Vorfälle dieses Servers – selbst wenn Grün nur kurz angezeigt wird.</value>
+  </data>
+  <data name="A green sample resets every timer. It also resolves this server&apos;s incidents when automatic resolution on green is enabled, even if green appears only briefly." xml:space="preserve">
     <value>Eine grüne Meldung setzt alle Timer zurück. Sie schließt außerdem die Vorfälle dieses Servers, wenn die automatische Auflösung bei Grün aktiviert ist – selbst wenn Grün nur kurz angezeigt wird.</value>
   </data>
   <data name="A yellow-or-worse rule set to 35 minutes would trigger. A red-or-worse rule set to 35 minutes would not. The rules you save determine the alert severity." xml:space="preserve">
@@ -87,6 +90,9 @@
   <data name="How alert timers work" xml:space="preserve">
     <value>Funktionsweise der Alarm-Timer</value>
   </data>
+  <data name="Immediately mitigate all incidents managed by this integration for a server when a healthy sample is received" xml:space="preserve">
+    <value>Alle von dieser Integration für einen Server verwalteten Vorfälle sofort entschärfen, sobald ein unauffälliger Messwert empfangen wird</value>
+  </data>
   <data name="Immediately resolve all incidents managed by this integration for a server when a healthy sample is received" xml:space="preserve">
     <value>Alle von dieser Integration verwalteten Vorfälle für einen Server sofort beheben, sobald ein fehlerfreier Messwert empfangen wird</value>
   </data>
@@ -107,6 +113,9 @@
   </data>
   <data name="Monitoring policy" xml:space="preserve">
     <value>Überwachungsrichtlinie</value>
+  </data>
+  <data name="No report since restart" xml:space="preserve">
+    <value>Kein Bericht seit dem Neustart</value>
   </data>
   <data name="One incident, with recovery" xml:space="preserve">
     <value>Ein Vorfall mit Wiederherstellung</value>
@@ -140,6 +149,9 @@
   </data>
   <data name="Sustained state rules" xml:space="preserve">
     <value>Regeln für anhaltende Zustände</value>
+  </data>
+  <data name="Timers and known servers are kept in memory, with no sample history stored in the database. After StatHub restarts, servers are observed again when they report, and their timers start fresh. Rules and connection settings remain saved." xml:space="preserve">
+    <value>Timer und bekannte Server werden im Speicher gehalten, wobei keine Stichprobenhistorie in der Datenbank gespeichert wird. Nach einem Neustart von StatHub werden Server erneut beobachtet, wenn sie melden, und ihre Timer starten neu. Regeln und Verbindungseinstellungen bleiben gespeichert.</value>
   </data>
   <data name="Unknown" xml:space="preserve">
     <value>Unbekannt</value>

@@ -18,7 +18,10 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="A green sample resets every timer. It also resolves this server&apos;s incidents when automatic resolution on green is enabled, even if green appears only briefly." xml:space="preserve">
+      <data name="A green sample resets every timer. It also mitigates this server&apos;s incidents when automatic mitigation on green is enabled, even if green appears only briefly." xml:space="preserve">
+    <value>綠色樣本會重設所有計時器。若已啟用綠色時自動緩解功能，即使綠色狀態只短暫出現，也會緩解此伺服器的事故。</value>
+  </data>
+  <data name="A green sample resets every timer. It also resolves this server&apos;s incidents when automatic resolution on green is enabled, even if green appears only briefly." xml:space="preserve">
     <value>綠色樣本會重置所有計時器。若已啟用「綠色時自動解決」，即使綠色僅短暫出現，它也會解決此伺服器的事件。</value>
   </data>
   <data name="A yellow-or-worse rule set to 35 minutes would trigger. A red-or-worse rule set to 35 minutes would not. The rules you save determine the alert severity." xml:space="preserve">
@@ -87,6 +90,9 @@
   <data name="How alert timers work" xml:space="preserve">
     <value>警示計時器如何運作</value>
   </data>
+  <data name="Immediately mitigate all incidents managed by this integration for a server when a healthy sample is received" xml:space="preserve">
+    <value>收到健康樣本後，立即緩解由此整合管理嘅該伺服器所有事故</value>
+  </data>
   <data name="Immediately resolve all incidents managed by this integration for a server when a healthy sample is received" xml:space="preserve">
     <value>收到健康狀態樣本時，立即解決此整合為伺服器管理的所有事件</value>
   </data>
@@ -107,6 +113,9 @@
   </data>
   <data name="Monitoring policy" xml:space="preserve">
     <value>監察政策</value>
+  </data>
+  <data name="No report since restart" xml:space="preserve">
+    <value>自重新啟動後沒有報告</value>
   </data>
   <data name="One incident, with recovery" xml:space="preserve">
     <value>單一事故及復原</value>
@@ -140,6 +149,9 @@
   </data>
   <data name="Sustained state rules" xml:space="preserve">
     <value>持續狀態規則</value>
+  </data>
+  <data name="Timers and known servers are kept in memory, with no sample history stored in the database. After StatHub restarts, servers are observed again when they report, and their timers start fresh. Rules and connection settings remain saved." xml:space="preserve">
+    <value>計時器和已知伺服器會保存在記憶體中，資料庫不會儲存任何樣本歷史記錄。StatHub 重新啟動後，伺服器會在回報時重新被觀察，其計時器也會重新開始。規則和連線設定會繼續保留。</value>
   </data>
   <data name="Unknown" xml:space="preserve">
     <value>未知</value>

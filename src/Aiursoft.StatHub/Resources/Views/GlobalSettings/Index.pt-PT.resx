@@ -21,6 +21,9 @@
       <data name="Actions" xml:space="preserve">
     <value>Ações</value>
   </data>
+  <data name="Close" xml:space="preserve">
+    <value>Fechar</value>
+  </data>
   <data name="Description" xml:space="preserve">
     <value>Descrição</value>
   </data>

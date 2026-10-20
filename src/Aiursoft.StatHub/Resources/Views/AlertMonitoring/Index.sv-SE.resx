@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="A green sample resets every timer. It also mitigates this server&apos;s incidents when automatic mitigation on green is enabled, even if green appears only briefly." xml:space="preserve">
+    <value>En grön mätvärde återställer alla timer. Den mitigerar också serverns incidenter när automatisk mitigering vid grönt är aktiverat, även om grönt bara visas kort tillfälligt.</value>
+  </data>
+  <data name="A yellow-or-worse rule set to 35 minutes would trigger. A red-or-worse rule set to 35 minutes would not. The rules you save determine the alert severity." xml:space="preserve">
+    <value>En regel för gul eller sämre inställd på 35 minuter skulle utlösas. En regel för röd eller sämre inställd på 35 minuter skulle inte göra det. Reglerna du sparar avgör allvarlighetsgraden för larmet.</value>
+  </data>
+  <data name="Add rule" xml:space="preserve">
+    <value>Lägg till regel</value>
+  </data>
+  <data name="AlertCenter monitoring" xml:space="preserve">
+    <value>AlertCenter-övervakning</value>
+  </data>
+  <data name="Configure the AlertCenter connection in Global Settings. Environment variables can override those settings. Monitoring rules do not store credentials." xml:space="preserve">
+    <value>Konfigurera anslutningen till AlertCenter under Globala inställningar. Miljövariabler kan åsidosätta dessa inställningar. Övervakningsregler lagrar inte inloggningsuppgifter.</value>
+  </data>
+  <data name="Connection settings" xml:space="preserve">
+    <value>Anslutningsinställningar</value>
+  </data>
+  <data name="Continuous minutes" xml:space="preserve">
+    <value>Kontinuerliga minuter</value>
+  </data>
+  <data name="Counts red and grey. Yellow or green resets this timer." xml:space="preserve">
+    <value>Räknar rött och grått. Gult eller grönt återställer den här timern.</value>
+  </data>
+  <data name="Counts time offline. Any live color resets this timer. Grey starts after one minute without a valid report." xml:space="preserve">
+    <value>Räknar tid offline. Valfri aktiv färg återställer denna timer. Grå startar efter en minut utan en giltig rapport.</value>
+  </data>
+  <data name="Counts yellow, red and grey. Only green resets this timer." xml:space="preserve">
+    <value>Räknar gult, rött och grått. Endast grönt återställer den här timern.</value>
+  </data>
+  <data name="Delete rule" xml:space="preserve">
+    <value>Ta bort regel</value>
+  </data>
+  <data name="Enable monitoring policy" xml:space="preserve">
+    <value>Aktivera övervakningspolicyn</value>
+  </data>
+  <data name="Enabled" xml:space="preserve">
+    <value>Aktiverad</value>
+  </data>
+  <data name="Example: alternating colors" xml:space="preserve">
+    <value>Exempel: växlande färger</value>
+  </data>
+  <data name="Exclude" xml:space="preserve">
+    <value>Uteslut</value>
+  </data>
+  <data name="Exclude server" xml:space="preserve">
+    <value>Uteslut server</value>
+  </data>
+  <data name="Excluded servers always take precedence. When all servers are monitored, individual inclusions are unnecessary." xml:space="preserve">
+    <value>Uteslutna servrar har alltid företräde. När alla servrar övervakas är individuella inkluderingar onödiga.</value>
+  </data>
+  <data name="From most to least severe" xml:space="preserve">
+    <value>Från allvarligast till minst allvarlig</value>
+  </data>
+  <data name="Getting worse keeps a timer running. Improving below its threshold resets it." xml:space="preserve">
+    <value>När det blir värre fortsätter timern att gå. Om läget förbättras så att det hamnar under tröskelvärdet nollställs timern.</value>
+  </data>
+  <data name="Green" xml:space="preserve">
+    <value>Grön</value>
+  </data>
+  <data name="Grey (offline)" xml:space="preserve">
+    <value>Grå (offline)</value>
+  </data>
+  <data name="Grey only" xml:space="preserve">
+    <value>Endast grå</value>
+  </data>
+  <data name="How alert timers work" xml:space="preserve">
+    <value>Så fungerar aviseringstimrar</value>
+  </data>
+  <data name="Immediately mitigate all incidents managed by this integration for a server when a healthy sample is received" xml:space="preserve">
+    <value>Åtgärda omedelbart alla incidenter som hanteras av den här integrationen för en server när ett friskt mätvärde tas emot</value>
+  </data>
+  <data name="Include" xml:space="preserve">
+    <value>Inkludera</value>
+  </data>
+  <data name="Include server" xml:space="preserve">
+    <value>Inkludera server</value>
+  </data>
+  <data name="Last report" xml:space="preserve">
+    <value>Senaste rapport</value>
+  </data>
+  <data name="Matching more rules escalates the existing incident when needed; it does not create another incident or automatically lower its severity." xml:space="preserve">
+    <value>När fler regler matchas förvärras den befintliga incidenten vid behov; den skapar inte en ny incident eller sänker automatiskt dess allvarlighetsgrad.</value>
+  </data>
+  <data name="Monitor all servers, including newly connected servers" xml:space="preserve">
+    <value>Övervaka alla servrar, inklusive nyanslutna servrar</value>
+  </data>
+  <data name="Monitoring policy" xml:space="preserve">
+    <value>Övervakningspolicy</value>
+  </data>
+  <data name="No report since restart" xml:space="preserve">
+    <value>Ingen rapport sedan omstart</value>
+  </data>
+  <data name="One incident, with recovery" xml:space="preserve">
+    <value>En händelse, med återhämtning</value>
+  </data>
+  <data name="Red" xml:space="preserve">
+    <value>Röd</value>
+  </data>
+  <data name="Red or worse" xml:space="preserve">
+    <value>Röd eller värre</value>
+  </data>
+  <data name="Rules measure how long a server stays at or above a health threshold. Each threshold has its own timer." xml:space="preserve">
+    <value>Reglerna mäter hur länge en server håller sig på eller över en hälsotröskel. Varje tröskel har sin egen timer.</value>
+  </data>
+  <data name="Save policy and server selection" xml:space="preserve">
+    <value>Spara policy och serverval</value>
+  </data>
+  <data name="Save rule" xml:space="preserve">
+    <value>Spara regel</value>
+  </data>
+  <data name="Server" xml:space="preserve">
+    <value>Server</value>
+  </data>
+  <data name="Server selection" xml:space="preserve">
+    <value>Serverval</value>
+  </data>
+  <data name="Severity" xml:space="preserve">
+    <value>Allvarlighetsgrad</value>
+  </data>
+  <data name="State" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="Sustained state rules" xml:space="preserve">
+    <value>Regler för ihållande tillstånd</value>
+  </data>
+  <data name="Timers and known servers are kept in memory, with no sample history stored in the database. After StatHub restarts, servers are observed again when they report, and their timers start fresh. Rules and connection settings remain saved." xml:space="preserve">
+    <value>Timers och kända servrar lagras i minnet, utan att någon historik över mätvärden sparas i databasen. När StatHub startas om observeras servrarna igen när de rapporterar, och deras timers börjar om från början. Regler och anslutningsinställningar finns kvar.</value>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>Okänd</value>
+  </data>
+  <data name="Yellow" xml:space="preserve">
+    <value>Gul</value>
+  </data>
+  <data name="Yellow for 15 minutes, then red for 10, then yellow for 10: yellow or worse has lasted 35 minutes. Red lasted only 10 minutes and its timer reset when yellow returned." xml:space="preserve">
+    <value>Gul i 15 minuter, sedan röd i 10, sedan gul i 10: Gul eller sämre har varat i 35 minuter. Röd varade bara i 10 minuter och dess timer återställdes när gul kom tillbaka.</value>
+  </data>
+  <data name="Yellow or worse" xml:space="preserve">
+    <value>Gul eller värre</value>
+  </data>
+  <data name="Zero minutes means immediately. The most severe matching rule wins. See the guide for how severity thresholds accumulate." xml:space="preserve">
+    <value>Noll minuter betyder omedelbart. Den mest allvarliga matchande regeln gäller. Se guiden för hur allvarlighetsgränsvärden ackumuleras.</value>
+  </data>
+
+</root>

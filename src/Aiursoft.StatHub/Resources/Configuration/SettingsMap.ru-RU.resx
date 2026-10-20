@@ -30,6 +30,9 @@
   <data name="Allow users to adjust their nickname in the profile management page." xml:space="preserve">
     <value>Позволить пользователям изменять свой ник в странице управления профилем.</value>
   </data>
+  <data name="An application API key with query, create, change severity, and mitigate permissions." xml:space="preserve">
+    <value>Ключ API приложения с правами на просмотр, создание, изменение уровня серьёзности и устранение инцидентов.</value>
+  </data>
   <data name="An application API key with query, create, change severity, and resolve permissions." xml:space="preserve">
     <value>Ключ API приложения с правами на просмотр, создание, изменение уровня важности и разрешение инцидентов.</value>
   </data>

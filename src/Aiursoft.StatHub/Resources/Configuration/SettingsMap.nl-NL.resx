@@ -30,6 +30,9 @@
   <data name="Allow users to adjust their nickname in the profile management page." xml:space="preserve">
     <value>Gebruikers toestaan hun bijnaam aan te passen op de pagina voor profielfuncties.</value>
   </data>
+  <data name="An application API key with query, create, change severity, and mitigate permissions." xml:space="preserve">
+    <value>Een toepassings- API-sleutel met de rechten om op te vragen, te maken, de ernst te wijzigen en te mitigeren.</value>
+  </data>
   <data name="An application API key with query, create, change severity, and resolve permissions." xml:space="preserve">
     <value>Een applicatie-API-sleutel met query-, aanmaak-, wijzigings- en oplosrechten.</value>
   </data>

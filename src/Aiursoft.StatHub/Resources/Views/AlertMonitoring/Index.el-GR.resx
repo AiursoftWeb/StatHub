@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="A green sample resets every timer. It also mitigates this server&apos;s incidents when automatic mitigation on green is enabled, even if green appears only briefly." xml:space="preserve">
+    <value>Ένα πράσινο δείγμα επαναφέρει όλους τους χρονόμετρος. Επίσης, μετριάσει τα περιστατικά αυτού του διακομιστή όταν η αυτόματη μετρίαση στο πράσινο είναι ενεργοποιημένη, ακόμα κι αν το πράσινο εμφανιστεί μόνο για σύντομο χρονικό διάστημα.</value>
+  </data>
+  <data name="A yellow-or-worse rule set to 35 minutes would trigger. A red-or-worse rule set to 35 minutes would not. The rules you save determine the alert severity." xml:space="preserve">
+    <value>Ένας κανόνας για κίτρινη ή χειρότερη κατάσταση, με όριο τα 35 λεπτά, θα ενεργοποιούνταν. Ένας κανόνας για κόκκινη ή χειρότερη κατάσταση, με όριο τα 35 λεπτά, δεν θα ενεργοποιούνταν. Οι κανόνες που αποθηκεύετε καθορίζουν τη σοβαρότητα της ειδοποίησης.</value>
+  </data>
+  <data name="Add rule" xml:space="preserve">
+    <value>Προσθήκη κανόνα</value>
+  </data>
+  <data name="AlertCenter monitoring" xml:space="preserve">
+    <value>Παρακολούθηση του AlertCenter</value>
+  </data>
+  <data name="Configure the AlertCenter connection in Global Settings. Environment variables can override those settings. Monitoring rules do not store credentials." xml:space="preserve">
+    <value>Ρυθμίστε τη σύνδεση με το AlertCenter στις Γενικές ρυθμίσεις. Οι μεταβλητές περιβάλλοντος μπορούν να παρακάμψουν αυτές τις ρυθμίσεις. Οι κανόνες παρακολούθησης δεν αποθηκεύουν διαπιστευτήρια.</value>
+  </data>
+  <data name="Connection settings" xml:space="preserve">
+    <value>Ρυθμίσεις σύνδεσης</value>
+  </data>
+  <data name="Continuous minutes" xml:space="preserve">
+    <value>Συνεχείς λεπτά</value>
+  </data>
+  <data name="Counts red and grey. Yellow or green resets this timer." xml:space="preserve">
+    <value>Μετρά κόκκινο και γκρι. Κίτρινο ή πράσινο επαναφέρει αυτόν τον χρονομέτρη.</value>
+  </data>
+  <data name="Counts time offline. Any live color resets this timer. Grey starts after one minute without a valid report." xml:space="preserve">
+    <value>Μετρά τον χρόνο εκτός σύνδεσης. Κάθε ενεργό χρώμα μηδενίζει αυτόν τον χρονομετρητή. Το γκρι εμφανίζεται μετά από ένα λεπτό χωρίς έγκυρη αναφορά.</value>
+  </data>
+  <data name="Counts yellow, red and grey. Only green resets this timer." xml:space="preserve">
+    <value>Μετρά το κίτρινο, το κόκκινο και το γκρι. Μόνο το πράσινο μηδενίζει αυτό το χρονόμετρο.</value>
+  </data>
+  <data name="Delete rule" xml:space="preserve">
+    <value>Διαγραφή κανόνα</value>
+  </data>
+  <data name="Enable monitoring policy" xml:space="preserve">
+    <value>Ενεργοποίηση πολιτικής παρακολούθησης</value>
+  </data>
+  <data name="Enabled" xml:space="preserve">
+    <value>Ενεργό</value>
+  </data>
+  <data name="Example: alternating colors" xml:space="preserve">
+    <value>Παράδειγμα: εναλλασσόμενα χρώματα</value>
+  </data>
+  <data name="Exclude" xml:space="preserve">
+    <value>Εξαίρεση</value>
+  </data>
+  <data name="Exclude server" xml:space="preserve">
+    <value>Εξαιρέστε τον διακομιστή</value>
+  </data>
+  <data name="Excluded servers always take precedence. When all servers are monitored, individual inclusions are unnecessary." xml:space="preserve">
+    <value>Οι εξαιρούμενοι διακομιστές έχουν πάντα προτεραιότητα. Όταν παρακολουθούνται όλοι οι διακομιστές, δεν χρειάζεται να συμπεριληφθούν μεμονωμένοι διακομιστές.</value>
+  </data>
+  <data name="From most to least severe" xml:space="preserve">
+    <value>Από τη μεγαλύτερη έως τη μικρότερη σοβαρότητα</value>
+  </data>
+  <data name="Getting worse keeps a timer running. Improving below its threshold resets it." xml:space="preserve">
+    <value>Η επιδείνωση διατηρεί τον χρονομετρητή σε λειτουργία. Αν η κατάσταση βελτιωθεί και πέσει κάτω από το όριό του, ο χρονομετρητής μηδενίζεται.</value>
+  </data>
+  <data name="Green" xml:space="preserve">
+    <value>Πράσινο</value>
+  </data>
+  <data name="Grey (offline)" xml:space="preserve">
+    <value>Γκρι (εκτός σύνδεσης)</value>
+  </data>
+  <data name="Grey only" xml:space="preserve">
+    <value>Μόνο γκρι</value>
+  </data>
+  <data name="How alert timers work" xml:space="preserve">
+    <value>Πώς λειτουργούν τα χρονόμετρα ειδοποιήσεων</value>
+  </data>
+  <data name="Immediately mitigate all incidents managed by this integration for a server when a healthy sample is received" xml:space="preserve">
+    <value>Αντιμετωπίστε αμέσως όλα τα περιστατικά που διαχειρίζεται αυτή η ενσωμάτωση για έναν διακομιστή, μόλις ληφθεί ένα δείγμα που υποδεικνύει καλή κατάσταση</value>
+  </data>
+  <data name="Include" xml:space="preserve">
+    <value>Συμπερίληψη</value>
+  </data>
+  <data name="Include server" xml:space="preserve">
+    <value>Συμπερίληψη διακομιστή</value>
+  </data>
+  <data name="Last report" xml:space="preserve">
+    <value>Τελευταία αναφορά</value>
+  </data>
+  <data name="Matching more rules escalates the existing incident when needed; it does not create another incident or automatically lower its severity." xml:space="preserve">
+    <value>Η ταιριασμένη περισσότερων κανόνων επιδεινώνει το υπάρχον περιστατικό όταν χρειάζεται; δεν δημιουργεί άλλο περιστατικό ούτε μειώνει αυτόματα τη σοβαρότητά του.</value>
+  </data>
+  <data name="Monitor all servers, including newly connected servers" xml:space="preserve">
+    <value>Παρακολούθηση όλων των διακομιστών, συμπεριλαμβανομένων των νεοσυνδεδεμένων διακομιστών</value>
+  </data>
+  <data name="Monitoring policy" xml:space="preserve">
+    <value>Πολιτική παρακολούθησης</value>
+  </data>
+  <data name="No report since restart" xml:space="preserve">
+    <value>Κανένα αναφορά από την επανεκκίνηση</value>
+  </data>
+  <data name="One incident, with recovery" xml:space="preserve">
+    <value>Ένα περιστατικό, με αποκατάσταση</value>
+  </data>
+  <data name="Red" xml:space="preserve">
+    <value>Κόκκινο</value>
+  </data>
+  <data name="Red or worse" xml:space="preserve">
+    <value>Κόκκινο ή χειρότερο</value>
+  </data>
+  <data name="Rules measure how long a server stays at or above a health threshold. Each threshold has its own timer." xml:space="preserve">
+    <value>Οι κανόνες μετρούν για πόσο χρόνο ένας διακομιστής παραμένει σε ένα επίπεδο υγείας ή υψηλότερο. Κάθε επίπεδο έχει το δικό του χρονόμετρο.</value>
+  </data>
+  <data name="Save policy and server selection" xml:space="preserve">
+    <value>Αποθήκευση πολιτικής και επιλογής διακομιστών</value>
+  </data>
+  <data name="Save rule" xml:space="preserve">
+    <value>Αποθήκευση κανόνα</value>
+  </data>
+  <data name="Server" xml:space="preserve">
+    <value>Διακομιστής</value>
+  </data>
+  <data name="Server selection" xml:space="preserve">
+    <value>Επιλογή διακομιστή</value>
+  </data>
+  <data name="Severity" xml:space="preserve">
+    <value>Σοβαρότητα</value>
+  </data>
+  <data name="State" xml:space="preserve">
+    <value>Κατάσταση</value>
+  </data>
+  <data name="Sustained state rules" xml:space="preserve">
+    <value>Κανόνες διατήρησης κατάστασης</value>
+  </data>
+  <data name="Timers and known servers are kept in memory, with no sample history stored in the database. After StatHub restarts, servers are observed again when they report, and their timers start fresh. Rules and connection settings remain saved." xml:space="preserve">
+    <value>Οι χρονομετρητές και οι γνωστοί διακομιστές διατηρούνται στη μνήμη, χωρίς να αποθηκεύεται ιστορικό δειγμάτων στη βάση δεδομένων. Μετά την επανεκκίνηση του StatHub, οι διακομιστές παρακολουθούνται ξανά μόλις στείλουν αναφορά και οι χρονομετρητές τους ξεκινούν από την αρχή. Οι κανόνες και οι ρυθμίσεις σύνδεσης παραμένουν αποθηκευμένοι.</value>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>Άγνωστο</value>
+  </data>
+  <data name="Yellow" xml:space="preserve">
+    <value>Κίτρινο</value>
+  </data>
+  <data name="Yellow for 15 minutes, then red for 10, then yellow for 10: yellow or worse has lasted 35 minutes. Red lasted only 10 minutes and its timer reset when yellow returned." xml:space="preserve">
+    <value>Κίτρινο για 15 λεπτά, μετά κόκκινο για 10, και μετά ξανά κίτρινο για 10: το κίτρινο ή χειρότερο έχει διαρκέσει 35 λεπτά. Το κόκκινο διήρκεσε μόνο 10 λεπτά και ο μετρητής του επανακινήθηκε όταν επέστρεψε το κίτρινο.</value>
+  </data>
+  <data name="Yellow or worse" xml:space="preserve">
+    <value>Κίτρινο ή χειρότερο</value>
+  </data>
+  <data name="Zero minutes means immediately. The most severe matching rule wins. See the guide for how severity thresholds accumulate." xml:space="preserve">
+    <value>Τα μηδέν λεπτά σημαίνουν άμεσα. Υπερισχύει ο κανόνας που αντιστοιχεί και έχει τη μεγαλύτερη σοβαρότητα. Δείτε στον οδηγό πώς συσσωρεύονται τα όρια σοβαρότητας.</value>
+  </data>
+
+</root>

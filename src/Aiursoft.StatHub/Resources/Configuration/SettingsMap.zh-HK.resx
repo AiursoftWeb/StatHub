@@ -30,6 +30,9 @@
   <data name="Allow users to adjust their nickname in the profile management page." xml:space="preserve">
     <value>允許用戶在個人資料管理頁面調整其暱稱。</value>
   </data>
+  <data name="An application API key with query, create, change severity, and mitigate permissions." xml:space="preserve">
+    <value>具備查詢、建立、變更嚴重程度及緩解權限的應用程式 API 金鑰。</value>
+  </data>
   <data name="An application API key with query, create, change severity, and resolve permissions." xml:space="preserve">
     <value>具有查詢、建立、更改嚴重程度及解決權限的應用程式 API 金鑰。</value>
   </data>

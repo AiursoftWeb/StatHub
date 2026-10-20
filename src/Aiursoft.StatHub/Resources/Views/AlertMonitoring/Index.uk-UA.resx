@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="A green sample resets every timer. It also mitigates this server&apos;s incidents when automatic mitigation on green is enabled, even if green appears only briefly." xml:space="preserve">
+    <value>Зелений зразок скидає всі таймери. Він також пом’якшує інциденти цього сервера, якщо ввімкнено автоматичне пом’якшення за зеленого статусу, навіть якщо зелений статус з’являється лише на короткий час.</value>
+  </data>
+  <data name="A yellow-or-worse rule set to 35 minutes would trigger. A red-or-worse rule set to 35 minutes would not. The rules you save determine the alert severity." xml:space="preserve">
+    <value>Правило «жовтий або гірше», встановлене на 35 хвилин, спрацює. Правило «червоний або гірше», встановлене на 35 хвилин, не спрацює. Правила, які ви зберігаєте, визначають важливість сповіщення.</value>
+  </data>
+  <data name="Add rule" xml:space="preserve">
+    <value>Додати правило</value>
+  </data>
+  <data name="AlertCenter monitoring" xml:space="preserve">
+    <value>Моніторинг AlertCenter</value>
+  </data>
+  <data name="Configure the AlertCenter connection in Global Settings. Environment variables can override those settings. Monitoring rules do not store credentials." xml:space="preserve">
+    <value>Налаштуйте з&apos;єднання AlertCenter в Глобальних налаштуваннях. Змінні середовища можуть перевизначати ці налаштування. Правила моніторингу не зберігають облікові дані.</value>
+  </data>
+  <data name="Connection settings" xml:space="preserve">
+    <value>Налаштування підключення</value>
+  </data>
+  <data name="Continuous minutes" xml:space="preserve">
+    <value>Безперервні хвилини</value>
+  </data>
+  <data name="Counts red and grey. Yellow or green resets this timer." xml:space="preserve">
+    <value>Враховує червоний і сірий кольори. Жовтий або зелений скидає цей таймер.</value>
+  </data>
+  <data name="Counts time offline. Any live color resets this timer. Grey starts after one minute without a valid report." xml:space="preserve">
+    <value>Враховує час у неактивному стані. Будь-який активний колір скидає цей таймер. Сірий стан активується після однієї хвилини без валідного звіту.</value>
+  </data>
+  <data name="Counts yellow, red and grey. Only green resets this timer." xml:space="preserve">
+    <value>Враховує жовтий, червоний і сірий кольори. Лише зелений скидає цей таймер.</value>
+  </data>
+  <data name="Delete rule" xml:space="preserve">
+    <value>Видалити правило</value>
+  </data>
+  <data name="Enable monitoring policy" xml:space="preserve">
+    <value>Увімкнути політику моніторингу</value>
+  </data>
+  <data name="Enabled" xml:space="preserve">
+    <value>Увімкнено</value>
+  </data>
+  <data name="Example: alternating colors" xml:space="preserve">
+    <value>Приклад: чергування кольорів</value>
+  </data>
+  <data name="Exclude" xml:space="preserve">
+    <value>Виключити</value>
+  </data>
+  <data name="Exclude server" xml:space="preserve">
+    <value>Виключити сервер</value>
+  </data>
+  <data name="Excluded servers always take precedence. When all servers are monitored, individual inclusions are unnecessary." xml:space="preserve">
+    <value>Виключені сервери завжди мають пріоритет. Коли моніторяться всі сервери, окремі включення не потрібні.</value>
+  </data>
+  <data name="From most to least severe" xml:space="preserve">
+    <value>Від найважливішої до найменш важливої</value>
+  </data>
+  <data name="Getting worse keeps a timer running. Improving below its threshold resets it." xml:space="preserve">
+    <value>Погіршення стану тримає таймер активним. Покращення нижче свого порогу скидає його.</value>
+  </data>
+  <data name="Green" xml:space="preserve">
+    <value>Зелений</value>
+  </data>
+  <data name="Grey (offline)" xml:space="preserve">
+    <value>Сірий (офлайн)</value>
+  </data>
+  <data name="Grey only" xml:space="preserve">
+    <value>Лише сірий</value>
+  </data>
+  <data name="How alert timers work" xml:space="preserve">
+    <value>Як працюють таймери сповіщень</value>
+  </data>
+  <data name="Immediately mitigate all incidents managed by this integration for a server when a healthy sample is received" xml:space="preserve">
+    <value>Негайно усунути всі інциденти, що керуються цією інтеграцією для сервера, при отриманні здорового зразка</value>
+  </data>
+  <data name="Include" xml:space="preserve">
+    <value>Включити</value>
+  </data>
+  <data name="Include server" xml:space="preserve">
+    <value>Додати сервер</value>
+  </data>
+  <data name="Last report" xml:space="preserve">
+    <value>Останній звіт</value>
+  </data>
+  <data name="Matching more rules escalates the existing incident when needed; it does not create another incident or automatically lower its severity." xml:space="preserve">
+    <value>Якщо спрацьовує більше правил, за потреби підвищується рівень наявного інциденту; новий інцидент не створюється, а рівень його критичності автоматично не знижується.</value>
+  </data>
+  <data name="Monitor all servers, including newly connected servers" xml:space="preserve">
+    <value>Моніторинг усіх серверів, включаючи новопідключені</value>
+  </data>
+  <data name="Monitoring policy" xml:space="preserve">
+    <value>Політика моніторингу</value>
+  </data>
+  <data name="No report since restart" xml:space="preserve">
+    <value>Немає звіту після перезапуску</value>
+  </data>
+  <data name="One incident, with recovery" xml:space="preserve">
+    <value>Одна інцидент, з відновленням</value>
+  </data>
+  <data name="Red" xml:space="preserve">
+    <value>Червоний</value>
+  </data>
+  <data name="Red or worse" xml:space="preserve">
+    <value>Червоний або гірше</value>
+  </data>
+  <data name="Rules measure how long a server stays at or above a health threshold. Each threshold has its own timer." xml:space="preserve">
+    <value>Правила визначають, як довго сервер залишається на рівні порога працездатності або вище. Для кожного порога ведеться окремий таймер.</value>
+  </data>
+  <data name="Save policy and server selection" xml:space="preserve">
+    <value>Зберегти політику та вибір серверів</value>
+  </data>
+  <data name="Save rule" xml:space="preserve">
+    <value>Зберегти правило</value>
+  </data>
+  <data name="Server" xml:space="preserve">
+    <value>Сервер</value>
+  </data>
+  <data name="Server selection" xml:space="preserve">
+    <value>Вибір сервера</value>
+  </data>
+  <data name="Severity" xml:space="preserve">
+    <value>Сeria</value>
+  </data>
+  <data name="State" xml:space="preserve">
+    <value>Стан</value>
+  </data>
+  <data name="Sustained state rules" xml:space="preserve">
+    <value>Правила сталого стану</value>
+  </data>
+  <data name="Timers and known servers are kept in memory, with no sample history stored in the database. After StatHub restarts, servers are observed again when they report, and their timers start fresh. Rules and connection settings remain saved." xml:space="preserve">
+    <value>Таймери та відомі сервери зберігаються в пам’яті, а історія показників не записується до бази даних. Після перезапуску StatHub сервери знову починають відстежуватися, коли надсилають звіти, а їхні таймери запускаються заново. Правила та налаштування підключення залишаються збереженими.</value>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>Невідомо</value>
+  </data>
+  <data name="Yellow" xml:space="preserve">
+    <value>Жовтий</value>
+  </data>
+  <data name="Yellow for 15 minutes, then red for 10, then yellow for 10: yellow or worse has lasted 35 minutes. Red lasted only 10 minutes and its timer reset when yellow returned." xml:space="preserve">
+    <value>Жовтий рівень тривав 15 хвилин, потім червоний — 10, а потім знову жовтий — 10: жовтий рівень або гірший тривав 35 хвилин. Червоний рівень тривав лише 10 хвилин, і його таймер скинувся, коли знову з’явився жовтий.</value>
+  </data>
+  <data name="Yellow or worse" xml:space="preserve">
+    <value>Жовтий або гірший</value>
+  </data>
+  <data name="Zero minutes means immediately. The most severe matching rule wins. See the guide for how severity thresholds accumulate." xml:space="preserve">
+    <value>Нуль хвилин означає негайно. Перемагає найсуворіше збігаючися правило. Дивіться в посібнику, як накопичуються пороги важливості.</value>
+  </data>
+
+</root>

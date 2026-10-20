@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="A green sample resets every timer. It also mitigates this server&apos;s incidents when automatic mitigation on green is enabled, even if green appears only briefly." xml:space="preserve">
+    <value>تؤدي عيّنة خضراء إلى إعادة ضبط جميع المؤقتات. كما تخفف من حدة الحوادث الخاصة بهذا الخادم عند تفعيل التخفيف التلقائي عند ظهور اللون الأخضر، حتى لو ظهر اللون الأخضر لفترة وجيزة فقط.</value>
+  </data>
+  <data name="A yellow-or-worse rule set to 35 minutes would trigger. A red-or-worse rule set to 35 minutes would not. The rules you save determine the alert severity." xml:space="preserve">
+    <value>سيتم تفعيل قاعدة «الأصفر أو أسوأ» المضبوطة على 35 دقيقة. ولن يتم تفعيل قاعدة «الأحمر أو أسوأ» المضبوطة على 35 دقيقة. القواعد التي تحفظها هي التي تحدد شدة التنبيه.</value>
+  </data>
+  <data name="Add rule" xml:space="preserve">
+    <value>إضافة قاعدة</value>
+  </data>
+  <data name="AlertCenter monitoring" xml:space="preserve">
+    <value>مراقبة AlertCenter</value>
+  </data>
+  <data name="Configure the AlertCenter connection in Global Settings. Environment variables can override those settings. Monitoring rules do not store credentials." xml:space="preserve">
+    <value>قم بتكوين اتصال AlertCenter في الإعدادات العامة. يمكن للمتغيرات البيئية تجاوز هذه الإعدادات. لا تخزن قواعد المراقبة بيانات الاعتماد.</value>
+  </data>
+  <data name="Connection settings" xml:space="preserve">
+    <value>إعدادات الاتصال</value>
+  </data>
+  <data name="Continuous minutes" xml:space="preserve">
+    <value>الدقائق المتواصلة</value>
+  </data>
+  <data name="Counts red and grey. Yellow or green resets this timer." xml:space="preserve">
+    <value>يحتسب الأحمر والرمادي. يعيد الأصفر أو الأخضر ضبط هذا المؤقت.</value>
+  </data>
+  <data name="Counts time offline. Any live color resets this timer. Grey starts after one minute without a valid report." xml:space="preserve">
+    <value>يُحسب وقت عدم الاتصال. أي لون نشط يعيد ضبط هذا المؤقّت. يبدأ اللون الرمادي بعد دقيقة واحدة دون تقرير صالح.</value>
+  </data>
+  <data name="Counts yellow, red and grey. Only green resets this timer." xml:space="preserve">
+    <value>تحتسب الأصفر والأحمر والرمادي. فقط الأخضر يعيد ضبط هذا المؤقت.</value>
+  </data>
+  <data name="Delete rule" xml:space="preserve">
+    <value>حذف القاعدة</value>
+  </data>
+  <data name="Enable monitoring policy" xml:space="preserve">
+    <value>تفعيل سياسة المراقبة</value>
+  </data>
+  <data name="Enabled" xml:space="preserve">
+    <value>مُفعَّل</value>
+  </data>
+  <data name="Example: alternating colors" xml:space="preserve">
+    <value>مثال: تناوب الألوان</value>
+  </data>
+  <data name="Exclude" xml:space="preserve">
+    <value>استبعاد</value>
+  </data>
+  <data name="Exclude server" xml:space="preserve">
+    <value>استبعاد الخادم</value>
+  </data>
+  <data name="Excluded servers always take precedence. When all servers are monitored, individual inclusions are unnecessary." xml:space="preserve">
+    <value>الخوادم المستثناة لها الأولوية دائمًا. عند مراقبة جميع الخوادم، لا حاجة للتضمينات الفردية.</value>
+  </data>
+  <data name="From most to least severe" xml:space="preserve">
+    <value>من الأشد إلى الأقل خطورة</value>
+  </data>
+  <data name="Getting worse keeps a timer running. Improving below its threshold resets it." xml:space="preserve">
+    <value>استمرار الحالة في التدهور يُبقي المؤقّت يعمل. والعودة إلى ما دون الحدّ المعيّن تُعيد ضبطه.</value>
+  </data>
+  <data name="Green" xml:space="preserve">
+    <value>أخضر</value>
+  </data>
+  <data name="Grey (offline)" xml:space="preserve">
+    <value>رمادي (غير متصل)</value>
+  </data>
+  <data name="Grey only" xml:space="preserve">
+    <value>الرمادي فقط</value>
+  </data>
+  <data name="How alert timers work" xml:space="preserve">
+    <value>آلية عمل مؤقتات التنبيهات</value>
+  </data>
+  <data name="Immediately mitigate all incidents managed by this integration for a server when a healthy sample is received" xml:space="preserve">
+    <value>معالجة جميع الحوادث التي يديرها هذا التكامل لخادم فورًا عند استلام عينة سليمة</value>
+  </data>
+  <data name="Include" xml:space="preserve">
+    <value>تضمين</value>
+  </data>
+  <data name="Include server" xml:space="preserve">
+    <value>تضمين الخادم</value>
+  </data>
+  <data name="Last report" xml:space="preserve">
+    <value>آخر تقرير</value>
+  </data>
+  <data name="Matching more rules escalates the existing incident when needed; it does not create another incident or automatically lower its severity." xml:space="preserve">
+    <value>تؤدي مطابقة مزيد من القواعد إلى تصعيد الحادثة الحالية عند الحاجة؛ ولا تنشئ حادثة أخرى أو تخفض مستوى شدتها تلقائيًا.</value>
+  </data>
+  <data name="Monitor all servers, including newly connected servers" xml:space="preserve">
+    <value>راقب جميع الخوادم، بما فيها الخوادم المتصلة حديثًا</value>
+  </data>
+  <data name="Monitoring policy" xml:space="preserve">
+    <value>سياسة المراقبة</value>
+  </data>
+  <data name="No report since restart" xml:space="preserve">
+    <value>لا يوجد تقرير منذ إعادة التشغيل</value>
+  </data>
+  <data name="One incident, with recovery" xml:space="preserve">
+    <value>حادثة واحدة، مع معالجة التعافي</value>
+  </data>
+  <data name="Red" xml:space="preserve">
+    <value>أحمر</value>
+  </data>
+  <data name="Red or worse" xml:space="preserve">
+    <value>أحمر أو أسوأ</value>
+  </data>
+  <data name="Rules measure how long a server stays at or above a health threshold. Each threshold has its own timer." xml:space="preserve">
+    <value>تقيس القواعد المدة التي يظل فيها الخادم عند عتبة الصحة أو أعلى منها. ولكل عتبة مؤقّت خاص بها.</value>
+  </data>
+  <data name="Save policy and server selection" xml:space="preserve">
+    <value>حفظ السياسة واختيار الخادم</value>
+  </data>
+  <data name="Save rule" xml:space="preserve">
+    <value>حفظ القاعدة</value>
+  </data>
+  <data name="Server" xml:space="preserve">
+    <value>الخادم</value>
+  </data>
+  <data name="Server selection" xml:space="preserve">
+    <value>اختيار الخادم</value>
+  </data>
+  <data name="Severity" xml:space="preserve">
+    <value>الخطورة</value>
+  </data>
+  <data name="State" xml:space="preserve">
+    <value>الحالة</value>
+  </data>
+  <data name="Sustained state rules" xml:space="preserve">
+    <value>قواعد الحالة المستمرة</value>
+  </data>
+  <data name="Timers and known servers are kept in memory, with no sample history stored in the database. After StatHub restarts, servers are observed again when they report, and their timers start fresh. Rules and connection settings remain saved." xml:space="preserve">
+    <value>تُحفظ المؤقتات والخوادم المعروفة في الذاكرة، دون تخزين أي سجل عينات في قاعدة البيانات. بعد إعادة تشغيل StatHub، يتم مراقبة الخوادم مرة أخرى عند إرسال التقارير، وتبدأ مؤقّتاتها من جديد. تبقى القواعد وإعدادات الاتصال محفوظة.</value>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>غير معروف</value>
+  </data>
+  <data name="Yellow" xml:space="preserve">
+    <value>أصفر</value>
+  </data>
+  <data name="Yellow for 15 minutes, then red for 10, then yellow for 10: yellow or worse has lasted 35 minutes. Red lasted only 10 minutes and its timer reset when yellow returned." xml:space="preserve">
+    <value>استمر اللون الأصفر لمدة 15 دقيقة، ثم الأحمر لمدة 10 دقائق، ثم الأصفر لمدة 10 دقائق: استمر اللون الأصفر أو ما هو أسوأ لمدة 35 دقيقة. استمر اللون الأحمر لمدة 10 دقائق فقط، وأُعيد ضبط مؤقته عند عودة اللون الأصفر.</value>
+  </data>
+  <data name="Yellow or worse" xml:space="preserve">
+    <value>أصفر أو أسوأ</value>
+  </data>
+  <data name="Zero minutes means immediately. The most severe matching rule wins. See the guide for how severity thresholds accumulate." xml:space="preserve">
+    <value>صفر دقيقة يعني فوريًا. القاعدة المطابقة الأكثر شدة هي الغالبة. راجع الدليل لمعرفة كيفية تراكم عتبات الشدة.</value>
+  </data>
+
+</root>

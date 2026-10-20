@@ -24,6 +24,9 @@
   <data name="Abandoning is not deletion. If this agent persists in submitting, it will appear again soon. Please use systemd command to stop the agent." xml:space="preserve">
     <value>Părăsirea nu înseamnă ștergere. Dacă acest agent continuă să trimită date, va reapărea în curând. Vă rugăm să utilizați comanda systemd pentru a opri agentul.</value>
   </data>
+  <data name="Accessed" xml:space="preserve">
+    <value>Accesat</value>
+  </data>
   <data name="Agent Information" xml:space="preserve">
     <value>Informații despre Agent</value>
   </data>
@@ -53,6 +56,9 @@
   </data>
   <data name="CPU Usage" xml:space="preserve">
     <value>Utilizarea CPU</value>
+  </data>
+  <data name="Created" xml:space="preserve">
+    <value>Creat</value>
   </data>
   <data name="Disabled" xml:space="preserve">
     <value>Dezactivat</value>
@@ -134,6 +140,9 @@
   </data>
   <data name="Modified" xml:space="preserve">
     <value>Modificat</value>
+  </data>
+  <data name="More times" xml:space="preserve">
+    <value>Mai multe momente</value>
   </data>
   <data name="MOTD" xml:space="preserve">
     <value>Mesajul zilei</value>
