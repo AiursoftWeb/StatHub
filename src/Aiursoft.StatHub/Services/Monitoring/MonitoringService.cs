@@ -23,8 +23,8 @@ public sealed class MonitoringService(StatHubDbContext db, MonitoringCoordinator
         if (policy != null) return policy;
         policy = new MonitoringPolicy
         {
-            Rules = [Rule("yellow", 35, "sev3"), Rule("yellow", 100, "sev2"),
-                Rule("red", 35, "sev2"), Rule("red", 100, "sev1"), Rule("grey", 15, "sev3"), Rule("grey", 35, "sev2")]
+            Rules = [Rule("yellow", 45, "sev3"), Rule("yellow", 100, "sev2"),
+                Rule("red", 35, "sev3"), Rule("red", 70, "sev2"), Rule("grey", 25, "sev3"), Rule("grey", 40, "sev2")]
         };
         db.AlertMonitoringPolicies.Add(policy);
         await db.SaveChangesAsync();

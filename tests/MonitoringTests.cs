@@ -65,7 +65,7 @@ public sealed class MonitoringTests
     public async Task RecurrenceReopensWithinFourHoursAndCreatesAfterBoundary(string status, int ageSeconds, bool reopen)
     {
         await Observe("yellow");
-        await Continue("yellow", 35);
+        await Continue("yellow", 45);
         var previous = _client.Incidents.Single();
         await Observe("green");
         previous.Status = status;
@@ -73,13 +73,13 @@ public sealed class MonitoringTests
         var oldVersion = previous.Version;
         var oldMitigated = previous.MitigatedAtUtc;
         var oldResolved = previous.ResolvedAtUtc;
-        _clock.Advance(TimeSpan.FromSeconds(ageSeconds - 35 * 60));
+        _clock.Advance(TimeSpan.FromSeconds(ageSeconds - 45 * 60));
         await Observe("green");
         // Recovery timestamps on completed incidents must never be refreshed by subsequent green samples.
         Assert.AreEqual(oldMitigated, previous.MitigatedAtUtc);
         Assert.AreEqual(oldResolved, previous.ResolvedAtUtc);
         await Observe("yellow");
-        await Continue("yellow", 34);
+        await Continue("yellow", 44);
         Assert.AreEqual(0, _client.Reopens);
         await Continue("yellow", 1);
         Assert.AreEqual(reopen ? 1 : 2, _client.Incidents.Count);
@@ -95,7 +95,7 @@ public sealed class MonitoringTests
         }
         await _service.CheckAsync();
         Assert.AreEqual(reopen ? 1 : 2, _client.Incidents.Count);
-        await Continue("yellow", 65);
+        await Continue("yellow", 55);
         Assert.AreEqual("sev2", current.Level);
         Assert.AreEqual(1, _client.Escalations);
         await Observe("green");
@@ -108,7 +108,7 @@ public sealed class MonitoringTests
     public async Task MostRecentlyRecoveredIncidentIsReopenedEvenWhenAnOlderIncidentWasReceivedLater()
     {
         await Observe("yellow");
-        await Continue("yellow", 35);
+        await Continue("yellow", 45);
         var latest = _client.Incidents.Single();
         var older = _client.Copy(latest);
         older.Status = "resolved";
@@ -117,7 +117,7 @@ public sealed class MonitoringTests
         older.ReceivedAtUtc = _clock.GetUtcNow().AddMinutes(1);
         await Observe("green");
         await Observe("yellow");
-        await Continue("yellow", 35);
+        await Continue("yellow", 45);
         Assert.AreEqual(1, _client.Reopens);
         Assert.AreEqual("new", latest.Status);
         Assert.AreEqual("resolved", older.Status);
@@ -150,12 +150,12 @@ public sealed class MonitoringTests
     public async Task ReopenFailureOrLostResponseNeverCreatesDuplicate(bool lostResponse)
     {
         await Observe("yellow");
-        await Continue("yellow", 35);
+        await Continue("yellow", 45);
         await Observe("green");
         _client.FailReopen = !lostResponse;
         _client.LoseReopenResponse = lostResponse;
         await Observe("yellow");
-        await Continue("yellow", 35);
+        await Continue("yellow", 45);
         Assert.AreEqual(1, _client.Incidents.Count);
         _client.FailReopen = false;
         await _service.CheckAsync();
@@ -206,12 +206,12 @@ public sealed class MonitoringTests
     public async Task ActiveIncidentTakesPrecedenceAndForeignHistoryIsNeverReopened(string property, string value)
     {
         await Observe("yellow");
-        await Continue("yellow", 35);
+        await Continue("yellow", 45);
         var active = _client.Incidents.Single();
         var closed = _client.Copy(active);
         closed.Status = "mitigated";
         closed.MitigatedAtUtc = _clock.GetUtcNow();
-        await Continue("yellow", 65);
+        await Continue("yellow", 55);
         Assert.AreEqual("sev2", active.Level);
         Assert.AreEqual("sev3", closed.Level);
         Assert.AreEqual(0, _client.Reopens);
@@ -219,7 +219,7 @@ public sealed class MonitoringTests
         foreach (var incident in _client.Incidents)
             incident.Context![property] = value;
         await Observe("yellow");
-        await Continue("yellow", 35);
+        await Continue("yellow", 45);
         Assert.AreEqual(3, _client.Incidents.Count);
         Assert.AreEqual(0, _client.Reopens);
     }
@@ -233,7 +233,7 @@ public sealed class MonitoringTests
         var id = Guid.NewGuid();
         await _db.Database.ExecuteSqlInterpolatedAsync($"INSERT INTO AgentMonitoringStates (ClientId, Hostname, CurrentState, LastReportedAtUtc, StateSinceUtc, ObservationSessionId, NextReportId) VALUES ('old', 'old', 'red', {since}, {since}, {id}, {id})");
         var policy = await _service.PolicyAsync();
-        policy.Rules.Single(rule => rule.State == "yellow" && rule.DurationMinutes == 35).DurationMinutes = 42;
+        policy.Rules.Single(rule => rule.State == "yellow" && rule.DurationMinutes == 45).DurationMinutes = 42;
         await _db.SaveChangesAsync();
         await migrator.MigrateAsync();
         using var command = _db.Database.GetDbConnection().CreateCommand();
@@ -247,10 +247,10 @@ public sealed class MonitoringTests
     public async Task AlternatingYellowAndRedTriggersYellowThresholdWithoutContinuousRed()
     {
         await Observe("yellow");
-        for (var i = 0; i < 7; i++) await Continue(i % 2 == 0 ? "yellow" : "red", 5);
+        for (var i = 0; i < 9; i++) await Continue(i % 2 == 0 ? "yellow" : "red", 5);
         Assert.AreEqual("sev3", _client.Incidents.Single().Level);
         Assert.Contains("yellow or worse", _client.Created.Single().Content!);
-        for (var i = 0; i < 13; i++) await Continue(i % 2 == 0 ? "red" : "yellow", 5);
+        for (var i = 0; i < 11; i++) await Continue(i % 2 == 0 ? "red" : "yellow", 5);
         Assert.AreEqual("sev2", _client.Incidents.Single().Level);
         Assert.AreEqual(1, _client.Escalations);
     }
@@ -262,14 +262,14 @@ public sealed class MonitoringTests
         await Continue("red", 20);
         _clock.Advance(TimeSpan.FromMinutes(15));
         await _service.CheckAsync();
-        Assert.AreEqual("sev2", _client.Incidents.Single().Level);
+        Assert.AreEqual("sev3", _client.Incidents.Single().Level);
         Assert.Contains("red or worse", _client.Created.Single().Content!);
         _clock.Advance(TimeSpan.FromMinutes(1));
         await _service.CheckAsync();
         Assert.AreEqual(1, _client.Incidents.Count);
         _clock.Advance(TimeSpan.FromMinutes(64));
         await _service.CheckAsync();
-        Assert.AreEqual("sev1", _client.Incidents.Single().Level);
+        Assert.AreEqual("sev2", _client.Incidents.Single().Level);
         Assert.AreEqual(1, _client.Escalations);
     }
 
@@ -283,12 +283,12 @@ public sealed class MonitoringTests
         await Observe("red");
         Assert.AreEqual(redStart, _coordinator.Snapshot().Single().RedOrWorseSinceUtc);
         await Continue("red", 5);
-        Assert.AreEqual("sev2", _client.Incidents.Single().Level);
+        Assert.AreEqual("sev3", _client.Incidents.Single().Level);
         await Observe("yellow");
         var state = _coordinator.Snapshot().Single();
         Assert.IsNull(state.RedOrWorseSinceUtc);
         Assert.AreEqual(redStart, state.YellowOrWorseSinceUtc);
-        Assert.AreEqual("sev2", _client.Incidents.Single().Level);
+        Assert.AreEqual("sev3", _client.Incidents.Single().Level);
     }
 
     [TestMethod]
@@ -312,7 +312,7 @@ public sealed class MonitoringTests
         await Continue("red", 34);
         Assert.IsEmpty(_client.Incidents);
         await Continue("red", 1);
-        Assert.AreEqual("sev2", _client.Incidents.Single().Level);
+        Assert.AreEqual("sev3", _client.Incidents.Single().Level);
         Assert.Contains("red or worse", _client.Created.Single().Content!);
     }
 
@@ -393,10 +393,10 @@ public sealed class MonitoringTests
         var agent = _agents.GetOrAddClient("server-1");
         agent.CpuCores = 24;
         await Observe("red");
-        _clock.Advance(TimeSpan.FromMinutes(16));
+        _clock.Advance(TimeSpan.FromMinutes(26));
         await _service.CheckAsync();
         var content = _client.Created.Single().Content!;
-        Assert.Contains("15 continuous minutes", content);
+        Assert.Contains("25 continuous minutes", content);
         Assert.Contains("No agent reports", content);
         Assert.Contains("Last report (UTC):", content);
         Assert.DoesNotContain("CPU busy:", content);
@@ -410,26 +410,26 @@ public sealed class MonitoringTests
         policy.AutoResolveOnGreen = false;
         await _db.SaveChangesAsync();
         await Observe("yellow");
-        await Continue("yellow", 35);
+        await Continue("yellow", 45);
         var content = _client.Created.Single().Content!;
         Assert.Contains("Live metric details are unavailable", content);
         Assert.Contains("mitigate the incident manually", content);
     }
 
     [TestMethod]
-    public async Task GreyCreatesAtFifteenMinutesAndEscalatesSameIncidentAtThirtyFive()
+    public async Task GreyCreatesAtTwentyFiveMinutesAndEscalatesSameIncidentAtForty()
     {
         await Observe("green");
-        _clock.Advance(MonitoringService.OfflineTimeout + TimeSpan.FromMinutes(15) - TimeSpan.FromSeconds(1));
+        _clock.Advance(MonitoringService.OfflineTimeout + TimeSpan.FromMinutes(25) - TimeSpan.FromSeconds(1));
         await _service.CheckAsync();
         Assert.IsEmpty(_client.Incidents);
         _clock.Advance(TimeSpan.FromSeconds(1));
         await _service.CheckAsync();
         var incident = _client.Incidents.Single();
         Assert.AreEqual("sev3", incident.Level);
-        Assert.AreEqual(_clock.GetUtcNow().AddMinutes(-15), incident.OccurredAtUtc);
-        Assert.Contains("15 continuous minutes", _client.Created.Single().Content!);
-        _clock.Advance(TimeSpan.FromMinutes(20) - TimeSpan.FromSeconds(1));
+        Assert.AreEqual(_clock.GetUtcNow().AddMinutes(-25), incident.OccurredAtUtc);
+        Assert.Contains("25 continuous minutes", _client.Created.Single().Content!);
+        _clock.Advance(TimeSpan.FromMinutes(15) - TimeSpan.FromSeconds(1));
         await _service.CheckAsync();
         Assert.AreEqual("sev3", incident.Level);
         Assert.AreEqual(0, _client.Escalations);
@@ -448,11 +448,11 @@ public sealed class MonitoringTests
     public async Task GreenBeforeGreyEscalationResetsTheGreyTimer()
     {
         await Observe("green");
-        _clock.Advance(MonitoringService.OfflineTimeout + TimeSpan.FromMinutes(15));
+        _clock.Advance(MonitoringService.OfflineTimeout + TimeSpan.FromMinutes(25));
         await _service.CheckAsync();
         var incident = _client.Incidents.Single();
         await Observe("green");
-        _clock.Advance(MonitoringService.OfflineTimeout + TimeSpan.FromMinutes(15) - TimeSpan.FromSeconds(1));
+        _clock.Advance(MonitoringService.OfflineTimeout + TimeSpan.FromMinutes(25) - TimeSpan.FromSeconds(1));
         await _service.CheckAsync();
         Assert.AreEqual("mitigated", incident.Status);
         Assert.AreEqual(0, _client.Reopens);
@@ -470,7 +470,7 @@ public sealed class MonitoringTests
         var policy = await _service.PolicyAsync();
         Assert.IsTrue(policy.IsEnabled && policy.MonitorAllServers && policy.AutoResolveOnGreen);
         Assert.AreEqual(6, policy.Rules.Count);
-        CollectionAssert.AreEquivalent(new[] { "yellow:35:sev3", "yellow:100:sev2", "red:35:sev2", "red:100:sev1", "grey:15:sev3", "grey:35:sev2" },
+        CollectionAssert.AreEquivalent(new[] { "yellow:45:sev3", "yellow:100:sev2", "red:35:sev3", "red:70:sev2", "grey:25:sev3", "grey:40:sev2" },
             policy.Rules.Select(rule => $"{rule.State}:{rule.DurationMinutes}:{rule.Severity}").ToArray());
         Assert.IsEmpty(policy.Targets);
         _db.AlertMonitoringRules.RemoveRange(policy.Rules);
@@ -480,18 +480,27 @@ public sealed class MonitoringTests
     }
 
     [TestMethod]
-    [DataRow("yellow", "sev3", "sev2")]
-    [DataRow("red", "sev2", "sev1")]
-    public async Task SustainedRulesCreateEscalateDeduplicateAndRecreateAfterHumanClosure(string color, string first, string second)
+    [DataRow("yellow", 45, 100)]
+    [DataRow("red", 35, 70)]
+    public async Task SustainedRulesCreateEscalateDeduplicateAndRecreateAfterHumanClosure(string color, int warningMinutes, int criticalMinutes)
     {
         await Observe(color);
-        await Continue(color, 34);
+        await Continue(color, warningMinutes - 1);
+        _clock.Advance(TimeSpan.FromSeconds(59));
+        await Observe(color);
         Assert.IsEmpty(_client.Incidents);
-        await Continue(color, 1);
+        _clock.Advance(TimeSpan.FromSeconds(1));
+        await Observe(color);
         var incident = _client.Incidents.Single();
-        Assert.AreEqual(first, incident.Level);
-        await Continue(color, 65);
-        Assert.AreEqual(second, incident.Level);
+        Assert.AreEqual("sev3", incident.Level);
+        await Continue(color, criticalMinutes - warningMinutes - 1);
+        _clock.Advance(TimeSpan.FromSeconds(59));
+        await Observe(color);
+        Assert.AreEqual("sev3", incident.Level);
+        Assert.AreEqual(0, _client.Escalations);
+        _clock.Advance(TimeSpan.FromSeconds(1));
+        await Observe(color);
+        Assert.AreEqual("sev2", incident.Level);
         Assert.AreEqual(1, _client.Incidents.Count);
         Assert.AreEqual(1, _client.Escalations);
         incident.Status = "mitigated";
@@ -500,14 +509,14 @@ public sealed class MonitoringTests
         Assert.AreEqual(1, _client.Incidents.Count);
         Assert.AreEqual(1, _client.Reopens);
         Assert.AreEqual("new", incident.Status);
-        Assert.AreEqual(second, _client.Incidents.Last().Level);
+        Assert.AreEqual("sev2", _client.Incidents.Last().Level);
     }
 
     [TestMethod]
     public async Task AnyGreenInBatchMitigatesAllOwnedIncidentsAndResetsTimer()
     {
         await Observe("yellow");
-        await Continue("yellow", 35);
+        await Continue("yellow", 45);
         var duplicate = _client.Copy(_client.Incidents.Single());
         var foreign = _client.Copy(duplicate);
         foreign.Context!["source"] = "Different integration";
@@ -521,7 +530,7 @@ public sealed class MonitoringTests
         Assert.AreEqual(3, _client.Incidents.Count);
         Assert.AreEqual(1, _client.Reopens);
         Assert.AreEqual(1, _client.Incidents.Count(item => item.Context!.Value<string>("source") == "StatHub.HealthMonitoring" && item.Status == "new"));
-        Assert.AreEqual("sev2", _client.Incidents.First(item => item.Status == "new" && item.Context!.Value<string>("source") == "StatHub.HealthMonitoring").Level);
+        Assert.AreEqual("sev3", _client.Incidents.First(item => item.Status == "new" && item.Context!.Value<string>("source") == "StatHub.HealthMonitoring").Level);
     }
 
     [TestMethod]
@@ -536,7 +545,7 @@ public sealed class MonitoringTests
         await Continue("red", 34);
         Assert.AreEqual(0, _client.Mitigations);
         Assert.AreEqual(1, _client.Incidents.Count);
-        Assert.AreEqual("sev2", _client.Incidents.Single().Level);
+        Assert.AreEqual("sev3", _client.Incidents.Single().Level);
     }
 
     [TestMethod]
@@ -560,7 +569,7 @@ public sealed class MonitoringTests
     {
         _client.LoseCreateResponse = true;
         await Observe("yellow");
-        await Continue("yellow", 36);
+        await Continue("yellow", 46);
         Assert.AreEqual(1, _client.Incidents.Count);
         var incident = _client.Incidents.Single();
         incident.Status = inactiveStatus;
@@ -583,7 +592,7 @@ public sealed class MonitoringTests
         await Observe("red");
         await Continue("red", 1);
         Assert.IsEmpty(_client.Incidents);
-        _clock.Advance(TimeSpan.FromMinutes(15));
+        _clock.Advance(TimeSpan.FromMinutes(25));
         await _service.CheckAsync();
         Assert.IsEmpty(_client.Incidents);
         _clock.Advance(TimeSpan.FromMinutes(1));
@@ -659,7 +668,7 @@ public sealed class MonitoringTests
     {
         await Observe("red");
         var lastReport = _coordinator.Snapshot().Single().LastReportedAtUtc;
-        _clock.Advance(TimeSpan.FromMinutes(16));
+        _clock.Advance(TimeSpan.FromMinutes(26));
         await Observe("unknown");
         Assert.AreEqual(lastReport, _coordinator.Snapshot().Single().LastReportedAtUtc);
         await _service.CheckAsync();

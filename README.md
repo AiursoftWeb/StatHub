@@ -77,7 +77,7 @@ We're also interested in your feedback on the future of this project. You can su
 
 ## AlertCenter monitoring
 
-Users with **Manage AlertCenter integration** permission can configure sustained health rules and server selection at `/AlertMonitoring`. Monitoring defaults to all known and future reporting servers with no exclusions. Exclusions override inclusions. The default rules are yellow for 20/100 minutes → sev3/sev2, red for 20/100 minutes → sev2/sev1, and grey for 15 minutes → sev2. Zero minutes means immediate; rules can be changed, disabled or deleted without being recreated at restart.
+Users with **Manage AlertCenter integration** permission can configure sustained health rules and server selection at `/AlertMonitoring`. Monitoring defaults to all known and future reporting servers with no exclusions. Exclusions override inclusions. The default rules are yellow or worse for 45/100 minutes, red or worse for 35/70 minutes, and grey for 25/40 minutes, each escalating from sev3 to sev2. Zero minutes means immediate; rules can be changed, disabled or deleted without being recreated at restart.
 
 A valid green sample immediately resolves this integration's active incidents for that server by default; this behavior can be disabled. A new color resets its continuous timer. Existing incidents are escalated rather than duplicated and are never automatically downgraded. Grey starts one minute after the last valid report. Restart interrupts unobserved yellow/red continuity; the persisted last-report time still detects offline servers.
 
