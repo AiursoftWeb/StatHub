@@ -734,7 +734,9 @@ public sealed class MonitoringTests
         {
             Queries++;
             if (BeforeQuery != null) await BeforeQuery();
-            var active = Incidents.Where(item => !request.ActiveOnly || item.Status != "resolved").ToList();
+            var active = Incidents.Where(item => !request.ActiveOnly || item.Status != "resolved")
+                .Where(item => !request.RecoveredSinceUtc.HasValue || item.Status is not ("mitigated" or "resolved") ||
+                    item.MitigatedAtUtc >= request.RecoveredSinceUtc || item.ResolvedAtUtc >= request.RecoveredSinceUtc).ToList();
             return new QueryIncidentsResponse
             {
                 Page = request.Page, PageSize = request.PageSize, TotalCount = active.Count,

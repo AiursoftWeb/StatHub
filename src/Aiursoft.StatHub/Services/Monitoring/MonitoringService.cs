@@ -316,9 +316,11 @@ public sealed class MonitoringService(StatHubDbContext db, MonitoringCoordinator
     {
         var results = new List<IncidentDetails>();
         int? expectedTotal = null;
+        // Freeze the cutoff across pages; old completed incidents cannot participate in recurrence.
+        var recoveredSince = clock.GetUtcNow() - ReopenWindow;
         for (var page = 1; ; page++)
         {
-            var result = await client.QueryAsync(new QueryIncidentsRequest { ActiveOnly = false, Page = page, PageSize = 100 });
+            var result = await client.QueryAsync(new QueryIncidentsRequest { RecoveredSinceUtc = recoveredSince, Page = page, PageSize = 100 });
             expectedTotal ??= result.TotalCount;
             if (expectedTotal != result.TotalCount || result.Page != page || result.PageSize != 100)
                 throw new InvalidOperationException("The incident listing changed; synchronization will retry.");
