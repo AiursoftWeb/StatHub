@@ -174,11 +174,15 @@ public sealed class MonitoringService(StatHubDbContext db, MonitoringCoordinator
                         // Occurrence time also covers a create completed after a concurrent green report.
                         foreach (var incident in owned.Where(item => item.OccurredAtUtc.UtcDateTime <= state.PendingRecoveryAtUtc.Value).ToList())
                         {
-                            await client.MitigateAsync(incident.IncidentId, new MitigateIncidentRequest
+                            var mitigated = await client.MitigateAsync(incident.IncidentId, new MitigateIncidentRequest
                             {
                                 Version = incident.Version,
                                 Reason = $"StatHub received a healthy sample at {state.PendingRecoveryAtUtc:O}."
                             });
+                            // The query snapshot is detached from the API's updated incident.
+                            incident.Status = "mitigated";
+                            incident.Version = mitigated.Version;
+                            incident.MitigatedAtUtc = mitigated.MitigatedAtUtc;
                             owned.Remove(incident);
                         }
                     }

@@ -165,6 +165,22 @@ public sealed class MonitoringTests
     }
 
     [TestMethod]
+    public async Task DelayedRecoveryAcknowledgementReopensTheSameIncidentForAnAlreadyMatureRecurrence()
+    {
+        await Observe("red");
+        await Continue("red", 35);
+        _client.FailMitigation = true;
+        await Observe("green", "red");
+        await Continue("red", 35);
+        _client.FailMitigation = false;
+        await _service.CheckAsync();
+        Assert.AreEqual(1, _client.Incidents.Count);
+        Assert.AreEqual(1, _client.Reopens);
+        Assert.AreEqual(1, _client.Mitigations);
+        Assert.AreEqual("new", _client.Incidents.Single().Status);
+    }
+
+    [TestMethod]
     public async Task GreenDuringReopenMitigatesAgainWithoutCreatingAnotherIncident()
     {
         await Observe("red");
@@ -740,7 +756,8 @@ public sealed class MonitoringTests
             return new QueryIncidentsResponse
             {
                 Page = request.Page, PageSize = request.PageSize, TotalCount = active.Count,
-                Items = active.Skip((request.Page - 1) * request.PageSize).Take(request.PageSize).ToList()
+                Items = active.Skip((request.Page - 1) * request.PageSize).Take(request.PageSize)
+                    .Select(item => JObject.FromObject(item).ToObject<IncidentDetails>()!).ToList()
             };
         }
         public async Task<CreateIncidentResponse> CreateAsync(CreateIncidentRequest request)
@@ -764,12 +781,12 @@ public sealed class MonitoringTests
             var incident = Incidents.Single(item => item.IncidentId == incidentId);
             Assert.AreEqual(incident.Version, request.Version);
             if (incident.Status == "mitigated")
-                return Task.FromResult(new MitigateIncidentResponse { IncidentId = incidentId, Version = incident.Version });
+                return Task.FromResult(new MitigateIncidentResponse { IncidentId = incidentId, Version = incident.Version, MitigatedAtUtc = incident.MitigatedAtUtc });
             incident.Status = "mitigated";
             incident.MitigatedAtUtc = clock.GetUtcNow();
             incident.Version = Guid.NewGuid();
             Mitigations++;
-            return Task.FromResult(new MitigateIncidentResponse { IncidentId = incidentId });
+            return Task.FromResult(new MitigateIncidentResponse { IncidentId = incidentId, Version = incident.Version, MitigatedAtUtc = incident.MitigatedAtUtc });
         }
         public async Task<ReopenIncidentResponse> ReopenAsync(Guid incidentId, ReopenIncidentRequest request)
         {
