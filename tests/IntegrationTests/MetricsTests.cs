@@ -6,6 +6,8 @@ using Aiursoft.StatHub.Data;
 using Aiursoft.StatHub.Entities;
 using Aiursoft.StatHub.SDK.Models;
 using Aiursoft.StatHub.Services.Monitoring;
+using Aiursoft.StatHub.Services.MetricsExport;
+using Microsoft.Extensions.Options;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
@@ -18,6 +20,7 @@ public class MetricsTests : TestBase
     [TestMethod]
     public async Task TestSubmitMetricsAndDisplay()
     {
+        GetService<IOptions<MetricsExportOptions>>().Value.Enabled = true;
         var clientId = Guid.NewGuid().ToString();
         var hostname = "test-host";
         var kernelVersion = "6.8.0-test-kernel";
@@ -82,6 +85,17 @@ public class MetricsTests : TestBase
             Assert.IsTrue(GetService<MonitoringCoordinator>().Snapshot().Any(state => state.ClientId == clientId));
             await ws.CloseAsync(WebSocketCloseStatus.NormalClosure, "Closing", CancellationToken.None);
         }
+
+        var export = GetService<MetricsExportBuffer>();
+        Assert.AreEqual(10, export.Count);
+        await export.FlushAsync(batch =>
+        {
+            Assert.AreEqual(10, batch.Count);
+            Assert.IsTrue(batch.All(sample => sample.ClientId == clientId && sample.Hostname == hostname));
+            Assert.IsTrue(batch.All(sample => sample.HasSampleTime && sample.CpuIdl == 100));
+            Assert.AreEqual(10, batch.Select(sample => sample.SampleId).Distinct().Count());
+            return Task.CompletedTask;
+        });
 
         // Now check if it's in the database
         var database = GetService<InMemoryDatabase>();

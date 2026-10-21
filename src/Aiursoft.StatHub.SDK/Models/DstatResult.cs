@@ -21,6 +21,8 @@ public class DstatResult
     /// <param name="line">The raw dstat output line.</param>
     public DstatResult(string line)
     {
+        SampleId = Guid.NewGuid();
+        SampleTime = DateTime.UtcNow;
         var parts = line
             .Split(" ", StringSplitOptions.RemoveEmptyEntries);
         if (parts.Length < 16)
@@ -50,6 +52,10 @@ public class DstatResult
         if (double.TryParse(parts[15], CultureInfo.InvariantCulture, out var load15M)) Load15M = load15M;
     }
     
+    // Optional for compatibility with clients that predate historical metrics export.
+    public Guid SampleId { get; set; }
+    public DateTime? SampleTime { get; set; }
+
     public int CpuUsr { get; set; }
     public int CpuSys { get; set; }
     public int CpuIdl { get; set; }

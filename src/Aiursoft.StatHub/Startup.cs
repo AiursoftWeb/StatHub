@@ -1,3 +1,4 @@
+using Aiursoft.StatHub.Services.MetricsExport;
 using Aiursoft.StatHub.Services.Monitoring;
 using Aiursoft.AiurProtocol;
 using Aiursoft.AiurProtocol.Server;
@@ -57,6 +58,16 @@ public class Startup : IWebStartup
         services.AddAssemblyDependencies(typeof(Startup).Assembly);
         services.AddSingleton<NavigationState<Startup>>();
 
+        services.AddOptions<MetricsExportOptions>()
+            .Bind(configuration.GetSection("MetricsExport"))
+            .Validate(options => !options.Enabled || !string.IsNullOrWhiteSpace(options.ConnectionString),
+                "MetricsExport:ConnectionString is required when metrics export is enabled.")
+            .Validate(options => options.MaxBufferedSamples is > 0 and <= 1_000_000,
+                "MetricsExport:MaxBufferedSamples must be between 1 and 1000000.")
+            .Validate(options => options.RetentionDays >= 0, "MetricsExport:RetentionDays must not be negative.")
+            .ValidateOnStart();
+        services.AddSingleton<MetricsExportBuffer>();
+        services.AddSingleton<MetricsClickhouseWriter>();
         services.AddSingleton<InMemoryDatabase>();
         services.AddSingleton(TimeProvider.System);
         services.AddSingleton<MonitoringCoordinator>();
@@ -71,6 +82,8 @@ public class Startup : IWebStartup
         services.RegisterBackgroundJob<Services.BackgroundJobs.DummyJob>();
         var monitoringJob = services.RegisterBackgroundJob<Services.BackgroundJobs.MonitoringJob>();
         services.RegisterScheduledTask(registration: monitoringJob, period: TimeSpan.FromSeconds(30), startDelay: TimeSpan.FromSeconds(10));
+        var metricsExportJob = services.RegisterBackgroundJob<Services.BackgroundJobs.MetricsExportJob>();
+        services.RegisterScheduledTask(registration: metricsExportJob, period: TimeSpan.FromMinutes(5), startDelay: TimeSpan.FromMinutes(5));
         var orphanAvatarCleanupJob = services.RegisterBackgroundJob<Services.BackgroundJobs.OrphanAvatarCleanupJob>();
         services.RegisterScheduledTask(registration: orphanAvatarCleanupJob, period: TimeSpan.FromHours(6), startDelay: TimeSpan.FromMinutes(5));
 

@@ -14,6 +14,10 @@ StatHub is a simple server stat statistics system. It can collect server stats a
 
 Default user name is `admin@default.com` and default password is `Admin@123456!`.
 
+## Historical metrics
+
+Enable `MetricsExport:Enabled` and set `MetricsExport:ConnectionString` to archive raw metrics every five minutes using Aiursoft.ClickhouseSdk. Query `ServerMetricsLatest` for deduplicated samples; retention defaults to 30 days. The bounded memory buffer retries failed writes, but unflushed samples are lost on restart or rejected when full. New clients send sampling timestamps; older clients are marked with receipt timestamps (`HasSampleTime = 0`).
+
 ## Try
 
 Try a running StatHub [here](https://statHub.aiursoft.com).
