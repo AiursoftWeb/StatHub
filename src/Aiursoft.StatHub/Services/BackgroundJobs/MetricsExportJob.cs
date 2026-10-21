@@ -6,6 +6,7 @@ namespace Aiursoft.StatHub.Services.BackgroundJobs;
 public sealed class MetricsExportJob(
     MetricsExportBuffer buffer,
     MetricsClickhouseWriter writer,
+    MetricsExportPolicyService policies,
     ILogger<MetricsExportJob> logger) : IBackgroundJob
 {
     public string Name => "ClickHouse metrics export";
@@ -15,6 +16,7 @@ public sealed class MetricsExportJob(
     {
         try
         {
+            await policies.RefreshAsync();
             var count = await buffer.FlushAsync(writer.WriteAsync);
             if (count > 0) logger.LogInformation("Exported {Count} raw metrics to ClickHouse.", count);
         }

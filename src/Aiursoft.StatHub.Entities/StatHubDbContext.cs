@@ -1,5 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using Aiursoft.StatHub.Entities.Monitoring;
+using Aiursoft.StatHub.Entities.MetricsExport;
 using Aiursoft.DbTools;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -14,9 +15,13 @@ public abstract class StatHubDbContext(DbContextOptions options) : IdentityDbCon
     public DbSet<MonitoringRule> AlertMonitoringRules => Set<MonitoringRule>();
     public DbSet<MonitoringTarget> AlertMonitoringTargets => Set<MonitoringTarget>();
 
+    public DbSet<MetricsExportPolicy> MetricsExportPolicies => Set<MetricsExportPolicy>();
+    public DbSet<MetricsExportTarget> MetricsExportTargets => Set<MetricsExportTarget>();
+
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
+        builder.Entity<MetricsExportTarget>().HasKey(item => new { item.PolicyId, item.ClientId });
         builder.Entity<MonitoringTarget>().HasKey(item => new { item.PolicyId, item.ClientId });
     }
 

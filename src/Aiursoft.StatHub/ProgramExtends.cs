@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 using Aiursoft.StatHub.Services;
 using Aiursoft.StatHub.Services.FileStorage;
+using Aiursoft.StatHub.Services.MetricsExport;
 
 namespace Aiursoft.StatHub;
 
@@ -57,6 +58,7 @@ public static class ProgramExtends
         
         var settingsService = services.GetRequiredService<GlobalSettingsService>();
         await settingsService.SeedSettingsAsync();
+        await services.GetRequiredService<MetricsExportPolicyService>().RefreshAsync();
 
         var shouldSeed = await ShouldSeedAsync(db);
         if (!shouldSeed)
