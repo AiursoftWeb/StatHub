@@ -10,6 +10,9 @@
                 <p class="text-white-50">
                     @Localizer["Aiursoft Stathub - A simple server stat statistics system. It can collect server stats and display them in a simple way."]
                 </p>
+                <p class="text-white-50">
+                    @Localizer["Export raw metrics to ClickHouse. Build your own Grafana dashboards."]
+                </p>
                 <div class="dropdown mt-3 mb-3">
                     @{
                         var currentCulture = ViewContext.HttpContext.Features
@@ -32,6 +35,12 @@
             <div class="col-12 col-md-4 col-lg-2 mb-3 mb-md-0">
                 <h4 class="text-light fs-5">@Localizer["Resources"]</h4>
                 <ul class="list-unstyled ps-0 mb-0 mt-3">
+                    <li class="mt-2">
+                        <a asp-controller="Home" asp-action="SelfHost" class="text-white-50">@Localizer["Self Host"]</a>
+                    </li>
+                    <li class="mt-2">
+                        <a asp-controller="Home" asp-action="BuildDashboard" class="text-white-50">@Localizer["Build Dashboard"]</a>
+                    </li>
                     <li class="mt-2">
                         <a href="https://github.com/aiursoftweb/stathub/discussions" class="text-white-50">@Localizer["Community"]</a>
                     </li>
