@@ -99,7 +99,10 @@ public class AgentChannelService(
         {
             var metrics = await GatherMetrics(items);
             if (await connection.SendMetricsAsync(metrics))
+            {
+                dockerService.AcknowledgeContainers(metrics.Containers);
                 logger.LogInformation("Metrics acknowledged by server via AiurObserver WebSocket.");
+            }
         }
         catch (Exception ex)
         {
@@ -123,7 +126,7 @@ public class AgentChannelService(
         var usedRoot = rootDisk?.Used ?? 0;
         var clientId = await clientIdService.GetClientId();
         var motd = await motdService.GetMotdFirstLine();
-        var containers = await dockerService.GetDockerContainersAsync();
+        var containers = await dockerService.GetContainersForReportAsync();
         var sshKeys = await sshKeyService.GetSshKeysAsync();
         var ufwStatus = await ufwService.GetUfwStatusAsync();
 

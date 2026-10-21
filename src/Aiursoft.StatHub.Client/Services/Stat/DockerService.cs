@@ -7,9 +7,43 @@ namespace Aiursoft.StatHub.Client.Services.Stat;
 
 public class DockerService(
     CommandService commandService,
-    ILogger<DockerService> logger)
+    ILogger<DockerService> logger,
+    TimeProvider? timeProvider = null)
 {
-    public async Task<ContainerInfo[]> GetDockerContainersAsync()
+    private readonly TimeProvider _timeProvider = timeProvider ?? TimeProvider.System;
+    private readonly SemaphoreSlim _collectionGate = new(1, 1);
+    private long? _lastCollection;
+    private ContainerInfo[]? _pendingContainers;
+
+    public async Task<ContainerInfo[]?> GetContainersForReportAsync()
+    {
+        await _collectionGate.WaitAsync();
+        try
+        {
+            var now = _timeProvider.GetTimestamp();
+            if (_lastCollection == null ||
+                _timeProvider.GetElapsedTime(_lastCollection.Value, now) >= TimeSpan.FromSeconds(120))
+            {
+                _pendingContainers = await GetDockerContainersAsync();
+                _lastCollection = now;
+            }
+
+            return _pendingContainers;
+        }
+        finally
+        {
+            _collectionGate.Release();
+        }
+    }
+
+    public void AcknowledgeContainers(ContainerInfo[]? containers)
+    {
+        // A late acknowledgement must not discard a newer snapshot.
+        if (containers != null)
+            Interlocked.CompareExchange(ref _pendingContainers, null, containers);
+    }
+
+    public virtual async Task<ContainerInfo[]> GetDockerContainersAsync()
     {
         try
         {

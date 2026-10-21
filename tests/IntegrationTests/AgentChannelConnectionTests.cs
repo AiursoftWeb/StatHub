@@ -15,6 +15,32 @@ namespace Aiursoft.StatHub.Tests.IntegrationTests;
 public class AgentChannelConnectionTests
 {
     [TestMethod]
+    public async Task RegularMetricsOmitContainersAndStillReceiveAcknowledgement()
+    {
+        await using var server = await StartServer(async (socket, request) =>
+        {
+            Assert.AreEqual("metrics", request.Method);
+            Assert.IsNotNull(request.Params);
+            Assert.IsNull(request.Params["containers"]);
+            Assert.IsNotNull(request.Params["stats"]);
+            await socket.Send(JsonConvert.SerializeObject(new JsonRpcMessage { Method = "metrics-ack", Id = request.Id }));
+        });
+        var connection = Connection(server);
+        using var stop = new CancellationTokenSource();
+        var run = connection.RunAsync("server", (_, _) => Task.CompletedTask, stop.Token);
+        try
+        {
+            await WaitConnected(connection);
+            Assert.IsTrue(await connection.SendMetricsAsync(Metrics()).WaitAsync(TimeSpan.FromSeconds(5)));
+        }
+        finally
+        {
+            await stop.CancelAsync();
+            await run.WaitAsync(TimeSpan.FromSeconds(5));
+        }
+    }
+
+    [TestMethod]
     public async Task LongCommandDoesNotBlockAcknowledgementsOrReplies()
     {
         var commandStarted = new TaskCompletionSource(TaskCreationOptions.RunContinuationsAsynchronously);

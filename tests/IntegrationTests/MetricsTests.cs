@@ -12,12 +12,66 @@ using Microsoft.Extensions.Options;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using Aiursoft.StatHub.SDK.AddressModels;
 
 namespace Aiursoft.StatHub.Tests.IntegrationTests;
 
 [TestClass]
 public class MetricsTests : TestBase
 {
+    [TestMethod]
+    public async Task SparseDockerReportsPreserveContainersWhileHostMetricsContinue()
+    {
+        GetService<IOptions<MetricsExportOptions>>().Value.Enabled = true;
+        var clientId = Guid.NewGuid().ToString();
+        using var ws = new ClientWebSocket();
+        using var timeout = new CancellationTokenSource(TimeSpan.FromSeconds(20));
+        await ws.ConnectAsync(new Uri($"ws://localhost:{Port}/api/agent/channel?clientId={clientId}"), timeout.Token);
+        var reports = 0;
+        async Task Report(ContainerInfo[]? containers, bool explicitNull = false)
+        {
+            var payload = JObject.FromObject(new MetricsAddressModel
+            {
+                ClientId = clientId,
+                Hostname = $"host-report-{++reports}",
+                CpuCores = 4,
+                Stats = Enumerable.Range(0, 10)
+                    .Select(_ => new DstatResult("0 0 100 0 0 100M 700M 0 0 0 0 0 0 0.0 0.0 0.0")).ToArray(),
+                Containers = containers
+            });
+            if (explicitNull) payload["containers"] = JValue.CreateNull();
+            var message = new JsonRpcMessage { Method = "metrics", Id = $"report-{reports}", Params = payload };
+            await ws.SendAsync(Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(message)), WebSocketMessageType.Text, true, timeout.Token);
+            var buffer = new byte[4096];
+            var result = await ws.ReceiveAsync(buffer, timeout.Token);
+            var ack = JsonConvert.DeserializeObject<JsonRpcMessage>(Encoding.UTF8.GetString(buffer, 0, result.Count));
+            Assert.IsNotNull(ack);
+            Assert.AreEqual("metrics-ack", ack.Method);
+            Assert.AreEqual(message.Id, ack.Id);
+        }
+
+        await Report([new ContainerInfo { Id = "one", Name = "original" }]);
+        var agent = GetService<InMemoryDatabase>().GetClient(clientId)!;
+        for (var report = 1; report < 12; report++)
+        {
+            await Report(null);
+            Assert.AreEqual("original", agent.Containers.Single().Name);
+            Assert.AreEqual($"host-report-{reports}", agent.Hostname);
+        }
+
+        await Report(null, explicitNull: true);
+        Assert.AreEqual("original", agent.Containers.Single().Name);
+        await Report([new ContainerInfo { Id = "two", Name = "replacement" }]);
+        Assert.AreEqual("replacement", agent.Containers.Single().Name);
+        await Report([]);
+        Assert.AreEqual(0, agent.Containers.Count);
+        await Report(null);
+        Assert.AreEqual(0, agent.Containers.Count);
+        Assert.AreEqual(reports * 10, GetService<MetricsExportBuffer>().Count);
+        await ws.CloseAsync(WebSocketCloseStatus.NormalClosure, "Closing", timeout.Token);
+    }
+
     [TestMethod]
     public async Task TestSubmitMetricsAndDisplay()
     {

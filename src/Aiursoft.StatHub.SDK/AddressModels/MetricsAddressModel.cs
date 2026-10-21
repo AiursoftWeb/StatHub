@@ -67,7 +67,7 @@ public class MetricsAddressModel
     [JsonProperty("motd")]
     public string? Motd { get; set; }
 
-    [JsonProperty("containers")]
+    [JsonProperty("containers", NullValueHandling = NullValueHandling.Ignore)]
     public ContainerInfo[]? Containers { get; set; }
 
     [JsonProperty("sshKeys")]
