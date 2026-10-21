@@ -54,6 +54,9 @@
   <data name="Bad Request" xml:space="preserve">
     <value>Pedido Inválido</value>
   </data>
+  <data name="Build Dashboard" xml:space="preserve">
+    <value>Construir Painel</value>
+  </data>
   <data name="Change Avatar" xml:space="preserve">
     <value>Alterar Avatar</value>
   </data>
@@ -65,6 +68,9 @@
   </data>
   <data name="Click to login" xml:space="preserve">
     <value>Clique para iniciar sessão</value>
+  </data>
+  <data name="ClickHouse export" xml:space="preserve">
+    <value>Exportação ClickHouse</value>
   </data>
   <data name="Create Role" xml:space="preserve">
     <value>Criar Função</value>

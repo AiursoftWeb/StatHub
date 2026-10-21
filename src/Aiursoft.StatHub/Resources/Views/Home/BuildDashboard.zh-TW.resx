@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="1. Enable ClickHouse export" xml:space="preserve">
+    <value>1. 啟用 ClickHouse 匯出</value>
+  </data>
+  <data name="2. Check your first batch" xml:space="preserve">
+    <value>2. 檢查第一批資料</value>
+  </data>
+  <data name="3. Connect Grafana to ClickHouse" xml:space="preserve">
+    <value>3. 將 Grafana 連線至 ClickHouse</value>
+  </data>
+  <data name="4. Add a server dropdown" xml:space="preserve">
+    <value>4. 新增伺服器下拉式選單</value>
+  </data>
+  <data name="5. Build your resource panels" xml:space="preserve">
+    <value>5. 建立資源面板</value>
+  </data>
+  <data name="A StatHub dashboard in Grafana: select several servers to compare their resource history, or choose one for a closer look. Open the image to view it at full size." xml:space="preserve">
+    <value>Grafana 中的 StatHub 儀表板：選取多台伺服器以比較其資源歷程，或選擇一台深入查看。開啟圖片即可檢視完整尺寸。</value>
+  </data>
+  <data name="Add a Time series visualization with your ClickHouse data source and SQL query type Time series. Start with CPU average and peak:" xml:space="preserve">
+    <value>使用您的 ClickHouse 資料來源新增時間序列視覺化，並將 SQL 查詢類型設為「時間序列」。先從 CPU 平均值和峰值開始：</value>
+  </data>
+  <data name="Average DskRead and DskWrit, divided by 1048576, for MiB/s." xml:space="preserve">
+    <value>DskRead 和 DskWrit 的平均值，除以 1048576，以 MiB/s 為單位。</value>
+  </data>
+  <data name="Average Load1M, Load5M, and Load15M. These are raw load averages, not CPU percentages." xml:space="preserve">
+    <value>Load1M、Load5M 和 Load15M 的平均值。這些是原始負載平均值，而非 CPU 使用率百分比。</value>
+  </data>
+  <data name="Average NetRecv and NetSend, multiplied by 8 / 1000000, for Mbps." xml:space="preserve">
+    <value>NetRecv 和 NetSend 的平均值乘以 8 / 1000000，換算為 Mbps。</value>
+  </data>
+  <data name="Build Dashboard" xml:space="preserve">
+    <value>建置儀表板</value>
+  </data>
+  <data name="Count archived samples in each time bucket to see reporting gaps and batch arrivals." xml:space="preserve">
+    <value>統計每個時間區間內封存的樣本數，以查看回報中斷和批次資料抵達的情況。</value>
+  </data>
+  <data name="Create a dashboard and add a Query variable named Server using your ClickHouse data source. Enable Multi-value and Include All, leave Custom all value empty, and refresh the variable on dashboard load. Use this query:" xml:space="preserve">
+    <value>建立一個儀表板，並使用 ClickHouse 資料來源新增名為 Server 的查詢變數。啟用「多值」和「包含全部」，將「自訂全部值」留空，並設定在載入儀表板時重新整理變數。使用以下查詢：</value>
+  </data>
+  <data name="Deploy StatHub" xml:space="preserve">
+    <value>部署 StatHub</value>
+  </data>
+  <data name="Disk I/O" xml:space="preserve">
+    <value>磁碟 I/O</value>
+  </data>
+  <data name="For an overview table, group by ClientId and show recent averages, peaks, and max(ReceivedTime). Avoid treating a metric chosen from tied receipt timestamps as the exact last sample." xml:space="preserve">
+    <value>對於概覽表格，請依 ClientId 分組，並顯示近期的平均值、峰值以及 max(ReceivedTime)。避免將從相同接收時間戳記中選取的指標視為確切的最新樣本。</value>
+  </data>
+  <data name="For Docker, configure the same settings with environment variables such as MetricsExport__Enabled=true and MetricsExport__ConnectionString. Use your deployment&apos;s secret configuration for the real password. Inside a container, localhost refers to that container; use a reachable ClickHouse hostname." xml:space="preserve">
+    <value>使用 Docker 時，請透過環境變數設定相同的選項，例如 MetricsExport__Enabled=true 和 MetricsExport__ConnectionString。實際密碼請使用部署環境的秘密設定。在容器內，localhost 指的是該容器本身；請使用可連線的 ClickHouse 主機名稱。</value>
+  </data>
+  <data name="Grafana dashboard comparing CPU, memory, network, disk I/O, load, and archived samples across selected StatHub servers." xml:space="preserve">
+    <value>Grafana 儀表板，比較所選 StatHub 伺服器的 CPU、記憶體、網路、磁碟 I/O、負載和封存的樣本。</value>
+  </data>
+  <data name="Install ClickHouse" xml:space="preserve">
+    <value>安裝 ClickHouse</value>
+  </data>
+  <data name="Install Grafana and the official Grafana ClickHouse data source plugin. Add a ClickHouse data source with the hostname reachable from Grafana, HTTP port 8123 for this example, and StatHubMetrics as the default database. Use Save &amp; test to verify the connection." xml:space="preserve">
+    <value>安裝 Grafana 以及官方的 Grafana ClickHouse 資料來源外掛程式。新增一個 ClickHouse 資料來源，使用可從 Grafana 存取的主機名稱、本範例中的 HTTP 埠 8123，並將 StatHubMetrics 設為預設資料庫。使用「儲存並測試」來驗證連線。</value>
+  </data>
+  <data name="Learn more about ClickHouse queries and Grafana macros" xml:space="preserve">
+    <value>深入了解 ClickHouse 查詢與 Grafana 巨集</value>
+  </data>
+  <data name="Let agents report and wait for a five-minute export cycle. In ClickHouse, check that servers and recent receipts appear:" xml:space="preserve">
+    <value>讓代理程式回報資料，並等待五分鐘的匯出週期。在 ClickHouse 中，確認是否已出現伺服器和近期收到的資料：</value>
+  </data>
+  <data name="Live server status. Your history, your dashboards." xml:space="preserve">
+    <value>即時伺服器狀態。您的歷史資料，您的儀表板。</value>
+  </data>
+  <data name="Load" xml:space="preserve">
+    <value>負載</value>
+  </data>
+  <data name="Memory" xml:space="preserve">
+    <value>記憶體</value>
+  </data>
+  <data name="Merge this section into your StatHub appsettings.json, replace the host and credentials, then restart your StatHub instance:" xml:space="preserve">
+    <value>將此區段合併至您的 StatHub appsettings.json，替換主機和憑證，然後重新啟動您的 StatHub 執行個體：</value>
+  </data>
+  <data name="Metrics and units" xml:space="preserve">
+    <value>指標與單位</value>
+  </data>
+  <data name="Network" xml:space="preserve">
+    <value>網路</value>
+  </data>
+  <data name="Network and disk fields are already rates in bytes per second; do not apply rate or derivative again. CPU core counts and disk capacity are not exported. Memory used share is not Linux MemAvailable." xml:space="preserve">
+    <value>網路和磁碟欄位已是以每秒位元組數表示的速率；請勿再次套用速率或導數計算。匯出的資料不包含 CPU 核心數和磁碟容量。記憶體使用率並非 Linux 的 MemAvailable。</value>
+  </data>
+  <data name="Official ClickHouse data source guide" xml:space="preserve">
+    <value>ClickHouse 官方資料來源指南</value>
+  </data>
+  <data name="Panel" xml:space="preserve">
+    <value>面板</value>
+  </data>
+  <data name="Query ServerMetricsLatest for dashboards so retries do not inflate your results. HasSampleTime=1 means the agent supplied the source timestamp. Older agents use receipt time and mark HasSampleTime=0; samples in one report may share a timestamp, so their exact source timing and order are unavailable." xml:space="preserve">
+    <value>建立儀表板時請查詢 ServerMetricsLatest，避免重試導致結果數量膨脹。HasSampleTime=1 表示代理程式提供了來源時間戳記。較舊的代理程式會使用接收時間，並將 HasSampleTime 標記為 0；同一份報告中的樣本可能共用相同的時間戳記，因此無法得知其確切的來源時間與順序。</value>
+  </data>
+  <data name="Raw samples are batched every five minutes rather than reduced to five-minute averages. The initial retention is 30 days. Changing RetentionDays later does not alter an existing table&apos;s TTL. The buffer is bounded and held in memory; a restart loses samples that have not been written yet." xml:space="preserve">
+    <value>原始樣本每五分鐘批次寫入一次，而非彙整為五分鐘平均值。初始保留期限為 30 天。之後變更 RetentionDays 不會改變現有資料表的 TTL。緩衝區大小有限，並保存在記憶體中；重新啟動時，尚未寫入的樣本會遺失。</value>
+  </data>
+  <data name="Samples" xml:space="preserve">
+    <value>樣本</value>
+  </data>
+  <data name="Self Host" xml:space="preserve">
+    <value>自行架設</value>
+  </data>
+  <data name="Set Grafana&apos;s Query Timeout to 15 seconds. In the ClickHouse reader&apos;s settings profile, use readonly=1 and max_threads=2, and allow max_execution_time to change in read-only mode with CHANGEABLE_IN_READONLY, as described in the official configuration guide." xml:space="preserve">
+    <value>將 Grafana 的「查詢逾時」設定為 15 秒。在 ClickHouse 讀取器的設定檔中，使用 readonly=1 和 max_threads=2，並依照官方設定指南的說明，透過 CHANGEABLE_IN_READONLY 允許 max_execution_time 在唯讀模式下變更。</value>
+  </data>
+  <data name="Set the CPU unit to Percent (0-100). Keep the time and server filters when adapting the query to other panels. All removes the server restriction; individual selections use safely quoted ClientId values." xml:space="preserve">
+    <value>將 CPU 單位設為百分比 (0-100)。在將查詢調整為其他面板時，請保留時間和伺服器篩選條件。選擇「全部」會移除伺服器限制；個別選擇則使用安全引用的 ClientId 值。</value>
+  </data>
+  <data name="Start with a self-hosted StatHub instance and a ClickHouse server reachable from it. Keep your existing agents reporting to StatHub; export happens centrally through the Aiursoft ClickHouse SDK." xml:space="preserve">
+    <value>請先準備一個自行託管的 StatHub 執行個體，以及一台該執行個體可連線到的 ClickHouse 伺服器。讓現有的代理程式繼續向 StatHub 回報；資料匯出會透過 Aiursoft ClickHouse SDK 在中央集中處理。</value>
+  </data>
+  <data name="Start with the last six hours in UTC, a five-minute dashboard refresh, and about 720 points per series. Keep a minimum 30-second bucket and let it grow for longer ranges. Leave missing data empty instead of filling it with zero. Data age is not proof that a server is offline." xml:space="preserve">
+    <value>請先使用 UTC 時間的最近六小時、五分鐘的儀表板重新整理間隔，以及每個序列約 720 個資料點。時間區間至少設為 30 秒，較長的時間範圍則讓區間隨之增加。缺少的資料請保持空白，不要填入零。資料時間久不代表伺服器已離線。</value>
+  </data>
+  <data name="The ClickHouse plugin reads the first column as the value and the second as the display text. ClientId keeps machines separate even when names match. Search and select one or several servers, or choose All. This menu lists servers reporting within the last 24 hours; reload to discover new servers." xml:space="preserve">
+    <value>ClickHouse 外掛程式會將第一列讀取為值，第二列讀取為顯示文字。ClientId 可確保即使名稱相同，機器也能彼此區分。您可以搜尋並選擇一台或多台伺服器，或選擇「全部」。此選單列出過去 24 小時內有報告的伺服器；重新整理以發現新伺服器。</value>
+  </data>
+  <data name="The exporter needs permission to create its database, table, and view, and to insert and select metrics. On the first non-empty batch it creates StatHubMetrics.ServerMetrics and the deduplicated ServerMetricsLatest view automatically." xml:space="preserve">
+    <value>匯出程式需要具備建立資料庫、資料表和檢視表，以及插入和查詢指標資料的權限。第一個非空批次送出時，系統會自動建立 StatHubMetrics.ServerMetrics 和去重後的 ServerMetricsLatest 檢視表。</value>
+  </data>
+  <data name="Use a separate read-only Grafana account with SELECT permission on both ServerMetricsLatest and its underlying ServerMetrics table. Keep the exporter credentials in StatHub." xml:space="preserve">
+    <value>使用一個獨立的唯讀 Grafana 帳號，該帳號需對 ServerMetricsLatest 及其底層的 ServerMetrics 資料表具有 SELECT 權限。請將匯出器憑證儲存在 StatHub 中。</value>
+  </data>
+  <data name="Use ClickHouse export under Monitoring to choose which servers to export. Its independent policy supports all servers, explicit inclusions, and exclusions; exclusions always win." xml:space="preserve">
+    <value>請在「監控」中使用 ClickHouse 匯出功能來選擇要匯出的伺服器。其獨立的策略支援所有伺服器、明確的包含項目和排除項目；排除項目永遠優先。</value>
+  </data>
+  <data name="Used percent: MemUsed divided by MemUsed + MemFree + MemBuf + MemCach, times 100. Return null when the total is zero. Plot the four fields separately for memory composition." xml:space="preserve">
+    <value>使用百分比：MemUsed 除以 MemUsed + MemFree + MemBuf + MemCach，再乘以 100。總值為零時，回傳 null。請分別繪製這四個欄位，以呈現記憶體組成。</value>
+  </data>
+  <data name="We recommend ClickHouse and Grafana for exploring your StatHub history. Preserve raw server samples, compare several machines, and switch from a fleet overview to a single server with one dropdown." xml:space="preserve">
+    <value>我們推薦使用 ClickHouse 和 Grafana 來探索您的 StatHub 歷史記錄。保留原始伺服器樣本，比較多台機器，並透過一個下拉選單從機群總覽切換到單一伺服器。</value>
+  </data>
+
+</root>

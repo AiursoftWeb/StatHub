@@ -57,11 +57,17 @@
   <data name="Automatic, AI-driven translation into 28 languages for global reach." xml:space="preserve">
     <value>自動化、人工智能驅動嘅翻譯，支援 28 種語言，助您拓展全球市場。</value>
   </data>
+  <data name="Build Dashboard" xml:space="preserve">
+    <value>建立儀表板</value>
+  </data>
   <data name="Build your next big thing," xml:space="preserve">
     <value>打造你的下一個大項目，</value>
   </data>
   <data name="Built-in User Management" xml:space="preserve">
     <value>內建用戶管理</value>
+  </data>
+  <data name="ClickHouse Export" xml:space="preserve">
+    <value>ClickHouse 匯出</value>
   </data>
   <data name="Comes with full Docker support for simplified, consistent, and reliable deployments." xml:space="preserve">
     <value>提供完整 Docker 支援，令部署過程更簡化、一致且可靠。</value>
@@ -174,6 +180,9 @@
   <data name="Keep an eye on your infrastructure with intuitive dashboards and detailed metrics." xml:space="preserve">
     <value>密切監控您的基礎設施，透過直觀的儀表板及詳細指標。</value>
   </data>
+  <data name="Keep raw server samples in ClickHouse with efficient five-minute batch exports." xml:space="preserve">
+    <value>將原始伺服器樣本儲存在 ClickHouse 中，並進行高效的五分鐘批次匯出。</value>
+  </data>
   <data name="Lightweight Agents" xml:space="preserve">
     <value>輕量級代理</value>
   </data>
@@ -278,6 +287,9 @@
   </data>
   <data name="This is a template project, where we start the voyager..." xml:space="preserve">
     <value>這是一個模板項目，我們由此展開探索之旅...</value>
+  </data>
+  <data name="Turn your history into Grafana dashboards, from fleet overviews to individual servers." xml:space="preserve">
+    <value>將歷史數據轉化為 Grafana 儀表板，從整個伺服器群組的概覽到個別伺服器，一目了然。</value>
   </data>
   <data name="Usage" xml:space="preserve">
     <value>用法</value>

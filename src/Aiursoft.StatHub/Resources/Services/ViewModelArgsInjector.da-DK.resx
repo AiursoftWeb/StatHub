@@ -54,6 +54,9 @@
   <data name="Bad Request" xml:space="preserve">
     <value>Forkert anmodning</value>
   </data>
+  <data name="Build Dashboard" xml:space="preserve">
+    <value>Byg Dashboard</value>
+  </data>
   <data name="Change Avatar" xml:space="preserve">
     <value>Skift avatar</value>
   </data>
@@ -65,6 +68,9 @@
   </data>
   <data name="Click to login" xml:space="preserve">
     <value>Klik for at logge ind</value>
+  </data>
+  <data name="ClickHouse export" xml:space="preserve">
+    <value>ClickHouse-eksport</value>
   </data>
   <data name="Create Role" xml:space="preserve">
     <value>Opret rolle</value>

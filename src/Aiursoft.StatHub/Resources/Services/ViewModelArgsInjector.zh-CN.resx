@@ -57,6 +57,9 @@
   <data name="Bad Request" xml:space="preserve">
     <value>错误的请求</value>
   </data>
+  <data name="Build Dashboard" xml:space="preserve">
+    <value>构建仪表盘</value>
+  </data>
   <data name="Change Avatar" xml:space="preserve">
     <value>更换头像</value>
   </data>
@@ -68,6 +71,9 @@
   </data>
   <data name="Click to login" xml:space="preserve">
     <value>点击登录</value>
+  </data>
+  <data name="ClickHouse export" xml:space="preserve">
+    <value>ClickHouse 导出</value>
   </data>
   <data name="Create Role" xml:space="preserve">
     <value>创建角色</value>

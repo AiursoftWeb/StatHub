@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="All servers" xml:space="preserve">
+    <value>所有服务器</value>
+  </data>
+  <data name="An excluded server is not exported, even when all servers are selected or both boxes are checked." xml:space="preserve">
+    <value>已排除的服务器不会被导出，即使选择了所有服务器或同时勾选了两个复选框。</value>
+  </data>
+  <data name="Build Dashboard" xml:space="preserve">
+    <value>构建仪表盘</value>
+  </data>
+  <data name="ClickHouse export" xml:space="preserve">
+    <value>ClickHouse 导出</value>
+  </data>
+  <data name="Configure the ClickHouse connection and retention in the MetricsExport section of appsettings.json or environment variables. Export selection is saved separately from AlertCenter monitoring and does not store credentials." xml:space="preserve">
+    <value>请在 appsettings.json 的 MetricsExport 部分或环境变量中配置 ClickHouse 连接和数据保留策略。导出选择独立于 AlertCenter 监控进行保存，且不存储凭据。</value>
+  </data>
+  <data name="Enable export policy" xml:space="preserve">
+    <value>启用导出策略</value>
+  </data>
+  <data name="Every server is exported unless explicitly excluded. Newly connected servers are included automatically." xml:space="preserve">
+    <value>除非明确排除，否则所有服务器都会被导出。新连接的服务器会自动包含在内。</value>
+  </data>
+  <data name="Exclude" xml:space="preserve">
+    <value>排除</value>
+  </data>
+  <data name="Exclude always wins" xml:space="preserve">
+    <value>排除优先</value>
+  </data>
+  <data name="Exclude server" xml:space="preserve">
+    <value>排除服务器</value>
+  </data>
+  <data name="Excluded servers always take precedence. When all servers are exported, individual inclusions are unnecessary." xml:space="preserve">
+    <value>被排除的服务器始终优先。当所有服务器都被导出时，无需单独包含。</value>
+  </data>
+  <data name="Export all servers, including newly connected servers" xml:space="preserve">
+    <value>导出所有服务器，包括新连接的服务器</value>
+  </data>
+  <data name="Export policy" xml:space="preserve">
+    <value>导出策略</value>
+  </data>
+  <data name="Green" xml:space="preserve">
+    <value>绿色</value>
+  </data>
+  <data name="Grey (offline)" xml:space="preserve">
+    <value>灰色（离线）</value>
+  </data>
+  <data name="How export selection works" xml:space="preserve">
+    <value>导出选择的工作原理</value>
+  </data>
+  <data name="Include" xml:space="preserve">
+    <value>包含</value>
+  </data>
+  <data name="Include server" xml:space="preserve">
+    <value>包含服务器</value>
+  </data>
+  <data name="Last report" xml:space="preserve">
+    <value>最后报告</value>
+  </data>
+  <data name="No report since restart" xml:space="preserve">
+    <value>重启后无报告</value>
+  </data>
+  <data name="No server is exported. Your include and exclude selections remain saved for when you enable the policy again." xml:space="preserve">
+    <value>未导出任何服务器。您的包含和排除选择将保留，以便在重新启用策略时使用。</value>
+  </data>
+  <data name="Policies and selections survive a restart. Servers without a new report remain listed by ClientId when they have a saved selection. Raw samples are still exported in five-minute batches, and live monitoring and AlertCenter rules are unchanged." xml:space="preserve">
+    <value>策略和选择设置会在重启后保留。若服务器已保存了选择设置，即使没有新报告，仍会按 ClientId 列出。原始样本仍以五分钟为一个批次导出，实时监控和 AlertCenter 规则保持不变。</value>
+  </data>
+  <data name="Policy disabled" xml:space="preserve">
+    <value>策略已禁用</value>
+  </data>
+  <data name="Red" xml:space="preserve">
+    <value>红色</value>
+  </data>
+  <data name="Save policy and server selection" xml:space="preserve">
+    <value>保存策略和服务器选择</value>
+  </data>
+  <data name="Saving applies the selection to new samples and removes excluded samples still waiting in memory. An already running ClickHouse write may finish before saving completes. Previously stored history is kept." xml:space="preserve">
+    <value>保存操作会将所选策略应用于新样本，并移除仍在内存中等待处理的已排除样本。已在运行的 ClickHouse 写入操作可能在保存完成前结束。已存储的历史数据将被保留。</value>
+  </data>
+  <data name="Selected servers only" xml:space="preserve">
+    <value>仅选定的服务器</value>
+  </data>
+  <data name="Server" xml:space="preserve">
+    <value>服务器</value>
+  </data>
+  <data name="Server selection" xml:space="preserve">
+    <value>服务器选择</value>
+  </data>
+  <data name="Server selection follows the same include and exclude rules as AlertCenter monitoring, with an independent policy." xml:space="preserve">
+    <value>服务器选择遵循与 AlertCenter 监控相同的包含和排除规则，并具有独立的策略。</value>
+  </data>
+  <data name="State" xml:space="preserve">
+    <value>状态</value>
+  </data>
+  <data name="The ClickHouse connection is disabled in configuration. You can save your server selection now; exporting also requires MetricsExport:Enabled and a valid connection string." xml:space="preserve">
+    <value>ClickHouse 连接已在配置中禁用。您现在可以保存服务器选择；导出功能还需要启用 MetricsExport:Enabled 并配置有效的连接字符串。</value>
+  </data>
+  <data name="Turn off all servers to export only servers explicitly marked Include. With no inclusions, nothing is exported." xml:space="preserve">
+    <value>关闭所有服务器，仅导出明确标记为“包含”的服务器。如果没有包含项，则不会导出任何内容。</value>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>未知</value>
+  </data>
+  <data name="When changes take effect" xml:space="preserve">
+    <value>更改何时生效</value>
+  </data>
+  <data name="Yellow" xml:space="preserve">
+    <value>黄色</value>
+  </data>
+
+</root>

@@ -57,6 +57,9 @@
   <data name="Bad Request" xml:space="preserve">
     <value>잘못된 요청</value>
   </data>
+  <data name="Build Dashboard" xml:space="preserve">
+    <value>빌드 대시보드</value>
+  </data>
   <data name="Change Avatar" xml:space="preserve">
     <value>아바타 변경</value>
   </data>
@@ -68,6 +71,9 @@
   </data>
   <data name="Click to login" xml:space="preserve">
     <value>로그인하려면 클릭</value>
+  </data>
+  <data name="ClickHouse export" xml:space="preserve">
+    <value>ClickHouse 내보내기</value>
   </data>
   <data name="Create Role" xml:space="preserve">
     <value>역할 생성</value>

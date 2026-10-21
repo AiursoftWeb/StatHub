@@ -36,6 +36,9 @@
   <data name="Binary path" xml:space="preserve">
     <value>二進位檔路徑</value>
   </data>
+  <data name="Build Dashboard" xml:space="preserve">
+    <value>建立儀表板</value>
+  </data>
   <data name="Config path" xml:space="preserve">
     <value>設定路徑</value>
   </data>
@@ -59,6 +62,9 @@
   </data>
   <data name="Execute `npm install` at `wwwroot` folder." xml:space="preserve">
     <value>在 `wwwroot` 資料夾中執行 `npm install`。</value>
+  </data>
+  <data name="Export raw server metrics to ClickHouse in five-minute batches and explore your history in Grafana." xml:space="preserve">
+    <value>每五分鐘將原始伺服器指標批次匯出至 ClickHouse，並在 Grafana 中檢視歷史資料。</value>
   </data>
   <data name="First, install Docker. Then run the following commands in a Linux shell:" xml:space="preserve">
     <value>首先安裝 Docker。然後在 Linux 終端機中執行下列指令：</value>

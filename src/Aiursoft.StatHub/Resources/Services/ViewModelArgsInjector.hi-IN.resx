@@ -54,6 +54,9 @@
   <data name="Bad Request" xml:space="preserve">
     <value>खराब अनुरोध</value>
   </data>
+  <data name="Build Dashboard" xml:space="preserve">
+    <value>डैशबोर्ड बनाएं</value>
+  </data>
   <data name="Change Avatar" xml:space="preserve">
     <value>अवतार बदलें</value>
   </data>
@@ -65,6 +68,9 @@
   </data>
   <data name="Click to login" xml:space="preserve">
     <value>लॉगिन करने के लिए क्लिक करें</value>
+  </data>
+  <data name="ClickHouse export" xml:space="preserve">
+    <value>ClickHouse निर्यात</value>
   </data>
   <data name="Create Role" xml:space="preserve">
     <value>भूमिका बनाएं</value>

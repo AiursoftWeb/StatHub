@@ -57,6 +57,9 @@
   <data name="Bad Request" xml:space="preserve">
     <value>Bad Request</value>
   </data>
+  <data name="Build Dashboard" xml:space="preserve">
+    <value>ダッシュボードの構築</value>
+  </data>
   <data name="Change Avatar" xml:space="preserve">
     <value>アバターを変更</value>
   </data>
@@ -68,6 +71,9 @@
   </data>
   <data name="Click to login" xml:space="preserve">
     <value>ログインするにはクリック</value>
+  </data>
+  <data name="ClickHouse export" xml:space="preserve">
+    <value>ClickHouse エクスポート</value>
   </data>
   <data name="Create Role" xml:space="preserve">
     <value>ロールの作成</value>

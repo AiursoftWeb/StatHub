@@ -57,6 +57,9 @@
   <data name="Bad Request" xml:space="preserve">
     <value>Yêu cầu sai</value>
   </data>
+  <data name="Build Dashboard" xml:space="preserve">
+    <value>Xây dựng Bảng điều khiển</value>
+  </data>
   <data name="Change Avatar" xml:space="preserve">
     <value>Thay đổi Ảnh đại diện</value>
   </data>
@@ -68,6 +71,9 @@
   </data>
   <data name="Click to login" xml:space="preserve">
     <value>Nhấp để đăng nhập</value>
+  </data>
+  <data name="ClickHouse export" xml:space="preserve">
+    <value>Xuất dữ liệu ClickHouse</value>
   </data>
   <data name="Create Role" xml:space="preserve">
     <value>Tạo Vai Trò</value>
