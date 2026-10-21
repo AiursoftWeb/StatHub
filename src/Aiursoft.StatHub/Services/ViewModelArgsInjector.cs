@@ -96,6 +96,7 @@ public class ViewModelArgsInjector(
         _ = localizer["Delete Account"];
 
         _ = localizer["AlertCenter monitoring"];
+        _ = localizer["ClickHouse export"];
         _ = localizer["Monitoring"];
     }
 

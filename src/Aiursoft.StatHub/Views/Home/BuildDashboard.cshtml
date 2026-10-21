@@ -39,6 +39,7 @@
 }</code></pre>
             <p>@Localizer["For Docker, configure the same settings with environment variables such as MetricsExport__Enabled=true and MetricsExport__ConnectionString. Use your deployment's secret configuration for the real password. Inside a container, localhost refers to that container; use a reachable ClickHouse hostname."]</p>
             <p>@Localizer["The exporter needs permission to create its database, table, and view, and to insert and select metrics. On the first non-empty batch it creates StatHubMetrics.ServerMetrics and the deduplicated ServerMetricsLatest view automatically."]</p>
+            <p>@Localizer["Use ClickHouse export under Monitoring to choose which servers to export. Its independent policy supports all servers, explicit inclusions, and exclusions; exclusions always win."]</p>
             <p class="mb-0">@Localizer["Raw samples are batched every five minutes rather than reduced to five-minute averages. The initial retention is 30 days. Changing RetentionDays later does not alter an existing table's TTL. The buffer is bounded and held in memory; a restart loses samples that have not been written yet."]</p>
         </div>
     </section>

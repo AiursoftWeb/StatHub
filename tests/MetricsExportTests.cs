@@ -1,4 +1,5 @@
 using Aiursoft.StatHub.SDK.Models;
+using Aiursoft.StatHub.Entities.MetricsExport;
 using Aiursoft.StatHub.Services.MetricsExport;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
@@ -180,4 +181,90 @@ public class MetricsExportTests
         Assert.AreEqual(sample.SampleId, copy.SampleId);
         Assert.AreEqual(sample.SampleTime, copy.SampleTime);
     }
+
+    [TestMethod]
+    [DataRow(false, true, "none", false)]
+    [DataRow(false, false, "include", false)]
+    [DataRow(true, true, "none", true)]
+    [DataRow(true, true, "include", true)]
+    [DataRow(true, true, "exclude", false)]
+    [DataRow(true, false, "none", false)]
+    [DataRow(true, false, "include", true)]
+    [DataRow(true, false, "exclude", false)]
+    public async Task ExportSelectionMatchesMonitoringPrecedence(bool enabled, bool all, string selection, bool expected)
+    {
+        var buffer = Buffer();
+        var policy = new MetricsExportPolicy { IsEnabled = enabled, ExportAllServers = all };
+        if (selection != "none")
+            policy.Targets.Add(new MetricsExportTarget { ClientId = "server", IsExcluded = selection == "exclude" });
+        await buffer.ApplyPolicyAsync(policy);
+        buffer.Capture("server", "host", new DstatResult(), DateTime.UtcNow);
+        Assert.AreEqual(expected ? 1 : 0, buffer.Count);
+        Assert.AreEqual(expected ? 1 : 0, await buffer.FlushAsync(_ => Task.CompletedTask));
+        Assert.AreEqual(0L, buffer.DroppedSamples);
+    }
+
+    [TestMethod]
+    public async Task ChangedSelectionPrunesPendingSamplesAndKeepsRetryIdentity()
+    {
+        var buffer = Buffer();
+        var kept = new DstatResult { CpuUsr = 7, SampleId = Guid.NewGuid() };
+        buffer.Capture("removed", "removed", new DstatResult(), DateTime.UtcNow);
+        buffer.Capture("kept", "kept", kept, DateTime.UtcNow);
+        var entered = new TaskCompletionSource(TaskCreationOptions.RunContinuationsAsynchronously);
+        var release = new TaskCompletionSource(TaskCreationOptions.RunContinuationsAsynchronously);
+        var write = buffer.FlushAsync(async _ =>
+        {
+            entered.SetResult();
+            await release.Task;
+            throw new IOException("Retry after an interrupted write.");
+        });
+        await entered.Task;
+        var change = buffer.ApplyPolicyAsync(new MetricsExportPolicy
+        {
+            ExportAllServers = false,
+            Targets = [new MetricsExportTarget { ClientId = "kept" }]
+        });
+        Assert.IsFalse(change.IsCompleted);
+        buffer.Capture("new-unlisted", "new-unlisted", new DstatResult(), DateTime.UtcNow);
+        release.SetResult();
+        await Assert.ThrowsExactlyAsync<IOException>(async () => await write);
+        await change;
+        Assert.AreEqual(1, buffer.Count);
+        buffer.Capture("removed", "removed", new DstatResult(), DateTime.UtcNow);
+        Assert.AreEqual(1, await buffer.FlushAsync(batch =>
+        {
+            Assert.AreEqual("kept", batch.Single().ClientId);
+            Assert.AreEqual(kept.SampleId, batch.Single().SampleId);
+            Assert.AreEqual(7, batch.Single().CpuUsr);
+            return Task.CompletedTask;
+        }));
+        Assert.AreEqual(0L, buffer.DroppedSamples);
+    }
+
+    [TestMethod]
+    public async Task DisablingAndReenablingRetainsSelectionWithoutRestoringDiscardedSamples()
+    {
+        var buffer = Buffer();
+        var policy = new MetricsExportPolicy
+        {
+            ExportAllServers = false,
+            Targets = [new MetricsExportTarget { ClientId = "selected" }]
+        };
+        await buffer.ApplyPolicyAsync(policy);
+        buffer.Capture("selected", "host", new DstatResult(), DateTime.UtcNow);
+        policy.IsEnabled = false;
+        policy.Version = Guid.NewGuid();
+        await buffer.ApplyPolicyAsync(policy);
+        buffer.Capture("selected", "host", new DstatResult(), DateTime.UtcNow);
+        Assert.AreEqual(0, buffer.Count);
+        policy.IsEnabled = true;
+        policy.Version = Guid.NewGuid();
+        await buffer.ApplyPolicyAsync(policy);
+        Assert.AreEqual(0, buffer.Count);
+        buffer.Capture("unlisted", "host", new DstatResult(), DateTime.UtcNow);
+        buffer.Capture("selected", "host", new DstatResult(), DateTime.UtcNow);
+        Assert.AreEqual(1, await buffer.FlushAsync(_ => Task.CompletedTask));
+    }
+
 }

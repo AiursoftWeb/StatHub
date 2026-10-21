@@ -1,0 +1,81 @@
+@using Aiursoft.WebTools
+@model Aiursoft.StatHub.Models.MetricsExport.MetricsExportViewModel
+
+<div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
+    <h3>@Localizer["ClickHouse export"]</h3>
+    <a asp-controller="Home" asp-action="BuildDashboard" class="btn btn-outline-primary">@Localizer["Build Dashboard"]</a>
+</div>
+<p class="text-muted">@Localizer["Configure the ClickHouse connection and retention in the MetricsExport section of appsettings.json or environment variables. Export selection is saved separately from AlertCenter monitoring and does not store credentials."]</p>
+@if (!Model.ConnectionEnabled)
+{
+    <div class="alert alert-info" role="alert"><div class="alert-message">@Localizer["The ClickHouse connection is disabled in configuration. You can save your server selection now; exporting also requires MetricsExport:Enabled and a valid connection string."]</div></div>
+}
+<div class="row g-4 align-items-start">
+    <div class="col-12 col-xl-8">
+        <form asp-action="SavePolicy" method="post">
+            <input type="hidden" name="Version" value="@Model.Policy.Version" />
+            <div class="card mb-3">
+                <div class="card-header"><h5 class="card-title mb-0">@Localizer["Export policy"]</h5></div>
+                <div class="card-body">
+                    <div class="form-check mb-2"><input class="form-check-input" type="checkbox" id="enabled" name="IsEnabled" value="true" checked="@Model.Policy.IsEnabled" /><label class="form-check-label" for="enabled">@Localizer["Enable export policy"]</label></div>
+                    <div class="form-check"><input class="form-check-input" type="checkbox" id="all" name="ExportAllServers" value="true" checked="@Model.Policy.ExportAllServers" /><label class="form-check-label" for="all">@Localizer["Export all servers, including newly connected servers"]</label></div>
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-header"><h5 class="card-title">@Localizer["Server selection"]</h5><p class="card-subtitle">@Localizer["Excluded servers always take precedence. When all servers are exported, individual inclusions are unnecessary."]</p></div>
+                <div class="table-responsive">
+                    <table class="table mb-0">
+                        <thead><tr><th>@Localizer["Server"]</th><th>@Localizer["Include"]</th><th>@Localizer["Exclude"]</th><th>@Localizer["State"]</th><th>@Localizer["Last report"]</th></tr></thead>
+                        <tbody>
+                        @foreach (var agent in Model.Agents)
+                        {
+                            var selection = Model.Policy.Targets.SingleOrDefault(item => item.ClientId == agent.ClientId);
+                            <tr>
+                                <td>@agent.Hostname <small class="d-block text-muted">@agent.ClientId</small></td>
+                                <td><input type="checkbox" class="form-check-input" name="Included" value="@agent.ClientId" checked="@(selection is { IsExcluded: false })" aria-label="@Localizer["Include server"]" /></td>
+                                <td><input type="checkbox" class="form-check-input" name="Excluded" value="@agent.ClientId" checked="@(selection is { IsExcluded: true })" aria-label="@Localizer["Exclude server"]" /></td>
+                                <td>@(agent.CurrentState switch { "green" => @Localizer["Green"], "yellow" => @Localizer["Yellow"], "red" => @Localizer["Red"], "grey" => @Localizer["Grey (offline)"], _ => @Localizer["Unknown"] })</td>
+                                <td>
+                                    @if (agent.LastReportedAtUtc == default)
+                                    {
+                                        <span class="text-muted">@Localizer["No report since restart"]</span>
+                                    }
+                                    else
+                                    {
+                                        <span data-utc-time="@agent.LastReportedAtUtc.ToHtmlDateTime()"></span>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card-footer"><button type="submit" class="btn btn-primary">@Localizer["Save policy and server selection"]</button></div>
+            </div>
+        </form>
+    </div>
+    <aside class="col-12 col-xl-4" aria-labelledby="export-guide-title">
+        <div class="card border-primary">
+            <div class="card-body">
+                <div class="text-center mb-3"><i data-lucide="database" class="text-primary" aria-hidden="true"></i></div>
+                <h4 class="h5" id="export-guide-title">@Localizer["How export selection works"]</h4>
+                <p class="text-muted small">@Localizer["Server selection follows the same include and exclude rules as AlertCenter monitoring, with an independent policy."]</p>
+                <dl class="small mb-3">
+                    <dt>@Localizer["Exclude always wins"]</dt>
+                    <dd>@Localizer["An excluded server is not exported, even when all servers are selected or both boxes are checked."]</dd>
+                    <dt>@Localizer["All servers"]</dt>
+                    <dd>@Localizer["Every server is exported unless explicitly excluded. Newly connected servers are included automatically."]</dd>
+                    <dt>@Localizer["Selected servers only"]</dt>
+                    <dd>@Localizer["Turn off all servers to export only servers explicitly marked Include. With no inclusions, nothing is exported."]</dd>
+                    <dt>@Localizer["Policy disabled"]</dt>
+                    <dd>@Localizer["No server is exported. Your include and exclude selections remain saved for when you enable the policy again."]</dd>
+                </dl>
+                <div class="border-top pt-3">
+                    <h5 class="h6">@Localizer["When changes take effect"]</h5>
+                    <p class="small mb-2">@Localizer["Saving applies the selection to new samples and removes excluded samples still waiting in memory. An already running ClickHouse write may finish before saving completes. Previously stored history is kept."]</p>
+                    <p class="small mb-0">@Localizer["Policies and selections survive a restart. Servers without a new report remain listed by ClientId when they have a saved selection. Raw samples are still exported in five-minute batches, and live monitoring and AlertCenter rules are unchanged."]</p>
+                </div>
+            </div>
+        </div>
+    </aside>
+</div>

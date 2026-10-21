@@ -30,6 +30,44 @@ namespace Aiursoft.StatHub.Sqlite.Migrations
                     b.ToTable("GlobalSettings");
                 });
 
+            modelBuilder.Entity("Aiursoft.StatHub.Entities.MetricsExport.MetricsExportPolicy", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool>("ExportAllServers")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool>("IsEnabled")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<Guid>("Version")
+                        .IsConcurrencyToken()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("MetricsExportPolicies");
+                });
+
+            modelBuilder.Entity("Aiursoft.StatHub.Entities.MetricsExport.MetricsExportTarget", b =>
+                {
+                    b.Property<int>("PolicyId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("ClientId")
+                        .HasMaxLength(200)
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("IsExcluded")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("PolicyId", "ClientId");
+
+                    b.ToTable("MetricsExportTargets");
+                });
+
             modelBuilder.Entity("Aiursoft.StatHub.Entities.Monitoring.MonitoringPolicy", b =>
                 {
                     b.Property<int>("Id")
@@ -313,6 +351,17 @@ namespace Aiursoft.StatHub.Sqlite.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("Aiursoft.StatHub.Entities.MetricsExport.MetricsExportTarget", b =>
+                {
+                    b.HasOne("Aiursoft.StatHub.Entities.MetricsExport.MetricsExportPolicy", "Policy")
+                        .WithMany("Targets")
+                        .HasForeignKey("PolicyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Policy");
+                });
+
             modelBuilder.Entity("Aiursoft.StatHub.Entities.Monitoring.MonitoringRule", b =>
                 {
                     b.HasOne("Aiursoft.StatHub.Entities.Monitoring.MonitoringPolicy", "Policy")
@@ -384,6 +433,11 @@ namespace Aiursoft.StatHub.Sqlite.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Aiursoft.StatHub.Entities.MetricsExport.MetricsExportPolicy", b =>
+                {
+                    b.Navigation("Targets");
                 });
 
             modelBuilder.Entity("Aiursoft.StatHub.Entities.Monitoring.MonitoringPolicy", b =>

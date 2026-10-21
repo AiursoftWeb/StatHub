@@ -66,6 +66,8 @@ public class Startup : IWebStartup
                 "MetricsExport:MaxBufferedSamples must be between 1 and 1000000.")
             .Validate(options => options.RetentionDays >= 0, "MetricsExport:RetentionDays must not be negative.")
             .ValidateOnStart();
+        services.AddSingleton<MetricsExportPolicyCoordinator>();
+        services.AddScoped<MetricsExportPolicyService>();
         services.AddSingleton<MetricsExportBuffer>();
         services.AddSingleton<MetricsClickhouseWriter>();
         services.AddSingleton<InMemoryDatabase>();

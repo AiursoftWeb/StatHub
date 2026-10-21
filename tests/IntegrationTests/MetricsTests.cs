@@ -4,6 +4,7 @@ using System.Net.WebSockets;
 using System.Text;
 using Aiursoft.StatHub.Data;
 using Aiursoft.StatHub.Entities;
+using Aiursoft.StatHub.Entities.MetricsExport;
 using Aiursoft.StatHub.SDK.Models;
 using Aiursoft.StatHub.Services.Monitoring;
 using Aiursoft.StatHub.Services.MetricsExport;
@@ -233,4 +234,37 @@ public class MetricsTests : TestBase
             Assert.IsTrue(exec!.Stdout.Contains($"line-{i}\n"), $"Missing line-{i}");
         }
     }
+
+    [TestMethod]
+    public async Task ExcludedMetricsStillUpdateLiveStatsAndAlertObservation()
+    {
+        GetService<IOptions<MetricsExportOptions>>().Value.Enabled = true;
+        var clientId = Guid.NewGuid().ToString();
+        await GetService<MetricsExportBuffer>().ApplyPolicyAsync(new MetricsExportPolicy
+        {
+            Targets = [new MetricsExportTarget { ClientId = clientId, IsExcluded = true }]
+        });
+        using var ws = new ClientWebSocket();
+        await ws.ConnectAsync(new Uri($"ws://localhost:{Port}/api/agent/channel?clientId={clientId}"), CancellationToken.None);
+        var payload = JsonConvert.SerializeObject(new
+        {
+            jsonrpc = "2.0", method = "metrics", id = "excluded-metrics",
+            @params = new
+            {
+                clientId, hostname = "excluded-live-host", cpuCores = 4,
+                stats = new[] { new DstatResult("0 0 100 0 0 100M 700M 0 0 0 0 0 0 0.0 0.0 0.0") }
+            }
+        });
+        await ws.SendAsync(Encoding.UTF8.GetBytes(payload), WebSocketMessageType.Text, true, CancellationToken.None);
+        using var timeout = new CancellationTokenSource(TimeSpan.FromSeconds(5));
+        var bytes = new byte[4096];
+        var ack = await ws.ReceiveAsync(bytes, timeout.Token);
+        var message = JsonConvert.DeserializeObject<JsonRpcMessage>(Encoding.UTF8.GetString(bytes, 0, ack.Count));
+        Assert.AreEqual("metrics-ack", message!.Method);
+        Assert.AreEqual("excluded-live-host", GetService<InMemoryDatabase>().GetClient(clientId)!.Hostname);
+        Assert.IsTrue(GetService<MonitoringCoordinator>().Snapshot().Any(state => state.ClientId == clientId && state.CurrentState == "green"));
+        Assert.AreEqual(0, GetService<MetricsExportBuffer>().Count);
+        await ws.CloseAsync(WebSocketCloseStatus.NormalClosure, "Done", timeout.Token);
+    }
+
 }
