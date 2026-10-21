@@ -166,7 +166,8 @@ public class AgentChannelController(
         agent.TotalRoot = model.TotalRoot;
         agent.Disks = model.Disks.ToList();
         agent.Motd = model.Motd;
-        agent.Containers = model.Containers?.ToList() ?? new List<ContainerInfo>();
+        if (model.Containers != null)
+            agent.Containers = model.Containers.ToList();
         agent.SshKeys = model.SshKeys?.ToList() ?? new List<SshKeyInfo>();
         agent.UfwStatus = model.UfwStatus;
 
