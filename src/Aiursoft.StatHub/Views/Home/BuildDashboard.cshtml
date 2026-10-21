@@ -1,0 +1,121 @@
+@model Aiursoft.StatHub.Models.HomeViewModels.BuildDashboardViewModel
+
+<vc:marketing-navbar></vc:marketing-navbar>
+
+<main class="container py-5">
+    <div class="row align-items-center mb-4">
+        <div class="col-lg-9">
+            <span class="badge bg-primary mb-3">ClickHouse + Grafana</span>
+            <h1>@Localizer["Build Dashboard"]</h1>
+            <p class="lead text-muted">@Localizer["Live server status. Your history, your dashboards."]</p>
+            <p>@Localizer["We recommend ClickHouse and Grafana for exploring your StatHub history. Preserve raw server samples, compare several machines, and switch from a fleet overview to a single server with one dropdown."]</p>
+        </div>
+        <div class="col-lg-3 text-lg-end">
+            <a asp-controller="Home" asp-action="SelfHost" class="btn btn-outline-primary">@Localizer["Self Host"]</a>
+        </div>
+    </div>
+
+    <figure class="mb-5">
+        <a href="~/images/grafana-dashboard.png" target="_blank" rel="noopener">
+            <img src="~/images/grafana-dashboard.png" class="img-fluid rounded border shadow-sm" width="2560" height="1297"
+                 alt="@Localizer["Grafana dashboard comparing CPU, memory, network, disk I/O, load, and archived samples across selected StatHub servers."]" />
+        </a>
+        <figcaption class="text-muted mt-2">@Localizer["A StatHub dashboard in Grafana: select several servers to compare their resource history, or choose one for a closer look. Open the image to view it at full size."]</figcaption>
+    </figure>
+
+    <section class="card mb-4" aria-labelledby="enable-export">
+        <div class="card-body">
+            <h2 id="enable-export" class="h4">@Localizer["1. Enable ClickHouse export"]</h2>
+            <p>@Localizer["Start with a self-hosted StatHub instance and a ClickHouse server reachable from it. Keep your existing agents reporting to StatHub; export happens centrally through the Aiursoft ClickHouse SDK."]</p>
+            <p><a asp-controller="Home" asp-action="SelfHost">@Localizer["Deploy StatHub"]</a> · <a href="https://clickhouse.com/docs/get-started/setup/install" target="_blank" rel="noopener">@Localizer["Install ClickHouse"]</a></p>
+            <p>@Localizer["Merge this section into your StatHub appsettings.json, replace the host and credentials, then restart your StatHub instance:"]</p>
+            <pre class="bg-light p-3 rounded border text-dark"><code>{
+  "MetricsExport": {
+    "Enabled": true,
+    "ConnectionString": "Host=clickhouse;Protocol=http;Port=8123;User=stathub;Password=replace-with-your-password;Database=StatHubMetrics",
+    "RetentionDays": 30,
+    "MaxBufferedSamples": 100000
+  }
+}</code></pre>
+            <p>@Localizer["For Docker, configure the same settings with environment variables such as MetricsExport__Enabled=true and MetricsExport__ConnectionString. Use your deployment's secret configuration for the real password. Inside a container, localhost refers to that container; use a reachable ClickHouse hostname."]</p>
+            <p>@Localizer["The exporter needs permission to create its database, table, and view, and to insert and select metrics. On the first non-empty batch it creates StatHubMetrics.ServerMetrics and the deduplicated ServerMetricsLatest view automatically."]</p>
+            <p class="mb-0">@Localizer["Raw samples are batched every five minutes rather than reduced to five-minute averages. The initial retention is 30 days. Changing RetentionDays later does not alter an existing table's TTL. The buffer is bounded and held in memory; a restart loses samples that have not been written yet."]</p>
+        </div>
+    </section>
+
+    <section class="card mb-4" aria-labelledby="check-export">
+        <div class="card-body">
+            <h2 id="check-export" class="h4">@Localizer["2. Check your first batch"]</h2>
+            <p>@Localizer["Let agents report and wait for a five-minute export cycle. In ClickHouse, check that servers and recent receipts appear:"]</p>
+            <pre class="bg-light p-3 rounded border text-dark"><code>SELECT ClientId, argMax(Hostname, ReceivedTime) AS server,
+       count() AS samples, max(ReceivedTime) AS last_receipt,
+       round(avg(HasSampleTime) * 100, 1) AS source_time_percent
+FROM StatHubMetrics.ServerMetricsLatest
+WHERE SampleTime &gt;= now() - INTERVAL 15 MINUTE
+GROUP BY ClientId
+ORDER BY server;</code></pre>
+            <p class="mb-0">@Localizer["Query ServerMetricsLatest for dashboards so retries do not inflate your results. HasSampleTime=1 means the agent supplied the source timestamp. Older agents use receipt time and mark HasSampleTime=0; samples in one report may share a timestamp, so their exact source timing and order are unavailable."]</p>
+        </div>
+    </section>
+
+    <section class="card mb-4" aria-labelledby="connect-grafana">
+        <div class="card-body">
+            <h2 id="connect-grafana" class="h4">@Localizer["3. Connect Grafana to ClickHouse"]</h2>
+            <p>@Localizer["Install Grafana and the official Grafana ClickHouse data source plugin. Add a ClickHouse data source with the hostname reachable from Grafana, HTTP port 8123 for this example, and StatHubMetrics as the default database. Use Save & test to verify the connection."]</p>
+            <p>@Localizer["Use a separate read-only Grafana account with SELECT permission on both ServerMetricsLatest and its underlying ServerMetrics table. Keep the exporter credentials in StatHub."]</p>
+            <p>@Localizer["Set Grafana's Query Timeout to 15 seconds. In the ClickHouse reader's settings profile, use readonly=1 and max_threads=2, and allow max_execution_time to change in read-only mode with CHANGEABLE_IN_READONLY, as described in the official configuration guide."]</p>
+            <p class="mb-0"><a href="https://grafana.com/docs/plugins/grafana-clickhouse-datasource/latest/configure/" target="_blank" rel="noopener">@Localizer["Official ClickHouse data source guide"]</a></p>
+        </div>
+    </section>
+
+    <section class="card mb-4" aria-labelledby="server-variable">
+        <div class="card-body">
+            <h2 id="server-variable" class="h4">@Localizer["4. Add a server dropdown"]</h2>
+            <p>@Localizer["Create a dashboard and add a Query variable named Server using your ClickHouse data source. Enable Multi-value and Include All, leave Custom all value empty, and refresh the variable on dashboard load. Use this query:"]</p>
+            <pre class="bg-light p-3 rounded border text-dark"><code>SELECT ClientId AS value,
+       concat(argMax(Hostname, ReceivedTime), ' [', substring(ClientId, 1, 8), ']') AS text
+FROM StatHubMetrics.ServerMetricsLatest
+WHERE SampleTime &gt;= now() - INTERVAL 24 HOUR
+GROUP BY ClientId
+ORDER BY text;</code></pre>
+            <p class="mb-0">@Localizer["The ClickHouse plugin reads the first column as the value and the second as the display text. ClientId keeps machines separate even when names match. Search and select one or several servers, or choose All. This menu lists servers reporting within the last 24 hours; reload to discover new servers."]</p>
+        </div>
+    </section>
+
+    <section class="card mb-4" aria-labelledby="build-panels">
+        <div class="card-body">
+            <h2 id="build-panels" class="h4">@Localizer["5. Build your resource panels"]</h2>
+            <p>@Localizer["Add a Time series visualization with your ClickHouse data source and SQL query type Time series. Start with CPU average and peak:"]</p>
+            <pre class="bg-light p-3 rounded border text-dark"><code>SELECT
+    toStartOfInterval(SampleTime, toIntervalSecond(greatest($__interval_s, 30))) AS time,
+    concat(argMax(Hostname, ReceivedTime), ' [', substring(ClientId, 1, 8), ']') AS server,
+    avg(100 - CpuIdl) AS average,
+    max(100 - CpuIdl) AS peak
+FROM StatHubMetrics.ServerMetricsLatest
+WHERE SampleTime &gt;= $__fromTime AND SampleTime &lt;= $__toTime
+  AND $__conditionalAll(ClientId IN (${Server:sqlstring}), $Server)
+GROUP BY time, ClientId
+ORDER BY time;</code></pre>
+            <p>@Localizer["Set the CPU unit to Percent (0-100). Keep the time and server filters when adapting the query to other panels. All removes the server restriction; individual selections use safely quoted ClientId values."]</p>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead><tr><th>@Localizer["Panel"]</th><th>@Localizer["Metrics and units"]</th></tr></thead>
+                    <tbody>
+                        <tr><td>@Localizer["Memory"]</td><td>@Localizer["Used percent: MemUsed divided by MemUsed + MemFree + MemBuf + MemCach, times 100. Return null when the total is zero. Plot the four fields separately for memory composition."]</td></tr>
+                        <tr><td>@Localizer["Network"]</td><td>@Localizer["Average NetRecv and NetSend, multiplied by 8 / 1000000, for Mbps."]</td></tr>
+                        <tr><td>@Localizer["Disk I/O"]</td><td>@Localizer["Average DskRead and DskWrit, divided by 1048576, for MiB/s."]</td></tr>
+                        <tr><td>@Localizer["Load"]</td><td>@Localizer["Average Load1M, Load5M, and Load15M. These are raw load averages, not CPU percentages."]</td></tr>
+                        <tr><td>@Localizer["Samples"]</td><td>@Localizer["Count archived samples in each time bucket to see reporting gaps and batch arrivals."]</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>@Localizer["Network and disk fields are already rates in bytes per second; do not apply rate or derivative again. CPU core counts and disk capacity are not exported. Memory used share is not Linux MemAvailable."]</p>
+            <p>@Localizer["For an overview table, group by ClientId and show recent averages, peaks, and max(ReceivedTime). Avoid treating a metric chosen from tied receipt timestamps as the exact last sample."]</p>
+            <p class="mb-0">@Localizer["Start with the last six hours in UTC, a five-minute dashboard refresh, and about 720 points per series. Keep a minimum 30-second bucket and let it grow for longer ranges. Leave missing data empty instead of filling it with zero. Data age is not proof that a server is offline."]</p>
+        </div>
+    </section>
+
+    <p class="text-muted"><a href="https://grafana.com/docs/plugins/grafana-clickhouse-datasource/latest/query-editor/" target="_blank" rel="noopener">@Localizer["Learn more about ClickHouse queries and Grafana macros"]</a></p>
+</main>
+
+<vc:marketing-footer></vc:marketing-footer>

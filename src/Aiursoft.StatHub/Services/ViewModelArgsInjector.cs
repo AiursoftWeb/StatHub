@@ -90,6 +90,7 @@ public class ViewModelArgsInjector(
         _ = localizer["Permission Details"];
         _ = localizer["Register"];
         _ = localizer["Self Host"];
+        _ = localizer["Build Dashboard"];
         _ = localizer["Server Details"];
     
         _ = localizer["Delete Account"];

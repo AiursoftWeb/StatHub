@@ -8,6 +8,12 @@
         </a>
         <ul class="navbar-nav ms-auto">
             <li class="nav-item d-none d-md-inline-block">
+                <a asp-controller="Home" asp-action="SelfHost" class="nav-link text-lg px-lg-3">@Localizer["Self Host"]</a>
+            </li>
+            <li class="nav-item d-none d-md-inline-block">
+                <a asp-controller="Home" asp-action="BuildDashboard" class="nav-link text-lg px-lg-3">@Localizer["Build Dashboard"]</a>
+            </li>
+            <li class="nav-item d-none d-md-inline-block">
                 <a class="nav-link active text-lg px-lg-3" href="https://github.com/aiursoftweb/stathub">@Localizer["Source Code"]</a>
             </li>
             <li class="nav-item d-none d-md-inline-block">

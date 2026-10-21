@@ -29,6 +29,8 @@
                             <p class="text-muted">
                                 @Localizer["StatHub is a simple server stat statistics system. It can collect server stats and display them in a simple way."]
                             </p>
+                            <p class="text-muted">@Localizer["Export raw server metrics to ClickHouse in five-minute batches and explore your history in Grafana."]</p>
+                            <a asp-controller="Home" asp-action="BuildDashboard" class="btn btn-outline-primary mb-3">@Localizer["Build Dashboard"]</a>
                             <div class="mb-3">
                                 <a href="https://github.com/aiursoftweb/stathub/blob/master/LICENSE" target="_blank" class="d-inline-block me-1 mb-1">
                                     <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT licensed">

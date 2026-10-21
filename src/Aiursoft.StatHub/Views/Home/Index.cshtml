@@ -14,6 +14,7 @@
                 <span class="badge badge-subtle-primary p-1">@Localizer["Open Source"]</span>
                 <span class="badge badge-subtle-primary p-1">@Localizer["Self-Hosted"]</span>
                 <span class="badge badge-subtle-primary p-1">@Localizer["MIT Licence"]</span>
+                <span class="badge badge-subtle-primary p-1">@Localizer["ClickHouse Export"]</span>
                 <h1 id="main-slogan" class="my-4 text-white" style="font-size: 3rem;">
                     StatHub: <span class='text-primary'>@Localizer["Your Server Status"]</span>
                 </h1>
@@ -21,12 +22,19 @@
                     @Localizer["A simple, real-time server monitoring system designed for local deployment."]
                     @Localizer["Keep an eye on your infrastructure with intuitive dashboards and detailed metrics."]
                 </p>
+                <p class="text-lg text-white-50">
+                    @Localizer["Keep raw server samples in ClickHouse with efficient five-minute batch exports."]
+                    @Localizer["Turn your history into Grafana dashboards, from fleet overviews to individual servers."]
+                </p>
                 <div class="my-4 d-flex gap-2 flex-wrap">
                     <a asp-controller="Dashboard" asp-action="Index" class="btn btn-primary btn-lg btn-pill">
                         <i class="align-middle" data-lucide="layout-dashboard"></i> @Localizer["View Servers Stat"]
                     </a>
                     <a asp-controller="Home" asp-action="SelfHost" class="btn btn-outline-primary btn-lg btn-pill">
                         <i class="align-middle" data-lucide="server"></i> @Localizer["Self Host"]
+                    </a>
+                    <a asp-controller="Home" asp-action="BuildDashboard" class="btn btn-outline-primary btn-lg btn-pill">
+                        <i class="align-middle" data-lucide="chart-no-axes-combined"></i> @Localizer["Build Dashboard"]
                     </a>
                     <a href="https://github.com/AiursoftWeb/StatHub" class="btn btn-outline-primary btn-lg btn-pill">
                         <i class="align-middle" data-lucide="github"></i> @Localizer["Source code on GitHub"]
@@ -151,6 +159,10 @@
                     <a asp-controller="Home" asp-action="SelfHost" class="btn btn-outline-primary btn-pill btn-lg">
                         <i class="align-middle me-1" data-lucide="server"></i>
                         <span>@Localizer["Self Host"]</span>
+                    </a>
+                    <a asp-controller="Home" asp-action="BuildDashboard" class="btn btn-outline-primary btn-pill btn-lg">
+                        <i class="align-middle me-1" data-lucide="chart-no-axes-combined"></i>
+                        <span>@Localizer["Build Dashboard"]</span>
                     </a>
                 </div>
             </div>

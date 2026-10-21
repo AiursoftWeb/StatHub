@@ -13,6 +13,11 @@ public class HomeController : Controller
         return this.SimpleView(new IndexViewModel());
     }
 
+    public IActionResult BuildDashboard()
+    {
+        return this.SimpleView(new BuildDashboardViewModel());
+    }
+
     public IActionResult SelfHost()
     {
         return this.SimpleView(new SelfHostViewModel());

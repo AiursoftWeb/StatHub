@@ -10,6 +10,9 @@
 
 StatHub is a simple server stat statistics system. It can collect server stats and display them in a simple way.
 
+Export raw server samples to ClickHouse in efficient five-minute batches with the Aiursoft ClickHouse SDK.
+Build fleet overviews and compare individual servers in Grafana: [Build Dashboard](https://stathub.aiursoft.com/Home/BuildDashboard).
+
 ![screenshot](./screenshot.png)
 
 Default user name is `admin@default.com` and default password is `Admin@123456!`.
