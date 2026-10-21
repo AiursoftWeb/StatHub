@@ -1,3 +1,4 @@
+using Aiursoft.StatHub.Services.MetricsExport;
 using Aiursoft.AiurObserver;
 using Aiursoft.Canon.BackgroundJobs;
 using Aiursoft.StatHub.Services.BackgroundJobs;
@@ -19,6 +20,7 @@ namespace Aiursoft.StatHub.Controllers;
 [Route("api/agent")]
 public class AgentChannelController(
     InMemoryDatabase database,
+    MetricsExportBuffer metricsExport,
     IServiceScopeFactory scopeFactory,
     BackgroundJobRegistry backgroundJobs,
     IpGeolocationService ipGeolocationService,
@@ -132,6 +134,7 @@ public class AgentChannelController(
             var observations = new List<string>();
             foreach (var sample in model.Stats)
             {
+                metricsExport.Capture(agent.ClientId, agent.Hostname, sample, agent.LastUpdate);
                 await agent.Stats.BroadcastAsync(sample);
                 if (agent.CpuCores <= 0 || sample.CpuIdl is < 0 or > 100) continue;
                 observations.Add(agent.GetHealthReport().Status switch
