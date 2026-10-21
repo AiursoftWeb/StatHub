@@ -54,6 +54,9 @@
   <data name="Bad Request" xml:space="preserve">
     <value>Cerere invalidă</value>
   </data>
+  <data name="Build Dashboard" xml:space="preserve">
+    <value>Construie Panou de control</value>
+  </data>
   <data name="Change Avatar" xml:space="preserve">
     <value>Schimbă Avatarul</value>
   </data>
@@ -65,6 +68,9 @@
   </data>
   <data name="Click to login" xml:space="preserve">
     <value>Apasă pentru a te autentifica</value>
+  </data>
+  <data name="ClickHouse export" xml:space="preserve">
+    <value>Export ClickHouse</value>
   </data>
   <data name="Create Role" xml:space="preserve">
     <value>Creează Rol</value>

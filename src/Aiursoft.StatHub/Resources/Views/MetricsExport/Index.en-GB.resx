@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="All servers" xml:space="preserve">
+    <value>All servers</value>
+  </data>
+  <data name="An excluded server is not exported, even when all servers are selected or both boxes are checked." xml:space="preserve">
+    <value>An excluded server is not exported, even when all servers are selected or both boxes are checked.</value>
+  </data>
+  <data name="Build Dashboard" xml:space="preserve">
+    <value>Build Dashboard</value>
+  </data>
+  <data name="ClickHouse export" xml:space="preserve">
+    <value>ClickHouse export</value>
+  </data>
+  <data name="Configure the ClickHouse connection and retention in the MetricsExport section of appsettings.json or environment variables. Export selection is saved separately from AlertCenter monitoring and does not store credentials." xml:space="preserve">
+    <value>Configure the ClickHouse connection and retention in the MetricsExport section of appsettings.json or environment variables. Export selection is saved separately from AlertCenter monitoring and does not store credentials.</value>
+  </data>
+  <data name="Enable export policy" xml:space="preserve">
+    <value>Enable export policy</value>
+  </data>
+  <data name="Every server is exported unless explicitly excluded. Newly connected servers are included automatically." xml:space="preserve">
+    <value>Every server is exported unless explicitly excluded. Newly connected servers are included automatically.</value>
+  </data>
+  <data name="Exclude" xml:space="preserve">
+    <value>Exclude</value>
+  </data>
+  <data name="Exclude always wins" xml:space="preserve">
+    <value>Exclusion always takes precedence</value>
+  </data>
+  <data name="Exclude server" xml:space="preserve">
+    <value>Exclude server</value>
+  </data>
+  <data name="Excluded servers always take precedence. When all servers are exported, individual inclusions are unnecessary." xml:space="preserve">
+    <value>Excluded servers always take precedence. When all servers are exported, individual inclusions are unnecessary.</value>
+  </data>
+  <data name="Export all servers, including newly connected servers" xml:space="preserve">
+    <value>Export all servers, including newly connected servers</value>
+  </data>
+  <data name="Export policy" xml:space="preserve">
+    <value>Export policy</value>
+  </data>
+  <data name="Green" xml:space="preserve">
+    <value>Green</value>
+  </data>
+  <data name="Grey (offline)" xml:space="preserve">
+    <value>Grey (offline)</value>
+  </data>
+  <data name="How export selection works" xml:space="preserve">
+    <value>How export selection works</value>
+  </data>
+  <data name="Include" xml:space="preserve">
+    <value>Include</value>
+  </data>
+  <data name="Include server" xml:space="preserve">
+    <value>Include server</value>
+  </data>
+  <data name="Last report" xml:space="preserve">
+    <value>Last report</value>
+  </data>
+  <data name="No report since restart" xml:space="preserve">
+    <value>No report since restart</value>
+  </data>
+  <data name="No server is exported. Your include and exclude selections remain saved for when you enable the policy again." xml:space="preserve">
+    <value>No server is exported. Your include and exclude selections remain saved for when you enable the policy again.</value>
+  </data>
+  <data name="Policies and selections survive a restart. Servers without a new report remain listed by ClientId when they have a saved selection. Raw samples are still exported in five-minute batches, and live monitoring and AlertCenter rules are unchanged." xml:space="preserve">
+    <value>Policies and selections survive a restart. Servers without a new report remain listed by ClientId when they have a saved selection. Raw samples are still exported in five-minute batches, and live monitoring and AlertCenter rules are unchanged.</value>
+  </data>
+  <data name="Policy disabled" xml:space="preserve">
+    <value>Policy disabled</value>
+  </data>
+  <data name="Red" xml:space="preserve">
+    <value>Red</value>
+  </data>
+  <data name="Save policy and server selection" xml:space="preserve">
+    <value>Save policy and server selection</value>
+  </data>
+  <data name="Saving applies the selection to new samples and removes excluded samples still waiting in memory. An already running ClickHouse write may finish before saving completes. Previously stored history is kept." xml:space="preserve">
+    <value>Saving applies the selection to new samples and removes excluded samples still waiting in memory. An already running ClickHouse write may finish before saving completes. Previously stored history is kept.</value>
+  </data>
+  <data name="Selected servers only" xml:space="preserve">
+    <value>Selected servers only</value>
+  </data>
+  <data name="Server" xml:space="preserve">
+    <value>Server</value>
+  </data>
+  <data name="Server selection" xml:space="preserve">
+    <value>Server selection</value>
+  </data>
+  <data name="Server selection follows the same include and exclude rules as AlertCenter monitoring, with an independent policy." xml:space="preserve">
+    <value>Server selection follows the same include and exclude rules as AlertCenter monitoring, with an independent policy.</value>
+  </data>
+  <data name="State" xml:space="preserve">
+    <value>State</value>
+  </data>
+  <data name="The ClickHouse connection is disabled in configuration. You can save your server selection now; exporting also requires MetricsExport:Enabled and a valid connection string." xml:space="preserve">
+    <value>The ClickHouse connection is disabled in the configuration. You can save your server selection now; exporting also requires MetricsExport:Enabled and a valid connection string.</value>
+  </data>
+  <data name="Turn off all servers to export only servers explicitly marked Include. With no inclusions, nothing is exported." xml:space="preserve">
+    <value>Turn off all servers to export only servers explicitly marked Include. With no inclusions, nothing is exported.</value>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>Unknown</value>
+  </data>
+  <data name="When changes take effect" xml:space="preserve">
+    <value>When changes take effect</value>
+  </data>
+  <data name="Yellow" xml:space="preserve">
+    <value>Yellow</value>
+  </data>
+
+</root>

@@ -54,6 +54,9 @@
   <data name="Bad Request" xml:space="preserve">
     <value>Λάθος αίτημα</value>
   </data>
+  <data name="Build Dashboard" xml:space="preserve">
+    <value>Δημιουργία Πίνακα Ελέγχου</value>
+  </data>
   <data name="Change Avatar" xml:space="preserve">
     <value>Αλλαγή Avatar</value>
   </data>
@@ -65,6 +68,9 @@
   </data>
   <data name="Click to login" xml:space="preserve">
     <value>Κάντε κλικ για σύνδεση</value>
+  </data>
+  <data name="ClickHouse export" xml:space="preserve">
+    <value>ClickHouse export</value>
   </data>
   <data name="Create Role" xml:space="preserve">
     <value>Δημιουργία Ρόλου</value>
