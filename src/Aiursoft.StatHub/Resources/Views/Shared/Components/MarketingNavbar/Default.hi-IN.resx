@@ -24,6 +24,9 @@
   <data name="Aiursoft Template" xml:space="preserve">
     <value>Aiursoft टेम्पलेट</value>
   </data>
+  <data name="Build Dashboard" xml:space="preserve">
+    <value>डैशबोर्ड बनाएँ</value>
+  </data>
   <data name="Community" xml:space="preserve">
     <value>समुदाय</value>
   </data>
@@ -32,6 +35,9 @@
   </data>
   <data name="GitHub" xml:space="preserve">
     <value>GitHub</value>
+  </data>
+  <data name="Self Host" xml:space="preserve">
+    <value>स्वयं होस्ट करें</value>
   </data>
   <data name="Source Code" xml:space="preserve">
     <value>सोर्स कोड</value>

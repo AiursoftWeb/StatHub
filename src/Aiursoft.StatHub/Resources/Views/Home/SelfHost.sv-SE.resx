@@ -36,6 +36,9 @@
   <data name="Binary path" xml:space="preserve">
     <value>Binär sökväg</value>
   </data>
+  <data name="Build Dashboard" xml:space="preserve">
+    <value>Skapa en instrumentpanel</value>
+  </data>
   <data name="Config path" xml:space="preserve">
     <value>Konfigurationsväg</value>
   </data>
@@ -59,6 +62,9 @@
   </data>
   <data name="Execute `npm install` at `wwwroot` folder." xml:space="preserve">
     <value>Kör `npm install` i mappen `wwwroot`.</value>
+  </data>
+  <data name="Export raw server metrics to ClickHouse in five-minute batches and explore your history in Grafana." xml:space="preserve">
+    <value>Exportera råa servermetriker till ClickHouse i femminuterspartier och utforska din historik i Grafana.</value>
   </data>
   <data name="First, install Docker. Then run the following commands in a Linux shell:" xml:space="preserve">
     <value>Först installera Docker. Kör sedan följande kommandon i en Linux-terminal:</value>

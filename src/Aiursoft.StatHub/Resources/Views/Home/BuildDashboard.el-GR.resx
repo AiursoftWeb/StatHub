@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="1. Enable ClickHouse export" xml:space="preserve">
+    <value>1. Ενεργοποίηση εξαγωγής ClickHouse</value>
+  </data>
+  <data name="2. Check your first batch" xml:space="preserve">
+    <value>2. Ελέγξτε το πρώτο σας παρτί</value>
+  </data>
+  <data name="3. Connect Grafana to ClickHouse" xml:space="preserve">
+    <value>3. Συνδέστε το Grafana με το ClickHouse</value>
+  </data>
+  <data name="4. Add a server dropdown" xml:space="preserve">
+    <value>4. Προσθέστε ένα αναπτυσσόμενο μενού διακομιστών</value>
+  </data>
+  <data name="5. Build your resource panels" xml:space="preserve">
+    <value>5. Δημιουργήστε τα πάνελ πόρων σας</value>
+  </data>
+  <data name="A StatHub dashboard in Grafana: select several servers to compare their resource history, or choose one for a closer look. Open the image to view it at full size." xml:space="preserve">
+    <value>Ένα tableau StatHub στο Grafana: επιλέξτε πολλαπλούς διακομιστές για να συγκρίνετε το ιστορικό των πόρων τους ή επιλέξτε έναν για μια πιο προσεκτική εξερεύνηση. Ανοίξτε την εικόνα για να την görüntέτε σε πλήρες μέγεθος.</value>
+  </data>
+  <data name="Add a Time series visualization with your ClickHouse data source and SQL query type Time series. Start with CPU average and peak:" xml:space="preserve">
+    <value>Προσθέστε μια απεικόνιση χρονοσειράς με την πηγή δεδομένων ClickHouse και τύπο ερωτήματος SQL «Χρονοσειρά». Ξεκινήστε με τον μέσο όρο και τη μέγιστη τιμή της CPU:</value>
+  </data>
+  <data name="Average DskRead and DskWrit, divided by 1048576, for MiB/s." xml:space="preserve">
+    <value>Μέσος όρος DskRead και DskWrit, διαιρεμένος με 1048576, για MiB/s.</value>
+  </data>
+  <data name="Average Load1M, Load5M, and Load15M. These are raw load averages, not CPU percentages." xml:space="preserve">
+    <value>Μέσος όρος των Load1M, Load5M και Load15M. Πρόκειται για ακατέργαστους μέσους όρους φόρτου, όχι για ποσοστά χρήσης CPU.</value>
+  </data>
+  <data name="Average NetRecv and NetSend, multiplied by 8 / 1000000, for Mbps." xml:space="preserve">
+    <value>Μέσος όρος των NetRecv και NetSend, πολλαπλασιασμένος επί 8 / 1000000, για Mbps.</value>
+  </data>
+  <data name="Build Dashboard" xml:space="preserve">
+    <value>Δημιουργία πίνακα ελέγχου</value>
+  </data>
+  <data name="Count archived samples in each time bucket to see reporting gaps and batch arrivals." xml:space="preserve">
+    <value>Μετρήστε τα αρχειοθετημένα δείγματα σε κάθε χρονικό διάστημα για να εντοπίσετε κενά αναφοράς και συσσωρευμένες αφίξεις.</value>
+  </data>
+  <data name="Create a dashboard and add a Query variable named Server using your ClickHouse data source. Enable Multi-value and Include All, leave Custom all value empty, and refresh the variable on dashboard load. Use this query:" xml:space="preserve">
+    <value>Δημιουργήστε έναν πίνακα ελέγχου και προσθέστε μια μεταβλητή τύπου Query με όνομα Server, χρησιμοποιώντας την πηγή δεδομένων ClickHouse. Ενεργοποιήστε τις επιλογές Multi-value και Include All, αφήστε κενή την τιμή Custom all και ορίστε την ανανέωση της μεταβλητής κατά τη φόρτωση του πίνακα ελέγχου. Χρησιμοποιήστε το εξής ερώτημα:</value>
+  </data>
+  <data name="Deploy StatHub" xml:space="preserve">
+    <value>Αναπτύξτε το StatHub</value>
+  </data>
+  <data name="Disk I/O" xml:space="preserve">
+    <value>Εισόδος/Έξοδος δίσκου</value>
+  </data>
+  <data name="For an overview table, group by ClientId and show recent averages, peaks, and max(ReceivedTime). Avoid treating a metric chosen from tied receipt timestamps as the exact last sample." xml:space="preserve">
+    <value>Για έναν συνοπτικό πίνακα, ομαδοποιήστε κατά ClientId και εμφανίστε πρόσφατους μέσους όρους, μέγιστες τιμές και το max(ReceivedTime). Μην θεωρείτε ότι μια μετρική που επιλέχθηκε από εγγραφές με ίδιες χρονικές σημάνσεις παραλαβής αντιστοιχεί ακριβώς στο τελευταίο δείγμα.</value>
+  </data>
+  <data name="For Docker, configure the same settings with environment variables such as MetricsExport__Enabled=true and MetricsExport__ConnectionString. Use your deployment&apos;s secret configuration for the real password. Inside a container, localhost refers to that container; use a reachable ClickHouse hostname." xml:space="preserve">
+    <value>Για Docker, ρυθμίστε τα ίδια ρυθμίσεις με μεταβλητές περιβάλλοντος όπως MetricsExport__Enabled=true και MetricsExport__ConnectionString. Χρησιμοποιήστε τη μυστική ρύθμιση της εγκατάστασής σας για τον πραγματικό κωδικό πρόσβασης. Εσωτερικά ενός容εϋτήρα, το localhost αναφέρεται σε αυτόν τον контейνέϋρα· χρησιμοποιήστε ένα προσβάσιμο όνομα υπολογιστή ClickHouse.</value>
+  </data>
+  <data name="Grafana dashboard comparing CPU, memory, network, disk I/O, load, and archived samples across selected StatHub servers." xml:space="preserve">
+    <value>Πίνακας Grafana που συγκρίνει CPU, μνήμη, δίκτυο, I/O δίσκου, φόρτο και αρχικοποιημένα δείγματα σε επιλεγμένους διακομιστές StatHub.</value>
+  </data>
+  <data name="Install ClickHouse" xml:space="preserve">
+    <value>Εγκαταστήστε το ClickHouse</value>
+  </data>
+  <data name="Install Grafana and the official Grafana ClickHouse data source plugin. Add a ClickHouse data source with the hostname reachable from Grafana, HTTP port 8123 for this example, and StatHubMetrics as the default database. Use Save &amp; test to verify the connection." xml:space="preserve">
+    <value>Εγκαταστήστε το Grafana και το επίσημο πρόσθετο πηγής δεδομένων ClickHouse του Grafana. Προσθέστε μια πηγή δεδομένων ClickHouse με το hostname προσβάσιμο από το Grafana, τη θύρα HTTP 8123 για αυτό το παράδειγμα, και το StatHubMetrics ως προεπιλεγμένη βάση δεδομένων. Χρησιμοποιήστε την επιλογή «Αποθήκευση &amp; δοκιμή» για να επιβεβαιώσετε τη σύνδεση.</value>
+  </data>
+  <data name="Learn more about ClickHouse queries and Grafana macros" xml:space="preserve">
+    <value>Μάθετε περισσότερα για τα ερωτήματα του ClickHouse και τις μακροεντολές του Grafana</value>
+  </data>
+  <data name="Let agents report and wait for a five-minute export cycle. In ClickHouse, check that servers and recent receipts appear:" xml:space="preserve">
+    <value>Αφήστε τους agents να στέλνουν αναφορές και περιμένετε έναν κύκλο εξαγωγής πέντε λεπτών. Στο ClickHouse, ελέγξτε ότι εμφανίζονται διακομιστές και πρόσφατες καταχωρίσεις:</value>
+  </data>
+  <data name="Live server status. Your history, your dashboards." xml:space="preserve">
+    <value>Κατάσταση διακομιστή σε πραγματικό χρόνο. Το ιστορικό σας, τα ταμπλό σας.</value>
+  </data>
+  <data name="Load" xml:space="preserve">
+    <value>Φόρτος</value>
+  </data>
+  <data name="Memory" xml:space="preserve">
+    <value>Μνήμη</value>
+  </data>
+  <data name="Merge this section into your StatHub appsettings.json, replace the host and credentials, then restart your StatHub instance:" xml:space="preserve">
+    <value>Συγχωνεύστε αυτή την ενότητα στο appsettings.json του StatHub, αντικαταστήστε τον κεντρικό υπολογιστή και τα διαπιστευτήρια και, στη συνέχεια, επανεκκινήστε την παρουσία του StatHub:</value>
+  </data>
+  <data name="Metrics and units" xml:space="preserve">
+    <value>Μετρικές και μονάδες</value>
+  </data>
+  <data name="Network" xml:space="preserve">
+    <value>Δίκτυο</value>
+  </data>
+  <data name="Network and disk fields are already rates in bytes per second; do not apply rate or derivative again. CPU core counts and disk capacity are not exported. Memory used share is not Linux MemAvailable." xml:space="preserve">
+    <value>Τα πεδία δικτύου και δίσκου είναι ήδη ρυθμοί σε bytes ανά δευτερόλεπτο· μην εφαρμόσετε ξανά ρυθμό ή παράγωγο. Οι μετρήσεις πυρήνων CPU και η χωρητικότητα του δίσκου δεν εξάγονται. Το ποσοστό χρησιμοποιούμενης μνήμης δεν αντιστοιχεί στο MemAvailable του Linux.</value>
+  </data>
+  <data name="Official ClickHouse data source guide" xml:space="preserve">
+    <value>Επίσημος οδηγός πηγής δεδομένων ClickHouse</value>
+  </data>
+  <data name="Panel" xml:space="preserve">
+    <value>Πίνακας</value>
+  </data>
+  <data name="Query ServerMetricsLatest for dashboards so retries do not inflate your results. HasSampleTime=1 means the agent supplied the source timestamp. Older agents use receipt time and mark HasSampleTime=0; samples in one report may share a timestamp, so their exact source timing and order are unavailable." xml:space="preserve">
+    <value>Χρησιμοποιήστε το ServerMetricsLatest για τα dashboards, ώστε οι επαναλήψεις να μην αλλοιώνουν τα αποτελέσματά σας. Το HasSampleTime=1 σημαίνει ότι ο agent παρείχε τη χρονική σήμανση της πηγής. Οι παλαιότεροι agents χρησιμοποιούν τον χρόνο παραλαβής και ορίζουν το HasSampleTime=0· τα δείγματα μιας αναφοράς μπορεί να έχουν την ίδια χρονική σήμανση, επομένως δεν είναι διαθέσιμα ο ακριβής χρόνος και η σειρά των δειγμάτων στην πηγή.</value>
+  </data>
+  <data name="Raw samples are batched every five minutes rather than reduced to five-minute averages. The initial retention is 30 days. Changing RetentionDays later does not alter an existing table&apos;s TTL. The buffer is bounded and held in memory; a restart loses samples that have not been written yet." xml:space="preserve">
+    <value>Τα ακατέργαστα δείγματα ομαδοποιούνται κάθε πέντε λεπτά, αντί να μετατρέπονται σε μέσους όρους πενταλέπτου. Η αρχική διάρκεια διατήρησης είναι 30 ημέρες. Αν αλλάξετε αργότερα την τιμή RetentionDays, δεν τροποποιείται το TTL ενός υπάρχοντος πίνακα. Το buffer έχει περιορισμένη χωρητικότητα και διατηρείται στη μνήμη· αν γίνει επανεκκίνηση, χάνονται τα δείγματα που δεν έχουν ακόμη εγγραφεί.</value>
+  </data>
+  <data name="Samples" xml:space="preserve">
+    <value>Δείγματα</value>
+  </data>
+  <data name="Self Host" xml:space="preserve">
+    <value>Αυτοξενία</value>
+  </data>
+  <data name="Set Grafana&apos;s Query Timeout to 15 seconds. In the ClickHouse reader&apos;s settings profile, use readonly=1 and max_threads=2, and allow max_execution_time to change in read-only mode with CHANGEABLE_IN_READONLY, as described in the official configuration guide." xml:space="preserve">
+    <value>Ορίστε το Query Timeout του Grafana στα 15 δευτερόλεπτα. Στο προφίλ ρυθμίσεων του χρήστη ανάγνωσης του ClickHouse, ορίστε readonly=1 και max_threads=2 και επιτρέψτε την αλλαγή του max_execution_time σε λειτουργία μόνο για ανάγνωση με το CHANGEABLE_IN_READONLY, όπως περιγράφεται στον επίσημο οδηγό ρυθμίσεων.</value>
+  </data>
+  <data name="Set the CPU unit to Percent (0-100). Keep the time and server filters when adapting the query to other panels. All removes the server restriction; individual selections use safely quoted ClientId values." xml:space="preserve">
+    <value>Ορίστε τη μονάδα της CPU σε Ποσοστό (0–100). Διατηρήστε τα φίλτρα χρόνου και διακομιστή όταν προσαρμόζετε το ερώτημα για άλλους πίνακες. Η επιλογή «Όλα» καταργεί τον περιορισμό διακομιστή· οι μεμονωμένες επιλογές χρησιμοποιούν τιμές ClientId με ασφαλή εισαγωγικά.</value>
+  </data>
+  <data name="Start with a self-hosted StatHub instance and a ClickHouse server reachable from it. Keep your existing agents reporting to StatHub; export happens centrally through the Aiursoft ClickHouse SDK." xml:space="preserve">
+    <value>Ξεκινήστε με μια αυτοξενούμενη (self-hosted) εγκατάσταση StatHub και έναν διακομιστή ClickHouse προσβάσιμο από αυτήν. Συντηρήστε τους υπάρχοντες agent σας να αναφέρουν δεδομένα στο StatHub· η εξαγωγή πραγματοποιείται κεντρικά μέσω του Aiursoft ClickHouse SDK.</value>
+  </data>
+  <data name="Start with the last six hours in UTC, a five-minute dashboard refresh, and about 720 points per series. Keep a minimum 30-second bucket and let it grow for longer ranges. Leave missing data empty instead of filling it with zero. Data age is not proof that a server is offline." xml:space="preserve">
+    <value>Ξεκινήστε με τις τελευταίες έξι ώρες σε UTC, ανανέωση του πίνακα ελέγχου κάθε πέντε λεπτά και περίπου 720 σημεία ανά σειρά. Διατηρήστε ένα ελάχιστο διάστημα 30 δευτερολέπτων και αφήστε το να αυξάνεται για μεγαλύτερα χρονικά διαστήματα. Αφήστε τα δεδομένα που λείπουν κενά αντί να τα συμπληρώνετε με μηδέν. Η παλαιότητα των δεδομένων δεν αποδεικνύει ότι ένας διακομιστής είναι εκτός λειτουργίας.</value>
+  </data>
+  <data name="The ClickHouse plugin reads the first column as the value and the second as the display text. ClientId keeps machines separate even when names match. Search and select one or several servers, or choose All. This menu lists servers reporting within the last 24 hours; reload to discover new servers." xml:space="preserve">
+    <value>Το πρόσθετο ClickHouse διαβάζει τη πρώτη στήλη ως την τιμή και τη δεύτερη ως το κείμενο εμφάνισης. Το ClientId διαχωρίζει τους υπολογιστές ακόμη και όταν οι ονόματα ταυτίζονται. Αναζητήστε και επιλέξτε έναν ή περισσότερους διακομιστές, ή επιλέξτε Όλα. Αυτό το μενού εμφανίζει τους διακομιστές που υποβάλλουν αναφορές εντός των τελευταίων 24 ωρών· επαναφορτώστε για να εντοπίσετε νέους διακομιστές.</value>
+  </data>
+  <data name="The exporter needs permission to create its database, table, and view, and to insert and select metrics. On the first non-empty batch it creates StatHubMetrics.ServerMetrics and the deduplicated ServerMetricsLatest view automatically." xml:space="preserve">
+    <value>Ο εξάγωγος χρειάζεται άδεια για τη δημιουργία της βάσης δεδομένων, του πίνακα και της προβολής του, καθώς και για την εισαγωγή και την ανάκτηση μετρικών. Στο πρώτο μη κενό παρτί, δημιουργεί αυτόματα τον StatHubMetrics.ServerMetrics και την αποδιαπληθυσμένη προβολή ServerMetricsLatest.</value>
+  </data>
+  <data name="Use a separate read-only Grafana account with SELECT permission on both ServerMetricsLatest and its underlying ServerMetrics table. Keep the exporter credentials in StatHub." xml:space="preserve">
+    <value>Χρησιμοποιήστε ένα ξεχωριστό μη επεξεργάσιμο λογαριασμό Grafana με άδεια SELECT τόσο στον πίνακα ServerMetricsLatest όσο και στον υποκείμενο πίνακα ServerMetrics. Κρατήστε τα διαπιστευτήρια του εξαγωγέα στο StatHub.</value>
+  </data>
+  <data name="Use ClickHouse export under Monitoring to choose which servers to export. Its independent policy supports all servers, explicit inclusions, and exclusions; exclusions always win." xml:space="preserve">
+    <value>Χρησιμοποιήστε την εξαγωγή ClickHouse στην ενότητα «Παρακολούθηση» για να επιλέξετε ποιους διακομιστές θα εξάγετε. Η ανεξάρτητη πολιτική της υποστηρίζει όλους τους διακομιστές, ρητές συμπεριλήψεις και εξαιρέσεις· οι εξαιρέσεις υπερισχύουν πάντα.</value>
+  </data>
+  <data name="Used percent: MemUsed divided by MemUsed + MemFree + MemBuf + MemCach, times 100. Return null when the total is zero. Plot the four fields separately for memory composition." xml:space="preserve">
+    <value>Ποσοστό χρήσης: MemUsed διαιρεμένο με MemUsed + MemFree + MemBuf + MemCach, επί 100. Επιστρέφει null όταν το σύνολο είναι μηδέν. Γράφει τα τέσσερα πεδία ξεχωριστά για τη σύσταση της μνήμης.</value>
+  </data>
+  <data name="We recommend ClickHouse and Grafana for exploring your StatHub history. Preserve raw server samples, compare several machines, and switch from a fleet overview to a single server with one dropdown." xml:space="preserve">
+    <value>Σας προτείνουμε το ClickHouse και το Grafana για την εξερεύνηση του ιστορικού του StatHub. Διατηρήστε τα ακατέργαστα δείγματα διακομιστή, συγκρίνετε πολλαπλές συσκευές και μεταβείτε από μια εικόνα συνόλου σε έναν μεμονωμένο διακομιστή με μία μόνο αναδυόμενη λίστα.</value>
+  </data>
+
+</root>

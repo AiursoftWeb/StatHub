@@ -57,11 +57,17 @@
   <data name="Automatic, AI-driven translation into 28 languages for global reach." xml:space="preserve">
     <value>Automatisk, AI-driven översättning till 28 språk för global räckvidd.</value>
   </data>
+  <data name="Build Dashboard" xml:space="preserve">
+    <value>Skapa dashboard</value>
+  </data>
   <data name="Build your next big thing," xml:space="preserve">
     <value>Bygg din nästa stora grej,</value>
   </data>
   <data name="Built-in User Management" xml:space="preserve">
     <value>Inbyggd användarhantering</value>
+  </data>
+  <data name="ClickHouse Export" xml:space="preserve">
+    <value>Export till ClickHouse</value>
   </data>
   <data name="Comes with full Docker support for simplified, consistent, and reliable deployments." xml:space="preserve">
     <value>Levererar fullt Docker-stöd för förenklade, konsekventa och pålitliga distributioner.</value>
@@ -174,6 +180,9 @@
   <data name="Keep an eye on your infrastructure with intuitive dashboards and detailed metrics." xml:space="preserve">
     <value>Håll koll på din infrastruktur med intuitiva instrumentpaneler och detaljerade mått.</value>
   </data>
+  <data name="Keep raw server samples in ClickHouse with efficient five-minute batch exports." xml:space="preserve">
+    <value>Spara råa servermätvärden i ClickHouse med effektiva batchjobb var femte minut.</value>
+  </data>
   <data name="Lightweight Agents" xml:space="preserve">
     <value>Lätta agenter</value>
   </data>
@@ -278,6 +287,9 @@
   </data>
   <data name="This is a template project, where we start the voyager..." xml:space="preserve">
     <value>Det här är ett mallprojekt, där vi startar resan...</value>
+  </data>
+  <data name="Turn your history into Grafana dashboards, from fleet overviews to individual servers." xml:space="preserve">
+    <value>Förvandla din historik till Grafana-dashboards, från översikter över hela serverparken till enskilda servrar.</value>
   </data>
   <data name="Usage" xml:space="preserve">
     <value>Användning</value>

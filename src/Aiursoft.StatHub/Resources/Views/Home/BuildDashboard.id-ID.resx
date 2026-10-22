@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="1. Enable ClickHouse export" xml:space="preserve">
+    <value>1. Aktifkan ekspor ClickHouse</value>
+  </data>
+  <data name="2. Check your first batch" xml:space="preserve">
+    <value>2. Periksa batch pertama Anda</value>
+  </data>
+  <data name="3. Connect Grafana to ClickHouse" xml:space="preserve">
+    <value>3. Hubungkan Grafana ke ClickHouse</value>
+  </data>
+  <data name="4. Add a server dropdown" xml:space="preserve">
+    <value>4. Tambahkan dropdown server</value>
+  </data>
+  <data name="5. Build your resource panels" xml:space="preserve">
+    <value>5. Bangun panel sumber daya Anda</value>
+  </data>
+  <data name="A StatHub dashboard in Grafana: select several servers to compare their resource history, or choose one for a closer look. Open the image to view it at full size." xml:space="preserve">
+    <value>Dasbor StatHub di Grafana: pilih beberapa server untuk membandingkan riwayat sumber dayanya, atau pilih satu untuk dilihat lebih dekat. Buka gambar untuk melihatnya dengan ukuran penuh.</value>
+  </data>
+  <data name="Add a Time series visualization with your ClickHouse data source and SQL query type Time series. Start with CPU average and peak:" xml:space="preserve">
+    <value>Tambahkan visualisasi Time series dengan sumber data ClickHouse dan jenis kueri SQL Time series. Mulailah dengan rata-rata dan puncak CPU:</value>
+  </data>
+  <data name="Average DskRead and DskWrit, divided by 1048576, for MiB/s." xml:space="preserve">
+    <value>Rata-rata DskRead dan DskWrit, dibagi 1048576, untuk MiB/s.</value>
+  </data>
+  <data name="Average Load1M, Load5M, and Load15M. These are raw load averages, not CPU percentages." xml:space="preserve">
+    <value>Rata-rata Load1M, Load5M, dan Load15M. Ini adalah nilai rata-rata beban mentah, bukan persentase CPU.</value>
+  </data>
+  <data name="Average NetRecv and NetSend, multiplied by 8 / 1000000, for Mbps." xml:space="preserve">
+    <value>Rata-rata NetRecv dan NetSend, dikalikan dengan 8 / 1000000, untuk Mbps.</value>
+  </data>
+  <data name="Build Dashboard" xml:space="preserve">
+    <value>Buat Dasbor</value>
+  </data>
+  <data name="Count archived samples in each time bucket to see reporting gaps and batch arrivals." xml:space="preserve">
+    <value>Hitung sampel arsip dalam setiap bucket waktu untuk melihat celah pelaporan dan kedatangan batch.</value>
+  </data>
+  <data name="Create a dashboard and add a Query variable named Server using your ClickHouse data source. Enable Multi-value and Include All, leave Custom all value empty, and refresh the variable on dashboard load. Use this query:" xml:space="preserve">
+    <value>Buat dashboard dan tambahkan variabel Query bernama Server menggunakan sumber data ClickHouse Anda. Aktifkan Multi-value dan Include All, biarkan Custom all value kosong, dan segarkan variabel saat dashboard dimuat. Gunakan query ini:</value>
+  </data>
+  <data name="Deploy StatHub" xml:space="preserve">
+    <value>Deploy StatHub</value>
+  </data>
+  <data name="Disk I/O" xml:space="preserve">
+    <value>Disk I/O</value>
+  </data>
+  <data name="For an overview table, group by ClientId and show recent averages, peaks, and max(ReceivedTime). Avoid treating a metric chosen from tied receipt timestamps as the exact last sample." xml:space="preserve">
+    <value>Untuk tabel ringkasan, kelompokkan berdasarkan ClientId dan tampilkan rata-rata terbaru, puncak, dan max(ReceivedTime). Hindari menganggap metrik yang dipilih dari timestamp penerimaan yang sama sebagai sampel terakhir yang tepat.</value>
+  </data>
+  <data name="For Docker, configure the same settings with environment variables such as MetricsExport__Enabled=true and MetricsExport__ConnectionString. Use your deployment&apos;s secret configuration for the real password. Inside a container, localhost refers to that container; use a reachable ClickHouse hostname." xml:space="preserve">
+    <value>Untuk Docker, atur pengaturan yang sama menggunakan variabel lingkungan seperti MetricsExport__Enabled=true dan MetricsExport__ConnectionString. Gunakan konfigurasi rahasia deployment Anda untuk kata sandi yang sebenarnya. Di dalam container, localhost merujuk pada container tersebut; gunakan nama host ClickHouse yang dapat dijangkau.</value>
+  </data>
+  <data name="Grafana dashboard comparing CPU, memory, network, disk I/O, load, and archived samples across selected StatHub servers." xml:space="preserve">
+    <value>Dasbor Grafana yang membandingkan CPU, memori, jaringan, I/O disk, beban, dan sampel arsip dari server StatHub yang dipilih.</value>
+  </data>
+  <data name="Install ClickHouse" xml:space="preserve">
+    <value>Instal ClickHouse</value>
+  </data>
+  <data name="Install Grafana and the official Grafana ClickHouse data source plugin. Add a ClickHouse data source with the hostname reachable from Grafana, HTTP port 8123 for this example, and StatHubMetrics as the default database. Use Save &amp; test to verify the connection." xml:space="preserve">
+    <value>Installasi Grafana dan plugin sumber data ClickHouse Grafana resmi. Tambahkan sumber data ClickHouse dengan nama host yang dapat dijangkau dari Grafana, port HTTP 8123 untuk contoh ini, dan StatHubMetrics sebagai database default. Gunakan Simpan &amp; uji untuk memverifikasi koneksi.</value>
+  </data>
+  <data name="Learn more about ClickHouse queries and Grafana macros" xml:space="preserve">
+    <value>Pelajari lebih lanjut tentang kueri ClickHouse dan makro Grafana</value>
+  </data>
+  <data name="Let agents report and wait for a five-minute export cycle. In ClickHouse, check that servers and recent receipts appear:" xml:space="preserve">
+    <value>Biarkan agen mengirimkan laporan, lalu tunggu satu siklus ekspor lima menit. Di ClickHouse, periksa apakah server dan data yang baru diterima sudah muncul:</value>
+  </data>
+  <data name="Live server status. Your history, your dashboards." xml:space="preserve">
+    <value>Status server secara real-time. Riwayat Anda, dasbor Anda.</value>
+  </data>
+  <data name="Load" xml:space="preserve">
+    <value>Beban</value>
+  </data>
+  <data name="Memory" xml:space="preserve">
+    <value>Memori</value>
+  </data>
+  <data name="Merge this section into your StatHub appsettings.json, replace the host and credentials, then restart your StatHub instance:" xml:space="preserve">
+    <value>Gabungkan bagian ini ke file appsettings.json StatHub Anda, ganti host dan kredensial, lalu mulai ulang instans StatHub Anda:</value>
+  </data>
+  <data name="Metrics and units" xml:space="preserve">
+    <value>Metrik dan unit</value>
+  </data>
+  <data name="Network" xml:space="preserve">
+    <value>Jaringan</value>
+  </data>
+  <data name="Network and disk fields are already rates in bytes per second; do not apply rate or derivative again. CPU core counts and disk capacity are not exported. Memory used share is not Linux MemAvailable." xml:space="preserve">
+    <value>Bidang jaringan dan disk sudah berupa laju dalam byte per detik; jangan terapkan laju atau turunan lagi. Jumlah inti CPU dan kapasitas disk tidak diekspor. Proporsi memori yang digunakan bukan MemAvailable Linux.</value>
+  </data>
+  <data name="Official ClickHouse data source guide" xml:space="preserve">
+    <value>Panduan sumber data ClickHouse resmi</value>
+  </data>
+  <data name="Panel" xml:space="preserve">
+    <value>Panel</value>
+  </data>
+  <data name="Query ServerMetricsLatest for dashboards so retries do not inflate your results. HasSampleTime=1 means the agent supplied the source timestamp. Older agents use receipt time and mark HasSampleTime=0; samples in one report may share a timestamp, so their exact source timing and order are unavailable." xml:space="preserve">
+    <value>Kueri ServerMetricsLatest untuk dashboard agar percobaan ulang tidak menggelembungkan hasil Anda. HasSampleTime=1 berarti agen menyediakan timestamp sumber. Agen yang lebih lama menggunakan waktu penerimaan dan menandai HasSampleTime=0; sampel dalam satu laporan dapat berbagi timestamp, sehingga waktu sumber dan urutan persis mereka tidak tersedia.</value>
+  </data>
+  <data name="Raw samples are batched every five minutes rather than reduced to five-minute averages. The initial retention is 30 days. Changing RetentionDays later does not alter an existing table&apos;s TTL. The buffer is bounded and held in memory; a restart loses samples that have not been written yet." xml:space="preserve">
+    <value>Sampel mentah dikirim dalam batch setiap lima menit, bukan diringkas menjadi rata-rata lima menit. Retensi awal adalah 30 hari. Mengubah RetentionDays di kemudian hari tidak mengubah TTL tabel yang sudah ada. Buffer memiliki kapasitas terbatas dan disimpan di memori; jika aplikasi dimulai ulang, sampel yang belum ditulis akan hilang.</value>
+  </data>
+  <data name="Samples" xml:space="preserve">
+    <value>Sampel</value>
+  </data>
+  <data name="Self Host" xml:space="preserve">
+    <value>Self-Host</value>
+  </data>
+  <data name="Set Grafana&apos;s Query Timeout to 15 seconds. In the ClickHouse reader&apos;s settings profile, use readonly=1 and max_threads=2, and allow max_execution_time to change in read-only mode with CHANGEABLE_IN_READONLY, as described in the official configuration guide." xml:space="preserve">
+    <value>Atur Query Timeout Grafana menjadi 15 detik. Dalam profil pengaturan pembaca ClickHouse, gunakan readonly=1 dan max_threads=2, serta izinkan max_execution_time untuk diubah dalam mode baca-saja dengan CHANGEABLE_IN_READONLY, seperti yang dijelaskan dalam panduan konfigurasi resmi.</value>
+  </data>
+  <data name="Set the CPU unit to Percent (0-100). Keep the time and server filters when adapting the query to other panels. All removes the server restriction; individual selections use safely quoted ClientId values." xml:space="preserve">
+    <value>Atur unit CPU menjadi Persen (0-100). Pertahankan filter waktu dan server saat menyesuaikan kueri ke panel lain. All menghapus batasan server; pilihan individual menggunakan nilai ClientId yang dikutip dengan aman.</value>
+  </data>
+  <data name="Start with a self-hosted StatHub instance and a ClickHouse server reachable from it. Keep your existing agents reporting to StatHub; export happens centrally through the Aiursoft ClickHouse SDK." xml:space="preserve">
+    <value>Mulai dengan instance StatHub self-hosted dan server ClickHouse yang dapat dijangkau darinya. Biarkan agen-agen Anda yang ada tetap melaporkan ke StatHub; ekspor terjadi secara terpusat melalui Aiursoft ClickHouse SDK.</value>
+  </data>
+  <data name="Start with the last six hours in UTC, a five-minute dashboard refresh, and about 720 points per series. Keep a minimum 30-second bucket and let it grow for longer ranges. Leave missing data empty instead of filling it with zero. Data age is not proof that a server is offline." xml:space="preserve">
+    <value>Mulailah dengan rentang enam jam terakhir dalam UTC, penyegaran dasbor setiap lima menit, dan sekitar 720 titik per deret. Pertahankan interval minimum 30 detik dan biarkan interval tersebut bertambah untuk rentang yang lebih panjang. Biarkan data yang tidak tersedia tetap kosong, jangan mengisinya dengan nol. Usia data bukanlah bukti bahwa server sedang offline.</value>
+  </data>
+  <data name="The ClickHouse plugin reads the first column as the value and the second as the display text. ClientId keeps machines separate even when names match. Search and select one or several servers, or choose All. This menu lists servers reporting within the last 24 hours; reload to discover new servers." xml:space="preserve">
+    <value>Plugin ClickHouse membaca kolom pertama sebagai nilai dan kolom kedua sebagai teks tampilan. ClientId memisahkan mesin meskipun nama mesinnya sama. Cari dan pilih satu atau beberapa server, atau pilih Semua. Menu ini mencantumkan server yang melaporkan dalam 24 jam terakhir; muat ulang untuk menemukan server baru.</value>
+  </data>
+  <data name="The exporter needs permission to create its database, table, and view, and to insert and select metrics. On the first non-empty batch it creates StatHubMetrics.ServerMetrics and the deduplicated ServerMetricsLatest view automatically." xml:space="preserve">
+    <value>Ekspor memerlukan izin untuk membuat basis data, tabel, dan view-nya, serta untuk menyisipkan dan memilih metrik. Pada batch non-kosong pertama, ia secara otomatis membuat StatHubMetrics.ServerMetrics dan view deduplikasi ServerMetricsLatest.</value>
+  </data>
+  <data name="Use a separate read-only Grafana account with SELECT permission on both ServerMetricsLatest and its underlying ServerMetrics table. Keep the exporter credentials in StatHub." xml:space="preserve">
+    <value>Gunakan akun Grafana terpisah yang hanya memiliki izin SELECT pada ServerMetricsLatest dan tabel ServerMetrics yang mendasarinya. Simpan kredensial eksportir di StatHub.</value>
+  </data>
+  <data name="Use ClickHouse export under Monitoring to choose which servers to export. Its independent policy supports all servers, explicit inclusions, and exclusions; exclusions always win." xml:space="preserve">
+    <value>Gunakan ekspor ClickHouse di bawah Monitoring untuk memilih server mana yang akan diekspor. Kebutuhannya independen mendukung semua server, inklusi eksplisit, dan eksklusi; eksklusi selalu menang.</value>
+  </data>
+  <data name="Used percent: MemUsed divided by MemUsed + MemFree + MemBuf + MemCach, times 100. Return null when the total is zero. Plot the four fields separately for memory composition." xml:space="preserve">
+    <value>Persentase penggunaan: MemUsed dibagi MemUsed + MemFree + MemBuf + MemCach, lalu dikalikan 100. Kembalikan null jika totalnya nol. Tampilkan keempat field secara terpisah untuk melihat komposisi memori.</value>
+  </data>
+  <data name="We recommend ClickHouse and Grafana for exploring your StatHub history. Preserve raw server samples, compare several machines, and switch from a fleet overview to a single server with one dropdown." xml:space="preserve">
+    <value>Kami merekomendasikan ClickHouse dan Grafana untuk menjelajahi riwayat StatHub Anda. Simpan sampel server mentah, bandingkan beberapa mesin, dan beralih dari ringkasan armada ke satu server dengan satu dropdown.</value>
+  </data>
+
+</root>

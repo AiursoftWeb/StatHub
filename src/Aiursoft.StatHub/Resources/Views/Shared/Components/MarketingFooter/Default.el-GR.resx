@@ -27,6 +27,9 @@
   <data name="Aiursoft Template - A modern, feature-rich, and highly extensible foundation for your next web application." xml:space="preserve">
     <value>Aiursoft Template - Ένα σύγχρονο, πλούσιο σε λειτουργίες και ιδιαίτερα επεκτάσιμο θεμέλιο για την επόμενη εφαρμογή σας web.</value>
   </data>
+  <data name="Build Dashboard" xml:space="preserve">
+    <value>Δημιουργία Πίνακα Ελέγχου</value>
+  </data>
   <data name="Community" xml:space="preserve">
     <value>Κοινότητα</value>
   </data>
@@ -35,6 +38,9 @@
   </data>
   <data name="Documentation" xml:space="preserve">
     <value>Τεκμηρίωση</value>
+  </data>
+  <data name="Export raw metrics to ClickHouse. Build your own Grafana dashboards." xml:space="preserve">
+    <value>Εξαγάγετε ακατέργαστες μετρικές στο ClickHouse. Δημιουργήστε τους δικούς σας πίνακες ελέγχου στο Grafana.</value>
   </data>
   <data name="Get Started" xml:space="preserve">
     <value>Ξεκινήστε</value>
@@ -56,6 +62,9 @@
   </data>
   <data name="Resources" xml:space="preserve">
     <value>Πόροι</value>
+  </data>
+  <data name="Self Host" xml:space="preserve">
+    <value>Φιλοξενία στον δικό σας διακομιστή</value>
   </data>
   <data name="Social" xml:space="preserve">
     <value>Κοινωνικά</value>

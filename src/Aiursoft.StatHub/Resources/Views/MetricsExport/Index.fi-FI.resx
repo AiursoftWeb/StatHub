@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="All servers" xml:space="preserve">
+    <value>Kaikki palvelimet</value>
+  </data>
+  <data name="An excluded server is not exported, even when all servers are selected or both boxes are checked." xml:space="preserve">
+    <value>Poissuljettua palvelinta ei viedä, vaikka kaikki palvelimet olisi valittu tai molemmat valintaruudut olisivat merkitty.</value>
+  </data>
+  <data name="Build Dashboard" xml:space="preserve">
+    <value>Rakenna valvontapaneeli</value>
+  </data>
+  <data name="ClickHouse export" xml:space="preserve">
+    <value>ClickHouse-vienti</value>
+  </data>
+  <data name="Configure the ClickHouse connection and retention in the MetricsExport section of appsettings.json or environment variables. Export selection is saved separately from AlertCenter monitoring and does not store credentials." xml:space="preserve">
+    <value>Määritä ClickHouse-yhteys ja tietojen säilytysaika appsettings.json-tiedoston MetricsExport-osiossa tai ympäristömuuttujissa. Viennin valinta tallennetaan erikseen AlertCenter-valvonnasta, eikä tunnistetietoja tallenneta.</value>
+  </data>
+  <data name="Enable export policy" xml:space="preserve">
+    <value>Ota vientikäytäntö käyttöön</value>
+  </data>
+  <data name="Every server is exported unless explicitly excluded. Newly connected servers are included automatically." xml:space="preserve">
+    <value>Jokainen palvelin viedään, ellei sitä ole nimenomaan suljettu pois. Uudet yhdistetyt palvelimet otetaan mukaan automaattisesti.</value>
+  </data>
+  <data name="Exclude" xml:space="preserve">
+    <value>Sulje pois</value>
+  </data>
+  <data name="Exclude always wins" xml:space="preserve">
+    <value>Sulje voittaa aina</value>
+  </data>
+  <data name="Exclude server" xml:space="preserve">
+    <value>Sulje palvelin pois</value>
+  </data>
+  <data name="Excluded servers always take precedence. When all servers are exported, individual inclusions are unnecessary." xml:space="preserve">
+    <value>Pois suljetut palvelimet ovat aina etusijalla. Kun kaikki palvelimet viedään, yksittäisiä sisällytyksiä ei tarvita.</value>
+  </data>
+  <data name="Export all servers, including newly connected servers" xml:space="preserve">
+    <value>Vie kaikki palvelimet, myös uudet yhdistetyt palvelimet</value>
+  </data>
+  <data name="Export policy" xml:space="preserve">
+    <value>Vienti</value>
+  </data>
+  <data name="Green" xml:space="preserve">
+    <value>Vihreä</value>
+  </data>
+  <data name="Grey (offline)" xml:space="preserve">
+    <value>Harmaa (pois päältä)</value>
+  </data>
+  <data name="How export selection works" xml:space="preserve">
+    <value>Miten viennin valinta toimii</value>
+  </data>
+  <data name="Include" xml:space="preserve">
+    <value>Sisällytä</value>
+  </data>
+  <data name="Include server" xml:space="preserve">
+    <value>Sisällytä palvelin</value>
+  </data>
+  <data name="Last report" xml:space="preserve">
+    <value>Viimeisin raportti</value>
+  </data>
+  <data name="No report since restart" xml:space="preserve">
+    <value>Ei raporttia uudelleenkäynnistyksen jälkeen</value>
+  </data>
+  <data name="No server is exported. Your include and exclude selections remain saved for when you enable the policy again." xml:space="preserve">
+    <value>Palvelimia ei viedä. Sisällytys- ja poissulkemisvalintasi säilyvät, kunnes otat käytännön uudelleen käyttöön.</value>
+  </data>
+  <data name="Policies and selections survive a restart. Servers without a new report remain listed by ClientId when they have a saved selection. Raw samples are still exported in five-minute batches, and live monitoring and AlertCenter rules are unchanged." xml:space="preserve">
+    <value>Käytännöt ja valinnat säilyvät uudelleenkäynnistyksen jälkeen. Palvelimet, joilta ei ole saatu uutta raporttia, pysyvät luettelossa ClientId-tunnuksensa perusteella, jos niille on tallennettu valinta. Raakanäytteet viedään edelleen viiden minuutin erissä, eikä reaaliaikaiseen valvontaan tai AlertCenter-sääntöihin tehdä muutoksia.</value>
+  </data>
+  <data name="Policy disabled" xml:space="preserve">
+    <value>Käytäntö poistettu käytöstä</value>
+  </data>
+  <data name="Red" xml:space="preserve">
+    <value>Punainen</value>
+  </data>
+  <data name="Save policy and server selection" xml:space="preserve">
+    <value>Tallenna käytäntö ja palvelinvalinnat</value>
+  </data>
+  <data name="Saving applies the selection to new samples and removes excluded samples still waiting in memory. An already running ClickHouse write may finish before saving completes. Previously stored history is kept." xml:space="preserve">
+    <value>Tallennus soveltaa valinnan uusiin näytteisiin ja poistaa muistissa vielä odottavat suljetut näytteet. Jo käynnissä oleva ClickHouse-kirjoitus saattaa päätyä ennen tallennuksen valmistumista. Aiemmin tallennettu historia säilyy.</value>
+  </data>
+  <data name="Selected servers only" xml:space="preserve">
+    <value>Vain valitut palvelimet</value>
+  </data>
+  <data name="Server" xml:space="preserve">
+    <value>Palvelin</value>
+  </data>
+  <data name="Server selection" xml:space="preserve">
+    <value>Palvelimen valinta</value>
+  </data>
+  <data name="Server selection follows the same include and exclude rules as AlertCenter monitoring, with an independent policy." xml:space="preserve">
+    <value>Palvelinten valinnassa noudatetaan samoja sisällyttämis- ja poissulkemissääntöjä kuin AlertCenterin valvonnassa, mutta käytössä on erillinen käytäntö.</value>
+  </data>
+  <data name="State" xml:space="preserve">
+    <value>Tila</value>
+  </data>
+  <data name="The ClickHouse connection is disabled in configuration. You can save your server selection now; exporting also requires MetricsExport:Enabled and a valid connection string." xml:space="preserve">
+    <value>ClickHouse-yhteys on poistettu käytöstä asetuksissa. Voit tallentaa palvelimen valintasi nyt; vienti vaatii myös MetricsExport:Enabled-asetuksen ja kelvollisen yhteysmerkkijonon.</value>
+  </data>
+  <data name="Turn off all servers to export only servers explicitly marked Include. With no inclusions, nothing is exported." xml:space="preserve">
+    <value>Poista kaikkien palvelinten valinta, jotta viedään vain palvelimet, jotka on erikseen merkitty mukaan otettaviksi. Jos yhtään palvelinta ei ole merkitty mukaan otettavaksi, mitään ei viedä.</value>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>Tuntematon</value>
+  </data>
+  <data name="When changes take effect" xml:space="preserve">
+    <value>Milloin muutokset tulevat voimaan</value>
+  </data>
+  <data name="Yellow" xml:space="preserve">
+    <value>Keltainen</value>
+  </data>
+
+</root>

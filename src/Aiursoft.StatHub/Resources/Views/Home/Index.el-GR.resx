@@ -57,11 +57,17 @@
   <data name="Automatic, AI-driven translation into 28 languages for global reach." xml:space="preserve">
     <value>Αυτόματη, τεχνητή νοημοσύνη μετάφραση σε 28 γλώσσες για παγκόσμια εμβέλεια.</value>
   </data>
+  <data name="Build Dashboard" xml:space="preserve">
+    <value>Δημιουργία Πίνακα Ελέγχου</value>
+  </data>
   <data name="Build your next big thing," xml:space="preserve">
     <value>Δημιουργήστε το επόμενό σας μεγάλο πράγμα,</value>
   </data>
   <data name="Built-in User Management" xml:space="preserve">
     <value>Ενσωματωμένη Διαχείριση Χρηστών</value>
+  </data>
+  <data name="ClickHouse Export" xml:space="preserve">
+    <value>Εξαγωγή στο ClickHouse</value>
   </data>
   <data name="Comes with full Docker support for simplified, consistent, and reliable deployments." xml:space="preserve">
     <value>Διαθέτει πλήρη υποστήριξη Docker για απλοποιημένες, συνεπείς και αξιόπιστες αναπτύξεις.</value>
@@ -174,6 +180,9 @@
   <data name="Keep an eye on your infrastructure with intuitive dashboards and detailed metrics." xml:space="preserve">
     <value>Παρακολουθήστε την υποδομή σας με εύκολα συνοπτικά διαγράμματα και λεπτομερείς μετρήσεις.</value>
   </data>
+  <data name="Keep raw server samples in ClickHouse with efficient five-minute batch exports." xml:space="preserve">
+    <value>Διατηρήστε τα αμετάφραστα δείγματα διακομιστή στο ClickHouse με αποτελεσματικές εξαγωγές παρτίδων ανά πέντε λεπτά.</value>
+  </data>
   <data name="Lightweight Agents" xml:space="preserve">
     <value>Ελαφριά Εργαλεία</value>
   </data>
@@ -278,6 +287,9 @@
   </data>
   <data name="This is a template project, where we start the voyager..." xml:space="preserve">
     <value>Αυτό είναι ένα πρότυπο έργο, από όπου ξεκινάμε το ταξίδι...</value>
+  </data>
+  <data name="Turn your history into Grafana dashboards, from fleet overviews to individual servers." xml:space="preserve">
+    <value>Μετατρέψτε το ιστορικό σας σε πίνακες Grafana, από εικόνες ολόκληρων στόλων μέχρι μεμονωμένους διακομιστές.</value>
   </data>
   <data name="Usage" xml:space="preserve">
     <value>Χρήση</value>

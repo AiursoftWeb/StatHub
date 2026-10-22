@@ -57,11 +57,17 @@
   <data name="Automatic, AI-driven translation into 28 languages for global reach." xml:space="preserve">
     <value>Traducere automată, bazată pe inteligență artificială, în 28 de limbi pentru o acoperire globală.</value>
   </data>
+  <data name="Build Dashboard" xml:space="preserve">
+    <value>Creează un tablou de bord</value>
+  </data>
   <data name="Build your next big thing," xml:space="preserve">
     <value>Construiește-ți următorul proiect important,</value>
   </data>
   <data name="Built-in User Management" xml:space="preserve">
     <value>Gestionare Utilizatori Integrată</value>
+  </data>
+  <data name="ClickHouse Export" xml:space="preserve">
+    <value>Export în ClickHouse</value>
   </data>
   <data name="Comes with full Docker support for simplified, consistent, and reliable deployments." xml:space="preserve">
     <value>Oferă suport complet pentru Docker, pentru implementări simplificate, consistente și fiabile.</value>
@@ -174,6 +180,9 @@
   <data name="Keep an eye on your infrastructure with intuitive dashboards and detailed metrics." xml:space="preserve">
     <value>Urmărește-ți infrastructura cu panouri intuitive și metrice detaliate.</value>
   </data>
+  <data name="Keep raw server samples in ClickHouse with efficient five-minute batch exports." xml:space="preserve">
+    <value>Păstrați mostre brute de server în ClickHouse cu exporturi eficiente prin loturi de cinci minute.</value>
+  </data>
   <data name="Lightweight Agents" xml:space="preserve">
     <value>Agenti ușori</value>
   </data>
@@ -278,6 +287,9 @@
   </data>
   <data name="This is a template project, where we start the voyager..." xml:space="preserve">
     <value>Acesta este un proiect tipic, de unde începem călătoria...</value>
+  </data>
+  <data name="Turn your history into Grafana dashboards, from fleet overviews to individual servers." xml:space="preserve">
+    <value>Transformă istoricul în tablouri de bord Grafana, de la o imagine de ansamblu asupra flotei până la servere individuale.</value>
   </data>
   <data name="Usage" xml:space="preserve">
     <value>Utilizare</value>

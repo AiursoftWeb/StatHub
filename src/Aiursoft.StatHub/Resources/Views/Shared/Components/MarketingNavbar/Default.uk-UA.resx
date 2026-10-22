@@ -24,6 +24,9 @@
   <data name="Aiursoft Template" xml:space="preserve">
     <value>Шаблон Aiursoft</value>
   </data>
+  <data name="Build Dashboard" xml:space="preserve">
+    <value>Створити панель керування</value>
+  </data>
   <data name="Community" xml:space="preserve">
     <value>Спільнота</value>
   </data>
@@ -32,6 +35,9 @@
   </data>
   <data name="GitHub" xml:space="preserve">
     <value>GitHub</value>
+  </data>
+  <data name="Self Host" xml:space="preserve">
+    <value>Самостійне розміщення</value>
   </data>
   <data name="Source Code" xml:space="preserve">
     <value>Вихідний код</value>
