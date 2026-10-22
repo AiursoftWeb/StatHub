@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="All servers" xml:space="preserve">
+    <value>Усі сервери</value>
+  </data>
+  <data name="An excluded server is not exported, even when all servers are selected or both boxes are checked." xml:space="preserve">
+    <value>Виключений сервер не експортується, навіть якщо вибрано всі сервери або позначено обидві прапорці.</value>
+  </data>
+  <data name="Build Dashboard" xml:space="preserve">
+    <value>Створити панель керування</value>
+  </data>
+  <data name="ClickHouse export" xml:space="preserve">
+    <value>Експорт ClickHouse</value>
+  </data>
+  <data name="Configure the ClickHouse connection and retention in the MetricsExport section of appsettings.json or environment variables. Export selection is saved separately from AlertCenter monitoring and does not store credentials." xml:space="preserve">
+    <value>Налаштуйте з&apos;єднання ClickHouse та зберігання в розділі MetricsExport файлу appsettings.json або змінних середовища. Вибір експорту зберігається окремо від моніторингу AlertCenter і не зберігає облікові дані.</value>
+  </data>
+  <data name="Enable export policy" xml:space="preserve">
+    <value>Увімкнути політику експорту</value>
+  </data>
+  <data name="Every server is exported unless explicitly excluded. Newly connected servers are included automatically." xml:space="preserve">
+    <value>Кожен сервер експортується, якщо його явно не виключено. Нові підключені сервери додаються автоматично.</value>
+  </data>
+  <data name="Exclude" xml:space="preserve">
+    <value>Виключити</value>
+  </data>
+  <data name="Exclude always wins" xml:space="preserve">
+    <value>Виключення завжди має пріоритет</value>
+  </data>
+  <data name="Exclude server" xml:space="preserve">
+    <value>Виключити сервер</value>
+  </data>
+  <data name="Excluded servers always take precedence. When all servers are exported, individual inclusions are unnecessary." xml:space="preserve">
+    <value>Виключені сервери завжди мають пріоритет. Коли експортується всі сервери, окремі включення не є необхідними.</value>
+  </data>
+  <data name="Export all servers, including newly connected servers" xml:space="preserve">
+    <value>Експортувати всі сервери, зокрема щойно підключені</value>
+  </data>
+  <data name="Export policy" xml:space="preserve">
+    <value>Політика експорту</value>
+  </data>
+  <data name="Green" xml:space="preserve">
+    <value>Зелений</value>
+  </data>
+  <data name="Grey (offline)" xml:space="preserve">
+    <value>Сірий (офлайн)</value>
+  </data>
+  <data name="How export selection works" xml:space="preserve">
+    <value>Як працює вибір для експорту</value>
+  </data>
+  <data name="Include" xml:space="preserve">
+    <value>Включити</value>
+  </data>
+  <data name="Include server" xml:space="preserve">
+    <value>Додати сервер</value>
+  </data>
+  <data name="Last report" xml:space="preserve">
+    <value>Останній звіт</value>
+  </data>
+  <data name="No report since restart" xml:space="preserve">
+    <value>Немає звіту після перезапуску</value>
+  </data>
+  <data name="No server is exported. Your include and exclude selections remain saved for when you enable the policy again." xml:space="preserve">
+    <value>Жоден сервер не експортується. Ваші налаштування включення та виключення залишаються збереженими, щоб ви могли скористатися ними, коли знову ввімкнете політику.</value>
+  </data>
+  <data name="Policies and selections survive a restart. Servers without a new report remain listed by ClientId when they have a saved selection. Raw samples are still exported in five-minute batches, and live monitoring and AlertCenter rules are unchanged." xml:space="preserve">
+    <value>Політики та вибрані параметри зберігаються після перезапуску. Сервери, від яких не надійшов новий звіт, залишаються у списку за ClientId, якщо для них збережено вибір. Необроблені зразки й надалі експортуються пакетами кожні п’ять хвилин, а правила live-моніторингу та AlertCenter не змінюються.</value>
+  </data>
+  <data name="Policy disabled" xml:space="preserve">
+    <value>Політика вимкнена</value>
+  </data>
+  <data name="Red" xml:space="preserve">
+    <value>Червоний</value>
+  </data>
+  <data name="Save policy and server selection" xml:space="preserve">
+    <value>Зберегти політику та вибір серверів</value>
+  </data>
+  <data name="Saving applies the selection to new samples and removes excluded samples still waiting in memory. An already running ClickHouse write may finish before saving completes. Previously stored history is kept." xml:space="preserve">
+    <value>Збереження застосовує вибір до нових зразків і видаляє виключені зразки, які все ще чекають у пам&apos;яті. Уже запущене записування в ClickHouse може завершитися до завершення збереження. Раніше збережена історія зберігається.</value>
+  </data>
+  <data name="Selected servers only" xml:space="preserve">
+    <value>Лише вибрані сервери</value>
+  </data>
+  <data name="Server" xml:space="preserve">
+    <value>Сервер</value>
+  </data>
+  <data name="Server selection" xml:space="preserve">
+    <value>Вибір серверів</value>
+  </data>
+  <data name="Server selection follows the same include and exclude rules as AlertCenter monitoring, with an independent policy." xml:space="preserve">
+    <value>Вибір серверів дотримується тих самих правил включення та виключення, що й моніторинг AlertCenter, з незалежною політикою.</value>
+  </data>
+  <data name="State" xml:space="preserve">
+    <value>Стан</value>
+  </data>
+  <data name="The ClickHouse connection is disabled in configuration. You can save your server selection now; exporting also requires MetricsExport:Enabled and a valid connection string." xml:space="preserve">
+    <value>Підключення до ClickHouse вимкнено в конфігурації. Зараз можна зберегти вибрані сервери; для експорту також потрібні параметр MetricsExport:Enabled і дійсний рядок підключення.</value>
+  </data>
+  <data name="Turn off all servers to export only servers explicitly marked Include. With no inclusions, nothing is exported." xml:space="preserve">
+    <value>Вимкніть усі сервери, щоб експортувати лише сервери, яким явно вказано «Включити». Якщо включень немає, нічого не експортується.</value>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>Невідомо</value>
+  </data>
+  <data name="When changes take effect" xml:space="preserve">
+    <value>Коли зміни набувають чинності</value>
+  </data>
+  <data name="Yellow" xml:space="preserve">
+    <value>Жовтий</value>
+  </data>
+
+</root>

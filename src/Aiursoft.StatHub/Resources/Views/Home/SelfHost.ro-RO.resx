@@ -36,6 +36,9 @@
   <data name="Binary path" xml:space="preserve">
     <value>Calea binarului</value>
   </data>
+  <data name="Build Dashboard" xml:space="preserve">
+    <value>Creează tabloul de bord</value>
+  </data>
   <data name="Config path" xml:space="preserve">
     <value>Cale configurare</value>
   </data>
@@ -59,6 +62,9 @@
   </data>
   <data name="Execute `npm install` at `wwwroot` folder." xml:space="preserve">
     <value>Execută `npm install` în folderul `wwwroot`.</value>
+  </data>
+  <data name="Export raw server metrics to ClickHouse in five-minute batches and explore your history in Grafana." xml:space="preserve">
+    <value>Exportați metricile brute ale serverului în ClickHouse în loturi de cinci minute și explorați-vă istoricul în Grafana.</value>
   </data>
   <data name="First, install Docker. Then run the following commands in a Linux shell:" xml:space="preserve">
     <value>Mai întâi, instalați Docker. Apoi rulați comenzile următoare într-un shell Linux:</value>

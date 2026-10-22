@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="All servers" xml:space="preserve">
+    <value>Semua server</value>
+  </data>
+  <data name="An excluded server is not exported, even when all servers are selected or both boxes are checked." xml:space="preserve">
+    <value>Server yang dikecualikan tidak diekspor, bahkan ketika semua server dipilih atau kedua kotak dicentang.</value>
+  </data>
+  <data name="Build Dashboard" xml:space="preserve">
+    <value>Buat Dasbor</value>
+  </data>
+  <data name="ClickHouse export" xml:space="preserve">
+    <value>Ekspor ClickHouse</value>
+  </data>
+  <data name="Configure the ClickHouse connection and retention in the MetricsExport section of appsettings.json or environment variables. Export selection is saved separately from AlertCenter monitoring and does not store credentials." xml:space="preserve">
+    <value>Konfigurasikan koneksi dan retensi ClickHouse di bagian MetricsExport pada appsettings.json atau melalui variabel lingkungan. Pilihan ekspor disimpan secara terpisah dari pemantauan AlertCenter dan tidak menyimpan kredensial.</value>
+  </data>
+  <data name="Enable export policy" xml:space="preserve">
+    <value>Aktifkan kebijakan ekspor</value>
+  </data>
+  <data name="Every server is exported unless explicitly excluded. Newly connected servers are included automatically." xml:space="preserve">
+    <value>Setiap server akan diekspor kecuali jika dikecualikan secara eksplisit. Server yang baru terhubung akan otomatis disertakan.</value>
+  </data>
+  <data name="Exclude" xml:space="preserve">
+    <value>Kecualikan</value>
+  </data>
+  <data name="Exclude always wins" xml:space="preserve">
+    <value>Pengecualian selalu diutamakan</value>
+  </data>
+  <data name="Exclude server" xml:space="preserve">
+    <value>Kecualikan server</value>
+  </data>
+  <data name="Excluded servers always take precedence. When all servers are exported, individual inclusions are unnecessary." xml:space="preserve">
+    <value>Server yang dikecualikan selalu diutamakan. Jika semua server diekspor, penyertaan server satu per satu tidak diperlukan.</value>
+  </data>
+  <data name="Export all servers, including newly connected servers" xml:space="preserve">
+    <value>Ekspor semua server, termasuk server yang baru terhubung</value>
+  </data>
+  <data name="Export policy" xml:space="preserve">
+    <value>Kebijakan Ekspor</value>
+  </data>
+  <data name="Green" xml:space="preserve">
+    <value>Hijau</value>
+  </data>
+  <data name="Grey (offline)" xml:space="preserve">
+    <value>Abu-abu (luring)</value>
+  </data>
+  <data name="How export selection works" xml:space="preserve">
+    <value>Cara kerja pemilihan ekspor</value>
+  </data>
+  <data name="Include" xml:space="preserve">
+    <value>Sertakan</value>
+  </data>
+  <data name="Include server" xml:space="preserve">
+    <value>Sertakan server</value>
+  </data>
+  <data name="Last report" xml:space="preserve">
+    <value>Laporan Terakhir</value>
+  </data>
+  <data name="No report since restart" xml:space="preserve">
+    <value>Tidak ada laporan sejak dimulai ulang</value>
+  </data>
+  <data name="No server is exported. Your include and exclude selections remain saved for when you enable the policy again." xml:space="preserve">
+    <value>Tidak ada server yang diekspor. Pilihan sertakan dan kecualikan Anda tetap tersimpan untuk digunakan kembali saat Anda mengaktifkan kebijakan ini.</value>
+  </data>
+  <data name="Policies and selections survive a restart. Servers without a new report remain listed by ClientId when they have a saved selection. Raw samples are still exported in five-minute batches, and live monitoring and AlertCenter rules are unchanged." xml:space="preserve">
+    <value>Kebijakan dan pilihan tetap tersimpan setelah sistem dimulai ulang. Server tanpa laporan baru tetap tercantum berdasarkan ClientId jika memiliki pilihan yang tersimpan. Sampel mentah tetap diekspor dalam batch lima menit, dan pemantauan langsung serta aturan AlertCenter tidak berubah.</value>
+  </data>
+  <data name="Policy disabled" xml:space="preserve">
+    <value>Kebijakan nonaktif</value>
+  </data>
+  <data name="Red" xml:space="preserve">
+    <value>Merah</value>
+  </data>
+  <data name="Save policy and server selection" xml:space="preserve">
+    <value>Simpan kebijakan dan pilihan server</value>
+  </data>
+  <data name="Saving applies the selection to new samples and removes excluded samples still waiting in memory. An already running ClickHouse write may finish before saving completes. Previously stored history is kept." xml:space="preserve">
+    <value>Menyimpan akan menerapkan seleksi ke sampel baru dan menghapus sampel yang dikecualikan yang masih menunggu di memori. Penulisan ClickHouse yang sudah berjalan mungkin selesai sebelum proses penyimpanan selesai. Riwayat yang sebelumnya disimpan tetap dipertahankan.</value>
+  </data>
+  <data name="Selected servers only" xml:space="preserve">
+    <value>Hanya server yang dipilih</value>
+  </data>
+  <data name="Server" xml:space="preserve">
+    <value>Server</value>
+  </data>
+  <data name="Server selection" xml:space="preserve">
+    <value>Pemilihan Server</value>
+  </data>
+  <data name="Server selection follows the same include and exclude rules as AlertCenter monitoring, with an independent policy." xml:space="preserve">
+    <value>Pemilihan server mengikuti aturan include dan exclude yang sama dengan pemantauan AlertCenter, dengan kebijakan yang independen.</value>
+  </data>
+  <data name="State" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="The ClickHouse connection is disabled in configuration. You can save your server selection now; exporting also requires MetricsExport:Enabled and a valid connection string." xml:space="preserve">
+    <value>Koneksi ClickHouse dinonaktifkan dalam konfigurasi. Anda dapat menyimpan pilihan server Anda sekarang; ekspor juga memerlukan MetricsExport:Enabled dan string koneksi yang valid.</value>
+  </data>
+  <data name="Turn off all servers to export only servers explicitly marked Include. With no inclusions, nothing is exported." xml:space="preserve">
+    <value>Matikan semua server untuk mengekspor hanya server yang secara eksplisit ditandai sebagai Include. Tanpa ada yang disertakan, tidak ada yang diekspor.</value>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>Tidak Diketahui</value>
+  </data>
+  <data name="When changes take effect" xml:space="preserve">
+    <value>Kapan perubahan berlaku</value>
+  </data>
+  <data name="Yellow" xml:space="preserve">
+    <value>Kuning</value>
+  </data>
+
+</root>

@@ -57,11 +57,17 @@
   <data name="Automatic, AI-driven translation into 28 languages for global reach." xml:space="preserve">
     <value>Автоматичний переклад за допомогою штучного інтелекту на 28 мов для глобального охоплення.</value>
   </data>
+  <data name="Build Dashboard" xml:space="preserve">
+    <value>Створити панель керування</value>
+  </data>
   <data name="Build your next big thing," xml:space="preserve">
     <value>Створіть свою наступну велику річ,</value>
   </data>
   <data name="Built-in User Management" xml:space="preserve">
     <value>Вбудоване керування користувачами</value>
+  </data>
+  <data name="ClickHouse Export" xml:space="preserve">
+    <value>Експорт ClickHouse</value>
   </data>
   <data name="Comes with full Docker support for simplified, consistent, and reliable deployments." xml:space="preserve">
     <value>Має повну підтримку Docker для спрощених, стабільних та надійних розгортань.</value>
@@ -174,6 +180,9 @@
   <data name="Keep an eye on your infrastructure with intuitive dashboards and detailed metrics." xml:space="preserve">
     <value>Слідкуйте за своєю інфраструктурою за допомогою інтуїтивних панелей керування та детальних метрик.</value>
   </data>
+  <data name="Keep raw server samples in ClickHouse with efficient five-minute batch exports." xml:space="preserve">
+    <value>Зберігайте сирові зразки серверів у ClickHouse з ефективними пакетними експортом кожні п’ять хвилин.</value>
+  </data>
   <data name="Lightweight Agents" xml:space="preserve">
     <value>Легкі агенти</value>
   </data>
@@ -278,6 +287,9 @@
   </data>
   <data name="This is a template project, where we start the voyager..." xml:space="preserve">
     <value>Це шаблонний проект, з якого ми починаємо нашу подорож...</value>
+  </data>
+  <data name="Turn your history into Grafana dashboards, from fleet overviews to individual servers." xml:space="preserve">
+    <value>Перетворіть історичні дані на дашборди Grafana — від огляду всього парку серверів до окремих серверів.</value>
   </data>
   <data name="Usage" xml:space="preserve">
     <value>Використання</value>

@@ -57,11 +57,17 @@
   <data name="Automatic, AI-driven translation into 28 languages for global reach." xml:space="preserve">
     <value>Automatisk, AI-drevet oversættelse til 28 sprog for global rækkevidde.</value>
   </data>
+  <data name="Build Dashboard" xml:space="preserve">
+    <value>Opret dashboard</value>
+  </data>
   <data name="Build your next big thing," xml:space="preserve">
     <value>Byg din næste store ting,</value>
   </data>
   <data name="Built-in User Management" xml:space="preserve">
     <value>Indbygget brugeradministration</value>
+  </data>
+  <data name="ClickHouse Export" xml:space="preserve">
+    <value>ClickHouse-eksport</value>
   </data>
   <data name="Comes with full Docker support for simplified, consistent, and reliable deployments." xml:space="preserve">
     <value>Kommer med fuld Docker-understøttelse til forenklede, konsistente og pålidelige installationer.</value>
@@ -174,6 +180,9 @@
   <data name="Keep an eye on your infrastructure with intuitive dashboards and detailed metrics." xml:space="preserve">
     <value>Hold øje med din infrastruktur med intuitive dashboard og detaljerede metrikker.</value>
   </data>
+  <data name="Keep raw server samples in ClickHouse with efficient five-minute batch exports." xml:space="preserve">
+    <value>Gem rå serverprøver i ClickHouse med effektive batch-eksporteringer hver femte minut.</value>
+  </data>
   <data name="Lightweight Agents" xml:space="preserve">
     <value>Lette agenter</value>
   </data>
@@ -278,6 +287,9 @@
   </data>
   <data name="This is a template project, where we start the voyager..." xml:space="preserve">
     <value>Dette er et skabelonprojekt, hvor vi starter rejsen...</value>
+  </data>
+  <data name="Turn your history into Grafana dashboards, from fleet overviews to individual servers." xml:space="preserve">
+    <value>Omdann din historik til Grafana-dashboards, fra flådeoversigter til individuelle servere.</value>
   </data>
   <data name="Usage" xml:space="preserve">
     <value>Brug</value>

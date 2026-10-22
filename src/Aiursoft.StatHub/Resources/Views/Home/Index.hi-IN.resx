@@ -57,11 +57,17 @@
   <data name="Automatic, AI-driven translation into 28 languages for global reach." xml:space="preserve">
     <value>वैश्विक पहुंच के लिए 28 भाषाओं में स्वचालित, AI-संचालित अनुवाद।</value>
   </data>
+  <data name="Build Dashboard" xml:space="preserve">
+    <value>डैशबोर्ड बनाएं</value>
+  </data>
   <data name="Build your next big thing," xml:space="preserve">
     <value>अपनी अगली बड़ी चीज़ बनाएं,</value>
   </data>
   <data name="Built-in User Management" xml:space="preserve">
     <value>अंतर्निहित उपयोगकर्ता प्रबंधन</value>
+  </data>
+  <data name="ClickHouse Export" xml:space="preserve">
+    <value>ClickHouse निर्यात</value>
   </data>
   <data name="Comes with full Docker support for simplified, consistent, and reliable deployments." xml:space="preserve">
     <value>पूर्ण Docker समर्थन के साथ आता है, जो सरल, सुसंगत और विश्वसनीय डेप्लॉयमेंट के लिए है।</value>
@@ -174,6 +180,9 @@
   <data name="Keep an eye on your infrastructure with intuitive dashboards and detailed metrics." xml:space="preserve">
     <value>अपने इंफ्रास्ट्रक्चर को आसान डैशबोर्ड और विस्तृत मीट्रिक्स के साथ निगरानी में रखें।</value>
   </data>
+  <data name="Keep raw server samples in ClickHouse with efficient five-minute batch exports." xml:space="preserve">
+    <value>ClickHouse में कच्चे सर्वर नमूने प्रभावी पाँच-मिनट के बैच निर्यात के साथ रखें।</value>
+  </data>
   <data name="Lightweight Agents" xml:space="preserve">
     <value>हल्के एजेंट्स</value>
   </data>
@@ -278,6 +287,9 @@
   </data>
   <data name="This is a template project, where we start the voyager..." xml:space="preserve">
     <value>यह एक टेम्पलेट प्रोजेक्ट है, जहाँ से हम वॉयजर की शुरुआत करते हैं...</value>
+  </data>
+  <data name="Turn your history into Grafana dashboards, from fleet overviews to individual servers." xml:space="preserve">
+    <value>अपनी इतिहास को Grafana डैशबोर्ड में बदलें, फ्लीट समीक्षाओं से लेकर व्यक्तिगत सर्वरों तक।</value>
   </data>
   <data name="Usage" xml:space="preserve">
     <value>प्रयोग</value>

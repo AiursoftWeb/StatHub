@@ -36,6 +36,9 @@
   <data name="Binary path" xml:space="preserve">
     <value>Шлях до бінарного файлу</value>
   </data>
+  <data name="Build Dashboard" xml:space="preserve">
+    <value>Створити панель</value>
+  </data>
   <data name="Config path" xml:space="preserve">
     <value>Шлях до конфігурації</value>
   </data>
@@ -59,6 +62,9 @@
   </data>
   <data name="Execute `npm install` at `wwwroot` folder." xml:space="preserve">
     <value>Виконайте `npm install` у папці `wwwroot`.</value>
+  </data>
+  <data name="Export raw server metrics to ClickHouse in five-minute batches and explore your history in Grafana." xml:space="preserve">
+    <value>Експортуйте сирі метрики сервера до ClickHouse пачками по п&apos;ять хвилин та досліджуйте свою історію в Grafana.</value>
   </data>
   <data name="First, install Docker. Then run the following commands in a Linux shell:" xml:space="preserve">
     <value>Спочатку встановіть Docker. Потім виконайте наступні команди в оболонці Linux:</value>

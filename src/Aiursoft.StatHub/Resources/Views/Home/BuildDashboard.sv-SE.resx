@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="1. Enable ClickHouse export" xml:space="preserve">
+    <value>1. Aktivera ClickHouse-export</value>
+  </data>
+  <data name="2. Check your first batch" xml:space="preserve">
+    <value>2. Kontrollera din första batch</value>
+  </data>
+  <data name="3. Connect Grafana to ClickHouse" xml:space="preserve">
+    <value>3. Anslut Grafana till ClickHouse</value>
+  </data>
+  <data name="4. Add a server dropdown" xml:space="preserve">
+    <value>4. Lägg till en serverrullista</value>
+  </data>
+  <data name="5. Build your resource panels" xml:space="preserve">
+    <value>5. Skapa dina resurspaneler</value>
+  </data>
+  <data name="A StatHub dashboard in Grafana: select several servers to compare their resource history, or choose one for a closer look. Open the image to view it at full size." xml:space="preserve">
+    <value>En StatHub-dashbord i Grafana: välj flera servrar för att jämföra deras resurshistorik, eller välj en för en närmare titt. Öppna bilden för att visa den i full storlek.</value>
+  </data>
+  <data name="Add a Time series visualization with your ClickHouse data source and SQL query type Time series. Start with CPU average and peak:" xml:space="preserve">
+    <value>Lägg till en tidsseriegraf med din ClickHouse-datakälla och frågetypen Time series för SQL. Börja med CPU-medelvärde och toppvärde:</value>
+  </data>
+  <data name="Average DskRead and DskWrit, divided by 1048576, for MiB/s." xml:space="preserve">
+    <value>Genomsnittet av DskRead och DskWrit, dividerat med 1048576, för MiB/s.</value>
+  </data>
+  <data name="Average Load1M, Load5M, and Load15M. These are raw load averages, not CPU percentages." xml:space="preserve">
+    <value>Genomsnitt för Load1M, Load5M och Load15M. Detta är råa belastningsmedelvärden, inte CPU-procent.</value>
+  </data>
+  <data name="Average NetRecv and NetSend, multiplied by 8 / 1000000, for Mbps." xml:space="preserve">
+    <value>Medelvärdet av NetRecv och NetSend multiplicerat med 8 / 1000000 för Mbps.</value>
+  </data>
+  <data name="Build Dashboard" xml:space="preserve">
+    <value>Skapa en instrumentpanel</value>
+  </data>
+  <data name="Count archived samples in each time bucket to see reporting gaps and batch arrivals." xml:space="preserve">
+    <value>Räkna arkiverade prover i varje tidsintervall för att se rapporteringsluckor och batchankomster.</value>
+  </data>
+  <data name="Create a dashboard and add a Query variable named Server using your ClickHouse data source. Enable Multi-value and Include All, leave Custom all value empty, and refresh the variable on dashboard load. Use this query:" xml:space="preserve">
+    <value>Skapa en instrumentpanel och lägg till en frågevariabel med namnet Server som använder din ClickHouse-datakälla. Aktivera Multi-value och Include All, lämna Custom all value tomt och uppdatera variabeln när instrumentpanelen läses in. Använd den här frågan:</value>
+  </data>
+  <data name="Deploy StatHub" xml:space="preserve">
+    <value>Distribuera StatHub</value>
+  </data>
+  <data name="Disk I/O" xml:space="preserve">
+    <value>Disk I/O</value>
+  </data>
+  <data name="For an overview table, group by ClientId and show recent averages, peaks, and max(ReceivedTime). Avoid treating a metric chosen from tied receipt timestamps as the exact last sample." xml:space="preserve">
+    <value>För en översiktstabell grupperar du efter ClientId och visar de senaste medelvärdena, toppvärdena och max(ReceivedTime). Betrakta inte ett mätvärde som valts bland flera med samma mottagningstid som det exakta senaste mätvärdet.</value>
+  </data>
+  <data name="For Docker, configure the same settings with environment variables such as MetricsExport__Enabled=true and MetricsExport__ConnectionString. Use your deployment&apos;s secret configuration for the real password. Inside a container, localhost refers to that container; use a reachable ClickHouse hostname." xml:space="preserve">
+    <value>För Docker konfigurerar du samma inställningar med miljövariabler, till exempel MetricsExport__Enabled=true och MetricsExport__ConnectionString. Använd distributionens konfiguration för hemligheter för det riktiga lösenordet. Inuti en container syftar localhost på den containern; använd ett ClickHouse-värdnamn som går att nå.</value>
+  </data>
+  <data name="Grafana dashboard comparing CPU, memory, network, disk I/O, load, and archived samples across selected StatHub servers." xml:space="preserve">
+    <value>Grafana-dashboard som jämför CPU, minne, nätverk, disk-I/O, belastning och arkiverade prover över valda StatHub-servrar.</value>
+  </data>
+  <data name="Install ClickHouse" xml:space="preserve">
+    <value>Installera ClickHouse</value>
+  </data>
+  <data name="Install Grafana and the official Grafana ClickHouse data source plugin. Add a ClickHouse data source with the hostname reachable from Grafana, HTTP port 8123 for this example, and StatHubMetrics as the default database. Use Save &amp; test to verify the connection." xml:space="preserve">
+    <value>Installera Grafana och den officiella Grafana ClickHouse-datakälltillägget. Lägg till en ClickHouse-datakälla med värdnamnet som är nåbart från Grafana, HTTP-port 8123 i detta exempel, och StatHubMetrics som standarddatabas. Använd Spara &amp; test för att verifiera anslutningen.</value>
+  </data>
+  <data name="Learn more about ClickHouse queries and Grafana macros" xml:space="preserve">
+    <value>Läs mer om ClickHouse-frågor och Grafana-makron</value>
+  </data>
+  <data name="Let agents report and wait for a five-minute export cycle. In ClickHouse, check that servers and recent receipts appear:" xml:space="preserve">
+    <value>Låt agenterna rapportera och vänta på en exportcykel på fem minuter. Kontrollera i ClickHouse att servrar och nyligen mottagna poster visas:</value>
+  </data>
+  <data name="Live server status. Your history, your dashboards." xml:space="preserve">
+    <value>Live serverstatus. Din historik, dina instrumentpaneler.</value>
+  </data>
+  <data name="Load" xml:space="preserve">
+    <value>Belastning</value>
+  </data>
+  <data name="Memory" xml:space="preserve">
+    <value>Minne</value>
+  </data>
+  <data name="Merge this section into your StatHub appsettings.json, replace the host and credentials, then restart your StatHub instance:" xml:space="preserve">
+    <value>Kopiera in det här avsnittet i din StatHub appsettings.json, ersätt värd och autentiseringsuppgifter, och starta sedan om din StatHub-instans:</value>
+  </data>
+  <data name="Metrics and units" xml:space="preserve">
+    <value>Mått och enheter</value>
+  </data>
+  <data name="Network" xml:space="preserve">
+    <value>Nätverk</value>
+  </data>
+  <data name="Network and disk fields are already rates in bytes per second; do not apply rate or derivative again. CPU core counts and disk capacity are not exported. Memory used share is not Linux MemAvailable." xml:space="preserve">
+    <value>Nätverks- och diskfälten är redan hastigheter i byte per sekund; tillämpa inte rate eller derivata igen. Antalet CPU-kärnor och diskkapacitet exporteras inte. Andelen använt minne är inte Linux MemAvailable.</value>
+  </data>
+  <data name="Official ClickHouse data source guide" xml:space="preserve">
+    <value>Officiell ClickHouse datakällguide</value>
+  </data>
+  <data name="Panel" xml:space="preserve">
+    <value>Panel</value>
+  </data>
+  <data name="Query ServerMetricsLatest for dashboards so retries do not inflate your results. HasSampleTime=1 means the agent supplied the source timestamp. Older agents use receipt time and mark HasSampleTime=0; samples in one report may share a timestamp, so their exact source timing and order are unavailable." xml:space="preserve">
+    <value>Använd ServerMetricsLatest för instrumentpaneler så att omförsök inte ger missvisande resultat. HasSampleTime=1 betyder att agenten angav källans tidsstämpel. Äldre agenter använder mottagningstiden och anger HasSampleTime=0; prover i samma rapport kan ha samma tidsstämpel, så deras exakta källtidpunkt och ordning är inte tillgängliga.</value>
+  </data>
+  <data name="Raw samples are batched every five minutes rather than reduced to five-minute averages. The initial retention is 30 days. Changing RetentionDays later does not alter an existing table&apos;s TTL. The buffer is bounded and held in memory; a restart loses samples that have not been written yet." xml:space="preserve">
+    <value>Råa mätvärden samlas i partier var femte minut istället för att reduceras till medelvärden över fem minuter. Den initiala behållningstiden är 30 dagar. Att ändra RetentionDays senare ändrar inte TTL för en befintlig tabell. Bufferten är begränsad och hålls i minnet; en omstart leder till att mätvärden som inte har skrivits ännu förloras.</value>
+  </data>
+  <data name="Samples" xml:space="preserve">
+    <value>Exempel</value>
+  </data>
+  <data name="Self Host" xml:space="preserve">
+    <value>Egenvärd</value>
+  </data>
+  <data name="Set Grafana&apos;s Query Timeout to 15 seconds. In the ClickHouse reader&apos;s settings profile, use readonly=1 and max_threads=2, and allow max_execution_time to change in read-only mode with CHANGEABLE_IN_READONLY, as described in the official configuration guide." xml:space="preserve">
+    <value>Sätt Grafanas frågetidsgräns till 15 sekunder. I ClickHouse-läsarens inställningsprofil, använd readonly=1 och max_threads=2, och tillåt max_execution_time att ändras i skrivskyddat läge med CHANGEABLE_IN_READONLY, enligt den officiella konfigurationsguiden.</value>
+  </data>
+  <data name="Set the CPU unit to Percent (0-100). Keep the time and server filters when adapting the query to other panels. All removes the server restriction; individual selections use safely quoted ClientId values." xml:space="preserve">
+    <value>Ställ in CPU-enheten på procent (0–100). Behåll tids- och serverfiltren när du anpassar frågan till andra paneler. All tar bort serverbegränsningen; enskilda val använder säkert citerade ClientId-värden.</value>
+  </data>
+  <data name="Start with a self-hosted StatHub instance and a ClickHouse server reachable from it. Keep your existing agents reporting to StatHub; export happens centrally through the Aiursoft ClickHouse SDK." xml:space="preserve">
+    <value>Börja med en självhostad StatHub-instans och en ClickHouse-server som är nåbar från den. Låt dina befintliga agenter rapportera till StatHub; exporten sker centralt via Aiursoft ClickHouse SDK.</value>
+  </data>
+  <data name="Start with the last six hours in UTC, a five-minute dashboard refresh, and about 720 points per series. Keep a minimum 30-second bucket and let it grow for longer ranges. Leave missing data empty instead of filling it with zero. Data age is not proof that a server is offline." xml:space="preserve">
+    <value>Börja med de senaste sex timmarna i UTC, en uppdatering av instrumentpanelen var femte minut och cirka 720 datapunkter per tidsserie. Behåll ett minsta intervall på 30 sekunder och låt det öka för längre tidsintervall. Lämna saknade data tomma i stället för att fylla i nollor. Dataålder är inget bevis på att en server är offline.</value>
+  </data>
+  <data name="The ClickHouse plugin reads the first column as the value and the second as the display text. ClientId keeps machines separate even when names match. Search and select one or several servers, or choose All. This menu lists servers reporting within the last 24 hours; reload to discover new servers." xml:space="preserve">
+    <value>ClickHouse-pluginen läser den första kolumnen som värdet och den andra som visningstext. ClientId håller maskinerna åtskilda även när namnen är identiska. Sök och välj en eller flera servrar, eller välj Alla. Den här menyn listar servrar som rapporterat under de senaste 24 timmar; ladda om för att upptäcka nya servrar.</value>
+  </data>
+  <data name="The exporter needs permission to create its database, table, and view, and to insert and select metrics. On the first non-empty batch it creates StatHubMetrics.ServerMetrics and the deduplicated ServerMetricsLatest view automatically." xml:space="preserve">
+    <value>Exportören behöver behörighet att skapa sin databas, tabell och vy samt att infoga och läsa mätvärden. När den första batchen som inte är tom skickas skapar den automatiskt StatHubMetrics.ServerMetrics och den deduplicerade vyn ServerMetricsLatest.</value>
+  </data>
+  <data name="Use a separate read-only Grafana account with SELECT permission on both ServerMetricsLatest and its underlying ServerMetrics table. Keep the exporter credentials in StatHub." xml:space="preserve">
+    <value>Använd ett separat skrivskyddat Grafana-konto med SELECT-behörighet för både ServerMetricsLatest och den underliggande ServerMetrics-tabellen. Förvara exportörens autentiseringsuppgifter i StatHub.</value>
+  </data>
+  <data name="Use ClickHouse export under Monitoring to choose which servers to export. Its independent policy supports all servers, explicit inclusions, and exclusions; exclusions always win." xml:space="preserve">
+    <value>Använd ClickHouse-exporten under Övervakning för att välja vilka servrar som ska exporteras. Den har en separat policy med stöd för alla servrar, uttryckliga inkluderingar och undantag; undantag gäller alltid.</value>
+  </data>
+  <data name="Used percent: MemUsed divided by MemUsed + MemFree + MemBuf + MemCach, times 100. Return null when the total is zero. Plot the four fields separately for memory composition." xml:space="preserve">
+    <value>Använd procent: MemUsed dividerat med MemUsed + MemFree + MemBuf + MemCach, gånger 100. Returnera null när totalsumman är noll. Visa de fyra fälten separat för att illustrera minnessammansättningen.</value>
+  </data>
+  <data name="We recommend ClickHouse and Grafana for exploring your StatHub history. Preserve raw server samples, compare several machines, and switch from a fleet overview to a single server with one dropdown." xml:space="preserve">
+    <value>Vi rekommenderar ClickHouse och Grafana för att utforska din historik i StatHub. Spara råa servermätvärden, jämför flera maskiner och växla från en översikt över hela serverparken till en enskild server med en enda rullgardinsmeny.</value>
+  </data>
+
+</root>

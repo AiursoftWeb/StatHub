@@ -57,11 +57,17 @@
   <data name="Automatic, AI-driven translation into 28 languages for global reach." xml:space="preserve">
     <value>Automatyczne, napędzane przez AI tłumaczenie na 28 języków dla globalnego zasięgu.</value>
   </data>
+  <data name="Build Dashboard" xml:space="preserve">
+    <value>Utwórz panel</value>
+  </data>
   <data name="Build your next big thing," xml:space="preserve">
     <value>Stwórz swój następny wielki projekt,</value>
   </data>
   <data name="Built-in User Management" xml:space="preserve">
     <value>Wbudowane zarządzanie użytkownikami</value>
+  </data>
+  <data name="ClickHouse Export" xml:space="preserve">
+    <value>Eksport ClickHouse</value>
   </data>
   <data name="Comes with full Docker support for simplified, consistent, and reliable deployments." xml:space="preserve">
     <value>Oferuje pełne wsparcie dla Dockera, co upraszcza, ujednolica i zwiększa niezawodność wdrożeń.</value>
@@ -174,6 +180,9 @@
   <data name="Keep an eye on your infrastructure with intuitive dashboards and detailed metrics." xml:space="preserve">
     <value>Monitoruj swoją infrastrukturę dzięki intuicyjnym pulpitom i szczegółowym metrykom.</value>
   </data>
+  <data name="Keep raw server samples in ClickHouse with efficient five-minute batch exports." xml:space="preserve">
+    <value>Przechowuj surowe próbki danych z serwerów w ClickHouse, eksportując je wydajnie w pięciominutowych partiach.</value>
+  </data>
   <data name="Lightweight Agents" xml:space="preserve">
     <value>Lekkie agenty</value>
   </data>
@@ -278,6 +287,9 @@
   </data>
   <data name="This is a template project, where we start the voyager..." xml:space="preserve">
     <value>To jest projekt szablonowy, od którego rozpoczynamy naszą podróż...</value>
+  </data>
+  <data name="Turn your history into Grafana dashboards, from fleet overviews to individual servers." xml:space="preserve">
+    <value>Przekształć swoją historię w dashboardy Grafana, od przeglądów całej floty po pojedyncze serwery.</value>
   </data>
   <data name="Usage" xml:space="preserve">
     <value>Wykorzystanie</value>
