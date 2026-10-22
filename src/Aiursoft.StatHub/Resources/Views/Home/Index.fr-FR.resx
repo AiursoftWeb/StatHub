@@ -57,11 +57,17 @@
   <data name="Automatic, AI-driven translation into 28 languages for global reach." xml:space="preserve">
     <value>Traduction automatique par IA vers 28 langues pour une portée mondiale.</value>
   </data>
+  <data name="Build Dashboard" xml:space="preserve">
+    <value>Créer un tableau de bord</value>
+  </data>
   <data name="Build your next big thing," xml:space="preserve">
     <value>Construisez votre prochain grand projet,</value>
   </data>
   <data name="Built-in User Management" xml:space="preserve">
     <value>Gestion intégrée des utilisateurs</value>
+  </data>
+  <data name="ClickHouse Export" xml:space="preserve">
+    <value>Export ClickHouse</value>
   </data>
   <data name="Comes with full Docker support for simplified, consistent, and reliable deployments." xml:space="preserve">
     <value>Bénéficie d&apos;une prise en charge complète de Docker pour des déploiements simplifiés, cohérents et fiables.</value>
@@ -174,6 +180,9 @@
   <data name="Keep an eye on your infrastructure with intuitive dashboards and detailed metrics." xml:space="preserve">
     <value>Surveillez votre infrastructure avec des tableaux de bord intuitifs et des métriques détaillées.</value>
   </data>
+  <data name="Keep raw server samples in ClickHouse with efficient five-minute batch exports." xml:space="preserve">
+    <value>Conservez les données brutes des serveurs dans ClickHouse grâce à des exports groupés efficaces toutes les cinq minutes.</value>
+  </data>
   <data name="Lightweight Agents" xml:space="preserve">
     <value>Agents légers</value>
   </data>
@@ -278,6 +287,9 @@
   </data>
   <data name="This is a template project, where we start the voyager..." xml:space="preserve">
     <value>Il s&apos;agit d&apos;un projet modèle, d&apos;où nous lançons le voyageur...</value>
+  </data>
+  <data name="Turn your history into Grafana dashboards, from fleet overviews to individual servers." xml:space="preserve">
+    <value>Transformez votre historique en tableaux de bord Grafana, des vues d&apos;ensemble de la flotte aux serveurs individuels.</value>
   </data>
   <data name="Usage" xml:space="preserve">
     <value>Utilisation</value>

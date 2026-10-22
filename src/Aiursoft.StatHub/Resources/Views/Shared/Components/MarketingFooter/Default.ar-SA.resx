@@ -27,6 +27,9 @@
   <data name="Aiursoft Template - A modern, feature-rich, and highly extensible foundation for your next web application." xml:space="preserve">
     <value>قالب Aiursoft - أساس حديث، غني بالميزات، وقابل للتوسعة بشكل كبير لتطبيق الويب القادم الخاص بك.</value>
   </data>
+  <data name="Build Dashboard" xml:space="preserve">
+    <value>إنشاء لوحة معلومات</value>
+  </data>
   <data name="Community" xml:space="preserve">
     <value>المجتمع</value>
   </data>
@@ -35,6 +38,9 @@
   </data>
   <data name="Documentation" xml:space="preserve">
     <value>التوثيق</value>
+  </data>
+  <data name="Export raw metrics to ClickHouse. Build your own Grafana dashboards." xml:space="preserve">
+    <value>صدّر المقاييس الأولية إلى ClickHouse. أنشئ لوحات معلومات Grafana الخاصة بك.</value>
   </data>
   <data name="Get Started" xml:space="preserve">
     <value>ابدأ</value>
@@ -56,6 +62,9 @@
   </data>
   <data name="Resources" xml:space="preserve">
     <value>الموارد</value>
+  </data>
+  <data name="Self Host" xml:space="preserve">
+    <value>الاستضافة الذاتية</value>
   </data>
   <data name="Social" xml:space="preserve">
     <value>اجتماعي</value>

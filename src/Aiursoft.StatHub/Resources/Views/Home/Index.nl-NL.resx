@@ -57,11 +57,17 @@
   <data name="Automatic, AI-driven translation into 28 languages for global reach." xml:space="preserve">
     <value>Automatische, AI-gestuurde vertaling in 28 talen voor wereldwijde reikwijdte.</value>
   </data>
+  <data name="Build Dashboard" xml:space="preserve">
+    <value>Dashboard bouwen</value>
+  </data>
   <data name="Build your next big thing," xml:space="preserve">
     <value>Bouw je volgende grote ding,</value>
   </data>
   <data name="Built-in User Management" xml:space="preserve">
     <value>Ingebouwd gebruikersbeheer</value>
+  </data>
+  <data name="ClickHouse Export" xml:space="preserve">
+    <value>ClickHouse-export</value>
   </data>
   <data name="Comes with full Docker support for simplified, consistent, and reliable deployments." xml:space="preserve">
     <value>Biedt volledige Docker-ondersteuning voor vereenvoudigde, consistente en betrouwbare implementaties.</value>
@@ -174,6 +180,9 @@
   <data name="Keep an eye on your infrastructure with intuitive dashboards and detailed metrics." xml:space="preserve">
     <value>Houd uw infrastructuur in de gaten met intuïtieve dashboards en gedetailleerde metrieken.</value>
   </data>
+  <data name="Keep raw server samples in ClickHouse with efficient five-minute batch exports." xml:space="preserve">
+    <value>Sla onbewerkte servergegevens op in ClickHouse met efficiënte exports in batches van vijf minuten.</value>
+  </data>
   <data name="Lightweight Agents" xml:space="preserve">
     <value>Lichte agents</value>
   </data>
@@ -278,6 +287,9 @@
   </data>
   <data name="This is a template project, where we start the voyager..." xml:space="preserve">
     <value>Dit is een templateproject, waar we de verkenning beginnen...</value>
+  </data>
+  <data name="Turn your history into Grafana dashboards, from fleet overviews to individual servers." xml:space="preserve">
+    <value>Zet je historische gegevens om in Grafana-dashboards, van overzichten van je serverpark tot afzonderlijke servers.</value>
   </data>
   <data name="Usage" xml:space="preserve">
     <value>Gebruik</value>

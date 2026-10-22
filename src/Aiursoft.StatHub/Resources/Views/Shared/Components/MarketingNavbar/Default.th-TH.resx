@@ -24,6 +24,9 @@
   <data name="Aiursoft Template" xml:space="preserve">
     <value>เทมเพลต Aiursoft</value>
   </data>
+  <data name="Build Dashboard" xml:space="preserve">
+    <value>สร้างแดชบอร์ด</value>
+  </data>
   <data name="Community" xml:space="preserve">
     <value>ชุมชน</value>
   </data>
@@ -32,6 +35,9 @@
   </data>
   <data name="GitHub" xml:space="preserve">
     <value>GitHub</value>
+  </data>
+  <data name="Self Host" xml:space="preserve">
+    <value>โฮสต์ด้วยตนเอง</value>
   </data>
   <data name="Source Code" xml:space="preserve">
     <value>ซอร์สโค้ด</value>

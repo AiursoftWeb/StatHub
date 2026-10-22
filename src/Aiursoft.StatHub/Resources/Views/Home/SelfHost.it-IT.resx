@@ -36,6 +36,9 @@
   <data name="Binary path" xml:space="preserve">
     <value>Percorso binario</value>
   </data>
+  <data name="Build Dashboard" xml:space="preserve">
+    <value>Crea dashboard</value>
+  </data>
   <data name="Config path" xml:space="preserve">
     <value>Percorso configurazione</value>
   </data>
@@ -59,6 +62,9 @@
   </data>
   <data name="Execute `npm install` at `wwwroot` folder." xml:space="preserve">
     <value>Esegui `npm install` nella cartella `wwwroot`.</value>
+  </data>
+  <data name="Export raw server metrics to ClickHouse in five-minute batches and explore your history in Grafana." xml:space="preserve">
+    <value>Esporta le metriche grezze del server in ClickHouse in batch di cinque minuti ed esplora lo storico in Grafana.</value>
   </data>
   <data name="First, install Docker. Then run the following commands in a Linux shell:" xml:space="preserve">
     <value>Prima, installa Docker. Poi esegui i seguenti comandi in un terminale Linux:</value>

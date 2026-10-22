@@ -57,11 +57,17 @@
   <data name="Automatic, AI-driven translation into 28 languages for global reach." xml:space="preserve">
     <value>ترجمة آلية مدعومة بالذكاء الاصطناعي إلى 28 لغة للوصول إلى جمهور عالمي.</value>
   </data>
+  <data name="Build Dashboard" xml:space="preserve">
+    <value>إنشاء لوحة المعلومات</value>
+  </data>
   <data name="Build your next big thing," xml:space="preserve">
     <value>ابنِ مشروعك الكبير القادم،</value>
   </data>
   <data name="Built-in User Management" xml:space="preserve">
     <value>إدارة المستخدمين المدمجة</value>
+  </data>
+  <data name="ClickHouse Export" xml:space="preserve">
+    <value>تصدير ClickHouse</value>
   </data>
   <data name="Comes with full Docker support for simplified, consistent, and reliable deployments." xml:space="preserve">
     <value>يأتي مع دعم كامل لـ Docker لنشر مبسط وموثوق ومتناسق.</value>
@@ -174,6 +180,9 @@
   <data name="Keep an eye on your infrastructure with intuitive dashboards and detailed metrics." xml:space="preserve">
     <value>راقب بنية شبكتك من خلال لوحات تحكم سهلة الاستخدام ومقاييس مفصلة.</value>
   </data>
+  <data name="Keep raw server samples in ClickHouse with efficient five-minute batch exports." xml:space="preserve">
+    <value>احتفِظ ببيانات الخادم الأولية في ClickHouse، مع تصدير دفعي فعّال كل خمس دقائق.</value>
+  </data>
   <data name="Lightweight Agents" xml:space="preserve">
     <value>الوكالات الخفيفة</value>
   </data>
@@ -278,6 +287,9 @@
   </data>
   <data name="This is a template project, where we start the voyager..." xml:space="preserve">
     <value>هذا مشروع قالب، حيث نبدأ رحلة المستكشف...</value>
+  </data>
+  <data name="Turn your history into Grafana dashboards, from fleet overviews to individual servers." xml:space="preserve">
+    <value>حوّل سجلّك إلى لوحات معلومات في Grafana، بدءًا من نظرة عامة على مجموعة الخوادم وصولًا إلى الخوادم الفردية.</value>
   </data>
   <data name="Usage" xml:space="preserve">
     <value>الاستخدام</value>

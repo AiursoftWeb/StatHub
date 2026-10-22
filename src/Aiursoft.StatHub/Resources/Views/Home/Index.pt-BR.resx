@@ -57,11 +57,17 @@
   <data name="Automatic, AI-driven translation into 28 languages for global reach." xml:space="preserve">
     <value>Tradução automática e orientada por IA para 28 idiomas, garantindo alcance global.</value>
   </data>
+  <data name="Build Dashboard" xml:space="preserve">
+    <value>Criar Dashboard</value>
+  </data>
   <data name="Build your next big thing," xml:space="preserve">
     <value>Construa seu próximo grande projeto,</value>
   </data>
   <data name="Built-in User Management" xml:space="preserve">
     <value>Gerenciamento de Usuários Integrado</value>
+  </data>
+  <data name="ClickHouse Export" xml:space="preserve">
+    <value>Exportação para ClickHouse</value>
   </data>
   <data name="Comes with full Docker support for simplified, consistent, and reliable deployments." xml:space="preserve">
     <value>Oferece suporte completo ao Docker para implantações simplificadas, consistentes e confiáveis.</value>
@@ -174,6 +180,9 @@
   <data name="Keep an eye on your infrastructure with intuitive dashboards and detailed metrics." xml:space="preserve">
     <value>Monitore sua infraestrutura com painéis intuitivos e métricas detalhadas.</value>
   </data>
+  <data name="Keep raw server samples in ClickHouse with efficient five-minute batch exports." xml:space="preserve">
+    <value>Mantenha as amostras brutas do servidor no ClickHouse com exportações em lote eficientes a cada cinco minutos.</value>
+  </data>
   <data name="Lightweight Agents" xml:space="preserve">
     <value>Agentes Leves</value>
   </data>
@@ -278,6 +287,9 @@
   </data>
   <data name="This is a template project, where we start the voyager..." xml:space="preserve">
     <value>Este é um projeto modelo, onde iniciamos a jornada...</value>
+  </data>
+  <data name="Turn your history into Grafana dashboards, from fleet overviews to individual servers." xml:space="preserve">
+    <value>Transforme seu histórico em painéis do Grafana, desde visões gerais de toda a frota até servidores individuais.</value>
   </data>
   <data name="Usage" xml:space="preserve">
     <value>Uso</value>

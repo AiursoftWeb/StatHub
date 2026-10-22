@@ -57,11 +57,17 @@
   <data name="Automatic, AI-driven translation into 28 languages for global reach." xml:space="preserve">
     <value>Автоматический перевод с использованием искусственного интеллекта на 28 языков для глобального охвата.</value>
   </data>
+  <data name="Build Dashboard" xml:space="preserve">
+    <value>Создать панель мониторинга</value>
+  </data>
   <data name="Build your next big thing," xml:space="preserve">
     <value>Создайте свой следующий большой проект,</value>
   </data>
   <data name="Built-in User Management" xml:space="preserve">
     <value>Встроенное управление пользователями</value>
+  </data>
+  <data name="ClickHouse Export" xml:space="preserve">
+    <value>Экспорт в ClickHouse</value>
   </data>
   <data name="Comes with full Docker support for simplified, consistent, and reliable deployments." xml:space="preserve">
     <value>Предоставляет полную поддержку Docker для упрощённых, согласованных и надёжных развёртываний.</value>
@@ -174,6 +180,9 @@
   <data name="Keep an eye on your infrastructure with intuitive dashboards and detailed metrics." xml:space="preserve">
     <value>Следите за состоянием своей инфраструктуры с удобными панелями мониторинга и подробными метриками.</value>
   </data>
+  <data name="Keep raw server samples in ClickHouse with efficient five-minute batch exports." xml:space="preserve">
+    <value>Храните исходные данные мониторинга серверов в ClickHouse, экспортируя их эффективными пакетами каждые пять минут.</value>
+  </data>
   <data name="Lightweight Agents" xml:space="preserve">
     <value>Легковесные агенты</value>
   </data>
@@ -278,6 +287,9 @@
   </data>
   <data name="This is a template project, where we start the voyager..." xml:space="preserve">
     <value>Это шаблонный проект, с которого мы начинаем путешествие...</value>
+  </data>
+  <data name="Turn your history into Grafana dashboards, from fleet overviews to individual servers." xml:space="preserve">
+    <value>Превратите историю в панели мониторинга Grafana: от обзора всего парка серверов до отдельных серверов.</value>
   </data>
   <data name="Usage" xml:space="preserve">
     <value>Использование</value>

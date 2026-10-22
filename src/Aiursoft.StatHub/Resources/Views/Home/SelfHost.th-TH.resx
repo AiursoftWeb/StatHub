@@ -36,6 +36,9 @@
   <data name="Binary path" xml:space="preserve">
     <value>เส้นทางไฟล์ไบนารี</value>
   </data>
+  <data name="Build Dashboard" xml:space="preserve">
+    <value>สร้างแดชบอร์ด</value>
+  </data>
   <data name="Config path" xml:space="preserve">
     <value>เส้นทางการตั้งค่า</value>
   </data>
@@ -59,6 +62,9 @@
   </data>
   <data name="Execute `npm install` at `wwwroot` folder." xml:space="preserve">
     <value>ดำเนินการ `npm install` ที่โฟลเดอร์ `wwwroot`</value>
+  </data>
+  <data name="Export raw server metrics to ClickHouse in five-minute batches and explore your history in Grafana." xml:space="preserve">
+    <value>ส่งออกเมตริกดิบของเซิร์ฟเวอร์ไปยัง ClickHouse เป็นชุดทุก ๆ ห้านาที แล้วสำรวจข้อมูลย้อนหลังของคุณใน Grafana</value>
   </data>
   <data name="First, install Docker. Then run the following commands in a Linux shell:" xml:space="preserve">
     <value>ก่อนอื่น ติดตั้ง Docker จากนั้นรันคำสั่งต่อไปนี้ในชells ของ Linux:</value>
