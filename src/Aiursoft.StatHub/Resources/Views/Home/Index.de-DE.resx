@@ -57,11 +57,17 @@
   <data name="Automatic, AI-driven translation into 28 languages for global reach." xml:space="preserve">
     <value>Automatische, KI-gesteuerte Übersetzung in 28 Sprachen für globale Reichweite.</value>
   </data>
+  <data name="Build Dashboard" xml:space="preserve">
+    <value>Dashboard erstellen</value>
+  </data>
   <data name="Build your next big thing," xml:space="preserve">
     <value>Erstellen Sie Ihr nächstes großes Ding,</value>
   </data>
   <data name="Built-in User Management" xml:space="preserve">
     <value>Integriertes Benutzerverwaltungssystem</value>
+  </data>
+  <data name="ClickHouse Export" xml:space="preserve">
+    <value>ClickHouse-Export</value>
   </data>
   <data name="Comes with full Docker support for simplified, consistent, and reliable deployments." xml:space="preserve">
     <value>Bietet vollständige Docker-Unterstützung für vereinfachte, konsistente und zuverlässige Bereitstellungen.</value>
@@ -174,6 +180,9 @@
   <data name="Keep an eye on your infrastructure with intuitive dashboards and detailed metrics." xml:space="preserve">
     <value>Achten Sie auf Ihre Infrastruktur mit intuitiven Dashboards und detaillierten Metriken.</value>
   </data>
+  <data name="Keep raw server samples in ClickHouse with efficient five-minute batch exports." xml:space="preserve">
+    <value>Speichern Sie rohe Serverdatenpunkte in ClickHouse mit effizienten Batch-Exports in Fünf-Minuten-Intervallen.</value>
+  </data>
   <data name="Lightweight Agents" xml:space="preserve">
     <value>Leichte Agenten</value>
   </data>
@@ -278,6 +287,9 @@
   </data>
   <data name="This is a template project, where we start the voyager..." xml:space="preserve">
     <value>Dies ist ein Template-Projekt, in dem wir die Reise des Voyagers beginnen...</value>
+  </data>
+  <data name="Turn your history into Grafana dashboards, from fleet overviews to individual servers." xml:space="preserve">
+    <value>Machen Sie aus Ihren Verlaufsdaten Grafana-Dashboards – von Flottenübersichten bis hin zu einzelnen Servern.</value>
   </data>
   <data name="Usage" xml:space="preserve">
     <value>Verwendung</value>

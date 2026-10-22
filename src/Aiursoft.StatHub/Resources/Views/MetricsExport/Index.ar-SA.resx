@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="All servers" xml:space="preserve">
+    <value>جميع الخوادم</value>
+  </data>
+  <data name="An excluded server is not exported, even when all servers are selected or both boxes are checked." xml:space="preserve">
+    <value>الخادم المستثنى لا يتم تصديره، حتى لو تم اختيار جميع الخوادم أو تم تحديد كلا الصندوقين.</value>
+  </data>
+  <data name="Build Dashboard" xml:space="preserve">
+    <value>إنشاء لوحة المعلومات</value>
+  </data>
+  <data name="ClickHouse export" xml:space="preserve">
+    <value>تصدير ClickHouse</value>
+  </data>
+  <data name="Configure the ClickHouse connection and retention in the MetricsExport section of appsettings.json or environment variables. Export selection is saved separately from AlertCenter monitoring and does not store credentials." xml:space="preserve">
+    <value>اضبط اتصال ClickHouse وفترة الاحتفاظ بالبيانات في قسم MetricsExport ضمن appsettings.json أو عبر متغيرات البيئة. يُحفَظ اختيار التصدير بشكل منفصل عن مراقبة AlertCenter، ولا تُخزَّن بيانات الاعتماد.</value>
+  </data>
+  <data name="Enable export policy" xml:space="preserve">
+    <value>تفعيل سياسة التصدير</value>
+  </data>
+  <data name="Every server is exported unless explicitly excluded. Newly connected servers are included automatically." xml:space="preserve">
+    <value>يتم تصدير كل خادم ما لم يُستبعد صراحةً. الخوادم المتصلة حديثًا مُدرجة تلقائيًا.</value>
+  </data>
+  <data name="Exclude" xml:space="preserve">
+    <value>استبعاد</value>
+  </data>
+  <data name="Exclude always wins" xml:space="preserve">
+    <value>استبعاد الخادم دائمًا له الأولوية</value>
+  </data>
+  <data name="Exclude server" xml:space="preserve">
+    <value>استبعاد الخادم</value>
+  </data>
+  <data name="Excluded servers always take precedence. When all servers are exported, individual inclusions are unnecessary." xml:space="preserve">
+    <value>تكون للخوادم المستثناة الأولوية دائمًا. عند تصدير جميع الخوادم، لا حاجة إلى تضمين خوادم بعينها.</value>
+  </data>
+  <data name="Export all servers, including newly connected servers" xml:space="preserve">
+    <value>تصدير جميع الخوادم، بما في ذلك الخوادم المتصلة حديثًا</value>
+  </data>
+  <data name="Export policy" xml:space="preserve">
+    <value>سياسة التصدير</value>
+  </data>
+  <data name="Green" xml:space="preserve">
+    <value>أخضر</value>
+  </data>
+  <data name="Grey (offline)" xml:space="preserve">
+    <value>رمادي (غير متصل)</value>
+  </data>
+  <data name="How export selection works" xml:space="preserve">
+    <value>كيفية عمل تحديد التصدير</value>
+  </data>
+  <data name="Include" xml:space="preserve">
+    <value>تضمين</value>
+  </data>
+  <data name="Include server" xml:space="preserve">
+    <value>تضمين الخادم</value>
+  </data>
+  <data name="Last report" xml:space="preserve">
+    <value>آخر تقرير</value>
+  </data>
+  <data name="No report since restart" xml:space="preserve">
+    <value>لا توجد تقارير منذ إعادة التشغيل</value>
+  </data>
+  <data name="No server is exported. Your include and exclude selections remain saved for when you enable the policy again." xml:space="preserve">
+    <value>لا يتم تصدير أي خادم. تظل اختياراتك للتضمين والاستبعاد محفوظة لتطبيقها عند تفعيل السياسة مجددًا.</value>
+  </data>
+  <data name="Policies and selections survive a restart. Servers without a new report remain listed by ClientId when they have a saved selection. Raw samples are still exported in five-minute batches, and live monitoring and AlertCenter rules are unchanged." xml:space="preserve">
+    <value>تظل السياسات والتحديدات محفوظة بعد إعادة التشغيل. وتبقى الخوادم التي لم ترسل تقريرًا جديدًا مدرجة حسب ClientId إذا كان لها تحديد محفوظ. ولا يزال تصدير العينات الخام يتم على دفعات كل خمس دقائق، دون أي تغيير في المراقبة المباشرة أو قواعد AlertCenter.</value>
+  </data>
+  <data name="Policy disabled" xml:space="preserve">
+    <value>تم تعطيل السياسة</value>
+  </data>
+  <data name="Red" xml:space="preserve">
+    <value>أحمر</value>
+  </data>
+  <data name="Save policy and server selection" xml:space="preserve">
+    <value>حفظ السياسة واختيار الخوادم</value>
+  </data>
+  <data name="Saving applies the selection to new samples and removes excluded samples still waiting in memory. An already running ClickHouse write may finish before saving completes. Previously stored history is kept." xml:space="preserve">
+    <value>يُطبَّق الحفظ على العينات الجديدة ويحذف العينات المستبعدة التي لا تزال في انتظار داخل الذاكرة. قد يكتمل عملية كتابة ClickHouse الجارية قبل اكتمال الحفظ. تُحفظ السجلات التاريخية المخزنة سابقًا.</value>
+  </data>
+  <data name="Selected servers only" xml:space="preserve">
+    <value>الخوادم المحددة فقط</value>
+  </data>
+  <data name="Server" xml:space="preserve">
+    <value>الخادم</value>
+  </data>
+  <data name="Server selection" xml:space="preserve">
+    <value>اختيار الخادم</value>
+  </data>
+  <data name="Server selection follows the same include and exclude rules as AlertCenter monitoring, with an independent policy." xml:space="preserve">
+    <value>يتبع اختيار الخوادم نفس قواعد التضمين والاستبعاد الخاصة بمراقبة AlertCenter، مع سياسة مستقلة.</value>
+  </data>
+  <data name="State" xml:space="preserve">
+    <value>الحالة</value>
+  </data>
+  <data name="The ClickHouse connection is disabled in configuration. You can save your server selection now; exporting also requires MetricsExport:Enabled and a valid connection string." xml:space="preserve">
+    <value>اتصال ClickHouse معطل في الإعدادات. يمكنك حفظ اختيار الخادم الآن؛ تتطلب التصدير أيضًا MetricsExport:Enabled وسلسلة اتصال صالحة.</value>
+  </data>
+  <data name="Turn off all servers to export only servers explicitly marked Include. With no inclusions, nothing is exported." xml:space="preserve">
+    <value>أطفئ جميع الخوادم لتصدير الخوادم المحددة فقط بعلامة &quot;تضمين&quot;. إذا لم تكن هناك عناصر مضمّنة، لن يتم تصدير أي شيء.</value>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>غير معروف</value>
+  </data>
+  <data name="When changes take effect" xml:space="preserve">
+    <value>متى تصبح التغييرات سارية</value>
+  </data>
+  <data name="Yellow" xml:space="preserve">
+    <value>أصفر</value>
+  </data>
+
+</root>

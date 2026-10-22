@@ -57,11 +57,17 @@
   <data name="Automatic, AI-driven translation into 28 languages for global reach." xml:space="preserve">
     <value>การแปลอัตโนมัติด้วยระบบ AI ไปยัง 28 ภาษา เพื่อการเข้าถึงทั่วโลก</value>
   </data>
+  <data name="Build Dashboard" xml:space="preserve">
+    <value>สร้างแดชบอร์ด</value>
+  </data>
   <data name="Build your next big thing," xml:space="preserve">
     <value>สร้างสิ่งที่ยิ่งใหญ่ครั้งต่อไปของคุณ</value>
   </data>
   <data name="Built-in User Management" xml:space="preserve">
     <value>การจัดการผู้ใช้ในตัว</value>
+  </data>
+  <data name="ClickHouse Export" xml:space="preserve">
+    <value>ส่งออกข้อมูลไปยัง ClickHouse</value>
   </data>
   <data name="Comes with full Docker support for simplified, consistent, and reliable deployments." xml:space="preserve">
     <value>มาพร้อมการสนับสนุน Docker เต็มรูปแบบเพื่อให้การติดตั้งง่ายขึ้น สม่ำเสมอ และเชื่อถือได้</value>
@@ -174,6 +180,9 @@
   <data name="Keep an eye on your infrastructure with intuitive dashboards and detailed metrics." xml:space="preserve">
     <value>ดูแลระบบโครงสร้างพื้นฐานของคุณด้วยแดชบอร์ดที่ใช้งานง่ายและข้อมูลเชิงลึกที่ละเอียด</value>
   </data>
+  <data name="Keep raw server samples in ClickHouse with efficient five-minute batch exports." xml:space="preserve">
+    <value>จัดเก็บข้อมูลดิบจากเซิร์ฟเวอร์ไว้ใน ClickHouse โดยส่งออกเป็นชุดทุก ๆ ห้านาทีอย่างมีประสิทธิภาพ</value>
+  </data>
   <data name="Lightweight Agents" xml:space="preserve">
     <value>ตัวแทนเบาบาง</value>
   </data>
@@ -278,6 +287,9 @@
   </data>
   <data name="This is a template project, where we start the voyager..." xml:space="preserve">
     <value>นี่คือโครงการเทมเพลต ซึ่งเป็นจุดเริ่มต้นของการเดินทาง...</value>
+  </data>
+  <data name="Turn your history into Grafana dashboards, from fleet overviews to individual servers." xml:space="preserve">
+    <value>เปลี่ยนข้อมูลย้อนหลังของคุณให้เป็นแดชบอร์ด Grafana ตั้งแต่ภาพรวมของเซิร์ฟเวอร์ทั้งหมดไปจนถึงเซิร์ฟเวอร์แต่ละเครื่อง</value>
   </data>
   <data name="Usage" xml:space="preserve">
     <value>การใช้งาน</value>

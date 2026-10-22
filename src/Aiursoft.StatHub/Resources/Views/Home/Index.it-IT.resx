@@ -57,11 +57,17 @@
   <data name="Automatic, AI-driven translation into 28 languages for global reach." xml:space="preserve">
     <value>Traduzione automatica basata sull&apos;intelligenza artificiale in 28 lingue per una portata globale.</value>
   </data>
+  <data name="Build Dashboard" xml:space="preserve">
+    <value>Crea Dashboard</value>
+  </data>
   <data name="Build your next big thing," xml:space="preserve">
     <value>Costruisci la tua prossima grande idea,</value>
   </data>
   <data name="Built-in User Management" xml:space="preserve">
     <value>Gestione Utenti Integrata</value>
+  </data>
+  <data name="ClickHouse Export" xml:space="preserve">
+    <value>Esportazione ClickHouse</value>
   </data>
   <data name="Comes with full Docker support for simplified, consistent, and reliable deployments." xml:space="preserve">
     <value>Include il supporto completo per Docker per implementazioni semplificate, coerenti e affidabili.</value>
@@ -174,6 +180,9 @@
   <data name="Keep an eye on your infrastructure with intuitive dashboards and detailed metrics." xml:space="preserve">
     <value>Tenere d&apos;occhio la tua infrastruttura con dashboard intuitive e metriche dettagliate.</value>
   </data>
+  <data name="Keep raw server samples in ClickHouse with efficient five-minute batch exports." xml:space="preserve">
+    <value>Conserva i campioni grezzi dei server in ClickHouse con esportazioni batch efficienti ogni cinque minuti.</value>
+  </data>
   <data name="Lightweight Agents" xml:space="preserve">
     <value>Agenti leggeri</value>
   </data>
@@ -278,6 +287,9 @@
   </data>
   <data name="This is a template project, where we start the voyager..." xml:space="preserve">
     <value>Questo è un progetto template, da cui iniziamo il viaggio...</value>
+  </data>
+  <data name="Turn your history into Grafana dashboards, from fleet overviews to individual servers." xml:space="preserve">
+    <value>Trasforma la tua cronologia in dashboard Grafana, dalle visioni d&apos;insieme della flotta ai singoli server.</value>
   </data>
   <data name="Usage" xml:space="preserve">
     <value>Utilizzo</value>

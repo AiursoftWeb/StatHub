@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="1. Enable ClickHouse export" xml:space="preserve">
+    <value>1. Bật xuất dữ liệu sang ClickHouse</value>
+  </data>
+  <data name="2. Check your first batch" xml:space="preserve">
+    <value>2. Kiểm tra lô dữ liệu đầu tiên</value>
+  </data>
+  <data name="3. Connect Grafana to ClickHouse" xml:space="preserve">
+    <value>3. Kết nối Grafana với ClickHouse</value>
+  </data>
+  <data name="4. Add a server dropdown" xml:space="preserve">
+    <value>4. Thêm menu thả xuống máy chủ</value>
+  </data>
+  <data name="5. Build your resource panels" xml:space="preserve">
+    <value>5. Xây dựng các bảng điều khiển tài nguyên của bạn</value>
+  </data>
+  <data name="A StatHub dashboard in Grafana: select several servers to compare their resource history, or choose one for a closer look. Open the image to view it at full size." xml:space="preserve">
+    <value>Bảng điều khiển StatHub trong Grafana: chọn nhiều máy chủ để so sánh lịch sử tài nguyên của chúng, hoặc chọn một máy chủ để xem chi tiết hơn. Mở ảnh để xem ở kích thước đầy đủ.</value>
+  </data>
+  <data name="Add a Time series visualization with your ClickHouse data source and SQL query type Time series. Start with CPU average and peak:" xml:space="preserve">
+    <value>Thêm biểu đồ chuỗi thời gian bằng nguồn dữ liệu ClickHouse và chọn loại truy vấn SQL là Time series. Bắt đầu với giá trị trung bình và cao nhất của CPU:</value>
+  </data>
+  <data name="Average DskRead and DskWrit, divided by 1048576, for MiB/s." xml:space="preserve">
+    <value>Trung bình DskRead và DskWrit, chia cho 1048576, để tính MiB/s.</value>
+  </data>
+  <data name="Average Load1M, Load5M, and Load15M. These are raw load averages, not CPU percentages." xml:space="preserve">
+    <value>Trung bình Load1M, Load5M và Load15M. Đây là các giá trị trung bình tải thô, không phải phần trăm CPU.</value>
+  </data>
+  <data name="Average NetRecv and NetSend, multiplied by 8 / 1000000, for Mbps." xml:space="preserve">
+    <value>Tính trung bình NetRecv và NetSend, nhân với 8 / 1000000 để được Mbps.</value>
+  </data>
+  <data name="Build Dashboard" xml:space="preserve">
+    <value>Tạo bảng điều khiển</value>
+  </data>
+  <data name="Count archived samples in each time bucket to see reporting gaps and batch arrivals." xml:space="preserve">
+    <value>Đếm số mẫu đã lưu trữ trong mỗi khoảng thời gian để phát hiện các khoảng trống trong báo cáo và các đợt dữ liệu đến theo lô.</value>
+  </data>
+  <data name="Create a dashboard and add a Query variable named Server using your ClickHouse data source. Enable Multi-value and Include All, leave Custom all value empty, and refresh the variable on dashboard load. Use this query:" xml:space="preserve">
+    <value>Tạo một bảng điều khiển và thêm biến kiểu Query có tên Server bằng nguồn dữ liệu ClickHouse của bạn. Bật Multi-value và Include All, để trống Custom all value và làm mới biến khi tải bảng điều khiển. Sử dụng truy vấn sau:</value>
+  </data>
+  <data name="Deploy StatHub" xml:space="preserve">
+    <value>Triển khai StatHub</value>
+  </data>
+  <data name="Disk I/O" xml:space="preserve">
+    <value>I/O đĩa</value>
+  </data>
+  <data name="For an overview table, group by ClientId and show recent averages, peaks, and max(ReceivedTime). Avoid treating a metric chosen from tied receipt timestamps as the exact last sample." xml:space="preserve">
+    <value>Đối với bảng tổng quan, hãy nhóm theo ClientId và hiển thị các giá trị trung bình, đỉnh gần đây cùng max(ReceivedTime). Không nên xem một chỉ số được chọn từ các dấu thời gian nhận trùng nhau là mẫu cuối cùng chính xác.</value>
+  </data>
+  <data name="For Docker, configure the same settings with environment variables such as MetricsExport__Enabled=true and MetricsExport__ConnectionString. Use your deployment&apos;s secret configuration for the real password. Inside a container, localhost refers to that container; use a reachable ClickHouse hostname." xml:space="preserve">
+    <value>Với Docker, hãy cấu hình các cài đặt tương tự bằng các biến môi trường như MetricsExport__Enabled=true và MetricsExport__ConnectionString. Sử dụng cấu hình bí mật của triển khai để đặt mật khẩu thực. Bên trong một container, localhost trỏ đến chính container đó; hãy sử dụng tên máy chủ ClickHouse có thể truy cập được.</value>
+  </data>
+  <data name="Grafana dashboard comparing CPU, memory, network, disk I/O, load, and archived samples across selected StatHub servers." xml:space="preserve">
+    <value>Bảng điều khiển Grafana so sánh CPU, bộ nhớ, mạng, I/O đĩa, tải và các mẫu dữ liệu đã lưu trữ trên những máy chủ StatHub được chọn.</value>
+  </data>
+  <data name="Install ClickHouse" xml:space="preserve">
+    <value>Cài đặt ClickHouse</value>
+  </data>
+  <data name="Install Grafana and the official Grafana ClickHouse data source plugin. Add a ClickHouse data source with the hostname reachable from Grafana, HTTP port 8123 for this example, and StatHubMetrics as the default database. Use Save &amp; test to verify the connection." xml:space="preserve">
+    <value>Cài đặt Grafana và plugin nguồn dữ liệu ClickHouse chính thức của Grafana. Thêm nguồn dữ liệu ClickHouse với tên máy chủ mà Grafana có thể truy cập, cổng HTTP 8123 trong ví dụ này và StatHubMetrics làm cơ sở dữ liệu mặc định. Chọn Save &amp; test để kiểm tra kết nối.</value>
+  </data>
+  <data name="Learn more about ClickHouse queries and Grafana macros" xml:space="preserve">
+    <value>Tìm hiểu thêm về truy vấn ClickHouse và macro Grafana</value>
+  </data>
+  <data name="Let agents report and wait for a five-minute export cycle. In ClickHouse, check that servers and recent receipts appear:" xml:space="preserve">
+    <value>Để các agent gửi dữ liệu và chờ một chu kỳ xuất dữ liệu kéo dài năm phút. Trong ClickHouse, hãy kiểm tra xem các máy chủ và dữ liệu nhận gần đây đã xuất hiện chưa:</value>
+  </data>
+  <data name="Live server status. Your history, your dashboards." xml:space="preserve">
+    <value>Trạng thái máy chủ theo thời gian thực. Lịch sử của bạn, bảng điều khiển của bạn.</value>
+  </data>
+  <data name="Load" xml:space="preserve">
+    <value>Tải</value>
+  </data>
+  <data name="Memory" xml:space="preserve">
+    <value>Bộ nhớ</value>
+  </data>
+  <data name="Merge this section into your StatHub appsettings.json, replace the host and credentials, then restart your StatHub instance:" xml:space="preserve">
+    <value>Hợp nhất phần này vào tệp appsettings.json của StatHub, thay thế host và thông tin xác thực, sau đó khởi động lại instance StatHub của bạn:</value>
+  </data>
+  <data name="Metrics and units" xml:space="preserve">
+    <value>Chỉ số và đơn vị</value>
+  </data>
+  <data name="Network" xml:space="preserve">
+    <value>Mạng</value>
+  </data>
+  <data name="Network and disk fields are already rates in bytes per second; do not apply rate or derivative again. CPU core counts and disk capacity are not exported. Memory used share is not Linux MemAvailable." xml:space="preserve">
+    <value>Các trường mạng và ổ đĩa đã là tốc độ tính bằng byte mỗi giây; không áp dụng lại tốc độ hoặc đạo hàm. Số lượng lõi CPU và dung lượng ổ đĩa không được xuất. Tỷ lệ bộ nhớ đang sử dụng không phải là Linux MemAvailable.</value>
+  </data>
+  <data name="Official ClickHouse data source guide" xml:space="preserve">
+    <value>Hướng dẫn chính thức về nguồn dữ liệu ClickHouse</value>
+  </data>
+  <data name="Panel" xml:space="preserve">
+    <value>Bảng điều khiển</value>
+  </data>
+  <data name="Query ServerMetricsLatest for dashboards so retries do not inflate your results. HasSampleTime=1 means the agent supplied the source timestamp. Older agents use receipt time and mark HasSampleTime=0; samples in one report may share a timestamp, so their exact source timing and order are unavailable." xml:space="preserve">
+    <value>Hãy truy vấn ServerMetricsLatest cho các bảng điều khiển để các lần thử lại không làm tăng sai kết quả. HasSampleTime=1 nghĩa là tác tử đã cung cấp dấu thời gian nguồn. Các tác tử cũ dùng thời điểm nhận và đánh dấu HasSampleTime=0; các mẫu trong cùng một báo cáo có thể dùng chung dấu thời gian, vì vậy không thể xác định chính xác thời điểm và thứ tự ở nguồn của chúng.</value>
+  </data>
+  <data name="Raw samples are batched every five minutes rather than reduced to five-minute averages. The initial retention is 30 days. Changing RetentionDays later does not alter an existing table&apos;s TTL. The buffer is bounded and held in memory; a restart loses samples that have not been written yet." xml:space="preserve">
+    <value>Các mẫu dữ liệu thô được gom thành lô mỗi năm phút, thay vì được rút gọn thành giá trị trung bình của mỗi khoảng năm phút. Thời gian lưu giữ ban đầu là 30 ngày. Việc thay đổi RetentionDays sau này không làm thay đổi TTL của bảng hiện có. Bộ đệm có giới hạn dung lượng và được lưu trong bộ nhớ; khi khởi động lại, các mẫu chưa được ghi sẽ bị mất.</value>
+  </data>
+  <data name="Samples" xml:space="preserve">
+    <value>Mẫu</value>
+  </data>
+  <data name="Self Host" xml:space="preserve">
+    <value>Tự lưu trữ</value>
+  </data>
+  <data name="Set Grafana&apos;s Query Timeout to 15 seconds. In the ClickHouse reader&apos;s settings profile, use readonly=1 and max_threads=2, and allow max_execution_time to change in read-only mode with CHANGEABLE_IN_READONLY, as described in the official configuration guide." xml:space="preserve">
+    <value>Đặt Query Timeout của Grafana thành 15 giây. Trong hồ sơ cài đặt của tài khoản đọc ClickHouse, đặt readonly=1 và max_threads=2, đồng thời cho phép thay đổi max_execution_time ở chế độ chỉ đọc bằng CHANGEABLE_IN_READONLY, như mô tả trong hướng dẫn cấu hình chính thức.</value>
+  </data>
+  <data name="Set the CPU unit to Percent (0-100). Keep the time and server filters when adapting the query to other panels. All removes the server restriction; individual selections use safely quoted ClientId values." xml:space="preserve">
+    <value>Đặt đơn vị CPU là Phần trăm (0-100). Giữ nguyên các bộ lọc thời gian và máy chủ khi điều chỉnh truy vấn cho các bảng khác. Tùy chọn All xóa bỏ hạn chế máy chủ; các lựa chọn cá nhân sử dụng các giá trị ClientId được trích dẫn an toàn.</value>
+  </data>
+  <data name="Start with a self-hosted StatHub instance and a ClickHouse server reachable from it. Keep your existing agents reporting to StatHub; export happens centrally through the Aiursoft ClickHouse SDK." xml:space="preserve">
+    <value>Bắt đầu với một phiên bản StatHub tự lưu trữ và một máy chủ ClickHouse có thể truy cập được từ đó. Tiếp tục để các agent hiện có gửi báo cáo đến StatHub; dữ liệu được xuất tập trung thông qua Aiursoft ClickHouse SDK.</value>
+  </data>
+  <data name="Start with the last six hours in UTC, a five-minute dashboard refresh, and about 720 points per series. Keep a minimum 30-second bucket and let it grow for longer ranges. Leave missing data empty instead of filling it with zero. Data age is not proof that a server is offline." xml:space="preserve">
+    <value>Bắt đầu với sáu giờ gần nhất theo múi giờ UTC, thời gian làm mới bảng điều khiển là năm phút và khoảng 720 điểm dữ liệu cho mỗi chuỗi. Duy trì giá trị nhỏ nhất của nhóm thời gian (bucket) là 30 giây và cho phép tăng lên khi xem các khoảng thời gian dài hơn. Để trống dữ liệu thiếu thay vì điền bằng số không. Thời gian dữ liệu cũ không phải là bằng chứng cho thấy máy chủ đang ngoại tuyến.</value>
+  </data>
+  <data name="The ClickHouse plugin reads the first column as the value and the second as the display text. ClientId keeps machines separate even when names match. Search and select one or several servers, or choose All. This menu lists servers reporting within the last 24 hours; reload to discover new servers." xml:space="preserve">
+    <value>Plugin ClickHouse đọc cột đầu tiên làm giá trị và cột thứ hai làm văn bản hiển thị. ClientId giúp phân biệt các máy ngay cả khi chúng có cùng tên. Tìm kiếm và chọn một hoặc nhiều máy chủ, hoặc chọn Tất cả. Danh sách này hiển thị các máy chủ đã báo cáo trong 24 giờ qua; hãy tải lại để tìm máy chủ mới.</value>
+  </data>
+  <data name="The exporter needs permission to create its database, table, and view, and to insert and select metrics. On the first non-empty batch it creates StatHubMetrics.ServerMetrics and the deduplicated ServerMetricsLatest view automatically." xml:space="preserve">
+    <value>Trình xuất dữ liệu cần quyền tạo cơ sở dữ liệu, bảng và view của nó, cũng như quyền chèn và truy vấn các chỉ số. Ở lô dữ liệu đầu tiên không rỗng, nó sẽ tự động tạo StatHubMetrics.ServerMetrics và view ServerMetricsLatest đã khử trùng lặp.</value>
+  </data>
+  <data name="Use a separate read-only Grafana account with SELECT permission on both ServerMetricsLatest and its underlying ServerMetrics table. Keep the exporter credentials in StatHub." xml:space="preserve">
+    <value>Sử dụng một tài khoản Grafana chỉ có quyền đọc riêng, với quyền SELECT trên cả ServerMetricsLatest và bảng ServerMetrics bên dưới. Giữ thông tin xác thực của trình xuất trong StatHub.</value>
+  </data>
+  <data name="Use ClickHouse export under Monitoring to choose which servers to export. Its independent policy supports all servers, explicit inclusions, and exclusions; exclusions always win." xml:space="preserve">
+    <value>Sử dụng xuất ClickHouse trong phần Giám sát để chọn máy chủ cần xuất. Chính sách độc lập của nó hỗ trợ tất cả các máy chủ, bao gồm rõ ràng và loại trừ; loại trừ luôn có ưu tiên.</value>
+  </data>
+  <data name="Used percent: MemUsed divided by MemUsed + MemFree + MemBuf + MemCach, times 100. Return null when the total is zero. Plot the four fields separately for memory composition." xml:space="preserve">
+    <value>Phần trăm đã sử dụng: MemUsed chia cho MemUsed + MemFree + MemBuf + MemCach, rồi nhân với 100. Trả về null khi tổng bằng 0. Vẽ riêng bốn trường để thể hiện cơ cấu bộ nhớ.</value>
+  </data>
+  <data name="We recommend ClickHouse and Grafana for exploring your StatHub history. Preserve raw server samples, compare several machines, and switch from a fleet overview to a single server with one dropdown." xml:space="preserve">
+    <value>Chúng tôi khuyên bạn nên sử dụng ClickHouse và Grafana để khám phá lịch sử StatHub của mình. Lưu giữ các mẫu máy chủ thô, so sánh nhiều máy và chuyển từ tổng quan đội máy sang một máy chủ đơn chỉ với một menu thả xuống.</value>
+  </data>
+
+</root>

@@ -24,6 +24,9 @@
   <data name="Aiursoft Template" xml:space="preserve">
     <value>Mẫu Aiursoft</value>
   </data>
+  <data name="Build Dashboard" xml:space="preserve">
+    <value>Tạo bảng điều khiển</value>
+  </data>
   <data name="Community" xml:space="preserve">
     <value>Cộng đồng</value>
   </data>
@@ -32,6 +35,9 @@
   </data>
   <data name="GitHub" xml:space="preserve">
     <value>GitHub</value>
+  </data>
+  <data name="Self Host" xml:space="preserve">
+    <value>Tự lưu trữ</value>
   </data>
   <data name="Source Code" xml:space="preserve">
     <value>Mã Nguồn</value>

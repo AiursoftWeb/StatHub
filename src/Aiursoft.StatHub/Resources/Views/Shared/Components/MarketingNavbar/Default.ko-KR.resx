@@ -24,6 +24,9 @@
   <data name="Aiursoft Template" xml:space="preserve">
     <value>Aiursoft 템플릿</value>
   </data>
+  <data name="Build Dashboard" xml:space="preserve">
+    <value>대시보드 빌드</value>
+  </data>
   <data name="Community" xml:space="preserve">
     <value>커뮤니티</value>
   </data>
@@ -32,6 +35,9 @@
   </data>
   <data name="GitHub" xml:space="preserve">
     <value>GitHub</value>
+  </data>
+  <data name="Self Host" xml:space="preserve">
+    <value>직접 호스팅</value>
   </data>
   <data name="Source Code" xml:space="preserve">
     <value>소스 코드</value>

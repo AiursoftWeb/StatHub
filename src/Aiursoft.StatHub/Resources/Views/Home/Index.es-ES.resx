@@ -57,11 +57,17 @@
   <data name="Automatic, AI-driven translation into 28 languages for global reach." xml:space="preserve">
     <value>Traducción automática impulsada por IA a 28 idiomas para alcance global.</value>
   </data>
+  <data name="Build Dashboard" xml:space="preserve">
+    <value>Crear panel</value>
+  </data>
   <data name="Build your next big thing," xml:space="preserve">
     <value>Construye tu próximo gran proyecto,</value>
   </data>
   <data name="Built-in User Management" xml:space="preserve">
     <value>Gestión de Usuarios Integrada</value>
+  </data>
+  <data name="ClickHouse Export" xml:space="preserve">
+    <value>Exportación a ClickHouse</value>
   </data>
   <data name="Comes with full Docker support for simplified, consistent, and reliable deployments." xml:space="preserve">
     <value>Incluye soporte completo para Docker con el fin de simplificar, estandarizar y garantizar despliegues confiables.</value>
@@ -174,6 +180,9 @@
   <data name="Keep an eye on your infrastructure with intuitive dashboards and detailed metrics." xml:space="preserve">
     <value>Mantén un ojo puesto en tu infraestructura con paneles intuitivos y métricas detalladas.</value>
   </data>
+  <data name="Keep raw server samples in ClickHouse with efficient five-minute batch exports." xml:space="preserve">
+    <value>Guarda en ClickHouse los datos sin procesar del servidor mediante exportaciones por lotes cada cinco minutos, de forma eficiente.</value>
+  </data>
   <data name="Lightweight Agents" xml:space="preserve">
     <value>Agentes ligeros</value>
   </data>
@@ -278,6 +287,9 @@
   </data>
   <data name="This is a template project, where we start the voyager..." xml:space="preserve">
     <value>Este es un proyecto plantilla, donde comenzamos el viaje...</value>
+  </data>
+  <data name="Turn your history into Grafana dashboards, from fleet overviews to individual servers." xml:space="preserve">
+    <value>Convierte tu historial en paneles de Grafana, desde vistas generales de la flota hasta servidores individuales.</value>
   </data>
   <data name="Usage" xml:space="preserve">
     <value>Uso</value>

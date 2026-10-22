@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="1. Enable ClickHouse export" xml:space="preserve">
+    <value>1. ClickHouse エクスポートを有効にする</value>
+  </data>
+  <data name="2. Check your first batch" xml:space="preserve">
+    <value>2. 最初のバッチを確認する</value>
+  </data>
+  <data name="3. Connect Grafana to ClickHouse" xml:space="preserve">
+    <value>3. GrafanaをClickHouseに接続する</value>
+  </data>
+  <data name="4. Add a server dropdown" xml:space="preserve">
+    <value>4. サーバードロップダウンを追加する</value>
+  </data>
+  <data name="5. Build your resource panels" xml:space="preserve">
+    <value>5. リソースパネルを作成する</value>
+  </data>
+  <data name="A StatHub dashboard in Grafana: select several servers to compare their resource history, or choose one for a closer look. Open the image to view it at full size." xml:space="preserve">
+    <value>Grafana の StatHub ダッシュボード：複数のサーバーを選択してリソースの履歴を比較したり、1 台を選んで詳しく確認したりできます。画像を開くと、元のサイズで表示できます。</value>
+  </data>
+  <data name="Add a Time series visualization with your ClickHouse data source and SQL query type Time series. Start with CPU average and peak:" xml:space="preserve">
+    <value>ClickHouse データソースを使用して、クエリタイプを「Time series」に設定した時系列ビジュアライゼーションを追加します。まずは CPU の平均値とピーク値から始めましょう：</value>
+  </data>
+  <data name="Average DskRead and DskWrit, divided by 1048576, for MiB/s." xml:space="preserve">
+    <value>DskRead と DskWrit の平均値を 1048576 で割り、MiB/s を得ます。</value>
+  </data>
+  <data name="Average Load1M, Load5M, and Load15M. These are raw load averages, not CPU percentages." xml:space="preserve">
+    <value>Load1M、Load5M、Load15M の平均値。これらは生のロード平均値であり、CPU使用率（パーセンテージ）ではありません。</value>
+  </data>
+  <data name="Average NetRecv and NetSend, multiplied by 8 / 1000000, for Mbps." xml:space="preserve">
+    <value>NetRecv と NetSend の平均値に 8 / 1000000 を掛けて Mbps を表示。</value>
+  </data>
+  <data name="Build Dashboard" xml:space="preserve">
+    <value>ダッシュボードを作成</value>
+  </data>
+  <data name="Count archived samples in each time bucket to see reporting gaps and batch arrivals." xml:space="preserve">
+    <value>各時間バケットでアーカイブされたサンプルの件数をカウントし、レポートの欠落やバッチ到着を確認します。</value>
+  </data>
+  <data name="Create a dashboard and add a Query variable named Server using your ClickHouse data source. Enable Multi-value and Include All, leave Custom all value empty, and refresh the variable on dashboard load. Use this query:" xml:space="preserve">
+    <value>ダッシュボードを作成し、ClickHouse データソースを使用する「Server」という名前のクエリ変数を追加します。「複数の値」と「すべて含める」を有効にし、「カスタムのすべての値」は空のままにして、ダッシュボードの読み込み時に変数を更新するよう設定します。次のクエリを使用します。</value>
+  </data>
+  <data name="Deploy StatHub" xml:space="preserve">
+    <value>StatHub をデプロイ</value>
+  </data>
+  <data name="Disk I/O" xml:space="preserve">
+    <value>ディスク I/O</value>
+  </data>
+  <data name="For an overview table, group by ClientId and show recent averages, peaks, and max(ReceivedTime). Avoid treating a metric chosen from tied receipt timestamps as the exact last sample." xml:space="preserve">
+    <value>概要テーブルでは、ClientId でグループ化し、最近の平均値、ピーク値、および max(ReceivedTime) を表示します。同一の受信タイムスタンプから選択されたメトリクスを正確な最終サンプルとして扱うことは避けてください。</value>
+  </data>
+  <data name="For Docker, configure the same settings with environment variables such as MetricsExport__Enabled=true and MetricsExport__ConnectionString. Use your deployment&apos;s secret configuration for the real password. Inside a container, localhost refers to that container; use a reachable ClickHouse hostname." xml:space="preserve">
+    <value>Docker では、`MetricsExport__Enabled=true` や `MetricsExport__ConnectionString` などの環境変数を使用して同じ設定を構成します。実際のパスワードには、デプロイのシークレット設定を使用してください。コンテナ内では、`localhost` はそのコンテナ自体を指すため、到達可能な ClickHouse のホスト名を使用してください。</value>
+  </data>
+  <data name="Grafana dashboard comparing CPU, memory, network, disk I/O, load, and archived samples across selected StatHub servers." xml:space="preserve">
+    <value>選択した StatHub サーバー間で CPU、メモリ、ネットワーク、ディスク I/O、負荷、アーカイブ済みサンプルを比較する Grafana ダッシュボード。</value>
+  </data>
+  <data name="Install ClickHouse" xml:space="preserve">
+    <value>ClickHouse をインストール</value>
+  </data>
+  <data name="Install Grafana and the official Grafana ClickHouse data source plugin. Add a ClickHouse data source with the hostname reachable from Grafana, HTTP port 8123 for this example, and StatHubMetrics as the default database. Use Save &amp; test to verify the connection." xml:space="preserve">
+    <value>Grafana と公式の Grafana ClickHouse データソースプラグインをインストールします。Grafana から到達可能なホスト名、今回の例では HTTP ポート 8123 を指定し、デフォルトデータベースを StatHubMetrics に設定して、ClickHouse データソースを追加します。「Save &amp; test」をクリックして接続を確認します。</value>
+  </data>
+  <data name="Learn more about ClickHouse queries and Grafana macros" xml:space="preserve">
+    <value>ClickHouseクエリとGrafanaマクロの詳細を見る</value>
+  </data>
+  <data name="Let agents report and wait for a five-minute export cycle. In ClickHouse, check that servers and recent receipts appear:" xml:space="preserve">
+    <value>エージェントが報告を行い、5分間のエクスポートサイクルを待ってください。ClickHouse で、サーバーと最近の受信データが表示されることを確認してください：</value>
+  </data>
+  <data name="Live server status. Your history, your dashboards." xml:space="preserve">
+    <value>サーバーのライブステータス。あなたの履歴、あなたのダッシュボード。</value>
+  </data>
+  <data name="Load" xml:space="preserve">
+    <value>負荷</value>
+  </data>
+  <data name="Memory" xml:space="preserve">
+    <value>メモリ</value>
+  </data>
+  <data name="Merge this section into your StatHub appsettings.json, replace the host and credentials, then restart your StatHub instance:" xml:space="preserve">
+    <value>このセクションを StatHub の appsettings.json にマージし、ホスト名と認証情報を置き換えた後、StatHub インスタンスを再起動してください：</value>
+  </data>
+  <data name="Metrics and units" xml:space="preserve">
+    <value>メトリクスと単位</value>
+  </data>
+  <data name="Network" xml:space="preserve">
+    <value>ネットワーク</value>
+  </data>
+  <data name="Network and disk fields are already rates in bytes per second; do not apply rate or derivative again. CPU core counts and disk capacity are not exported. Memory used share is not Linux MemAvailable." xml:space="preserve">
+    <value>ネットワークおよびディスクのフィールドはすでに秒あたりのバイト単位のレートです。rateやderivativeを再度適用しないでください。CPUコア数とディスク容量はエクスポートされません。メモリ使用率（使用量シェア）はLinuxのMemAvailableではありません。</value>
+  </data>
+  <data name="Official ClickHouse data source guide" xml:space="preserve">
+    <value>ClickHouseデータソース公式ガイド</value>
+  </data>
+  <data name="Panel" xml:space="preserve">
+    <value>パネル</value>
+  </data>
+  <data name="Query ServerMetricsLatest for dashboards so retries do not inflate your results. HasSampleTime=1 means the agent supplied the source timestamp. Older agents use receipt time and mark HasSampleTime=0; samples in one report may share a timestamp, so their exact source timing and order are unavailable." xml:space="preserve">
+    <value>ダッシュボードでは、リトライによって結果が膨らまないよう、ServerMetricsLatest をクエリしてください。HasSampleTime=1 は、エージェントがソースタイムスタンプを提供したことを意味します。古いエージェントは受信時刻を使用し、HasSampleTime=0 とマークします。1つのレポート内のサンプルが同じタイムスタンプを共有する可能性があるため、それらの正確なソースタイミングと順序は利用できません。</value>
+  </data>
+  <data name="Raw samples are batched every five minutes rather than reduced to five-minute averages. The initial retention is 30 days. Changing RetentionDays later does not alter an existing table&apos;s TTL. The buffer is bounded and held in memory; a restart loses samples that have not been written yet." xml:space="preserve">
+    <value>生のサンプルは5分ごとにまとめて書き込まれ、5分間の平均値に集約されることはありません。初期の保持期間は30日です。後から RetentionDays を変更しても、既存のテーブルの TTL は変更されません。バッファーのサイズには上限があり、メモリ上に保持されます。再起動すると、まだ書き込まれていないサンプルは失われます。</value>
+  </data>
+  <data name="Samples" xml:space="preserve">
+    <value>サンプル</value>
+  </data>
+  <data name="Self Host" xml:space="preserve">
+    <value>セルフホスト</value>
+  </data>
+  <data name="Set Grafana&apos;s Query Timeout to 15 seconds. In the ClickHouse reader&apos;s settings profile, use readonly=1 and max_threads=2, and allow max_execution_time to change in read-only mode with CHANGEABLE_IN_READONLY, as described in the official configuration guide." xml:space="preserve">
+    <value>Grafana のクエリタイムアウトを 15 秒に設定します。ClickHouse の読み取り専用ユーザーの設定プロファイルでは、readonly=1 と max_threads=2 を指定し、公式の設定ガイドに記載されているように、読み取り専用モードでも CHANGEABLE_IN_READONLY を使用して max_execution_time を変更できるようにします。</value>
+  </data>
+  <data name="Set the CPU unit to Percent (0-100). Keep the time and server filters when adapting the query to other panels. All removes the server restriction; individual selections use safely quoted ClientId values." xml:space="preserve">
+    <value>CPU の単位をパーセント（0～100）に設定します。他のパネル用にクエリを調整する際も、時間とサーバーのフィルターを維持してください。All を選択するとサーバーの制限が解除され、個別に選択した場合は ClientId の値が安全に引用符で囲まれて使用されます。</value>
+  </data>
+  <data name="Start with a self-hosted StatHub instance and a ClickHouse server reachable from it. Keep your existing agents reporting to StatHub; export happens centrally through the Aiursoft ClickHouse SDK." xml:space="preserve">
+    <value>まず、セルフホスト型の StatHub インスタンスと、そこから接続できる ClickHouse サーバーを用意します。既存のエージェントは引き続き StatHub にデータを送信するようにしてください。エクスポートは Aiursoft ClickHouse SDK を介して一元的に行われます。</value>
+  </data>
+  <data name="Start with the last six hours in UTC, a five-minute dashboard refresh, and about 720 points per series. Keep a minimum 30-second bucket and let it grow for longer ranges. Leave missing data empty instead of filling it with zero. Data age is not proof that a server is offline." xml:space="preserve">
+    <value>UTCで直近6時間、ダッシュボードの更新間隔を5分、1シリーズあたり約720点として開始してください。最小バケットは30秒とし、長い範囲では自動的に拡大するように設定します。欠損データはゼロで埋めるのではなく、空欄のままにしてください。データの古さは、サーバーがオフラインであることの証拠ではありません。</value>
+  </data>
+  <data name="The ClickHouse plugin reads the first column as the value and the second as the display text. ClientId keeps machines separate even when names match. Search and select one or several servers, or choose All. This menu lists servers reporting within the last 24 hours; reload to discover new servers." xml:space="preserve">
+    <value>ClickHouse プラグインは、1 列目を値、2 列目を表示テキストとして読み取ります。ClientId は、名前が一致した場合でもマシンを区別します。検索して 1 つ以上のサーバーを選択するか、All を選択します。このメニューには、過去 24 時間以内にレポートしたサーバーが表示されます。新しいサーバーを発見するには、再読み込みしてください。</value>
+  </data>
+  <data name="The exporter needs permission to create its database, table, and view, and to insert and select metrics. On the first non-empty batch it creates StatHubMetrics.ServerMetrics and the deduplicated ServerMetricsLatest view automatically." xml:space="preserve">
+    <value>エクスポーターには、データベース、テーブル、ビューの作成、およびメトリクスの挿入と選択を行うための権限が必要です。最初の非空バッチ時に、StatHubMetrics.ServerMetrics と重複排除済みの ServerMetricsLatest ビューが自動的に作成されます。</value>
+  </data>
+  <data name="Use a separate read-only Grafana account with SELECT permission on both ServerMetricsLatest and its underlying ServerMetrics table. Keep the exporter credentials in StatHub." xml:space="preserve">
+    <value>ServerMetricsLatestとその基になるServerMetricsテーブルの両方に対するSELECT権限を持つ、Grafana専用の読み取り専用アカウントを使用してください。エクスポーターの認証情報はStatHubに保管してください。</value>
+  </data>
+  <data name="Use ClickHouse export under Monitoring to choose which servers to export. Its independent policy supports all servers, explicit inclusions, and exclusions; exclusions always win." xml:space="preserve">
+    <value>監視（Monitoring）のClickHouseエクスポートを使用して、エクスポートするサーバーを選択します。その独立したポリシーでは、すべてのサーバー、明示的な包含（インクルージョン）、および除外（エクスクルージョン）をサポートし、除外は常に優先されます。</value>
+  </data>
+  <data name="Used percent: MemUsed divided by MemUsed + MemFree + MemBuf + MemCach, times 100. Return null when the total is zero. Plot the four fields separately for memory composition." xml:space="preserve">
+    <value>使用率：MemUsedをMemUsed + MemFree + MemBuf + MemCachで割り、100を掛けます。合計が0の場合はnullを返します。メモリ構成を表示するには、4つのフィールドを個別にプロットします。</value>
+  </data>
+  <data name="We recommend ClickHouse and Grafana for exploring your StatHub history. Preserve raw server samples, compare several machines, and switch from a fleet overview to a single server with one dropdown." xml:space="preserve">
+    <value>StatHubの履歴を確認するには、ClickHouseとGrafanaの使用をおすすめします。サーバーの生データを保持し、複数のマシンを比較したり、ドロップダウンを1つ操作するだけでフリート全体の概要から単一サーバーの表示に切り替えたりできます。</value>
+  </data>
+
+</root>

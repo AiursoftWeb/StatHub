@@ -36,6 +36,9 @@
   <data name="Binary path" xml:space="preserve">
     <value>Đường dẫn tệp nhị phân</value>
   </data>
+  <data name="Build Dashboard" xml:space="preserve">
+    <value>Tạo bảng điều khiển</value>
+  </data>
   <data name="Config path" xml:space="preserve">
     <value>Đường dẫn cấu hình</value>
   </data>
@@ -59,6 +62,9 @@
   </data>
   <data name="Execute `npm install` at `wwwroot` folder." xml:space="preserve">
     <value>Thực hiện lệnh `npm install` tại thư mục `wwwroot`.</value>
+  </data>
+  <data name="Export raw server metrics to ClickHouse in five-minute batches and explore your history in Grafana." xml:space="preserve">
+    <value>Xuất các chỉ số thô của máy chủ sang ClickHouse theo từng đợt năm phút và khám phá dữ liệu lịch sử của bạn trong Grafana.</value>
   </data>
   <data name="First, install Docker. Then run the following commands in a Linux shell:" xml:space="preserve">
     <value>Đầu tiên, cài đặt Docker. Sau đó chạy các lệnh sau trong một shell Linux:</value>
