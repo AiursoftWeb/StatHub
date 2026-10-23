@@ -229,7 +229,12 @@ public sealed class MonitoringService(StatHubDbContext db, MonitoringCoordinator
                 }
                 if (owned.Count == 0)
                 {
-                    var title = $"{state.Hostname}: {state.CurrentState} server health";
+                    var title = state.CurrentState switch
+                    {
+                        "red" => $"Server status critical: {state.Hostname}",
+                        "yellow" => $"Server status warning: {state.Hostname}",
+                        _ => $"{state.Hostname}: {state.CurrentState} server health"
+                    };
                     await client.CreateAsync(new CreateIncidentRequest
                     {
                         ReportId = state.NextReportId, Title = title.Length > 200 ? title[..200] : title,
