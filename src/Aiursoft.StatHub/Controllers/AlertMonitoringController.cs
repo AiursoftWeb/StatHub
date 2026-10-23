@@ -18,7 +18,7 @@ namespace Aiursoft.StatHub.Controllers;
 public sealed class AlertMonitoringController(StatHubDbContext db, MonitoringService monitoring,
     MonitoringCoordinator coordinator, IStringLocalizer<AlertMonitoringController> localizer) : Controller
 {
-    [RenderInNavBar(NavGroupName = "Features", NavGroupOrder = 1, CascadedLinksGroupName = "Monitoring",
+    [RenderInNavBar(NavGroupName = "Administration", NavGroupOrder = 9999, CascadedLinksGroupName = "Monitoring",
         CascadedLinksIcon = "bell", CascadedLinksOrder = 2, LinkText = "AlertCenter monitoring", LinkOrder = 1)]
     public async Task<IActionResult> Index()
     {
