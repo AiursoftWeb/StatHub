@@ -6,6 +6,8 @@ namespace Aiursoft.StatHub.SDK.Models;
 public record AgentHealthReport
 {
     // 1. 核心计算指标
+    public double? SmoothedIdle { get; init; }
+    public PressureInfo? Pressure { get; init; }
     public double LoadRate { get; init; }
     public int CpuRate { get; init; }
     public double DiskUseRatio { get; init; }
@@ -18,15 +20,9 @@ public record AgentHealthReport
     public required string DiskPrompt { get; init; }
 
     // 3. 模板样式 (用于主页进度条)
-    public string LoadColorClass => LoadRate < 10 ? "bg-success" :
-        LoadRate < 15 ? "bg-info" :
-        LoadRate < 70 ? "bg-secondary" :
-        LoadRate < 100 ? "bg-warning" : "bg-danger";
-
-    public string CpuColorClass => CpuRate < 5 ? "bg-success" :
-        CpuRate < 10 ? "bg-info" :
-        CpuRate < 20 ? "bg-secondary" :
-        CpuRate < 40 ? "bg-warning" : "bg-danger";
+    // Utilization and normalized load are diagnostic values, not independent health colors.
+    public string LoadColorClass => "bg-info";
+    public string CpuColorClass => "bg-info";
 
     public string DiskColorClass => DiskUseRatio < 0.8 ? "bg-success" :
         DiskUseRatio < 0.92 ? "bg-warning" : "bg-danger";
@@ -34,17 +30,17 @@ public record AgentHealthReport
     // 4. 模板样式 (用于详情页卡片 和 主页状态图标)
     public string BadgeClass => Status switch
     {
-        AgentStatus.Offline => "badge-subtle-secondary",
+        AgentStatus.Offline or AgentStatus.Unknown => "badge-subtle-secondary",
         AgentStatus.Critical => "badge-subtle-danger",
         AgentStatus.Warning => "badge-subtle-warning",
         _ => "badge-subtle-success"
     };
 
-    public string BadgeText => Status.ToString();
+    public string BadgeText => Status == AgentStatus.Unknown ? "Collecting data" : Status.ToString();
 
     public string IconClass => Status switch
     {
-        AgentStatus.Offline => "text-muted",
+        AgentStatus.Offline or AgentStatus.Unknown => "text-muted",
         AgentStatus.Critical => "text-danger",
         AgentStatus.Warning => "text-warning",
         _ => "text-success"
@@ -53,6 +49,7 @@ public record AgentHealthReport
     public string DetailsIconDataLucide => Status switch
     {
         AgentStatus.Offline => "server-off",
+        AgentStatus.Unknown => "timer",
         AgentStatus.Critical => "alert-triangle",
         AgentStatus.Warning => "alert-circle",
         _ => "server"
@@ -60,7 +57,7 @@ public record AgentHealthReport
 
     public string IndexIconDataLucide => Status switch
     {
-        AgentStatus.Offline => "activity",
+        AgentStatus.Offline or AgentStatus.Unknown => "activity",
         AgentStatus.Critical => "alert-triangle",
         AgentStatus.Warning => "alert-circle",
         _ => "check-circle"

@@ -27,6 +27,7 @@ public sealed class MetricsClickhouseWriter(IOptions<MetricsExportOptions> optio
                 $"{ClickhouseIdentifier.Quote(property.Name)} " +
                 (property.PropertyType == typeof(DateTime)
                     ? "DateTime64(3, 'UTC')"
+                    : property.PropertyType == typeof(double?) ? "Nullable(Float64)"
                     : ClickhouseTypeMapper.MapClrTypeToChType(property.PropertyType)));
             var ttl = _options.RetentionDays > 0 ? $" TTL SampleTime + INTERVAL {_options.RetentionDays} DAY" : string.Empty;
             await context.ExecuteScalarAsync<object>($"""
@@ -35,7 +36,9 @@ public sealed class MetricsClickhouseWriter(IOptions<MetricsExportOptions> optio
                 PARTITION BY toDate(SampleTime)
                 ORDER BY (SampleTime, ClientId, SampleId){ttl}
                 """);
-            await context.ExecuteScalarAsync<object>("CREATE VIEW IF NOT EXISTS ServerMetricsLatest AS SELECT * FROM ServerMetrics FINAL");
+            // Additive evolution: historical/older-agent samples retain NULL pressure values.
+            await context.ExecuteScalarAsync<object>("ALTER TABLE ServerMetrics ADD COLUMN IF NOT EXISTS PressureCpu Nullable(Float64), ADD COLUMN IF NOT EXISTS PressureMemory Nullable(Float64), ADD COLUMN IF NOT EXISTS PressureIo Nullable(Float64)");
+            await context.ExecuteScalarAsync<object>("CREATE OR REPLACE VIEW ServerMetricsLatest AS SELECT * FROM ServerMetrics FINAL");
             _initialized = true;
         }
 

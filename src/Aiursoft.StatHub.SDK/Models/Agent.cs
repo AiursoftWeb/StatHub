@@ -33,8 +33,12 @@ public class Agent
     public readonly MessageStageLast<double> Load5M;
     public readonly MessageStageLast<double> Load15M;
 
-    public Agent(string clientId)
+    private readonly ResourceHealthTracker _health = new();
+    private readonly TimeProvider _clock;
+
+    public Agent(string clientId, TimeProvider? clock = null)
     {
+        _clock = clock ?? TimeProvider.System;
         ClientId = clientId;
         Stats = new AsyncObservable<DstatResult>();
         PendingCommands = new AsyncObservable<Command>();
@@ -95,6 +99,11 @@ public class Agent
         Stats.Map(stat => stat.Load5M).Subscribe(Load5M);
         Load15M = new MessageStageLast<double>();
         Stats.Map(stat => stat.Load15M).Subscribe(Load15M);
+        Stats.Subscribe(sample =>
+        {
+            _health.Observe(sample, GetDiskUseRatio(), _clock.GetUtcNow().UtcDateTime, BootTime);
+            return Task.CompletedTask;
+        });
     }
 
     public string ClientId { get; set; }
@@ -226,61 +235,26 @@ public class Agent
     }
 
 
-    /// <summary>
-    /// 计算并返回 Agent 的完整健康报告。
-    /// </summary>
+    private double? GetDiskUseRatio()
+    {
+        if (Disks.Count > 0)
+            return Disks.All(d => double.IsFinite(d.Total) && double.IsFinite(d.Used) && d.Total > 0 && d.Used >= 0 && d.Used <= d.Total)
+                ? Disks.Max(d => d.Used / d.Total) : null;
+        return TotalRoot > 0 && double.IsFinite(TotalRoot) && double.IsFinite(UsedRoot) && UsedRoot >= 0 && UsedRoot <= TotalRoot
+            ? UsedRoot / TotalRoot : null;
+    }
+
     public AgentHealthReport GetHealthReport()
     {
-        // 1. 核心计算
-        var isOutDated = LastUpdate < DateTime.UtcNow.AddMinutes(-1);
-
+        var now = _clock.GetUtcNow().UtcDateTime;
         var load = GetLoad();
-        // Normalize load by CPU cores and convert to percentage
-        // loadPerCore represents utilization: 1.0 = 100% of one core
-        var loadPerCore = CpuCores > 0 ? load.Load15M / CpuCores : 0;
-        var loadRate = loadPerCore * 100; // Convert to percentage for consistency
-
+        var loadRate = CpuCores > 0 ? 100 * load.Load15M / CpuCores : 0;
         var cpu = GetCpuUsage();
         var cpuRate = cpu.Ratio;
-
-        var diskUseRatio = 0.0;
-        if (Disks.Any())
-        {
-            diskUseRatio = Disks.Max(d => d.Total > 0 ? d.Used / d.Total : 0);
-        }
-        else if (TotalRoot > 0)
-        {
-            diskUseRatio = UsedRoot / TotalRoot;
-        }
-
-        // 2. 状态逻辑
-        AgentStatus status;
-        string reason;
-
-        if (isOutDated)
-        {
-            status = AgentStatus.Offline;
-            reason = "Server is out of sync.";
-        }
-        else if (loadRate > 100 || cpuRate > 40 || diskUseRatio > 0.92)
-        {
-            status = AgentStatus.Critical;
-            reason = (loadRate > 100 ? "Load critical. " : "") +
-                     (cpuRate > 40 ? "CPU critical. " : "") +
-                     (diskUseRatio > 0.92 ? "Disk critical. " : "");
-        }
-        else if (loadRate > 70 || cpuRate > 20 || diskUseRatio > 0.8)
-        {
-            status = AgentStatus.Warning;
-            reason = (loadRate > 70 ? "Load warning. " : "") +
-                     (cpuRate > 20 ? "CPU warning. " : "") +
-                     (diskUseRatio > 0.8 ? "Disk warning. " : "");
-        }
-        else
-        {
-            status = AgentStatus.Healthy;
-            reason = "System healthy.";
-        }
+        var diskUseRatio = GetDiskUseRatio() ?? 0;
+        var health = _health.Snapshot(now);
+        var status = now - LastUpdate > TimeSpan.FromMinutes(1) ? AgentStatus.Offline : health.Status;
+        var reason = status == AgentStatus.Offline ? "Server is out of sync." : health.Reason;
 
         // 3. Tooltips
         var loadPrompt = $"Load:\n1 min: {load.Load1M}\n5 min: {load.Load5M}\n15 min: {load.Load15M}";
@@ -298,6 +272,8 @@ public class Agent
         // 4. 返回报告
         return new AgentHealthReport
         {
+            SmoothedIdle = health.Idle,
+            Pressure = health.Pressure,
             LoadRate = loadRate,
             CpuRate = cpuRate,
             DiskUseRatio = diskUseRatio,

@@ -27,6 +27,27 @@
         </div>
     </div>
 
+    <div class="card mb-3">
+        <div class="card-body">
+            <h4 class="h5">@Localizer["Resource pressure"]</h4>
+            <p class="text-muted">@Localizer["Colors use sustained resource pressure. A short quiet sample does not establish recovery."]</p>
+            @if (health.Pressure is { } pressure)
+            {
+                <dl class="row mb-0">
+                    <dt class="col-sm-4">@Localizer["Smoothed CPU idle"]</dt><dd class="col-sm-8">@health.SmoothedIdle?.ToString("F1")%</dd>
+                    <dt class="col-sm-4">@Localizer["CPU PSI (avg60)"]</dt><dd class="col-sm-8">@pressure.Cpu.ToString("F1")%</dd>
+                    <dt class="col-sm-4">@Localizer["Memory PSI (avg60)"]</dt><dd class="col-sm-8">@pressure.Memory.ToString("F1")%</dd>
+                    <dt class="col-sm-4">@Localizer["I/O PSI (avg60)"]</dt><dd class="col-sm-8">@pressure.Io.ToString("F1")%</dd>
+                    <dt class="col-sm-4">@Localizer["Pressure index (15-minute load / logical CPUs)"]</dt><dd class="col-sm-8">@((health.LoadRate / 100).ToString("F2"))</dd>
+                </dl>
+            }
+            else
+            {
+                <p class="mb-0">@Localizer["Fresh PSI measurements are unavailable. Check connectivity, update the agent and verify Linux PSI support."]</p>
+            }
+        </div>
+    </div>
+
     <div class="row">
         <div class="col-12 col-sm-6 col-xxl-3 d-flex">
             <div class="card flex-fill">
@@ -47,7 +68,7 @@
                             </p>
                             <div class="mb-0">
                                 <span class="badge @health.BadgeClass" data-bs-toggle="tooltip" title="@health.Reason">
-                                    @Localizer[health.BadgeText]
+                                    @(health.Status == Aiursoft.StatHub.SDK.Models.AgentStatus.Unknown ? Localizer["Collecting data"] : Localizer[health.BadgeText])
                                 </span>
                             </div>
                         </div>

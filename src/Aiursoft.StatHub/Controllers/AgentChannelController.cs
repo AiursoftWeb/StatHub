@@ -128,7 +128,7 @@ public class AgentChannelController(
         // 基础信息同步 (同步调用)
         SyncAgentMetadata(agent, model);
 
-        // Preserve sample order so monitoring observes transient recovery within a batch.
+        // Preserve event order; only the shared tracker can confirm recovery.
         if (model.Stats != null)
         {
             var observations = new List<string>();
@@ -137,10 +137,13 @@ public class AgentChannelController(
                 metricsExport.Capture(agent.ClientId, agent.Hostname, sample, agent.LastUpdate);
                 await agent.Stats.BroadcastAsync(sample);
                 if (agent.CpuCores <= 0 || sample.CpuIdl is < 0 or > 100) continue;
+                if (sample.SampleTime is { } sampledAt &&
+                    (sampledAt.Kind != DateTimeKind.Utc || agent.LastUpdate - sampledAt > TimeSpan.FromSeconds(30) ||
+                     sampledAt - agent.LastUpdate > TimeSpan.FromSeconds(5))) continue;
                 observations.Add(agent.GetHealthReport().Status switch
                 {
                     AgentStatus.Healthy => "green", AgentStatus.Warning => "yellow",
-                    AgentStatus.Critical => "red", _ => "unknown"
+                    AgentStatus.Critical => "red", AgentStatus.Unknown => "collecting", _ => "unknown"
                 });
             }
             using var scope = scopeFactory.CreateScope();

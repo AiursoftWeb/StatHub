@@ -28,118 +28,20 @@ public class AgentTests
     }
 
     [TestMethod]
-    public async Task TestGetHealthReport_Healthy()
+    public async Task OldAgentsAreUnconfirmedAndStillShowDiagnosticMetrics()
     {
-        var agent = new Agent("test-client")
-        {
-            LastUpdate = DateTime.UtcNow,
-            CpuCores = 4,
-            TotalRoot = 100,
-            UsedRoot = 10
-        };
-        await agent.Stats.BroadcastAsync(new DstatResult
-        {
-            CpuUsr = 1,
-            CpuSys = 1,
-            CpuIdl = 98,
-            Load15M = 0.3 // 7.5% load per core
-        });
-
+        var agent = new Agent("old") { CpuCores = 4, TotalRoot = 100, UsedRoot = 10 };
+        await agent.Stats.BroadcastAsync(new DstatResult { CpuIdl = 98, Load15M = 0.3 });
         var report = agent.GetHealthReport();
-        Assert.AreEqual(AgentStatus.Healthy, report.Status);
+        Assert.AreEqual(AgentStatus.Unknown, report.Status);
         Assert.AreEqual(7.5, report.LoadRate);
         Assert.AreEqual(2, report.CpuRate);
         Assert.AreEqual(0.1, report.DiskUseRatio);
-        Assert.AreEqual("bg-success", report.LoadColorClass);
-        Assert.AreEqual("bg-success", report.CpuColorClass);
-        Assert.AreEqual("bg-success", report.DiskColorClass);
-    }
-
-    [TestMethod]
-    public void TestGetHealthReport_Offline()
-    {
-        var agent = new Agent("test-client")
-        {
-            LastUpdate = DateTime.UtcNow.AddMinutes(-2),
-            CpuCores = 4,
-            TotalRoot = 100,
-            UsedRoot = 10
-        };
-        
-        var report = agent.GetHealthReport();
-        Assert.AreEqual(AgentStatus.Offline, report.Status);
-    }
-
-    [TestMethod]
-    public async Task TestGetHealthReport_Critical()
-    {
-        var agent = new Agent("test-client")
-        {
-            LastUpdate = DateTime.UtcNow,
-            CpuCores = 1,
-            TotalRoot = 100,
-            UsedRoot = 95
-        };
-        await agent.Stats.BroadcastAsync(new DstatResult
-        {
-            CpuUsr = 50,
-            CpuSys = 0,
-            CpuIdl = 50,
-            Load15M = 1.1 
-        });
-
-        var report = agent.GetHealthReport();
-        Assert.AreEqual(AgentStatus.Critical, report.Status);
-        StringAssert.Contains(report.Reason, "Load critical");
-        StringAssert.Contains(report.Reason, "CPU critical");
-        StringAssert.Contains(report.Reason, "Disk critical");
-    }
-
-    [TestMethod]
-    public void TestGetHealthReport_MultipleDisks()
-    {
-        var agent = new Agent("test-client")
-        {
-            LastUpdate = DateTime.UtcNow,
-            CpuCores = 4,
-            TotalRoot = 100,
-            UsedRoot = 10,
-            Disks = new List<DiskSpaceInfo>
-            {
-                new() { Name = "/", Total = 100, Used = 10 },
-                new() { Name = "/data", Total = 100, Used = 95 }
-            }
-        };
-
-        var report = agent.GetHealthReport();
-        Assert.AreEqual(AgentStatus.Critical, report.Status);
-        Assert.AreEqual(0.95, report.DiskUseRatio);
-        StringAssert.Contains(report.Reason, "Disk critical");
-    }
-
-    [TestMethod]
-    public async Task TestGetHealthReport_Warning()
-    {
-        var agent = new Agent("test-client")
-        {
-            LastUpdate = DateTime.UtcNow,
-            CpuCores = 4,
-            TotalRoot = 100,
-            UsedRoot = 85
-        };
-        await agent.Stats.BroadcastAsync(new DstatResult
-        {
-            CpuUsr = 1,
-            CpuSys = 1,
-            CpuIdl = 98,
-            Load15M = 0.3 
-        });
-
-        var report = agent.GetHealthReport();
-        Assert.AreEqual(AgentStatus.Warning, report.Status);
-        Assert.AreEqual(0.85, report.DiskUseRatio);
-        StringAssert.Contains(report.Reason, "Disk warning");
-        Assert.AreEqual("bg-warning", report.DiskColorClass);
+        Assert.AreEqual("bg-info", report.LoadColorClass);
+        Assert.AreEqual("bg-info", report.CpuColorClass);
+        Assert.AreEqual("badge-subtle-secondary", report.BadgeClass);
+        agent.LastUpdate = DateTime.UtcNow.AddMinutes(-2);
+        Assert.AreEqual(AgentStatus.Offline, agent.GetHealthReport().Status);
     }
 
     [TestMethod]
