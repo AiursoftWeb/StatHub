@@ -27,6 +27,9 @@
   <data name="Add rule" xml:space="preserve">
     <value>नियम जोड़ें</value>
   </data>
+  <data name="After startup, reconnecting or incomplete data, health stays unconfirmed until pressure or recovery is established. Upgrade older agents to report Linux PSI. Collecting data is different from offline." xml:space="preserve">
+    <value>स्टार्टअप, पुनः कनेक्शन या अधूरे डेटा के बाद, दबाव या सुधार की पुष्टि होने तक स्वास्थ्य स्थिति अपुष्ट रहती है। पुराने एजेंटों को Linux PSI की रिपोर्ट करने के लिए अपग्रेड करें। डेटा एकत्र किया जाना ऑफ़लाइन होने से अलग है।</value>
+  </data>
   <data name="AlertCenter monitoring" xml:space="preserve">
     <value>AlertCenter मॉनिटरिंग</value>
   </data>
@@ -44,6 +47,9 @@
   </data>
   <data name="Counts time offline. Any live color resets this timer. Grey starts after one minute without a valid report." xml:space="preserve">
     <value>ऑफ़लाइन रहने का समय गिना जाता है। कोई भी सक्रिय रंग इस टाइमर को रीसेट कर देता है। मान्य रिपोर्ट न मिलने पर एक मिनट बाद ग्रे स्थिति शुरू होती है।</value>
+  </data>
+  <data name="Counts yellow, red and grey. Confirmed green resets this timer. Incomplete measurements interrupt observation without mitigating incidents." xml:space="preserve">
+    <value>पीला, लाल और धूसर समय में गिने जाते हैं। पुष्टि किया गया हरा रंग इस टाइमर को रीसेट करता है। अधूरे माप अवलोकन को बाधित करते हैं, लेकिन घटनाओं की गंभीरता कम नहीं करते।</value>
   </data>
   <data name="Counts yellow, red and grey. Only green resets this timer." xml:space="preserve">
     <value>पीले, लाल और भूरे का गणना करता है। केवल हरा इस टाइमर को रीसेट करता है।</value>
@@ -78,6 +84,9 @@
   <data name="Green" xml:space="preserve">
     <value>हरा</value>
   </data>
+  <data name="Green is published only after five continuous minutes below all recovery limits. A brief quiet sample cannot reset timers or mitigate incidents. Missing pressure data is not recovery." xml:space="preserve">
+    <value>सभी रिकवरी सीमाओं से नीचे लगातार पाँच मिनट रहने के बाद ही हरा रंग दिखाया जाता है। थोड़े समय का शांत नमूना टाइमर रीसेट नहीं कर सकता और न ही घटनाओं की गंभीरता कम कर सकता है। दबाव से जुड़े डेटा का न होना रिकवरी नहीं है।</value>
+  </data>
   <data name="Grey (offline)" xml:space="preserve">
     <value>धूसर (ऑफ़लाइन)</value>
   </data>
@@ -102,6 +111,9 @@
   <data name="Matching more rules escalates the existing incident when needed; it does not create another incident or automatically lower its severity." xml:space="preserve">
     <value>ज़रूरत पड़ने पर अधिक नियमों का मेल मौजूदा घटना की गंभीरता बढ़ाता है; इससे कोई दूसरी घटना नहीं बनती और न ही उसकी गंभीरता अपने-आप कम होती है।</value>
   </data>
+  <data name="Mitigate incidents after five continuous minutes below all resource recovery limits" xml:space="preserve">
+    <value>सभी संसाधनों की पुनर्प्राप्ति सीमाओं से नीचे लगातार पाँच मिनट रहने के बाद घटनाओं का निवारण करें</value>
+  </data>
   <data name="Monitor all servers, including newly connected servers" xml:space="preserve">
     <value>सभी सर्वरों, जिसमें नई जोड़े गए सर्वर भी शामिल हैं, की निगरानी करें</value>
   </data>
@@ -114,11 +126,17 @@
   <data name="One incident, with recovery" xml:space="preserve">
     <value>एक ही घटना, सुधार के साथ</value>
   </data>
+  <data name="PSI measures time when tasks wait for CPU, memory or I/O. Health uses PSI avg60 and CPU idle smoothed over 60 seconds; load is diagnostic only." xml:space="preserve">
+    <value>PSI यह मापता है कि कार्य CPU, मेमोरी या I/O के लिए कितनी देर प्रतीक्षा करते हैं। स्वास्थ्य का आकलन PSI avg60 और 60 सेकंड में स्मूद किए गए CPU idle के आधार पर होता है; load केवल निदान के लिए है।</value>
+  </data>
   <data name="Red" xml:space="preserve">
     <value>लाल</value>
   </data>
   <data name="Red or worse" xml:space="preserve">
     <value>लाल या उससे अधिक गंभीर</value>
+  </data>
+  <data name="Red: CPU idle at most 5% and CPU PSI at least 50%, memory PSI at least 20%, I/O PSI at least 30%, or disk usage at least 92%." xml:space="preserve">
+    <value>लाल: CPU निष्क्रियता अधिकतम 5% और CPU PSI कम से कम 50%, मेमोरी PSI कम से कम 20%, I/O PSI कम से कम 30%, या डिस्क उपयोग कम से कम 92%।</value>
   </data>
   <data name="Rules measure how long a server stays at or above a health threshold. Each threshold has its own timer." xml:space="preserve">
     <value>नियम मापते हैं कि सर्वर स्वास्थ्य सीमा पर या उसके ऊपर कितने समय तक बना रहता है। प्रत्येक सीमा का अपना स्वतंत्र टाइमर होता है।</value>
@@ -138,6 +156,9 @@
   <data name="Severity" xml:space="preserve">
     <value>गंभीरता</value>
   </data>
+  <data name="Stable resource health" xml:space="preserve">
+    <value>स्थिर संसाधन स्वास्थ्य</value>
+  </data>
   <data name="State" xml:space="preserve">
     <value>स्थिति</value>
   </data>
@@ -150,6 +171,9 @@
   <data name="Unknown" xml:space="preserve">
     <value>अज्ञात</value>
   </data>
+  <data name="Worsening requires two continuous minutes. Red drops to yellow after five minutes without red pressure. Green requires five minutes with CPU idle at least 20% or CPU PSI at most 10%, memory PSI at most 2%, I/O PSI at most 5%, and disk usage at most 75%." xml:space="preserve">
+    <value>स्थिति बिगड़ने पर दो लगातार मिनट आवश्यक हैं। लाल स्थिति में लाल स्तर का दबाव न रहने पर पाँच मिनट बाद स्थिति पीली हो जाती है। हरी स्थिति के लिए पाँच मिनट तक CPU आइडल कम से कम 20% या CPU PSI अधिकतम 10%, मेमोरी PSI अधिकतम 2%, I/O PSI अधिकतम 5% और डिस्क उपयोग अधिकतम 75% होना आवश्यक है।</value>
+  </data>
   <data name="Yellow" xml:space="preserve">
     <value>पीला</value>
   </data>
@@ -158,6 +182,9 @@
   </data>
   <data name="Yellow or worse" xml:space="preserve">
     <value>पीला या उससे खराब</value>
+  </data>
+  <data name="Yellow: CPU idle at most 15% and CPU PSI at least 20%, memory PSI at least 5%, I/O PSI at least 10%, or disk usage at least 80%." xml:space="preserve">
+    <value>पीला: CPU idle अधिकतम 15% और CPU PSI कम से कम 20%, memory PSI कम से कम 5%, I/O PSI कम से कम 10%, या disk usage कम से कम 80% हो।</value>
   </data>
   <data name="Zero minutes means immediately. The most severe matching rule wins. See the guide for how severity thresholds accumulate." xml:space="preserve">
     <value>शून्य मिनट का अर्थ है तुरंत। मेल खाने वाले नियमों में सबसे गंभीर नियम लागू होगा। गंभीरता की सीमाएँ कैसे बढ़ती हैं, इसके लिए मार्गदर्शिका देखें।</value>

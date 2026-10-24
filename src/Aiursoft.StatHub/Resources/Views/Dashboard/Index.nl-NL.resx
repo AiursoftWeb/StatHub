@@ -66,6 +66,9 @@
   <data name="Average Load" xml:space="preserve">
     <value>Gemiddelde belasting</value>
   </data>
+  <data name="Average pressure index" xml:space="preserve">
+    <value>Gemiddelde belastingsindex</value>
+  </data>
   <data name="Avg Load" xml:space="preserve">
     <value>Gem. belasting</value>
   </data>
@@ -74,6 +77,9 @@
   </data>
   <data name="Built-in User Management" xml:space="preserve">
     <value>Ingebouwd gebruikersbeheer</value>
+  </data>
+  <data name="Collecting data" xml:space="preserve">
+    <value>Gegevens verzamelen</value>
   </data>
   <data name="Comes with full Docker support for simplified, consistent, and reliable deployments." xml:space="preserve">
     <value>Biedt volledige Docker-ondersteuning voor vereenvoudigde, consistente en betrouwbare implementaties.</value>
@@ -182,6 +188,9 @@
   </data>
   <data name="Out of sync" xml:space="preserve">
     <value>Niet gesynchroniseerd</value>
+  </data>
+  <data name="Pressure index" xml:space="preserve">
+    <value>Drukindex</value>
   </data>
   <data name="RAM Usage" xml:space="preserve">
     <value>RAM-gebruik</value>

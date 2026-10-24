@@ -27,6 +27,9 @@
   <data name="Add rule" xml:space="preserve">
     <value>Додати правило</value>
   </data>
+  <data name="After startup, reconnecting or incomplete data, health stays unconfirmed until pressure or recovery is established. Upgrade older agents to report Linux PSI. Collecting data is different from offline." xml:space="preserve">
+    <value>Після запуску, повторного підключення або отримання неповних даних стан здоров’я залишається непідтвердженим, доки не буде встановлено наявність навантаження або відновлення. Оновіть старі агенти, щоб вони передавали дані Linux PSI. Збирання даних — це не те саме, що стан офлайн.</value>
+  </data>
   <data name="AlertCenter monitoring" xml:space="preserve">
     <value>Моніторинг AlertCenter</value>
   </data>
@@ -44,6 +47,9 @@
   </data>
   <data name="Counts time offline. Any live color resets this timer. Grey starts after one minute without a valid report." xml:space="preserve">
     <value>Враховує час у неактивному стані. Будь-який активний колір скидає цей таймер. Сірий стан активується після однієї хвилини без валідного звіту.</value>
+  </data>
+  <data name="Counts yellow, red and grey. Confirmed green resets this timer. Incomplete measurements interrupt observation without mitigating incidents." xml:space="preserve">
+    <value>Враховуються жовтий, червоний і сірий рівні. Підтверджений зелений рівень скидає цей таймер. Неповні вимірювання переривають спостереження, але не пом’якшують інциденти.</value>
   </data>
   <data name="Counts yellow, red and grey. Only green resets this timer." xml:space="preserve">
     <value>Враховує жовтий, червоний і сірий кольори. Лише зелений скидає цей таймер.</value>
@@ -78,6 +84,9 @@
   <data name="Green" xml:space="preserve">
     <value>Зелений</value>
   </data>
+  <data name="Green is published only after five continuous minutes below all recovery limits. A brief quiet sample cannot reset timers or mitigate incidents. Missing pressure data is not recovery." xml:space="preserve">
+    <value>Зелений статус відображається лише після п’яти безперервних хвилин, протягом яких показники залишаються нижчими за всі порогові значення відновлення. Короткий період спокійних показників не скидає таймери й не пом’якшує інциденти. Відсутність даних про навантаження не є відновленням.</value>
+  </data>
   <data name="Grey (offline)" xml:space="preserve">
     <value>Сірий (офлайн)</value>
   </data>
@@ -102,6 +111,9 @@
   <data name="Matching more rules escalates the existing incident when needed; it does not create another incident or automatically lower its severity." xml:space="preserve">
     <value>Якщо спрацьовує більше правил, за потреби підвищується рівень наявного інциденту; новий інцидент не створюється, а рівень його критичності автоматично не знижується.</value>
   </data>
+  <data name="Mitigate incidents after five continuous minutes below all resource recovery limits" xml:space="preserve">
+    <value>Усунення інцидентів, якщо протягом п’яти хвилин поспіль усі показники ресурсів нижчі за порогові значення відновлення</value>
+  </data>
   <data name="Monitor all servers, including newly connected servers" xml:space="preserve">
     <value>Моніторинг усіх серверів, включаючи новопідключені</value>
   </data>
@@ -114,11 +126,17 @@
   <data name="One incident, with recovery" xml:space="preserve">
     <value>Одна інцидент, з відновленням</value>
   </data>
+  <data name="PSI measures time when tasks wait for CPU, memory or I/O. Health uses PSI avg60 and CPU idle smoothed over 60 seconds; load is diagnostic only." xml:space="preserve">
+    <value>PSI вимірює час, протягом якого завдання очікують на процесор, пам’ять або введення-виведення. Для оцінки стану використовуються PSI avg60 і завантаженість процесора в режимі простою, згладжена за 60 секунд; показник load має лише діагностичне значення.</value>
+  </data>
   <data name="Red" xml:space="preserve">
     <value>Червоний</value>
   </data>
   <data name="Red or worse" xml:space="preserve">
     <value>Червоний або гірше</value>
+  </data>
+  <data name="Red: CPU idle at most 5% and CPU PSI at least 50%, memory PSI at least 20%, I/O PSI at least 30%, or disk usage at least 92%." xml:space="preserve">
+    <value>Червоний: завантаження процесора не перевищує 5%, а CPU PSI становить щонайменше 50%, PSI пам’яті — щонайменше 20%, PSI вводу-виводу — щонайменше 30% або використання диска — щонайменше 92%.</value>
   </data>
   <data name="Rules measure how long a server stays at or above a health threshold. Each threshold has its own timer." xml:space="preserve">
     <value>Правила визначають, як довго сервер залишається на рівні порога працездатності або вище. Для кожного порога ведеться окремий таймер.</value>
@@ -138,6 +156,9 @@
   <data name="Severity" xml:space="preserve">
     <value>Сeria</value>
   </data>
+  <data name="Stable resource health" xml:space="preserve">
+    <value>Стабільний стан ресурсів</value>
+  </data>
   <data name="State" xml:space="preserve">
     <value>Стан</value>
   </data>
@@ -150,6 +171,9 @@
   <data name="Unknown" xml:space="preserve">
     <value>Невідомо</value>
   </data>
+  <data name="Worsening requires two continuous minutes. Red drops to yellow after five minutes without red pressure. Green requires five minutes with CPU idle at least 20% or CPU PSI at most 10%, memory PSI at most 2%, I/O PSI at most 5%, and disk usage at most 75%." xml:space="preserve">
+    <value>Погіршення стану має тривати безперервно дві хвилини. Червоний рівень змінюється на жовтий після п’яти хвилин без критичного навантаження. Для переходу на зелений рівень протягом п’яти хвилин мають виконуватися такі умови: завантаженість CPU не перевищує 80% або CPU PSI не перевищує 10%, memory PSI не перевищує 2%, I/O PSI не перевищує 5%, а використання диска не перевищує 75%.</value>
+  </data>
   <data name="Yellow" xml:space="preserve">
     <value>Жовтий</value>
   </data>
@@ -158,6 +182,9 @@
   </data>
   <data name="Yellow or worse" xml:space="preserve">
     <value>Жовтий або гірший</value>
+  </data>
+  <data name="Yellow: CPU idle at most 15% and CPU PSI at least 20%, memory PSI at least 5%, I/O PSI at least 10%, or disk usage at least 80%." xml:space="preserve">
+    <value>Жовтий: завантаження ЦП не більше 15% і PSI ЦП не менше 20%, PSI пам’яті не менше 5%, PSI введення-виведення не менше 10% або використання диска не менше 80%.</value>
   </data>
   <data name="Zero minutes means immediately. The most severe matching rule wins. See the guide for how severity thresholds accumulate." xml:space="preserve">
     <value>Нуль хвилин означає негайно. Перемагає найсуворіше збігаючися правило. Дивіться в посібнику, як накопичуються пороги важливості.</value>

@@ -66,6 +66,9 @@
   <data name="Average Load" xml:space="preserve">
     <value>Genomsnittlig belastning</value>
   </data>
+  <data name="Average pressure index" xml:space="preserve">
+    <value>Genomsnittligt belastningsindex</value>
+  </data>
   <data name="Avg Load" xml:space="preserve">
     <value>Genomsnittlig belastning</value>
   </data>
@@ -74,6 +77,9 @@
   </data>
   <data name="Built-in User Management" xml:space="preserve">
     <value>Inbyggd användarhantering</value>
+  </data>
+  <data name="Collecting data" xml:space="preserve">
+    <value>Samlar in data</value>
   </data>
   <data name="Comes with full Docker support for simplified, consistent, and reliable deployments." xml:space="preserve">
     <value>Levereras med fullt Docker-stöd för förenklad, konsekvent och pålitlig distribution.</value>
@@ -182,6 +188,9 @@
   </data>
   <data name="Out of sync" xml:space="preserve">
     <value>Ej synkroniserad</value>
+  </data>
+  <data name="Pressure index" xml:space="preserve">
+    <value>Belastningsindex</value>
   </data>
   <data name="RAM Usage" xml:space="preserve">
     <value>RAM-användning</value>

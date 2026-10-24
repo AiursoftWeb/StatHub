@@ -27,6 +27,9 @@
   <data name="Add rule" xml:space="preserve">
     <value>Tilføj regel</value>
   </data>
+  <data name="After startup, reconnecting or incomplete data, health stays unconfirmed until pressure or recovery is established. Upgrade older agents to report Linux PSI. Collecting data is different from offline." xml:space="preserve">
+    <value>Efter opstart, genopkobling eller ufuldstændige data forbliver tilstanden ubekræftet, indtil belastning eller genopretning er fastslået. Opgrader ældre agenter, så de rapporterer Linux PSI. Dataindsamling er ikke det samme som at være offline.</value>
+  </data>
   <data name="AlertCenter monitoring" xml:space="preserve">
     <value>Overvågning af AlertCenter</value>
   </data>
@@ -44,6 +47,9 @@
   </data>
   <data name="Counts time offline. Any live color resets this timer. Grey starts after one minute without a valid report." xml:space="preserve">
     <value>Tæller tiden offline. Enhver aktiv farve nulstiller denne timer. Grå starter efter ét minut uden en gyldig rapport.</value>
+  </data>
+  <data name="Counts yellow, red and grey. Confirmed green resets this timer. Incomplete measurements interrupt observation without mitigating incidents." xml:space="preserve">
+    <value>Tæller gul, rød og grå. Bekræftet grøn nulstiller denne timer. Ufuldstændige målinger afbryder observationen uden at afbøde hændelser.</value>
   </data>
   <data name="Counts yellow, red and grey. Only green resets this timer." xml:space="preserve">
     <value>Tæller gul, rød og grå. Kun grøn nulstiller denne timer.</value>
@@ -78,6 +84,9 @@
   <data name="Green" xml:space="preserve">
     <value>Grøn</value>
   </data>
+  <data name="Green is published only after five continuous minutes below all recovery limits. A brief quiet sample cannot reset timers or mitigate incidents. Missing pressure data is not recovery." xml:space="preserve">
+    <value>Grøn status vises først, når alle grænser for genopretning har været overholdt i fem sammenhængende minutter. En kortvarig rolig måling kan hverken nulstille timere eller afbøde hændelser. Manglende trykdata er ikke tegn på genopretning.</value>
+  </data>
   <data name="Grey (offline)" xml:space="preserve">
     <value>Grå (offline)</value>
   </data>
@@ -102,6 +111,9 @@
   <data name="Matching more rules escalates the existing incident when needed; it does not create another incident or automatically lower its severity." xml:space="preserve">
     <value>Hvis flere regler matcher, opgraderes den eksisterende hændelse efter behov; der oprettes ikke en ny hændelse, og alvorligheden sænkes ikke automatisk.</value>
   </data>
+  <data name="Mitigate incidents after five continuous minutes below all resource recovery limits" xml:space="preserve">
+    <value>Afhjælp hændelser, når alle ressourcer i fem sammenhængende minutter har været under grænseværdierne for genopretning</value>
+  </data>
   <data name="Monitor all servers, including newly connected servers" xml:space="preserve">
     <value>Overvåg alle servere, herunder nytilsluttede servere</value>
   </data>
@@ -114,11 +126,17 @@
   <data name="One incident, with recovery" xml:space="preserve">
     <value>Én hændelse, med genopretning</value>
   </data>
+  <data name="PSI measures time when tasks wait for CPU, memory or I/O. Health uses PSI avg60 and CPU idle smoothed over 60 seconds; load is diagnostic only." xml:space="preserve">
+    <value>PSI måler, hvor længe opgaver venter på CPU, hukommelse eller I/O. Sundhedstilstanden bruger PSI avg60 og CPU-idle, udjævnet over 60 sekunder; load bruges kun til diagnosticering.</value>
+  </data>
   <data name="Red" xml:space="preserve">
     <value>Rød</value>
   </data>
   <data name="Red or worse" xml:space="preserve">
     <value>Rød eller værre</value>
+  </data>
+  <data name="Red: CPU idle at most 5% and CPU PSI at least 50%, memory PSI at least 20%, I/O PSI at least 30%, or disk usage at least 92%." xml:space="preserve">
+    <value>Rød: CPU-inaktivitet på højst 5 % og CPU-PSI på mindst 50 %, hukommelses-PSI på mindst 20 %, I/O-PSI på mindst 30 % eller diskforbrug på mindst 92 %.</value>
   </data>
   <data name="Rules measure how long a server stays at or above a health threshold. Each threshold has its own timer." xml:space="preserve">
     <value>Regler måler, hvor længe en server forbliver på eller over en sundhedsgrænse. Hver grænse har sin egen timer.</value>
@@ -138,6 +156,9 @@
   <data name="Severity" xml:space="preserve">
     <value>Alvorlighedsgrad</value>
   </data>
+  <data name="Stable resource health" xml:space="preserve">
+    <value>Stabil ressourcehelbred</value>
+  </data>
   <data name="State" xml:space="preserve">
     <value>Status</value>
   </data>
@@ -150,6 +171,9 @@
   <data name="Unknown" xml:space="preserve">
     <value>Ukendt</value>
   </data>
+  <data name="Worsening requires two continuous minutes. Red drops to yellow after five minutes without red pressure. Green requires five minutes with CPU idle at least 20% or CPU PSI at most 10%, memory PSI at most 2%, I/O PSI at most 5%, and disk usage at most 75%." xml:space="preserve">
+    <value>Forværring kræver to sammenhængende minutter. Rød skifter til gul efter fem minutter uden rødt pres. Grøn kræver fem minutter, hvor CPU-idle er mindst 20 % eller CPU PSI højst 10 %, memory PSI højst 2 %, I/O PSI højst 5 % og diskforbruget højst 75 %.</value>
+  </data>
   <data name="Yellow" xml:space="preserve">
     <value>Gul</value>
   </data>
@@ -158,6 +182,9 @@
   </data>
   <data name="Yellow or worse" xml:space="preserve">
     <value>Gul eller værre</value>
+  </data>
+  <data name="Yellow: CPU idle at most 15% and CPU PSI at least 20%, memory PSI at least 5%, I/O PSI at least 10%, or disk usage at least 80%." xml:space="preserve">
+    <value>Gul: CPU-inaktivitet på højst 15 % og CPU-PSI på mindst 20 %, hukommelses-PSI på mindst 5 %, I/O-PSI på mindst 10 % eller diskforbrug på mindst 80 %.</value>
   </data>
   <data name="Zero minutes means immediately. The most severe matching rule wins. See the guide for how severity thresholds accumulate." xml:space="preserve">
     <value>0 minutter betyder straks. Den mest alvorlige matchende regel gælder. Se vejledningen for, hvordan alvorlighedstærsklerne akkumuleres.</value>

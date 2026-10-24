@@ -42,6 +42,9 @@
   <data name="Client ID" xml:space="preserve">
     <value>客戶端 ID</value>
   </data>
+  <data name="Colors use sustained resource pressure. A short quiet sample does not establish recovery." xml:space="preserve">
+    <value>顏色會根據持續的資源壓力變化。短暫的平靜狀況並不足以證明已恢復。</value>
+  </data>
   <data name="Command" xml:space="preserve">
     <value>指令</value>
   </data>
@@ -53,6 +56,9 @@
   </data>
   <data name="CPU %" xml:space="preserve">
     <value>CPU %</value>
+  </data>
+  <data name="CPU PSI (avg60)" xml:space="preserve">
+    <value>CPU PSI（60 秒平均值）</value>
   </data>
   <data name="CPU Usage" xml:space="preserve">
     <value>CPU 使用率</value>
@@ -102,6 +108,9 @@
   <data name="Firewall Status" xml:space="preserve">
     <value>防火牆狀態</value>
   </data>
+  <data name="Fresh PSI measurements are unavailable. Check connectivity, update the agent and verify Linux PSI support." xml:space="preserve">
+    <value>目前未能取得最新的 PSI 測量數據。請檢查連線、更新代理程式，並確認 Linux 支援 PSI。</value>
+  </data>
   <data name="Hardware Details" xml:space="preserve">
     <value>硬件詳細資料</value>
   </data>
@@ -110,6 +119,9 @@
   </data>
   <data name="Healthy" xml:space="preserve">
     <value>健康</value>
+  </data>
+  <data name="I/O PSI (avg60)" xml:space="preserve">
+    <value>輸入／輸出 PSI（avg60）</value>
   </data>
   <data name="Identity" xml:space="preserve">
     <value>身份</value>
@@ -137,6 +149,9 @@
   </data>
   <data name="Memory" xml:space="preserve">
     <value>記憶體</value>
+  </data>
+  <data name="Memory PSI (avg60)" xml:space="preserve">
+    <value>記憶體 PSI（avg60）</value>
   </data>
   <data name="Modified" xml:space="preserve">
     <value>修改時間</value>
@@ -174,6 +189,9 @@
   <data name="Ports" xml:space="preserve">
     <value>埠</value>
   </data>
+  <data name="Pressure index (15-minute load / logical CPUs)" xml:space="preserve">
+    <value>壓力指數（15 分鐘負載／邏輯 CPU 數量）</value>
+  </data>
   <data name="Preview" xml:space="preserve">
     <value>預覽</value>
   </data>
@@ -183,11 +201,17 @@
   <data name="RAM Usage" xml:space="preserve">
     <value>記憶體使用量</value>
   </data>
+  <data name="Resource pressure" xml:space="preserve">
+    <value>資源壓力</value>
+  </data>
   <data name="Running" xml:space="preserve">
     <value>執行中</value>
   </data>
   <data name="Runtime Info" xml:space="preserve">
     <value>運行時資訊</value>
+  </data>
+  <data name="Smoothed CPU idle" xml:space="preserve">
+    <value>平滑 CPU 閒置率</value>
   </data>
   <data name="SSH Keys" xml:space="preserve">
     <value>SSH 金鑰</value>

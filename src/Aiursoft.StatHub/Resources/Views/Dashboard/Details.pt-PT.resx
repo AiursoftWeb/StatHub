@@ -42,6 +42,9 @@
   <data name="Client ID" xml:space="preserve">
     <value>ID do Cliente</value>
   </data>
+  <data name="Colors use sustained resource pressure. A short quiet sample does not establish recovery." xml:space="preserve">
+    <value>As cores refletem uma pressão sustentada sobre os recursos. Um breve período sem pressão não é suficiente para confirmar a recuperação.</value>
+  </data>
   <data name="Command" xml:space="preserve">
     <value>Comando</value>
   </data>
@@ -53,6 +56,9 @@
   </data>
   <data name="CPU %" xml:space="preserve">
     <value>CPU %</value>
+  </data>
+  <data name="CPU PSI (avg60)" xml:space="preserve">
+    <value>PSI da CPU (média de 60 s)</value>
   </data>
   <data name="CPU Usage" xml:space="preserve">
     <value>Utilização da CPU</value>
@@ -102,6 +108,9 @@
   <data name="Firewall Status" xml:space="preserve">
     <value>Estado do Firewall</value>
   </data>
+  <data name="Fresh PSI measurements are unavailable. Check connectivity, update the agent and verify Linux PSI support." xml:space="preserve">
+    <value>Não estão disponíveis medições PSI recentes. Verifique a conectividade, atualize o agente e confirme o suporte do Linux para PSI.</value>
+  </data>
   <data name="Hardware Details" xml:space="preserve">
     <value>Detalhes do Hardware</value>
   </data>
@@ -110,6 +119,9 @@
   </data>
   <data name="Healthy" xml:space="preserve">
     <value>Healthy</value>
+  </data>
+  <data name="I/O PSI (avg60)" xml:space="preserve">
+    <value>PSI de E/S (avg60)</value>
   </data>
   <data name="Identity" xml:space="preserve">
     <value>Identidade</value>
@@ -137,6 +149,9 @@
   </data>
   <data name="Memory" xml:space="preserve">
     <value>Memory</value>
+  </data>
+  <data name="Memory PSI (avg60)" xml:space="preserve">
+    <value>PSI da memória (média de 60 s)</value>
   </data>
   <data name="Modified" xml:space="preserve">
     <value>Modificado</value>
@@ -174,6 +189,9 @@
   <data name="Ports" xml:space="preserve">
     <value>Ports</value>
   </data>
+  <data name="Pressure index (15-minute load / logical CPUs)" xml:space="preserve">
+    <value>Índice de pressão (carga dos últimos 15 minutos / CPUs lógicas)</value>
+  </data>
   <data name="Preview" xml:space="preserve">
     <value>Pré-visualização</value>
   </data>
@@ -183,11 +201,17 @@
   <data name="RAM Usage" xml:space="preserve">
     <value>Utilização de RAM</value>
   </data>
+  <data name="Resource pressure" xml:space="preserve">
+    <value>Pressão dos recursos</value>
+  </data>
   <data name="Running" xml:space="preserve">
     <value>Em execução</value>
   </data>
   <data name="Runtime Info" xml:space="preserve">
     <value>Informações de Execução</value>
+  </data>
+  <data name="Smoothed CPU idle" xml:space="preserve">
+    <value>Tempo de inatividade suavizado da CPU</value>
   </data>
   <data name="SSH Keys" xml:space="preserve">
     <value>Chaves SSH</value>

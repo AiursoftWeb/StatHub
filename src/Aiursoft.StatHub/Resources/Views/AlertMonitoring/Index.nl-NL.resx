@@ -27,6 +27,9 @@
   <data name="Add rule" xml:space="preserve">
     <value>Regel toevoegen</value>
   </data>
+  <data name="After startup, reconnecting or incomplete data, health stays unconfirmed until pressure or recovery is established. Upgrade older agents to report Linux PSI. Collecting data is different from offline." xml:space="preserve">
+    <value>Na het opstarten, bij het opnieuw verbinden of bij onvolledige gegevens blijft de status onbevestigd totdat overbelasting of herstel is vastgesteld. Werk oudere agents bij zodat ze Linux PSI rapporteren. Gegevens verzamelen is iets anders dan offline zijn.</value>
+  </data>
   <data name="AlertCenter monitoring" xml:space="preserve">
     <value>AlertCenter-monitoring</value>
   </data>
@@ -44,6 +47,9 @@
   </data>
   <data name="Counts time offline. Any live color resets this timer. Grey starts after one minute without a valid report." xml:space="preserve">
     <value>Telt de tijd offline. Elke actieve kleur reset deze timer. Grijs start na één minuut zonder geldig rapport.</value>
+  </data>
+  <data name="Counts yellow, red and grey. Confirmed green resets this timer. Incomplete measurements interrupt observation without mitigating incidents." xml:space="preserve">
+    <value>Telt geel, rood en grijs mee. Bevestigd groen zet deze timer terug. Onvolledige metingen onderbreken de observatie, maar verminderen de ernst van incidenten niet.</value>
   </data>
   <data name="Counts yellow, red and grey. Only green resets this timer." xml:space="preserve">
     <value>Telt geel, rood en grijs. Alleen groen reset deze timer.</value>
@@ -78,6 +84,9 @@
   <data name="Green" xml:space="preserve">
     <value>Groen</value>
   </data>
+  <data name="Green is published only after five continuous minutes below all recovery limits. A brief quiet sample cannot reset timers or mitigate incidents. Missing pressure data is not recovery." xml:space="preserve">
+    <value>Groen wordt pas weergegeven nadat de waarden vijf minuten onafgebroken onder alle herstelgrenzen zijn gebleven. Een korte rustige meting kan timers niet resetten of incidenten afzwakken. Ontbrekende drukgegevens betekenen niet dat er sprake is van herstel.</value>
+  </data>
   <data name="Grey (offline)" xml:space="preserve">
     <value>Grijs (offline)</value>
   </data>
@@ -102,6 +111,9 @@
   <data name="Matching more rules escalates the existing incident when needed; it does not create another incident or automatically lower its severity." xml:space="preserve">
     <value>Als er meer regels overeenkomen, wordt het bestaande incident indien nodig opgeschaald; er wordt geen nieuw incident aangemaakt en de ernst ervan wordt niet automatisch verlaagd.</value>
   </data>
+  <data name="Mitigate incidents after five continuous minutes below all resource recovery limits" xml:space="preserve">
+    <value>Incidenties verhelpen na vijf aaneengesloten minuten onder alle herstelgrenzen voor resources</value>
+  </data>
   <data name="Monitor all servers, including newly connected servers" xml:space="preserve">
     <value>Alle servers bewaken, ook nieuw verbonden servers</value>
   </data>
@@ -114,11 +126,17 @@
   <data name="One incident, with recovery" xml:space="preserve">
     <value>Eén incident, met herstel</value>
   </data>
+  <data name="PSI measures time when tasks wait for CPU, memory or I/O. Health uses PSI avg60 and CPU idle smoothed over 60 seconds; load is diagnostic only." xml:space="preserve">
+    <value>PSI meet hoelang taken moeten wachten op CPU, geheugen of I/O. Voor de gezondheidsstatus worden PSI avg60 en het CPU-inactiefpercentage gebruikt, afgevlakt over 60 seconden; load is alleen bedoeld voor diagnostische doeleinden.</value>
+  </data>
   <data name="Red" xml:space="preserve">
     <value>Rood</value>
   </data>
   <data name="Red or worse" xml:space="preserve">
     <value>Rood of erger</value>
+  </data>
+  <data name="Red: CPU idle at most 5% and CPU PSI at least 50%, memory PSI at least 20%, I/O PSI at least 30%, or disk usage at least 92%." xml:space="preserve">
+    <value>Rood: CPU-inactiviteit van maximaal 5% en CPU-PSI van minimaal 50%, geheugen-PSI van minimaal 20%, I/O-PSI van minimaal 30% of schijfgebruik van minimaal 92%.</value>
   </data>
   <data name="Rules measure how long a server stays at or above a health threshold. Each threshold has its own timer." xml:space="preserve">
     <value>Regels meten hoe lang een server op of boven een gezondheidsdrempel blijft. Elke drempel heeft een eigen timer.</value>
@@ -138,6 +156,9 @@
   <data name="Severity" xml:space="preserve">
     <value>Zwaarte</value>
   </data>
+  <data name="Stable resource health" xml:space="preserve">
+    <value>Stabiele status van resources</value>
+  </data>
   <data name="State" xml:space="preserve">
     <value>Status</value>
   </data>
@@ -150,6 +171,9 @@
   <data name="Unknown" xml:space="preserve">
     <value>Onbekend</value>
   </data>
+  <data name="Worsening requires two continuous minutes. Red drops to yellow after five minutes without red pressure. Green requires five minutes with CPU idle at least 20% or CPU PSI at most 10%, memory PSI at most 2%, I/O PSI at most 5%, and disk usage at most 75%." xml:space="preserve">
+    <value>Verslechtering moet twee minuten onafgebroken aanhouden. Rood wordt geel na vijf minuten zonder rode druk. Groen vereist vijf minuten waarin de CPU minstens 20% inactief is of de CPU-PSI maximaal 10% bedraagt, de geheugen-PSI maximaal 2%, de I/O-PSI maximaal 5% en het schijfgebruik maximaal 75%.</value>
+  </data>
   <data name="Yellow" xml:space="preserve">
     <value>Geel</value>
   </data>
@@ -158,6 +182,9 @@
   </data>
   <data name="Yellow or worse" xml:space="preserve">
     <value>Geel of erger</value>
+  </data>
+  <data name="Yellow: CPU idle at most 15% and CPU PSI at least 20%, memory PSI at least 5%, I/O PSI at least 10%, or disk usage at least 80%." xml:space="preserve">
+    <value>Geel: CPU-idle maximaal 15% en CPU-PSI minimaal 20%, geheugen-PSI minimaal 5%, I/O-PSI minimaal 10% of schijfgebruik minimaal 80%.</value>
   </data>
   <data name="Zero minutes means immediately. The most severe matching rule wins. See the guide for how severity thresholds accumulate." xml:space="preserve">
     <value>Nul minuten betekent onmiddellijk. De strengste overeenkomende regel is doorslaggevend. Zie de handleiding voor meer informatie over hoe ernstgrenzen zich opstapelen.</value>

@@ -42,6 +42,9 @@
   <data name="Client ID" xml:space="preserve">
     <value>क्लाइंट आईडी</value>
   </data>
+  <data name="Colors use sustained resource pressure. A short quiet sample does not establish recovery." xml:space="preserve">
+    <value>रंग संसाधनों पर लगातार बने दबाव के आधार पर निर्धारित होते हैं। थोड़े समय तक दबाव कम रहने का नमूना सुधार की पुष्टि नहीं करता।</value>
+  </data>
   <data name="Command" xml:space="preserve">
     <value>आदेश</value>
   </data>
@@ -53,6 +56,9 @@
   </data>
   <data name="CPU %" xml:space="preserve">
     <value>CPU %</value>
+  </data>
+  <data name="CPU PSI (avg60)" xml:space="preserve">
+    <value>CPU PSI (avg60)</value>
   </data>
   <data name="CPU Usage" xml:space="preserve">
     <value>सीपीयू उपयोग</value>
@@ -102,6 +108,9 @@
   <data name="Firewall Status" xml:space="preserve">
     <value>अग्निबंद स्थिति</value>
   </data>
+  <data name="Fresh PSI measurements are unavailable. Check connectivity, update the agent and verify Linux PSI support." xml:space="preserve">
+    <value>नए PSI माप उपलब्ध नहीं हैं। कनेक्टिविटी जाँचें, एजेंट अपडेट करें और Linux PSI समर्थन की पुष्टि करें।</value>
+  </data>
   <data name="Hardware Details" xml:space="preserve">
     <value>हार्डवेयर विवरण</value>
   </data>
@@ -110,6 +119,9 @@
   </data>
   <data name="Healthy" xml:space="preserve">
     <value>Healthy</value>
+  </data>
+  <data name="I/O PSI (avg60)" xml:space="preserve">
+    <value>इनपुट/आउटपुट PSI (औसत 60)</value>
   </data>
   <data name="Identity" xml:space="preserve">
     <value>पहचान</value>
@@ -137,6 +149,9 @@
   </data>
   <data name="Memory" xml:space="preserve">
     <value>Memory</value>
+  </data>
+  <data name="Memory PSI (avg60)" xml:space="preserve">
+    <value>मेमोरी PSI (avg60)</value>
   </data>
   <data name="Modified" xml:space="preserve">
     <value>संशोधित</value>
@@ -174,6 +189,9 @@
   <data name="Ports" xml:space="preserve">
     <value>Ports</value>
   </data>
+  <data name="Pressure index (15-minute load / logical CPUs)" xml:space="preserve">
+    <value>दबाव सूचकांक (15-मिनट का लोड / लॉजिकल CPUs)</value>
+  </data>
   <data name="Preview" xml:space="preserve">
     <value>पूर्वावलोकन</value>
   </data>
@@ -183,11 +201,17 @@
   <data name="RAM Usage" xml:space="preserve">
     <value>RAM उपयोग</value>
   </data>
+  <data name="Resource pressure" xml:space="preserve">
+    <value>संसाधनों पर दबाव</value>
+  </data>
   <data name="Running" xml:space="preserve">
     <value>चल रहा है</value>
   </data>
   <data name="Runtime Info" xml:space="preserve">
     <value>रनटाइम जानकारी</value>
+  </data>
+  <data name="Smoothed CPU idle" xml:space="preserve">
+    <value>औसत CPU निष्क्रियता</value>
   </data>
   <data name="SSH Keys" xml:space="preserve">
     <value>SSH कुंजियाँ</value>

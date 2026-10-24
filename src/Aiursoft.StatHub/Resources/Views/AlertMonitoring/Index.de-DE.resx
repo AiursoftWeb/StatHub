@@ -30,6 +30,9 @@
   <data name="Add rule" xml:space="preserve">
     <value>Regel hinzufügen</value>
   </data>
+  <data name="After startup, reconnecting or incomplete data, health stays unconfirmed until pressure or recovery is established. Upgrade older agents to report Linux PSI. Collecting data is different from offline." xml:space="preserve">
+    <value>Nach dem Start, bei einer erneuten Verbindung oder bei unvollständigen Daten bleibt der Gesundheitsstatus unbestätigt, bis eine Belastung oder Erholung festgestellt wird. Aktualisieren Sie ältere Agents, damit sie Linux-PSI melden. Daten werden erfasst, das ist nicht dasselbe wie offline zu sein.</value>
+  </data>
   <data name="AlertCenter monitoring" xml:space="preserve">
     <value>AlertCenter-Überwachung</value>
   </data>
@@ -47,6 +50,9 @@
   </data>
   <data name="Counts time offline. Any live color resets this timer. Grey starts after one minute without a valid report." xml:space="preserve">
     <value>Erfasst die Offline-Zeit. Jede aktive Farbe setzt diesen Timer zurück. Grau wird nach einer Minute ohne gültige Meldung angezeigt.</value>
+  </data>
+  <data name="Counts yellow, red and grey. Confirmed green resets this timer. Incomplete measurements interrupt observation without mitigating incidents." xml:space="preserve">
+    <value>Zählt Gelb, Rot und Grau. Bestätigtes Grün setzt diesen Timer zurück. Unvollständige Messungen unterbrechen die Beobachtung, ohne Vorfälle zu entschärfen.</value>
   </data>
   <data name="Counts yellow, red and grey. Only green resets this timer." xml:space="preserve">
     <value>Zählt Gelb, Rot und Grau. Nur Grün setzt diesen Timer zurück.</value>
@@ -81,6 +87,9 @@
   <data name="Green" xml:space="preserve">
     <value>Grün</value>
   </data>
+  <data name="Green is published only after five continuous minutes below all recovery limits. A brief quiet sample cannot reset timers or mitigate incidents. Missing pressure data is not recovery." xml:space="preserve">
+    <value>Grün wird erst angezeigt, wenn fünf Minuten lang alle Wiederherstellungsgrenzwerte unterschritten wurden. Eine kurze Phase ohne Auffälligkeiten kann weder Timer zurücksetzen noch Vorfälle abschwächen. Fehlende Druckdaten bedeuten keine Wiederherstellung.</value>
+  </data>
   <data name="Grey (offline)" xml:space="preserve">
     <value>Grau (offline)</value>
   </data>
@@ -108,6 +117,9 @@
   <data name="Matching more rules escalates the existing incident when needed; it does not create another incident or automatically lower its severity." xml:space="preserve">
     <value>Wenn weitere Regeln zutreffen, wird der bestehende Vorfall bei Bedarf hochgestuft; es wird kein weiterer Vorfall erstellt und der Schweregrad nicht automatisch herabgesetzt.</value>
   </data>
+  <data name="Mitigate incidents after five continuous minutes below all resource recovery limits" xml:space="preserve">
+    <value>Vorfälle beheben, nachdem alle Ressourcen fünf Minuten lang kontinuierlich unter den Wiederherstellungsgrenzwerten liegen</value>
+  </data>
   <data name="Monitor all servers, including newly connected servers" xml:space="preserve">
     <value>Alle Server überwachen, einschließlich neu verbundener Server</value>
   </data>
@@ -120,11 +132,17 @@
   <data name="One incident, with recovery" xml:space="preserve">
     <value>Ein Vorfall mit Wiederherstellung</value>
   </data>
+  <data name="PSI measures time when tasks wait for CPU, memory or I/O. Health uses PSI avg60 and CPU idle smoothed over 60 seconds; load is diagnostic only." xml:space="preserve">
+    <value>PSI misst die Zeit, in der Aufgaben auf CPU, Arbeitsspeicher oder E/A warten. Für den Gesundheitsstatus werden PSI avg60 und die CPU-Leerlaufzeit verwendet, die über 60 Sekunden geglättet wird; die Auslastung dient nur der Diagnose.</value>
+  </data>
   <data name="Red" xml:space="preserve">
     <value>Rot</value>
   </data>
   <data name="Red or worse" xml:space="preserve">
     <value>Rot oder schlechter</value>
+  </data>
+  <data name="Red: CPU idle at most 5% and CPU PSI at least 50%, memory PSI at least 20%, I/O PSI at least 30%, or disk usage at least 92%." xml:space="preserve">
+    <value>Rot: CPU-Leerlauf höchstens 5 % und CPU-PSI mindestens 50 %, Speicher-PSI mindestens 20 %, E/A-PSI mindestens 30 % oder Datenträgerauslastung mindestens 92 %.</value>
   </data>
   <data name="Rules measure how long a server stays at or above a health threshold. Each threshold has its own timer." xml:space="preserve">
     <value>Regeln messen, wie lange ein Server einen Gesundheitsschwellenwert erreicht oder überschreitet. Für jeden Schwellenwert gibt es einen eigenen Timer.</value>
@@ -144,6 +162,9 @@
   <data name="Severity" xml:space="preserve">
     <value>Schweregrad</value>
   </data>
+  <data name="Stable resource health" xml:space="preserve">
+    <value>Stabile Ressourcengesundheit</value>
+  </data>
   <data name="State" xml:space="preserve">
     <value>Status</value>
   </data>
@@ -156,6 +177,9 @@
   <data name="Unknown" xml:space="preserve">
     <value>Unbekannt</value>
   </data>
+  <data name="Worsening requires two continuous minutes. Red drops to yellow after five minutes without red pressure. Green requires five minutes with CPU idle at least 20% or CPU PSI at most 10%, memory PSI at most 2%, I/O PSI at most 5%, and disk usage at most 75%." xml:space="preserve">
+    <value>Eine Verschlechterung muss zwei Minuten lang anhalten. Rot wird nach fünf Minuten ohne roten Belastungszustand zu Gelb. Grün setzt fünf Minuten voraus, in denen die CPU-Leerlaufzeit mindestens 20 % oder die CPU-PSI höchstens 10 % beträgt, die Speicher-PSI höchstens 2 %, die I/O-PSI höchstens 5 % und die Festplattenauslastung höchstens 75 %.</value>
+  </data>
   <data name="Yellow" xml:space="preserve">
     <value>Gelb</value>
   </data>
@@ -164,6 +188,9 @@
   </data>
   <data name="Yellow or worse" xml:space="preserve">
     <value>Gelb oder schlechter</value>
+  </data>
+  <data name="Yellow: CPU idle at most 15% and CPU PSI at least 20%, memory PSI at least 5%, I/O PSI at least 10%, or disk usage at least 80%." xml:space="preserve">
+    <value>Gelb: CPU-Leerlauf höchstens 15 % und CPU-PSI mindestens 20 %, Speicher-PSI mindestens 5 %, I/O-PSI mindestens 10 % oder Festplattenauslastung mindestens 80 %.</value>
   </data>
   <data name="Zero minutes means immediately. The most severe matching rule wins. See the guide for how severity thresholds accumulate." xml:space="preserve">
     <value>Null Minuten bedeutet sofort. Es gilt die passende Regel mit der höchsten Schwere. Im Leitfaden erfahren Sie, wie sich die Schweregrad-Schwellenwerte summieren.</value>

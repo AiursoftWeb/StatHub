@@ -30,6 +30,9 @@
   <data name="Add rule" xml:space="preserve">
     <value>Thêm quy tắc</value>
   </data>
+  <data name="After startup, reconnecting or incomplete data, health stays unconfirmed until pressure or recovery is established. Upgrade older agents to report Linux PSI. Collecting data is different from offline." xml:space="preserve">
+    <value>Sau khi khởi động, kết nối lại hoặc khi dữ liệu chưa đầy đủ, trạng thái sức khỏe vẫn chưa được xác nhận cho đến khi xác định được tình trạng quá tải hoặc phục hồi. Hãy nâng cấp các tác tử cũ để gửi báo cáo Linux PSI. Đang thu thập dữ liệu không đồng nghĩa với ngoại tuyến.</value>
+  </data>
   <data name="AlertCenter monitoring" xml:space="preserve">
     <value>Giám sát AlertCenter</value>
   </data>
@@ -47,6 +50,9 @@
   </data>
   <data name="Counts time offline. Any live color resets this timer. Grey starts after one minute without a valid report." xml:space="preserve">
     <value>Đếm thời gian ngoại tuyến. Bất kỳ màu nào hoạt động đều đặt lại bộ đếm thời gian này. Màu xám bắt đầu sau một phút không có báo cáo hợp lệ.</value>
+  </data>
+  <data name="Counts yellow, red and grey. Confirmed green resets this timer. Incomplete measurements interrupt observation without mitigating incidents." xml:space="preserve">
+    <value>Tính cả trạng thái vàng, đỏ và xám. Trạng thái xanh lá được xác nhận sẽ đặt lại bộ đếm thời gian này. Các phép đo chưa đầy đủ làm gián đoạn quá trình theo dõi nhưng không làm giảm mức độ nghiêm trọng của sự cố.</value>
   </data>
   <data name="Counts yellow, red and grey. Only green resets this timer." xml:space="preserve">
     <value>Tính thời gian ở mức vàng, đỏ và xám. Chỉ màu xanh lá mới đặt lại bộ hẹn giờ này.</value>
@@ -81,6 +87,9 @@
   <data name="Green" xml:space="preserve">
     <value>Xanh lá</value>
   </data>
+  <data name="Green is published only after five continuous minutes below all recovery limits. A brief quiet sample cannot reset timers or mitigate incidents. Missing pressure data is not recovery." xml:space="preserve">
+    <value>Trạng thái Xanh chỉ được công bố sau khi các chỉ số duy trì liên tục năm phút dưới mọi ngưỡng phục hồi. Một mẫu yên ổn trong thời gian ngắn không thể đặt lại bộ đếm thời gian hoặc giảm nhẹ sự cố. Thiếu dữ liệu áp lực không có nghĩa là đã phục hồi.</value>
+  </data>
   <data name="Grey (offline)" xml:space="preserve">
     <value>Xám (ngoại tuyến)</value>
   </data>
@@ -108,6 +117,9 @@
   <data name="Matching more rules escalates the existing incident when needed; it does not create another incident or automatically lower its severity." xml:space="preserve">
     <value>Việc khớp thêm các quy tắc sẽ nâng cấp sự cố hiện có khi cần thiết; nó không tạo ra một sự cố khác hoặc tự động hạ mức độ nghiêm trọng của sự cố đó.</value>
   </data>
+  <data name="Mitigate incidents after five continuous minutes below all resource recovery limits" xml:space="preserve">
+    <value>Giảm thiểu sự cố sau khi các chỉ số tài nguyên duy trì dưới mọi ngưỡng phục hồi trong năm phút liên tục</value>
+  </data>
   <data name="Monitor all servers, including newly connected servers" xml:space="preserve">
     <value>Theo dõi tất cả máy chủ, bao gồm cả máy chủ mới được kết nối</value>
   </data>
@@ -120,11 +132,17 @@
   <data name="One incident, with recovery" xml:space="preserve">
     <value>Một sự cố, có khôi phục</value>
   </data>
+  <data name="PSI measures time when tasks wait for CPU, memory or I/O. Health uses PSI avg60 and CPU idle smoothed over 60 seconds; load is diagnostic only." xml:space="preserve">
+    <value>PSI đo thời gian các tác vụ phải chờ CPU, bộ nhớ hoặc I/O. Tình trạng sức khỏe sử dụng PSI avg60 và mức CPU nhàn rỗi được làm mượt trong 60 giây; tải chỉ dùng để chẩn đoán.</value>
+  </data>
   <data name="Red" xml:space="preserve">
     <value>Đỏ</value>
   </data>
   <data name="Red or worse" xml:space="preserve">
     <value>Đỏ hoặc nặng hơn</value>
+  </data>
+  <data name="Red: CPU idle at most 5% and CPU PSI at least 50%, memory PSI at least 20%, I/O PSI at least 30%, or disk usage at least 92%." xml:space="preserve">
+    <value>Đỏ: CPU ở trạng thái nhàn rỗi không quá 5% và CPU PSI ít nhất 50%, bộ nhớ PSI ít nhất 20%, I/O PSI ít nhất 30% hoặc mức sử dụng ổ đĩa ít nhất 92%.</value>
   </data>
   <data name="Rules measure how long a server stays at or above a health threshold. Each threshold has its own timer." xml:space="preserve">
     <value>Quy tắc đo lường thời gian máy chủ duy trì ở mức hoặc trên ngưỡng sức khỏe. Mỗi ngưỡng có bộ đếm thời gian riêng.</value>
@@ -144,6 +162,9 @@
   <data name="Severity" xml:space="preserve">
     <value>Mức độ nghiêm trọng</value>
   </data>
+  <data name="Stable resource health" xml:space="preserve">
+    <value>Tình trạng tài nguyên ổn định</value>
+  </data>
   <data name="State" xml:space="preserve">
     <value>Trạng thái</value>
   </data>
@@ -156,6 +177,9 @@
   <data name="Unknown" xml:space="preserve">
     <value>Không xác định</value>
   </data>
+  <data name="Worsening requires two continuous minutes. Red drops to yellow after five minutes without red pressure. Green requires five minutes with CPU idle at least 20% or CPU PSI at most 10%, memory PSI at most 2%, I/O PSI at most 5%, and disk usage at most 75%." xml:space="preserve">
+    <value>Tình trạng xấu đi cần kéo dài liên tục hai phút. Mức đỏ giảm xuống mức vàng sau năm phút không còn áp lực ở mức đỏ. Mức xanh yêu cầu duy trì trong năm phút với CPU nhàn rỗi ít nhất 20% hoặc CPU PSI không quá 10%, bộ nhớ PSI không quá 2%, I/O PSI không quá 5% và mức sử dụng đĩa không quá 75%.</value>
+  </data>
   <data name="Yellow" xml:space="preserve">
     <value>Vàng</value>
   </data>
@@ -164,6 +188,9 @@
   </data>
   <data name="Yellow or worse" xml:space="preserve">
     <value>Vàng hoặc nghiêm trọng hơn</value>
+  </data>
+  <data name="Yellow: CPU idle at most 15% and CPU PSI at least 20%, memory PSI at least 5%, I/O PSI at least 10%, or disk usage at least 80%." xml:space="preserve">
+    <value>Vàng: CPU ở trạng thái nhàn rỗi không quá 15% và CPU PSI ít nhất 20%, bộ nhớ PSI ít nhất 5%, I/O PSI ít nhất 10% hoặc mức sử dụng ổ đĩa ít nhất 80%.</value>
   </data>
   <data name="Zero minutes means immediately. The most severe matching rule wins. See the guide for how severity thresholds accumulate." xml:space="preserve">
     <value>Không phút nào có nghĩa là ngay lập tức. Quy tắc phù hợp nghiêm trọng nhất sẽ được áp dụng. Xem hướng dẫn để biết cách các ngưỡng mức độ nghiêm trọng được tích lũy.</value>

@@ -27,6 +27,9 @@
   <data name="Add rule" xml:space="preserve">
     <value>Lisää sääntö</value>
   </data>
+  <data name="After startup, reconnecting or incomplete data, health stays unconfirmed until pressure or recovery is established. Upgrade older agents to report Linux PSI. Collecting data is different from offline." xml:space="preserve">
+    <value>Käynnistyksen, uudelleenyhdistämisen tai puutteellisten tietojen jälkeen terveydentila pysyy vahvistamattomana, kunnes kuormitus tai palautuminen on todettu. Päivitä vanhemmat agentit raportoimaan Linuxin PSI-tiedot. Tietojen kerääminen ei tarkoita, että palvelin olisi offline-tilassa.</value>
+  </data>
   <data name="AlertCenter monitoring" xml:space="preserve">
     <value>AlertCenter-seuranta</value>
   </data>
@@ -44,6 +47,9 @@
   </data>
   <data name="Counts time offline. Any live color resets this timer. Grey starts after one minute without a valid report." xml:space="preserve">
     <value>Laskee offline-ajan. Mikä tahansa aktiivinen väri nollaa tämän ajastimen. Harmaa tila alkaa, kun kelvollista raporttia ei ole saatu minuuttiin.</value>
+  </data>
+  <data name="Counts yellow, red and grey. Confirmed green resets this timer. Incomplete measurements interrupt observation without mitigating incidents." xml:space="preserve">
+    <value>Laskee keltaisen, punaisen ja harmaan. Vahvistettu vihreä nollaa tämän ajastimen. Puutteelliset mittaukset keskeyttävät seurannan lieventämättä kuitenkaan häiriöitä.</value>
   </data>
   <data name="Counts yellow, red and grey. Only green resets this timer." xml:space="preserve">
     <value>Laskee keltaisen, punaisen ja harmaan. Vain vihreä nollaa tämän ajastimen.</value>
@@ -78,6 +84,9 @@
   <data name="Green" xml:space="preserve">
     <value>Vihreä</value>
   </data>
+  <data name="Green is published only after five continuous minutes below all recovery limits. A brief quiet sample cannot reset timers or mitigate incidents. Missing pressure data is not recovery." xml:space="preserve">
+    <value>Vihreä tila ilmoitetaan vasta, kun kaikki palautumisrajat ovat alittuneet yhtäjaksoisesti viiden minuutin ajan. Lyhyt rauhallinen mittausjakso ei nollaa ajastimia eikä lievennä häiriöitä. Puuttuvat painetiedot eivät tarkoita palautumista.</value>
+  </data>
   <data name="Grey (offline)" xml:space="preserve">
     <value>Harmaa (offline)</value>
   </data>
@@ -102,6 +111,9 @@
   <data name="Matching more rules escalates the existing incident when needed; it does not create another incident or automatically lower its severity." xml:space="preserve">
     <value>Useampaa sääntöjen täyttymistä nostaa olemassa olevan onnettomisuuden vakavuutta tarvittaessa; se ei luoda uutta onnettomuutta eikä automaattisesti laske sen vakavuutta.</value>
   </data>
+  <data name="Mitigate incidents after five continuous minutes below all resource recovery limits" xml:space="preserve">
+    <value>Ratkaise häiriöt viiden peräkkäisen minuutin jälkeen, kun kaikki resurssien palautumiskynnykset ovat alittuneet</value>
+  </data>
   <data name="Monitor all servers, including newly connected servers" xml:space="preserve">
     <value>Valvo kaikkia palvelimia, myös uusia yhdistettyjä palvelimia</value>
   </data>
@@ -114,11 +126,17 @@
   <data name="One incident, with recovery" xml:space="preserve">
     <value>Yksi tapaus, palautumisen kanssa</value>
   </data>
+  <data name="PSI measures time when tasks wait for CPU, memory or I/O. Health uses PSI avg60 and CPU idle smoothed over 60 seconds; load is diagnostic only." xml:space="preserve">
+    <value>PSI mittaa ajan, jonka tehtävät odottavat suoritinta, muistia tai I/O:ta. Terveydentilan arvioinnissa käytetään PSI:n avg60-arvoa ja 60 sekunnin ajalta tasoitettua suorittimen joutoaikaa; kuormitus on vain diagnostiikkaa varten.</value>
+  </data>
   <data name="Red" xml:space="preserve">
     <value>Punainen</value>
   </data>
   <data name="Red or worse" xml:space="preserve">
     <value>Punainen tai vakavampi</value>
+  </data>
+  <data name="Red: CPU idle at most 5% and CPU PSI at least 50%, memory PSI at least 20%, I/O PSI at least 30%, or disk usage at least 92%." xml:space="preserve">
+    <value>Punainen: suorittimen joutoaika enintään 5 % ja suorittimen PSI vähintään 50 %, muistin PSI vähintään 20 %, I/O:n PSI vähintään 30 % tai levyn käyttöaste vähintään 92 %.</value>
   </data>
   <data name="Rules measure how long a server stays at or above a health threshold. Each threshold has its own timer." xml:space="preserve">
     <value>Säännöt mittaavat, kuinka kauan palvelin pysyy terveyyskynnyn yläpuolella tai sen tasolla. Jokaisella kynnyksellä on oma ajastimensa.</value>
@@ -138,6 +156,9 @@
   <data name="Severity" xml:space="preserve">
     <value>Vakavuus</value>
   </data>
+  <data name="Stable resource health" xml:space="preserve">
+    <value>Resurssien toimintavarmuus</value>
+  </data>
   <data name="State" xml:space="preserve">
     <value>Tila</value>
   </data>
@@ -150,6 +171,9 @@
   <data name="Unknown" xml:space="preserve">
     <value>Tuntematon</value>
   </data>
+  <data name="Worsening requires two continuous minutes. Red drops to yellow after five minutes without red pressure. Green requires five minutes with CPU idle at least 20% or CPU PSI at most 10%, memory PSI at most 2%, I/O PSI at most 5%, and disk usage at most 75%." xml:space="preserve">
+    <value>Huononeminen edellyttää kahta yhtäjaksoista minuuttia. Tila laskee punaisesta keltaiseksi, kun punaista kuormitusta ei ole ollut viiteen minuuttiin. Vihreä tila edellyttää viittä minuuttia, jolloin suorittimen joutoaika on vähintään 20 % tai suorittimen PSI enintään 10 %, muistin PSI enintään 2 %, I/O:n PSI enintään 5 % ja levyn käyttö enintään 75 %.</value>
+  </data>
   <data name="Yellow" xml:space="preserve">
     <value>Keltainen</value>
   </data>
@@ -158,6 +182,9 @@
   </data>
   <data name="Yellow or worse" xml:space="preserve">
     <value>Keltainen tai huonompi</value>
+  </data>
+  <data name="Yellow: CPU idle at most 15% and CPU PSI at least 20%, memory PSI at least 5%, I/O PSI at least 10%, or disk usage at least 80%." xml:space="preserve">
+    <value>Keltainen: suorittimen joutoaika enintään 15 % ja suorittimen PSI vähintään 20 %, muistin PSI vähintään 5 %, I/O:n PSI vähintään 10 % tai levyn käyttöaste vähintään 80 %.</value>
   </data>
   <data name="Zero minutes means immediately. The most severe matching rule wins. See the guide for how severity thresholds accumulate." xml:space="preserve">
     <value>Nolla minuuttia tarkoittaa välitöntä. Vakavin täsmäävä sääntö voittaa. Katso oppaasta, miten vakavuusrajoitukset kerryttävät vaikutuksiaan.</value>

@@ -27,6 +27,9 @@
   <data name="Add rule" xml:space="preserve">
     <value>إضافة قاعدة</value>
   </data>
+  <data name="After startup, reconnecting or incomplete data, health stays unconfirmed until pressure or recovery is established. Upgrade older agents to report Linux PSI. Collecting data is different from offline." xml:space="preserve">
+    <value>بعد بدء التشغيل أو إعادة الاتصال أو عند عدم اكتمال البيانات، تظل الحالة الصحية غير مؤكدة إلى أن يتأكد وجود ضغط أو تعافٍ. حدّث الوكلاء الأقدم للإبلاغ عن PSI في Linux. جمع البيانات يختلف عن كون الخادم غير متصل.</value>
+  </data>
   <data name="AlertCenter monitoring" xml:space="preserve">
     <value>مراقبة AlertCenter</value>
   </data>
@@ -44,6 +47,9 @@
   </data>
   <data name="Counts time offline. Any live color resets this timer. Grey starts after one minute without a valid report." xml:space="preserve">
     <value>يُحسب وقت عدم الاتصال. أي لون نشط يعيد ضبط هذا المؤقّت. يبدأ اللون الرمادي بعد دقيقة واحدة دون تقرير صالح.</value>
+  </data>
+  <data name="Counts yellow, red and grey. Confirmed green resets this timer. Incomplete measurements interrupt observation without mitigating incidents." xml:space="preserve">
+    <value>يشمل الأصفر والأحمر والرمادي. يعيد اللون الأخضر المؤكد ضبط هذا المؤقت. تؤدي القياسات غير المكتملة إلى إيقاف الرصد مؤقتًا دون تخفيف الحوادث.</value>
   </data>
   <data name="Counts yellow, red and grey. Only green resets this timer." xml:space="preserve">
     <value>تحتسب الأصفر والأحمر والرمادي. فقط الأخضر يعيد ضبط هذا المؤقت.</value>
@@ -78,6 +84,9 @@
   <data name="Green" xml:space="preserve">
     <value>أخضر</value>
   </data>
+  <data name="Green is published only after five continuous minutes below all recovery limits. A brief quiet sample cannot reset timers or mitigate incidents. Missing pressure data is not recovery." xml:space="preserve">
+    <value>لا تُعلَن الحالة الخضراء إلا بعد مرور خمس دقائق متواصلة دون تجاوز أيٍّ من حدود التعافي. ولا تكفي عينة هادئة قصيرة لإعادة ضبط المؤقتات أو تخفيف حدة الحوادث. وغياب بيانات الضغط لا يُعد تعافيًا.</value>
+  </data>
   <data name="Grey (offline)" xml:space="preserve">
     <value>رمادي (غير متصل)</value>
   </data>
@@ -102,6 +111,9 @@
   <data name="Matching more rules escalates the existing incident when needed; it does not create another incident or automatically lower its severity." xml:space="preserve">
     <value>تؤدي مطابقة مزيد من القواعد إلى تصعيد الحادثة الحالية عند الحاجة؛ ولا تنشئ حادثة أخرى أو تخفض مستوى شدتها تلقائيًا.</value>
   </data>
+  <data name="Mitigate incidents after five continuous minutes below all resource recovery limits" xml:space="preserve">
+    <value>عالج الحوادث بعد مرور خمس دقائق متواصلة على بقاء جميع الموارد دون حدود التعافي</value>
+  </data>
   <data name="Monitor all servers, including newly connected servers" xml:space="preserve">
     <value>راقب جميع الخوادم، بما فيها الخوادم المتصلة حديثًا</value>
   </data>
@@ -114,11 +126,17 @@
   <data name="One incident, with recovery" xml:space="preserve">
     <value>حادثة واحدة، مع معالجة التعافي</value>
   </data>
+  <data name="PSI measures time when tasks wait for CPU, memory or I/O. Health uses PSI avg60 and CPU idle smoothed over 60 seconds; load is diagnostic only." xml:space="preserve">
+    <value>يقيس PSI الوقت الذي تنتظر فيه المهام وحدة المعالجة المركزية أو الذاكرة أو عمليات الإدخال والإخراج. تعتمد الحالة الصحية على متوسط PSI خلال 60 ثانية وخمول وحدة المعالجة المركزية بعد تنعيمه على مدى 60 ثانية؛ أما الحمل فهو لأغراض التشخيص فقط.</value>
+  </data>
   <data name="Red" xml:space="preserve">
     <value>أحمر</value>
   </data>
   <data name="Red or worse" xml:space="preserve">
     <value>أحمر أو أسوأ</value>
+  </data>
+  <data name="Red: CPU idle at most 5% and CPU PSI at least 50%, memory PSI at least 20%, I/O PSI at least 30%, or disk usage at least 92%." xml:space="preserve">
+    <value>أحمر: ألا يتجاوز خمول وحدة المعالجة المركزية 5%، وأن يبلغ ضغط وحدة المعالجة المركزية (PSI) 50% على الأقل، وضغط الذاكرة 20% على الأقل، وضغط الإدخال/الإخراج 30% على الأقل، أو أن يبلغ استخدام القرص 92% على الأقل.</value>
   </data>
   <data name="Rules measure how long a server stays at or above a health threshold. Each threshold has its own timer." xml:space="preserve">
     <value>تقيس القواعد المدة التي يظل فيها الخادم عند عتبة الصحة أو أعلى منها. ولكل عتبة مؤقّت خاص بها.</value>
@@ -138,6 +156,9 @@
   <data name="Severity" xml:space="preserve">
     <value>الخطورة</value>
   </data>
+  <data name="Stable resource health" xml:space="preserve">
+    <value>استقرار حالة الموارد</value>
+  </data>
   <data name="State" xml:space="preserve">
     <value>الحالة</value>
   </data>
@@ -150,6 +171,9 @@
   <data name="Unknown" xml:space="preserve">
     <value>غير معروف</value>
   </data>
+  <data name="Worsening requires two continuous minutes. Red drops to yellow after five minutes without red pressure. Green requires five minutes with CPU idle at least 20% or CPU PSI at most 10%, memory PSI at most 2%, I/O PSI at most 5%, and disk usage at most 75%." xml:space="preserve">
+    <value>يتطلب التدهور استمرار الحالة لمدة دقيقتين متواصلتين. يعود الأحمر إلى الأصفر بعد مرور خمس دقائق دون ضغط أحمر. يتطلب التحول إلى الأخضر مرور خمس دقائق مع خمول وحدة المعالجة المركزية بنسبة 20% على الأقل أو ضغط CPU PSI بنسبة 10% كحد أقصى، وضغط الذاكرة PSI بنسبة 2% كحد أقصى، وضغط I/O PSI بنسبة 5% كحد أقصى، واستخدام القرص بنسبة 75% كحد أقصى.</value>
+  </data>
   <data name="Yellow" xml:space="preserve">
     <value>أصفر</value>
   </data>
@@ -158,6 +182,9 @@
   </data>
   <data name="Yellow or worse" xml:space="preserve">
     <value>أصفر أو أسوأ</value>
+  </data>
+  <data name="Yellow: CPU idle at most 15% and CPU PSI at least 20%, memory PSI at least 5%, I/O PSI at least 10%, or disk usage at least 80%." xml:space="preserve">
+    <value>الأصفر: خمول وحدة المعالجة المركزية لا يتجاوز 15%، ويبلغ ضغط وحدة المعالجة المركزية (CPU PSI) 20% على الأقل، أو ضغط الذاكرة 5% على الأقل، أو ضغط الإدخال/الإخراج 10% على الأقل، أو استخدام القرص 80% على الأقل.</value>
   </data>
   <data name="Zero minutes means immediately. The most severe matching rule wins. See the guide for how severity thresholds accumulate." xml:space="preserve">
     <value>صفر دقيقة يعني فوريًا. القاعدة المطابقة الأكثر شدة هي الغالبة. راجع الدليل لمعرفة كيفية تراكم عتبات الشدة.</value>

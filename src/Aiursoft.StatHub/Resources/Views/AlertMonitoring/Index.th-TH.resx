@@ -30,6 +30,9 @@
   <data name="Add rule" xml:space="preserve">
     <value>เพิ่มกฎ</value>
   </data>
+  <data name="After startup, reconnecting or incomplete data, health stays unconfirmed until pressure or recovery is established. Upgrade older agents to report Linux PSI. Collecting data is different from offline." xml:space="preserve">
+    <value>หลังเริ่มต้นระบบ หลังเชื่อมต่อใหม่ หรือเมื่อข้อมูลไม่ครบถ้วน จะยังไม่ยืนยันสถานะสุขภาพจนกว่าจะตรวจพบภาวะกดดันหรือการฟื้นตัว อัปเกรดเอเจนต์รุ่นเก่าให้รายงาน Linux PSI การกำลังรวบรวมข้อมูลไม่เหมือนกับการออฟไลน์</value>
+  </data>
   <data name="AlertCenter monitoring" xml:space="preserve">
     <value>การตรวจสอบ AlertCenter</value>
   </data>
@@ -47,6 +50,9 @@
   </data>
   <data name="Counts time offline. Any live color resets this timer. Grey starts after one minute without a valid report." xml:space="preserve">
     <value>นับเวลาที่ออฟไลน์ สีใดๆ ที่แสดงสถานะออนไลน์จะรีเซ็ตตัวจับเวลานี้ สถานะสีเทาจะเริ่มขึ้นเมื่อไม่มีรายงานที่ถูกต้องเป็นเวลาหนึ่งนาที</value>
+  </data>
+  <data name="Counts yellow, red and grey. Confirmed green resets this timer. Incomplete measurements interrupt observation without mitigating incidents." xml:space="preserve">
+    <value>นับรวมสถานะสีเหลือง สีแดง และสีเทา เมื่อยืนยันสถานะสีเขียวแล้ว ตัวจับเวลานี้จะเริ่มนับใหม่ ข้อมูลวัดผลที่ไม่ครบถ้วนจะขัดจังหวะการสังเกต แต่ไม่ได้ช่วยบรรเทาเหตุการณ์</value>
   </data>
   <data name="Counts yellow, red and grey. Only green resets this timer." xml:space="preserve">
     <value>นับสีเหลือง สีแดง และสีเทา เฉพาะสีเขียวเท่านั้นที่จะรีเซ็ตตัวจับเวลานี้</value>
@@ -81,6 +87,9 @@
   <data name="Green" xml:space="preserve">
     <value>เขียว</value>
   </data>
+  <data name="Green is published only after five continuous minutes below all recovery limits. A brief quiet sample cannot reset timers or mitigate incidents. Missing pressure data is not recovery." xml:space="preserve">
+    <value>ระบบจะแสดงสถานะสีเขียวก็ต่อเมื่อค่าต่ำกว่าขีดจำกัดการฟื้นตัวทั้งหมดอย่างต่อเนื่องเป็นเวลา 5 นาที ตัวอย่างค่าที่ต่ำเพียงชั่วครู่ไม่สามารถรีเซ็ตตัวจับเวลาหรือบรรเทาเหตุการณ์ได้ การไม่มีข้อมูลแรงกดดันไม่ได้หมายถึงการฟื้นตัว</value>
+  </data>
   <data name="Grey (offline)" xml:space="preserve">
     <value>สีเทา (ออฟไลน์)</value>
   </data>
@@ -108,6 +117,9 @@
   <data name="Matching more rules escalates the existing incident when needed; it does not create another incident or automatically lower its severity." xml:space="preserve">
     <value>เมื่อเข้าเงื่อนไขของกฎเพิ่มเติม ระบบจะยกระดับเหตุการณ์เดิมตามความจำเป็น โดยจะไม่สร้างเหตุการณ์ใหม่หรือปรับลดระดับความรุนแรงโดยอัตโนมัติ</value>
   </data>
+  <data name="Mitigate incidents after five continuous minutes below all resource recovery limits" xml:space="preserve">
+    <value>บรรเทาเหตุขัดข้องเมื่อค่าทรัพยากรทั้งหมดต่ำกว่าขีดจำกัดการกู้คืนต่อเนื่องเป็นเวลาห้านาที</value>
+  </data>
   <data name="Monitor all servers, including newly connected servers" xml:space="preserve">
     <value>ตรวจสอบเซิร์ฟเวอร์ทั้งหมด รวมถึงเซิร์ฟเวอร์ที่เชื่อมต่อใหม่</value>
   </data>
@@ -120,11 +132,17 @@
   <data name="One incident, with recovery" xml:space="preserve">
     <value>เหตุการณ์เดียว พร้อมการกู้คืน</value>
   </data>
+  <data name="PSI measures time when tasks wait for CPU, memory or I/O. Health uses PSI avg60 and CPU idle smoothed over 60 seconds; load is diagnostic only." xml:space="preserve">
+    <value>PSI ใช้วัดระยะเวลาที่งานต้องรอ CPU หน่วยความจำ หรือ I/O สถานะสุขภาพใช้ค่า PSI avg60 และค่า CPU idle ที่ปรับให้เรียบในช่วง 60 วินาที ส่วนค่า load ใช้เพื่อการวินิจฉัยเท่านั้น</value>
+  </data>
   <data name="Red" xml:space="preserve">
     <value>สีแดง</value>
   </data>
   <data name="Red or worse" xml:space="preserve">
     <value>สีแดงหรือแย่กว่า</value>
+  </data>
+  <data name="Red: CPU idle at most 5% and CPU PSI at least 50%, memory PSI at least 20%, I/O PSI at least 30%, or disk usage at least 92%." xml:space="preserve">
+    <value>แดง: CPU idle สูงสุด 5% และ CPU PSI ขั้นต่ำ 50%, memory PSI ขั้นต่ำ 20%, I/O PSI ขั้นต่ำ 30%, หรือการใช้ดิสก์ขั้นต่ำ 92%.</value>
   </data>
   <data name="Rules measure how long a server stays at or above a health threshold. Each threshold has its own timer." xml:space="preserve">
     <value>กฎจะวัดระยะเวลาที่เซิร์ฟเวอร์มีสถานะอยู่ที่ระดับเกณฑ์สุขภาพหรือสูงกว่า แต่ละเกณฑ์จะมีตัวจับเวลาของตัวเอง</value>
@@ -144,6 +162,9 @@
   <data name="Severity" xml:space="preserve">
     <value>ระดับความรุนแรง</value>
   </data>
+  <data name="Stable resource health" xml:space="preserve">
+    <value>สถานะทรัพยากรที่เสถียร</value>
+  </data>
   <data name="State" xml:space="preserve">
     <value>สถานะ</value>
   </data>
@@ -156,6 +177,9 @@
   <data name="Unknown" xml:space="preserve">
     <value>ไม่ทราบ</value>
   </data>
+  <data name="Worsening requires two continuous minutes. Red drops to yellow after five minutes without red pressure. Green requires five minutes with CPU idle at least 20% or CPU PSI at most 10%, memory PSI at most 2%, I/O PSI at most 5%, and disk usage at most 75%." xml:space="preserve">
+    <value>อาการแย่ลงต้องเกิดขึ้นต่อเนื่อง 2 นาที สีแดงจะลดระดับเป็นสีเหลืองเมื่อไม่มีภาวะกดดันระดับสีแดงเป็นเวลา 5 นาที สีเขียวต้องมีเงื่อนไขครบ 5 นาที โดย CPU idle อย่างน้อย 20% หรือ CPU PSI ไม่เกิน 10%, memory PSI ไม่เกิน 2%, I/O PSI ไม่เกิน 5% และการใช้งานดิสก์ไม่เกิน 75%</value>
+  </data>
   <data name="Yellow" xml:space="preserve">
     <value>เหลือง</value>
   </data>
@@ -164,6 +188,9 @@
   </data>
   <data name="Yellow or worse" xml:space="preserve">
     <value>สีเหลืองหรือแย่กว่านั้น</value>
+  </data>
+  <data name="Yellow: CPU idle at most 15% and CPU PSI at least 20%, memory PSI at least 5%, I/O PSI at least 10%, or disk usage at least 80%." xml:space="preserve">
+    <value>สีเหลือง: CPU idle ไม่เกิน 15% และ CPU PSI อย่างน้อย 20%, memory PSI อย่างน้อย 5%, I/O PSI อย่างน้อย 10% หรือการใช้งานดิสก์อย่างน้อย 80%</value>
   </data>
   <data name="Zero minutes means immediately. The most severe matching rule wins. See the guide for how severity thresholds accumulate." xml:space="preserve">
     <value>0 นาทีหมายถึงดำเนินการทันที กฎที่ตรงกันและมีระดับความรุนแรงสูงสุดจะมีผล โปรดดูคู่มือเกี่ยวกับวิธีการสะสมเกณฑ์ระดับความรุนแรง</value>

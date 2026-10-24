@@ -66,6 +66,9 @@
   <data name="Average Load" xml:space="preserve">
     <value>Încărcare medie</value>
   </data>
+  <data name="Average pressure index" xml:space="preserve">
+    <value>Indicele mediu al presiunii</value>
+  </data>
   <data name="Avg Load" xml:space="preserve">
     <value>Încărcare medie</value>
   </data>
@@ -74,6 +77,9 @@
   </data>
   <data name="Built-in User Management" xml:space="preserve">
     <value>Gestionare Utilizatori Integrată</value>
+  </data>
+  <data name="Collecting data" xml:space="preserve">
+    <value>Se colectează date</value>
   </data>
   <data name="Comes with full Docker support for simplified, consistent, and reliable deployments." xml:space="preserve">
     <value>Oferă suport complet pentru Docker pentru implementări simplificate, consistente și fiabile.</value>
@@ -182,6 +188,9 @@
   </data>
   <data name="Out of sync" xml:space="preserve">
     <value>Nu este sincronizat</value>
+  </data>
+  <data name="Pressure index" xml:space="preserve">
+    <value>Indice de presiune</value>
   </data>
   <data name="RAM Usage" xml:space="preserve">
     <value>Utilizarea RAM</value>

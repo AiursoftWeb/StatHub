@@ -42,6 +42,9 @@
   <data name="Client ID" xml:space="preserve">
     <value>クライアントID</value>
   </data>
+  <data name="Colors use sustained resource pressure. A short quiet sample does not establish recovery." xml:space="preserve">
+    <value>色は、継続的なリソース負荷に基づいています。短時間負荷が落ち着いた状態が続いても、回復したとは判断できません。</value>
+  </data>
   <data name="Command" xml:space="preserve">
     <value>コマンド</value>
   </data>
@@ -53,6 +56,9 @@
   </data>
   <data name="CPU %" xml:space="preserve">
     <value>CPU %</value>
+  </data>
+  <data name="CPU PSI (avg60)" xml:space="preserve">
+    <value>CPU PSI（平均60秒）</value>
   </data>
   <data name="CPU Usage" xml:space="preserve">
     <value>CPU使用率</value>
@@ -102,6 +108,9 @@
   <data name="Firewall Status" xml:space="preserve">
     <value>ファイアウォール状態</value>
   </data>
+  <data name="Fresh PSI measurements are unavailable. Check connectivity, update the agent and verify Linux PSI support." xml:space="preserve">
+    <value>最新の PSI 測定値を取得できません。接続状況を確認し、エージェントを更新して、Linux の PSI サポートを確認してください。</value>
+  </data>
   <data name="Hardware Details" xml:space="preserve">
     <value>ハードウェア詳細</value>
   </data>
@@ -110,6 +119,9 @@
   </data>
   <data name="Healthy" xml:space="preserve">
     <value>正常</value>
+  </data>
+  <data name="I/O PSI (avg60)" xml:space="preserve">
+    <value>I/O PSI（avg60）</value>
   </data>
   <data name="Identity" xml:space="preserve">
     <value>識別情報</value>
@@ -137,6 +149,9 @@
   </data>
   <data name="Memory" xml:space="preserve">
     <value>メモリ</value>
+  </data>
+  <data name="Memory PSI (avg60)" xml:space="preserve">
+    <value>メモリ PSI（平均60）</value>
   </data>
   <data name="Modified" xml:space="preserve">
     <value>更新日</value>
@@ -174,6 +189,9 @@
   <data name="Ports" xml:space="preserve">
     <value>ポート</value>
   </data>
+  <data name="Pressure index (15-minute load / logical CPUs)" xml:space="preserve">
+    <value>圧力指数（15分間の負荷 / 論理 CPU 数）</value>
+  </data>
   <data name="Preview" xml:space="preserve">
     <value>プレビュー</value>
   </data>
@@ -183,11 +201,17 @@
   <data name="RAM Usage" xml:space="preserve">
     <value>メモリ使用量</value>
   </data>
+  <data name="Resource pressure" xml:space="preserve">
+    <value>リソース負荷</value>
+  </data>
   <data name="Running" xml:space="preserve">
     <value>実行中</value>
   </data>
   <data name="Runtime Info" xml:space="preserve">
     <value>ランタイム情報</value>
+  </data>
+  <data name="Smoothed CPU idle" xml:space="preserve">
+    <value>平滑化されたCPUアイドル率</value>
   </data>
   <data name="SSH Keys" xml:space="preserve">
     <value>SSHキー</value>

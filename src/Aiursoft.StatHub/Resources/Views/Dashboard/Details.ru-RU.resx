@@ -42,6 +42,9 @@
   <data name="Client ID" xml:space="preserve">
     <value>Идентификатор клиента</value>
   </data>
+  <data name="Colors use sustained resource pressure. A short quiet sample does not establish recovery." xml:space="preserve">
+    <value>Цвета отражают устойчивую нагрузку на ресурсы. Кратковременное отсутствие нагрузки ещё не означает восстановления.</value>
+  </data>
   <data name="Command" xml:space="preserve">
     <value>Команда</value>
   </data>
@@ -53,6 +56,9 @@
   </data>
   <data name="CPU %" xml:space="preserve">
     <value>CPU %</value>
+  </data>
+  <data name="CPU PSI (avg60)" xml:space="preserve">
+    <value>PSI процессора (avg60)</value>
   </data>
   <data name="CPU Usage" xml:space="preserve">
     <value>Использование ЦП</value>
@@ -102,6 +108,9 @@
   <data name="Firewall Status" xml:space="preserve">
     <value>Статус брандмауэра</value>
   </data>
+  <data name="Fresh PSI measurements are unavailable. Check connectivity, update the agent and verify Linux PSI support." xml:space="preserve">
+    <value>Свежие данные PSI недоступны. Проверьте подключение, обновите агент и убедитесь, что Linux поддерживает PSI.</value>
+  </data>
   <data name="Hardware Details" xml:space="preserve">
     <value>Сведения об оборудовании</value>
   </data>
@@ -110,6 +119,9 @@
   </data>
   <data name="Healthy" xml:space="preserve">
     <value>Healthy</value>
+  </data>
+  <data name="I/O PSI (avg60)" xml:space="preserve">
+    <value>PSI ввода-вывода (среднее за 60 с)</value>
   </data>
   <data name="Identity" xml:space="preserve">
     <value>Идентификация</value>
@@ -137,6 +149,9 @@
   </data>
   <data name="Memory" xml:space="preserve">
     <value>Memory</value>
+  </data>
+  <data name="Memory PSI (avg60)" xml:space="preserve">
+    <value>PSI памяти (avg60)</value>
   </data>
   <data name="Modified" xml:space="preserve">
     <value>Изменено</value>
@@ -174,6 +189,9 @@
   <data name="Ports" xml:space="preserve">
     <value>Ports</value>
   </data>
+  <data name="Pressure index (15-minute load / logical CPUs)" xml:space="preserve">
+    <value>Индекс нагрузки (нагрузка за 15 минут / логические процессоры)</value>
+  </data>
   <data name="Preview" xml:space="preserve">
     <value>Предпросмотр</value>
   </data>
@@ -183,11 +201,17 @@
   <data name="RAM Usage" xml:space="preserve">
     <value>Использование ОЗУ</value>
   </data>
+  <data name="Resource pressure" xml:space="preserve">
+    <value>Нагрузка на ресурсы</value>
+  </data>
   <data name="Running" xml:space="preserve">
     <value>Работает</value>
   </data>
   <data name="Runtime Info" xml:space="preserve">
     <value>Информация о времени выполнения</value>
+  </data>
+  <data name="Smoothed CPU idle" xml:space="preserve">
+    <value>Сглаженный простой процессора</value>
   </data>
   <data name="SSH Keys" xml:space="preserve">
     <value>SSH-ключи</value>

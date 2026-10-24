@@ -42,6 +42,9 @@
   <data name="Client ID" xml:space="preserve">
     <value>Identyfikator klienta</value>
   </data>
+  <data name="Colors use sustained resource pressure. A short quiet sample does not establish recovery." xml:space="preserve">
+    <value>Kolory odzwierciedlają utrzymujące się obciążenie zasobów. Krótki okres niskiego obciążenia nie oznacza, że system odzyskał sprawność.</value>
+  </data>
   <data name="Command" xml:space="preserve">
     <value>Polecenie</value>
   </data>
@@ -53,6 +56,9 @@
   </data>
   <data name="CPU %" xml:space="preserve">
     <value>CPU %</value>
+  </data>
+  <data name="CPU PSI (avg60)" xml:space="preserve">
+    <value>PSI procesora (avg60)</value>
   </data>
   <data name="CPU Usage" xml:space="preserve">
     <value>Wykorzystanie procesora</value>
@@ -102,6 +108,9 @@
   <data name="Firewall Status" xml:space="preserve">
     <value>Status zapory sieciowej</value>
   </data>
+  <data name="Fresh PSI measurements are unavailable. Check connectivity, update the agent and verify Linux PSI support." xml:space="preserve">
+    <value>Najnowsze pomiary PSI są niedostępne. Sprawdź łączność, zaktualizuj agenta i upewnij się, że system Linux obsługuje PSI.</value>
+  </data>
   <data name="Hardware Details" xml:space="preserve">
     <value>Szczegóły sprzętu</value>
   </data>
@@ -110,6 +119,9 @@
   </data>
   <data name="Healthy" xml:space="preserve">
     <value>Healthy</value>
+  </data>
+  <data name="I/O PSI (avg60)" xml:space="preserve">
+    <value>PSI operacji wejścia/wyjścia (avg60)</value>
   </data>
   <data name="Identity" xml:space="preserve">
     <value>Tożsamość</value>
@@ -137,6 +149,9 @@
   </data>
   <data name="Memory" xml:space="preserve">
     <value>Memory</value>
+  </data>
+  <data name="Memory PSI (avg60)" xml:space="preserve">
+    <value>PSI pamięci (avg60)</value>
   </data>
   <data name="Modified" xml:space="preserve">
     <value>Zmodyfikowano</value>
@@ -174,6 +189,9 @@
   <data name="Ports" xml:space="preserve">
     <value>Ports</value>
   </data>
+  <data name="Pressure index (15-minute load / logical CPUs)" xml:space="preserve">
+    <value>Wskaźnik obciążenia (obciążenie z 15 minut / logiczne procesory)</value>
+  </data>
   <data name="Preview" xml:space="preserve">
     <value>Podgląd</value>
   </data>
@@ -183,11 +201,17 @@
   <data name="RAM Usage" xml:space="preserve">
     <value>Zużycie pamięci RAM</value>
   </data>
+  <data name="Resource pressure" xml:space="preserve">
+    <value>Presja zasobów</value>
+  </data>
   <data name="Running" xml:space="preserve">
     <value>Uruchomiony</value>
   </data>
   <data name="Runtime Info" xml:space="preserve">
     <value>Informacje o środowisku uruchomieniowym</value>
+  </data>
+  <data name="Smoothed CPU idle" xml:space="preserve">
+    <value>Wygładzony czas bezczynności CPU</value>
   </data>
   <data name="SSH Keys" xml:space="preserve">
     <value>Klucze SSH</value>

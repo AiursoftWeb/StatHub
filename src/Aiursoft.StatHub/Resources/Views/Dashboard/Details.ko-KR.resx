@@ -42,6 +42,9 @@
   <data name="Client ID" xml:space="preserve">
     <value>클라이언트 ID</value>
   </data>
+  <data name="Colors use sustained resource pressure. A short quiet sample does not establish recovery." xml:space="preserve">
+    <value>색상은 지속적인 리소스 압박 수준을 나타냅니다. 잠깐 압박이 낮아진 것만으로는 회복되었다고 판단할 수 없습니다.</value>
+  </data>
   <data name="Command" xml:space="preserve">
     <value>명령</value>
   </data>
@@ -53,6 +56,9 @@
   </data>
   <data name="CPU %" xml:space="preserve">
     <value>CPU %</value>
+  </data>
+  <data name="CPU PSI (avg60)" xml:space="preserve">
+    <value>CPU 압력 지표(평균 60초)</value>
   </data>
   <data name="CPU Usage" xml:space="preserve">
     <value>CPU 사용률</value>
@@ -102,6 +108,9 @@
   <data name="Firewall Status" xml:space="preserve">
     <value>방화벽 상태</value>
   </data>
+  <data name="Fresh PSI measurements are unavailable. Check connectivity, update the agent and verify Linux PSI support." xml:space="preserve">
+    <value>최신 PSI 측정값을 사용할 수 없습니다. 연결 상태를 확인하고, 에이전트를 업데이트한 다음 Linux PSI 지원 여부를 확인하세요.</value>
+  </data>
   <data name="Hardware Details" xml:space="preserve">
     <value>하드웨어 상세 정보</value>
   </data>
@@ -110,6 +119,9 @@
   </data>
   <data name="Healthy" xml:space="preserve">
     <value>정상</value>
+  </data>
+  <data name="I/O PSI (avg60)" xml:space="preserve">
+    <value>I/O PSI (avg60)</value>
   </data>
   <data name="Identity" xml:space="preserve">
     <value>신원 정보</value>
@@ -137,6 +149,9 @@
   </data>
   <data name="Memory" xml:space="preserve">
     <value>메모리</value>
+  </data>
+  <data name="Memory PSI (avg60)" xml:space="preserve">
+    <value>메모리 PSI (avg60)</value>
   </data>
   <data name="Modified" xml:space="preserve">
     <value>수정됨</value>
@@ -174,6 +189,9 @@
   <data name="Ports" xml:space="preserve">
     <value>포트</value>
   </data>
+  <data name="Pressure index (15-minute load / logical CPUs)" xml:space="preserve">
+    <value>압력 지수(15분 부하 / 논리 CPU 수)</value>
+  </data>
   <data name="Preview" xml:space="preserve">
     <value>미리보기</value>
   </data>
@@ -183,11 +201,17 @@
   <data name="RAM Usage" xml:space="preserve">
     <value>RAM 사용량</value>
   </data>
+  <data name="Resource pressure" xml:space="preserve">
+    <value>리소스 부하</value>
+  </data>
   <data name="Running" xml:space="preserve">
     <value>실행 중</value>
   </data>
   <data name="Runtime Info" xml:space="preserve">
     <value>런타임 정보</value>
+  </data>
+  <data name="Smoothed CPU idle" xml:space="preserve">
+    <value>평활화된 CPU 유휴율</value>
   </data>
   <data name="SSH Keys" xml:space="preserve">
     <value>SSH 키</value>

@@ -66,6 +66,9 @@
   <data name="Average Load" xml:space="preserve">
     <value>평균 부하</value>
   </data>
+  <data name="Average pressure index" xml:space="preserve">
+    <value>평균 부하 지수</value>
+  </data>
   <data name="Avg Load" xml:space="preserve">
     <value>평균 부하</value>
   </data>
@@ -74,6 +77,9 @@
   </data>
   <data name="Built-in User Management" xml:space="preserve">
     <value>내장된 사용자 관리</value>
+  </data>
+  <data name="Collecting data" xml:space="preserve">
+    <value>데이터 수집 중</value>
   </data>
   <data name="Comes with full Docker support for simplified, consistent, and reliable deployments." xml:space="preserve">
     <value>완전한 Docker 지원을 통해 단순화되고 일관성 있으며 신뢰할 수 있는 배포를 제공합니다.</value>
@@ -182,6 +188,9 @@
   </data>
   <data name="Out of sync" xml:space="preserve">
     <value>동기화되지 않음</value>
+  </data>
+  <data name="Pressure index" xml:space="preserve">
+    <value>압력 지수</value>
   </data>
   <data name="RAM Usage" xml:space="preserve">
     <value>RAM 사용량</value>

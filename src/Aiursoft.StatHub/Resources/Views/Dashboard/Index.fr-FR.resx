@@ -66,6 +66,9 @@
   <data name="Average Load" xml:space="preserve">
     <value>Charge moyenne</value>
   </data>
+  <data name="Average pressure index" xml:space="preserve">
+    <value>Indice de pression moyen</value>
+  </data>
   <data name="Avg Load" xml:space="preserve">
     <value>Charge moyenne</value>
   </data>
@@ -74,6 +77,9 @@
   </data>
   <data name="Built-in User Management" xml:space="preserve">
     <value>Gestion des utilisateurs intégrée</value>
+  </data>
+  <data name="Collecting data" xml:space="preserve">
+    <value>Collecte des données</value>
   </data>
   <data name="Comes with full Docker support for simplified, consistent, and reliable deployments." xml:space="preserve">
     <value>Bénéficie d&apos;une prise en charge complète de Docker pour des déploiements simplifiés, cohérents et fiables.</value>
@@ -182,6 +188,9 @@
   </data>
   <data name="Out of sync" xml:space="preserve">
     <value>Non synchronisé</value>
+  </data>
+  <data name="Pressure index" xml:space="preserve">
+    <value>Indice de pression</value>
   </data>
   <data name="RAM Usage" xml:space="preserve">
     <value>Utilisation de la RAM</value>

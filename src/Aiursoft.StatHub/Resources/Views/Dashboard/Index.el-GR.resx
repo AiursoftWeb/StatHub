@@ -66,6 +66,9 @@
   <data name="Average Load" xml:space="preserve">
     <value>Μέσος Φόρτος</value>
   </data>
+  <data name="Average pressure index" xml:space="preserve">
+    <value>Μέσος δείκτης φόρτου</value>
+  </data>
   <data name="Avg Load" xml:space="preserve">
     <value>Μέσος Φόρτος</value>
   </data>
@@ -74,6 +77,9 @@
   </data>
   <data name="Built-in User Management" xml:space="preserve">
     <value>Ενσωματωμένη Διαχείριση Χρηστών</value>
+  </data>
+  <data name="Collecting data" xml:space="preserve">
+    <value>Συλλογή δεδομένων</value>
   </data>
   <data name="Comes with full Docker support for simplified, consistent, and reliable deployments." xml:space="preserve">
     <value>Διαθέτει πλήρη υποστήριξη Docker για απλοποιημένες, συνεπείς και αξιόπιστες αναπτύξεις.</value>
@@ -182,6 +188,9 @@
   </data>
   <data name="Out of sync" xml:space="preserve">
     <value>Εκτός συγχρονισμού</value>
+  </data>
+  <data name="Pressure index" xml:space="preserve">
+    <value>Δείκτης πίεσης</value>
   </data>
   <data name="RAM Usage" xml:space="preserve">
     <value>Χρήση Μνήμης RAM</value>
