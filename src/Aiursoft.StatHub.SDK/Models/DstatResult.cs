@@ -54,6 +54,7 @@ public class DstatResult
     
     // Optional for compatibility with clients that predate historical metrics export.
     public Guid SampleId { get; set; }
+    public PressureInfo? Pressure { get; set; }
     public DateTime? SampleTime { get; set; }
 
     public int CpuUsr { get; set; }

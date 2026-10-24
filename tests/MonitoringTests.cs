@@ -382,7 +382,7 @@ public sealed class MonitoringTests
         Assert.Contains("25.31 across 24", content);
         Assert.Contains("40.0", content);
         Assert.Contains("Next steps:", content);
-        Assert.Contains("automatically mitigates", content);
+        Assert.Contains("automatically mitigate", content);
         Assert.Contains("/Dashboard/Details/server-1", content);
         Assert.IsTrue(content.Length <= 4000);
     }
@@ -675,6 +675,54 @@ public sealed class MonitoringTests
         Assert.AreEqual("grey", _coordinator.Snapshot().Single().CurrentState);
         Assert.AreEqual(1, _client.Incidents.Count);
         Assert.AreEqual(0, _client.Mitigations);
+    }
+
+    [TestMethod]
+    public async Task RawQuietSpikesCannotMitigateUntilTheSharedHealthTrackerConfirmsRecovery()
+    {
+        var agent = new Agent("server-1", _clock) { CpuCores = 24, TotalRoot = 100, UsedRoot = 40 };
+        var policy = await _service.PolicyAsync();
+        policy.Rules.Single(rule => rule.State == "red" && rule.Severity == "sev3").DurationMinutes = 1;
+        await _db.SaveChangesAsync();
+        async Task Feed(double memory)
+        {
+            agent.LastUpdate = _clock.GetUtcNow().UtcDateTime;
+            await agent.Stats.BroadcastAsync(new DstatResult
+            {
+                SampleTime = agent.LastUpdate, CpuIdl = 50, Pressure = new PressureInfo(0, memory, 0)
+            });
+            var color = agent.GetHealthReport().Status switch
+            {
+                AgentStatus.Healthy => "green", AgentStatus.Critical => "red",
+                AgentStatus.Warning => "yellow", _ => "collecting"
+            };
+            await Observe(color);
+            _clock.Advance(TimeSpan.FromSeconds(10));
+        }
+        for (var i = 0; i < 25; i++) await Feed(25);
+        Assert.AreEqual(1, _client.Incidents.Count);
+        for (var i = 0; i < 30; i++) await Feed(i % 3 == 0 ? 0 : 25);
+        Assert.AreEqual(0, _client.Mitigations);
+        for (var i = 0; i < 30; i++) await Feed(0);
+        Assert.AreEqual(0, _client.Mitigations);
+        await Feed(0);
+        Assert.AreEqual(1, _client.Mitigations);
+        Assert.AreEqual("mitigated", _client.Incidents.Single().Status);
+    }
+
+    [TestMethod]
+    public async Task IncompletePressureReportsAreLiveButCannotMitigate()
+    {
+        await Observe("red");
+        await Continue("red", 35);
+        Assert.AreEqual(1, _client.Incidents.Count);
+        await Continue("collecting", 30);
+        Assert.AreEqual("collecting", _coordinator.Snapshot().Single().CurrentState);
+        Assert.AreEqual(0, _client.Mitigations);
+        Assert.AreEqual(1, _client.Incidents.Count);
+        _clock.Advance(TimeSpan.FromMinutes(1));
+        await _service.CheckAsync();
+        Assert.AreEqual("grey", _coordinator.Snapshot().Single().CurrentState);
     }
 
     [TestMethod]

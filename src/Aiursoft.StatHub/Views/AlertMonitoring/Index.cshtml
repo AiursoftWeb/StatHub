@@ -19,7 +19,7 @@
         <div class="card-body">
             <div class="form-check mb-2"><input class="form-check-input" type="checkbox" id="enabled" name="IsEnabled" value="true" checked="@Model.Policy.IsEnabled" /><label class="form-check-label" for="enabled">@Localizer["Enable monitoring policy"]</label></div>
             <div class="form-check mb-2"><input class="form-check-input" type="checkbox" id="all" name="MonitorAllServers" value="true" checked="@Model.Policy.MonitorAllServers" /><label class="form-check-label" for="all">@Localizer["Monitor all servers, including newly connected servers"]</label></div>
-            <div class="form-check"><input class="form-check-input" type="checkbox" id="green" name="AutoResolveOnGreen" value="true" checked="@Model.Policy.AutoResolveOnGreen" /><label class="form-check-label" for="green">@Localizer["Immediately mitigate all incidents managed by this integration for a server when a healthy sample is received"]</label></div>
+            <div class="form-check"><input class="form-check-input" type="checkbox" id="green" name="AutoResolveOnGreen" value="true" checked="@Model.Policy.AutoResolveOnGreen" /><label class="form-check-label" for="green">@Localizer["Mitigate incidents after five continuous minutes below all resource recovery limits"]</label></div>
         </div>
     </div>
     <div class="card mb-3">
@@ -90,6 +90,12 @@
                 <h4 class="h5" id="monitoring-guide-title">@Localizer["How alert timers work"]</h4>
                 <p class="text-muted small">@Localizer["Rules measure how long a server stays at or above a health threshold. Each threshold has its own timer."]</p>
                 <p class="text-muted small">@Localizer["Timers and known servers are kept in memory, with no sample history stored in the database. After StatHub restarts, servers are observed again when they report, and their timers start fresh. Rules and connection settings remain saved."]</p>
+                <h5 class="h6">@Localizer["Stable resource health"]</h5>
+                <p class="small">@Localizer["PSI measures time when tasks wait for CPU, memory or I/O. Health uses PSI avg60 and CPU idle smoothed over 60 seconds; load is diagnostic only."]</p>
+                <p class="small">@Localizer["Yellow: CPU idle at most 15% and CPU PSI at least 20%, memory PSI at least 5%, I/O PSI at least 10%, or disk usage at least 80%."]</p>
+                <p class="small">@Localizer["Red: CPU idle at most 5% and CPU PSI at least 50%, memory PSI at least 20%, I/O PSI at least 30%, or disk usage at least 92%."]</p>
+                <p class="small">@Localizer["Worsening requires two continuous minutes. Red drops to yellow after five minutes without red pressure. Green requires five minutes with CPU idle at least 20% or CPU PSI at most 10%, memory PSI at most 2%, I/O PSI at most 5%, and disk usage at most 75%."]</p>
+                <p class="small">@Localizer["After startup, reconnecting or incomplete data, health stays unconfirmed until pressure or recovery is established. Upgrade older agents to report Linux PSI. Collecting data is different from offline."]</p>
                 <h5 class="h6">@Localizer["From most to least severe"]</h5>
                 <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
                     <span class="badge bg-secondary">@Localizer["Grey (offline)"]</span><span aria-hidden="true">&gt;</span>
@@ -99,7 +105,7 @@
                 </div>
                 <dl class="small mb-3">
                     <dt>@Localizer["Yellow or worse"]</dt>
-                    <dd>@Localizer["Counts yellow, red and grey. Only green resets this timer."]</dd>
+                    <dd>@Localizer["Counts yellow, red and grey. Confirmed green resets this timer. Incomplete measurements interrupt observation without mitigating incidents."]</dd>
                     <dt>@Localizer["Red or worse"]</dt>
                     <dd>@Localizer["Counts red and grey. Yellow or green resets this timer."]</dd>
                     <dt>@Localizer["Grey only"]</dt>
@@ -114,7 +120,7 @@
                 <div class="border-top pt-3">
                     <h5 class="h6">@Localizer["One incident, with recovery"]</h5>
                     <p class="small mb-2">@Localizer["Matching more rules escalates the existing incident when needed; it does not create another incident or automatically lower its severity."]</p>
-                    <p class="small mb-0">@Localizer["A green sample resets every timer. It also mitigates this server's incidents when automatic mitigation on green is enabled, even if green appears only briefly."]</p>
+                    <p class="small mb-0">@Localizer["Green is published only after five continuous minutes below all recovery limits. A brief quiet sample cannot reset timers or mitigate incidents. Missing pressure data is not recovery."]</p>
                 </div>
             </div>
         </div>

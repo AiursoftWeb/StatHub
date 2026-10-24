@@ -8,5 +8,6 @@ public enum AgentStatus
     Healthy,
     Warning,
     Critical,
-    Offline
+    Offline,
+    Unknown
 }

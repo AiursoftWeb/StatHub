@@ -27,6 +27,10 @@ public sealed class MetricsSample
     public double Load5M { get; init; }
     public double Load15M { get; init; }
 
+    public double? PressureCpu { get; init; }
+    public double? PressureMemory { get; init; }
+    public double? PressureIo { get; init; }
+
     public static MetricsSample Capture(string clientId, string hostname, DstatResult sample, DateTime receivedTime) => new()
     {
         SampleId = sample.SampleId == Guid.Empty ? Guid.NewGuid() : sample.SampleId,
@@ -40,13 +44,17 @@ public sealed class MetricsSample
         MemUsed = sample.MemUsed, MemFree = sample.MemFree, MemBuf = sample.MemBuf, MemCach = sample.MemCach,
         DskRead = sample.DskRead, DskWrit = sample.DskWrit,
         NetRecv = sample.NetRecv, NetSend = sample.NetSend,
-        Load1M = sample.Load1M, Load5M = sample.Load5M, Load15M = sample.Load15M
+        Load1M = sample.Load1M, Load5M = sample.Load5M, Load15M = sample.Load15M,
+        PressureCpu = sample.Pressure?.Cpu, PressureMemory = sample.Pressure?.Memory, PressureIo = sample.Pressure?.Io
     };
 
     public object[] ToRow() =>
     [
         SampleId, ClientId, Hostname, SampleTime, ReceivedTime, HasSampleTime ? 1 : 0,
         CpuUsr, CpuSys, CpuIdl, CpuWai, CpuStl, MemUsed, MemFree, MemBuf, MemCach,
-        DskRead, DskWrit, NetRecv, NetSend, Load1M, Load5M, Load15M
+        DskRead, DskWrit, NetRecv, NetSend, Load1M, Load5M, Load15M,
+        PressureCpu.HasValue ? PressureCpu.Value : DBNull.Value,
+        PressureMemory.HasValue ? PressureMemory.Value : DBNull.Value,
+        PressureIo.HasValue ? PressureIo.Value : DBNull.Value
     ];
 }

@@ -28,7 +28,7 @@ public class ServerMonitor(
                 .Map(t => t.Replace("|", " "))
                 .Filter(t => t.Split(" ", StringSplitOptions.RemoveEmptyEntries).Length >= 16)
                 .Pipe(t => { logger.LogTrace("Received dstat metrics: {Trace}.", t); })
-                .Map(t => new DstatResult(t))
+                .Map(t => PressureReader.Capture(new DstatResult(t)))
                 .Aggregate(10) // Aggregate 10 results into one array. 
                 .Throttle(TimeSpan.FromSeconds(9)) // Max speed is every 9 seconds one request.
                 .InNewThread(e => { logger.LogCritical(e, "Failed to submit to server.");})

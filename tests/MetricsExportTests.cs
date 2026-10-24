@@ -28,6 +28,7 @@ public class MetricsExportTests
         var buffer = Buffer();
         var first = new DstatResult("1 2 90 3 4 100M 200M 30M 40M 50M 60M 70M 80M 0.1 0.2 0.3");
         var second = new DstatResult("5 6 80 7 2 110M 210M 31M 41M 51M 61M 71M 81M 0.4 0.5 0.6");
+        first.Pressure = new PressureInfo(12.5, 2.5, 6.5);
         var firstTime = new DateTime(2026, 10, 21, 8, 0, 1, DateTimeKind.Utc);
         first.SampleTime = firstTime;
         second.SampleTime = firstTime.AddSeconds(1);
@@ -62,6 +63,11 @@ public class MetricsExportTests
             Assert.AreEqual(0.1, row.Load1M);
             Assert.AreEqual(0.2, row.Load5M);
             Assert.AreEqual(0.3, row.Load15M);
+            Assert.AreEqual(12.5, row.PressureCpu);
+            Assert.AreEqual(2.5, row.PressureMemory);
+            Assert.AreEqual(6.5, row.PressureIo);
+            Assert.IsNull(batch[1].PressureCpu);
+            Assert.AreEqual(DBNull.Value, batch[1].ToRow()[^1]);
             Assert.AreEqual(firstTime.AddSeconds(1), batch[1].SampleTime);
             Assert.AreEqual(5, batch[1].CpuUsr);
             return Task.CompletedTask;

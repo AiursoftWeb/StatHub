@@ -95,7 +95,10 @@ public class MetricsTests : TestBase
             usedRoot = 20,
             totalRoot = 100,
             motd = "Test MOTD",
-            stats = Enumerable.Range(0, 10).Select(_ => new DstatResult("0 0 100 0 0 100M 700M 0 0 0 0 0 0 0.0 0.0 0.0")).ToArray(),
+            stats = Enumerable.Range(0, 10).Select(_ => new DstatResult("0 0 100 0 0 100M 700M 0 0 0 0 0 0 0.0 0.0 0.0")
+            {
+                Pressure = new PressureInfo(12.5, 2.5, 6.5)
+            }).ToArray(),
             containers = new[]
             {
                 new 
@@ -148,6 +151,7 @@ public class MetricsTests : TestBase
             Assert.AreEqual(10, batch.Count);
             Assert.IsTrue(batch.All(sample => sample.ClientId == clientId && sample.Hostname == hostname));
             Assert.IsTrue(batch.All(sample => sample.HasSampleTime && sample.CpuIdl == 100));
+            Assert.IsTrue(batch.All(sample => sample.PressureCpu == 12.5 && sample.PressureMemory == 2.5 && sample.PressureIo == 6.5));
             Assert.AreEqual(10, batch.Select(sample => sample.SampleId).Distinct().Count());
             return Task.CompletedTask;
         });
@@ -167,6 +171,8 @@ public class MetricsTests : TestBase
         detailsResponse.EnsureSuccessStatusCode();
         var detailsHtml = await detailsResponse.Content.ReadAsStringAsync();
         Assert.IsTrue(detailsHtml.Contains(kernelVersion));
+        Assert.IsTrue(detailsHtml.Contains("Resource pressure"));
+        Assert.IsTrue(detailsHtml.Contains("12.5"));
         Assert.IsTrue(detailsHtml.Contains("test-container"));
         Assert.IsTrue(detailsHtml.Contains("test-image"));
         Assert.IsTrue(detailsHtml.Contains("data-sort=\"10485760\"")); // 10MB in bytes
@@ -316,7 +322,8 @@ public class MetricsTests : TestBase
         var message = JsonConvert.DeserializeObject<JsonRpcMessage>(Encoding.UTF8.GetString(bytes, 0, ack.Count));
         Assert.AreEqual("metrics-ack", message!.Method);
         Assert.AreEqual("excluded-live-host", GetService<InMemoryDatabase>().GetClient(clientId)!.Hostname);
-        Assert.IsTrue(GetService<MonitoringCoordinator>().Snapshot().Any(state => state.ClientId == clientId && state.CurrentState == "green"));
+        Assert.IsTrue(GetService<MonitoringCoordinator>().Snapshot().Any(state => state.ClientId == clientId && state.CurrentState == "collecting"));
+        Assert.AreEqual(AgentStatus.Unknown, GetService<InMemoryDatabase>().GetClient(clientId)!.GetHealthReport().Status);
         Assert.AreEqual(0, GetService<MetricsExportBuffer>().Count);
         await ws.CloseAsync(WebSocketCloseStatus.NormalClosure, "Done", timeout.Token);
     }

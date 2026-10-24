@@ -68,7 +68,7 @@ public sealed class MonitoringService(StatHubDbContext db, MonitoringCoordinator
             AgentMonitoringState? state = null;
             foreach (var color in observations)
             {
-                if (color is not ("green" or "yellow" or "red")) continue;
+                if (color is not ("green" or "yellow" or "red" or "collecting")) continue;
                 if (state == null)
                 {
                     if (!coordinator.States.TryGetValue(clientId, out state))
@@ -86,7 +86,7 @@ public sealed class MonitoringService(StatHubDbContext db, MonitoringCoordinator
                     wakeRecovery = true;
                 }
                 Transition(state, color, now);
-                // A later red sample must not hide even one green sample from the sync worker.
+                // A later deterioration must not hide an already confirmed five-minute recovery.
                 if (color == "green")
                 {
                     state.PendingRecoveryAtUtc = now;
@@ -177,7 +177,7 @@ public sealed class MonitoringService(StatHubDbContext db, MonitoringCoordinator
                             var mitigated = await client.MitigateAsync(incident.IncidentId, new MitigateIncidentRequest
                             {
                                 Version = incident.Version,
-                                Reason = $"StatHub received a healthy sample at {state.PendingRecoveryAtUtc:O}."
+                                Reason = $"StatHub confirmed five continuous minutes below all resource recovery limits at {state.PendingRecoveryAtUtc:O}."
                             });
                             // The query snapshot is detached from the API's updated incident.
                             incident.Status = "mitigated";
@@ -297,16 +297,20 @@ public sealed class MonitoringService(StatHubDbContext db, MonitoringCoordinator
                 var load = agent.GetLoad();
                 evidence = string.Create(System.Globalization.CultureInfo.InvariantCulture, $"Latest available sample (UTC): {agent.LastUpdate:O}\n" +
                     $"CPU busy: {health.CpuRate}%; 15-minute load: {load.Load15M:F2} across {agent.CpuCores} logical CPUs " +
-                    $"({health.LoadRate:F1}% per CPU); busiest disk: {health.DiskUseRatio:P1}.\n") +
-                    "Red thresholds: CPU busy > 40%, load per CPU > 100%, or disk usage > 92%. " +
-                    "Yellow thresholds: CPU busy > 20%, load per CPU > 70%, or disk usage > 80%, unless already red. " +
-                    "These are the latest values, not a claim that one metric stayed above its threshold for the entire interval.";
+                    $"(pressure index {health.LoadRate / 100:F2}); busiest disk: {health.DiskUseRatio:P1}.\n") +
+                    string.Create(System.Globalization.CultureInfo.InvariantCulture,
+                        $"Smoothed CPU idle: {health.SmoothedIdle:F1}%; PSI avg60 (CPU / memory / I/O): " +
+                        $"{health.Pressure?.Cpu:F1}% / {health.Pressure?.Memory:F1}% / {health.Pressure?.Io:F1}%.\n") +
+                    "Red: CPU idle <= 5% AND CPU PSI >= 50%, memory PSI >= 20%, I/O PSI >= 30%, or disk >= 92%. " +
+                    "Yellow: CPU idle <= 15% AND CPU PSI >= 20%, memory PSI >= 5%, I/O PSI >= 10%, or disk >= 80%. " +
+                    "Deterioration requires two minutes; improvement requires five minutes. " +
+                    "These latest measurements do not establish which resource caused the entire interval.";
             }
             action = "Inspect CPU-heavy processes and running builds, disk space and I/O, then check affected service responses. " +
                 "A resource-pressure alert alone does not prove a service outage.";
         }
         var recovery = policy.AutoResolveOnGreen
-            ? "One healthy (green) sample automatically mitigates this server's active StatHub incidents."
+            ? "Five continuous minutes below all recovery limits confirm green and automatically mitigate this server's active StatHub incidents."
             : "Automatic mitigation on green is disabled. Verify recovery and mitigate the incident manually.";
         var footer = $"\n\nNext steps: {action}\nRecovery: {recovery}\n" +
             $"Server details: {settings.PublicBaseUrl.TrimEnd('/')}/Dashboard/Details/{Uri.EscapeDataString(state.ClientId)}";
