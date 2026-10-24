@@ -27,6 +27,9 @@
   <data name="Add rule" xml:space="preserve">
     <value>Tambah aturan</value>
   </data>
+  <data name="After startup, reconnecting or incomplete data, health stays unconfirmed until pressure or recovery is established. Upgrade older agents to report Linux PSI. Collecting data is different from offline." xml:space="preserve">
+    <value>Setelah server dimulai, tersambung kembali, atau data tidak lengkap, status kesehatan tetap belum terkonfirmasi hingga kondisi tekanan atau pemulihan terdeteksi. Perbarui agen versi lama agar melaporkan PSI Linux. Pengumpulan data berbeda dengan kondisi offline.</value>
+  </data>
   <data name="AlertCenter monitoring" xml:space="preserve">
     <value>Pemantauan AlertCenter</value>
   </data>
@@ -44,6 +47,9 @@
   </data>
   <data name="Counts time offline. Any live color resets this timer. Grey starts after one minute without a valid report." xml:space="preserve">
     <value>Menghitung waktu saat offline. Warna apa pun saat server aktif akan mengatur ulang timer ini. Status abu-abu dimulai setelah satu menit tanpa laporan yang valid.</value>
+  </data>
+  <data name="Counts yellow, red and grey. Confirmed green resets this timer. Incomplete measurements interrupt observation without mitigating incidents." xml:space="preserve">
+    <value>Menghitung status kuning, merah, dan abu-abu. Status hijau yang terkonfirmasi mengatur ulang timer ini. Pengukuran yang tidak lengkap mengganggu pengamatan tanpa mengurangi insiden.</value>
   </data>
   <data name="Counts yellow, red and grey. Only green resets this timer." xml:space="preserve">
     <value>Menghitung warna kuning, merah, dan abu-abu. Hanya hijau yang mereset timer ini.</value>
@@ -78,6 +84,9 @@
   <data name="Green" xml:space="preserve">
     <value>Hijau</value>
   </data>
+  <data name="Green is published only after five continuous minutes below all recovery limits. A brief quiet sample cannot reset timers or mitigate incidents. Missing pressure data is not recovery." xml:space="preserve">
+    <value>Status hijau hanya ditampilkan setelah kondisi berada di bawah semua batas pemulihan selama lima menit berturut-turut. Sampel singkat yang tenang tidak dapat mengatur ulang timer atau mengurangi tingkat keparahan insiden. Tidak adanya data tekanan bukan berarti pemulihan.</value>
+  </data>
   <data name="Grey (offline)" xml:space="preserve">
     <value>Abu-abu (offline)</value>
   </data>
@@ -102,6 +111,9 @@
   <data name="Matching more rules escalates the existing incident when needed; it does not create another incident or automatically lower its severity." xml:space="preserve">
     <value>Pencocokan dengan lebih banyak aturan akan meningkatkan tingkat keparahan insiden yang ada jika diperlukan; hal ini tidak membuat insiden baru atau secara otomatis menurunkan tingkat keparahannya.</value>
   </data>
+  <data name="Mitigate incidents after five continuous minutes below all resource recovery limits" xml:space="preserve">
+    <value>Atasi insiden setelah berada di bawah semua ambang pemulihan sumber daya selama lima menit berturut-turut</value>
+  </data>
   <data name="Monitor all servers, including newly connected servers" xml:space="preserve">
     <value>Pantau semua server, termasuk server yang baru terhubung</value>
   </data>
@@ -114,11 +126,17 @@
   <data name="One incident, with recovery" xml:space="preserve">
     <value>Satu insiden, dengan pemulihan</value>
   </data>
+  <data name="PSI measures time when tasks wait for CPU, memory or I/O. Health uses PSI avg60 and CPU idle smoothed over 60 seconds; load is diagnostic only." xml:space="preserve">
+    <value>PSI mengukur lamanya tugas menunggu CPU, memori, atau I/O. Kesehatan sistem menggunakan PSI avg60 dan rata-rata CPU idle yang dihaluskan selama 60 detik; load hanya digunakan untuk diagnosis.</value>
+  </data>
   <data name="Red" xml:space="preserve">
     <value>Merah</value>
   </data>
   <data name="Red or worse" xml:space="preserve">
     <value>Merah atau lebih buruk</value>
+  </data>
+  <data name="Red: CPU idle at most 5% and CPU PSI at least 50%, memory PSI at least 20%, I/O PSI at least 30%, or disk usage at least 92%." xml:space="preserve">
+    <value>Merah: CPU idle paling banyak 5% dan CPU PSI minimal 50%, PSI memori minimal 20%, PSI I/O minimal 30%, atau penggunaan disk minimal 92%.</value>
   </data>
   <data name="Rules measure how long a server stays at or above a health threshold. Each threshold has its own timer." xml:space="preserve">
     <value>Aturan mengukur berapa lama server tetap berada pada atau di atas ambang kesehatan. Setiap ambang memiliki timer tersendiri.</value>
@@ -138,6 +156,9 @@
   <data name="Severity" xml:space="preserve">
     <value>Tingkat keparahan</value>
   </data>
+  <data name="Stable resource health" xml:space="preserve">
+    <value>Kesehatan sumber daya yang stabil</value>
+  </data>
   <data name="State" xml:space="preserve">
     <value>Status</value>
   </data>
@@ -150,6 +171,9 @@
   <data name="Unknown" xml:space="preserve">
     <value>Tidak diketahui</value>
   </data>
+  <data name="Worsening requires two continuous minutes. Red drops to yellow after five minutes without red pressure. Green requires five minutes with CPU idle at least 20% or CPU PSI at most 10%, memory PSI at most 2%, I/O PSI at most 5%, and disk usage at most 75%." xml:space="preserve">
+    <value>Kondisi yang memburuk harus berlangsung selama dua menit berturut-turut. Status merah turun menjadi kuning setelah lima menit tanpa tekanan tingkat merah. Status hijau memerlukan lima menit dengan CPU idle minimal 20% atau PSI CPU maksimal 10%, PSI memori maksimal 2%, PSI I/O maksimal 5%, dan penggunaan disk maksimal 75%.</value>
+  </data>
   <data name="Yellow" xml:space="preserve">
     <value>Kuning</value>
   </data>
@@ -158,6 +182,9 @@
   </data>
   <data name="Yellow or worse" xml:space="preserve">
     <value>Kuning atau lebih parah</value>
+  </data>
+  <data name="Yellow: CPU idle at most 15% and CPU PSI at least 20%, memory PSI at least 5%, I/O PSI at least 10%, or disk usage at least 80%." xml:space="preserve">
+    <value>Kuning: CPU dalam keadaan idle paling banyak 15% dan CPU PSI minimal 20%, PSI memori minimal 5%, PSI I/O minimal 10%, atau penggunaan disk minimal 80%.</value>
   </data>
   <data name="Zero minutes means immediately. The most severe matching rule wins. See the guide for how severity thresholds accumulate." xml:space="preserve">
     <value>Nol menit berarti langsung. Aturan yang cocok dengan tingkat keparahan tertinggi yang berlaku. Lihat panduan untuk mengetahui cara ambang batas tingkat keparahan terakumulasi.</value>

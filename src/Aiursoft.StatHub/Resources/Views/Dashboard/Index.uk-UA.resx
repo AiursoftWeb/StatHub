@@ -66,6 +66,9 @@
   <data name="Average Load" xml:space="preserve">
     <value>Середнє навантаження</value>
   </data>
+  <data name="Average pressure index" xml:space="preserve">
+    <value>Середній індекс навантаження</value>
+  </data>
   <data name="Avg Load" xml:space="preserve">
     <value>Середнє навантаження</value>
   </data>
@@ -74,6 +77,9 @@
   </data>
   <data name="Built-in User Management" xml:space="preserve">
     <value>Вбудоване управління користувачами</value>
+  </data>
+  <data name="Collecting data" xml:space="preserve">
+    <value>Збирання даних</value>
   </data>
   <data name="Comes with full Docker support for simplified, consistent, and reliable deployments." xml:space="preserve">
     <value>Повністю підтримує Docker для спрощених, стабільних та надійних розгортань.</value>
@@ -182,6 +188,9 @@
   </data>
   <data name="Out of sync" xml:space="preserve">
     <value>Не синхронізовано</value>
+  </data>
+  <data name="Pressure index" xml:space="preserve">
+    <value>Індекс тиску</value>
   </data>
   <data name="RAM Usage" xml:space="preserve">
     <value>Використання RAM</value>

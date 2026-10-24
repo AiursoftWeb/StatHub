@@ -66,6 +66,9 @@
   <data name="Average Load" xml:space="preserve">
     <value>Beban Rata-rata</value>
   </data>
+  <data name="Average pressure index" xml:space="preserve">
+    <value>Indeks tekanan rata-rata</value>
+  </data>
   <data name="Avg Load" xml:space="preserve">
     <value>Beban Rata-rata</value>
   </data>
@@ -74,6 +77,9 @@
   </data>
   <data name="Built-in User Management" xml:space="preserve">
     <value>Manajemen Pengguna Bawaan</value>
+  </data>
+  <data name="Collecting data" xml:space="preserve">
+    <value>Mengumpulkan data</value>
   </data>
   <data name="Comes with full Docker support for simplified, consistent, and reliable deployments." xml:space="preserve">
     <value>Dilengkapi dengan dukungan Docker penuh untuk penyebaran yang disederhanakan, konsisten, dan andal.</value>
@@ -182,6 +188,9 @@
   </data>
   <data name="Out of sync" xml:space="preserve">
     <value>Tidak Sinkron</value>
+  </data>
+  <data name="Pressure index" xml:space="preserve">
+    <value>Indeks Tekanan</value>
   </data>
   <data name="RAM Usage" xml:space="preserve">
     <value>Penggunaan RAM</value>

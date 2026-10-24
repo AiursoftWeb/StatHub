@@ -66,6 +66,9 @@
   <data name="Average Load" xml:space="preserve">
     <value>โหลดเฉลี่ย</value>
   </data>
+  <data name="Average pressure index" xml:space="preserve">
+    <value>ดัชนีแรงดันเฉลี่ย</value>
+  </data>
   <data name="Avg Load" xml:space="preserve">
     <value>โหลดเฉลี่ย</value>
   </data>
@@ -74,6 +77,9 @@
   </data>
   <data name="Built-in User Management" xml:space="preserve">
     <value>การจัดการผู้ใช้ในตัว</value>
+  </data>
+  <data name="Collecting data" xml:space="preserve">
+    <value>กำลังรวบรวมข้อมูล</value>
   </data>
   <data name="Comes with full Docker support for simplified, consistent, and reliable deployments." xml:space="preserve">
     <value>มาพร้อมการสนับสนุน Docker เต็มรูปแบบเพื่อให้การปรับใช้เป็นเรื่องง่าย สม่ำเสมอ และเชื่อถือได้</value>
@@ -182,6 +188,9 @@
   </data>
   <data name="Out of sync" xml:space="preserve">
     <value>ไม่ตรงกัน</value>
+  </data>
+  <data name="Pressure index" xml:space="preserve">
+    <value>ดัชนีแรงกดดัน</value>
   </data>
   <data name="RAM Usage" xml:space="preserve">
     <value>การใช้หน่วยความจำ</value>

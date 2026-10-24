@@ -66,6 +66,9 @@
   <data name="Average Load" xml:space="preserve">
     <value>Keskimääräinen kuorma</value>
   </data>
+  <data name="Average pressure index" xml:space="preserve">
+    <value>Keskimääräinen paineindeksi</value>
+  </data>
   <data name="Avg Load" xml:space="preserve">
     <value>Keskim. kuorma</value>
   </data>
@@ -74,6 +77,9 @@
   </data>
   <data name="Built-in User Management" xml:space="preserve">
     <value>Sisäänrakennettu käyttäjienhallinta</value>
+  </data>
+  <data name="Collecting data" xml:space="preserve">
+    <value>Kerää tietoja</value>
   </data>
   <data name="Comes with full Docker support for simplified, consistent, and reliable deployments." xml:space="preserve">
     <value>Sisältää täyden Docker-tuen yksinkertaistettuja, yhdenmukaisia ja luotettavia käyttöönottoja varten.</value>
@@ -182,6 +188,9 @@
   </data>
   <data name="Out of sync" xml:space="preserve">
     <value>Ei synkronoidu</value>
+  </data>
+  <data name="Pressure index" xml:space="preserve">
+    <value>Painemittari</value>
   </data>
   <data name="RAM Usage" xml:space="preserve">
     <value>RAM-käyttö</value>

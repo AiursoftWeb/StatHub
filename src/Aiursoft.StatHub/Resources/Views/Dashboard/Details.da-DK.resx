@@ -42,6 +42,9 @@
   <data name="Client ID" xml:space="preserve">
     <value>Klient-ID</value>
   </data>
+  <data name="Colors use sustained resource pressure. A short quiet sample does not establish recovery." xml:space="preserve">
+    <value>Farverne afspejler vedvarende ressourcebelastning. En kort periode med lav belastning er ikke ensbetydende med, at systemet er kommet sig.</value>
+  </data>
   <data name="Command" xml:space="preserve">
     <value>Kommando</value>
   </data>
@@ -53,6 +56,9 @@
   </data>
   <data name="CPU %" xml:space="preserve">
     <value>CPU %</value>
+  </data>
+  <data name="CPU PSI (avg60)" xml:space="preserve">
+    <value>CPU PSI (gennemsnit over 60 sek.)</value>
   </data>
   <data name="CPU Usage" xml:space="preserve">
     <value>CPU-forbrug</value>
@@ -102,6 +108,9 @@
   <data name="Firewall Status" xml:space="preserve">
     <value>Fyrværkeristatus</value>
   </data>
+  <data name="Fresh PSI measurements are unavailable. Check connectivity, update the agent and verify Linux PSI support." xml:space="preserve">
+    <value>Der er ingen nye PSI-målinger tilgængelige. Kontrollér forbindelsen, opdatér agenten, og kontrollér, at Linux understøtter PSI.</value>
+  </data>
   <data name="Hardware Details" xml:space="preserve">
     <value>Hardwareoplysninger</value>
   </data>
@@ -110,6 +119,9 @@
   </data>
   <data name="Healthy" xml:space="preserve">
     <value>Healthy</value>
+  </data>
+  <data name="I/O PSI (avg60)" xml:space="preserve">
+    <value>I/O-PSI (avg60)</value>
   </data>
   <data name="Identity" xml:space="preserve">
     <value>Identitet</value>
@@ -137,6 +149,9 @@
   </data>
   <data name="Memory" xml:space="preserve">
     <value>Memory</value>
+  </data>
+  <data name="Memory PSI (avg60)" xml:space="preserve">
+    <value>Hukommelses-PSI (avg60)</value>
   </data>
   <data name="Modified" xml:space="preserve">
     <value>Ændret</value>
@@ -174,6 +189,9 @@
   <data name="Ports" xml:space="preserve">
     <value>Ports</value>
   </data>
+  <data name="Pressure index (15-minute load / logical CPUs)" xml:space="preserve">
+    <value>Belastningsindeks (15-minutters belastning / logiske CPU&apos;er)</value>
+  </data>
   <data name="Preview" xml:space="preserve">
     <value>Forhåndsvisning</value>
   </data>
@@ -183,11 +201,17 @@
   <data name="RAM Usage" xml:space="preserve">
     <value>RAM-forbrug</value>
   </data>
+  <data name="Resource pressure" xml:space="preserve">
+    <value>Ressourcepresion</value>
+  </data>
   <data name="Running" xml:space="preserve">
     <value>Kører</value>
   </data>
   <data name="Runtime Info" xml:space="preserve">
     <value>Køreoplysninger</value>
+  </data>
+  <data name="Smoothed CPU idle" xml:space="preserve">
+    <value>Udglattet CPU-inaktivitet</value>
   </data>
   <data name="SSH Keys" xml:space="preserve">
     <value>SSH-nøgler</value>

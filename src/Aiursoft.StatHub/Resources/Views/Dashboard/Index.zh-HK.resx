@@ -66,6 +66,9 @@
   <data name="Average Load" xml:space="preserve">
     <value>平均負載</value>
   </data>
+  <data name="Average pressure index" xml:space="preserve">
+    <value>平均負載指數</value>
+  </data>
   <data name="Avg Load" xml:space="preserve">
     <value>平均負載</value>
   </data>
@@ -74,6 +77,9 @@
   </data>
   <data name="Built-in User Management" xml:space="preserve">
     <value>內建用戶管理</value>
+  </data>
+  <data name="Collecting data" xml:space="preserve">
+    <value>正在收集資料</value>
   </data>
   <data name="Comes with full Docker support for simplified, consistent, and reliable deployments." xml:space="preserve">
     <value>提供完整 Docker 支援，實現簡化、一致且可靠的部署流程。</value>
@@ -182,6 +188,9 @@
   </data>
   <data name="Out of sync" xml:space="preserve">
     <value>失去同步</value>
+  </data>
+  <data name="Pressure index" xml:space="preserve">
+    <value>壓力指數</value>
   </data>
   <data name="RAM Usage" xml:space="preserve">
     <value>記憶體使用量</value>

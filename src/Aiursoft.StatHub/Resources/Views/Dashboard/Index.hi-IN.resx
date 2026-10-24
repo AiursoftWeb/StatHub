@@ -66,6 +66,9 @@
   <data name="Average Load" xml:space="preserve">
     <value>औसत लोड</value>
   </data>
+  <data name="Average pressure index" xml:space="preserve">
+    <value>औसत दबाव सूचकांक</value>
+  </data>
   <data name="Avg Load" xml:space="preserve">
     <value>औसत लोड</value>
   </data>
@@ -74,6 +77,9 @@
   </data>
   <data name="Built-in User Management" xml:space="preserve">
     <value>अंतर्निहित उपयोगकर्ता प्रबंधन</value>
+  </data>
+  <data name="Collecting data" xml:space="preserve">
+    <value>डेटा एकत्र किया जा रहा है</value>
   </data>
   <data name="Comes with full Docker support for simplified, consistent, and reliable deployments." xml:space="preserve">
     <value>पूर्ण Docker समर्थन के साथ आता है, जो सरल, सुसंगत और विश्वसनीय डेप्लॉयमेंट के लिए है।</value>
@@ -182,6 +188,9 @@
   </data>
   <data name="Out of sync" xml:space="preserve">
     <value>सिंक से बाहर</value>
+  </data>
+  <data name="Pressure index" xml:space="preserve">
+    <value>दबाव सूचकांक</value>
   </data>
   <data name="RAM Usage" xml:space="preserve">
     <value>RAM उपयोग</value>

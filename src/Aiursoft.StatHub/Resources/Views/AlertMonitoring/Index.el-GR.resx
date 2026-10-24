@@ -27,6 +27,9 @@
   <data name="Add rule" xml:space="preserve">
     <value>Προσθήκη κανόνα</value>
   </data>
+  <data name="After startup, reconnecting or incomplete data, health stays unconfirmed until pressure or recovery is established. Upgrade older agents to report Linux PSI. Collecting data is different from offline." xml:space="preserve">
+    <value>Μετά την εκκίνηση, την επανασύνδεση ή τη λήψη ελλιπών δεδομένων, η κατάσταση υγείας παραμένει μη επιβεβαιωμένη μέχρι να διαπιστωθεί επιβάρυνση ή αποκατάσταση. Αναβαθμίστε παλαιότερους agents ώστε να αναφέρουν τα Linux PSI. Η συλλογή δεδομένων δεν σημαίνει ότι ο διακομιστής είναι εκτός σύνδεσης.</value>
+  </data>
   <data name="AlertCenter monitoring" xml:space="preserve">
     <value>Παρακολούθηση του AlertCenter</value>
   </data>
@@ -44,6 +47,9 @@
   </data>
   <data name="Counts time offline. Any live color resets this timer. Grey starts after one minute without a valid report." xml:space="preserve">
     <value>Μετρά τον χρόνο εκτός σύνδεσης. Κάθε ενεργό χρώμα μηδενίζει αυτόν τον χρονομετρητή. Το γκρι εμφανίζεται μετά από ένα λεπτό χωρίς έγκυρη αναφορά.</value>
+  </data>
+  <data name="Counts yellow, red and grey. Confirmed green resets this timer. Incomplete measurements interrupt observation without mitigating incidents." xml:space="preserve">
+    <value>Υπολογίζει το κίτρινο, το κόκκινο και το γκρι. Το επιβεβαιωμένο πράσινο μηδενίζει αυτόν τον χρονοδιακόπτη. Οι ελλιπείς μετρήσεις διακόπτουν την παρακολούθηση χωρίς να μετριάζουν τα περιστατικά.</value>
   </data>
   <data name="Counts yellow, red and grey. Only green resets this timer." xml:space="preserve">
     <value>Μετρά το κίτρινο, το κόκκινο και το γκρι. Μόνο το πράσινο μηδενίζει αυτό το χρονόμετρο.</value>
@@ -78,6 +84,9 @@
   <data name="Green" xml:space="preserve">
     <value>Πράσινο</value>
   </data>
+  <data name="Green is published only after five continuous minutes below all recovery limits. A brief quiet sample cannot reset timers or mitigate incidents. Missing pressure data is not recovery." xml:space="preserve">
+    <value>Η ένδειξη «Πράσινο» εμφανίζεται μόνο αφού παρέλθουν πέντε συνεχόμενα λεπτά με τιμές κάτω από όλα τα όρια αποκατάστασης. Μια σύντομη περίοδος χωρίς επιβάρυνση δεν μπορεί να μηδενίσει τα χρονόμετρα ή να μετριάσει τα περιστατικά. Η απουσία δεδομένων πίεσης δεν σημαίνει αποκατάσταση.</value>
+  </data>
   <data name="Grey (offline)" xml:space="preserve">
     <value>Γκρι (εκτός σύνδεσης)</value>
   </data>
@@ -102,6 +111,9 @@
   <data name="Matching more rules escalates the existing incident when needed; it does not create another incident or automatically lower its severity." xml:space="preserve">
     <value>Η ταιριασμένη περισσότερων κανόνων επιδεινώνει το υπάρχον περιστατικό όταν χρειάζεται; δεν δημιουργεί άλλο περιστατικό ούτε μειώνει αυτόματα τη σοβαρότητά του.</value>
   </data>
+  <data name="Mitigate incidents after five continuous minutes below all resource recovery limits" xml:space="preserve">
+    <value>Αποκατάσταση των περιστατικών αφού οι τιμές παραμείνουν για πέντε συνεχόμενα λεπτά κάτω από όλα τα όρια επαναφοράς πόρων</value>
+  </data>
   <data name="Monitor all servers, including newly connected servers" xml:space="preserve">
     <value>Παρακολούθηση όλων των διακομιστών, συμπεριλαμβανομένων των νεοσυνδεδεμένων διακομιστών</value>
   </data>
@@ -114,11 +126,17 @@
   <data name="One incident, with recovery" xml:space="preserve">
     <value>Ένα περιστατικό, με αποκατάσταση</value>
   </data>
+  <data name="PSI measures time when tasks wait for CPU, memory or I/O. Health uses PSI avg60 and CPU idle smoothed over 60 seconds; load is diagnostic only." xml:space="preserve">
+    <value>Το PSI μετρά τον χρόνο αναμονής των εργασιών για CPU, μνήμη ή I/O. Η κατάσταση υγείας χρησιμοποιεί το PSI avg60 και τη χρήση CPU σε αδράνεια, εξομαλυμένη σε διάστημα 60 δευτερολέπτων· το φορτίο χρησιμοποιείται μόνο για διαγνωστικούς σκοπούς.</value>
+  </data>
   <data name="Red" xml:space="preserve">
     <value>Κόκκινο</value>
   </data>
   <data name="Red or worse" xml:space="preserve">
     <value>Κόκκινο ή χειρότερο</value>
+  </data>
+  <data name="Red: CPU idle at most 5% and CPU PSI at least 50%, memory PSI at least 20%, I/O PSI at least 30%, or disk usage at least 92%." xml:space="preserve">
+    <value>Κόκκινο: αδράνεια CPU έως 5% και CPU PSI τουλάχιστον 50%, PSI μνήμης τουλάχιστον 20%, PSI I/O τουλάχιστον 30% ή χρήση δίσκου τουλάχιστον 92%.</value>
   </data>
   <data name="Rules measure how long a server stays at or above a health threshold. Each threshold has its own timer." xml:space="preserve">
     <value>Οι κανόνες μετρούν για πόσο χρόνο ένας διακομιστής παραμένει σε ένα επίπεδο υγείας ή υψηλότερο. Κάθε επίπεδο έχει το δικό του χρονόμετρο.</value>
@@ -138,6 +156,9 @@
   <data name="Severity" xml:space="preserve">
     <value>Σοβαρότητα</value>
   </data>
+  <data name="Stable resource health" xml:space="preserve">
+    <value>Σταθερή κατάσταση πόρων</value>
+  </data>
   <data name="State" xml:space="preserve">
     <value>Κατάσταση</value>
   </data>
@@ -150,6 +171,9 @@
   <data name="Unknown" xml:space="preserve">
     <value>Άγνωστο</value>
   </data>
+  <data name="Worsening requires two continuous minutes. Red drops to yellow after five minutes without red pressure. Green requires five minutes with CPU idle at least 20% or CPU PSI at most 10%, memory PSI at most 2%, I/O PSI at most 5%, and disk usage at most 75%." xml:space="preserve">
+    <value>Η επιδείνωση απαιτεί δύο συνεχόμενα λεπτά. Το κόκκινο υποχωρεί σε κίτρινο μετά από πέντε λεπτά χωρίς κόκκινη πίεση. Το πράσινο απαιτεί πέντε λεπτά με αδράνεια CPU τουλάχιστον 20% ή CPU PSI το πολύ 10%, memory PSI το πολύ 2%, I/O PSI το πολύ 5% και χρήση δίσκου το πολύ 75%.</value>
+  </data>
   <data name="Yellow" xml:space="preserve">
     <value>Κίτρινο</value>
   </data>
@@ -158,6 +182,9 @@
   </data>
   <data name="Yellow or worse" xml:space="preserve">
     <value>Κίτρινο ή χειρότερο</value>
+  </data>
+  <data name="Yellow: CPU idle at most 15% and CPU PSI at least 20%, memory PSI at least 5%, I/O PSI at least 10%, or disk usage at least 80%." xml:space="preserve">
+    <value>Κίτρινο: αδράνεια CPU έως 15% και CPU PSI τουλάχιστον 20%, PSI μνήμης τουλάχιστον 5%, PSI εισόδου/εξόδου τουλάχιστον 10% ή χρήση δίσκου τουλάχιστον 80%.</value>
   </data>
   <data name="Zero minutes means immediately. The most severe matching rule wins. See the guide for how severity thresholds accumulate." xml:space="preserve">
     <value>Τα μηδέν λεπτά σημαίνουν άμεσα. Υπερισχύει ο κανόνας που αντιστοιχεί και έχει τη μεγαλύτερη σοβαρότητα. Δείτε στον οδηγό πώς συσσωρεύονται τα όρια σοβαρότητας.</value>

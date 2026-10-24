@@ -30,6 +30,9 @@
   <data name="Add rule" xml:space="preserve">
     <value>Add rule</value>
   </data>
+  <data name="After startup, reconnecting or incomplete data, health stays unconfirmed until pressure or recovery is established. Upgrade older agents to report Linux PSI. Collecting data is different from offline." xml:space="preserve">
+    <value>After start-up, reconnection or incomplete data, health remains unconfirmed until pressure or recovery is established. Upgrade older agents to report Linux PSI. Collecting data is not the same as being offline.</value>
+  </data>
   <data name="AlertCenter monitoring" xml:space="preserve">
     <value>AlertCenter monitoring</value>
   </data>
@@ -47,6 +50,9 @@
   </data>
   <data name="Counts time offline. Any live color resets this timer. Grey starts after one minute without a valid report." xml:space="preserve">
     <value>Counts time offline. Any live colour resets this timer. Grey starts after one minute without a valid report.</value>
+  </data>
+  <data name="Counts yellow, red and grey. Confirmed green resets this timer. Incomplete measurements interrupt observation without mitigating incidents." xml:space="preserve">
+    <value>Counts yellow, red and grey. Confirmed green resets this timer. Incomplete measurements interrupt observation without mitigating incidents.</value>
   </data>
   <data name="Counts yellow, red and grey. Only green resets this timer." xml:space="preserve">
     <value>Counts yellow, red and grey. Only green resets this timer.</value>
@@ -81,6 +87,9 @@
   <data name="Green" xml:space="preserve">
     <value>Green</value>
   </data>
+  <data name="Green is published only after five continuous minutes below all recovery limits. A brief quiet sample cannot reset timers or mitigate incidents. Missing pressure data is not recovery." xml:space="preserve">
+    <value>Green is published only after five continuous minutes below all recovery limits. A brief quiet sample cannot reset timers or mitigate incidents. Missing pressure data is not recovery.</value>
+  </data>
   <data name="Grey (offline)" xml:space="preserve">
     <value>Grey (offline)</value>
   </data>
@@ -108,6 +117,9 @@
   <data name="Matching more rules escalates the existing incident when needed; it does not create another incident or automatically lower its severity." xml:space="preserve">
     <value>Matching more rules escalates the existing incident when needed; it does not create another incident or automatically lower its severity.</value>
   </data>
+  <data name="Mitigate incidents after five continuous minutes below all resource recovery limits" xml:space="preserve">
+    <value>Resolve incidents after five consecutive minutes below all resource recovery thresholds</value>
+  </data>
   <data name="Monitor all servers, including newly connected servers" xml:space="preserve">
     <value>Monitor all servers, including newly connected servers</value>
   </data>
@@ -120,11 +132,17 @@
   <data name="One incident, with recovery" xml:space="preserve">
     <value>A single incident, with recovery</value>
   </data>
+  <data name="PSI measures time when tasks wait for CPU, memory or I/O. Health uses PSI avg60 and CPU idle smoothed over 60 seconds; load is diagnostic only." xml:space="preserve">
+    <value>PSI measures the time tasks spend waiting for CPU, memory or I/O. Health uses PSI avg60 and CPU idle averaged over 60 seconds; load is for diagnostic purposes only.</value>
+  </data>
   <data name="Red" xml:space="preserve">
     <value>Red</value>
   </data>
   <data name="Red or worse" xml:space="preserve">
     <value>Red or worse</value>
+  </data>
+  <data name="Red: CPU idle at most 5% and CPU PSI at least 50%, memory PSI at least 20%, I/O PSI at least 30%, or disk usage at least 92%." xml:space="preserve">
+    <value>Red: CPU idle at most 5% and CPU PSI at least 50%, memory PSI at least 20%, I/O PSI at least 30%, or disk usage at least 92%.</value>
   </data>
   <data name="Rules measure how long a server stays at or above a health threshold. Each threshold has its own timer." xml:space="preserve">
     <value>Rules measure how long a server stays at or above a health threshold. Each threshold has its own timer.</value>
@@ -144,6 +162,9 @@
   <data name="Severity" xml:space="preserve">
     <value>Severity</value>
   </data>
+  <data name="Stable resource health" xml:space="preserve">
+    <value>Stable resource health</value>
+  </data>
   <data name="State" xml:space="preserve">
     <value>State</value>
   </data>
@@ -156,6 +177,9 @@
   <data name="Unknown" xml:space="preserve">
     <value>Unknown</value>
   </data>
+  <data name="Worsening requires two continuous minutes. Red drops to yellow after five minutes without red pressure. Green requires five minutes with CPU idle at least 20% or CPU PSI at most 10%, memory PSI at most 2%, I/O PSI at most 5%, and disk usage at most 75%." xml:space="preserve">
+    <value>Deterioration requires two continuous minutes. Red drops to yellow after five minutes without red-level pressure. Green requires five minutes with CPU idle at least 20% or CPU PSI at most 10%, memory PSI at most 2%, I/O PSI at most 5%, and disk usage at most 75%.</value>
+  </data>
   <data name="Yellow" xml:space="preserve">
     <value>Yellow</value>
   </data>
@@ -164,6 +188,9 @@
   </data>
   <data name="Yellow or worse" xml:space="preserve">
     <value>Yellow or worse</value>
+  </data>
+  <data name="Yellow: CPU idle at most 15% and CPU PSI at least 20%, memory PSI at least 5%, I/O PSI at least 10%, or disk usage at least 80%." xml:space="preserve">
+    <value>Yellow: CPU idle at 15% or less and CPU PSI at 20% or more, memory PSI at 5% or more, I/O PSI at 10% or more, or disk usage at 80% or more.</value>
   </data>
   <data name="Zero minutes means immediately. The most severe matching rule wins. See the guide for how severity thresholds accumulate." xml:space="preserve">
     <value>Zero minutes means immediately. The most severe matching rule wins. See the guide for how severity thresholds accumulate.</value>

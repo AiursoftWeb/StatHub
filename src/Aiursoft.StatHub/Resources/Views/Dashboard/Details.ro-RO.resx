@@ -42,6 +42,9 @@
   <data name="Client ID" xml:space="preserve">
     <value>ID client</value>
   </data>
+  <data name="Colors use sustained resource pressure. A short quiet sample does not establish recovery." xml:space="preserve">
+    <value>Culorile reflectă presiunea susținută asupra resurselor. O perioadă scurtă fără presiune nu indică revenirea la normal.</value>
+  </data>
   <data name="Command" xml:space="preserve">
     <value>Comandă</value>
   </data>
@@ -53,6 +56,9 @@
   </data>
   <data name="CPU %" xml:space="preserve">
     <value>CPU %</value>
+  </data>
+  <data name="CPU PSI (avg60)" xml:space="preserve">
+    <value>PSI CPU (avg60)</value>
   </data>
   <data name="CPU Usage" xml:space="preserve">
     <value>Utilizarea CPU</value>
@@ -102,6 +108,9 @@
   <data name="Firewall Status" xml:space="preserve">
     <value>Starea firewall-ului</value>
   </data>
+  <data name="Fresh PSI measurements are unavailable. Check connectivity, update the agent and verify Linux PSI support." xml:space="preserve">
+    <value>Măsurătorile PSI recente nu sunt disponibile. Verificați conectivitatea, actualizați agentul și verificați compatibilitatea Linux cu PSI.</value>
+  </data>
   <data name="Hardware Details" xml:space="preserve">
     <value>Detalii Hardware</value>
   </data>
@@ -110,6 +119,9 @@
   </data>
   <data name="Healthy" xml:space="preserve">
     <value>Healthy</value>
+  </data>
+  <data name="I/O PSI (avg60)" xml:space="preserve">
+    <value>PSI I/O (media pe 60 s)</value>
   </data>
   <data name="Identity" xml:space="preserve">
     <value>Identitate</value>
@@ -137,6 +149,9 @@
   </data>
   <data name="Memory" xml:space="preserve">
     <value>Memory</value>
+  </data>
+  <data name="Memory PSI (avg60)" xml:space="preserve">
+    <value>PSI pentru memorie (medie pe 60 s)</value>
   </data>
   <data name="Modified" xml:space="preserve">
     <value>Modificat</value>
@@ -174,6 +189,9 @@
   <data name="Ports" xml:space="preserve">
     <value>Ports</value>
   </data>
+  <data name="Pressure index (15-minute load / logical CPUs)" xml:space="preserve">
+    <value>Indicele presiunii (încărcarea pe 15 minute / numărul de CPU-uri logice)</value>
+  </data>
   <data name="Preview" xml:space="preserve">
     <value>Previzualizare</value>
   </data>
@@ -183,11 +201,17 @@
   <data name="RAM Usage" xml:space="preserve">
     <value>Utilizarea RAM</value>
   </data>
+  <data name="Resource pressure" xml:space="preserve">
+    <value>Presiunea asupra resurselor</value>
+  </data>
   <data name="Running" xml:space="preserve">
     <value>În curs de execuție</value>
   </data>
   <data name="Runtime Info" xml:space="preserve">
     <value>Informații de Execuție</value>
+  </data>
+  <data name="Smoothed CPU idle" xml:space="preserve">
+    <value>Timp de inactivitate CPU mediat</value>
   </data>
   <data name="SSH Keys" xml:space="preserve">
     <value>Chei SSH</value>

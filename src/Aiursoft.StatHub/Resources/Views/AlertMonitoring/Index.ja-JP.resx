@@ -30,6 +30,9 @@
   <data name="Add rule" xml:space="preserve">
     <value>ルールを追加</value>
   </data>
+  <data name="After startup, reconnecting or incomplete data, health stays unconfirmed until pressure or recovery is established. Upgrade older agents to report Linux PSI. Collecting data is different from offline." xml:space="preserve">
+    <value>起動後、再接続後、またはデータが不完全な場合、負荷または回復が確認されるまで、ヘルス状態は未確定のままです。古いエージェントは、Linux PSIを報告するようにアップグレードしてください。データを収集中であることと、オフラインであることは異なります。</value>
+  </data>
   <data name="AlertCenter monitoring" xml:space="preserve">
     <value>AlertCenter の監視</value>
   </data>
@@ -47,6 +50,9 @@
   </data>
   <data name="Counts time offline. Any live color resets this timer. Grey starts after one minute without a valid report." xml:space="preserve">
     <value>オフライン状態の時間を計測します。オンライン状態を示す色に変わると、このタイマーはリセットされます。有効なレポートが1分間届かないと、グレーになります。</value>
+  </data>
+  <data name="Counts yellow, red and grey. Confirmed green resets this timer. Incomplete measurements interrupt observation without mitigating incidents." xml:space="preserve">
+    <value>黄色、赤、灰色の状態が対象です。緑色が確認されると、このタイマーはリセットされます。測定値が不完全な場合、観測は中断されますが、インシデントが軽減されたことにはなりません。</value>
   </data>
   <data name="Counts yellow, red and grey. Only green resets this timer." xml:space="preserve">
     <value>黄色、赤色、灰色の時間をカウントします。緑色になった場合のみ、このタイマーがリセットされます。</value>
@@ -81,6 +87,9 @@
   <data name="Green" xml:space="preserve">
     <value>正常</value>
   </data>
+  <data name="Green is published only after five continuous minutes below all recovery limits. A brief quiet sample cannot reset timers or mitigate incidents. Missing pressure data is not recovery." xml:space="preserve">
+    <value>すべての回復しきい値を下回る状態が5分間連続した場合にのみ、緑色が通知されます。一時的に負荷が静まっただけでは、タイマーはリセットされず、インシデントも軽減されません。負荷データが欠落している状態は、回復とはみなされません。</value>
+  </data>
   <data name="Grey (offline)" xml:space="preserve">
     <value>グレー（オフライン）</value>
   </data>
@@ -108,6 +117,9 @@
   <data name="Matching more rules escalates the existing incident when needed; it does not create another incident or automatically lower its severity." xml:space="preserve">
     <value>より多くのルールに一致すると、必要に応じて既存のインシデントがエスカレーションされます。別のインシデントを作成したり、重要度を自動的に下げたりすることはありません。</value>
   </data>
+  <data name="Mitigate incidents after five continuous minutes below all resource recovery limits" xml:space="preserve">
+    <value>すべてのリソースが回復しきい値を下回った状態が5分間連続した後、インシデントを解消する</value>
+  </data>
   <data name="Monitor all servers, including newly connected servers" xml:space="preserve">
     <value>新たに接続されたサーバーを含む、すべてのサーバーを監視する</value>
   </data>
@@ -120,11 +132,17 @@
   <data name="One incident, with recovery" xml:space="preserve">
     <value>1件のインシデント、復旧あり</value>
   </data>
+  <data name="PSI measures time when tasks wait for CPU, memory or I/O. Health uses PSI avg60 and CPU idle smoothed over 60 seconds; load is diagnostic only." xml:space="preserve">
+    <value>PSIは、タスクがCPU、メモリ、またはI/Oを待つ時間を測定します。ヘルス判定では、PSI avg60と、60秒間で平滑化したCPUアイドル率を使用します。負荷は診断目的にのみ使用されます。</value>
+  </data>
   <data name="Red" xml:space="preserve">
     <value>赤</value>
   </data>
   <data name="Red or worse" xml:space="preserve">
     <value>赤以上</value>
+  </data>
+  <data name="Red: CPU idle at most 5% and CPU PSI at least 50%, memory PSI at least 20%, I/O PSI at least 30%, or disk usage at least 92%." xml:space="preserve">
+    <value>Red：CPUアイドルが5%以下かつCPU PSIが50%以上、メモリPSIが20%以上、I/O PSIが30%以上、またはディスク使用率が92%以上</value>
   </data>
   <data name="Rules measure how long a server stays at or above a health threshold. Each threshold has its own timer." xml:space="preserve">
     <value>ルールでは、サーバーの状態が健全性のしきい値以上に保たれている時間を計測します。しきい値ごとに個別のタイマーがあります。</value>
@@ -144,6 +162,9 @@
   <data name="Severity" xml:space="preserve">
     <value>重大度</value>
   </data>
+  <data name="Stable resource health" xml:space="preserve">
+    <value>安定したリソースの健全性</value>
+  </data>
   <data name="State" xml:space="preserve">
     <value>状態</value>
   </data>
@@ -156,6 +177,9 @@
   <data name="Unknown" xml:space="preserve">
     <value>不明</value>
   </data>
+  <data name="Worsening requires two continuous minutes. Red drops to yellow after five minutes without red pressure. Green requires five minutes with CPU idle at least 20% or CPU PSI at most 10%, memory PSI at most 2%, I/O PSI at most 5%, and disk usage at most 75%." xml:space="preserve">
+    <value>悪化の判定には2分間の継続が必要です。赤色の負荷がなくなってから5分後に、赤から黄色に変わります。CPUアイドル率が20%以上、またはCPU PSIが10%以下で、メモリPSIが2%以下、I/O PSIが5%以下、ディスク使用率が75%以下の状態が5分間続くと、緑になります。</value>
+  </data>
   <data name="Yellow" xml:space="preserve">
     <value>黄色</value>
   </data>
@@ -164,6 +188,9 @@
   </data>
   <data name="Yellow or worse" xml:space="preserve">
     <value>イエローまたはそれ以上</value>
+  </data>
+  <data name="Yellow: CPU idle at most 15% and CPU PSI at least 20%, memory PSI at least 5%, I/O PSI at least 10%, or disk usage at least 80%." xml:space="preserve">
+    <value>黄色：CPUアイドル率が15%以下かつCPU PSIが20%以上、メモリPSIが5%以上、I/O PSIが10%以上、またはディスク使用率が80%以上。</value>
   </data>
   <data name="Zero minutes means immediately. The most severe matching rule wins. See the guide for how severity thresholds accumulate." xml:space="preserve">
     <value>0分は即時を意味します。該当するルールの中で最も重大度の高いものが適用されます。重大度のしきい値がどのように累積するかについては、ガイドを参照してください。</value>

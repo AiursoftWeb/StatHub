@@ -30,6 +30,9 @@
   <data name="Add rule" xml:space="preserve">
     <value>新增規則</value>
   </data>
+  <data name="After startup, reconnecting or incomplete data, health stays unconfirmed until pressure or recovery is established. Upgrade older agents to report Linux PSI. Collecting data is different from offline." xml:space="preserve">
+    <value>啟動、重新連線或資料不完整後，在確認有壓力或已恢復之前，健康狀況仍屬未確認。請升級較舊的代理程式，以回報 Linux PSI。正在收集資料並不代表離線。</value>
+  </data>
   <data name="AlertCenter monitoring" xml:space="preserve">
     <value>AlertCenter 監控</value>
   </data>
@@ -47,6 +50,9 @@
   </data>
   <data name="Counts time offline. Any live color resets this timer. Grey starts after one minute without a valid report." xml:space="preserve">
     <value>計算離線時間。任何正常運作的顏色都會重設此計時器。連續一分鐘沒有收到有效報告後，狀態便會變成灰色。</value>
+  </data>
+  <data name="Counts yellow, red and grey. Confirmed green resets this timer. Incomplete measurements interrupt observation without mitigating incidents." xml:space="preserve">
+    <value>計算黃色、紅色及灰色狀態。確認為綠色後，這個計時器便會重設。測量資料不完整會中斷觀察，但不會減輕事故。</value>
   </data>
   <data name="Counts yellow, red and grey. Only green resets this timer." xml:space="preserve">
     <value>計算黃色、紅色及灰色。只有綠色會重設此計時器。</value>
@@ -81,6 +87,9 @@
   <data name="Green" xml:space="preserve">
     <value>綠色</value>
   </data>
+  <data name="Green is published only after five continuous minutes below all recovery limits. A brief quiet sample cannot reset timers or mitigate incidents. Missing pressure data is not recovery." xml:space="preserve">
+    <value>只有在所有復原界限以下持續五分鐘後，才會發佈綠色狀態。短暫的平靜讀數不能重設計時器或減輕事故的嚴重程度。缺少壓力數據並不代表已復原。</value>
+  </data>
   <data name="Grey (offline)" xml:space="preserve">
     <value>灰色（離線）</value>
   </data>
@@ -108,6 +117,9 @@
   <data name="Matching more rules escalates the existing incident when needed; it does not create another incident or automatically lower its severity." xml:space="preserve">
     <value>符合更多規則時，會按需要升級現有事故；不會建立另一個事故，也不會自動降低其嚴重程度。</value>
   </data>
+  <data name="Mitigate incidents after five continuous minutes below all resource recovery limits" xml:space="preserve">
+    <value>所有資源指標連續五分鐘低於恢復上限後，自動緩解事故</value>
+  </data>
   <data name="Monitor all servers, including newly connected servers" xml:space="preserve">
     <value>監察所有伺服器，包括新連接的伺服器</value>
   </data>
@@ -120,11 +132,17 @@
   <data name="One incident, with recovery" xml:space="preserve">
     <value>單一事故及復原</value>
   </data>
+  <data name="PSI measures time when tasks wait for CPU, memory or I/O. Health uses PSI avg60 and CPU idle smoothed over 60 seconds; load is diagnostic only." xml:space="preserve">
+    <value>PSI 用來量度工作項目等待 CPU、記憶體或 I/O 的時間。健康狀況採用 PSI avg60 和經 60 秒平滑處理的 CPU 閒置率；負載僅供診斷用途。</value>
+  </data>
   <data name="Red" xml:space="preserve">
     <value>紅色</value>
   </data>
   <data name="Red or worse" xml:space="preserve">
     <value>紅色或更差</value>
+  </data>
+  <data name="Red: CPU idle at most 5% and CPU PSI at least 50%, memory PSI at least 20%, I/O PSI at least 30%, or disk usage at least 92%." xml:space="preserve">
+    <value>紅色：CPU 閒置率不高於 5%，且 CPU PSI 至少為 50%、記憶體 PSI 至少為 20%、I/O PSI 至少為 30%，或磁碟使用率至少為 92%。</value>
   </data>
   <data name="Rules measure how long a server stays at or above a health threshold. Each threshold has its own timer." xml:space="preserve">
     <value>規則用於量度伺服器維持於某健康閾值或以上之持續時間。每個閾值均設有獨立計時器。</value>
@@ -144,6 +162,9 @@
   <data name="Severity" xml:space="preserve">
     <value>嚴重程度</value>
   </data>
+  <data name="Stable resource health" xml:space="preserve">
+    <value>資源健康狀況穩定</value>
+  </data>
   <data name="State" xml:space="preserve">
     <value>狀態</value>
   </data>
@@ -156,6 +177,9 @@
   <data name="Unknown" xml:space="preserve">
     <value>未知</value>
   </data>
+  <data name="Worsening requires two continuous minutes. Red drops to yellow after five minutes without red pressure. Green requires five minutes with CPU idle at least 20% or CPU PSI at most 10%, memory PSI at most 2%, I/O PSI at most 5%, and disk usage at most 75%." xml:space="preserve">
+    <value>惡化狀況須持續兩分鐘。紅色狀況在紅色壓力消失五分鐘後會降至黃色。要恢復綠色，須連續五分鐘符合以下條件：CPU 閒置率至少 20% 或 CPU PSI 不高於 10%、記憶體 PSI 不高於 2%、I/O PSI 不高於 5%，以及磁碟使用率不高於 75%。</value>
+  </data>
   <data name="Yellow" xml:space="preserve">
     <value>黃色</value>
   </data>
@@ -164,6 +188,9 @@
   </data>
   <data name="Yellow or worse" xml:space="preserve">
     <value>黃色或更差</value>
+  </data>
+  <data name="Yellow: CPU idle at most 15% and CPU PSI at least 20%, memory PSI at least 5%, I/O PSI at least 10%, or disk usage at least 80%." xml:space="preserve">
+    <value>黃色：CPU 閒置率不高於 15%，且 CPU PSI 不低於 20%、記憶體 PSI 不低於 5%、I/O PSI 不低於 10%，或磁碟使用率不低於 80%。</value>
   </data>
   <data name="Zero minutes means immediately. The most severe matching rule wins. See the guide for how severity thresholds accumulate." xml:space="preserve">
     <value>零分鐘即表示立即生效。最嚴格的匹配規則優先。請參閱指南了解嚴重程度閾值如何累積。</value>

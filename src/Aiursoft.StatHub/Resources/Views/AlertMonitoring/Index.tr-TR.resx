@@ -27,6 +27,9 @@
   <data name="Add rule" xml:space="preserve">
     <value>Kural ekle</value>
   </data>
+  <data name="After startup, reconnecting or incomplete data, health stays unconfirmed until pressure or recovery is established. Upgrade older agents to report Linux PSI. Collecting data is different from offline." xml:space="preserve">
+    <value>Başlatma, yeniden bağlanma veya eksik veri durumlarında, baskı ya da toparlanma belirginleşene kadar sistem sağlığı doğrulanmamış olarak kalır. Eski ajanları Linux PSI raporlayacak şekilde yükseltin. Veri toplamak, çevrimdışı olmakla aynı şey değildir.</value>
+  </data>
   <data name="AlertCenter monitoring" xml:space="preserve">
     <value>AlertCenter izleme</value>
   </data>
@@ -44,6 +47,9 @@
   </data>
   <data name="Counts time offline. Any live color resets this timer. Grey starts after one minute without a valid report." xml:space="preserve">
     <value>Çevrimdışı geçen süreyi sayar. Herhangi bir canlı renk bu zamanlayıcıyı sıfırlar. Geçerli bir rapor alınmadığında bir dakika sonra gri durum başlar.</value>
+  </data>
+  <data name="Counts yellow, red and grey. Confirmed green resets this timer. Incomplete measurements interrupt observation without mitigating incidents." xml:space="preserve">
+    <value>Sarı, kırmızı ve gri süreye dâhildir. Onaylanmış yeşil durum bu zamanlayıcıyı sıfırlar. Eksik ölçümler, olayların etkisini azaltmadan gözlemi kesintiye uğratır.</value>
   </data>
   <data name="Counts yellow, red and grey. Only green resets this timer." xml:space="preserve">
     <value>Sarı, kırmızı ve gri süreye dâhildir. Bu zamanlayıcıyı yalnızca yeşil sıfırlar.</value>
@@ -78,6 +84,9 @@
   <data name="Green" xml:space="preserve">
     <value>Yeşil</value>
   </data>
+  <data name="Green is published only after five continuous minutes below all recovery limits. A brief quiet sample cannot reset timers or mitigate incidents. Missing pressure data is not recovery." xml:space="preserve">
+    <value>Yeşil durumu, tüm toparlanma eşiklerinin altında kesintisiz beş dakika geçtikten sonra yayımlanır. Kısa süreli sakin bir ölçüm, zamanlayıcıları sıfırlayamaz veya olayların etkisini azaltamaz. Basınç verisinin eksik olması toparlanma anlamına gelmez.</value>
+  </data>
   <data name="Grey (offline)" xml:space="preserve">
     <value>Gri (çevrimdışı)</value>
   </data>
@@ -102,6 +111,9 @@
   <data name="Matching more rules escalates the existing incident when needed; it does not create another incident or automatically lower its severity." xml:space="preserve">
     <value>Daha fazla kural eşleştiğinde, gerektiğinde mevcut olayın şiddeti artırılır; başka bir olay oluşturulmaz veya şiddeti otomatik olarak düşürülmez.</value>
   </data>
+  <data name="Mitigate incidents after five continuous minutes below all resource recovery limits" xml:space="preserve">
+    <value>Tüm kaynak kurtarma eşiklerinin altında kesintisiz beş dakika geçtikten sonra olayları gider</value>
+  </data>
   <data name="Monitor all servers, including newly connected servers" xml:space="preserve">
     <value>Yeni bağlanan sunucular dahil tüm sunucuları izleyin</value>
   </data>
@@ -114,11 +126,17 @@
   <data name="One incident, with recovery" xml:space="preserve">
     <value>Kurtarma süreciyle birlikte tek olay</value>
   </data>
+  <data name="PSI measures time when tasks wait for CPU, memory or I/O. Health uses PSI avg60 and CPU idle smoothed over 60 seconds; load is diagnostic only." xml:space="preserve">
+    <value>PSI, görevlerin CPU, bellek veya G/Ç için beklediği süreyi ölçer. Sağlık durumu hesaplanırken PSI avg60 ve 60 saniye boyunca yumuşatılmış CPU boşta kalma değeri kullanılır; yük yalnızca tanılama amaçlıdır.</value>
+  </data>
   <data name="Red" xml:space="preserve">
     <value>Kırmızı</value>
   </data>
   <data name="Red or worse" xml:space="preserve">
     <value>Kırmızı veya daha kötü</value>
+  </data>
+  <data name="Red: CPU idle at most 5% and CPU PSI at least 50%, memory PSI at least 20%, I/O PSI at least 30%, or disk usage at least 92%." xml:space="preserve">
+    <value>Kırmızı: CPU boşta kalma oranı en fazla %5 ve CPU PSI en az %50, bellek PSI en az %20, G/Ç PSI en az %30 veya disk kullanımı en az %92%.</value>
   </data>
   <data name="Rules measure how long a server stays at or above a health threshold. Each threshold has its own timer." xml:space="preserve">
     <value>Kurallar, bir sunucunun sağlık eşiğinde veya üzerinde ne kadar süre kaldığını ölçer. Her eşiğin kendi zamanlayıcısı vardır.</value>
@@ -138,6 +156,9 @@
   <data name="Severity" xml:space="preserve">
     <value>Önem Derecesi</value>
   </data>
+  <data name="Stable resource health" xml:space="preserve">
+    <value>Kararlı kaynak sağlığı</value>
+  </data>
   <data name="State" xml:space="preserve">
     <value>Durum</value>
   </data>
@@ -150,6 +171,9 @@
   <data name="Unknown" xml:space="preserve">
     <value>Bilinmiyor</value>
   </data>
+  <data name="Worsening requires two continuous minutes. Red drops to yellow after five minutes without red pressure. Green requires five minutes with CPU idle at least 20% or CPU PSI at most 10%, memory PSI at most 2%, I/O PSI at most 5%, and disk usage at most 75%." xml:space="preserve">
+    <value>Kötüleşmenin iki dakika kesintisiz sürmesi gerekir. Kırmızı seviye, kırmızı baskı beş dakika boyunca görülmediğinde sarı seviyeye düşer. Yeşil seviye için CPU boşta kalma oranının en az %20 veya CPU PSI değerinin en fazla %10, bellek PSI değerinin en fazla %2, G/Ç PSI değerinin en fazla %5 ve disk kullanımının en fazla %75 olduğu koşulların beş dakika sürmesi gerekir.</value>
+  </data>
   <data name="Yellow" xml:space="preserve">
     <value>Sarı</value>
   </data>
@@ -158,6 +182,9 @@
   </data>
   <data name="Yellow or worse" xml:space="preserve">
     <value>Sarı veya daha kötü</value>
+  </data>
+  <data name="Yellow: CPU idle at most 15% and CPU PSI at least 20%, memory PSI at least 5%, I/O PSI at least 10%, or disk usage at least 80%." xml:space="preserve">
+    <value>Sarı: CPU boşta kalma oranı en fazla %15 ve CPU PSI en az %20, bellek PSI en az %5, G/Ç PSI en az %10 veya disk kullanımı en az %80.</value>
   </data>
   <data name="Zero minutes means immediately. The most severe matching rule wins. See the guide for how severity thresholds accumulate." xml:space="preserve">
     <value>Sıfır dakika, hemen gerçekleşeceği anlamına gelir. Eşleşen kurallar arasından önem derecesi en yüksek olan geçerlidir. Önem derecesi eşiklerinin nasıl biriktiğini öğrenmek için kılavuza bakın.</value>

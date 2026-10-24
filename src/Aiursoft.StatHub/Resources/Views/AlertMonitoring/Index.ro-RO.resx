@@ -27,6 +27,9 @@
   <data name="Add rule" xml:space="preserve">
     <value>Adaugă regulă</value>
   </data>
+  <data name="After startup, reconnecting or incomplete data, health stays unconfirmed until pressure or recovery is established. Upgrade older agents to report Linux PSI. Collecting data is different from offline." xml:space="preserve">
+    <value>După pornire, reconectare sau primirea unor date incomplete, starea de sănătate rămâne neconfirmată până când se constată presiune sau recuperare. Actualizați agenții mai vechi pentru a raporta PSI-ul Linux. Colectarea datelor nu este același lucru cu starea offline.</value>
+  </data>
   <data name="AlertCenter monitoring" xml:space="preserve">
     <value>Monitorizarea AlertCenter</value>
   </data>
@@ -44,6 +47,9 @@
   </data>
   <data name="Counts time offline. Any live color resets this timer. Grey starts after one minute without a valid report." xml:space="preserve">
     <value>Înregistrează timpul de offline. Orice culoare activă resetează acest cronometru. Gri începe după o minut fără un raport valid.</value>
+  </data>
+  <data name="Counts yellow, red and grey. Confirmed green resets this timer. Incomplete measurements interrupt observation without mitigating incidents." xml:space="preserve">
+    <value>Numără galbenul, roșul și griul. Verdele confirmat resetează acest cronometru. Măsurătorile incomplete întrerup observarea fără a atenua incidentele.</value>
   </data>
   <data name="Counts yellow, red and grey. Only green resets this timer." xml:space="preserve">
     <value>Contorizează galbenul, roșul și griul. Doar verdele resetează acest cronometru.</value>
@@ -78,6 +84,9 @@
   <data name="Green" xml:space="preserve">
     <value>Verde</value>
   </data>
+  <data name="Green is published only after five continuous minutes below all recovery limits. A brief quiet sample cannot reset timers or mitigate incidents. Missing pressure data is not recovery." xml:space="preserve">
+    <value>Starea „Verde” este afișată numai după cinci minute consecutive în care valorile se mențin sub toate limitele de recuperare. Un interval scurt fără activitate nu poate reseta temporizatoarele și nici atenua incidentele. Lipsa datelor despre presiune nu înseamnă recuperare.</value>
+  </data>
   <data name="Grey (offline)" xml:space="preserve">
     <value>Gri (offline)</value>
   </data>
@@ -102,6 +111,9 @@
   <data name="Matching more rules escalates the existing incident when needed; it does not create another incident or automatically lower its severity." xml:space="preserve">
     <value>Îndeplinirea a mai multe reguli escalează incidentul existent atunci când este necesar; nu creează un alt incident și nu îi reduce automat severitatea.</value>
   </data>
+  <data name="Mitigate incidents after five continuous minutes below all resource recovery limits" xml:space="preserve">
+    <value>Atenuați incidentele după cinci minute consecutive în care toate resursele se află sub pragurile de recuperare</value>
+  </data>
   <data name="Monitor all servers, including newly connected servers" xml:space="preserve">
     <value>Monitorizează toate serverele, inclusiv serverele conectate recent</value>
   </data>
@@ -114,11 +126,17 @@
   <data name="One incident, with recovery" xml:space="preserve">
     <value>Un singur incident, cu revenire</value>
   </data>
+  <data name="PSI measures time when tasks wait for CPU, memory or I/O. Health uses PSI avg60 and CPU idle smoothed over 60 seconds; load is diagnostic only." xml:space="preserve">
+    <value>PSI măsoară timpul în care procesele așteaptă procesorul, memoria sau operațiile de intrare/ieșire. Pentru starea de sănătate se folosesc PSI avg60 și timpul de inactivitate al procesorului, netezit pe 60 de secunde; încărcarea este doar un indicator de diagnostic.</value>
+  </data>
   <data name="Red" xml:space="preserve">
     <value>Roșu</value>
   </data>
   <data name="Red or worse" xml:space="preserve">
     <value>Roșu sau mai grav</value>
+  </data>
+  <data name="Red: CPU idle at most 5% and CPU PSI at least 50%, memory PSI at least 20%, I/O PSI at least 30%, or disk usage at least 92%." xml:space="preserve">
+    <value>Roșu: CPU inactiv cel mult 5% și PSI CPU de cel puțin 50%, PSI memorie de cel puțin 20%, PSI I/O de cel puțin 30% sau utilizarea discului de cel puțin 92%.</value>
   </data>
   <data name="Rules measure how long a server stays at or above a health threshold. Each threshold has its own timer." xml:space="preserve">
     <value>Regulile măsoară cât timp un server rămâne la sau peste un prag de sănătate. Fiecare prag are propriul temporizator.</value>
@@ -138,6 +156,9 @@
   <data name="Severity" xml:space="preserve">
     <value>Severitate</value>
   </data>
+  <data name="Stable resource health" xml:space="preserve">
+    <value>Stabilitatea sănătății resurselor</value>
+  </data>
   <data name="State" xml:space="preserve">
     <value>Stare</value>
   </data>
@@ -150,6 +171,9 @@
   <data name="Unknown" xml:space="preserve">
     <value>Necunoscut</value>
   </data>
+  <data name="Worsening requires two continuous minutes. Red drops to yellow after five minutes without red pressure. Green requires five minutes with CPU idle at least 20% or CPU PSI at most 10%, memory PSI at most 2%, I/O PSI at most 5%, and disk usage at most 75%." xml:space="preserve">
+    <value>Agravarea trebuie să dureze două minute consecutive. Starea roșie trece în galben după cinci minute fără presiune de nivel roșu. Starea verde necesită cinci minute în care timpul de inactivitate al CPU-ului este de cel puțin 20% sau PSI CPU este de cel mult 10%, PSI memorie este de cel mult 2%, PSI I/O este de cel mult 5%, iar utilizarea discului este de cel mult 75%.</value>
+  </data>
   <data name="Yellow" xml:space="preserve">
     <value>Galben</value>
   </data>
@@ -158,6 +182,9 @@
   </data>
   <data name="Yellow or worse" xml:space="preserve">
     <value>Galben sau mai grav</value>
+  </data>
+  <data name="Yellow: CPU idle at most 15% and CPU PSI at least 20%, memory PSI at least 5%, I/O PSI at least 10%, or disk usage at least 80%." xml:space="preserve">
+    <value>Galben: CPU în repaus cel mult 15% și PSI CPU de cel puțin 20%, PSI memorie de cel puțin 5%, PSI I/O de cel puțin 10% sau utilizarea discului de cel puțin 80%.</value>
   </data>
   <data name="Zero minutes means immediately. The most severe matching rule wins. See the guide for how severity thresholds accumulate." xml:space="preserve">
     <value>Zero minute înseamnă imediat. Cea mai gravă regulă corespunzătoare are prioritate. Consultați ghidul pentru a vedea cum se acumulează pragurile de gravitate.</value>

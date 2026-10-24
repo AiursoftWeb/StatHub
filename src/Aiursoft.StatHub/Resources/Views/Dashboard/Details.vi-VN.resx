@@ -42,6 +42,9 @@
   <data name="Client ID" xml:space="preserve">
     <value>ID Máy khách</value>
   </data>
+  <data name="Colors use sustained resource pressure. A short quiet sample does not establish recovery." xml:space="preserve">
+    <value>Màu sắc phản ánh tình trạng áp lực tài nguyên kéo dài. Một mẫu ngắn cho thấy hệ thống yên ổn không đủ để xác định rằng tình trạng đã được phục hồi.</value>
+  </data>
   <data name="Command" xml:space="preserve">
     <value>Lệnh</value>
   </data>
@@ -53,6 +56,9 @@
   </data>
   <data name="CPU %" xml:space="preserve">
     <value>CPU %</value>
+  </data>
+  <data name="CPU PSI (avg60)" xml:space="preserve">
+    <value>PSI CPU (trung bình 60 giây)</value>
   </data>
   <data name="CPU Usage" xml:space="preserve">
     <value>Mức sử dụng CPU</value>
@@ -102,6 +108,9 @@
   <data name="Firewall Status" xml:space="preserve">
     <value>Trạng thái tường lửa</value>
   </data>
+  <data name="Fresh PSI measurements are unavailable. Check connectivity, update the agent and verify Linux PSI support." xml:space="preserve">
+    <value>Hiện không có số liệu PSI mới. Hãy kiểm tra kết nối, cập nhật tác nhân và xác minh Linux có hỗ trợ PSI.</value>
+  </data>
   <data name="Hardware Details" xml:space="preserve">
     <value>Thông Tin Phần Cứng</value>
   </data>
@@ -110,6 +119,9 @@
   </data>
   <data name="Healthy" xml:space="preserve">
     <value>Healthy</value>
+  </data>
+  <data name="I/O PSI (avg60)" xml:space="preserve">
+    <value>PSI I/O (trung bình 60 giây)</value>
   </data>
   <data name="Identity" xml:space="preserve">
     <value>Định danh</value>
@@ -137,6 +149,9 @@
   </data>
   <data name="Memory" xml:space="preserve">
     <value>Memory</value>
+  </data>
+  <data name="Memory PSI (avg60)" xml:space="preserve">
+    <value>PSI bộ nhớ (avg60)</value>
   </data>
   <data name="Modified" xml:space="preserve">
     <value>Sửa đổi</value>
@@ -174,6 +189,9 @@
   <data name="Ports" xml:space="preserve">
     <value>Ports</value>
   </data>
+  <data name="Pressure index (15-minute load / logical CPUs)" xml:space="preserve">
+    <value>Chỉ số áp lực (tải trong 15 phút / số CPU logic)</value>
+  </data>
   <data name="Preview" xml:space="preserve">
     <value>Xem trước</value>
   </data>
@@ -183,11 +201,17 @@
   <data name="RAM Usage" xml:space="preserve">
     <value>Mức Sử Dụng RAM</value>
   </data>
+  <data name="Resource pressure" xml:space="preserve">
+    <value>Áp lực tài nguyên</value>
+  </data>
   <data name="Running" xml:space="preserve">
     <value>Đang chạy</value>
   </data>
   <data name="Runtime Info" xml:space="preserve">
     <value>Thông tin Thời gian chạy</value>
+  </data>
+  <data name="Smoothed CPU idle" xml:space="preserve">
+    <value>Mức độ CPU rảnh đã được làm mượt</value>
   </data>
   <data name="SSH Keys" xml:space="preserve">
     <value>Chìa khóa SSH</value>

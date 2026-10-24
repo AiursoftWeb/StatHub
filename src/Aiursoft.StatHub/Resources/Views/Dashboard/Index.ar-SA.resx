@@ -66,6 +66,9 @@
   <data name="Average Load" xml:space="preserve">
     <value>متوسط الحمل</value>
   </data>
+  <data name="Average pressure index" xml:space="preserve">
+    <value>متوسط مؤشر الضغط</value>
+  </data>
   <data name="Avg Load" xml:space="preserve">
     <value>متوسط الحمل</value>
   </data>
@@ -74,6 +77,9 @@
   </data>
   <data name="Built-in User Management" xml:space="preserve">
     <value>إدارة المستخدمين المدمجة</value>
+  </data>
+  <data name="Collecting data" xml:space="preserve">
+    <value>جارٍ جمع البيانات</value>
   </data>
   <data name="Comes with full Docker support for simplified, consistent, and reliable deployments." xml:space="preserve">
     <value>يأتي مع دعم كامل لـ Docker لنشر مبسط، متسق، وموثوق.</value>
@@ -182,6 +188,9 @@
   </data>
   <data name="Out of sync" xml:space="preserve">
     <value>غير متزامن</value>
+  </data>
+  <data name="Pressure index" xml:space="preserve">
+    <value>مؤشر الضغط</value>
   </data>
   <data name="RAM Usage" xml:space="preserve">
     <value>استخدام الذاكرة العشوائية</value>
