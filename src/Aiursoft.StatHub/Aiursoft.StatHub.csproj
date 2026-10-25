@@ -10,7 +10,7 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Aiursoft.AlertCenter.SDK" Version="10.9.0" />
+    <PackageReference Include="Aiursoft.AlertCenter.SDK" Version="10.10.0" />
     <PackageReference Include="Aiursoft.Canon.ScheduledTasks" Version="10.0.17" />
     <PackageReference Include="Aiursoft.ClickhouseLoggerProvider" Version="10.0.27" />
     <PackageReference Include="Aiursoft.DbTools.Switchable" Version="10.0.29" />
