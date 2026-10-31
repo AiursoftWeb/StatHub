@@ -39,6 +39,9 @@
   <data name="Abandoning is not deletion. If this agent persists in submitting, it will appear again soon. Please use systemd command to stop the agent." xml:space="preserve">
     <value>放棄並非刪除。若此代理程式持續送出資料，將會很快再次出現。請使用 systemd 指令來停止代理程式。</value>
   </data>
+  <data name="Add a server" xml:space="preserve">
+    <value>新增伺服器</value>
+  </data>
   <data name="Agents Dashboard" xml:space="preserve">
     <value>终端程式儀表板</value>
   </data>
@@ -206,6 +209,9 @@
   </data>
   <data name="Seamlessly integrate with any OpenID Connect provider, with automatic role synchronization." xml:space="preserve">
     <value>無縫整合任何 OpenID Connect 提供者，並自動同步角色權限。</value>
+  </data>
+  <data name="Servers" xml:space="preserve">
+    <value>伺服器</value>
   </data>
   <data name="SKU" xml:space="preserve">
     <value>SKU</value>

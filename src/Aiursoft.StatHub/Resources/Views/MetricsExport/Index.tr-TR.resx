@@ -75,6 +75,9 @@
   <data name="Last report" xml:space="preserve">
     <value>Son rapor</value>
   </data>
+  <data name="Metrics archive" xml:space="preserve">
+    <value>Metrik arşivi</value>
+  </data>
   <data name="No report since restart" xml:space="preserve">
     <value>Yeniden başlatmadan beri rapor yok</value>
   </data>

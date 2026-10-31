@@ -45,6 +45,9 @@
   <data name="Aiursoft Template" xml:space="preserve">
     <value>Plantilla de Aiursoft</value>
   </data>
+  <data name="Alert rules" xml:space="preserve">
+    <value>Reglas de alerta</value>
+  </data>
   <data name="AlertCenter monitoring" xml:space="preserve">
     <value>Monitorización de AlertCenter</value>
   </data>
@@ -137,6 +140,9 @@
   </data>
   <data name="Manage" xml:space="preserve">
     <value>Gestionar</value>
+  </data>
+  <data name="Metrics archive" xml:space="preserve">
+    <value>Archivo de métricas</value>
   </data>
   <data name="Monitoring" xml:space="preserve">
     <value>Supervisión</value>

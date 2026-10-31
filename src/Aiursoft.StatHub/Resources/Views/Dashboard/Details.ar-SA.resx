@@ -42,6 +42,9 @@
   <data name="Client ID" xml:space="preserve">
     <value>معرف العميل</value>
   </data>
+  <data name="Collecting data" xml:space="preserve">
+    <value>جارٍ جمع البيانات</value>
+  </data>
   <data name="Colors use sustained resource pressure. A short quiet sample does not establish recovery." xml:space="preserve">
     <value>تعكس الألوان ضغط الموارد المستمر. ولا تكفي عينة قصيرة من الهدوء لإثبات التعافي.</value>
   </data>
@@ -65,6 +68,9 @@
   </data>
   <data name="Created" xml:space="preserve">
     <value>تاريخ الإنشاء</value>
+  </data>
+  <data name="Critical" xml:space="preserve">
+    <value>حرج</value>
   </data>
   <data name="Disabled" xml:space="preserve">
     <value>معطل</value>
@@ -177,6 +183,9 @@
   <data name="No output yet..." xml:space="preserve">
     <value>لا توجد مخرجات بعد...</value>
   </data>
+  <data name="Offline" xml:space="preserve">
+    <value>غير متصل</value>
+  </data>
   <data name="Operating System" xml:space="preserve">
     <value>نظام التشغيل</value>
   </data>
@@ -192,8 +201,14 @@
   <data name="Pressure index (15-minute load / logical CPUs)" xml:space="preserve">
     <value>مؤشر الضغط (الحمل خلال 15 دقيقة / عدد وحدات المعالجة المركزية المنطقية)</value>
   </data>
+  <data name="Pressure snapshot" xml:space="preserve">
+    <value>لقطة الضغط</value>
+  </data>
   <data name="Preview" xml:space="preserve">
     <value>معاينة</value>
+  </data>
+  <data name="PSI avg60 at page load: time spent waiting for this resource over the last minute. Refresh to update." xml:space="preserve">
+    <value>متوسط PSI خلال 60 ثانية عند تحميل الصفحة: الوقت المستغرق في انتظار هذا المورد خلال الدقيقة الماضية. حدّث الصفحة لتحديث البيانات.</value>
   </data>
   <data name="RAM" xml:space="preserve">
     <value>الذاكرة العشوائية</value>
@@ -239,6 +254,9 @@
   </data>
   <data name="View" xml:space="preserve">
     <value>عرض</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>تحذير</value>
   </data>
 
 </root>

@@ -75,6 +75,9 @@
   <data name="Last report" xml:space="preserve">
     <value>最後報告</value>
   </data>
+  <data name="Metrics archive" xml:space="preserve">
+    <value>指標檔案庫</value>
+  </data>
   <data name="No report since restart" xml:space="preserve">
     <value>重啟後無報告</value>
   </data>

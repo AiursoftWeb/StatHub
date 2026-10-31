@@ -39,6 +39,9 @@
   <data name="Abandoning is not deletion. If this agent persists in submitting, it will appear again soon. Please use systemd command to stop the agent." xml:space="preserve">
     <value>Việc từ bỏ không đồng nghĩa với xóa bỏ. Nếu tác nhân này tiếp tục gửi dữ liệu, nó sẽ xuất hiện trở lại sớm. Vui lòng sử dụng lệnh systemd để dừng tác nhân.</value>
   </data>
+  <data name="Add a server" xml:space="preserve">
+    <value>Thêm máy chủ</value>
+  </data>
   <data name="Agents Dashboard" xml:space="preserve">
     <value>Bảng điều khiển Tác nhân</value>
   </data>
@@ -206,6 +209,9 @@
   </data>
   <data name="Seamlessly integrate with any OpenID Connect provider, with automatic role synchronization." xml:space="preserve">
     <value>Tích hợp liền mạch với mọi nhà cung cấp OpenID Connect, kèm theo đồng bộ hóa vai trò tự động.</value>
+  </data>
+  <data name="Servers" xml:space="preserve">
+    <value>Máy chủ</value>
   </data>
   <data name="SKU" xml:space="preserve">
     <value>SKU</value>

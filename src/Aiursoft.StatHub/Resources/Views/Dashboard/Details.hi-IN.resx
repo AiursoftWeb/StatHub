@@ -42,6 +42,9 @@
   <data name="Client ID" xml:space="preserve">
     <value>क्लाइंट आईडी</value>
   </data>
+  <data name="Collecting data" xml:space="preserve">
+    <value>डेटा एकत्रित किया जा रहा है</value>
+  </data>
   <data name="Colors use sustained resource pressure. A short quiet sample does not establish recovery." xml:space="preserve">
     <value>रंग संसाधनों पर लगातार बने दबाव के आधार पर निर्धारित होते हैं। थोड़े समय तक दबाव कम रहने का नमूना सुधार की पुष्टि नहीं करता।</value>
   </data>
@@ -65,6 +68,9 @@
   </data>
   <data name="Created" xml:space="preserve">
     <value>निर्मित</value>
+  </data>
+  <data name="Critical" xml:space="preserve">
+    <value>गंभीर</value>
   </data>
   <data name="Disabled" xml:space="preserve">
     <value>अक्षम</value>
@@ -177,6 +183,9 @@
   <data name="No output yet..." xml:space="preserve">
     <value>अभी तक कोई आउटपुट नहीं...</value>
   </data>
+  <data name="Offline" xml:space="preserve">
+    <value>ऑफ़लाइन</value>
+  </data>
   <data name="Operating System" xml:space="preserve">
     <value>ऑपरेटिंग सिस्टम</value>
   </data>
@@ -192,8 +201,14 @@
   <data name="Pressure index (15-minute load / logical CPUs)" xml:space="preserve">
     <value>दबाव सूचकांक (15-मिनट का लोड / लॉजिकल CPUs)</value>
   </data>
+  <data name="Pressure snapshot" xml:space="preserve">
+    <value>दबाव की झलक</value>
+  </data>
   <data name="Preview" xml:space="preserve">
     <value>पूर्वावलोकन</value>
+  </data>
+  <data name="PSI avg60 at page load: time spent waiting for this resource over the last minute. Refresh to update." xml:space="preserve">
+    <value>पेज लोड होने पर PSI का 60 सेकंड का औसत: पिछले एक मिनट में इस संसाधन के लिए प्रतीक्षा में लगा समय। अपडेट करने के लिए रीफ़्रेश करें।</value>
   </data>
   <data name="RAM" xml:space="preserve">
     <value>रैम</value>
@@ -239,6 +254,9 @@
   </data>
   <data name="View" xml:space="preserve">
     <value>दृश्य</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>चेतावनी</value>
   </data>
 
 </root>

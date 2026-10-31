@@ -45,6 +45,9 @@
   <data name="Aiursoft Template" xml:space="preserve">
     <value>Aiursoft 템플릿</value>
   </data>
+  <data name="Alert rules" xml:space="preserve">
+    <value>알림 규칙</value>
+  </data>
   <data name="AlertCenter monitoring" xml:space="preserve">
     <value>AlertCenter 모니터링</value>
   </data>
@@ -137,6 +140,9 @@
   </data>
   <data name="Manage" xml:space="preserve">
     <value>관리</value>
+  </data>
+  <data name="Metrics archive" xml:space="preserve">
+    <value>메트릭 보관함</value>
   </data>
   <data name="Monitoring" xml:space="preserve">
     <value>모니터링</value>

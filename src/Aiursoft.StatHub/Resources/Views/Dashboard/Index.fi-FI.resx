@@ -39,6 +39,9 @@
   <data name="Abandoning is not deletion. If this agent persists in submitting, it will appear again soon. Please use systemd command to stop the agent." xml:space="preserve">
     <value>Lopettaminen ei ole poistaminen. Jos tämä agentti jatkaa lähettämistä, se näkyy pian uudelleen. Käytä systemd-komentoa pysäyttääksesi agentin.</value>
   </data>
+  <data name="Add a server" xml:space="preserve">
+    <value>Lisää palvelin</value>
+  </data>
   <data name="Agents Dashboard" xml:space="preserve">
     <value>Agenttien kojelauta</value>
   </data>
@@ -206,6 +209,9 @@
   </data>
   <data name="Seamlessly integrate with any OpenID Connect provider, with automatic role synchronization." xml:space="preserve">
     <value>Saatonta integrointi minkä tahansa OpenID Connect -palveluntarjoajan kanssa, automaattisella roolisynkronoinnilla.</value>
+  </data>
+  <data name="Servers" xml:space="preserve">
+    <value>Palvelimet</value>
   </data>
   <data name="SKU" xml:space="preserve">
     <value>Malli</value>

@@ -42,6 +42,9 @@
   <data name="Client ID" xml:space="preserve">
     <value>用戶端識別碼</value>
   </data>
+  <data name="Collecting data" xml:space="preserve">
+    <value>正在收集資料</value>
+  </data>
   <data name="Colors use sustained resource pressure. A short quiet sample does not establish recovery." xml:space="preserve">
     <value>顏色是依據持續的資源壓力判定。短暫的低負載樣本不足以證明資源已恢復。</value>
   </data>
@@ -65,6 +68,9 @@
   </data>
   <data name="Created" xml:space="preserve">
     <value>建立時間</value>
+  </data>
+  <data name="Critical" xml:space="preserve">
+    <value>嚴重</value>
   </data>
   <data name="Disabled" xml:space="preserve">
     <value>已停用</value>
@@ -177,6 +183,9 @@
   <data name="No output yet..." xml:space="preserve">
     <value>尚未有輸出...</value>
   </data>
+  <data name="Offline" xml:space="preserve">
+    <value>離線</value>
+  </data>
   <data name="Operating System" xml:space="preserve">
     <value>作業系統</value>
   </data>
@@ -192,8 +201,14 @@
   <data name="Pressure index (15-minute load / logical CPUs)" xml:space="preserve">
     <value>壓力指數（15 分鐘負載 / 邏輯 CPU 數）</value>
   </data>
+  <data name="Pressure snapshot" xml:space="preserve">
+    <value>壓力概況</value>
+  </data>
   <data name="Preview" xml:space="preserve">
     <value>預覽</value>
+  </data>
+  <data name="PSI avg60 at page load: time spent waiting for this resource over the last minute. Refresh to update." xml:space="preserve">
+    <value>頁面載入時的 PSI avg60：過去一分鐘等待此資源所花費的時間。重新整理以更新。</value>
   </data>
   <data name="RAM" xml:space="preserve">
     <value>記憶體</value>
@@ -239,6 +254,9 @@
   </data>
   <data name="View" xml:space="preserve">
     <value>檢視</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>警告</value>
   </data>
 
 </root>

@@ -42,6 +42,9 @@
   <data name="Client ID" xml:space="preserve">
     <value>Идентификатор клиента</value>
   </data>
+  <data name="Collecting data" xml:space="preserve">
+    <value>Сбор данных</value>
+  </data>
   <data name="Colors use sustained resource pressure. A short quiet sample does not establish recovery." xml:space="preserve">
     <value>Цвета отражают устойчивую нагрузку на ресурсы. Кратковременное отсутствие нагрузки ещё не означает восстановления.</value>
   </data>
@@ -65,6 +68,9 @@
   </data>
   <data name="Created" xml:space="preserve">
     <value>Создан</value>
+  </data>
+  <data name="Critical" xml:space="preserve">
+    <value>Критическое</value>
   </data>
   <data name="Disabled" xml:space="preserve">
     <value>Отключено</value>
@@ -177,6 +183,9 @@
   <data name="No output yet..." xml:space="preserve">
     <value>Пока нет вывода...</value>
   </data>
+  <data name="Offline" xml:space="preserve">
+    <value>Не в сети</value>
+  </data>
   <data name="Operating System" xml:space="preserve">
     <value>Операционная система</value>
   </data>
@@ -192,8 +201,14 @@
   <data name="Pressure index (15-minute load / logical CPUs)" xml:space="preserve">
     <value>Индекс нагрузки (нагрузка за 15 минут / логические процессоры)</value>
   </data>
+  <data name="Pressure snapshot" xml:space="preserve">
+    <value>Снимок давления</value>
+  </data>
   <data name="Preview" xml:space="preserve">
     <value>Предпросмотр</value>
+  </data>
+  <data name="PSI avg60 at page load: time spent waiting for this resource over the last minute. Refresh to update." xml:space="preserve">
+    <value>PSI avg60 при загрузке страницы: время ожидания этого ресурса за последнюю минуту. Обновите страницу, чтобы обновить данные.</value>
   </data>
   <data name="RAM" xml:space="preserve">
     <value>ОЗУ</value>
@@ -239,6 +254,9 @@
   </data>
   <data name="View" xml:space="preserve">
     <value>Просмотр</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>Предупреждение</value>
   </data>
 
 </root>

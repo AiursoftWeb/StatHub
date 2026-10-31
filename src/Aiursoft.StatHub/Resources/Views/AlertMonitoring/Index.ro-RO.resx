@@ -30,6 +30,9 @@
   <data name="After startup, reconnecting or incomplete data, health stays unconfirmed until pressure or recovery is established. Upgrade older agents to report Linux PSI. Collecting data is different from offline." xml:space="preserve">
     <value>După pornire, reconectare sau primirea unor date incomplete, starea de sănătate rămâne neconfirmată până când se constată presiune sau recuperare. Actualizați agenții mai vechi pentru a raporta PSI-ul Linux. Colectarea datelor nu este același lucru cu starea offline.</value>
   </data>
+  <data name="Alert rules" xml:space="preserve">
+    <value>Reguli de alertare</value>
+  </data>
   <data name="AlertCenter monitoring" xml:space="preserve">
     <value>Monitorizarea AlertCenter</value>
   </data>

@@ -42,6 +42,9 @@
   <data name="Client ID" xml:space="preserve">
     <value>ID do Cliente</value>
   </data>
+  <data name="Collecting data" xml:space="preserve">
+    <value>A recolher dados</value>
+  </data>
   <data name="Colors use sustained resource pressure. A short quiet sample does not establish recovery." xml:space="preserve">
     <value>As cores refletem uma pressão sustentada sobre os recursos. Um breve período sem pressão não é suficiente para confirmar a recuperação.</value>
   </data>
@@ -65,6 +68,9 @@
   </data>
   <data name="Created" xml:space="preserve">
     <value>Criado</value>
+  </data>
+  <data name="Critical" xml:space="preserve">
+    <value>Crítico</value>
   </data>
   <data name="Disabled" xml:space="preserve">
     <value>Desativado</value>
@@ -177,6 +183,9 @@
   <data name="No output yet..." xml:space="preserve">
     <value>Ainda não há saída...</value>
   </data>
+  <data name="Offline" xml:space="preserve">
+    <value>Offline</value>
+  </data>
   <data name="Operating System" xml:space="preserve">
     <value>Sistema Operativo</value>
   </data>
@@ -192,8 +201,14 @@
   <data name="Pressure index (15-minute load / logical CPUs)" xml:space="preserve">
     <value>Índice de pressão (carga dos últimos 15 minutos / CPUs lógicas)</value>
   </data>
+  <data name="Pressure snapshot" xml:space="preserve">
+    <value>Instantâneo da pressão</value>
+  </data>
   <data name="Preview" xml:space="preserve">
     <value>Pré-visualização</value>
+  </data>
+  <data name="PSI avg60 at page load: time spent waiting for this resource over the last minute. Refresh to update." xml:space="preserve">
+    <value>PSI avg60 ao carregar a página: tempo passado à espera deste recurso durante o último minuto. Atualize para atualizar.</value>
   </data>
   <data name="RAM" xml:space="preserve">
     <value>RAM</value>
@@ -239,6 +254,9 @@
   </data>
   <data name="View" xml:space="preserve">
     <value>Ver</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>Aviso</value>
   </data>
 
 </root>
