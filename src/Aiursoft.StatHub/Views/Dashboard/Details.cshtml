@@ -15,7 +15,7 @@
         <div class="col-12 col-md">
             <div class="d-flex align-items-center flex-wrap gap-2 mb-1">
                 <h3 class="mb-0 text-break">@agent.Hostname</h3>
-                <span class="badge @health.BadgeClass" data-bs-toggle="tooltip" title="@health.Reason">
+                <span class="badge @health.BadgeClass" tabindex="0" data-bs-toggle="tooltip" title="@health.Reason">
                     @(health.Status switch
                     {
                         AgentStatus.Healthy => @Localizer["Healthy"],
@@ -272,7 +272,7 @@
                     <div class="card flex-fill w-100">
                         <div class="card-header">
                             <h5 class="card-title mb-0">@Localizer["CPU Usage"]</h5>
-                            <div class="small text-muted mt-1" data-bs-toggle="tooltip" title="@Localizer["PSI avg60 at page load: time spent waiting for this resource over the last minute. Refresh to update."]">
+                            <div class="small text-muted mt-1" tabindex="0" data-bs-toggle="tooltip" title="@Localizer["PSI avg60 at page load: time spent waiting for this resource over the last minute. Refresh to update."]">
                                 @Localizer["Pressure snapshot"]: @(health.Pressure?.Cpu.ToString("F1") ?? "—")@(health.Pressure is null ? "" : "%")
                             </div>
                         </div>
@@ -285,7 +285,7 @@
                     <div class="card flex-fill w-100">
                         <div class="card-header">
                             <h5 class="card-title mb-0">@Localizer["RAM Usage"]</h5>
-                            <div class="small text-muted mt-1" data-bs-toggle="tooltip" title="@Localizer["PSI avg60 at page load: time spent waiting for this resource over the last minute. Refresh to update."]">
+                            <div class="small text-muted mt-1" tabindex="0" data-bs-toggle="tooltip" title="@Localizer["PSI avg60 at page load: time spent waiting for this resource over the last minute. Refresh to update."]">
                                 @Localizer["Pressure snapshot"]: @(health.Pressure?.Memory.ToString("F1") ?? "—")@(health.Pressure is null ? "" : "%")
                             </div>
                         </div>
@@ -320,7 +320,7 @@
                     <div class="card flex-fill w-100">
                         <div class="card-header">
                             <h5 class="card-title mb-0">@Localizer["Disk I/O"]</h5>
-                            <div class="small text-muted mt-1" data-bs-toggle="tooltip" title="@Localizer["PSI avg60 at page load: time spent waiting for this resource over the last minute. Refresh to update."]">
+                            <div class="small text-muted mt-1" tabindex="0" data-bs-toggle="tooltip" title="@Localizer["PSI avg60 at page load: time spent waiting for this resource over the last minute. Refresh to update."]">
                                 @Localizer["Pressure snapshot"]: @(health.Pressure?.Io.ToString("F1") ?? "—")@(health.Pressure is null ? "" : "%")
                             </div>
                         </div>
