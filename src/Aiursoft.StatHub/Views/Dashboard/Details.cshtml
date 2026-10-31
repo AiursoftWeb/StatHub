@@ -1,6 +1,7 @@
 @model Aiursoft.StatHub.Models.DashboardViewModels.AgentDetailsViewModel
 @using Aiursoft.CSTools.Tools
 @using Aiursoft.WebTools
+@using Aiursoft.StatHub.SDK.Models
 
 @{
     var agent = Model.Agent;
@@ -11,144 +12,88 @@
 <div class="container-fluid p-0">
 
     <div class="row mb-2 mb-xl-3">
-        <div class="col-auto d-none d-sm-block">
-            <h3>@Localizer["Client Details"]</h3>
+        <div class="col-12 col-md">
+            <div class="d-flex align-items-center flex-wrap gap-2 mb-1">
+                <h3 class="mb-0 text-break">@agent.Hostname</h3>
+                <span class="badge @health.BadgeClass" tabindex="0" data-bs-toggle="tooltip" title="@health.Reason">
+                    @(health.Status switch
+                    {
+                        AgentStatus.Healthy => @Localizer["Healthy"],
+                        AgentStatus.Warning => @Localizer["Warning"],
+                        AgentStatus.Critical => @Localizer["Critical"],
+                        AgentStatus.Offline => @Localizer["Offline"],
+                        _ => @Localizer["Collecting data"]
+                    })
+                </span>
+            </div>
+            <div class="small text-muted text-break">
+                @if (agent.IsPrivateIp())
+                {
+                    <span class="me-1">🏠</span>
+                }
+                else if (!string.IsNullOrWhiteSpace(agent.CountryCode))
+                {
+                    <img src="~/UIStack/dist/img/flags/@(agent.CountryCode.ToLower()).png" alt="@agent.CountryName" height="15" class="me-1" />
+                }
+                @agent.Ip
+                <span class="ms-2" data-bs-toggle="tooltip" title="@Localizer["Last Update"]" data-utc-time="@agent.LastUpdate.ToHtmlDateTime()"></span>
+            </div>
         </div>
 
-        <div class="col-auto ms-auto text-end mt-n1">
+        <div class="col-12 col-md-auto ms-auto d-flex flex-wrap gap-2 align-items-start mt-2 mt-md-0">
             <form asp-controller="Dashboard" asp-action="Abandon" asp-route-id="@agent.ClientId" method="post" class="d-inline">
                 <button type="submit" class="btn btn-danger shadow-sm me-1" onclick="return confirm('@Localizer["Abandoning is not deletion. If this agent persists in submitting, it will appear again soon. Please use systemd command to stop the agent."]')">
                     <i class="align-middle" data-lucide="trash-2"></i> @Localizer["Abandon"]
                 </button>
             </form>
-            <a asp-action="Index" class="btn btn-light bg-white shadow-sm">
+            <a asp-action="Index" class="btn btn-outline-primary shadow-sm">
                 <i class="align-middle" data-lucide="arrow-left"></i> @Localizer["Back to Dashboard"]
             </a>
         </div>
     </div>
 
     <div class="card mb-3">
-        <div class="card-body">
-            <h4 class="h5">@Localizer["Resource pressure"]</h4>
-            <p class="text-muted">@Localizer["Colors use sustained resource pressure. A short quiet sample does not establish recovery."]</p>
-            @if (health.Pressure is { } pressure)
-            {
-                <dl class="row mb-0">
-                    <dt class="col-sm-4">@Localizer["Smoothed CPU idle"]</dt><dd class="col-sm-8">@health.SmoothedIdle?.ToString("F1")%</dd>
-                    <dt class="col-sm-4">@Localizer["CPU PSI (avg60)"]</dt><dd class="col-sm-8">@pressure.Cpu.ToString("F1")%</dd>
-                    <dt class="col-sm-4">@Localizer["Memory PSI (avg60)"]</dt><dd class="col-sm-8">@pressure.Memory.ToString("F1")%</dd>
-                    <dt class="col-sm-4">@Localizer["I/O PSI (avg60)"]</dt><dd class="col-sm-8">@pressure.Io.ToString("F1")%</dd>
-                    <dt class="col-sm-4">@Localizer["Pressure index (15-minute load / logical CPUs)"]</dt><dd class="col-sm-8">@((health.LoadRate / 100).ToString("F2"))</dd>
-                </dl>
-            }
-            else
-            {
-                <p class="mb-0">@Localizer["Fresh PSI measurements are unavailable. Check connectivity, update the agent and verify Linux PSI support."]</p>
-            }
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-12 col-sm-6 col-xxl-3 d-flex">
-            <div class="card flex-fill">
-                <div class="card-body py-4">
-                    <div class="d-flex align-items-start">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-2">@agent.Hostname</h3>
-                            <p class="mb-2">
-                                @if (agent.IsPrivateIp())
-                                {
-                                    <span style="margin-right: 5px;">🏠</span>
-                                }
-                                else if (!string.IsNullOrWhiteSpace(agent.CountryCode))
-                                {
-                                    <img src="~/UIStack/dist/img/flags/@(agent.CountryCode.ToLower()).png" alt="@agent.CountryName" style="height: 15px; margin-right: 5px;" />
-                                }
-                                @agent.Ip
-                            </p>
-                            <div class="mb-0">
-                                <span class="badge @health.BadgeClass" data-bs-toggle="tooltip" title="@health.Reason">
-                                    @(health.Status == Aiursoft.StatHub.SDK.Models.AgentStatus.Unknown ? Localizer["Collecting data"] : Localizer[health.BadgeText])
-                                </span>
-                            </div>
-                        </div>
-                        <div class="d-inline-block ms-3">
-                            <div class="stat">
-                                <i class="align-middle @health.IconClass"
-                                   data-lucide="@health.DetailsIconDataLucide"></i>
-                            </div>
-                        </div>
-                    </div>
+        <div class="card-body py-3">
+            <div class="row g-3 small">
+                <div class="col-12 col-sm-4 d-flex d-sm-block justify-content-between gap-2">
+                    <span class="text-muted d-block">@Localizer["Hardware SKU"]</span>
+                    <strong>@agent.GetSku()</strong>
                 </div>
-            </div>
-        </div>
-        <div class="col-12 col-sm-6 col-xxl-3 d-flex">
-            <div class="card flex-fill">
-                <div class="card-body py-4">
-                    <div class="d-flex align-items-start">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-2">@agent.GetSku()</h3>
-                            <p class="mb-2">@Localizer["Hardware SKU"]</p>
-                            <div class="mb-0">
-                                <span class="text-muted">@Localizer["Cores-RAM-Disk"]</span>
-                            </div>
-                        </div>
-                        <div class="d-inline-block ms-3">
-                            <div class="stat">
-                                <i class="align-middle text-info" data-lucide="cpu"></i>
-                            </div>
-                        </div>
-                    </div>
+                <div class="col-12 col-sm-4 d-flex d-sm-block justify-content-between gap-2">
+                    <span class="text-muted d-block">@Localizer["Operating System"]</span>
+                    <strong>@agent.OsName</strong>
                 </div>
-            </div>
-        </div>
-        <div class="col-12 col-sm-6 col-xxl-3 d-flex">
-            <div class="card flex-fill">
-                <div class="card-body py-4">
-                    <div class="d-flex align-items-start">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-2" style="font-size: 1.5rem;">@agent.OsName</h3>
-                            <p class="mb-2">@Localizer["Operating System"]</p>
-                            <div class="mb-0">
-                                <span class="text-muted">Ver: @agent.Version</span>
-                            </div>
-                        </div>
-                        <div class="d-inline-block ms-3">
-                            <div class="stat">
-                                <i class="align-middle text-primary" data-lucide="hard-drive"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-12 col-sm-6 col-xxl-3 d-flex">
-            <div class="card flex-fill">
-                <div class="card-body py-4">
-                    <div class="d-flex align-items-start">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-2">
-                                <span data-utc-time="@agent.BootTime.ToHtmlDateTime()"></span>
-                            </h3>
-                            <p class="mb-2">@Localizer["Last Boot Time"]</p>
-                            <div class="mb-0">
-                                <span class="text-muted" data-utc-time="@agent.LastUpdate.ToHtmlDateTime()"
-                                      data-bs-toggle="tooltip" title="@Localizer["Last Update"]"></span>
-                            </div>
-                        </div>
-                        <div class="d-inline-block ms-3">
-                            <div class="stat">
-                                <i class="align-middle text-secondary" data-lucide="clock"></i>
-                            </div>
-                        </div>
-                    </div>
+                <div class="col-12 col-sm-4 d-flex d-sm-block justify-content-between gap-2">
+                    <span class="text-muted d-block">@Localizer["Last Boot Time"]</span>
+                    <span>@agent.BootTime.ToString("g")</span>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="row">
-        <div class="col-md-4 col-xl-3">
+        <div class="col-12 col-xl-3 order-2 order-xl-1">
+            <details class="card">
+                <summary class="card-header card-title mb-0">@Localizer["Resource pressure"]</summary>
+                <div class="card-body">
+                    <p class="text-muted">@Localizer["Colors use sustained resource pressure. A short quiet sample does not establish recovery."]</p>
+                    @if (health.Pressure is { } pressure)
+                    {
+                        <dl class="row mb-0">
+                            <dt class="col-7">@Localizer["Smoothed CPU idle"]</dt><dd class="col-5 text-end">@health.SmoothedIdle?.ToString("F1")%</dd>
+                            <dt class="col-7">@Localizer["CPU PSI (avg60)"]</dt><dd class="col-5 text-end">@pressure.Cpu.ToString("F1")%</dd>
+                            <dt class="col-7">@Localizer["Memory PSI (avg60)"]</dt><dd class="col-5 text-end">@pressure.Memory.ToString("F1")%</dd>
+                            <dt class="col-7">@Localizer["I/O PSI (avg60)"]</dt><dd class="col-5 text-end">@pressure.Io.ToString("F1")%</dd>
+                            <dt class="col-7">@Localizer["Pressure index (15-minute load / logical CPUs)"]</dt><dd class="col-5 text-end">@((health.LoadRate / 100).ToString("F2"))</dd>
+                        </dl>
+                    }
+                    else
+                    {
+                        <p class="mb-0">@Localizer["Fresh PSI measurements are unavailable. Check connectivity, update the agent and verify Linux PSI support."]</p>
+                    }
+                </div>
+            </details>
+
             <div class="card">
                 <div class="card-header">
                     <h5 class="card-title mb-0">@Localizer["Agent Information"]</h5>
@@ -321,12 +266,15 @@
             </div>
         </div>
 
-        <div class="col-md-8 col-xl-9">
+        <div class="col-12 col-xl-9 order-1 order-xl-2">
             <div class="row">
                 <div class="col-12 col-lg-4 d-flex">
                     <div class="card flex-fill w-100">
                         <div class="card-header">
                             <h5 class="card-title mb-0">@Localizer["CPU Usage"]</h5>
+                            <div class="small text-muted mt-1" tabindex="0" data-bs-toggle="tooltip" title="@Localizer["PSI avg60 at page load: time spent waiting for this resource over the last minute. Refresh to update."]">
+                                @Localizer["Pressure snapshot"]: @(health.Pressure?.Cpu.ToString("F1") ?? "—")@(health.Pressure is null ? "" : "%")
+                            </div>
                         </div>
                         <div class="card-body">
                             <canvas id="cpuChart"></canvas>
@@ -337,6 +285,9 @@
                     <div class="card flex-fill w-100">
                         <div class="card-header">
                             <h5 class="card-title mb-0">@Localizer["RAM Usage"]</h5>
+                            <div class="small text-muted mt-1" tabindex="0" data-bs-toggle="tooltip" title="@Localizer["PSI avg60 at page load: time spent waiting for this resource over the last minute. Refresh to update."]">
+                                @Localizer["Pressure snapshot"]: @(health.Pressure?.Memory.ToString("F1") ?? "—")@(health.Pressure is null ? "" : "%")
+                            </div>
                         </div>
                         <div class="card-body">
                             <canvas id="ramChart"></canvas>
@@ -369,6 +320,9 @@
                     <div class="card flex-fill w-100">
                         <div class="card-header">
                             <h5 class="card-title mb-0">@Localizer["Disk I/O"]</h5>
+                            <div class="small text-muted mt-1" tabindex="0" data-bs-toggle="tooltip" title="@Localizer["PSI avg60 at page load: time spent waiting for this resource over the last minute. Refresh to update."]">
+                                @Localizer["Pressure snapshot"]: @(health.Pressure?.Io.ToString("F1") ?? "—")@(health.Pressure is null ? "" : "%")
+                            </div>
                         </div>
                         <div class="card-body">
                             <canvas id="diskChart"></canvas>
