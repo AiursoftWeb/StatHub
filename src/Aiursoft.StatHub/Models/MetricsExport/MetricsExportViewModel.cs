@@ -6,7 +6,7 @@ namespace Aiursoft.StatHub.Models.MetricsExport;
 
 public sealed class MetricsExportViewModel : UiStackLayoutViewModel
 {
-    public MetricsExportViewModel() => PageTitle = "ClickHouse export";
+    public MetricsExportViewModel() => PageTitle = "Metrics archive";
     public MetricsExportPolicy Policy { get; init; } = new();
     public bool ConnectionEnabled { get; init; }
     public List<AgentMonitoringState> Agents { get; init; } = [];

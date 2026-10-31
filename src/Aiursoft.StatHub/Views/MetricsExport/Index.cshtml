@@ -2,7 +2,7 @@
 @model Aiursoft.StatHub.Models.MetricsExport.MetricsExportViewModel
 
 <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
-    <h3>@Localizer["ClickHouse export"]</h3>
+    <h3>@Localizer["Metrics archive"]</h3>
     <a asp-controller="Home" asp-action="BuildDashboard" class="btn btn-outline-primary">@Localizer["Build Dashboard"]</a>
 </div>
 <p class="text-muted">@Localizer["Configure the ClickHouse connection and retention in the MetricsExport section of appsettings.json or environment variables. Export selection is saved separately from AlertCenter monitoring and does not store credentials."]</p>

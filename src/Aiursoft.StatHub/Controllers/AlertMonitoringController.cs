@@ -19,7 +19,7 @@ public sealed class AlertMonitoringController(StatHubDbContext db, MonitoringSer
     MonitoringCoordinator coordinator, IStringLocalizer<AlertMonitoringController> localizer) : Controller
 {
     [RenderInNavBar(NavGroupName = "Administration", NavGroupOrder = 9999, CascadedLinksGroupName = "Monitoring",
-        CascadedLinksIcon = "bell", CascadedLinksOrder = 2, LinkText = "AlertCenter monitoring", LinkOrder = 1)]
+        CascadedLinksIcon = "bell", CascadedLinksOrder = 2, LinkText = "Alert rules", LinkOrder = 1)]
     public async Task<IActionResult> Index()
     {
         await coordinator.Gate.WaitAsync();

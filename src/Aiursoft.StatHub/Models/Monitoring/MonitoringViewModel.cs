@@ -6,7 +6,7 @@ namespace Aiursoft.StatHub.Models.Monitoring;
 
 public sealed class MonitoringViewModel : UiStackLayoutViewModel
 {
-    public MonitoringViewModel() => PageTitle = "AlertCenter monitoring";
+    public MonitoringViewModel() => PageTitle = "Alert rules";
     public MonitoringPolicy Policy { get; init; } = new();
     public List<AgentMonitoringState> Agents { get; init; } = [];
 }

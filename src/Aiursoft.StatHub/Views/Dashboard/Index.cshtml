@@ -26,11 +26,15 @@
 <div class="container-fluid p-0">
 
     <div class="row mb-2 mb-xl-3">
-        <div class="col-auto d-none d-sm-block">
-            <h3>@Localizer["Agents Dashboard"]</h3>
+        <div class="col-auto">
+            <h3>@Localizer["Servers"]</h3>
         </div>
 
-        <div class="col-auto ms-auto text-end mt-n1">
+        <div class="col-auto ms-auto d-flex flex-wrap justify-content-end gap-2">
+            <a class="btn btn-primary" asp-controller="Dashboard" asp-action="AddAgent">
+                <i class="align-middle" data-lucide="plus" aria-hidden="true"></i>
+                @Localizer["Add a server"]
+            </a>
             <div class="btn-group" role="group" aria-label="Data View Toggle">
                 @{
                     var cumulativeActive = showLast30 ? "" : "active";

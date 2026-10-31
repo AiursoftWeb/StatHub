@@ -7,7 +7,7 @@ public class IndexViewModel : UiStackLayoutViewModel
 {
     public IndexViewModel()
     {
-        PageTitle = "Dashboard";
+        PageTitle = "Servers";
     }
 
     public required Agent[] Agents { get; init; }
