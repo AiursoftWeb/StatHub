@@ -17,10 +17,10 @@ public class DashboardController(InMemoryDatabase database) : Controller
     [RenderInNavBar(
         NavGroupName = "Features",
         NavGroupOrder = 1,
-        CascadedLinksGroupName = "Dashboard",
-        CascadedLinksIcon = "align-left",
+        CascadedLinksGroupName = "Servers",
+        CascadedLinksIcon = "server",
         CascadedLinksOrder = 1,
-        LinkText = "Agents",
+        LinkText = "Servers",
         LinkOrder = 1)]
     public IActionResult Index([FromQuery] bool last30Seconds = false)
     {
@@ -140,14 +140,6 @@ public class DashboardController(InMemoryDatabase database) : Controller
     }
 
     [Authorize(Policy = AppPermissionNames.CanViewDashboard)]
-    [RenderInNavBar(
-        NavGroupName = "Features",
-        NavGroupOrder = 1,
-        CascadedLinksGroupName = "Dashboard",
-        CascadedLinksIcon = "align-left",
-        CascadedLinksOrder = 1,
-        LinkText = "Add an agent",
-        LinkOrder = 1)]
     public IActionResult AddAgent()
     {
         return this.StackView(new AddAgentViewModel());

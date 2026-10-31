@@ -65,6 +65,10 @@ public class ViewModelArgsInjector(
         _ = localizer["Personal"];
         _ = localizer["Unauthorized"];
         _ = localizer["Dashboard"];
+        _ = localizer["Servers"];
+        _ = localizer["Monitoring"];
+        _ = localizer["Alert rules"];
+        _ = localizer["Metrics archive"];
         _ = localizer["Error"];
         _ = localizer["Agents"];
         _ = localizer["Add an agent"];
@@ -195,7 +199,16 @@ public class ViewModelArgsInjector(
                 navGroupsForView.Add(new NavGroup
                 {
                     Name = localizer[groupDef.Name],
-                    Items = itemsForView.Select(t => (SideBarItem)t).ToList()
+                    Items = itemsForView.Select(item =>
+                        item.Links.Count == 1 && item.Links[0].Href == "/Dashboard/Index"
+                            ? (SideBarItem)new LinkSideBarItem
+                            {
+                                Text = item.Text,
+                                LucideIcon = item.LucideIcon,
+                                Href = item.Links[0].Href,
+                                IsActive = item.IsActive
+                            }
+                            : item).ToList()
                 });
             }
         }

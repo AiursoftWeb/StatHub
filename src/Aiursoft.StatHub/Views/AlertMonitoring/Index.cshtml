@@ -3,7 +3,7 @@
 @using Aiursoft.StatHub.Entities.Monitoring
 
 <div class="d-flex justify-content-between align-items-center mb-3">
-    <h3>@Localizer["AlertCenter monitoring"]</h3>
+    <h3>@Localizer["Alert rules"]</h3>
     @if (User.HasClaim(Aiursoft.StatHub.Authorization.AppPermissions.Type, Aiursoft.StatHub.Authorization.AppPermissionNames.CanManageGlobalSettings))
     {
         <a asp-controller="GlobalSettings" asp-action="Index" class="btn btn-outline-primary">@Localizer["Connection settings"]</a>
