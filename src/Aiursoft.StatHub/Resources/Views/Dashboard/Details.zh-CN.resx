@@ -189,11 +189,20 @@
   <data name="Ports" xml:space="preserve">
     <value>端口</value>
   </data>
+  <data name="Pressure" xml:space="preserve">
+    <value>压力</value>
+  </data>
   <data name="Pressure index (15-minute load / logical CPUs)" xml:space="preserve">
     <value>压力指数（15 分钟负载 / 逻辑 CPU 数）</value>
   </data>
+  <data name="Pressure snapshot" xml:space="preserve">
+    <value>压力概览</value>
+  </data>
   <data name="Preview" xml:space="preserve">
     <value>预览</value>
+  </data>
+  <data name="PSI avg60 at page load: time spent waiting for this resource over the last minute. Refresh to update." xml:space="preserve">
+    <value>页面加载时的 PSI 60 秒平均值：过去一分钟内等待此资源所花费的时间。刷新以更新。</value>
   </data>
   <data name="RAM" xml:space="preserve">
     <value>内存</value>
