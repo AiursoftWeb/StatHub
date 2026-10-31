@@ -1,6 +1,7 @@
 @model Aiursoft.StatHub.Models.DashboardViewModels.AgentDetailsViewModel
 @using Aiursoft.CSTools.Tools
 @using Aiursoft.WebTools
+@using Aiursoft.StatHub.SDK.Models
 
 @{
     var agent = Model.Agent;
@@ -15,7 +16,14 @@
             <div class="d-flex align-items-center flex-wrap gap-2 mb-1">
                 <h3 class="mb-0 text-break">@agent.Hostname</h3>
                 <span class="badge @health.BadgeClass" data-bs-toggle="tooltip" title="@health.Reason">
-                    @(health.Status == Aiursoft.StatHub.SDK.Models.AgentStatus.Unknown ? Localizer["Collecting data"] : Localizer[health.BadgeText])
+                    @(health.Status switch
+                    {
+                        AgentStatus.Healthy => @Localizer["Healthy"],
+                        AgentStatus.Warning => @Localizer["Warning"],
+                        AgentStatus.Critical => @Localizer["Critical"],
+                        AgentStatus.Offline => @Localizer["Offline"],
+                        _ => @Localizer["Collecting data"]
+                    })
                 </span>
             </div>
             <div class="small text-muted text-break">

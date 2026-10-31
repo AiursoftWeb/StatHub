@@ -42,6 +42,9 @@
   <data name="Client ID" xml:space="preserve">
     <value>客户端 ID</value>
   </data>
+  <data name="Collecting data" xml:space="preserve">
+    <value>正在收集数据</value>
+  </data>
   <data name="Colors use sustained resource pressure. A short quiet sample does not establish recovery." xml:space="preserve">
     <value>颜色基于持续的资源压力。短暂的平稳样本不能证明已恢复。</value>
   </data>
@@ -65,6 +68,9 @@
   </data>
   <data name="Created" xml:space="preserve">
     <value>创建时间</value>
+  </data>
+  <data name="Critical" xml:space="preserve">
+    <value>严重</value>
   </data>
   <data name="Disabled" xml:space="preserve">
     <value>已禁用</value>
@@ -177,6 +183,9 @@
   <data name="No output yet..." xml:space="preserve">
     <value>暂无输出...</value>
   </data>
+  <data name="Offline" xml:space="preserve">
+    <value>离线</value>
+  </data>
   <data name="Operating System" xml:space="preserve">
     <value>操作系统</value>
   </data>
@@ -248,6 +257,9 @@
   </data>
   <data name="View" xml:space="preserve">
     <value>查看</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>警告</value>
   </data>
 
 </root>
