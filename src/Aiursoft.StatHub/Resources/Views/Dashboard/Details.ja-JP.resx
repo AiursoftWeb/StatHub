@@ -42,6 +42,9 @@
   <data name="Client ID" xml:space="preserve">
     <value>クライアントID</value>
   </data>
+  <data name="Collecting data" xml:space="preserve">
+    <value>データを収集中</value>
+  </data>
   <data name="Colors use sustained resource pressure. A short quiet sample does not establish recovery." xml:space="preserve">
     <value>色は、継続的なリソース負荷に基づいています。短時間負荷が落ち着いた状態が続いても、回復したとは判断できません。</value>
   </data>
@@ -65,6 +68,9 @@
   </data>
   <data name="Created" xml:space="preserve">
     <value>作成日時</value>
+  </data>
+  <data name="Critical" xml:space="preserve">
+    <value>重大</value>
   </data>
   <data name="Disabled" xml:space="preserve">
     <value>無効</value>
@@ -177,6 +183,9 @@
   <data name="No output yet..." xml:space="preserve">
     <value>まだ出力されていません...</value>
   </data>
+  <data name="Offline" xml:space="preserve">
+    <value>オフライン</value>
+  </data>
   <data name="Operating System" xml:space="preserve">
     <value>オペレーティングシステム</value>
   </data>
@@ -192,8 +201,14 @@
   <data name="Pressure index (15-minute load / logical CPUs)" xml:space="preserve">
     <value>圧力指数（15分間の負荷 / 論理 CPU 数）</value>
   </data>
+  <data name="Pressure snapshot" xml:space="preserve">
+    <value>圧力のスナップショット</value>
+  </data>
   <data name="Preview" xml:space="preserve">
     <value>プレビュー</value>
+  </data>
+  <data name="PSI avg60 at page load: time spent waiting for this resource over the last minute. Refresh to update." xml:space="preserve">
+    <value>ページ読み込み時の PSI avg60：過去1分間にこのリソースの待機に費やされた時間です。更新すると最新の値が表示されます。</value>
   </data>
   <data name="RAM" xml:space="preserve">
     <value>RAM</value>
@@ -239,6 +254,9 @@
   </data>
   <data name="View" xml:space="preserve">
     <value>表示</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>警告</value>
   </data>
 
 </root>

@@ -39,6 +39,9 @@
   <data name="Abandoning is not deletion. If this agent persists in submitting, it will appear again soon. Please use systemd command to stop the agent." xml:space="preserve">
     <value>إلغاء التكليف ليس حذفًا. إذا استمر هذا الوكيل في الإرسال، فسيظهر مرة أخرى قريبًا. يُرجى استخدام أمر systemd لإيقاف الوكيل.</value>
   </data>
+  <data name="Add a server" xml:space="preserve">
+    <value>إضافة خادم</value>
+  </data>
   <data name="Agents Dashboard" xml:space="preserve">
     <value>لوحة تحكم الوكلاء</value>
   </data>
@@ -206,6 +209,9 @@
   </data>
   <data name="Seamlessly integrate with any OpenID Connect provider, with automatic role synchronization." xml:space="preserve">
     <value>التكامل السلس مع أي موفر OpenID Connect، مع مزامنة تلقائية للأدوار.</value>
+  </data>
+  <data name="Servers" xml:space="preserve">
+    <value>الخوادم</value>
   </data>
   <data name="SKU" xml:space="preserve">
     <value>المنتج</value>

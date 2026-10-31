@@ -39,6 +39,9 @@
   <data name="Abandoning is not deletion. If this agent persists in submitting, it will appear again soon. Please use systemd command to stop the agent." xml:space="preserve">
     <value>การละทิ้งไม่ใช่การลบออก หากเอเจนต์นี้ยังคงส่งข้อมูลต่อไป มันจะปรากฏขึ้นอีกเร็ว ๆ นี้ โปรดใช้คำสั่ง systemd เพื่อหยุดเอเจนต์นี้</value>
   </data>
+  <data name="Add a server" xml:space="preserve">
+    <value>เพิ่มเซิร์ฟเวอร์</value>
+  </data>
   <data name="Agents Dashboard" xml:space="preserve">
     <value>แดชบอร์ดเอเยนต์</value>
   </data>
@@ -206,6 +209,9 @@
   </data>
   <data name="Seamlessly integrate with any OpenID Connect provider, with automatic role synchronization." xml:space="preserve">
     <value>ผสานรวมได้อย่างราบรื่นกับผู้ให้บริการ OpenID Connect ใดก็ได้ พร้อมการซิงโครไนซ์บทบาทอัตโนมัติ</value>
+  </data>
+  <data name="Servers" xml:space="preserve">
+    <value>เซิร์ฟเวอร์</value>
   </data>
   <data name="SKU" xml:space="preserve">
     <value>รหัสสินค้า</value>

@@ -33,6 +33,9 @@
   <data name="After startup, reconnecting or incomplete data, health stays unconfirmed until pressure or recovery is established. Upgrade older agents to report Linux PSI. Collecting data is different from offline." xml:space="preserve">
     <value>Sau khi khởi động, kết nối lại hoặc khi dữ liệu chưa đầy đủ, trạng thái sức khỏe vẫn chưa được xác nhận cho đến khi xác định được tình trạng quá tải hoặc phục hồi. Hãy nâng cấp các tác tử cũ để gửi báo cáo Linux PSI. Đang thu thập dữ liệu không đồng nghĩa với ngoại tuyến.</value>
   </data>
+  <data name="Alert rules" xml:space="preserve">
+    <value>Quy tắc cảnh báo</value>
+  </data>
   <data name="AlertCenter monitoring" xml:space="preserve">
     <value>Giám sát AlertCenter</value>
   </data>

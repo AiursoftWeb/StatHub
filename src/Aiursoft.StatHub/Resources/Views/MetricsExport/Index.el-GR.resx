@@ -75,6 +75,9 @@
   <data name="Last report" xml:space="preserve">
     <value>Τελευταία αναφορά</value>
   </data>
+  <data name="Metrics archive" xml:space="preserve">
+    <value>Αρχείο μετρήσεων</value>
+  </data>
   <data name="No report since restart" xml:space="preserve">
     <value>Καμία αναφορά από την επανεκκίνηση</value>
   </data>

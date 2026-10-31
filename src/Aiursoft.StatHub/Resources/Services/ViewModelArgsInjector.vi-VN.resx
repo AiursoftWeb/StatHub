@@ -45,6 +45,9 @@
   <data name="Aiursoft Template" xml:space="preserve">
     <value>Aiursoft Template</value>
   </data>
+  <data name="Alert rules" xml:space="preserve">
+    <value>Quy tắc cảnh báo</value>
+  </data>
   <data name="AlertCenter monitoring" xml:space="preserve">
     <value>Giám sát AlertCenter</value>
   </data>
@@ -137,6 +140,9 @@
   </data>
   <data name="Manage" xml:space="preserve">
     <value>Quản lý</value>
+  </data>
+  <data name="Metrics archive" xml:space="preserve">
+    <value>Kho lưu trữ chỉ số</value>
   </data>
   <data name="Monitoring" xml:space="preserve">
     <value>Giám sát</value>

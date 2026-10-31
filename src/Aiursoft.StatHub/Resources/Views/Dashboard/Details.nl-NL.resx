@@ -42,6 +42,9 @@
   <data name="Client ID" xml:space="preserve">
     <value>Client-ID</value>
   </data>
+  <data name="Collecting data" xml:space="preserve">
+    <value>Gegevens verzamelen</value>
+  </data>
   <data name="Colors use sustained resource pressure. A short quiet sample does not establish recovery." xml:space="preserve">
     <value>De kleuren geven de aanhoudende belasting van bronnen weer. Een korte rustige meetperiode betekent niet dat het herstel is ingezet.</value>
   </data>
@@ -65,6 +68,9 @@
   </data>
   <data name="Created" xml:space="preserve">
     <value>Gemaakt</value>
+  </data>
+  <data name="Critical" xml:space="preserve">
+    <value>Kritiek</value>
   </data>
   <data name="Disabled" xml:space="preserve">
     <value>Uitgeschakeld</value>
@@ -177,6 +183,9 @@
   <data name="No output yet..." xml:space="preserve">
     <value>Nog geen uitvoer...</value>
   </data>
+  <data name="Offline" xml:space="preserve">
+    <value>Offline</value>
+  </data>
   <data name="Operating System" xml:space="preserve">
     <value>Besturingssysteem</value>
   </data>
@@ -192,8 +201,14 @@
   <data name="Pressure index (15-minute load / logical CPUs)" xml:space="preserve">
     <value>Drukindex (belasting gedurende 15 minuten / logische CPU&apos;s)</value>
   </data>
+  <data name="Pressure snapshot" xml:space="preserve">
+    <value>Drukmomentopname</value>
+  </data>
   <data name="Preview" xml:space="preserve">
     <value>Voorbeeld</value>
+  </data>
+  <data name="PSI avg60 at page load: time spent waiting for this resource over the last minute. Refresh to update." xml:space="preserve">
+    <value>PSI avg60 bij het laden van de pagina: tijd die de afgelopen minuut is besteed aan wachten op deze resource. Vernieuw de pagina om bij te werken.</value>
   </data>
   <data name="RAM" xml:space="preserve">
     <value>RAM</value>
@@ -239,6 +254,9 @@
   </data>
   <data name="View" xml:space="preserve">
     <value>Bekijken</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>Waarschuwing</value>
   </data>
 
 </root>

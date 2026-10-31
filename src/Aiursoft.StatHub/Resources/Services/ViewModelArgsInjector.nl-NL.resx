@@ -42,6 +42,9 @@
   <data name="Aiursoft Template" xml:space="preserve">
     <value>Aiursoft Template</value>
   </data>
+  <data name="Alert rules" xml:space="preserve">
+    <value>Waarschuwingsregels</value>
+  </data>
   <data name="AlertCenter monitoring" xml:space="preserve">
     <value>Monitoring van AlertCenter</value>
   </data>
@@ -134,6 +137,9 @@
   </data>
   <data name="Manage" xml:space="preserve">
     <value>Beheren</value>
+  </data>
+  <data name="Metrics archive" xml:space="preserve">
+    <value>Metriekenarchief</value>
   </data>
   <data name="Monitoring" xml:space="preserve">
     <value>Monitoring</value>

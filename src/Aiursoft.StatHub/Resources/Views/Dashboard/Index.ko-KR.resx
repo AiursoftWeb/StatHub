@@ -39,6 +39,9 @@
   <data name="Abandoning is not deletion. If this agent persists in submitting, it will appear again soon. Please use systemd command to stop the agent." xml:space="preserve">
     <value>버려짐은 삭제가 아닙니다. 이 에이전트가 계속 제출을 시도할 경우 곧 다시 나타날 것입니다. 에이전트를 중지하려면 systemd 명령어를 사용하십시오.</value>
   </data>
+  <data name="Add a server" xml:space="preserve">
+    <value>서버 추가</value>
+  </data>
   <data name="Agents Dashboard" xml:space="preserve">
     <value>에이전트 대시보드</value>
   </data>
@@ -206,6 +209,9 @@
   </data>
   <data name="Seamlessly integrate with any OpenID Connect provider, with automatic role synchronization." xml:space="preserve">
     <value>어떤 OpenID Connect 공급자와도 원활하게 통합되며, 자동 역할 동기화를 지원합니다.</value>
+  </data>
+  <data name="Servers" xml:space="preserve">
+    <value>서버</value>
   </data>
   <data name="SKU" xml:space="preserve">
     <value>SKU</value>

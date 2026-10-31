@@ -30,6 +30,9 @@
   <data name="After startup, reconnecting or incomplete data, health stays unconfirmed until pressure or recovery is established. Upgrade older agents to report Linux PSI. Collecting data is different from offline." xml:space="preserve">
     <value>Μετά την εκκίνηση, την επανασύνδεση ή τη λήψη ελλιπών δεδομένων, η κατάσταση υγείας παραμένει μη επιβεβαιωμένη μέχρι να διαπιστωθεί επιβάρυνση ή αποκατάσταση. Αναβαθμίστε παλαιότερους agents ώστε να αναφέρουν τα Linux PSI. Η συλλογή δεδομένων δεν σημαίνει ότι ο διακομιστής είναι εκτός σύνδεσης.</value>
   </data>
+  <data name="Alert rules" xml:space="preserve">
+    <value>Κανόνες ειδοποιήσεων</value>
+  </data>
   <data name="AlertCenter monitoring" xml:space="preserve">
     <value>Παρακολούθηση του AlertCenter</value>
   </data>

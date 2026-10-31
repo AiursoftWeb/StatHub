@@ -42,6 +42,9 @@
   <data name="Client ID" xml:space="preserve">
     <value>İstemci Kimliği</value>
   </data>
+  <data name="Collecting data" xml:space="preserve">
+    <value>Veriler toplanıyor</value>
+  </data>
   <data name="Colors use sustained resource pressure. A short quiet sample does not establish recovery." xml:space="preserve">
     <value>Renkler, kaynak baskısının sürekliliğine göre belirlenir. Kısa süreli sakin bir ölçüm, kaynakların toparlandığını göstermez.</value>
   </data>
@@ -65,6 +68,9 @@
   </data>
   <data name="Created" xml:space="preserve">
     <value>Oluşturulma</value>
+  </data>
+  <data name="Critical" xml:space="preserve">
+    <value>Kritik</value>
   </data>
   <data name="Disabled" xml:space="preserve">
     <value>Devre Dışı</value>
@@ -177,6 +183,9 @@
   <data name="No output yet..." xml:space="preserve">
     <value>Henüz çıktı yok...</value>
   </data>
+  <data name="Offline" xml:space="preserve">
+    <value>Çevrimdışı</value>
+  </data>
   <data name="Operating System" xml:space="preserve">
     <value>İşletim Sistemi</value>
   </data>
@@ -192,8 +201,14 @@
   <data name="Pressure index (15-minute load / logical CPUs)" xml:space="preserve">
     <value>Basınç indeksi (15 dakikalık yük / mantıksal CPU sayısı)</value>
   </data>
+  <data name="Pressure snapshot" xml:space="preserve">
+    <value>Basınç anlık görüntüsü</value>
+  </data>
   <data name="Preview" xml:space="preserve">
     <value>Önizleme</value>
+  </data>
+  <data name="PSI avg60 at page load: time spent waiting for this resource over the last minute. Refresh to update." xml:space="preserve">
+    <value>PSI avg60 sayfa yüklenirken: son bir dakikada bu kaynak için beklenen süre. Güncellemek için yenileyin.</value>
   </data>
   <data name="RAM" xml:space="preserve">
     <value>Bellek</value>
@@ -239,6 +254,9 @@
   </data>
   <data name="View" xml:space="preserve">
     <value>Görüntüle</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>Uyarı</value>
   </data>
 
 </root>

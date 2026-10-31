@@ -42,6 +42,9 @@
   <data name="Client ID" xml:space="preserve">
     <value>Klient-ID</value>
   </data>
+  <data name="Collecting data" xml:space="preserve">
+    <value>Samlar in data</value>
+  </data>
   <data name="Colors use sustained resource pressure. A short quiet sample does not establish recovery." xml:space="preserve">
     <value>Färgerna baseras på ihållande resursbelastning. Ett kort mätintervall med låg belastning visar inte att systemet har återhämtat sig.</value>
   </data>
@@ -65,6 +68,9 @@
   </data>
   <data name="Created" xml:space="preserve">
     <value>Skapad</value>
+  </data>
+  <data name="Critical" xml:space="preserve">
+    <value>Kritisk</value>
   </data>
   <data name="Disabled" xml:space="preserve">
     <value>Inaktiverad</value>
@@ -177,6 +183,9 @@
   <data name="No output yet..." xml:space="preserve">
     <value>Ingen utskrift än...</value>
   </data>
+  <data name="Offline" xml:space="preserve">
+    <value>Frånkopplad</value>
+  </data>
   <data name="Operating System" xml:space="preserve">
     <value>Operativsystem</value>
   </data>
@@ -192,8 +201,14 @@
   <data name="Pressure index (15-minute load / logical CPUs)" xml:space="preserve">
     <value>Tryckindex (belastning under 15 minuter / logiska processorer)</value>
   </data>
+  <data name="Pressure snapshot" xml:space="preserve">
+    <value>Tryckbelastning – ögonblicksbild</value>
+  </data>
   <data name="Preview" xml:space="preserve">
     <value>Förhandsgranskning</value>
+  </data>
+  <data name="PSI avg60 at page load: time spent waiting for this resource over the last minute. Refresh to update." xml:space="preserve">
+    <value>PSI avg60 vid sidinläsning: tid som tillbringats med att vänta på den här resursen under den senaste minuten. Uppdatera sidan för att uppdatera värdet.</value>
   </data>
   <data name="RAM" xml:space="preserve">
     <value>RAM</value>
@@ -239,6 +254,9 @@
   </data>
   <data name="View" xml:space="preserve">
     <value>Visa</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>Varning</value>
   </data>
 
 </root>

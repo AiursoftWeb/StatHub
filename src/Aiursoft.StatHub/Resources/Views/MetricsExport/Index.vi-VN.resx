@@ -75,6 +75,9 @@
   <data name="Last report" xml:space="preserve">
     <value>Báo cáo gần nhất</value>
   </data>
+  <data name="Metrics archive" xml:space="preserve">
+    <value>Kho lưu trữ số liệu</value>
+  </data>
   <data name="No report since restart" xml:space="preserve">
     <value>Không có báo cáo kể từ khi khởi động lại</value>
   </data>

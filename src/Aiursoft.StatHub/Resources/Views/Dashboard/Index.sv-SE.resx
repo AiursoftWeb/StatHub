@@ -39,6 +39,9 @@
   <data name="Abandoning is not deletion. If this agent persists in submitting, it will appear again soon. Please use systemd command to stop the agent." xml:space="preserve">
     <value>Att lämna över innebär inte radering. Om denna agent fortsätter att skicka in data kommer den snart dyka upp igen. Använd systemd-kommandot för att stoppa agenten.</value>
   </data>
+  <data name="Add a server" xml:space="preserve">
+    <value>Lägg till en server</value>
+  </data>
   <data name="Agents Dashboard" xml:space="preserve">
     <value>Agenter Instrumentpanel</value>
   </data>
@@ -206,6 +209,9 @@
   </data>
   <data name="Seamlessly integrate with any OpenID Connect provider, with automatic role synchronization." xml:space="preserve">
     <value>Integrera sömlöst med valfri OpenID Connect-leverantör, med automatisk rollsynkronisering.</value>
+  </data>
+  <data name="Servers" xml:space="preserve">
+    <value>Servrar</value>
   </data>
   <data name="SKU" xml:space="preserve">
     <value>SKU</value>

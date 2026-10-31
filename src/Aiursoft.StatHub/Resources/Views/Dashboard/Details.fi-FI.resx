@@ -42,6 +42,9 @@
   <data name="Client ID" xml:space="preserve">
     <value>Asiakastunniste</value>
   </data>
+  <data name="Collecting data" xml:space="preserve">
+    <value>Kerätään tietoja</value>
+  </data>
   <data name="Colors use sustained resource pressure. A short quiet sample does not establish recovery." xml:space="preserve">
     <value>Värit perustuvat pitkään jatkuneeseen resurssien kuormitukseen. Lyhyt kuormittamaton mittaus ei osoita, että tilanne olisi palautunut ennalleen.</value>
   </data>
@@ -65,6 +68,9 @@
   </data>
   <data name="Created" xml:space="preserve">
     <value>Luotu</value>
+  </data>
+  <data name="Critical" xml:space="preserve">
+    <value>Kriittinen</value>
   </data>
   <data name="Disabled" xml:space="preserve">
     <value>Pois käytöstä</value>
@@ -177,6 +183,9 @@
   <data name="No output yet..." xml:space="preserve">
     <value>Ei vielä tuottoa...</value>
   </data>
+  <data name="Offline" xml:space="preserve">
+    <value>Offline</value>
+  </data>
   <data name="Operating System" xml:space="preserve">
     <value>Käyttöjärjestelmä</value>
   </data>
@@ -192,8 +201,14 @@
   <data name="Pressure index (15-minute load / logical CPUs)" xml:space="preserve">
     <value>Kuormitusindeksi (15 minuutin kuorma / loogisten suorittimien määrä)</value>
   </data>
+  <data name="Pressure snapshot" xml:space="preserve">
+    <value>Paineen tilannekuva</value>
+  </data>
   <data name="Preview" xml:space="preserve">
     <value>Esikatselu</value>
+  </data>
+  <data name="PSI avg60 at page load: time spent waiting for this resource over the last minute. Refresh to update." xml:space="preserve">
+    <value>PSI avg60 sivun latautuessa: tämän resurssin odottamiseen kulunut aika viimeisen minuutin aikana. Päivitä päivittääksesi tiedot.</value>
   </data>
   <data name="RAM" xml:space="preserve">
     <value>RAM</value>
@@ -239,6 +254,9 @@
   </data>
   <data name="View" xml:space="preserve">
     <value>Näytä</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>Varoitus</value>
   </data>
 
 </root>

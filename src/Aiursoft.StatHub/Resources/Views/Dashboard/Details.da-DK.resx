@@ -42,6 +42,9 @@
   <data name="Client ID" xml:space="preserve">
     <value>Klient-ID</value>
   </data>
+  <data name="Collecting data" xml:space="preserve">
+    <value>Indsamler data</value>
+  </data>
   <data name="Colors use sustained resource pressure. A short quiet sample does not establish recovery." xml:space="preserve">
     <value>Farverne afspejler vedvarende ressourcebelastning. En kort periode med lav belastning er ikke ensbetydende med, at systemet er kommet sig.</value>
   </data>
@@ -65,6 +68,9 @@
   </data>
   <data name="Created" xml:space="preserve">
     <value>Oprettet</value>
+  </data>
+  <data name="Critical" xml:space="preserve">
+    <value>Kritisk</value>
   </data>
   <data name="Disabled" xml:space="preserve">
     <value>Deaktiveret</value>
@@ -177,6 +183,9 @@
   <data name="No output yet..." xml:space="preserve">
     <value>Ingen output endnu...</value>
   </data>
+  <data name="Offline" xml:space="preserve">
+    <value>Offline</value>
+  </data>
   <data name="Operating System" xml:space="preserve">
     <value>Styresystem</value>
   </data>
@@ -192,8 +201,14 @@
   <data name="Pressure index (15-minute load / logical CPUs)" xml:space="preserve">
     <value>Belastningsindeks (15-minutters belastning / logiske CPU&apos;er)</value>
   </data>
+  <data name="Pressure snapshot" xml:space="preserve">
+    <value>Trykbelastning (øjebliksbillede)</value>
+  </data>
   <data name="Preview" xml:space="preserve">
     <value>Forhåndsvisning</value>
+  </data>
+  <data name="PSI avg60 at page load: time spent waiting for this resource over the last minute. Refresh to update." xml:space="preserve">
+    <value>PSI avg60 ved indlæsning af siden: tid brugt på at vente på denne ressource i løbet af det seneste minut. Opdater for at se den nyeste værdi.</value>
   </data>
   <data name="RAM" xml:space="preserve">
     <value>RAM</value>
@@ -239,6 +254,9 @@
   </data>
   <data name="View" xml:space="preserve">
     <value>Se</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>Advarsel</value>
   </data>
 
 </root>

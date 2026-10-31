@@ -42,6 +42,9 @@
   <data name="Client ID" xml:space="preserve">
     <value>ID Máy khách</value>
   </data>
+  <data name="Collecting data" xml:space="preserve">
+    <value>Đang thu thập dữ liệu</value>
+  </data>
   <data name="Colors use sustained resource pressure. A short quiet sample does not establish recovery." xml:space="preserve">
     <value>Màu sắc phản ánh tình trạng áp lực tài nguyên kéo dài. Một mẫu ngắn cho thấy hệ thống yên ổn không đủ để xác định rằng tình trạng đã được phục hồi.</value>
   </data>
@@ -65,6 +68,9 @@
   </data>
   <data name="Created" xml:space="preserve">
     <value>Được tạo</value>
+  </data>
+  <data name="Critical" xml:space="preserve">
+    <value>Nghiêm trọng</value>
   </data>
   <data name="Disabled" xml:space="preserve">
     <value>Vô hiệu hóa</value>
@@ -177,6 +183,9 @@
   <data name="No output yet..." xml:space="preserve">
     <value>Chưa có đầu ra...</value>
   </data>
+  <data name="Offline" xml:space="preserve">
+    <value>Ngoại tuyến</value>
+  </data>
   <data name="Operating System" xml:space="preserve">
     <value>Hệ điều hành</value>
   </data>
@@ -192,8 +201,14 @@
   <data name="Pressure index (15-minute load / logical CPUs)" xml:space="preserve">
     <value>Chỉ số áp lực (tải trong 15 phút / số CPU logic)</value>
   </data>
+  <data name="Pressure snapshot" xml:space="preserve">
+    <value>Ảnh chụp nhanh áp suất</value>
+  </data>
   <data name="Preview" xml:space="preserve">
     <value>Xem trước</value>
+  </data>
+  <data name="PSI avg60 at page load: time spent waiting for this resource over the last minute. Refresh to update." xml:space="preserve">
+    <value>PSI trung bình 60 tại thời điểm tải trang: thời gian chờ tài nguyên này trong phút vừa qua. Tải lại để cập nhật.</value>
   </data>
   <data name="RAM" xml:space="preserve">
     <value>RAM</value>
@@ -239,6 +254,9 @@
   </data>
   <data name="View" xml:space="preserve">
     <value>Xem</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>Cảnh báo</value>
   </data>
 
 </root>
