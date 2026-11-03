@@ -36,6 +36,9 @@ public sealed class MetricsClickhouseWriter(IOptions<MetricsExportOptions> optio
                 PARTITION BY toDate(SampleTime)
                 ORDER BY (SampleTime, ClientId, SampleId){ttl}
                 """);
+            // CREATE IF NOT EXISTS leaves existing retention unchanged; update it on initialization too.
+            if (_options.RetentionDays > 0)
+                await context.ExecuteScalarAsync<object>($"ALTER TABLE ServerMetrics MODIFY TTL SampleTime + INTERVAL {_options.RetentionDays} DAY");
             // Additive evolution: historical/older-agent samples retain NULL pressure values.
             await context.ExecuteScalarAsync<object>("ALTER TABLE ServerMetrics ADD COLUMN IF NOT EXISTS PressureCpu Nullable(Float64), ADD COLUMN IF NOT EXISTS PressureMemory Nullable(Float64), ADD COLUMN IF NOT EXISTS PressureIo Nullable(Float64)");
             await context.ExecuteScalarAsync<object>("CREATE OR REPLACE VIEW ServerMetricsLatest AS SELECT * FROM ServerMetrics FINAL");

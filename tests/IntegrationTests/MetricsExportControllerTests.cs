@@ -1,4 +1,6 @@
 using System.Net;
+using System.Data.Common;
+using ClickHouse.Client.ADO;
 using Aiursoft.StatHub.Data;
 using Aiursoft.StatHub.Entities;
 using Aiursoft.StatHub.Entities.MetricsExport;
@@ -12,6 +14,60 @@ namespace Aiursoft.StatHub.Tests.IntegrationTests;
 [TestClass]
 public sealed class MetricsExportControllerTests : TestBase
 {
+    [TestMethod]
+    public async Task ExportUpgradesExistingRetentionAndKeepsOlderSamplesAcrossRestarts()
+    {
+        var connectionString = Environment.GetEnvironmentVariable("CLICKHOUSE_CONNECTION");
+        if (string.IsNullOrEmpty(connectionString))
+            Assert.Inconclusive("Set CLICKHOUSE_CONNECTION to run the real ClickHouse retention test.");
+
+        var database = $"stathub_retention_{Guid.NewGuid():N}";
+        var builder = new DbConnectionStringBuilder { ConnectionString = connectionString };
+        builder["Database"] = database;
+        var options = new MetricsExportOptions
+        {
+            Enabled = true,
+            ConnectionString = builder.ConnectionString,
+            RetentionDays = GetService<IOptions<MetricsExportOptions>>().Value.RetentionDays
+        };
+        Assert.AreEqual(120, options.RetentionDays);
+        await using var connection = new ClickHouseConnection(connectionString);
+        await connection.OpenAsync();
+        await using var command = connection.CreateCommand();
+        try
+        {
+            var current = MetricsSample.Capture("server", "host", new DstatResult { CpuUsr = 7 }, DateTime.UtcNow);
+            await new MetricsClickhouseWriter(Options.Create(options)).WriteAsync([current]);
+            command.CommandText = $"SHOW CREATE TABLE `{database}`.ServerMetrics";
+            StringAssert.Contains((await command.ExecuteScalarAsync())!.ToString()!, "toIntervalDay(120)");
+
+            command.CommandText = $"ALTER TABLE `{database}`.ServerMetrics MODIFY TTL SampleTime + INTERVAL 30 DAY";
+            await command.ExecuteNonQueryAsync();
+            var older = MetricsSample.Capture("server", "host", new DstatResult
+            {
+                SampleTime = DateTime.UtcNow.AddDays(-90),
+                CpuUsr = 12
+            }, DateTime.UtcNow);
+            await new MetricsClickhouseWriter(Options.Create(options)).WriteAsync([older]);
+            command.CommandText = $"SHOW CREATE TABLE `{database}`.ServerMetrics";
+            StringAssert.Contains((await command.ExecuteScalarAsync())!.ToString()!, "toIntervalDay(120)");
+
+            // Reinitializing must keep both retention and the existing idempotent export behavior.
+            await new MetricsClickhouseWriter(Options.Create(options)).WriteAsync([older]);
+            command.CommandText = $"OPTIMIZE TABLE `{database}`.ServerMetrics FINAL";
+            await command.ExecuteNonQueryAsync();
+            command.CommandText = $"SELECT count() FROM `{database}`.ServerMetricsLatest";
+            Assert.AreEqual(2UL, Convert.ToUInt64(await command.ExecuteScalarAsync()));
+            command.CommandText = $"SELECT CpuUsr FROM `{database}`.ServerMetricsLatest WHERE SampleId = '{older.SampleId}'";
+            Assert.AreEqual(12, Convert.ToInt32(await command.ExecuteScalarAsync()));
+        }
+        finally
+        {
+            command.CommandText = $"DROP DATABASE IF EXISTS `{database}` SYNC";
+            await command.ExecuteNonQueryAsync();
+        }
+    }
+
     private async Task<MetricsExportPolicy> PolicyAsync()
     {
         using var scope = Server!.Services.CreateScope();
