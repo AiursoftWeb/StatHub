@@ -35,15 +35,15 @@
                 <i class="align-middle" data-lucide="plus" aria-hidden="true"></i>
                 @Localizer["Add a server"]
             </a>
-            <div class="btn-group" role="group" aria-label="Data View Toggle">
+            <div class="btn-group" role="group" aria-label="@Localizer["Data View"]">
                 @{
                     var cumulativeActive = showLast30 ? "" : "active";
                     var last30Active = showLast30 ? "active" : "";
                 }
-                <a class="btn btn-light bg-white shadow-sm @cumulativeActive" asp-controller="Dashboard" asp-action="Index" asp-route-Last30Seconds="false">
+                <a class="btn btn-outline-primary @cumulativeActive" aria-current="@(showLast30 ? null : "true")" asp-controller="Dashboard" asp-action="Index" asp-route-Last30Seconds="false">
                     @Localizer["Cumulative"]
                 </a>
-                <a class="btn btn-light bg-white shadow-sm @last30Active" asp-controller="Dashboard" asp-action="Index" asp-route-Last30Seconds="true">
+                <a class="btn btn-outline-primary @last30Active" aria-current="@(showLast30 ? "true" : null)" asp-controller="Dashboard" asp-action="Index" asp-route-Last30Seconds="true">
                     @Localizer["Last 30 seconds"]
                 </a>
             </div>
