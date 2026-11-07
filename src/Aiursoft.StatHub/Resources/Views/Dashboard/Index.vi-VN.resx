@@ -102,6 +102,9 @@
   <data name="Cumulative" xml:space="preserve">
     <value>Tích lũy</value>
   </data>
+  <data name="Data View" xml:space="preserve">
+    <value>Xem dữ liệu</value>
+  </data>
   <data name="Details" xml:space="preserve">
     <value>Chi tiết</value>
   </data>

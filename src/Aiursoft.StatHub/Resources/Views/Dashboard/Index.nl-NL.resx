@@ -102,6 +102,9 @@
   <data name="Cumulative" xml:space="preserve">
     <value>Cumulatief</value>
   </data>
+  <data name="Data View" xml:space="preserve">
+    <value>Dataweergave</value>
+  </data>
   <data name="Details" xml:space="preserve">
     <value>Details</value>
   </data>
