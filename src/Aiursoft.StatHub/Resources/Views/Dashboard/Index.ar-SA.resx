@@ -102,6 +102,9 @@
   <data name="Cumulative" xml:space="preserve">
     <value>تراكمي</value>
   </data>
+  <data name="Data View" xml:space="preserve">
+    <value>عرض البيانات</value>
+  </data>
   <data name="Details" xml:space="preserve">
     <value>التفاصيل</value>
   </data>
