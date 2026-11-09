@@ -6,7 +6,7 @@
   "license": "MIT",
   "dependencies": {
     "dropify": "^0.2.2",
-    "chart.js": "^4.4.1"
+    "chart.js": "^4.6.1"
   },
   "keep": {
     "dropify": "dist",
