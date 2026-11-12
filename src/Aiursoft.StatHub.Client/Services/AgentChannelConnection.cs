@@ -107,7 +107,8 @@ public sealed class AgentChannelConnection(IOptions<ServerConfig> options, ILogg
         }
         finally
         {
-            Interlocked.CompareExchange(ref session.Pending, (PendingReport?)null, pending);
+            // ReportGate still excludes every other metrics writer while this slot is cleared.
+            Interlocked.Exchange(ref session.Pending, null);
             session.ReportGate.Release();
         }
     }
