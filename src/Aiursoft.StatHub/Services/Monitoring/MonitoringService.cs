@@ -277,7 +277,7 @@ public sealed class MonitoringService(StatHubDbContext db, MonitoringCoordinator
         var rule = MatchingRule(policy, state, now)!;
         var since = Since(state, rule.State)!.Value;
         var elapsed = (now - since).TotalMinutes;
-        var summary = string.Create(System.Globalization.CultureInfo.InvariantCulture, $"Server {state.Hostname} has remained {rule.State} or worse for {elapsed:F1} minutes. " +
+        var summary = string.Create(CultureInfo.InvariantCulture, $"Server {state.Hostname} has remained {rule.State} or worse for {elapsed:F1} minutes. " +
             $"The configured rule triggers {severity} after {rule.DurationMinutes} continuous minutes. Current state: {state.CurrentState}.\n" +
             $"Threshold exceeded since (UTC): {since:O}\nCurrent color since (UTC): {state.StateSinceUtc:O}\nLast report (UTC): {state.LastReportedAtUtc:O}\n");
         string evidence;
@@ -296,10 +296,10 @@ public sealed class MonitoringService(StatHubDbContext db, MonitoringCoordinator
             {
                 var health = agent.GetHealthReport();
                 var load = agent.GetLoad();
-                evidence = string.Create(System.Globalization.CultureInfo.InvariantCulture, $"Latest available sample (UTC): {agent.LastUpdate:O}\n" +
+                evidence = string.Create(CultureInfo.InvariantCulture, $"Latest available sample (UTC): {agent.LastUpdate:O}\n" +
                     $"CPU busy: {health.CpuRate}%; 15-minute load: {load.Load15M:F2} across {agent.CpuCores} logical CPUs " +
                     $"(pressure index {health.LoadRate / 100:F2}); busiest disk: {health.DiskUseRatio:P1}.\n") +
-                    string.Create(System.Globalization.CultureInfo.InvariantCulture,
+                    string.Create(CultureInfo.InvariantCulture,
                         $"Smoothed CPU idle: {health.SmoothedIdle:F1}%; PSI avg60 (CPU / memory / I/O): " +
                         $"{health.Pressure?.Cpu:F1}% / {health.Pressure?.Memory:F1}% / {health.Pressure?.Io:F1}%.\n") +
                     "Red: CPU idle <= 5% AND CPU PSI >= 50%, memory PSI >= 20%, I/O PSI >= 30%, or disk >= 92%. " +
