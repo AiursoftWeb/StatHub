@@ -72,7 +72,7 @@ public class SkuInfoService(
                     Used = usedBlocks / 1024.0 / 1024.0
                 });
             }
-            return results.OrderBy(r => r.Name).ToArray();
+            return results.OrderBy(r => r.Name, StringComparer.Ordinal).ToArray();
         }, cachedMinutes: _ => TimeSpan.FromMinutes(10));
     }
 }

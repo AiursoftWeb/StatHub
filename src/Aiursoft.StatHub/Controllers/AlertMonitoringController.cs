@@ -33,7 +33,7 @@ public sealed class AlertMonitoringController(StatHubDbContext db, MonitoringSer
             return this.StackView(new MonitoringViewModel
             {
                 Policy = policy,
-                Agents = states.OrderBy(item => item.Hostname).ToList()
+                Agents = states.OrderBy(item => item.Hostname, StringComparer.OrdinalIgnoreCase).ToList()
             });
         }
         finally { coordinator.Gate.Release(); }

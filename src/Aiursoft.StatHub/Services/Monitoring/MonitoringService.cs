@@ -1,3 +1,4 @@
+using System.Globalization;
 using Aiursoft.AlertCenter.SDK.Models;
 using Aiursoft.StatHub.Configuration;
 using Aiursoft.StatHub.Data;
@@ -45,7 +46,7 @@ public sealed class MonitoringService(StatHubDbContext db, MonitoringCoordinator
     private static MonitoringRule? MatchingRule(MonitoringPolicy policy, AgentMonitoringState state, DateTime now) =>
         policy.Rules.Where(rule => rule.IsEnabled && Since(state, rule.State) is { } since &&
                 now - since >= TimeSpan.FromMinutes(rule.DurationMinutes))
-            .OrderBy(rule => rule.Severity).ThenBy(rule => rule.DurationMinutes).ThenBy(rule => rule.Id).FirstOrDefault();
+            .OrderBy(rule => rule.Severity, StringComparer.Ordinal).ThenBy(rule => rule.DurationMinutes).ThenBy(rule => rule.Id).FirstOrDefault();
 
     public static string? Severity(MonitoringPolicy policy, AgentMonitoringState state, DateTime now) =>
         MatchingRule(policy, state, now)?.Severity;

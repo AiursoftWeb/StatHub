@@ -107,7 +107,7 @@ public sealed class AgentChannelConnection(IOptions<ServerConfig> options, ILogg
         }
         finally
         {
-            Interlocked.CompareExchange(ref session.Pending, null, pending);
+            Interlocked.CompareExchange<PendingReport?>(ref session.Pending, null, pending);
             session.ReportGate.Release();
         }
     }

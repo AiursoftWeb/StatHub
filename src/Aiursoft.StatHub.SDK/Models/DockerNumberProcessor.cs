@@ -17,7 +17,7 @@ public static class DockerNumberProcessor
             {
                 size = size.Split('/')[0];
             }
-            size = size.Trim().ToUpper();
+            size = size.Trim().ToUpperInvariant();
             if (size.EndsWith("KIB")) return TryParseDataSize(size[..^3], 1024);
             if (size.EndsWith("MIB")) return TryParseDataSize(size[..^3], 1024 * 1024);
             if (size.EndsWith("GIB")) return TryParseDataSize(size[..^3], 1024 * 1024 * 1024);

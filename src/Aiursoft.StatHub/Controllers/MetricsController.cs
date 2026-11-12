@@ -1,3 +1,4 @@
+using System.Globalization;
 using Aiursoft.AiurObserver;
 using Aiursoft.AiurObserver.WebSocket.Server;
 using Aiursoft.StatHub.Authorization;
@@ -79,7 +80,7 @@ public class MetricsController(
         var client = database.GetOrAddClient(id);
         await StreamMetricAsync(
             client.Load1M,
-            t => t.ToString("F2"));
+            t => t.ToString("F2", CultureInfo.InvariantCulture));
     }
 
     [Route("{id}/load5m.ws")]
@@ -89,7 +90,7 @@ public class MetricsController(
         var client = database.GetOrAddClient(id);
         await StreamMetricAsync(
             client.Load5M,
-            t => t.ToString("F2"));
+            t => t.ToString("F2", CultureInfo.InvariantCulture));
     }
 
     [Route("{id}/load15m.ws")]
@@ -99,7 +100,7 @@ public class MetricsController(
         var client = database.GetOrAddClient(id);
         await StreamMetricAsync(
             client.Load15M,
-            t => t.ToString("F2"));
+            t => t.ToString("F2", CultureInfo.InvariantCulture));
     }
 
 
