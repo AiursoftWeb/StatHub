@@ -55,7 +55,7 @@
 <div class="card">
     <div class="card-header"><h5 class="card-title">@Localizer["Sustained state rules"]</h5><p class="card-subtitle">@Localizer["Zero minutes means immediately. The most severe matching rule wins. See the guide for how severity thresholds accumulate."]</p></div>
     <div class="card-body">
-    @foreach (var rule in Model.Policy.Rules.OrderBy(item => item.State).ThenBy(item => item.DurationMinutes).Append(new MonitoringRule { Id = Guid.Empty }))
+    @foreach (var rule in Model.Policy.Rules.OrderBy(item => item.State, StringComparer.Ordinal).ThenBy(item => item.DurationMinutes).Append(new MonitoringRule { Id = Guid.Empty }))
     {
         var isNew = rule.Id == Guid.Empty;
         <div class="border rounded p-3 mb-3">

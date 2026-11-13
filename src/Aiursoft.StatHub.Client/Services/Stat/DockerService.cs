@@ -75,10 +75,10 @@ public class DockerService(
 
                 var createdTimeStr = parts[7];
                 // Example: 2024-05-22 14:12:57 +0800 CST
-                if (!DateTime.TryParse(createdTimeStr, out var createdTime))
+                if (!DateTime.TryParse(createdTimeStr, CultureInfo.InvariantCulture, DateTimeStyles.None, out var createdTime))
                 {
                     // Fallback: try to parse the first 19 characters (yyyy-MM-dd HH:mm:ss)
-                    if (createdTimeStr.Length >= 19 && DateTime.TryParse(createdTimeStr[..19], out var fallbackTime))
+                    if (createdTimeStr.Length >= 19 && DateTime.TryParseExact(createdTimeStr[..19], "yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture, DateTimeStyles.None, out var fallbackTime))
                     {
                         createdTime = fallbackTime;
                     }

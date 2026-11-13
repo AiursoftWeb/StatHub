@@ -49,7 +49,7 @@ public sealed class MetricsExportController(StatHubDbContext db, MetricsExportPo
             new AgentMonitoringState { ClientId = agent.ClientId, Hostname = agent.Hostname, LastReportedAtUtc = agent.LastUpdate }));
         states.AddRange(policy.Targets.Where(target => known.Add(target.ClientId)).Select(target =>
             new AgentMonitoringState { ClientId = target.ClientId, Hostname = target.ClientId }));
-        return states.OrderBy(state => state.Hostname).ToList();
+        return states.OrderBy(state => state.Hostname, StringComparer.OrdinalIgnoreCase).ToList();
     }
 
     [HttpPost, ValidateAntiForgeryToken]

@@ -107,7 +107,7 @@ public sealed class AgentChannelConnection(IOptions<ServerConfig> options, ILogg
         }
         finally
         {
-            Interlocked.CompareExchange(ref session.Pending, null, pending);
+            session.ClearPendingReport(pending);
             session.ReportGate.Release();
         }
     }
@@ -155,6 +155,9 @@ public sealed class AgentChannelConnection(IOptions<ServerConfig> options, ILogg
         public SemaphoreSlim ReportGate { get; } = new(1, 1);
         public SemaphoreSlim SendGate { get; } = new(1, 1);
         public PendingReport? Pending;
+
+        public void ClearPendingReport(PendingReport? expected) =>
+            Interlocked.CompareExchange(ref Pending, null, expected);
 
         public void Stop()
         {

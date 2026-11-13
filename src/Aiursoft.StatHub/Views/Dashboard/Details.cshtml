@@ -1,3 +1,4 @@
+@using System.Globalization
 @model Aiursoft.StatHub.Models.DashboardViewModels.AgentDetailsViewModel
 @using Aiursoft.CSTools.Tools
 @using Aiursoft.WebTools
@@ -33,7 +34,7 @@
                 }
                 else if (!string.IsNullOrWhiteSpace(agent.CountryCode))
                 {
-                    <img src="~/UIStack/dist/img/flags/@(agent.CountryCode.ToLower()).png" alt="@agent.CountryName" height="15" class="me-1" />
+                    <img src="~/UIStack/dist/img/flags/@(agent.CountryCode.ToLowerInvariant()).png" alt="@agent.CountryName" height="15" class="me-1" />
                 }
                 @agent.Ip
                 <span class="ms-2" data-bs-toggle="tooltip" title="@Localizer["Last Update"]" data-utc-time="@agent.LastUpdate.ToHtmlDateTime()"></span>
@@ -65,7 +66,7 @@
                 </div>
                 <div class="col-12 col-sm-4 d-flex d-sm-block justify-content-between gap-2">
                     <span class="text-muted d-block">@Localizer["Last Boot Time"]</span>
-                    <span>@agent.BootTime.ToString("g")</span>
+                    <span>@agent.BootTime.ToString("g", CultureInfo.CurrentCulture)</span>
                 </div>
             </div>
         </div>
@@ -80,11 +81,11 @@
                     @if (health.Pressure is { } pressure)
                     {
                         <dl class="row mb-0">
-                            <dt class="col-7">@Localizer["Smoothed CPU idle"]</dt><dd class="col-5 text-end">@health.SmoothedIdle?.ToString("F1")%</dd>
-                            <dt class="col-7">@Localizer["CPU PSI (avg60)"]</dt><dd class="col-5 text-end">@pressure.Cpu.ToString("F1")%</dd>
-                            <dt class="col-7">@Localizer["Memory PSI (avg60)"]</dt><dd class="col-5 text-end">@pressure.Memory.ToString("F1")%</dd>
-                            <dt class="col-7">@Localizer["I/O PSI (avg60)"]</dt><dd class="col-5 text-end">@pressure.Io.ToString("F1")%</dd>
-                            <dt class="col-7">@Localizer["Pressure index (15-minute load / logical CPUs)"]</dt><dd class="col-5 text-end">@((health.LoadRate / 100).ToString("F2"))</dd>
+                            <dt class="col-7">@Localizer["Smoothed CPU idle"]</dt><dd class="col-5 text-end">@health.SmoothedIdle?.ToString("F1", CultureInfo.CurrentCulture)%</dd>
+                            <dt class="col-7">@Localizer["CPU PSI (avg60)"]</dt><dd class="col-5 text-end">@pressure.Cpu.ToString("F1", CultureInfo.CurrentCulture)%</dd>
+                            <dt class="col-7">@Localizer["Memory PSI (avg60)"]</dt><dd class="col-5 text-end">@pressure.Memory.ToString("F1", CultureInfo.CurrentCulture)%</dd>
+                            <dt class="col-7">@Localizer["I/O PSI (avg60)"]</dt><dd class="col-5 text-end">@pressure.Io.ToString("F1", CultureInfo.CurrentCulture)%</dd>
+                            <dt class="col-7">@Localizer["Pressure index (15-minute load / logical CPUs)"]</dt><dd class="col-5 text-end">@((health.LoadRate / 100).ToString("F2", CultureInfo.CurrentCulture))</dd>
                         </dl>
                     }
                     else
@@ -128,7 +129,7 @@
                     {
                         @foreach (var disk in agent.Disks)
                         {
-                            <p class="mb-1 small text-muted">@disk.Name (@disk.Used.ToString("0.##") GB / @disk.Total.ToString("0.##") GB)</p>
+                            <p class="mb-1 small text-muted">@disk.Name (@disk.Used.ToString("0.##", CultureInfo.CurrentCulture) GB / @disk.Total.ToString("0.##", CultureInfo.CurrentCulture) GB)</p>
                             <div class="progress progress-sm w-100 mb-3">
                                 <div class="progress-bar @(disk.Total > 0 && disk.Used / disk.Total > 0.92 ? "bg-danger" : disk.Total > 0 && disk.Used / disk.Total > 0.8 ? "bg-warning" : "bg-success")"
                                      role="progressbar"
@@ -138,14 +139,14 @@
                                      aria-valuemax="100"
                                      data-bs-toggle="tooltip"
                                      data-placement="bottom"
-                                     title="@disk.Name: @disk.Used.ToString("0.##") GB / @disk.Total.ToString("0.##") GB">
+                                     title="@disk.Name: @disk.Used.ToString("0.##", CultureInfo.CurrentCulture) GB / @disk.Total.ToString("0.##", CultureInfo.CurrentCulture) GB">
                                 </div>
                             </div>
                         }
                     }
                     else
                     {
-                        <p class="mb-1 small text-muted">/ (@agent.UsedRoot.ToString("0.##") GB / @agent.TotalRoot.ToString("0.##") GB)</p>
+                        <p class="mb-1 small text-muted">/ (@agent.UsedRoot.ToString("0.##", CultureInfo.CurrentCulture) GB / @agent.TotalRoot.ToString("0.##", CultureInfo.CurrentCulture) GB)</p>
                         <div class="progress progress-sm w-100">
                             <div class="progress-bar @health.DiskColorClass" role="progressbar"
                                  style="width: @(health.DiskUseRatio * 100)%"
@@ -273,7 +274,7 @@
                         <div class="card-header">
                             <h5 class="card-title mb-0">@Localizer["CPU Usage"]</h5>
                             <div class="small text-muted mt-1" tabindex="0" data-bs-toggle="tooltip" title="@Localizer["PSI avg60 at page load: time spent waiting for this resource over the last minute. Refresh to update."]">
-                                @Localizer["Pressure snapshot"]: @(health.Pressure?.Cpu.ToString("F1") ?? "—")@(health.Pressure is null ? "" : "%")
+                                @Localizer["Pressure snapshot"]: @(health.Pressure?.Cpu.ToString("F1", CultureInfo.CurrentCulture) ?? "—")@(health.Pressure is null ? "" : "%")
                             </div>
                         </div>
                         <div class="card-body">
@@ -286,7 +287,7 @@
                         <div class="card-header">
                             <h5 class="card-title mb-0">@Localizer["RAM Usage"]</h5>
                             <div class="small text-muted mt-1" tabindex="0" data-bs-toggle="tooltip" title="@Localizer["PSI avg60 at page load: time spent waiting for this resource over the last minute. Refresh to update."]">
-                                @Localizer["Pressure snapshot"]: @(health.Pressure?.Memory.ToString("F1") ?? "—")@(health.Pressure is null ? "" : "%")
+                                @Localizer["Pressure snapshot"]: @(health.Pressure?.Memory.ToString("F1", CultureInfo.CurrentCulture) ?? "—")@(health.Pressure is null ? "" : "%")
                             </div>
                         </div>
                         <div class="card-body">
@@ -321,7 +322,7 @@
                         <div class="card-header">
                             <h5 class="card-title mb-0">@Localizer["Disk I/O"]</h5>
                             <div class="small text-muted mt-1" tabindex="0" data-bs-toggle="tooltip" title="@Localizer["PSI avg60 at page load: time spent waiting for this resource over the last minute. Refresh to update."]">
-                                @Localizer["Pressure snapshot"]: @(health.Pressure?.Io.ToString("F1") ?? "—")@(health.Pressure is null ? "" : "%")
+                                @Localizer["Pressure snapshot"]: @(health.Pressure?.Io.ToString("F1", CultureInfo.CurrentCulture) ?? "—")@(health.Pressure is null ? "" : "%")
                             </div>
                         </div>
                         <div class="card-body">
@@ -381,7 +382,7 @@
                                                         }
                                                     </td>
                                                     <td>@(exec.ExitCode?.ToString() ?? "-")</td>
-                                                    <td>@exec.StartedAt.ToString("HH:mm:ss")</td>
+                                                    <td>@exec.StartedAt.ToString("HH:mm:ss", CultureInfo.CurrentCulture)</td>
                                                     <td>
                                                         <button class="btn btn-sm btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#output-@exec.CommandId">
                                                             @Localizer["View"]
@@ -497,7 +498,7 @@
                                         </td>
                                         <td><strong>@container.Name.Split('.')[0]</strong><br /><small class="text-muted">@container.Id.SafeSubstring(12)</small></td>
                                         <td style="max-width: 150px;" class="text-truncate" title="@container.Image">@container.Image</td>
-                                        <td data-sort="@container.CpuPercentage">@container.CpuPercentage.ToString("F2")%</td>
+                                        <td data-sort="@container.CpuPercentage">@container.CpuPercentage.ToString("F2", CultureInfo.CurrentCulture)%</td>
                                         <td data-sort="@container.MemoryUsage">
                                             <div class="d-flex flex-column" style="min-width: 100px;">
                                                 <span>@container.MemoryUsage.HumanReadableSize()</span>

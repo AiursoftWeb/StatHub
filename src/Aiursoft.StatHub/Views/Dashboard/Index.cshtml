@@ -1,3 +1,4 @@
+@using System.Globalization
 @using Aiursoft.WebTools
 @using Aiursoft.CSTools.Tools
 @using Aiursoft.StatHub.SDK.Models
@@ -117,7 +118,7 @@
                 <div class="card-body py-4">
                     <div class="d-flex align-items-start">
                         <div class="flex-grow-1">
-                            <h3 class="mb-2">@((averageLoad / 100).ToString("F2"))</h3>
+                            <h3 class="mb-2">@((averageLoad / 100).ToString("F2", CultureInfo.CurrentCulture))</h3>
                             <p class="mb-2">@Localizer["Average pressure index"]</p>
                             <div class="mb-0">
                                 <span class="text-muted">@Localizer["(15m, Online Agents)"]</span>
@@ -198,7 +199,7 @@
                                         }
                                         else if (!string.IsNullOrWhiteSpace(agent.CountryCode))
                                         {
-                                                    <img src="~/UIStack/dist/img/flags/@(agent.CountryCode.ToLower()).png" alt="@agent.CountryName" style="height: 15px; margin-right: 5px;" />
+                                                    <img src="~/UIStack/dist/img/flags/@(agent.CountryCode.ToLowerInvariant()).png" alt="@agent.CountryName" style="height: 15px; margin-right: 5px;" />
                                         }
                                         @agent.Ip
 
@@ -260,7 +261,7 @@
 
                                         <td data-sort="@health.LoadRate">
                                             <div class="d-flex flex-column w-100">
-                                                <span class="me-2 mb-1 text-muted">@((health.LoadRate / 100).ToString("F2"))</span>
+                                                <span class="me-2 mb-1 text-muted">@((health.LoadRate / 100).ToString("F2", CultureInfo.CurrentCulture))</span>
                                                 <div class="progress progress-sm w-100">
                                                     <div class="progress-bar @health.LoadColorClass"
                                                          role="progressbar" style="width: @(Math.Clamp(health.LoadRate, 0, 100))%" aria-valuenow="@health.LoadRate" aria-valuemin="0" aria-valuemax="100" data-bs-toggle="tooltip" data-placement="bottom"
