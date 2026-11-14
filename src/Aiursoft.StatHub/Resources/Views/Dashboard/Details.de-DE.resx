@@ -36,6 +36,15 @@
   <data name="Back to Dashboard" xml:space="preserve">
     <value>Zurück zum Dashboard</value>
   </data>
+  <data name="CPU %" xml:space="preserve">
+    <value>CPU %</value>
+  </data>
+  <data name="CPU PSI (avg60)" xml:space="preserve">
+    <value>CPU-PSI (avg60)</value>
+  </data>
+  <data name="CPU Usage" xml:space="preserve">
+    <value>CPU-Auslastung</value>
+  </data>
   <data name="Client Details" xml:space="preserve">
     <value>Client-Details</value>
   </data>
@@ -56,15 +65,6 @@
   </data>
   <data name="Cores-RAM-Disk" xml:space="preserve">
     <value>Kerne-RAM-Festplatte</value>
-  </data>
-  <data name="CPU %" xml:space="preserve">
-    <value>CPU %</value>
-  </data>
-  <data name="CPU PSI (avg60)" xml:space="preserve">
-    <value>CPU-PSI (avg60)</value>
-  </data>
-  <data name="CPU Usage" xml:space="preserve">
-    <value>CPU-Auslastung</value>
   </data>
   <data name="Created" xml:space="preserve">
     <value>Erstellt</value>
@@ -150,6 +150,9 @@
   <data name="Last Update" xml:space="preserve">
     <value>Letzte Aktualisierung</value>
   </data>
+  <data name="MOTD" xml:space="preserve">
+    <value>MOTD</value>
+  </data>
   <data name="Mainly used by process" xml:space="preserve">
     <value>Hauptsächlich vom Prozess genutzt</value>
   </data>
@@ -164,9 +167,6 @@
   </data>
   <data name="More times" xml:space="preserve">
     <value>Weitere Zeitangaben</value>
-  </data>
-  <data name="MOTD" xml:space="preserve">
-    <value>MOTD</value>
   </data>
   <data name="Name" xml:space="preserve">
     <value>Name</value>
@@ -195,6 +195,9 @@
   <data name="Owner" xml:space="preserve">
     <value>Eigentümer</value>
   </data>
+  <data name="PSI avg60 at page load: time spent waiting for this resource over the last minute. Refresh to update." xml:space="preserve">
+    <value>PSI avg60 beim Laden der Seite: Zeit, die in der letzten Minute mit dem Warten auf diese Ressource verbracht wurde. Zum Aktualisieren neu laden.</value>
+  </data>
   <data name="Ports" xml:space="preserve">
     <value>Ports</value>
   </data>
@@ -206,9 +209,6 @@
   </data>
   <data name="Preview" xml:space="preserve">
     <value>Vorschau</value>
-  </data>
-  <data name="PSI avg60 at page load: time spent waiting for this resource over the last minute. Refresh to update." xml:space="preserve">
-    <value>PSI avg60 beim Laden der Seite: Zeit, die in der letzten Minute mit dem Warten auf diese Ressource verbracht wurde. Zum Aktualisieren neu laden.</value>
   </data>
   <data name="RAM" xml:space="preserve">
     <value>RAM</value>
@@ -225,11 +225,11 @@
   <data name="Runtime Info" xml:space="preserve">
     <value>Laufzeitinformationen</value>
   </data>
-  <data name="Smoothed CPU idle" xml:space="preserve">
-    <value>Geglättete CPU-Leerlaufzeit</value>
-  </data>
   <data name="SSH Keys" xml:space="preserve">
     <value>SSH-Schlüssel</value>
+  </data>
+  <data name="Smoothed CPU idle" xml:space="preserve">
+    <value>Geglättete CPU-Leerlaufzeit</value>
   </data>
   <data name="Started" xml:space="preserve">
     <value>Startzeit</value>

@@ -60,14 +60,17 @@
   <data name="Synchronize server health incidents with AlertCenter." xml:space="preserve">
     <value>Συγχρονίστε τα περιστατικά υγείας του διακομιστή με το AlertCenter.</value>
   </data>
-  <data name="The brand name of the company or project. E.g. Aiursoft." xml:space="preserve">
-    <value>Το όνομα της εταιρείας ή του έργου. Π.χ. Aiursoft.</value>
-  </data>
   <data name="The HTTP(S) base URL of AlertCenter." xml:space="preserve">
     <value>Η βασική διεύθυνση URL HTTP(S) του AlertCenter.</value>
   </data>
   <data name="The ICP license number for China mainland users. Leave empty to hide." xml:space="preserve">
     <value>Ο αριθμός άδειας ICP για χρήστες της κυρίως Κίνας. Αφήστε κενό για να κρυφτεί.</value>
+  </data>
+  <data name="The URL of the company or project. E.g. https://www.aiursoft.com" xml:space="preserve">
+    <value>Η διεύθυνση URL της εταιρείας ή του έργου. Π.χ. https://www.aiursoft.com</value>
+  </data>
+  <data name="The brand name of the company or project. E.g. Aiursoft." xml:space="preserve">
+    <value>Το όνομα της εταιρείας ή του έργου. Π.χ. Aiursoft.</value>
   </data>
   <data name="The logo of the project displayed in the navbar and footer. Support jpg, png, svg." xml:space="preserve">
     <value>Το λογότυπο του έργου που εμφανίζεται στην ναβιγατόρια και στον πόδα της σελίδας. Υποστήριξη jpg, png, svg.</value>
@@ -77,9 +80,6 @@
   </data>
   <data name="The public base URL of this StatHub instance, used in incident links." xml:space="preserve">
     <value>Η δημόσια βασική διεύθυνση URL αυτής της εγκατάστασης του StatHub, που χρησιμοποιείται στους συνδέσμους συμβάντων.</value>
-  </data>
-  <data name="The URL of the company or project. E.g. https://www.aiursoft.com" xml:space="preserve">
-    <value>Η διεύθυνση URL της εταιρείας ή του έργου. Π.χ. https://www.aiursoft.com</value>
   </data>
 
 </root>

@@ -108,11 +108,11 @@
   <data name="View Background Jobs" xml:space="preserve">
     <value>عرض المهام الخلفية</value>
   </data>
-  <data name="View server dashboard to see server metrics." xml:space="preserve">
-    <value>عرض لوحة تحكم الخادم لرؤية مقاييس الخادم.</value>
-  </data>
   <data name="View System Context" xml:space="preserve">
     <value>عرض سياق النظام</value>
+  </data>
+  <data name="View server dashboard to see server metrics." xml:space="preserve">
+    <value>عرض لوحة تحكم الخادم لرؤية مقاييس الخادم.</value>
   </data>
 
 </root>

@@ -108,11 +108,11 @@
   <data name="View Background Jobs" xml:space="preserve">
     <value>Afficher les travaux en arrière-plan</value>
   </data>
-  <data name="View server dashboard to see server metrics." xml:space="preserve">
-    <value>Afficher le tableau de bord du serveur pour voir les métriques du serveur.</value>
-  </data>
   <data name="View System Context" xml:space="preserve">
     <value>Afficher le contexte système</value>
+  </data>
+  <data name="View server dashboard to see server metrics." xml:space="preserve">
+    <value>Afficher le tableau de bord du serveur pour voir les métriques du serveur.</value>
   </data>
 
 </root>

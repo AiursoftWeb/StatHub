@@ -63,11 +63,11 @@
   <data name="Disk I/O" xml:space="preserve">
     <value>การรับส่งข้อมูลของดิสก์</value>
   </data>
-  <data name="For an overview table, group by ClientId and show recent averages, peaks, and max(ReceivedTime). Avoid treating a metric chosen from tied receipt timestamps as the exact last sample." xml:space="preserve">
-    <value>สำหรับตารางภาพรวม ให้จัดกลุ่มตาม ClientId และแสดงค่าเฉลี่ยล่าสุด จุดสูงสุด และ max(ReceivedTime) หลีกเลี่ยงการนำค่าเมตริกที่เลือกจากเวลาที่รับข้อมูลซ้ำกันมาถือเป็นตัวอย่างสุดท้ายที่แม่นยำ</value>
-  </data>
   <data name="For Docker, configure the same settings with environment variables such as MetricsExport__Enabled=true and MetricsExport__ConnectionString. Use your deployment&apos;s secret configuration for the real password. Inside a container, localhost refers to that container; use a reachable ClickHouse hostname." xml:space="preserve">
     <value>สำหรับ Docker ให้กำหนดค่าเดียวกันโดยใช้ตัวแปรสภาพแวดล้อม เช่น MetricsExport__Enabled=true และ MetricsExport__ConnectionString โดยใช้การกำหนดค่าลับของการดีพลอยของคุณสำหรับรหัสผ่านจริง ภายในคอนเทนเนอร์ localhost หมายถึงคอนเทนเนอร์นั้นเอง; ใช้ชื่อโฮสต์ ClickHouse ที่สามารถเข้าถึงได้</value>
+  </data>
+  <data name="For an overview table, group by ClientId and show recent averages, peaks, and max(ReceivedTime). Avoid treating a metric chosen from tied receipt timestamps as the exact last sample." xml:space="preserve">
+    <value>สำหรับตารางภาพรวม ให้จัดกลุ่มตาม ClientId และแสดงค่าเฉลี่ยล่าสุด จุดสูงสุด และ max(ReceivedTime) หลีกเลี่ยงการนำค่าเมตริกที่เลือกจากเวลาที่รับข้อมูลซ้ำกันมาถือเป็นตัวอย่างสุดท้ายที่แม่นยำ</value>
   </data>
   <data name="Grafana dashboard comparing CPU, memory, network, disk I/O, load, and archived samples across selected StatHub servers." xml:space="preserve">
     <value>แดชบอร์ด Grafana ที่เปรียบเทียบ CPU หน่วยความจำ เครือข่าย การรับส่งข้อมูลเข้า/ออกดิสก์ โหลด และข้อมูลตัวอย่างที่จัดเก็บไว้ของเซิร์ฟเวอร์ StatHub ที่เลือก</value>
@@ -141,11 +141,11 @@
   <data name="The exporter needs permission to create its database, table, and view, and to insert and select metrics. On the first non-empty batch it creates StatHubMetrics.ServerMetrics and the deduplicated ServerMetricsLatest view automatically." xml:space="preserve">
     <value>ผู้ส่งออกจำเป็นต้องได้รับสิทธิ์ในการสร้างฐานข้อมูล ตาราง และวิว รวมถึงสิทธิ์ในการเพิ่มและอ่านเมตริก เมื่อมีชุดข้อมูลที่ไม่ว่างชุดแรก ระบบจะสร้าง StatHubMetrics.ServerMetrics และวิว ServerMetricsLatest ที่ตัดข้อมูลซ้ำให้โดยอัตโนมัติ</value>
   </data>
-  <data name="Use a separate read-only Grafana account with SELECT permission on both ServerMetricsLatest and its underlying ServerMetrics table. Keep the exporter credentials in StatHub." xml:space="preserve">
-    <value>ใช้บัญชี Grafana แยกต่างหากแบบอ่านอย่างเดียว โดยมีสิทธิ์ SELECT สำหรับทั้ง ServerMetricsLatest และตาราง ServerMetrics ที่อยู่เบื้องหลัง เก็บข้อมูลประจำตัวของตัวส่งออกไว้ใน StatHub</value>
-  </data>
   <data name="Use ClickHouse export under Monitoring to choose which servers to export. Its independent policy supports all servers, explicit inclusions, and exclusions; exclusions always win." xml:space="preserve">
     <value>ใช้การส่งออก ClickHouse ภายใต้ Monitoring เพื่อเลือกเซิร์ฟเวอร์ที่ต้องการส่งออก นโยบายอิสระรองรับเซิร์ฟเวอร์ทั้งหมด การรวมแบบระบุชัดเจน และการยกเว้น โดยลำดับความสำคัญของการยกเว้นจะเหนือกว่าเสมอ</value>
+  </data>
+  <data name="Use a separate read-only Grafana account with SELECT permission on both ServerMetricsLatest and its underlying ServerMetrics table. Keep the exporter credentials in StatHub." xml:space="preserve">
+    <value>ใช้บัญชี Grafana แยกต่างหากแบบอ่านอย่างเดียว โดยมีสิทธิ์ SELECT สำหรับทั้ง ServerMetricsLatest และตาราง ServerMetrics ที่อยู่เบื้องหลัง เก็บข้อมูลประจำตัวของตัวส่งออกไว้ใน StatHub</value>
   </data>
   <data name="Used percent: MemUsed divided by MemUsed + MemFree + MemBuf + MemCach, times 100. Return null when the total is zero. Plot the four fields separately for memory composition." xml:space="preserve">
     <value>ร้อยละที่ใช้: MemUsed หารด้วย MemUsed + MemFree + MemBuf + MemCach คูณด้วย 100 คืนค่า null เมื่อรวมเป็นศูนย์ กราฟฟิลด์ทั้งสี่แยกกันเพื่อแสดงองค์ประกอบหน่วยความจำ</value>

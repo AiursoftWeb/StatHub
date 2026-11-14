@@ -108,11 +108,11 @@
   <data name="View Background Jobs" xml:space="preserve">
     <value>Переглянути фонові завдання</value>
   </data>
-  <data name="View server dashboard to see server metrics." xml:space="preserve">
-    <value>Переглянути панель керування сервера для перегляду метрик сервера.</value>
-  </data>
   <data name="View System Context" xml:space="preserve">
     <value>Перегляд системного контексту</value>
+  </data>
+  <data name="View server dashboard to see server metrics." xml:space="preserve">
+    <value>Переглянути панель керування сервера для перегляду метрик сервера.</value>
   </data>
 
 </root>

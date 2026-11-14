@@ -63,11 +63,11 @@
   <data name="Disk I/O" xml:space="preserve">
     <value>Εισόδος/Έξοδος δίσκου</value>
   </data>
-  <data name="For an overview table, group by ClientId and show recent averages, peaks, and max(ReceivedTime). Avoid treating a metric chosen from tied receipt timestamps as the exact last sample." xml:space="preserve">
-    <value>Για έναν συνοπτικό πίνακα, ομαδοποιήστε κατά ClientId και εμφανίστε πρόσφατους μέσους όρους, μέγιστες τιμές και το max(ReceivedTime). Μην θεωρείτε ότι μια μετρική που επιλέχθηκε από εγγραφές με ίδιες χρονικές σημάνσεις παραλαβής αντιστοιχεί ακριβώς στο τελευταίο δείγμα.</value>
-  </data>
   <data name="For Docker, configure the same settings with environment variables such as MetricsExport__Enabled=true and MetricsExport__ConnectionString. Use your deployment&apos;s secret configuration for the real password. Inside a container, localhost refers to that container; use a reachable ClickHouse hostname." xml:space="preserve">
     <value>Για Docker, ρυθμίστε τα ίδια ρυθμίσεις με μεταβλητές περιβάλλοντος όπως MetricsExport__Enabled=true και MetricsExport__ConnectionString. Χρησιμοποιήστε τη μυστική ρύθμιση της εγκατάστασής σας για τον πραγματικό κωδικό πρόσβασης. Εσωτερικά ενός容εϋτήρα, το localhost αναφέρεται σε αυτόν τον контейνέϋρα· χρησιμοποιήστε ένα προσβάσιμο όνομα υπολογιστή ClickHouse.</value>
+  </data>
+  <data name="For an overview table, group by ClientId and show recent averages, peaks, and max(ReceivedTime). Avoid treating a metric chosen from tied receipt timestamps as the exact last sample." xml:space="preserve">
+    <value>Για έναν συνοπτικό πίνακα, ομαδοποιήστε κατά ClientId και εμφανίστε πρόσφατους μέσους όρους, μέγιστες τιμές και το max(ReceivedTime). Μην θεωρείτε ότι μια μετρική που επιλέχθηκε από εγγραφές με ίδιες χρονικές σημάνσεις παραλαβής αντιστοιχεί ακριβώς στο τελευταίο δείγμα.</value>
   </data>
   <data name="Grafana dashboard comparing CPU, memory, network, disk I/O, load, and archived samples across selected StatHub servers." xml:space="preserve">
     <value>Πίνακας Grafana που συγκρίνει CPU, μνήμη, δίκτυο, I/O δίσκου, φόρτο και αρχικοποιημένα δείγματα σε επιλεγμένους διακομιστές StatHub.</value>
@@ -141,11 +141,11 @@
   <data name="The exporter needs permission to create its database, table, and view, and to insert and select metrics. On the first non-empty batch it creates StatHubMetrics.ServerMetrics and the deduplicated ServerMetricsLatest view automatically." xml:space="preserve">
     <value>Ο εξάγωγος χρειάζεται άδεια για τη δημιουργία της βάσης δεδομένων, του πίνακα και της προβολής του, καθώς και για την εισαγωγή και την ανάκτηση μετρικών. Στο πρώτο μη κενό παρτί, δημιουργεί αυτόματα τον StatHubMetrics.ServerMetrics και την αποδιαπληθυσμένη προβολή ServerMetricsLatest.</value>
   </data>
-  <data name="Use a separate read-only Grafana account with SELECT permission on both ServerMetricsLatest and its underlying ServerMetrics table. Keep the exporter credentials in StatHub." xml:space="preserve">
-    <value>Χρησιμοποιήστε ένα ξεχωριστό μη επεξεργάσιμο λογαριασμό Grafana με άδεια SELECT τόσο στον πίνακα ServerMetricsLatest όσο και στον υποκείμενο πίνακα ServerMetrics. Κρατήστε τα διαπιστευτήρια του εξαγωγέα στο StatHub.</value>
-  </data>
   <data name="Use ClickHouse export under Monitoring to choose which servers to export. Its independent policy supports all servers, explicit inclusions, and exclusions; exclusions always win." xml:space="preserve">
     <value>Χρησιμοποιήστε την εξαγωγή ClickHouse στην ενότητα «Παρακολούθηση» για να επιλέξετε ποιους διακομιστές θα εξάγετε. Η ανεξάρτητη πολιτική της υποστηρίζει όλους τους διακομιστές, ρητές συμπεριλήψεις και εξαιρέσεις· οι εξαιρέσεις υπερισχύουν πάντα.</value>
+  </data>
+  <data name="Use a separate read-only Grafana account with SELECT permission on both ServerMetricsLatest and its underlying ServerMetrics table. Keep the exporter credentials in StatHub." xml:space="preserve">
+    <value>Χρησιμοποιήστε ένα ξεχωριστό μη επεξεργάσιμο λογαριασμό Grafana με άδεια SELECT τόσο στον πίνακα ServerMetricsLatest όσο και στον υποκείμενο πίνακα ServerMetrics. Κρατήστε τα διαπιστευτήρια του εξαγωγέα στο StatHub.</value>
   </data>
   <data name="Used percent: MemUsed divided by MemUsed + MemFree + MemBuf + MemCach, times 100. Return null when the total is zero. Plot the four fields separately for memory composition." xml:space="preserve">
     <value>Ποσοστό χρήσης: MemUsed διαιρεμένο με MemUsed + MemFree + MemBuf + MemCach, επί 100. Επιστρέφει null όταν το σύνολο είναι μηδέν. Γράφει τα τέσσερα πεδία ξεχωριστά για τη σύσταση της μνήμης.</value>

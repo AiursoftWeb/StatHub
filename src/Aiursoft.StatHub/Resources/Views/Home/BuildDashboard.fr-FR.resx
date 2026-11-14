@@ -63,11 +63,11 @@
   <data name="Disk I/O" xml:space="preserve">
     <value>E/S disque</value>
   </data>
-  <data name="For an overview table, group by ClientId and show recent averages, peaks, and max(ReceivedTime). Avoid treating a metric chosen from tied receipt timestamps as the exact last sample." xml:space="preserve">
-    <value>Pour un tableau récapitulatif, regroupez les données par ClientId et affichez les moyennes récentes, les pics et max(ReceivedTime). Ne considérez pas une métrique sélectionnée parmi plusieurs horodatages de réception identiques comme étant celle du dernier échantillon exact.</value>
-  </data>
   <data name="For Docker, configure the same settings with environment variables such as MetricsExport__Enabled=true and MetricsExport__ConnectionString. Use your deployment&apos;s secret configuration for the real password. Inside a container, localhost refers to that container; use a reachable ClickHouse hostname." xml:space="preserve">
     <value>Pour Docker, configurez les mêmes paramètres à l’aide de variables d’environnement, telles que MetricsExport__Enabled=true et MetricsExport__ConnectionString. Utilisez le mécanisme de gestion des secrets de votre déploiement pour le mot de passe réel. Dans un conteneur, localhost désigne ce conteneur ; utilisez un nom d’hôte ClickHouse accessible.</value>
+  </data>
+  <data name="For an overview table, group by ClientId and show recent averages, peaks, and max(ReceivedTime). Avoid treating a metric chosen from tied receipt timestamps as the exact last sample." xml:space="preserve">
+    <value>Pour un tableau récapitulatif, regroupez les données par ClientId et affichez les moyennes récentes, les pics et max(ReceivedTime). Ne considérez pas une métrique sélectionnée parmi plusieurs horodatages de réception identiques comme étant celle du dernier échantillon exact.</value>
   </data>
   <data name="Grafana dashboard comparing CPU, memory, network, disk I/O, load, and archived samples across selected StatHub servers." xml:space="preserve">
     <value>Tableau de bord Grafana comparant le processeur, la mémoire, le réseau, les entrées/sorties disque, la charge et les échantillons archivés des serveurs StatHub sélectionnés.</value>
@@ -141,11 +141,11 @@
   <data name="The exporter needs permission to create its database, table, and view, and to insert and select metrics. On the first non-empty batch it creates StatHubMetrics.ServerMetrics and the deduplicated ServerMetricsLatest view automatically." xml:space="preserve">
     <value>L&apos;exportateur a besoin d&apos;une autorisation pour créer sa base de données, sa table et sa vue, ainsi que pour insérer et sélectionner des métriques. Lors du premier lot non vide, il crée automatiquement StatHubMetrics.ServerMetrics et la vue dédupliquée ServerMetricsLatest.</value>
   </data>
-  <data name="Use a separate read-only Grafana account with SELECT permission on both ServerMetricsLatest and its underlying ServerMetrics table. Keep the exporter credentials in StatHub." xml:space="preserve">
-    <value>Utilisez un compte Grafana en lecture seule distinct avec la permission SELECT sur les tables ServerMetricsLatest et ServerMetrics sous-jacente. Conservez les identifiants de l&apos;exportateur dans StatHub.</value>
-  </data>
   <data name="Use ClickHouse export under Monitoring to choose which servers to export. Its independent policy supports all servers, explicit inclusions, and exclusions; exclusions always win." xml:space="preserve">
     <value>Utilisez l&apos;export ClickHouse sous Surveillance pour choisir les serveurs à exporter. Sa politique indépendante prend en charge tous les serveurs, les inclusions explicites et les exclusions ; les exclusions ont toujours la priorité.</value>
+  </data>
+  <data name="Use a separate read-only Grafana account with SELECT permission on both ServerMetricsLatest and its underlying ServerMetrics table. Keep the exporter credentials in StatHub." xml:space="preserve">
+    <value>Utilisez un compte Grafana en lecture seule distinct avec la permission SELECT sur les tables ServerMetricsLatest et ServerMetrics sous-jacente. Conservez les identifiants de l&apos;exportateur dans StatHub.</value>
   </data>
   <data name="Used percent: MemUsed divided by MemUsed + MemFree + MemBuf + MemCach, times 100. Return null when the total is zero. Plot the four fields separately for memory composition." xml:space="preserve">
     <value>Pourcentage utilisé : MemUsed divisé par MemUsed + MemFree + MemBuf + MemCach, multiplié par 100. Renvoyer null lorsque le total est égal à zéro. Tracer séparément les quatre champs pour représenter la composition de la mémoire.</value>

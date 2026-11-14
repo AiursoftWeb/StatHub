@@ -33,6 +33,9 @@
   <data name="A modern, feature-rich, and highly extensible foundation for your next web application." xml:space="preserve">
     <value>Μια σύγχρονη, πλούσια σε λειτουργίες και εξαιρετικά επεκτάσιμη βάση για την επόμενη εφαρμογή σας στον ιστό.</value>
   </data>
+  <data name="AI-Powered Translations" xml:space="preserve">
+    <value>Μεταφράσεις με Τεχνητή Νοημοσύνη</value>
+  </data>
   <data name="Abandon" xml:space="preserve">
     <value>Απορρίψτε</value>
   </data>
@@ -50,9 +53,6 @@
   </data>
   <data name="Agents with Alerts" xml:space="preserve">
     <value>Πράκτορες με Ειδοποιήσεις</value>
-  </data>
-  <data name="AI-Powered Translations" xml:space="preserve">
-    <value>Μεταφράσεις με Τεχνητή Νοημοσύνη</value>
   </data>
   <data name="All dependencies are automatically registered and always available via constructor injection." xml:space="preserve">
     <value>Όλες οι εξαρτήσεις καταχωρούνται αυτόματα και είναι πάντα διαθέσιμες μέσω της εισαγωγής στον κατασκευαστή.</value>
@@ -81,6 +81,9 @@
   <data name="Built-in User Management" xml:space="preserve">
     <value>Ενσωματωμένη Διαχείριση Χρηστών</value>
   </data>
+  <data name="CPU Usage" xml:space="preserve">
+    <value>Χρήση CPU</value>
+  </data>
   <data name="Collecting data" xml:space="preserve">
     <value>Συλλογή δεδομένων</value>
   </data>
@@ -92,9 +95,6 @@
   </data>
   <data name="Containers" xml:space="preserve">
     <value>Containers</value>
-  </data>
-  <data name="CPU Usage" xml:space="preserve">
-    <value>Χρήση CPU</value>
   </data>
   <data name="Critical or Warning" xml:space="preserve">
     <value>Κρίσιμη ή Προειδοποίηση</value>
@@ -147,14 +147,14 @@
   <data name="Hello World!" xml:space="preserve">
     <value>Γεια σου Κόσμε!</value>
   </data>
+  <data name="IP" xml:space="preserve">
+    <value>Διεύθυνση IP</value>
+  </data>
   <data name="Includes extensive documentation and practical examples to get you started quickly." xml:space="preserve">
     <value>Περιλαμβάνει εκτενή τεκμηρίωση και πρακτικά παραδείγματα για να ξεκινήσετε γρήγορα.</value>
   </data>
   <data name="Integrated File Management" xml:space="preserve">
     <value>Ενσωματωμένη Διαχείριση Αρχείων</value>
-  </data>
-  <data name="IP" xml:space="preserve">
-    <value>Διεύθυνση IP</value>
   </data>
   <data name="Last 30 seconds" xml:space="preserve">
     <value>Τελευταία 30 δευτερόλεπτα</value>
@@ -180,6 +180,9 @@
   <data name="Net Sent" xml:space="preserve">
     <value>Δίκτυο Αποστολής</value>
   </data>
+  <data name="OS" xml:space="preserve">
+    <value>ΛΣ</value>
+  </data>
   <data name="Offline Agents" xml:space="preserve">
     <value>Εκτός σύνδεσης Παράγοντες</value>
   </data>
@@ -188,9 +191,6 @@
   </data>
   <data name="OpenID Connect Integration" xml:space="preserve">
     <value>Ενσωμάτωση OpenID Connect</value>
-  </data>
-  <data name="OS" xml:space="preserve">
-    <value>ΛΣ</value>
   </data>
   <data name="Out of sync" xml:space="preserve">
     <value>Εκτός συγχρονισμού</value>
@@ -210,20 +210,20 @@
   <data name="Responsive Design" xml:space="preserve">
     <value>Αποκρισιμό Σχεδιασμό</value>
   </data>
+  <data name="SKU" xml:space="preserve">
+    <value>Κωδικός SKU</value>
+  </data>
+  <data name="SSH Keys" xml:space="preserve">
+    <value>Κλειδιά SSH</value>
+  </data>
   <data name="Seamlessly integrate with any OpenID Connect provider, with automatic role synchronization." xml:space="preserve">
     <value>Απρόσκοπτη ενσωμάτωση με οποιονδήποτε πάροχο OpenID Connect, με αυτόματο συγχρονισμό ρόλων.</value>
   </data>
   <data name="Servers" xml:space="preserve">
     <value>Διακομιστές</value>
   </data>
-  <data name="SKU" xml:space="preserve">
-    <value>Κωδικός SKU</value>
-  </data>
   <data name="Smart dark mode that automatically adapts to the user&apos;s system settings." xml:space="preserve">
     <value>Έξυπνη λειτουργία σκούρου θέματος που προσαρμόζεται αυτόματα στις ρυθμίσεις του συστήματος του χρήστη.</value>
-  </data>
-  <data name="SSH Keys" xml:space="preserve">
-    <value>Κλειδιά SSH</value>
   </data>
   <data name="Status" xml:space="preserve">
     <value>Κατάσταση</value>

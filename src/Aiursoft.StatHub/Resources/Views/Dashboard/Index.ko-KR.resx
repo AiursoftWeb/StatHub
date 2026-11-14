@@ -33,6 +33,9 @@
   <data name="A modern, feature-rich, and highly extensible foundation for your next web application." xml:space="preserve">
     <value>현대적이고, 기능이 풍부하며, 확장성이 뛰어난 기반을 통해 다음 웹 애플리케이션을 구축하세요.</value>
   </data>
+  <data name="AI-Powered Translations" xml:space="preserve">
+    <value>AI 기반 번역</value>
+  </data>
   <data name="Abandon" xml:space="preserve">
     <value>이용 중지</value>
   </data>
@@ -50,9 +53,6 @@
   </data>
   <data name="Agents with Alerts" xml:space="preserve">
     <value>경고가 있는 에이전트</value>
-  </data>
-  <data name="AI-Powered Translations" xml:space="preserve">
-    <value>AI 기반 번역</value>
   </data>
   <data name="All dependencies are automatically registered and always available via constructor injection." xml:space="preserve">
     <value>모든 종속성은 자동으로 등록되며 생성자 주입을 통해 항상 사용할 수 있습니다.</value>
@@ -81,6 +81,9 @@
   <data name="Built-in User Management" xml:space="preserve">
     <value>내장된 사용자 관리</value>
   </data>
+  <data name="CPU Usage" xml:space="preserve">
+    <value>CPU 사용률</value>
+  </data>
   <data name="Collecting data" xml:space="preserve">
     <value>데이터 수집 중</value>
   </data>
@@ -92,9 +95,6 @@
   </data>
   <data name="Containers" xml:space="preserve">
     <value>컨테이너</value>
-  </data>
-  <data name="CPU Usage" xml:space="preserve">
-    <value>CPU 사용률</value>
   </data>
   <data name="Critical or Warning" xml:space="preserve">
     <value>위험 또는 경고</value>
@@ -147,14 +147,14 @@
   <data name="Hello World!" xml:space="preserve">
     <value>안녕하세요 세계!</value>
   </data>
+  <data name="IP" xml:space="preserve">
+    <value>IP</value>
+  </data>
   <data name="Includes extensive documentation and practical examples to get you started quickly." xml:space="preserve">
     <value>방대한 문서와 실용적인 예제를 포함하여 빠르게 시작할 수 있도록 도와줍니다.</value>
   </data>
   <data name="Integrated File Management" xml:space="preserve">
     <value>통합 파일 관리</value>
-  </data>
-  <data name="IP" xml:space="preserve">
-    <value>IP</value>
   </data>
   <data name="Last 30 seconds" xml:space="preserve">
     <value>지난 30초</value>
@@ -180,6 +180,9 @@
   <data name="Net Sent" xml:space="preserve">
     <value>네트워크 전송</value>
   </data>
+  <data name="OS" xml:space="preserve">
+    <value>운영체제</value>
+  </data>
   <data name="Offline Agents" xml:space="preserve">
     <value>오프라인 에이전트</value>
   </data>
@@ -188,9 +191,6 @@
   </data>
   <data name="OpenID Connect Integration" xml:space="preserve">
     <value>OpenID Connect 연동</value>
-  </data>
-  <data name="OS" xml:space="preserve">
-    <value>운영체제</value>
   </data>
   <data name="Out of sync" xml:space="preserve">
     <value>동기화되지 않음</value>
@@ -210,20 +210,20 @@
   <data name="Responsive Design" xml:space="preserve">
     <value>반응형 디자인</value>
   </data>
+  <data name="SKU" xml:space="preserve">
+    <value>SKU</value>
+  </data>
+  <data name="SSH Keys" xml:space="preserve">
+    <value>SSH 키</value>
+  </data>
   <data name="Seamlessly integrate with any OpenID Connect provider, with automatic role synchronization." xml:space="preserve">
     <value>어떤 OpenID Connect 공급자와도 원활하게 통합되며, 자동 역할 동기화를 지원합니다.</value>
   </data>
   <data name="Servers" xml:space="preserve">
     <value>서버</value>
   </data>
-  <data name="SKU" xml:space="preserve">
-    <value>SKU</value>
-  </data>
   <data name="Smart dark mode that automatically adapts to the user&apos;s system settings." xml:space="preserve">
     <value>사용자의 시스템 설정에 자동으로 적응하는 스마트 다크 모드.</value>
-  </data>
-  <data name="SSH Keys" xml:space="preserve">
-    <value>SSH 키</value>
   </data>
   <data name="Status" xml:space="preserve">
     <value>상태</value>

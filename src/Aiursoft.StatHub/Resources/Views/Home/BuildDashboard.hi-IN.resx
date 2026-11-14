@@ -63,11 +63,11 @@
   <data name="Disk I/O" xml:space="preserve">
     <value>डिस्क I/O</value>
   </data>
-  <data name="For an overview table, group by ClientId and show recent averages, peaks, and max(ReceivedTime). Avoid treating a metric chosen from tied receipt timestamps as the exact last sample." xml:space="preserve">
-    <value>सारांश तालिका के लिए, ClientId के अनुसार समूह बनाएँ और हाल के औसत, अधिकतम मान तथा max(ReceivedTime) दिखाएँ। समान प्राप्ति समय वाले रिकॉर्डों में से चुने गए किसी मेट्रिक को अंतिम सैंपल का सटीक मान न मानें।</value>
-  </data>
   <data name="For Docker, configure the same settings with environment variables such as MetricsExport__Enabled=true and MetricsExport__ConnectionString. Use your deployment&apos;s secret configuration for the real password. Inside a container, localhost refers to that container; use a reachable ClickHouse hostname." xml:space="preserve">
     <value>Docker के लिए, समान सेटिंग्स को पर्यावरण चर (environment variables) जैसे MetricsExport__Enabled=true और MetricsExport__ConnectionString के साथ कॉन्फ़िगर करें। वास्तविक पासवर्ड के लिए अपने डिप्लॉयमेंट की गुप्त कॉन्फ़िगरेशन का उपयोग करें। कंटेनर के अंदर, localhost उसी कंटेनर को संदर्भित करता है; एक पहुँच योग्य ClickHouse होस्टनेम का उपयोग करें।</value>
+  </data>
+  <data name="For an overview table, group by ClientId and show recent averages, peaks, and max(ReceivedTime). Avoid treating a metric chosen from tied receipt timestamps as the exact last sample." xml:space="preserve">
+    <value>सारांश तालिका के लिए, ClientId के अनुसार समूह बनाएँ और हाल के औसत, अधिकतम मान तथा max(ReceivedTime) दिखाएँ। समान प्राप्ति समय वाले रिकॉर्डों में से चुने गए किसी मेट्रिक को अंतिम सैंपल का सटीक मान न मानें।</value>
   </data>
   <data name="Grafana dashboard comparing CPU, memory, network, disk I/O, load, and archived samples across selected StatHub servers." xml:space="preserve">
     <value>चयनित StatHub सर्वरों में CPU, मेमोरी, नेटवर्क, डिस्क I/O, लोड और संग्रहीत सैंपलों की तुलना करने वाला Grafana डैशबोर्ड।</value>
@@ -141,11 +141,11 @@
   <data name="The exporter needs permission to create its database, table, and view, and to insert and select metrics. On the first non-empty batch it creates StatHubMetrics.ServerMetrics and the deduplicated ServerMetricsLatest view automatically." xml:space="preserve">
     <value>एक्सपोर्टर को अपना डेटाबेस, टेबल और व्यू बनाने तथा मेट्रिक्स डालने और चुनने की अनुमति चाहिए। डेटा वाले पहले बैच पर यह अपने-आप StatHubMetrics.ServerMetrics और डुप्लिकेट हटाकर ServerMetricsLatest व्यू बनाता है।</value>
   </data>
-  <data name="Use a separate read-only Grafana account with SELECT permission on both ServerMetricsLatest and its underlying ServerMetrics table. Keep the exporter credentials in StatHub." xml:space="preserve">
-    <value>ServerMetricsLatest और इसकी अंतर्निहित ServerMetrics तालिका, दोनों पर SELECT की अनुमति वाले Grafana के एक अलग, केवल-पढ़ने योग्य खाते का उपयोग करें। एक्सपोर्टर के क्रेडेंशियल StatHub में रखें।</value>
-  </data>
   <data name="Use ClickHouse export under Monitoring to choose which servers to export. Its independent policy supports all servers, explicit inclusions, and exclusions; exclusions always win." xml:space="preserve">
     <value>Monitoring के अंतर्गत ClickHouse export का उपयोग करके यह चुनें कि किन सर्वर को निर्यात किया जाए। इसका स्वतंत्र नीति सभी सर्वर, स्पष्ट समावेश और विलोपन का समर्थन करता है; विलोपन हमेशा प्राथमिकता रखते हैं।</value>
+  </data>
+  <data name="Use a separate read-only Grafana account with SELECT permission on both ServerMetricsLatest and its underlying ServerMetrics table. Keep the exporter credentials in StatHub." xml:space="preserve">
+    <value>ServerMetricsLatest और इसकी अंतर्निहित ServerMetrics तालिका, दोनों पर SELECT की अनुमति वाले Grafana के एक अलग, केवल-पढ़ने योग्य खाते का उपयोग करें। एक्सपोर्टर के क्रेडेंशियल StatHub में रखें।</value>
   </data>
   <data name="Used percent: MemUsed divided by MemUsed + MemFree + MemBuf + MemCach, times 100. Return null when the total is zero. Plot the four fields separately for memory composition." xml:space="preserve">
     <value>उपयोग प्रतिशत: MemUsed को MemUsed + MemFree + MemBuf + MemCach से विभाजित करके 100 से गुणा करें। कुल शून्य होने पर null लौटाएँ। मेमोरी संरचना दिखाने के लिए चारों फ़ील्ड को अलग-अलग प्लॉट करें।</value>

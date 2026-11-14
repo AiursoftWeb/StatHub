@@ -36,6 +36,15 @@
   <data name="Back to Dashboard" xml:space="preserve">
     <value>返回儀表板</value>
   </data>
+  <data name="CPU %" xml:space="preserve">
+    <value>CPU %</value>
+  </data>
+  <data name="CPU PSI (avg60)" xml:space="preserve">
+    <value>CPU PSI（60 秒平均值）</value>
+  </data>
+  <data name="CPU Usage" xml:space="preserve">
+    <value>CPU 使用率</value>
+  </data>
   <data name="Client Details" xml:space="preserve">
     <value>客戶詳情</value>
   </data>
@@ -56,15 +65,6 @@
   </data>
   <data name="Cores-RAM-Disk" xml:space="preserve">
     <value>核心-記憶體-硬碟</value>
-  </data>
-  <data name="CPU %" xml:space="preserve">
-    <value>CPU %</value>
-  </data>
-  <data name="CPU PSI (avg60)" xml:space="preserve">
-    <value>CPU PSI（60 秒平均值）</value>
-  </data>
-  <data name="CPU Usage" xml:space="preserve">
-    <value>CPU 使用率</value>
   </data>
   <data name="Created" xml:space="preserve">
     <value>建立</value>
@@ -150,6 +150,9 @@
   <data name="Last Update" xml:space="preserve">
     <value>最後更新</value>
   </data>
+  <data name="MOTD" xml:space="preserve">
+    <value>每日訊息</value>
+  </data>
   <data name="Mainly used by process" xml:space="preserve">
     <value>主要被進程使用</value>
   </data>
@@ -164,9 +167,6 @@
   </data>
   <data name="More times" xml:space="preserve">
     <value>更多時間</value>
-  </data>
-  <data name="MOTD" xml:space="preserve">
-    <value>每日訊息</value>
   </data>
   <data name="Name" xml:space="preserve">
     <value>名稱</value>
@@ -195,6 +195,9 @@
   <data name="Owner" xml:space="preserve">
     <value>擁有者</value>
   </data>
+  <data name="PSI avg60 at page load: time spent waiting for this resource over the last minute. Refresh to update." xml:space="preserve">
+    <value>頁面載入時的 PSI avg60：過去一分鐘內等待此資源所花的時間。重新整理以更新。</value>
+  </data>
   <data name="Ports" xml:space="preserve">
     <value>埠</value>
   </data>
@@ -206,9 +209,6 @@
   </data>
   <data name="Preview" xml:space="preserve">
     <value>預覽</value>
-  </data>
-  <data name="PSI avg60 at page load: time spent waiting for this resource over the last minute. Refresh to update." xml:space="preserve">
-    <value>頁面載入時的 PSI avg60：過去一分鐘內等待此資源所花的時間。重新整理以更新。</value>
   </data>
   <data name="RAM" xml:space="preserve">
     <value>記憶體</value>
@@ -225,11 +225,11 @@
   <data name="Runtime Info" xml:space="preserve">
     <value>運行時資訊</value>
   </data>
-  <data name="Smoothed CPU idle" xml:space="preserve">
-    <value>平滑 CPU 閒置率</value>
-  </data>
   <data name="SSH Keys" xml:space="preserve">
     <value>SSH 金鑰</value>
+  </data>
+  <data name="Smoothed CPU idle" xml:space="preserve">
+    <value>平滑 CPU 閒置率</value>
   </data>
   <data name="Started" xml:space="preserve">
     <value>開始時間</value>

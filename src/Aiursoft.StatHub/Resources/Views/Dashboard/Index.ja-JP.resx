@@ -33,6 +33,9 @@
   <data name="A modern, feature-rich, and highly extensible foundation for your next web application." xml:space="preserve">
     <value>モダンで機能豊富、そして高い拡張性を備えた、次世代のWebアプリケーションの基盤。</value>
   </data>
+  <data name="AI-Powered Translations" xml:space="preserve">
+    <value>AIによる翻訳</value>
+  </data>
   <data name="Abandon" xml:space="preserve">
     <value>放棄</value>
   </data>
@@ -50,9 +53,6 @@
   </data>
   <data name="Agents with Alerts" xml:space="preserve">
     <value>アラートのあるエージェント</value>
-  </data>
-  <data name="AI-Powered Translations" xml:space="preserve">
-    <value>AIによる翻訳</value>
   </data>
   <data name="All dependencies are automatically registered and always available via constructor injection." xml:space="preserve">
     <value>すべての依存関係は自動的に登録され、コンストラクタインジェクションを通じて常に利用可能です。</value>
@@ -81,6 +81,9 @@
   <data name="Built-in User Management" xml:space="preserve">
     <value>組み込みユーザー管理</value>
   </data>
+  <data name="CPU Usage" xml:space="preserve">
+    <value>CPU使用率</value>
+  </data>
   <data name="Collecting data" xml:space="preserve">
     <value>データ収集中</value>
   </data>
@@ -92,9 +95,6 @@
   </data>
   <data name="Containers" xml:space="preserve">
     <value>コンテナ</value>
-  </data>
-  <data name="CPU Usage" xml:space="preserve">
-    <value>CPU使用率</value>
   </data>
   <data name="Critical or Warning" xml:space="preserve">
     <value>重大または警告</value>
@@ -147,14 +147,14 @@
   <data name="Hello World!" xml:space="preserve">
     <value>こんにちは、世界！</value>
   </data>
+  <data name="IP" xml:space="preserve">
+    <value>IPアドレス</value>
+  </data>
   <data name="Includes extensive documentation and practical examples to get you started quickly." xml:space="preserve">
     <value>豊富なドキュメントと実用的なサンプルが含まれており、素早く使い始めることができます。</value>
   </data>
   <data name="Integrated File Management" xml:space="preserve">
     <value>統合ファイル管理</value>
-  </data>
-  <data name="IP" xml:space="preserve">
-    <value>IPアドレス</value>
   </data>
   <data name="Last 30 seconds" xml:space="preserve">
     <value>過去30秒間</value>
@@ -180,6 +180,9 @@
   <data name="Net Sent" xml:space="preserve">
     <value>ネット送信</value>
   </data>
+  <data name="OS" xml:space="preserve">
+    <value>OS</value>
+  </data>
   <data name="Offline Agents" xml:space="preserve">
     <value>オフライン エージェント</value>
   </data>
@@ -188,9 +191,6 @@
   </data>
   <data name="OpenID Connect Integration" xml:space="preserve">
     <value>OpenID Connect連携</value>
-  </data>
-  <data name="OS" xml:space="preserve">
-    <value>OS</value>
   </data>
   <data name="Out of sync" xml:space="preserve">
     <value>同期が取れていません</value>
@@ -210,20 +210,20 @@
   <data name="Responsive Design" xml:space="preserve">
     <value>レスポンシブデザイン</value>
   </data>
+  <data name="SKU" xml:space="preserve">
+    <value>SKU</value>
+  </data>
+  <data name="SSH Keys" xml:space="preserve">
+    <value>SSHキー</value>
+  </data>
   <data name="Seamlessly integrate with any OpenID Connect provider, with automatic role synchronization." xml:space="preserve">
     <value>あらゆるOpenID Connectプロバイダーとシームレスに統合し、ロールの自動同期を実現します。</value>
   </data>
   <data name="Servers" xml:space="preserve">
     <value>サーバー</value>
   </data>
-  <data name="SKU" xml:space="preserve">
-    <value>SKU</value>
-  </data>
   <data name="Smart dark mode that automatically adapts to the user&apos;s system settings." xml:space="preserve">
     <value>ユーザーのシステム設定に自動的に適応するスマートダークモード。</value>
-  </data>
-  <data name="SSH Keys" xml:space="preserve">
-    <value>SSHキー</value>
   </data>
   <data name="Status" xml:space="preserve">
     <value>ステータス</value>

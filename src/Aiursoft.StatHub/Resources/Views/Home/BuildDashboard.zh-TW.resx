@@ -63,11 +63,11 @@
   <data name="Disk I/O" xml:space="preserve">
     <value>磁碟 I/O</value>
   </data>
-  <data name="For an overview table, group by ClientId and show recent averages, peaks, and max(ReceivedTime). Avoid treating a metric chosen from tied receipt timestamps as the exact last sample." xml:space="preserve">
-    <value>對於概覽表格，請依 ClientId 分組，並顯示近期的平均值、峰值以及 max(ReceivedTime)。避免將從相同接收時間戳記中選取的指標視為確切的最新樣本。</value>
-  </data>
   <data name="For Docker, configure the same settings with environment variables such as MetricsExport__Enabled=true and MetricsExport__ConnectionString. Use your deployment&apos;s secret configuration for the real password. Inside a container, localhost refers to that container; use a reachable ClickHouse hostname." xml:space="preserve">
     <value>使用 Docker 時，請透過環境變數設定相同的選項，例如 MetricsExport__Enabled=true 和 MetricsExport__ConnectionString。實際密碼請使用部署環境的秘密設定。在容器內，localhost 指的是該容器本身；請使用可連線的 ClickHouse 主機名稱。</value>
+  </data>
+  <data name="For an overview table, group by ClientId and show recent averages, peaks, and max(ReceivedTime). Avoid treating a metric chosen from tied receipt timestamps as the exact last sample." xml:space="preserve">
+    <value>對於概覽表格，請依 ClientId 分組，並顯示近期的平均值、峰值以及 max(ReceivedTime)。避免將從相同接收時間戳記中選取的指標視為確切的最新樣本。</value>
   </data>
   <data name="Grafana dashboard comparing CPU, memory, network, disk I/O, load, and archived samples across selected StatHub servers." xml:space="preserve">
     <value>Grafana 儀表板，比較所選 StatHub 伺服器的 CPU、記憶體、網路、磁碟 I/O、負載和封存的樣本。</value>
@@ -141,11 +141,11 @@
   <data name="The exporter needs permission to create its database, table, and view, and to insert and select metrics. On the first non-empty batch it creates StatHubMetrics.ServerMetrics and the deduplicated ServerMetricsLatest view automatically." xml:space="preserve">
     <value>匯出程式需要具備建立資料庫、資料表和檢視表，以及插入和查詢指標資料的權限。第一個非空批次送出時，系統會自動建立 StatHubMetrics.ServerMetrics 和去重後的 ServerMetricsLatest 檢視表。</value>
   </data>
-  <data name="Use a separate read-only Grafana account with SELECT permission on both ServerMetricsLatest and its underlying ServerMetrics table. Keep the exporter credentials in StatHub." xml:space="preserve">
-    <value>使用一個獨立的唯讀 Grafana 帳號，該帳號需對 ServerMetricsLatest 及其底層的 ServerMetrics 資料表具有 SELECT 權限。請將匯出器憑證儲存在 StatHub 中。</value>
-  </data>
   <data name="Use ClickHouse export under Monitoring to choose which servers to export. Its independent policy supports all servers, explicit inclusions, and exclusions; exclusions always win." xml:space="preserve">
     <value>請在「監控」中使用 ClickHouse 匯出功能來選擇要匯出的伺服器。其獨立的策略支援所有伺服器、明確的包含項目和排除項目；排除項目永遠優先。</value>
+  </data>
+  <data name="Use a separate read-only Grafana account with SELECT permission on both ServerMetricsLatest and its underlying ServerMetrics table. Keep the exporter credentials in StatHub." xml:space="preserve">
+    <value>使用一個獨立的唯讀 Grafana 帳號，該帳號需對 ServerMetricsLatest 及其底層的 ServerMetrics 資料表具有 SELECT 權限。請將匯出器憑證儲存在 StatHub 中。</value>
   </data>
   <data name="Used percent: MemUsed divided by MemUsed + MemFree + MemBuf + MemCach, times 100. Return null when the total is zero. Plot the four fields separately for memory composition." xml:space="preserve">
     <value>使用百分比：MemUsed 除以 MemUsed + MemFree + MemBuf + MemCach，再乘以 100。總值為零時，回傳 null。請分別繪製這四個欄位，以呈現記憶體組成。</value>

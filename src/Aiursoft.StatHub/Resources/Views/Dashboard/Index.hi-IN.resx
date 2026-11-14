@@ -33,6 +33,9 @@
   <data name="A modern, feature-rich, and highly extensible foundation for your next web application." xml:space="preserve">
     <value>आपके अगले वेब एप्लिकेशन के लिए एक आधुनिक, सुविधा-संपन्न और अत्यधिक विस्तार योग्य आधार।</value>
   </data>
+  <data name="AI-Powered Translations" xml:space="preserve">
+    <value>AI-संचालित अनुवाद</value>
+  </data>
   <data name="Abandon" xml:space="preserve">
     <value>त्यागें</value>
   </data>
@@ -50,9 +53,6 @@
   </data>
   <data name="Agents with Alerts" xml:space="preserve">
     <value>चेतावनी वाले एजेंट</value>
-  </data>
-  <data name="AI-Powered Translations" xml:space="preserve">
-    <value>AI-संचालित अनुवाद</value>
   </data>
   <data name="All dependencies are automatically registered and always available via constructor injection." xml:space="preserve">
     <value>सभी निर्भरताएँ स्वचालित रूप से पंजीकृत होती हैं और कंस्ट्रक्टर इंजेक्शन के माध्यम से हमेशा उपलब्ध रहती हैं।</value>
@@ -81,6 +81,9 @@
   <data name="Built-in User Management" xml:space="preserve">
     <value>अंतर्निहित उपयोगकर्ता प्रबंधन</value>
   </data>
+  <data name="CPU Usage" xml:space="preserve">
+    <value>सीपीयू उपयोग</value>
+  </data>
   <data name="Collecting data" xml:space="preserve">
     <value>डेटा एकत्र किया जा रहा है</value>
   </data>
@@ -92,9 +95,6 @@
   </data>
   <data name="Containers" xml:space="preserve">
     <value>Containers</value>
-  </data>
-  <data name="CPU Usage" xml:space="preserve">
-    <value>सीपीयू उपयोग</value>
   </data>
   <data name="Critical or Warning" xml:space="preserve">
     <value>गंभीर या चेतावनी</value>
@@ -147,14 +147,14 @@
   <data name="Hello World!" xml:space="preserve">
     <value>नमस्ते दुनिया!</value>
   </data>
+  <data name="IP" xml:space="preserve">
+    <value>आईपी</value>
+  </data>
   <data name="Includes extensive documentation and practical examples to get you started quickly." xml:space="preserve">
     <value>विस्तृत दस्तावेज़ीकरण और व्यावहारिक उदाहरण शामिल हैं ताकि आप जल्दी से शुरुआत कर सकें।</value>
   </data>
   <data name="Integrated File Management" xml:space="preserve">
     <value>एकीकृत फ़ाइल प्रबंधन</value>
-  </data>
-  <data name="IP" xml:space="preserve">
-    <value>आईपी</value>
   </data>
   <data name="Last 30 seconds" xml:space="preserve">
     <value>पिछले 30 सेकंड</value>
@@ -180,6 +180,9 @@
   <data name="Net Sent" xml:space="preserve">
     <value>नेट भेजा गया</value>
   </data>
+  <data name="OS" xml:space="preserve">
+    <value>ओएस</value>
+  </data>
   <data name="Offline Agents" xml:space="preserve">
     <value>ऑफ़लाइन एजेंट</value>
   </data>
@@ -188,9 +191,6 @@
   </data>
   <data name="OpenID Connect Integration" xml:space="preserve">
     <value>ओपनआईडी कनेक्ट एकीकरण</value>
-  </data>
-  <data name="OS" xml:space="preserve">
-    <value>ओएस</value>
   </data>
   <data name="Out of sync" xml:space="preserve">
     <value>सिंक से बाहर</value>
@@ -210,20 +210,20 @@
   <data name="Responsive Design" xml:space="preserve">
     <value>उत्तरदायी डिज़ाइन</value>
   </data>
+  <data name="SKU" xml:space="preserve">
+    <value>एसकेयू</value>
+  </data>
+  <data name="SSH Keys" xml:space="preserve">
+    <value>SSH कुंजियाँ</value>
+  </data>
   <data name="Seamlessly integrate with any OpenID Connect provider, with automatic role synchronization." xml:space="preserve">
     <value>किसी भी OpenID Connect प्रदाता के साथ सहज एकीकरण, स्वचालित भूमिका सिंक्रनाइज़ेशन के साथ।</value>
   </data>
   <data name="Servers" xml:space="preserve">
     <value>सर्वर</value>
   </data>
-  <data name="SKU" xml:space="preserve">
-    <value>एसकेयू</value>
-  </data>
   <data name="Smart dark mode that automatically adapts to the user&apos;s system settings." xml:space="preserve">
     <value>स्मार्ट डार्क मोड जो स्वचालित रूप से उपयोगकर्ता की सिस्टम सेटिंग्स के अनुकूल हो जाता है।</value>
-  </data>
-  <data name="SSH Keys" xml:space="preserve">
-    <value>SSH कुंजियाँ</value>
   </data>
   <data name="Status" xml:space="preserve">
     <value>स्थिति</value>

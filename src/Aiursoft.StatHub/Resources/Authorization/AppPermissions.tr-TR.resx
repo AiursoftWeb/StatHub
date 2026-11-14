@@ -108,11 +108,11 @@
   <data name="View Background Jobs" xml:space="preserve">
     <value>Arka Plan İşlerini Görüntüle</value>
   </data>
-  <data name="View server dashboard to see server metrics." xml:space="preserve">
-    <value>Sunucu ölçümlerini görmek için sunucu panosunu görüntüleyin.</value>
-  </data>
   <data name="View System Context" xml:space="preserve">
     <value>Sistem Bağlamını Görüntüle</value>
+  </data>
+  <data name="View server dashboard to see server metrics." xml:space="preserve">
+    <value>Sunucu ölçümlerini görmek için sunucu panosunu görüntüleyin.</value>
   </data>
 
 </root>

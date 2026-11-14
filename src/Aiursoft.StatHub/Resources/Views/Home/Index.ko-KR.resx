@@ -33,11 +33,11 @@
   <data name="A simple, real-time server monitoring system designed for local deployment." xml:space="preserve">
     <value>간단하고 실시간으로 작동하는 서버 모니터링 시스템으로, 로컬 배포를 위해 설계되었습니다.</value>
   </data>
-  <data name="Achieve more with Aiursoft Template" xml:space="preserve">
-    <value>Aiursoft 템플릿으로 더 많은 성과를 이루세요</value>
-  </data>
   <data name="AI-Powered Translations" xml:space="preserve">
     <value>AI 기반 번역</value>
+  </data>
+  <data name="Achieve more with Aiursoft Template" xml:space="preserve">
+    <value>Aiursoft 템플릿으로 더 많은 성과를 이루세요</value>
   </data>
   <data name="Aiursoft Template is our definitive choice for enterprise projects! It&apos;s built for developers and is lightweight yet powerful. We can skip all the boilerplate for authentication and user management." xml:space="preserve">
     <value>Aiursoft Template은 엔터프라이즈 프로젝트를 위한 최적의 선택입니다! 개발자를 위해 제작되었으며 가볍지만 강력한 성능을 자랑합니다. 인증 및 사용자 관리와 관련된 모든 상용구 코드를 생략할 수 있습니다.</value>
@@ -102,9 +102,6 @@
   <data name="Dynamic Navigation Bar" xml:space="preserve">
     <value>동적 내비게이션 바</value>
   </data>
-  <data name="easier" xml:space="preserve">
-    <value>더 쉽게</value>
-  </data>
   <data name="Easily switch between providers like SQLite, MySQL, SQL Server, and an in-memory database for testing." xml:space="preserve">
     <value>SQLite, MySQL, SQL Server 및 테스트용 인메모리 데이터베이스와 같은 프로바이더 간에 쉽게 전환할 수 있습니다.</value>
   </data>
@@ -114,17 +111,11 @@
   <data name="FAQ" xml:space="preserve">
     <value>자주 묻는 질문</value>
   </data>
-  <data name="faster" xml:space="preserve">
-    <value>더 빠르게</value>
-  </data>
   <data name="Features" xml:space="preserve">
     <value>기능</value>
   </data>
   <data name="Features a built-in file management system with automatic avatar compression." xml:space="preserve">
     <value>자동 아바타 압축 기능이 포함된 내장 파일 관리 시스템을 갖추고 있습니다.</value>
-  </data>
-  <data name="for any inquiries or to report issues." xml:space="preserve">
-    <value>문의 사항이 있거나 문제를 보고하려면</value>
   </data>
   <data name="Free" xml:space="preserve">
     <value>무료</value>
@@ -192,11 +183,11 @@
   <data name="Low-overhead agents collect metrics without impacting your server&apos;s performance." xml:space="preserve">
     <value>저부하 에이전트가 서버 성능에 영향을 주지 않고 메트릭을 수집합니다.</value>
   </data>
-  <data name="Markdown To HTML" xml:space="preserve">
-    <value>마크다운을 HTML로 변환</value>
-  </data>
   <data name="MIT Licence" xml:space="preserve">
     <value>MIT 라이선스</value>
+  </data>
+  <data name="Markdown To HTML" xml:space="preserve">
+    <value>마크다운을 HTML로 변환</value>
   </data>
   <data name="Monitor multiple servers from a single centralized dashboard. Scale as your infrastructure grows." xml:space="preserve">
     <value>단일 중앙 집중형 대시보드에서 여러 서버를 모니터링하세요. 인프라가 확장될수록 스케일하세요.</value>
@@ -297,14 +288,14 @@
   <data name="Use it as a foundation for your SaaS, a backend for your mobile app, a corporate website, or a personal blog. The possibilities are endless." xml:space="preserve">
     <value>SaaS의 기반, 모바일 앱의 백엔드, 기업 웹사이트 또는 개인 블로그로 활용하세요. 가능성은 무궁무진합니다.</value>
   </data>
-  <data name="View on GitHub" xml:space="preserve">
-    <value>GitHub에서 보기</value>
-  </data>
   <data name="View Servers Stat" xml:space="preserve">
     <value>서버 상태 보기</value>
   </data>
   <data name="View Source on GitHub" xml:space="preserve">
     <value>GitHub에서 소스 보기</value>
+  </data>
+  <data name="View on GitHub" xml:space="preserve">
+    <value>GitHub에서 보기</value>
   </data>
   <data name="Welcome" xml:space="preserve">
     <value>환영합니다</value>
@@ -332,6 +323,15 @@
   </data>
   <data name="Your Server Status" xml:space="preserve">
     <value>당신의 서버 상태</value>
+  </data>
+  <data name="easier" xml:space="preserve">
+    <value>더 쉽게</value>
+  </data>
+  <data name="faster" xml:space="preserve">
+    <value>더 빠르게</value>
+  </data>
+  <data name="for any inquiries or to report issues." xml:space="preserve">
+    <value>문의 사항이 있거나 문제를 보고하려면</value>
   </data>
 
 </root>

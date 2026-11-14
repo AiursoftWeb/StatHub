@@ -108,11 +108,11 @@
   <data name="View Background Jobs" xml:space="preserve">
     <value>Προβολή Εργασιών Παρασκηνίου</value>
   </data>
-  <data name="View server dashboard to see server metrics." xml:space="preserve">
-    <value>Προβολή του πίνακα ελέγχου του διακομιστή για να δείτε τις μετρικές του διακομιστή.</value>
-  </data>
   <data name="View System Context" xml:space="preserve">
     <value>Προβολή Συστημικού Περιεχομένου</value>
+  </data>
+  <data name="View server dashboard to see server metrics." xml:space="preserve">
+    <value>Προβολή του πίνακα ελέγχου του διακομιστή για να δείτε τις μετρικές του διακομιστή.</value>
   </data>
 
 </root>
