@@ -36,6 +36,15 @@
   <data name="Back to Dashboard" xml:space="preserve">
     <value>Назад до Панелі керування</value>
   </data>
+  <data name="CPU %" xml:space="preserve">
+    <value>CPU %</value>
+  </data>
+  <data name="CPU PSI (avg60)" xml:space="preserve">
+    <value>PSI процесора (avg60)</value>
+  </data>
+  <data name="CPU Usage" xml:space="preserve">
+    <value>Використання процесора</value>
+  </data>
   <data name="Client Details" xml:space="preserve">
     <value>Деталі клієнта</value>
   </data>
@@ -56,15 +65,6 @@
   </data>
   <data name="Cores-RAM-Disk" xml:space="preserve">
     <value>Ядра-ОЗП-Диск</value>
-  </data>
-  <data name="CPU %" xml:space="preserve">
-    <value>CPU %</value>
-  </data>
-  <data name="CPU PSI (avg60)" xml:space="preserve">
-    <value>PSI процесора (avg60)</value>
-  </data>
-  <data name="CPU Usage" xml:space="preserve">
-    <value>Використання процесора</value>
   </data>
   <data name="Created" xml:space="preserve">
     <value>Створено</value>
@@ -150,6 +150,9 @@
   <data name="Last Update" xml:space="preserve">
     <value>Останнє оновлення</value>
   </data>
+  <data name="MOTD" xml:space="preserve">
+    <value>Повідомлення дня</value>
+  </data>
   <data name="Mainly used by process" xml:space="preserve">
     <value>В основному використовується процесом</value>
   </data>
@@ -164,9 +167,6 @@
   </data>
   <data name="More times" xml:space="preserve">
     <value>Інші часові позначки</value>
-  </data>
-  <data name="MOTD" xml:space="preserve">
-    <value>Повідомлення дня</value>
   </data>
   <data name="Name" xml:space="preserve">
     <value>Name</value>
@@ -195,6 +195,9 @@
   <data name="Owner" xml:space="preserve">
     <value>Власник</value>
   </data>
+  <data name="PSI avg60 at page load: time spent waiting for this resource over the last minute. Refresh to update." xml:space="preserve">
+    <value>PSI avg60 під час завантаження сторінки: час очікування цього ресурсу протягом останньої хвилини. Оновіть сторінку, щоб оновити дані.</value>
+  </data>
   <data name="Ports" xml:space="preserve">
     <value>Ports</value>
   </data>
@@ -206,9 +209,6 @@
   </data>
   <data name="Preview" xml:space="preserve">
     <value>Перегляд</value>
-  </data>
-  <data name="PSI avg60 at page load: time spent waiting for this resource over the last minute. Refresh to update." xml:space="preserve">
-    <value>PSI avg60 під час завантаження сторінки: час очікування цього ресурсу протягом останньої хвилини. Оновіть сторінку, щоб оновити дані.</value>
   </data>
   <data name="RAM" xml:space="preserve">
     <value>ОЗП</value>
@@ -225,11 +225,11 @@
   <data name="Runtime Info" xml:space="preserve">
     <value>Інформація про середовище виконання</value>
   </data>
-  <data name="Smoothed CPU idle" xml:space="preserve">
-    <value>Згладжений час простою ЦП</value>
-  </data>
   <data name="SSH Keys" xml:space="preserve">
     <value>SSH-ключі</value>
+  </data>
+  <data name="Smoothed CPU idle" xml:space="preserve">
+    <value>Згладжений час простою ЦП</value>
   </data>
   <data name="Started" xml:space="preserve">
     <value>Початок</value>

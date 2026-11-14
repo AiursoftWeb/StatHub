@@ -33,6 +33,9 @@
   <data name="A modern, feature-rich, and highly extensible foundation for your next web application." xml:space="preserve">
     <value>Modern, zengin özelliklere sahip ve bir sonraki web uygulamanız için oldukça genişletilebilir bir temel.</value>
   </data>
+  <data name="AI-Powered Translations" xml:space="preserve">
+    <value>Yapay Zeka Destekli Çeviriler</value>
+  </data>
   <data name="Abandon" xml:space="preserve">
     <value>Bırak</value>
   </data>
@@ -50,9 +53,6 @@
   </data>
   <data name="Agents with Alerts" xml:space="preserve">
     <value>Uyarılı Ajanlar</value>
-  </data>
-  <data name="AI-Powered Translations" xml:space="preserve">
-    <value>Yapay Zeka Destekli Çeviriler</value>
   </data>
   <data name="All dependencies are automatically registered and always available via constructor injection." xml:space="preserve">
     <value>Tüm bağımlılıklar otomatik olarak kaydedilir ve constructor injection yoluyla her zaman kullanılabilir.</value>
@@ -81,6 +81,9 @@
   <data name="Built-in User Management" xml:space="preserve">
     <value>Dahili Kullanıcı Yönetimi</value>
   </data>
+  <data name="CPU Usage" xml:space="preserve">
+    <value>CPU Kullanımı</value>
+  </data>
   <data name="Collecting data" xml:space="preserve">
     <value>Veri toplanıyor</value>
   </data>
@@ -92,9 +95,6 @@
   </data>
   <data name="Containers" xml:space="preserve">
     <value>Containers</value>
-  </data>
-  <data name="CPU Usage" xml:space="preserve">
-    <value>CPU Kullanımı</value>
   </data>
   <data name="Critical or Warning" xml:space="preserve">
     <value>Kritik veya Uyarı</value>
@@ -147,14 +147,14 @@
   <data name="Hello World!" xml:space="preserve">
     <value>Merhaba Dünya!</value>
   </data>
+  <data name="IP" xml:space="preserve">
+    <value>IP Adresi</value>
+  </data>
   <data name="Includes extensive documentation and practical examples to get you started quickly." xml:space="preserve">
     <value>Kapsamlı belgeler ve hızlı bir şekilde başlamanızı sağlayacak pratik örnekler içerir.</value>
   </data>
   <data name="Integrated File Management" xml:space="preserve">
     <value>Entegre Dosya Yönetimi</value>
-  </data>
-  <data name="IP" xml:space="preserve">
-    <value>IP Adresi</value>
   </data>
   <data name="Last 30 seconds" xml:space="preserve">
     <value>Son 30 saniye</value>
@@ -180,6 +180,9 @@
   <data name="Net Sent" xml:space="preserve">
     <value>Gönderilen Ağ</value>
   </data>
+  <data name="OS" xml:space="preserve">
+    <value>İşletim Sistemi</value>
+  </data>
   <data name="Offline Agents" xml:space="preserve">
     <value>Çevrimdışı Ajanlar</value>
   </data>
@@ -188,9 +191,6 @@
   </data>
   <data name="OpenID Connect Integration" xml:space="preserve">
     <value>OpenID Connect Entegrasyonu</value>
-  </data>
-  <data name="OS" xml:space="preserve">
-    <value>İşletim Sistemi</value>
   </data>
   <data name="Out of sync" xml:space="preserve">
     <value>Senkronizasyon Dışı</value>
@@ -210,20 +210,20 @@
   <data name="Responsive Design" xml:space="preserve">
     <value>Duyarlı Tasarım</value>
   </data>
+  <data name="SKU" xml:space="preserve">
+    <value>SKU</value>
+  </data>
+  <data name="SSH Keys" xml:space="preserve">
+    <value>SSH Anahtarları</value>
+  </data>
   <data name="Seamlessly integrate with any OpenID Connect provider, with automatic role synchronization." xml:space="preserve">
     <value>Herhangi bir OpenID Connect sağlayıcısıyla sorunsuz entegre olun, otomatik rol senkronizasyonu ile.</value>
   </data>
   <data name="Servers" xml:space="preserve">
     <value>Sunucular</value>
   </data>
-  <data name="SKU" xml:space="preserve">
-    <value>SKU</value>
-  </data>
   <data name="Smart dark mode that automatically adapts to the user&apos;s system settings." xml:space="preserve">
     <value>Kullanıcının sistem ayarlarına otomatik olarak uyum sağlayan akıllı karanlık mod.</value>
-  </data>
-  <data name="SSH Keys" xml:space="preserve">
-    <value>SSH Anahtarları</value>
   </data>
   <data name="Status" xml:space="preserve">
     <value>Durum</value>

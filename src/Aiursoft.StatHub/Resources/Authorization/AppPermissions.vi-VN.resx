@@ -108,11 +108,11 @@
   <data name="View Background Jobs" xml:space="preserve">
     <value>Xem các Nhiệm vụ nền</value>
   </data>
-  <data name="View server dashboard to see server metrics." xml:space="preserve">
-    <value>Xem bảng điều khiển máy chủ để xem các số liệu máy chủ.</value>
-  </data>
   <data name="View System Context" xml:space="preserve">
     <value>Xem Ngữ cảnh Hệ thống</value>
+  </data>
+  <data name="View server dashboard to see server metrics." xml:space="preserve">
+    <value>Xem bảng điều khiển máy chủ để xem các số liệu máy chủ.</value>
   </data>
 
 </root>

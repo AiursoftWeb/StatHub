@@ -33,11 +33,11 @@
   <data name="A simple, real-time server monitoring system designed for local deployment." xml:space="preserve">
     <value>Ett enkelt, realtidsbaserat system för serverövervakning utformat för lokal distribution.</value>
   </data>
-  <data name="Achieve more with Aiursoft Template" xml:space="preserve">
-    <value>Uppnå mer med Aiursoft Template</value>
-  </data>
   <data name="AI-Powered Translations" xml:space="preserve">
     <value>AI-drivna översättningar</value>
+  </data>
+  <data name="Achieve more with Aiursoft Template" xml:space="preserve">
+    <value>Uppnå mer med Aiursoft Template</value>
   </data>
   <data name="Aiursoft Template is our definitive choice for enterprise projects! It&apos;s built for developers and is lightweight yet powerful. We can skip all the boilerplate for authentication and user management." xml:space="preserve">
     <value>Aiursoft Template är vårt slutgiltiga val för företagsprojekt! Den är byggd för utvecklare och är lättviktig men ändå kraftfull. Vi kan hoppa över all standardkod för autentisering och användarhantering.</value>
@@ -102,9 +102,6 @@
   <data name="Dynamic Navigation Bar" xml:space="preserve">
     <value>Dynamiskt navigeringsfält</value>
   </data>
-  <data name="easier" xml:space="preserve">
-    <value>enklare</value>
-  </data>
   <data name="Easily switch between providers like SQLite, MySQL, SQL Server, and an in-memory database for testing." xml:space="preserve">
     <value>Enkelt växla mellan leverantörer som SQLite, MySQL, SQL Server och ett minnesbaserat databassystem för testning.</value>
   </data>
@@ -114,17 +111,11 @@
   <data name="FAQ" xml:space="preserve">
     <value>Vanliga frågor</value>
   </data>
-  <data name="faster" xml:space="preserve">
-    <value>snabbare</value>
-  </data>
   <data name="Features" xml:space="preserve">
     <value>Funktioner</value>
   </data>
   <data name="Features a built-in file management system with automatic avatar compression." xml:space="preserve">
     <value>Har ett inbyggt filhanteringssystem med automatisk komprimering av avatarer.</value>
-  </data>
-  <data name="for any inquiries or to report issues." xml:space="preserve">
-    <value>för frågor eller för att rapportera problem.</value>
   </data>
   <data name="Free" xml:space="preserve">
     <value>Gratis</value>
@@ -192,11 +183,11 @@
   <data name="Low-overhead agents collect metrics without impacting your server&apos;s performance." xml:space="preserve">
     <value>Lågkostnadsagenter samlar in måttdata utan att påverka serverns prestanda.</value>
   </data>
-  <data name="Markdown To HTML" xml:space="preserve">
-    <value>Markdown till HTML</value>
-  </data>
   <data name="MIT Licence" xml:space="preserve">
     <value>MIT-licens</value>
+  </data>
+  <data name="Markdown To HTML" xml:space="preserve">
+    <value>Markdown till HTML</value>
   </data>
   <data name="Monitor multiple servers from a single centralized dashboard. Scale as your infrastructure grows." xml:space="preserve">
     <value>Övervaka flera servrar från en enda centraliserad instrumentbräda. Skala när din infrastruktur växer.</value>
@@ -297,14 +288,14 @@
   <data name="Use it as a foundation for your SaaS, a backend for your mobile app, a corporate website, or a personal blog. The possibilities are endless." xml:space="preserve">
     <value>Använd den som grund för din SaaS, som backend för din mobilapp, som företagswebbplats eller som en personlig blogg. Möjligheterna är oändliga.</value>
   </data>
-  <data name="View on GitHub" xml:space="preserve">
-    <value>Visa på GitHub</value>
-  </data>
   <data name="View Servers Stat" xml:space="preserve">
     <value>Visa serverstatistik</value>
   </data>
   <data name="View Source on GitHub" xml:space="preserve">
     <value>Visa källkod på GitHub</value>
+  </data>
+  <data name="View on GitHub" xml:space="preserve">
+    <value>Visa på GitHub</value>
   </data>
   <data name="Welcome" xml:space="preserve">
     <value>Välkommen</value>
@@ -332,6 +323,15 @@
   </data>
   <data name="Your Server Status" xml:space="preserve">
     <value>Din serverstatus</value>
+  </data>
+  <data name="easier" xml:space="preserve">
+    <value>enklare</value>
+  </data>
+  <data name="faster" xml:space="preserve">
+    <value>snabbare</value>
+  </data>
+  <data name="for any inquiries or to report issues." xml:space="preserve">
+    <value>för frågor eller för att rapportera problem.</value>
   </data>
 
 </root>

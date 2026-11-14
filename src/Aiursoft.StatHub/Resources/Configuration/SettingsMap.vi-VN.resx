@@ -60,14 +60,17 @@
   <data name="Synchronize server health incidents with AlertCenter." xml:space="preserve">
     <value>Đồng bộ các sự cố sức khỏe máy chủ với AlertCenter.</value>
   </data>
-  <data name="The brand name of the company or project. E.g. Aiursoft." xml:space="preserve">
-    <value>Tên thương hiệu của công ty hoặc dự án. Ví dụ: Aiursoft.</value>
-  </data>
   <data name="The HTTP(S) base URL of AlertCenter." xml:space="preserve">
     <value>URL gốc HTTP(S) của AlertCenter.</value>
   </data>
   <data name="The ICP license number for China mainland users. Leave empty to hide." xml:space="preserve">
     <value>Số giấy phép ICP dành cho người dùng Trung Quốc đại lục. Để trống để ẩn.</value>
+  </data>
+  <data name="The URL of the company or project. E.g. https://www.aiursoft.com" xml:space="preserve">
+    <value>Địa chỉ URL của công ty hoặc dự án. Ví dụ: https://www.aiursoft.com</value>
+  </data>
+  <data name="The brand name of the company or project. E.g. Aiursoft." xml:space="preserve">
+    <value>Tên thương hiệu của công ty hoặc dự án. Ví dụ: Aiursoft.</value>
   </data>
   <data name="The logo of the project displayed in the navbar and footer. Support jpg, png, svg." xml:space="preserve">
     <value>Logo của dự án được hiển thị trong thanh điều hướng và chân trang. Hỗ trợ định dạng jpg, png, svg.</value>
@@ -77,9 +80,6 @@
   </data>
   <data name="The public base URL of this StatHub instance, used in incident links." xml:space="preserve">
     <value>URL gốc công khai của instance StatHub này, được sử dụng trong các liên kết sự cố.</value>
-  </data>
-  <data name="The URL of the company or project. E.g. https://www.aiursoft.com" xml:space="preserve">
-    <value>Địa chỉ URL của công ty hoặc dự án. Ví dụ: https://www.aiursoft.com</value>
   </data>
 
 </root>

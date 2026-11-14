@@ -36,6 +36,15 @@
   <data name="Back to Dashboard" xml:space="preserve">
     <value>Kembali ke Dasbor</value>
   </data>
+  <data name="CPU %" xml:space="preserve">
+    <value>CPU %</value>
+  </data>
+  <data name="CPU PSI (avg60)" xml:space="preserve">
+    <value>PSI CPU (avg60)</value>
+  </data>
+  <data name="CPU Usage" xml:space="preserve">
+    <value>Penggunaan CPU</value>
+  </data>
   <data name="Client Details" xml:space="preserve">
     <value>Detail Klien</value>
   </data>
@@ -56,15 +65,6 @@
   </data>
   <data name="Cores-RAM-Disk" xml:space="preserve">
     <value>Inti-RAM-Disk</value>
-  </data>
-  <data name="CPU %" xml:space="preserve">
-    <value>CPU %</value>
-  </data>
-  <data name="CPU PSI (avg60)" xml:space="preserve">
-    <value>PSI CPU (avg60)</value>
-  </data>
-  <data name="CPU Usage" xml:space="preserve">
-    <value>Penggunaan CPU</value>
   </data>
   <data name="Created" xml:space="preserve">
     <value>Dibuat</value>
@@ -150,6 +150,9 @@
   <data name="Last Update" xml:space="preserve">
     <value>Pembaruan Terakhir</value>
   </data>
+  <data name="MOTD" xml:space="preserve">
+    <value>Pesan Hari Ini</value>
+  </data>
   <data name="Mainly used by process" xml:space="preserve">
     <value>Terutama digunakan oleh proses</value>
   </data>
@@ -164,9 +167,6 @@
   </data>
   <data name="More times" xml:space="preserve">
     <value>Lebih banyak waktu</value>
-  </data>
-  <data name="MOTD" xml:space="preserve">
-    <value>Pesan Hari Ini</value>
   </data>
   <data name="Name" xml:space="preserve">
     <value>Name</value>
@@ -195,6 +195,9 @@
   <data name="Owner" xml:space="preserve">
     <value>Pemilik</value>
   </data>
+  <data name="PSI avg60 at page load: time spent waiting for this resource over the last minute. Refresh to update." xml:space="preserve">
+    <value>PSI avg60 saat halaman dimuat: waktu yang dihabiskan untuk menunggu sumber daya ini selama satu menit terakhir. Muat ulang untuk memperbarui.</value>
+  </data>
   <data name="Ports" xml:space="preserve">
     <value>Ports</value>
   </data>
@@ -206,9 +209,6 @@
   </data>
   <data name="Preview" xml:space="preserve">
     <value>Pratinjau</value>
-  </data>
-  <data name="PSI avg60 at page load: time spent waiting for this resource over the last minute. Refresh to update." xml:space="preserve">
-    <value>PSI avg60 saat halaman dimuat: waktu yang dihabiskan untuk menunggu sumber daya ini selama satu menit terakhir. Muat ulang untuk memperbarui.</value>
   </data>
   <data name="RAM" xml:space="preserve">
     <value>RAM</value>
@@ -225,11 +225,11 @@
   <data name="Runtime Info" xml:space="preserve">
     <value>Informasi Runtime</value>
   </data>
-  <data name="Smoothed CPU idle" xml:space="preserve">
-    <value>Rata-rata CPU menganggur</value>
-  </data>
   <data name="SSH Keys" xml:space="preserve">
     <value>Kunci SSH</value>
+  </data>
+  <data name="Smoothed CPU idle" xml:space="preserve">
+    <value>Rata-rata CPU menganggur</value>
   </data>
   <data name="Started" xml:space="preserve">
     <value>Dimulai</value>

@@ -63,11 +63,11 @@
   <data name="Disk I/O" xml:space="preserve">
     <value>Disk I/O</value>
   </data>
-  <data name="For an overview table, group by ClientId and show recent averages, peaks, and max(ReceivedTime). Avoid treating a metric chosen from tied receipt timestamps as the exact last sample." xml:space="preserve">
-    <value>Untuk tabel ringkasan, kelompokkan berdasarkan ClientId dan tampilkan rata-rata terbaru, puncak, dan max(ReceivedTime). Hindari menganggap metrik yang dipilih dari timestamp penerimaan yang sama sebagai sampel terakhir yang tepat.</value>
-  </data>
   <data name="For Docker, configure the same settings with environment variables such as MetricsExport__Enabled=true and MetricsExport__ConnectionString. Use your deployment&apos;s secret configuration for the real password. Inside a container, localhost refers to that container; use a reachable ClickHouse hostname." xml:space="preserve">
     <value>Untuk Docker, atur pengaturan yang sama menggunakan variabel lingkungan seperti MetricsExport__Enabled=true dan MetricsExport__ConnectionString. Gunakan konfigurasi rahasia deployment Anda untuk kata sandi yang sebenarnya. Di dalam container, localhost merujuk pada container tersebut; gunakan nama host ClickHouse yang dapat dijangkau.</value>
+  </data>
+  <data name="For an overview table, group by ClientId and show recent averages, peaks, and max(ReceivedTime). Avoid treating a metric chosen from tied receipt timestamps as the exact last sample." xml:space="preserve">
+    <value>Untuk tabel ringkasan, kelompokkan berdasarkan ClientId dan tampilkan rata-rata terbaru, puncak, dan max(ReceivedTime). Hindari menganggap metrik yang dipilih dari timestamp penerimaan yang sama sebagai sampel terakhir yang tepat.</value>
   </data>
   <data name="Grafana dashboard comparing CPU, memory, network, disk I/O, load, and archived samples across selected StatHub servers." xml:space="preserve">
     <value>Dasbor Grafana yang membandingkan CPU, memori, jaringan, I/O disk, beban, dan sampel arsip dari server StatHub yang dipilih.</value>
@@ -141,11 +141,11 @@
   <data name="The exporter needs permission to create its database, table, and view, and to insert and select metrics. On the first non-empty batch it creates StatHubMetrics.ServerMetrics and the deduplicated ServerMetricsLatest view automatically." xml:space="preserve">
     <value>Ekspor memerlukan izin untuk membuat basis data, tabel, dan view-nya, serta untuk menyisipkan dan memilih metrik. Pada batch non-kosong pertama, ia secara otomatis membuat StatHubMetrics.ServerMetrics dan view deduplikasi ServerMetricsLatest.</value>
   </data>
-  <data name="Use a separate read-only Grafana account with SELECT permission on both ServerMetricsLatest and its underlying ServerMetrics table. Keep the exporter credentials in StatHub." xml:space="preserve">
-    <value>Gunakan akun Grafana terpisah yang hanya memiliki izin SELECT pada ServerMetricsLatest dan tabel ServerMetrics yang mendasarinya. Simpan kredensial eksportir di StatHub.</value>
-  </data>
   <data name="Use ClickHouse export under Monitoring to choose which servers to export. Its independent policy supports all servers, explicit inclusions, and exclusions; exclusions always win." xml:space="preserve">
     <value>Gunakan ekspor ClickHouse di bawah Monitoring untuk memilih server mana yang akan diekspor. Kebutuhannya independen mendukung semua server, inklusi eksplisit, dan eksklusi; eksklusi selalu menang.</value>
+  </data>
+  <data name="Use a separate read-only Grafana account with SELECT permission on both ServerMetricsLatest and its underlying ServerMetrics table. Keep the exporter credentials in StatHub." xml:space="preserve">
+    <value>Gunakan akun Grafana terpisah yang hanya memiliki izin SELECT pada ServerMetricsLatest dan tabel ServerMetrics yang mendasarinya. Simpan kredensial eksportir di StatHub.</value>
   </data>
   <data name="Used percent: MemUsed divided by MemUsed + MemFree + MemBuf + MemCach, times 100. Return null when the total is zero. Plot the four fields separately for memory composition." xml:space="preserve">
     <value>Persentase penggunaan: MemUsed dibagi MemUsed + MemFree + MemBuf + MemCach, lalu dikalikan 100. Kembalikan null jika totalnya nol. Tampilkan keempat field secara terpisah untuk melihat komposisi memori.</value>

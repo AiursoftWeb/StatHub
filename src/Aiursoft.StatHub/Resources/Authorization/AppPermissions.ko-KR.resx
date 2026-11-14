@@ -108,11 +108,11 @@
   <data name="View Background Jobs" xml:space="preserve">
     <value>백그라운드 작업 보기</value>
   </data>
-  <data name="View server dashboard to see server metrics." xml:space="preserve">
-    <value>서버 메트릭을 확인하려면 서버 대시보드를 봅니다.</value>
-  </data>
   <data name="View System Context" xml:space="preserve">
     <value>시스템 컨텍스트 보기</value>
+  </data>
+  <data name="View server dashboard to see server metrics." xml:space="preserve">
+    <value>서버 메트릭을 확인하려면 서버 대시보드를 봅니다.</value>
   </data>
 
 </root>

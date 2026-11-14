@@ -33,6 +33,9 @@
   <data name="A modern, feature-rich, and highly extensible foundation for your next web application." xml:space="preserve">
     <value>Een moderne, functierijke en zeer uitbreidbare basis voor uw volgende webapplicatie.</value>
   </data>
+  <data name="AI-Powered Translations" xml:space="preserve">
+    <value>AI-gestuurde vertalingen</value>
+  </data>
   <data name="Abandon" xml:space="preserve">
     <value>Opgeven</value>
   </data>
@@ -50,9 +53,6 @@
   </data>
   <data name="Agents with Alerts" xml:space="preserve">
     <value>Agents met waarschuwingen</value>
-  </data>
-  <data name="AI-Powered Translations" xml:space="preserve">
-    <value>AI-gestuurde vertalingen</value>
   </data>
   <data name="All dependencies are automatically registered and always available via constructor injection." xml:space="preserve">
     <value>Alle afhankelijkheden worden automatisch geregistreerd en zijn altijd beschikbaar via constructorinjectie.</value>
@@ -81,6 +81,9 @@
   <data name="Built-in User Management" xml:space="preserve">
     <value>Ingebouwd gebruikersbeheer</value>
   </data>
+  <data name="CPU Usage" xml:space="preserve">
+    <value>CPU-gebruik</value>
+  </data>
   <data name="Collecting data" xml:space="preserve">
     <value>Gegevens verzamelen</value>
   </data>
@@ -92,9 +95,6 @@
   </data>
   <data name="Containers" xml:space="preserve">
     <value>Containers</value>
-  </data>
-  <data name="CPU Usage" xml:space="preserve">
-    <value>CPU-gebruik</value>
   </data>
   <data name="Critical or Warning" xml:space="preserve">
     <value>Kritiek of Waarschuwing</value>
@@ -147,14 +147,14 @@
   <data name="Hello World!" xml:space="preserve">
     <value>Hallo Wereld!</value>
   </data>
+  <data name="IP" xml:space="preserve">
+    <value>IP</value>
+  </data>
   <data name="Includes extensive documentation and practical examples to get you started quickly." xml:space="preserve">
     <value>Bevat uitgebreide documentatie en praktische voorbeelden om je snel op weg te helpen.</value>
   </data>
   <data name="Integrated File Management" xml:space="preserve">
     <value>Geïntegreerd Bestandsbeheer</value>
-  </data>
-  <data name="IP" xml:space="preserve">
-    <value>IP</value>
   </data>
   <data name="Last 30 seconds" xml:space="preserve">
     <value>Laatste 30 seconden</value>
@@ -180,6 +180,9 @@
   <data name="Net Sent" xml:space="preserve">
     <value>Netwerk verzonden</value>
   </data>
+  <data name="OS" xml:space="preserve">
+    <value>Besturingssysteem</value>
+  </data>
   <data name="Offline Agents" xml:space="preserve">
     <value>Offline Agents</value>
   </data>
@@ -188,9 +191,6 @@
   </data>
   <data name="OpenID Connect Integration" xml:space="preserve">
     <value>OpenID Connect-integratie</value>
-  </data>
-  <data name="OS" xml:space="preserve">
-    <value>Besturingssysteem</value>
   </data>
   <data name="Out of sync" xml:space="preserve">
     <value>Niet gesynchroniseerd</value>
@@ -210,20 +210,20 @@
   <data name="Responsive Design" xml:space="preserve">
     <value>Responsief Ontwerp</value>
   </data>
+  <data name="SKU" xml:space="preserve">
+    <value>SKU</value>
+  </data>
+  <data name="SSH Keys" xml:space="preserve">
+    <value>SSH-sleutels</value>
+  </data>
   <data name="Seamlessly integrate with any OpenID Connect provider, with automatic role synchronization." xml:space="preserve">
     <value>Integreer naadloos met elke OpenID Connect-provider, met automatische rol-synchronisatie.</value>
   </data>
   <data name="Servers" xml:space="preserve">
     <value>Servers</value>
   </data>
-  <data name="SKU" xml:space="preserve">
-    <value>SKU</value>
-  </data>
   <data name="Smart dark mode that automatically adapts to the user&apos;s system settings." xml:space="preserve">
     <value>Slimme donkere modus die automatisch aanpast aan de systeeminstellingen van de gebruiker.</value>
-  </data>
-  <data name="SSH Keys" xml:space="preserve">
-    <value>SSH-sleutels</value>
   </data>
   <data name="Status" xml:space="preserve">
     <value>Status</value>

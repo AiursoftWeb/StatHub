@@ -108,11 +108,11 @@
   <data name="View Background Jobs" xml:space="preserve">
     <value>バックグラウンドジョブの表示</value>
   </data>
-  <data name="View server dashboard to see server metrics." xml:space="preserve">
-    <value>サーバーダッシュボードを表示してサーバーメトリクスを確認</value>
-  </data>
   <data name="View System Context" xml:space="preserve">
     <value>システムコンテキストの表示</value>
+  </data>
+  <data name="View server dashboard to see server metrics." xml:space="preserve">
+    <value>サーバーダッシュボードを表示してサーバーメトリクスを確認</value>
   </data>
 
 </root>

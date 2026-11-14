@@ -33,11 +33,11 @@
   <data name="A simple, real-time server monitoring system designed for local deployment." xml:space="preserve">
     <value>Sistem pemantauan server real-time yang sederhana, dirancang untuk penyebaran lokal.</value>
   </data>
-  <data name="Achieve more with Aiursoft Template" xml:space="preserve">
-    <value>Raih lebih banyak dengan Aiursoft Template</value>
-  </data>
   <data name="AI-Powered Translations" xml:space="preserve">
     <value>Terjemahan Berbasis AI</value>
+  </data>
+  <data name="Achieve more with Aiursoft Template" xml:space="preserve">
+    <value>Raih lebih banyak dengan Aiursoft Template</value>
   </data>
   <data name="Aiursoft Template is our definitive choice for enterprise projects! It&apos;s built for developers and is lightweight yet powerful. We can skip all the boilerplate for authentication and user management." xml:space="preserve">
     <value>Aiursoft Template adalah pilihan utama kami untuk proyek perusahaan! Template ini dibangun untuk pengembang, ringan namun bertenaga. Kami bisa melewati semua kode boilerplate untuk autentikasi dan manajemen pengguna.</value>
@@ -102,9 +102,6 @@
   <data name="Dynamic Navigation Bar" xml:space="preserve">
     <value>Bilah Navigasi Dinamis</value>
   </data>
-  <data name="easier" xml:space="preserve">
-    <value>lebih mudah</value>
-  </data>
   <data name="Easily switch between providers like SQLite, MySQL, SQL Server, and an in-memory database for testing." xml:space="preserve">
     <value>Dengan mudah beralih di antara penyedia seperti SQLite, MySQL, SQL Server, dan database dalam memori untuk pengujian.</value>
   </data>
@@ -114,17 +111,11 @@
   <data name="FAQ" xml:space="preserve">
     <value>FAQ</value>
   </data>
-  <data name="faster" xml:space="preserve">
-    <value>lebih cepat</value>
-  </data>
   <data name="Features" xml:space="preserve">
     <value>Fitur</value>
   </data>
   <data name="Features a built-in file management system with automatic avatar compression." xml:space="preserve">
     <value>Fitur sistem manajemen file bawaan dengan kompresi avatar otomatis.</value>
-  </data>
-  <data name="for any inquiries or to report issues." xml:space="preserve">
-    <value>untuk pertanyaan apa pun atau untuk melaporkan masalah.</value>
   </data>
   <data name="Free" xml:space="preserve">
     <value>Gratis</value>
@@ -192,11 +183,11 @@
   <data name="Low-overhead agents collect metrics without impacting your server&apos;s performance." xml:space="preserve">
     <value>Agen dengan beban rendah mengumpulkan metrik tanpa memengaruhi kinerja server Anda.</value>
   </data>
-  <data name="Markdown To HTML" xml:space="preserve">
-    <value>Markdown ke HTML</value>
-  </data>
   <data name="MIT Licence" xml:space="preserve">
     <value>Lisensi MIT</value>
+  </data>
+  <data name="Markdown To HTML" xml:space="preserve">
+    <value>Markdown ke HTML</value>
   </data>
   <data name="Monitor multiple servers from a single centralized dashboard. Scale as your infrastructure grows." xml:space="preserve">
     <value>Pantau beberapa server sekaligus dari satu dasbor terpusat. Skalakan sesuai pertumbuhan infrastruktur Anda.</value>
@@ -297,14 +288,14 @@
   <data name="Use it as a foundation for your SaaS, a backend for your mobile app, a corporate website, or a personal blog. The possibilities are endless." xml:space="preserve">
     <value>Gunakan sebagai fondasi untuk SaaS Anda, backend untuk aplikasi seluler Anda, situs web perusahaan, atau blog pribadi. Kemungkinannya tidak terbatas.</value>
   </data>
-  <data name="View on GitHub" xml:space="preserve">
-    <value>Lihat di GitHub</value>
-  </data>
   <data name="View Servers Stat" xml:space="preserve">
     <value>Lihat Statistik Server</value>
   </data>
   <data name="View Source on GitHub" xml:space="preserve">
     <value>Lihat Sumber di GitHub</value>
+  </data>
+  <data name="View on GitHub" xml:space="preserve">
+    <value>Lihat di GitHub</value>
   </data>
   <data name="Welcome" xml:space="preserve">
     <value>Selamat datang</value>
@@ -332,6 +323,15 @@
   </data>
   <data name="Your Server Status" xml:space="preserve">
     <value>Status Server Anda</value>
+  </data>
+  <data name="easier" xml:space="preserve">
+    <value>lebih mudah</value>
+  </data>
+  <data name="faster" xml:space="preserve">
+    <value>lebih cepat</value>
+  </data>
+  <data name="for any inquiries or to report issues." xml:space="preserve">
+    <value>untuk pertanyaan apa pun atau untuk melaporkan masalah.</value>
   </data>
 
 </root>

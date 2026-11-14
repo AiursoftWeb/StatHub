@@ -33,6 +33,9 @@
   <data name="A modern, feature-rich, and highly extensible foundation for your next web application." xml:space="preserve">
     <value>一個現代化、功能豐富且高度可擴展嘅基礎，為您嘅下一個網頁應用程式提供強大支援。</value>
   </data>
+  <data name="AI-Powered Translations" xml:space="preserve">
+    <value>人工智能翻譯</value>
+  </data>
   <data name="Abandon" xml:space="preserve">
     <value>放棄</value>
   </data>
@@ -50,9 +53,6 @@
   </data>
   <data name="Agents with Alerts" xml:space="preserve">
     <value>有警示嘅终端</value>
-  </data>
-  <data name="AI-Powered Translations" xml:space="preserve">
-    <value>人工智能翻譯</value>
   </data>
   <data name="All dependencies are automatically registered and always available via constructor injection." xml:space="preserve">
     <value>所有依賴項都會自動註冊，並可隨時透過構造函數注入使用。</value>
@@ -81,6 +81,9 @@
   <data name="Built-in User Management" xml:space="preserve">
     <value>內建用戶管理</value>
   </data>
+  <data name="CPU Usage" xml:space="preserve">
+    <value>CPU 使用率</value>
+  </data>
   <data name="Collecting data" xml:space="preserve">
     <value>正在收集資料</value>
   </data>
@@ -92,9 +95,6 @@
   </data>
   <data name="Containers" xml:space="preserve">
     <value>容器</value>
-  </data>
-  <data name="CPU Usage" xml:space="preserve">
-    <value>CPU 使用率</value>
   </data>
   <data name="Critical or Warning" xml:space="preserve">
     <value>嚴重或警告</value>
@@ -147,14 +147,14 @@
   <data name="Hello World!" xml:space="preserve">
     <value>你好世界！</value>
   </data>
+  <data name="IP" xml:space="preserve">
+    <value>IP 地址</value>
+  </data>
   <data name="Includes extensive documentation and practical examples to get you started quickly." xml:space="preserve">
     <value>包含詳盡嘅說明文件同埋實用例子，助你快速上手。</value>
   </data>
   <data name="Integrated File Management" xml:space="preserve">
     <value>整合式檔案管理</value>
-  </data>
-  <data name="IP" xml:space="preserve">
-    <value>IP 地址</value>
   </data>
   <data name="Last 30 seconds" xml:space="preserve">
     <value>過去 30 秒</value>
@@ -180,6 +180,9 @@
   <data name="Net Sent" xml:space="preserve">
     <value>網絡傳送</value>
   </data>
+  <data name="OS" xml:space="preserve">
+    <value>作業系統</value>
+  </data>
   <data name="Offline Agents" xml:space="preserve">
     <value>離線终端</value>
   </data>
@@ -188,9 +191,6 @@
   </data>
   <data name="OpenID Connect Integration" xml:space="preserve">
     <value>OpenID Connect 整合</value>
-  </data>
-  <data name="OS" xml:space="preserve">
-    <value>作業系統</value>
   </data>
   <data name="Out of sync" xml:space="preserve">
     <value>失去同步</value>
@@ -210,20 +210,20 @@
   <data name="Responsive Design" xml:space="preserve">
     <value>自適應設計</value>
   </data>
+  <data name="SKU" xml:space="preserve">
+    <value>型號</value>
+  </data>
+  <data name="SSH Keys" xml:space="preserve">
+    <value>SSH 金鑰</value>
+  </data>
   <data name="Seamlessly integrate with any OpenID Connect provider, with automatic role synchronization." xml:space="preserve">
     <value>無縫整合任何 OpenID Connect 供應商，並自動同步角色權限。</value>
   </data>
   <data name="Servers" xml:space="preserve">
     <value>伺服器</value>
   </data>
-  <data name="SKU" xml:space="preserve">
-    <value>型號</value>
-  </data>
   <data name="Smart dark mode that automatically adapts to the user&apos;s system settings." xml:space="preserve">
     <value>智能深色模式，會自動適應使用者嘅系統設定。</value>
-  </data>
-  <data name="SSH Keys" xml:space="preserve">
-    <value>SSH 金鑰</value>
   </data>
   <data name="Status" xml:space="preserve">
     <value>狀態</value>

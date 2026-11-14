@@ -63,11 +63,11 @@
   <data name="Disk I/O" xml:space="preserve">
     <value>I/O đĩa</value>
   </data>
-  <data name="For an overview table, group by ClientId and show recent averages, peaks, and max(ReceivedTime). Avoid treating a metric chosen from tied receipt timestamps as the exact last sample." xml:space="preserve">
-    <value>Đối với bảng tổng quan, hãy nhóm theo ClientId và hiển thị các giá trị trung bình, đỉnh gần đây cùng max(ReceivedTime). Không nên xem một chỉ số được chọn từ các dấu thời gian nhận trùng nhau là mẫu cuối cùng chính xác.</value>
-  </data>
   <data name="For Docker, configure the same settings with environment variables such as MetricsExport__Enabled=true and MetricsExport__ConnectionString. Use your deployment&apos;s secret configuration for the real password. Inside a container, localhost refers to that container; use a reachable ClickHouse hostname." xml:space="preserve">
     <value>Với Docker, hãy cấu hình các cài đặt tương tự bằng các biến môi trường như MetricsExport__Enabled=true và MetricsExport__ConnectionString. Sử dụng cấu hình bí mật của triển khai để đặt mật khẩu thực. Bên trong một container, localhost trỏ đến chính container đó; hãy sử dụng tên máy chủ ClickHouse có thể truy cập được.</value>
+  </data>
+  <data name="For an overview table, group by ClientId and show recent averages, peaks, and max(ReceivedTime). Avoid treating a metric chosen from tied receipt timestamps as the exact last sample." xml:space="preserve">
+    <value>Đối với bảng tổng quan, hãy nhóm theo ClientId và hiển thị các giá trị trung bình, đỉnh gần đây cùng max(ReceivedTime). Không nên xem một chỉ số được chọn từ các dấu thời gian nhận trùng nhau là mẫu cuối cùng chính xác.</value>
   </data>
   <data name="Grafana dashboard comparing CPU, memory, network, disk I/O, load, and archived samples across selected StatHub servers." xml:space="preserve">
     <value>Bảng điều khiển Grafana so sánh CPU, bộ nhớ, mạng, I/O đĩa, tải và các mẫu dữ liệu đã lưu trữ trên những máy chủ StatHub được chọn.</value>
@@ -141,11 +141,11 @@
   <data name="The exporter needs permission to create its database, table, and view, and to insert and select metrics. On the first non-empty batch it creates StatHubMetrics.ServerMetrics and the deduplicated ServerMetricsLatest view automatically." xml:space="preserve">
     <value>Trình xuất dữ liệu cần quyền tạo cơ sở dữ liệu, bảng và view của nó, cũng như quyền chèn và truy vấn các chỉ số. Ở lô dữ liệu đầu tiên không rỗng, nó sẽ tự động tạo StatHubMetrics.ServerMetrics và view ServerMetricsLatest đã khử trùng lặp.</value>
   </data>
-  <data name="Use a separate read-only Grafana account with SELECT permission on both ServerMetricsLatest and its underlying ServerMetrics table. Keep the exporter credentials in StatHub." xml:space="preserve">
-    <value>Sử dụng một tài khoản Grafana chỉ có quyền đọc riêng, với quyền SELECT trên cả ServerMetricsLatest và bảng ServerMetrics bên dưới. Giữ thông tin xác thực của trình xuất trong StatHub.</value>
-  </data>
   <data name="Use ClickHouse export under Monitoring to choose which servers to export. Its independent policy supports all servers, explicit inclusions, and exclusions; exclusions always win." xml:space="preserve">
     <value>Sử dụng xuất ClickHouse trong phần Giám sát để chọn máy chủ cần xuất. Chính sách độc lập của nó hỗ trợ tất cả các máy chủ, bao gồm rõ ràng và loại trừ; loại trừ luôn có ưu tiên.</value>
+  </data>
+  <data name="Use a separate read-only Grafana account with SELECT permission on both ServerMetricsLatest and its underlying ServerMetrics table. Keep the exporter credentials in StatHub." xml:space="preserve">
+    <value>Sử dụng một tài khoản Grafana chỉ có quyền đọc riêng, với quyền SELECT trên cả ServerMetricsLatest và bảng ServerMetrics bên dưới. Giữ thông tin xác thực của trình xuất trong StatHub.</value>
   </data>
   <data name="Used percent: MemUsed divided by MemUsed + MemFree + MemBuf + MemCach, times 100. Return null when the total is zero. Plot the four fields separately for memory composition." xml:space="preserve">
     <value>Phần trăm đã sử dụng: MemUsed chia cho MemUsed + MemFree + MemBuf + MemCach, rồi nhân với 100. Trả về null khi tổng bằng 0. Vẽ riêng bốn trường để thể hiện cơ cấu bộ nhớ.</value>

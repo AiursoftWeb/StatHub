@@ -63,11 +63,11 @@
   <data name="Disk I/O" xml:space="preserve">
     <value>I/O القرص</value>
   </data>
-  <data name="For an overview table, group by ClientId and show recent averages, peaks, and max(ReceivedTime). Avoid treating a metric chosen from tied receipt timestamps as the exact last sample." xml:space="preserve">
-    <value>لإنشاء جدول نظرة عامة، اجمع النتائج حسب ClientId واعرض المتوسطات والقمم الحديثة وmax(ReceivedTime). تجنّب اعتبار مقياس مختار من بين طوابع زمنية متطابقة للاستلام هو العينة الأخيرة بدقة.</value>
-  </data>
   <data name="For Docker, configure the same settings with environment variables such as MetricsExport__Enabled=true and MetricsExport__ConnectionString. Use your deployment&apos;s secret configuration for the real password. Inside a container, localhost refers to that container; use a reachable ClickHouse hostname." xml:space="preserve">
     <value>في حالة Docker، قم بإعداد نفس الإعدادات باستخدام متغيرات البيئة مثل MetricsExport__Enabled=true و MetricsExport__ConnectionString. استخدم إعدادات الأمان الخاصة بنشر نظامك للكلمة السريرية الفعلية. داخل الحاوية، يشير localhost إلى تلك الحاوية؛ استخدم اسم مضيف ClickHouse يمكن الوصول إليه.</value>
+  </data>
+  <data name="For an overview table, group by ClientId and show recent averages, peaks, and max(ReceivedTime). Avoid treating a metric chosen from tied receipt timestamps as the exact last sample." xml:space="preserve">
+    <value>لإنشاء جدول نظرة عامة، اجمع النتائج حسب ClientId واعرض المتوسطات والقمم الحديثة وmax(ReceivedTime). تجنّب اعتبار مقياس مختار من بين طوابع زمنية متطابقة للاستلام هو العينة الأخيرة بدقة.</value>
   </data>
   <data name="Grafana dashboard comparing CPU, memory, network, disk I/O, load, and archived samples across selected StatHub servers." xml:space="preserve">
     <value>لوحة معلومات Grafana تقارن استخدام وحدة المعالجة المركزية والذاكرة والشبكة وإدخال/إخراج القرص والحمل والعينات المؤرشفة عبر خوادم StatHub المحددة.</value>
@@ -141,11 +141,11 @@
   <data name="The exporter needs permission to create its database, table, and view, and to insert and select metrics. On the first non-empty batch it creates StatHubMetrics.ServerMetrics and the deduplicated ServerMetricsLatest view automatically." xml:space="preserve">
     <value>يحتاج مُصدِّر البيانات إلى إذن لإنشاء قاعدة البيانات والجداول والعرض الخاص به، وإدراج المقاييس واختيارها. عند أول دفعة غير فارغة، ينشئ تلقائيًا جدول StatHubMetrics.ServerMetrics وعرض ServerMetricsLatest المُزيل للتكرار.</value>
   </data>
-  <data name="Use a separate read-only Grafana account with SELECT permission on both ServerMetricsLatest and its underlying ServerMetrics table. Keep the exporter credentials in StatHub." xml:space="preserve">
-    <value>استخدم حسابًا منفصلًا للقراءة فقط في Grafana مع صلاحية SELECT على كلٍّ من ServerMetricsLatest وجدول ServerMetrics الأساسي. احتفظ ببيانات اعتماد المُصدِّر في StatHub.</value>
-  </data>
   <data name="Use ClickHouse export under Monitoring to choose which servers to export. Its independent policy supports all servers, explicit inclusions, and exclusions; exclusions always win." xml:space="preserve">
     <value>استخدم تصدير ClickHouse ضمن قسم المراقبة لاختيار الخوادم التي تريد تصديرها. يدعم سياستها المستقلة جميع الخوادم، والإدراج الصريح، والاستبعاد؛ حيث تغلب الاستثناءات دائمًا.</value>
+  </data>
+  <data name="Use a separate read-only Grafana account with SELECT permission on both ServerMetricsLatest and its underlying ServerMetrics table. Keep the exporter credentials in StatHub." xml:space="preserve">
+    <value>استخدم حسابًا منفصلًا للقراءة فقط في Grafana مع صلاحية SELECT على كلٍّ من ServerMetricsLatest وجدول ServerMetrics الأساسي. احتفظ ببيانات اعتماد المُصدِّر في StatHub.</value>
   </data>
   <data name="Used percent: MemUsed divided by MemUsed + MemFree + MemBuf + MemCach, times 100. Return null when the total is zero. Plot the four fields separately for memory composition." xml:space="preserve">
     <value>النسبة المئوية للاستخدام: MemUsed مقسومة على MemUsed + MemFree + MemBuf + MemCach، مضروبة في 100. أعد null عندما يكون المجموع صفراً. ارسم الحقول الأربعة بشكل منفصل لتكوين الذاكرة.</value>

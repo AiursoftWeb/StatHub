@@ -33,6 +33,9 @@
   <data name="A modern, feature-rich, and highly extensible foundation for your next web application." xml:space="preserve">
     <value>أساس حديث، غني بالميزات، وقابل للتوسعة بشكل كبير لتطبيق الويب القادم الخاص بك.</value>
   </data>
+  <data name="AI-Powered Translations" xml:space="preserve">
+    <value>الترجمات المدعومة بالذكاء الاصطناعي</value>
+  </data>
   <data name="Abandon" xml:space="preserve">
     <value>إلغاء</value>
   </data>
@@ -50,9 +53,6 @@
   </data>
   <data name="Agents with Alerts" xml:space="preserve">
     <value>العملاء مع التنبيهات</value>
-  </data>
-  <data name="AI-Powered Translations" xml:space="preserve">
-    <value>الترجمات المدعومة بالذكاء الاصطناعي</value>
   </data>
   <data name="All dependencies are automatically registered and always available via constructor injection." xml:space="preserve">
     <value>يتم تسجيل جميع التبعيات تلقائيًا وهي متاحة دائمًا عبر حقن المُنشئ.</value>
@@ -81,6 +81,9 @@
   <data name="Built-in User Management" xml:space="preserve">
     <value>إدارة المستخدمين المدمجة</value>
   </data>
+  <data name="CPU Usage" xml:space="preserve">
+    <value>استخدام المعالج</value>
+  </data>
   <data name="Collecting data" xml:space="preserve">
     <value>جارٍ جمع البيانات</value>
   </data>
@@ -92,9 +95,6 @@
   </data>
   <data name="Containers" xml:space="preserve">
     <value>Containers</value>
-  </data>
-  <data name="CPU Usage" xml:space="preserve">
-    <value>استخدام المعالج</value>
   </data>
   <data name="Critical or Warning" xml:space="preserve">
     <value>حرج أو تحذير</value>
@@ -147,14 +147,14 @@
   <data name="Hello World!" xml:space="preserve">
     <value>مرحباً أيها العالم!</value>
   </data>
+  <data name="IP" xml:space="preserve">
+    <value>عنوان IP</value>
+  </data>
   <data name="Includes extensive documentation and practical examples to get you started quickly." xml:space="preserve">
     <value>يحتوي على وثائق شاملة وأمثلة عملية لمساعدتك على البدء بسرعة.</value>
   </data>
   <data name="Integrated File Management" xml:space="preserve">
     <value>إدارة الملفات المتكاملة</value>
-  </data>
-  <data name="IP" xml:space="preserve">
-    <value>عنوان IP</value>
   </data>
   <data name="Last 30 seconds" xml:space="preserve">
     <value>آخر 30 ثانية</value>
@@ -180,6 +180,9 @@
   <data name="Net Sent" xml:space="preserve">
     <value>البيانات المرسلة</value>
   </data>
+  <data name="OS" xml:space="preserve">
+    <value>نظام التشغيل</value>
+  </data>
   <data name="Offline Agents" xml:space="preserve">
     <value>العملات غير المتصلة</value>
   </data>
@@ -188,9 +191,6 @@
   </data>
   <data name="OpenID Connect Integration" xml:space="preserve">
     <value>دمج OpenID Connect</value>
-  </data>
-  <data name="OS" xml:space="preserve">
-    <value>نظام التشغيل</value>
   </data>
   <data name="Out of sync" xml:space="preserve">
     <value>غير متزامن</value>
@@ -210,20 +210,20 @@
   <data name="Responsive Design" xml:space="preserve">
     <value>تصميم متجاوب</value>
   </data>
+  <data name="SKU" xml:space="preserve">
+    <value>المنتج</value>
+  </data>
+  <data name="SSH Keys" xml:space="preserve">
+    <value>مفاتيح SSH</value>
+  </data>
   <data name="Seamlessly integrate with any OpenID Connect provider, with automatic role synchronization." xml:space="preserve">
     <value>التكامل السلس مع أي موفر OpenID Connect، مع مزامنة تلقائية للأدوار.</value>
   </data>
   <data name="Servers" xml:space="preserve">
     <value>الخوادم</value>
   </data>
-  <data name="SKU" xml:space="preserve">
-    <value>المنتج</value>
-  </data>
   <data name="Smart dark mode that automatically adapts to the user&apos;s system settings." xml:space="preserve">
     <value>وضع الظلام الذكي الذي يتكيف تلقائيًا مع إعدادات نظام المستخدم.</value>
-  </data>
-  <data name="SSH Keys" xml:space="preserve">
-    <value>مفاتيح SSH</value>
   </data>
   <data name="Status" xml:space="preserve">
     <value>الحالة</value>

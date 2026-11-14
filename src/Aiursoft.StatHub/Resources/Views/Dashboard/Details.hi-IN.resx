@@ -36,6 +36,15 @@
   <data name="Back to Dashboard" xml:space="preserve">
     <value>डैशबोर्ड पर वापस</value>
   </data>
+  <data name="CPU %" xml:space="preserve">
+    <value>CPU %</value>
+  </data>
+  <data name="CPU PSI (avg60)" xml:space="preserve">
+    <value>CPU PSI (avg60)</value>
+  </data>
+  <data name="CPU Usage" xml:space="preserve">
+    <value>सीपीयू उपयोग</value>
+  </data>
   <data name="Client Details" xml:space="preserve">
     <value>क्लाइंट विवरण</value>
   </data>
@@ -56,15 +65,6 @@
   </data>
   <data name="Cores-RAM-Disk" xml:space="preserve">
     <value>कोर-रैम-डिस्क</value>
-  </data>
-  <data name="CPU %" xml:space="preserve">
-    <value>CPU %</value>
-  </data>
-  <data name="CPU PSI (avg60)" xml:space="preserve">
-    <value>CPU PSI (avg60)</value>
-  </data>
-  <data name="CPU Usage" xml:space="preserve">
-    <value>सीपीयू उपयोग</value>
   </data>
   <data name="Created" xml:space="preserve">
     <value>निर्मित</value>
@@ -150,6 +150,9 @@
   <data name="Last Update" xml:space="preserve">
     <value>अंतिम अद्यतन</value>
   </data>
+  <data name="MOTD" xml:space="preserve">
+    <value>संदेश दिवस</value>
+  </data>
   <data name="Mainly used by process" xml:space="preserve">
     <value>मुख्य रूप से प्रक्रिया द्वारा उपयोग किया गया</value>
   </data>
@@ -164,9 +167,6 @@
   </data>
   <data name="More times" xml:space="preserve">
     <value>अन्य समय</value>
-  </data>
-  <data name="MOTD" xml:space="preserve">
-    <value>संदेश दिवस</value>
   </data>
   <data name="Name" xml:space="preserve">
     <value>Name</value>
@@ -195,6 +195,9 @@
   <data name="Owner" xml:space="preserve">
     <value>मालिक</value>
   </data>
+  <data name="PSI avg60 at page load: time spent waiting for this resource over the last minute. Refresh to update." xml:space="preserve">
+    <value>पेज लोड होने पर PSI का 60 सेकंड का औसत: पिछले एक मिनट में इस संसाधन के लिए प्रतीक्षा में लगा समय। अपडेट करने के लिए रीफ़्रेश करें।</value>
+  </data>
   <data name="Ports" xml:space="preserve">
     <value>Ports</value>
   </data>
@@ -206,9 +209,6 @@
   </data>
   <data name="Preview" xml:space="preserve">
     <value>पूर्वावलोकन</value>
-  </data>
-  <data name="PSI avg60 at page load: time spent waiting for this resource over the last minute. Refresh to update." xml:space="preserve">
-    <value>पेज लोड होने पर PSI का 60 सेकंड का औसत: पिछले एक मिनट में इस संसाधन के लिए प्रतीक्षा में लगा समय। अपडेट करने के लिए रीफ़्रेश करें।</value>
   </data>
   <data name="RAM" xml:space="preserve">
     <value>रैम</value>
@@ -225,11 +225,11 @@
   <data name="Runtime Info" xml:space="preserve">
     <value>रनटाइम जानकारी</value>
   </data>
-  <data name="Smoothed CPU idle" xml:space="preserve">
-    <value>औसत CPU निष्क्रियता</value>
-  </data>
   <data name="SSH Keys" xml:space="preserve">
     <value>SSH कुंजियाँ</value>
+  </data>
+  <data name="Smoothed CPU idle" xml:space="preserve">
+    <value>औसत CPU निष्क्रियता</value>
   </data>
   <data name="Started" xml:space="preserve">
     <value>शुरू</value>

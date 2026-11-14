@@ -60,14 +60,17 @@
   <data name="Synchronize server health incidents with AlertCenter." xml:space="preserve">
     <value>सर्वर की स्वास्थ्य संबंधी घटनाओं को AlertCenter के साथ सिंक्रनाइज़ करें।</value>
   </data>
-  <data name="The brand name of the company or project. E.g. Aiursoft." xml:space="preserve">
-    <value>कंपनी या प्रोजेक्ट का ब्रांड नाम। उदाहरण: Aiursoft।</value>
-  </data>
   <data name="The HTTP(S) base URL of AlertCenter." xml:space="preserve">
     <value>AlertCenter का HTTP(S) बेस URL।</value>
   </data>
   <data name="The ICP license number for China mainland users. Leave empty to hide." xml:space="preserve">
     <value>चीन मुख्यभूमि के उपयोगकर्ताओं के लिए ICP लाइसेंस संख्या। छिपाने के लिए खाली छोड़ें।</value>
+  </data>
+  <data name="The URL of the company or project. E.g. https://www.aiursoft.com" xml:space="preserve">
+    <value>कंपनी या प्रोजेक्ट का URL। उदाहरण: https://www.aiursoft.com</value>
+  </data>
+  <data name="The brand name of the company or project. E.g. Aiursoft." xml:space="preserve">
+    <value>कंपनी या प्रोजेक्ट का ब्रांड नाम। उदाहरण: Aiursoft।</value>
   </data>
   <data name="The logo of the project displayed in the navbar and footer. Support jpg, png, svg." xml:space="preserve">
     <value>प्रोजेक्ट का लोगो नेवबार और फुटर में प्रदर्शित किया जाता है। jpg, png, svg का समर्थन करता है।</value>
@@ -77,9 +80,6 @@
   </data>
   <data name="The public base URL of this StatHub instance, used in incident links." xml:space="preserve">
     <value>इस StatHub इंस्टेंस का सार्वजनिक बेस URL, जो इन्सिडेंट लिंक में उपयोग किया जाता है।</value>
-  </data>
-  <data name="The URL of the company or project. E.g. https://www.aiursoft.com" xml:space="preserve">
-    <value>कंपनी या प्रोजेक्ट का URL। उदाहरण: https://www.aiursoft.com</value>
   </data>
 
 </root>

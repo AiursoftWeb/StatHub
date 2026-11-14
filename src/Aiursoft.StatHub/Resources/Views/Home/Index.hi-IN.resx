@@ -33,11 +33,11 @@
   <data name="A simple, real-time server monitoring system designed for local deployment." xml:space="preserve">
     <value>एक सरल, रीयल-टाइम सर्वर मॉनिटरिंग प्रणाली जो स्थानीय डेप्लॉयमेंट के लिए डिज़ाइन की गई है।</value>
   </data>
-  <data name="Achieve more with Aiursoft Template" xml:space="preserve">
-    <value>Aiursoft टेम्पलेट के साथ और अधिक हासिल करें</value>
-  </data>
   <data name="AI-Powered Translations" xml:space="preserve">
     <value>AI-संचालित अनुवाद</value>
+  </data>
+  <data name="Achieve more with Aiursoft Template" xml:space="preserve">
+    <value>Aiursoft टेम्पलेट के साथ और अधिक हासिल करें</value>
   </data>
   <data name="Aiursoft Template is our definitive choice for enterprise projects! It&apos;s built for developers and is lightweight yet powerful. We can skip all the boilerplate for authentication and user management." xml:space="preserve">
     <value>Aiursoft Template उद्यम परियोजनाओं के लिए हमारा सर्वोत्तम विकल्प है! यह डेवलपर्स के लिए बनाया गया है और हल्का होने के साथ-साथ शक्तिशाली भी है। हम प्रमाणीकरण और उपयोगकर्ता प्रबंधन के लिए सभी बॉयलरप्लेट को छोड़ सकते हैं।</value>
@@ -102,9 +102,6 @@
   <data name="Dynamic Navigation Bar" xml:space="preserve">
     <value>डायनामिक नेविगेशन बार</value>
   </data>
-  <data name="easier" xml:space="preserve">
-    <value>आसान</value>
-  </data>
   <data name="Easily switch between providers like SQLite, MySQL, SQL Server, and an in-memory database for testing." xml:space="preserve">
     <value>SQLite, MySQL, SQL Server जैसे प्रदाताओं और परीक्षण के लिए इन-मेमोरी डेटाबेस के बीच आसानी से स्विच करें।</value>
   </data>
@@ -114,17 +111,11 @@
   <data name="FAQ" xml:space="preserve">
     <value>अक्सर पूछे जाने वाले प्रश्न</value>
   </data>
-  <data name="faster" xml:space="preserve">
-    <value>तेज़</value>
-  </data>
   <data name="Features" xml:space="preserve">
     <value>विशेषताएँ</value>
   </data>
   <data name="Features a built-in file management system with automatic avatar compression." xml:space="preserve">
     <value>स्वचालित अवतार संपीड़न के साथ एक अंतर्निहित फ़ाइल प्रबंधन प्रणाली की सुविधा।</value>
-  </data>
-  <data name="for any inquiries or to report issues." xml:space="preserve">
-    <value>किसी भी जानकारी के लिए या समस्याओं की रिपोर्ट करने के लिए।</value>
   </data>
   <data name="Free" xml:space="preserve">
     <value>मुफ़्त</value>
@@ -192,11 +183,11 @@
   <data name="Low-overhead agents collect metrics without impacting your server&apos;s performance." xml:space="preserve">
     <value>कम ओवरहेड एजेंट अपने सर्वर के प्रदर्शन को प्रभावित किए बिना मेट्रिक्स एकत्र करते हैं।</value>
   </data>
-  <data name="Markdown To HTML" xml:space="preserve">
-    <value>मार्कडाउन से एचटीएमएल</value>
-  </data>
   <data name="MIT Licence" xml:space="preserve">
     <value>एमआईटी लाइसेंस</value>
+  </data>
+  <data name="Markdown To HTML" xml:space="preserve">
+    <value>मार्कडाउन से एचटीएमएल</value>
   </data>
   <data name="Monitor multiple servers from a single centralized dashboard. Scale as your infrastructure grows." xml:space="preserve">
     <value>एक ही केंद्रीकृत डैशबोर्ड से कई सर्वरों को मॉनिटर करें। अपनी इंफ्रास्ट्रक्चर के विकास के साथ स्केल करें।</value>
@@ -297,14 +288,14 @@
   <data name="Use it as a foundation for your SaaS, a backend for your mobile app, a corporate website, or a personal blog. The possibilities are endless." xml:space="preserve">
     <value>इसे अपने SaaS की नींव के रूप में, अपने मोबाइल ऐप के लिए बैकएंड के रूप में, एक कॉर्पोरेट वेबसाइट के रूप में, या एक व्यक्तिगत ब्लॉग के रूप में उपयोग करें। संभावनाएं अनंत हैं।</value>
   </data>
-  <data name="View on GitHub" xml:space="preserve">
-    <value>GitHub पर देखें</value>
-  </data>
   <data name="View Servers Stat" xml:space="preserve">
     <value>सर्वरों की स्थिति देखें</value>
   </data>
   <data name="View Source on GitHub" xml:space="preserve">
     <value>GitHub पर सोर्स कोड देखें</value>
+  </data>
+  <data name="View on GitHub" xml:space="preserve">
+    <value>GitHub पर देखें</value>
   </data>
   <data name="Welcome" xml:space="preserve">
     <value>स्वागत है</value>
@@ -332,6 +323,15 @@
   </data>
   <data name="Your Server Status" xml:space="preserve">
     <value>आपका सर्वर स्थिति</value>
+  </data>
+  <data name="easier" xml:space="preserve">
+    <value>आसान</value>
+  </data>
+  <data name="faster" xml:space="preserve">
+    <value>तेज़</value>
+  </data>
+  <data name="for any inquiries or to report issues." xml:space="preserve">
+    <value>किसी भी जानकारी के लिए या समस्याओं की रिपोर्ट करने के लिए।</value>
   </data>
 
 </root>

@@ -63,11 +63,11 @@
   <data name="Disk I/O" xml:space="preserve">
     <value>We/Wy I/O dysku</value>
   </data>
-  <data name="For an overview table, group by ClientId and show recent averages, peaks, and max(ReceivedTime). Avoid treating a metric chosen from tied receipt timestamps as the exact last sample." xml:space="preserve">
-    <value>W tabeli przeglądowej grupuj wg ClientId i wyświetlaj ostatnie średnie, szczyty oraz max(ReceivedTime). Unikaj traktowania metryki wybranej z równych znaczników czasu odbioru jako dokładnej ostatniej próbki.</value>
-  </data>
   <data name="For Docker, configure the same settings with environment variables such as MetricsExport__Enabled=true and MetricsExport__ConnectionString. Use your deployment&apos;s secret configuration for the real password. Inside a container, localhost refers to that container; use a reachable ClickHouse hostname." xml:space="preserve">
     <value>W przypadku Dockera skonfiguruj te same ustawienia za pomocą zmiennych środowiskowych, takich jak MetricsExport__Enabled=true i MetricsExport__ConnectionString. Rzeczywiste hasło podaj w konfiguracji sekretów wdrożenia. W kontenerze localhost odnosi się do tego kontenera; użyj nazwy hosta ClickHouse, która jest z niego osiągalna.</value>
+  </data>
+  <data name="For an overview table, group by ClientId and show recent averages, peaks, and max(ReceivedTime). Avoid treating a metric chosen from tied receipt timestamps as the exact last sample." xml:space="preserve">
+    <value>W tabeli przeglądowej grupuj wg ClientId i wyświetlaj ostatnie średnie, szczyty oraz max(ReceivedTime). Unikaj traktowania metryki wybranej z równych znaczników czasu odbioru jako dokładnej ostatniej próbki.</value>
   </data>
   <data name="Grafana dashboard comparing CPU, memory, network, disk I/O, load, and archived samples across selected StatHub servers." xml:space="preserve">
     <value>Panel Grafany porównujący użycie procesora i pamięci, ruch sieciowy, operacje wejścia/wyjścia dysku, obciążenie oraz zarchiwizowane próbki dla wybranych serwerów StatHub.</value>
@@ -141,11 +141,11 @@
   <data name="The exporter needs permission to create its database, table, and view, and to insert and select metrics. On the first non-empty batch it creates StatHubMetrics.ServerMetrics and the deduplicated ServerMetricsLatest view automatically." xml:space="preserve">
     <value>Eksporter potrzebuje uprawnień do utworzenia bazy danych, tabeli i widoku oraz do wstawiania i odczytywania metryk. Przy pierwszej niepustej partii danych automatycznie tworzy tabelę StatHubMetrics.ServerMetrics i widok ServerMetricsLatest z usuniętymi duplikatami.</value>
   </data>
-  <data name="Use a separate read-only Grafana account with SELECT permission on both ServerMetricsLatest and its underlying ServerMetrics table. Keep the exporter credentials in StatHub." xml:space="preserve">
-    <value>Użyj osobnego konta Grafany z uprawnieniami tylko do odczytu i uprawnieniem SELECT do tabeli ServerMetricsLatest oraz bazowej tabeli ServerMetrics. Dane logowania eksportera przechowuj w StatHub.</value>
-  </data>
   <data name="Use ClickHouse export under Monitoring to choose which servers to export. Its independent policy supports all servers, explicit inclusions, and exclusions; exclusions always win." xml:space="preserve">
     <value>W sekcji Monitorowanie wybierz eksport ClickHouse, aby wskazać serwery, które mają być eksportowane. Jego niezależna polityka obsługuje wszystkie serwery, jawnie uwzględnione serwery oraz wykluczenia; wykluczenia mają zawsze pierwszeństwo.</value>
+  </data>
+  <data name="Use a separate read-only Grafana account with SELECT permission on both ServerMetricsLatest and its underlying ServerMetrics table. Keep the exporter credentials in StatHub." xml:space="preserve">
+    <value>Użyj osobnego konta Grafany z uprawnieniami tylko do odczytu i uprawnieniem SELECT do tabeli ServerMetricsLatest oraz bazowej tabeli ServerMetrics. Dane logowania eksportera przechowuj w StatHub.</value>
   </data>
   <data name="Used percent: MemUsed divided by MemUsed + MemFree + MemBuf + MemCach, times 100. Return null when the total is zero. Plot the four fields separately for memory composition." xml:space="preserve">
     <value>Procent wykorzystania: MemUsed podzielone przez MemUsed + MemFree + MemBuf + MemCach, pomnożone przez 100. Zwróć null, gdy suma wynosi zero. Przedstaw osobno cztery pola, aby pokazać strukturę pamięci.</value>

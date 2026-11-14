@@ -36,6 +36,15 @@
   <data name="Back to Dashboard" xml:space="preserve">
     <value>Înapoi la Panoul de Control</value>
   </data>
+  <data name="CPU %" xml:space="preserve">
+    <value>CPU %</value>
+  </data>
+  <data name="CPU PSI (avg60)" xml:space="preserve">
+    <value>PSI CPU (avg60)</value>
+  </data>
+  <data name="CPU Usage" xml:space="preserve">
+    <value>Utilizarea CPU</value>
+  </data>
   <data name="Client Details" xml:space="preserve">
     <value>Detalii Client</value>
   </data>
@@ -56,15 +65,6 @@
   </data>
   <data name="Cores-RAM-Disk" xml:space="preserve">
     <value>Nuclee-Memorie-Disc</value>
-  </data>
-  <data name="CPU %" xml:space="preserve">
-    <value>CPU %</value>
-  </data>
-  <data name="CPU PSI (avg60)" xml:space="preserve">
-    <value>PSI CPU (avg60)</value>
-  </data>
-  <data name="CPU Usage" xml:space="preserve">
-    <value>Utilizarea CPU</value>
   </data>
   <data name="Created" xml:space="preserve">
     <value>Creat</value>
@@ -150,6 +150,9 @@
   <data name="Last Update" xml:space="preserve">
     <value>Ultima actualizare</value>
   </data>
+  <data name="MOTD" xml:space="preserve">
+    <value>Mesajul zilei</value>
+  </data>
   <data name="Mainly used by process" xml:space="preserve">
     <value>Utilizat în principal de proces</value>
   </data>
@@ -164,9 +167,6 @@
   </data>
   <data name="More times" xml:space="preserve">
     <value>Mai multe momente</value>
-  </data>
-  <data name="MOTD" xml:space="preserve">
-    <value>Mesajul zilei</value>
   </data>
   <data name="Name" xml:space="preserve">
     <value>Name</value>
@@ -195,6 +195,9 @@
   <data name="Owner" xml:space="preserve">
     <value>Proprietar</value>
   </data>
+  <data name="PSI avg60 at page load: time spent waiting for this resource over the last minute. Refresh to update." xml:space="preserve">
+    <value>PSI avg60 la încărcarea paginii: timpul de așteptare pentru această resursă în ultimul minut. Reîmprospătați pentru a actualiza.</value>
+  </data>
   <data name="Ports" xml:space="preserve">
     <value>Ports</value>
   </data>
@@ -206,9 +209,6 @@
   </data>
   <data name="Preview" xml:space="preserve">
     <value>Previzualizare</value>
-  </data>
-  <data name="PSI avg60 at page load: time spent waiting for this resource over the last minute. Refresh to update." xml:space="preserve">
-    <value>PSI avg60 la încărcarea paginii: timpul de așteptare pentru această resursă în ultimul minut. Reîmprospătați pentru a actualiza.</value>
   </data>
   <data name="RAM" xml:space="preserve">
     <value>RAM</value>
@@ -225,11 +225,11 @@
   <data name="Runtime Info" xml:space="preserve">
     <value>Informații de Execuție</value>
   </data>
-  <data name="Smoothed CPU idle" xml:space="preserve">
-    <value>Timp de inactivitate CPU mediat</value>
-  </data>
   <data name="SSH Keys" xml:space="preserve">
     <value>Chei SSH</value>
+  </data>
+  <data name="Smoothed CPU idle" xml:space="preserve">
+    <value>Timp de inactivitate CPU mediat</value>
   </data>
   <data name="Started" xml:space="preserve">
     <value>Început</value>

@@ -33,6 +33,9 @@
   <data name="A modern, feature-rich, and highly extensible foundation for your next web application." xml:space="preserve">
     <value>Une base moderne, riche en fonctionnalités et hautement extensible pour votre prochaine application web.</value>
   </data>
+  <data name="AI-Powered Translations" xml:space="preserve">
+    <value>Traductions par IA</value>
+  </data>
   <data name="Abandon" xml:space="preserve">
     <value>Abandonner</value>
   </data>
@@ -50,9 +53,6 @@
   </data>
   <data name="Agents with Alerts" xml:space="preserve">
     <value>Agents avec alertes</value>
-  </data>
-  <data name="AI-Powered Translations" xml:space="preserve">
-    <value>Traductions par IA</value>
   </data>
   <data name="All dependencies are automatically registered and always available via constructor injection." xml:space="preserve">
     <value>Toutes les dépendances sont automatiquement enregistrées et toujours disponibles via l&apos;injection de constructeur.</value>
@@ -81,6 +81,9 @@
   <data name="Built-in User Management" xml:space="preserve">
     <value>Gestion des utilisateurs intégrée</value>
   </data>
+  <data name="CPU Usage" xml:space="preserve">
+    <value>Utilisation du processeur</value>
+  </data>
   <data name="Collecting data" xml:space="preserve">
     <value>Collecte des données</value>
   </data>
@@ -92,9 +95,6 @@
   </data>
   <data name="Containers" xml:space="preserve">
     <value>Containers</value>
-  </data>
-  <data name="CPU Usage" xml:space="preserve">
-    <value>Utilisation du processeur</value>
   </data>
   <data name="Critical or Warning" xml:space="preserve">
     <value>Critique ou Avertissement</value>
@@ -147,14 +147,14 @@
   <data name="Hello World!" xml:space="preserve">
     <value>Bonjour le monde !</value>
   </data>
+  <data name="IP" xml:space="preserve">
+    <value>Adresse IP</value>
+  </data>
   <data name="Includes extensive documentation and practical examples to get you started quickly." xml:space="preserve">
     <value>Comprend une documentation exhaustive et des exemples pratiques pour vous permettre de démarrer rapidement.</value>
   </data>
   <data name="Integrated File Management" xml:space="preserve">
     <value>Gestion intégrée des fichiers</value>
-  </data>
-  <data name="IP" xml:space="preserve">
-    <value>Adresse IP</value>
   </data>
   <data name="Last 30 seconds" xml:space="preserve">
     <value>30 dernières secondes</value>
@@ -180,6 +180,9 @@
   <data name="Net Sent" xml:space="preserve">
     <value>Données réseau envoyées</value>
   </data>
+  <data name="OS" xml:space="preserve">
+    <value>OS</value>
+  </data>
   <data name="Offline Agents" xml:space="preserve">
     <value>Agents hors ligne</value>
   </data>
@@ -188,9 +191,6 @@
   </data>
   <data name="OpenID Connect Integration" xml:space="preserve">
     <value>Intégration OpenID Connect</value>
-  </data>
-  <data name="OS" xml:space="preserve">
-    <value>OS</value>
   </data>
   <data name="Out of sync" xml:space="preserve">
     <value>Non synchronisé</value>
@@ -210,20 +210,20 @@
   <data name="Responsive Design" xml:space="preserve">
     <value>Conception adaptative</value>
   </data>
+  <data name="SKU" xml:space="preserve">
+    <value>RÉF</value>
+  </data>
+  <data name="SSH Keys" xml:space="preserve">
+    <value>Clés SSH</value>
+  </data>
   <data name="Seamlessly integrate with any OpenID Connect provider, with automatic role synchronization." xml:space="preserve">
     <value>Intégration transparente avec n&apos;importe quel fournisseur OpenID Connect, avec synchronisation automatique des rôles.</value>
   </data>
   <data name="Servers" xml:space="preserve">
     <value>Serveurs</value>
   </data>
-  <data name="SKU" xml:space="preserve">
-    <value>RÉF</value>
-  </data>
   <data name="Smart dark mode that automatically adapts to the user&apos;s system settings." xml:space="preserve">
     <value>Mode sombre intelligent qui s&apos;adapte automatiquement aux paramètres système de l&apos;utilisateur.</value>
-  </data>
-  <data name="SSH Keys" xml:space="preserve">
-    <value>Clés SSH</value>
   </data>
   <data name="Status" xml:space="preserve">
     <value>Statut</value>

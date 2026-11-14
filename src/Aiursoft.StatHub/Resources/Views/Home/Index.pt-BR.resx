@@ -33,11 +33,11 @@
   <data name="A simple, real-time server monitoring system designed for local deployment." xml:space="preserve">
     <value>Um sistema simples de monitoramento em tempo real de servidores, projetado para implantação local.</value>
   </data>
-  <data name="Achieve more with Aiursoft Template" xml:space="preserve">
-    <value>Alcance mais com o Aiursoft Template</value>
-  </data>
   <data name="AI-Powered Translations" xml:space="preserve">
     <value>Traduções com IA</value>
+  </data>
+  <data name="Achieve more with Aiursoft Template" xml:space="preserve">
+    <value>Alcance mais com o Aiursoft Template</value>
   </data>
   <data name="Aiursoft Template is our definitive choice for enterprise projects! It&apos;s built for developers and is lightweight yet powerful. We can skip all the boilerplate for authentication and user management." xml:space="preserve">
     <value>O Aiursoft Template é a nossa escolha definitiva para projetos empresariais! Ele foi construído para desenvolvedores e é leve, mas poderoso. Podemos pular toda a parte repetitiva de autenticação e gerenciamento de usuários.</value>
@@ -102,9 +102,6 @@
   <data name="Dynamic Navigation Bar" xml:space="preserve">
     <value>Barra de Navegação Dinâmica</value>
   </data>
-  <data name="easier" xml:space="preserve">
-    <value>mais fácil</value>
-  </data>
   <data name="Easily switch between providers like SQLite, MySQL, SQL Server, and an in-memory database for testing." xml:space="preserve">
     <value>Altere facilmente entre provedores como SQLite, MySQL, SQL Server e um banco de dados em memória para testes.</value>
   </data>
@@ -114,17 +111,11 @@
   <data name="FAQ" xml:space="preserve">
     <value>Perguntas Frequentes</value>
   </data>
-  <data name="faster" xml:space="preserve">
-    <value>mais rápido</value>
-  </data>
   <data name="Features" xml:space="preserve">
     <value>Funcionalidades</value>
   </data>
   <data name="Features a built-in file management system with automatic avatar compression." xml:space="preserve">
     <value>Inclui um sistema de gerenciamento de arquivos integrado com compressão automática de avatares.</value>
-  </data>
-  <data name="for any inquiries or to report issues." xml:space="preserve">
-    <value>para quaisquer perguntas ou para relatar problemas.</value>
   </data>
   <data name="Free" xml:space="preserve">
     <value>Grátis</value>
@@ -192,11 +183,11 @@
   <data name="Low-overhead agents collect metrics without impacting your server&apos;s performance." xml:space="preserve">
     <value>Agentes de baixo custo coletam métricas sem afetar o desempenho do seu servidor.</value>
   </data>
-  <data name="Markdown To HTML" xml:space="preserve">
-    <value>Markdown para HTML</value>
-  </data>
   <data name="MIT Licence" xml:space="preserve">
     <value>Licença MIT</value>
+  </data>
+  <data name="Markdown To HTML" xml:space="preserve">
+    <value>Markdown para HTML</value>
   </data>
   <data name="Monitor multiple servers from a single centralized dashboard. Scale as your infrastructure grows." xml:space="preserve">
     <value>Monitore múltiplos servidores a partir de um único painel centralizado. Escalone conforme sua infraestrutura cresce.</value>
@@ -297,14 +288,14 @@
   <data name="Use it as a foundation for your SaaS, a backend for your mobile app, a corporate website, or a personal blog. The possibilities are endless." xml:space="preserve">
     <value>Use-o como base para seu SaaS, um backend para seu aplicativo móvel, um site corporativo ou um blog pessoal. As possibilidades são infinitas.</value>
   </data>
-  <data name="View on GitHub" xml:space="preserve">
-    <value>Visualizar no GitHub</value>
-  </data>
   <data name="View Servers Stat" xml:space="preserve">
     <value>Ver Estatísticas dos Servidores</value>
   </data>
   <data name="View Source on GitHub" xml:space="preserve">
     <value>Ver código-fonte no GitHub</value>
+  </data>
+  <data name="View on GitHub" xml:space="preserve">
+    <value>Visualizar no GitHub</value>
   </data>
   <data name="Welcome" xml:space="preserve">
     <value>Bem-vindo</value>
@@ -332,6 +323,15 @@
   </data>
   <data name="Your Server Status" xml:space="preserve">
     <value>Seu Status do Servidor</value>
+  </data>
+  <data name="easier" xml:space="preserve">
+    <value>mais fácil</value>
+  </data>
+  <data name="faster" xml:space="preserve">
+    <value>mais rápido</value>
+  </data>
+  <data name="for any inquiries or to report issues." xml:space="preserve">
+    <value>para quaisquer perguntas ou para relatar problemas.</value>
   </data>
 
 </root>

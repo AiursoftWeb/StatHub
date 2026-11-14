@@ -63,11 +63,11 @@
   <data name="Disk I/O" xml:space="preserve">
     <value>디스크 I/O</value>
   </data>
-  <data name="For an overview table, group by ClientId and show recent averages, peaks, and max(ReceivedTime). Avoid treating a metric chosen from tied receipt timestamps as the exact last sample." xml:space="preserve">
-    <value>개요 테이블을 만들려면 ClientId별로 그룹화하고 최근 평균, 피크, max(ReceivedTime)를 표시하세요. 동일한 수신 타임스탬프에서 선택된 메트릭을 정확한 마지막 샘플로 취급하지 않도록 주의하세요.</value>
-  </data>
   <data name="For Docker, configure the same settings with environment variables such as MetricsExport__Enabled=true and MetricsExport__ConnectionString. Use your deployment&apos;s secret configuration for the real password. Inside a container, localhost refers to that container; use a reachable ClickHouse hostname." xml:space="preserve">
     <value>Docker에서는 MetricsExport__Enabled=true 및 MetricsExport__ConnectionString과 같은 환경 변수로 동일한 설정을 구성하세요. 실제 비밀번호는 배포 환경의 비밀 정보 설정을 사용하세요. 컨테이너 내부에서 localhost는 해당 컨테이너를 가리키므로, 연결 가능한 ClickHouse 호스트 이름을 사용하세요.</value>
+  </data>
+  <data name="For an overview table, group by ClientId and show recent averages, peaks, and max(ReceivedTime). Avoid treating a metric chosen from tied receipt timestamps as the exact last sample." xml:space="preserve">
+    <value>개요 테이블을 만들려면 ClientId별로 그룹화하고 최근 평균, 피크, max(ReceivedTime)를 표시하세요. 동일한 수신 타임스탬프에서 선택된 메트릭을 정확한 마지막 샘플로 취급하지 않도록 주의하세요.</value>
   </data>
   <data name="Grafana dashboard comparing CPU, memory, network, disk I/O, load, and archived samples across selected StatHub servers." xml:space="preserve">
     <value>선택한 StatHub 서버의 CPU, 메모리, 네트워크, 디스크 I/O, 부하 및 보관된 샘플을 비교하는 Grafana 대시보드.</value>
@@ -141,11 +141,11 @@
   <data name="The exporter needs permission to create its database, table, and view, and to insert and select metrics. On the first non-empty batch it creates StatHubMetrics.ServerMetrics and the deduplicated ServerMetricsLatest view automatically." xml:space="preserve">
     <value>내보내기 프로그램에는 데이터베이스, 테이블, 뷰를 생성하고 메트릭을 삽입하고 조회할 권한이 필요합니다. 비어 있지 않은 첫 번째 배치에서 StatHubMetrics.ServerMetrics와 중복 제거된 ServerMetricsLatest 뷰를 자동으로 생성합니다.</value>
   </data>
-  <data name="Use a separate read-only Grafana account with SELECT permission on both ServerMetricsLatest and its underlying ServerMetrics table. Keep the exporter credentials in StatHub." xml:space="preserve">
-    <value>SELECT 권한이 ServerMetricsLatest와 그 기반인 ServerMetrics 테이블 모두에 있는 별도의 읽기 전용 Grafana 계정을 사용하세요. 내보내기 자격 증명은 StatHub에 보관하세요.</value>
-  </data>
   <data name="Use ClickHouse export under Monitoring to choose which servers to export. Its independent policy supports all servers, explicit inclusions, and exclusions; exclusions always win." xml:space="preserve">
     <value>모니터링의 ClickHouse 내보내기에서 내보낼 서버를 선택하세요. 독립적인 정책을 통해 모든 서버, 명시적으로 포함할 서버, 제외할 서버를 설정할 수 있으며, 제외 설정이 항상 우선 적용됩니다.</value>
+  </data>
+  <data name="Use a separate read-only Grafana account with SELECT permission on both ServerMetricsLatest and its underlying ServerMetrics table. Keep the exporter credentials in StatHub." xml:space="preserve">
+    <value>SELECT 권한이 ServerMetricsLatest와 그 기반인 ServerMetrics 테이블 모두에 있는 별도의 읽기 전용 Grafana 계정을 사용하세요. 내보내기 자격 증명은 StatHub에 보관하세요.</value>
   </data>
   <data name="Used percent: MemUsed divided by MemUsed + MemFree + MemBuf + MemCach, times 100. Return null when the total is zero. Plot the four fields separately for memory composition." xml:space="preserve">
     <value>사용률: MemUsed를 (MemUsed + MemFree + MemBuf + MemCach)로 나눈 값에 100을 곱합니다. 합계가 0인 경우 null을 반환합니다. 메모리 구성을 시각화하기 위해 네 필드를 개별적으로 플롯하세요.</value>

@@ -33,11 +33,11 @@
   <data name="A simple, real-time server monitoring system designed for local deployment." xml:space="preserve">
     <value>一個簡單、即時的伺服器監控系統，專為本地部署設計。</value>
   </data>
-  <data name="Achieve more with Aiursoft Template" xml:space="preserve">
-    <value>使用 Aiursoft Template 成就更多</value>
-  </data>
   <data name="AI-Powered Translations" xml:space="preserve">
     <value>AI 驅動翻譯</value>
+  </data>
+  <data name="Achieve more with Aiursoft Template" xml:space="preserve">
+    <value>使用 Aiursoft Template 成就更多</value>
   </data>
   <data name="Aiursoft Template is our definitive choice for enterprise projects! It&apos;s built for developers and is lightweight yet powerful. We can skip all the boilerplate for authentication and user management." xml:space="preserve">
     <value>Aiursoft Template 是我們企業級專案的不二之選！它專為開發者打造，輕量卻功能強大。我們可以直接跳過所有身份驗證和使用者管理的樣板程式碼。</value>
@@ -102,9 +102,6 @@
   <data name="Dynamic Navigation Bar" xml:space="preserve">
     <value>動態導覽列</value>
   </data>
-  <data name="easier" xml:space="preserve">
-    <value>更輕鬆</value>
-  </data>
   <data name="Easily switch between providers like SQLite, MySQL, SQL Server, and an in-memory database for testing." xml:space="preserve">
     <value>可輕鬆切換不同的資料庫供應商，例如 SQLite、MySQL、SQL Server 以及用於測試的記憶體資料庫。</value>
   </data>
@@ -114,17 +111,11 @@
   <data name="FAQ" xml:space="preserve">
     <value>常見問題</value>
   </data>
-  <data name="faster" xml:space="preserve">
-    <value>更快速</value>
-  </data>
   <data name="Features" xml:space="preserve">
     <value>功能特色</value>
   </data>
   <data name="Features a built-in file management system with automatic avatar compression." xml:space="preserve">
     <value>具備內建檔案管理系統，並支援自動頭像壓縮功能。</value>
-  </data>
-  <data name="for any inquiries or to report issues." xml:space="preserve">
-    <value>如有任何疑問或回報問題。</value>
   </data>
   <data name="Free" xml:space="preserve">
     <value>免費</value>
@@ -192,11 +183,11 @@
   <data name="Low-overhead agents collect metrics without impacting your server&apos;s performance." xml:space="preserve">
     <value>低負載的代理程式會收集指標，而不會影響您伺服器的效能。</value>
   </data>
-  <data name="Markdown To HTML" xml:space="preserve">
-    <value>Markdown 轉 HTML</value>
-  </data>
   <data name="MIT Licence" xml:space="preserve">
     <value>MIT 授權</value>
+  </data>
+  <data name="Markdown To HTML" xml:space="preserve">
+    <value>Markdown 轉 HTML</value>
   </data>
   <data name="Monitor multiple servers from a single centralized dashboard. Scale as your infrastructure grows." xml:space="preserve">
     <value>從單一中央控制面板監控多台伺服器。隨著您的基礎架構擴展而自動擴充。</value>
@@ -297,14 +288,14 @@
   <data name="Use it as a foundation for your SaaS, a backend for your mobile app, a corporate website, or a personal blog. The possibilities are endless." xml:space="preserve">
     <value>無論是作為您 SaaS 的基礎架構、行動應用程式的後端、企業網站或個人部落格，都能完美適用。可能性永無止境。</value>
   </data>
-  <data name="View on GitHub" xml:space="preserve">
-    <value>在 GitHub 上檢視</value>
-  </data>
   <data name="View Servers Stat" xml:space="preserve">
     <value>查看伺服器狀態</value>
   </data>
   <data name="View Source on GitHub" xml:space="preserve">
     <value>在 GitHub 上檢視原始碼</value>
+  </data>
+  <data name="View on GitHub" xml:space="preserve">
+    <value>在 GitHub 上檢視</value>
   </data>
   <data name="Welcome" xml:space="preserve">
     <value>歡迎</value>
@@ -332,6 +323,15 @@
   </data>
   <data name="Your Server Status" xml:space="preserve">
     <value>你的伺服器狀態</value>
+  </data>
+  <data name="easier" xml:space="preserve">
+    <value>更輕鬆</value>
+  </data>
+  <data name="faster" xml:space="preserve">
+    <value>更快速</value>
+  </data>
+  <data name="for any inquiries or to report issues." xml:space="preserve">
+    <value>如有任何疑問或回報問題。</value>
   </data>
 
 </root>

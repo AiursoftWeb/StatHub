@@ -63,11 +63,11 @@
   <data name="Disk I/O" xml:space="preserve">
     <value>Диск I/O</value>
   </data>
-  <data name="For an overview table, group by ClientId and show recent averages, peaks, and max(ReceivedTime). Avoid treating a metric chosen from tied receipt timestamps as the exact last sample." xml:space="preserve">
-    <value>Для зведеної таблиці згрупуйте дані за ClientId і покажіть нещодавні середні значення, пікові значення та max(ReceivedTime). Не вважайте метрику, вибрану серед записів з однаковими часовими позначками отримання, точним значенням останнього зразка.</value>
-  </data>
   <data name="For Docker, configure the same settings with environment variables such as MetricsExport__Enabled=true and MetricsExport__ConnectionString. Use your deployment&apos;s secret configuration for the real password. Inside a container, localhost refers to that container; use a reachable ClickHouse hostname." xml:space="preserve">
     <value>Для Docker налаштуйте ті самі параметри за допомогою змінних середовища, наприклад MetricsExport__Enabled=true і MetricsExport__ConnectionString. Для справжнього пароля скористайтеся конфігурацією секретів вашого розгортання. Усередині контейнера localhost означає саме цей контейнер; використовуйте доступне ім’я хоста ClickHouse.</value>
+  </data>
+  <data name="For an overview table, group by ClientId and show recent averages, peaks, and max(ReceivedTime). Avoid treating a metric chosen from tied receipt timestamps as the exact last sample." xml:space="preserve">
+    <value>Для зведеної таблиці згрупуйте дані за ClientId і покажіть нещодавні середні значення, пікові значення та max(ReceivedTime). Не вважайте метрику, вибрану серед записів з однаковими часовими позначками отримання, точним значенням останнього зразка.</value>
   </data>
   <data name="Grafana dashboard comparing CPU, memory, network, disk I/O, load, and archived samples across selected StatHub servers." xml:space="preserve">
     <value>Панель Grafana, що порівнює використання CPU, пам&apos;яті, мережі, диска I/O, навантаження та архівовані вибірки на обраних серверах StatHub.</value>
@@ -141,11 +141,11 @@
   <data name="The exporter needs permission to create its database, table, and view, and to insert and select metrics. On the first non-empty batch it creates StatHubMetrics.ServerMetrics and the deduplicated ServerMetricsLatest view automatically." xml:space="preserve">
     <value>Експортеру потрібні дозволи на створення власної бази даних, таблиці та виду, а також на вставку та вибір метрик. Під час першої непорожньої партії він автоматично створює StatHubMetrics.ServerMetrics та дедуплікований вид ServerMetricsLatest.</value>
   </data>
-  <data name="Use a separate read-only Grafana account with SELECT permission on both ServerMetricsLatest and its underlying ServerMetrics table. Keep the exporter credentials in StatHub." xml:space="preserve">
-    <value>Використовуйте окремий обліковий запис Grafana з правами лише на читання та дозволом SELECT на таблиці ServerMetricsLatest та її базову таблицю ServerMetrics. Зберігайте облікові дані експортера в StatHub.</value>
-  </data>
   <data name="Use ClickHouse export under Monitoring to choose which servers to export. Its independent policy supports all servers, explicit inclusions, and exclusions; exclusions always win." xml:space="preserve">
     <value>У розділі «Моніторинг» скористайтеся експортом ClickHouse, щоб вибрати сервери для експорту. Його незалежна політика підтримує всі сервери, явне включення та виключення; виключення завжди мають пріоритет.</value>
+  </data>
+  <data name="Use a separate read-only Grafana account with SELECT permission on both ServerMetricsLatest and its underlying ServerMetrics table. Keep the exporter credentials in StatHub." xml:space="preserve">
+    <value>Використовуйте окремий обліковий запис Grafana з правами лише на читання та дозволом SELECT на таблиці ServerMetricsLatest та її базову таблицю ServerMetrics. Зберігайте облікові дані експортера в StatHub.</value>
   </data>
   <data name="Used percent: MemUsed divided by MemUsed + MemFree + MemBuf + MemCach, times 100. Return null when the total is zero. Plot the four fields separately for memory composition." xml:space="preserve">
     <value>Відсоток використання: MemUsed, поділене на суму MemUsed + MemFree + MemBuf + MemCach, помножене на 100. Якщо загальна сума дорівнює нулю, поверніть null. Для відображення складу пам’яті побудуйте окремі графіки для кожного з чотирьох полів.</value>

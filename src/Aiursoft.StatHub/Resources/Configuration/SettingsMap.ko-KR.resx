@@ -60,14 +60,17 @@
   <data name="Synchronize server health incidents with AlertCenter." xml:space="preserve">
     <value>서버 상태 인시던트를 AlertCenter와 동기화합니다.</value>
   </data>
-  <data name="The brand name of the company or project. E.g. Aiursoft." xml:space="preserve">
-    <value>회사 또는 프로젝트의 브랜드 이름입니다. 예: Aiursoft.</value>
-  </data>
   <data name="The HTTP(S) base URL of AlertCenter." xml:space="preserve">
     <value>AlertCenter의 HTTP(S) 기본 URL입니다.</value>
   </data>
   <data name="The ICP license number for China mainland users. Leave empty to hide." xml:space="preserve">
     <value>중국 대륙 사용자를 위한 ICP 라이선스 번호입니다. 숨기려면 비워 두세요.</value>
+  </data>
+  <data name="The URL of the company or project. E.g. https://www.aiursoft.com" xml:space="preserve">
+    <value>회사 또는 프로젝트의 URL입니다. 예: https://www.aiursoft.com</value>
+  </data>
+  <data name="The brand name of the company or project. E.g. Aiursoft." xml:space="preserve">
+    <value>회사 또는 프로젝트의 브랜드 이름입니다. 예: Aiursoft.</value>
   </data>
   <data name="The logo of the project displayed in the navbar and footer. Support jpg, png, svg." xml:space="preserve">
     <value>네비게이션 바와 푸터에 표시되는 프로젝트의 로고입니다. jpg, png, svg 파일을 지원합니다.</value>
@@ -77,9 +80,6 @@
   </data>
   <data name="The public base URL of this StatHub instance, used in incident links." xml:space="preserve">
     <value>장애 발생 링크에 사용되는 이 StatHub 인스턴스의 공개 기본 URL입니다.</value>
-  </data>
-  <data name="The URL of the company or project. E.g. https://www.aiursoft.com" xml:space="preserve">
-    <value>회사 또는 프로젝트의 URL입니다. 예: https://www.aiursoft.com</value>
   </data>
 
 </root>

@@ -108,11 +108,11 @@
   <data name="View Background Jobs" xml:space="preserve">
     <value>檢視背景工作</value>
   </data>
-  <data name="View server dashboard to see server metrics." xml:space="preserve">
-    <value>檢視伺服器儀表板以查看伺服器指標。</value>
-  </data>
   <data name="View System Context" xml:space="preserve">
     <value>檢視系統內容</value>
+  </data>
+  <data name="View server dashboard to see server metrics." xml:space="preserve">
+    <value>檢視伺服器儀表板以查看伺服器指標。</value>
   </data>
 
 </root>
