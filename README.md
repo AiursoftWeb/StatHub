@@ -1,4 +1,6 @@
-# StatHub
+# Aiursoft StatHub
+
+<a name="stathub"></a>
 
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/aiursoftweb/statHub/blob/master/LICENSE)
 [![Pipeline stat](https://badge-proxy.aiursoft.com/aiursoft/statHub/badges/master/pipeline.svg)](https://gitlab.aiursoft.com/aiursoft/statHub/-/pipelines)
@@ -13,7 +15,15 @@ StatHub is a simple server stat statistics system. It can collect server stats a
 Export raw server samples to ClickHouse in efficient five-minute batches with the Aiursoft ClickHouse SDK.
 Build fleet overviews and compare individual servers in Grafana: [Build Dashboard](https://stathub.aiursoft.com/Home/BuildDashboard).
 
+## Overview
+
+### What is StatHub?
+
+StatHub is a simple server stat statistics system. It can collect server stats and display them in a simple way.
+
 ## CLI & SDK
+
+### CLI
 
 Install the CLI with the [.NET 10 SDK](https://dotnet.microsoft.com/download/dotnet/10.0):
 
@@ -22,6 +32,8 @@ dotnet tool install --global Aiursoft.StatHub.Client --add-source https://nuget.
 ```
 
 Run `stathub-client --help` to explore commands.
+
+### SDK
 
 Add the SDK to your .NET project:
 
@@ -32,10 +44,6 @@ dotnet add package Aiursoft.StatHub.SDK --source https://nuget.aiursoft.com/v3/i
 ![screenshot](./screenshot.png)
 
 Default user name is `admin@default.com` and default password is `Admin@123456!`.
-
-## Historical metrics
-
-Enable `MetricsExport:Enabled` and set `MetricsExport:ConnectionString` to archive raw metrics every five minutes using Aiursoft.ClickhouseSdk. Query `ServerMetricsLatest` for deduplicated samples; retention defaults to 30 days. The bounded memory buffer retries failed writes, but unflushed samples are lost on restart or rejected when full. New clients send sampling timestamps; older clients are marked with receipt timestamps (`HasSampleTime = 0`).
 
 ## Try
 
@@ -90,6 +98,102 @@ The docker image has the following context:
 | Data path   | /data                  |
 | Config path | /data/appsettings.json |
 
+## Usage
+
+### Historical metrics
+
+Enable `MetricsExport:Enabled` and set `MetricsExport:ConnectionString` to archive raw metrics every five minutes using Aiursoft.ClickhouseSdk. Query `ServerMetricsLatest` for deduplicated samples; retention defaults to 30 days. The bounded memory buffer retries failed writes, but unflushed samples are lost on restart or rejected when full. New clients send sampling timestamps; older clients are marked with receipt timestamps (`HasSampleTime = 0`).
+
+### AlertCenter monitoring
+
+Users with **Manage AlertCenter integration** permission can configure sustained health rules and server selection at `/AlertMonitoring`. Monitoring defaults to all known and future reporting servers with no exclusions. Exclusions override inclusions. The default rules are yellow or worse for 45/100 minutes, red or worse for 35/70 minutes, and grey for 25/40 minutes, each escalating from sev3 to sev2. Zero minutes means immediate; rules can be changed, disabled or deleted without being recreated at restart.
+
+A valid green sample immediately resolves this integration's active incidents for that server by default; this behavior can be disabled. A new color resets its continuous timer. Existing incidents are escalated rather than duplicated and are never automatically downgraded. Grey starts one minute after the last valid report. Restart interrupts unobserved yellow/red continuity; the persisted last-report time still detects offline servers.
+
+Configure the endpoint, secret application key and this StatHub instance's public base URL in Global Settings, then enable synchronization. The key needs query, create, resolve and change-severity scopes. Environment variables `GlobalSettings__AlertCenter_Enabled`, `GlobalSettings__AlertCenter_Endpoint`, `GlobalSettings__AlertCenter_ApiKey` and `GlobalSettings__AlertCenter_PublicBaseUrl` override the same settings. Synchronization is disabled until configured.
+
+## Configuration
+
+The application defaults are defined in [`src/Aiursoft.StatHub/appsettings.json`](src/Aiursoft.StatHub/appsettings.json). The Docker image initializes `/data/appsettings.json` on its first start and keeps it for later starts; persist `/data`. Override nested values with double-underscore environment variables, such as `Logging__LogLevel__Default`.
+
+```jsonc
+{
+  "ConnectionStrings": {
+    "AllowCache": "True",
+
+    "DbType": "Sqlite",
+    "DefaultConnection": "DataSource=app.db;Cache=Shared"
+
+    // sudo docker run -d --name db -e MYSQL_RANDOM_ROOT_PASSWORD=true -e MYSQL_DATABASE=template -e MYSQL_USER=template -e MYSQL_PASSWORD=template_password -p 3306:3306 hub.aiursoft.com/mysql
+    //"DbType": "MySql",
+    //"DefaultConnection": "Server=localhost;Database=template;Uid=template;Pwd=template_password;"
+  },
+  "Storage": {
+    "Path": "/tmp/data",
+    "PublicOrigin": "",
+    "RequireDedicatedInlineOrigin": false,
+    "AllowArbitraryInlineOnDedicatedOrigin": false,
+    "SafeInlineMediaExtensions": ["svg"],
+    "SafeInlineSvgSubfolders": ["project-logo"],
+    "UploadPolicy": {
+      "RequireAuthenticatedUser": false,
+      "ReplaceSpacesWithHyphens": false
+    }
+  },
+  "AppSettings": {
+    "AuthProvider": "Local", // OIDC or Local
+    "DefaultRole": "",
+    "PersistsSignIn": false,
+    "OIDC": {
+      // https://auth.aiursoft.com/application/o/template
+      "Authority": "https://auth.aiursoft.com/application/o/template",
+      "ClientId": "",
+      "ClientSecret": "",
+      "RolePropertyName": "groups",
+      "UsernamePropertyName": "preferred_username",
+      "UserDisplayNamePropertyName": "name",
+      "EmailPropertyName": "email",
+      "UserIdentityPropertyName": "sub"
+    },
+    "Local": {
+      "AllowRegister": true,
+      "AllowWeakPassword": true
+    }
+  },
+  "GlobalSettings": {
+    // You can initialize or override global settings here.
+    // "Allow_User_Adjust_Nickname": "True"
+  },
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    },
+    "Clickhouse": {
+      "Enabled": false,
+      "ConnectionString": "Host=localhost;Protocol=http;Port=8123;User=default;Password=;Database=AspNetCoreLogs",
+      "TableName": "StatHubLogs"
+    }
+  },
+  "MetricsExport": {
+    "Enabled": false,
+    "ConnectionString": "Host=localhost;Protocol=http;Port=8123;User=default;Password=;Database=StatHubMetrics",
+    "RetentionDays": 120,
+    "MaxBufferedSamples": 100000
+  },
+  "AllowedHosts": "*"
+}
+```
+
+### Shared settings
+
+- `ConnectionStrings` selects the database provider and connection. Prepare the external database before choosing MySQL; keep the SQLite file persistent when using SQLite.
+- `Storage` configures local application files. Keep the storage directory persistent and use the documented hostname and upload policies for shared downloads.
+- `AppSettings` controls authentication and account synchronization. Choose local accounts or configure the OIDC authority, client and `/signin-oidc` callback; use environment variables for credentials.
+- Uncommented `GlobalSettings` entries override the database-backed administration settings. Leave entries commented to use the stored values or application defaults.
+- `Logging:LogLevel` controls application and framework verbosity. Configure the optional ClickHouse exporter only when its server and credentials are ready.
+- `AllowedHosts` is the ASP.NET Core Host-header allowlist, not a CORS setting.
+
 ## How to contribute
 
 There are many ways to contribute to the project: logging bugs, submitting pull requests, reporting issues, and creating suggestions.
@@ -98,10 +202,6 @@ Even if you with push rights on the repository, you should create a personal for
 
 We're also interested in your feedback on the future of this project. You can submit a suggestion or feature request through the issue tracker. To make this process more effective, we're asking that these include more information to help define them more clearly.
 
-## AlertCenter monitoring
+## License
 
-Users with **Manage AlertCenter integration** permission can configure sustained health rules and server selection at `/AlertMonitoring`. Monitoring defaults to all known and future reporting servers with no exclusions. Exclusions override inclusions. The default rules are yellow or worse for 45/100 minutes, red or worse for 35/70 minutes, and grey for 25/40 minutes, each escalating from sev3 to sev2. Zero minutes means immediate; rules can be changed, disabled or deleted without being recreated at restart.
-
-A valid green sample immediately resolves this integration's active incidents for that server by default; this behavior can be disabled. A new color resets its continuous timer. Existing incidents are escalated rather than duplicated and are never automatically downgraded. Grey starts one minute after the last valid report. Restart interrupts unobserved yellow/red continuity; the persisted last-report time still detects offline servers.
-
-Configure the endpoint, secret application key and this StatHub instance's public base URL in Global Settings, then enable synchronization. The key needs query, create, resolve and change-severity scopes. Environment variables `GlobalSettings__AlertCenter_Enabled`, `GlobalSettings__AlertCenter_Endpoint`, `GlobalSettings__AlertCenter_ApiKey` and `GlobalSettings__AlertCenter_PublicBaseUrl` override the same settings. Synchronization is disabled until configured.
+Licensed under the [MIT License](LICENSE).
