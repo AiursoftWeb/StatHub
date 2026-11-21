@@ -66,7 +66,7 @@
                 </div>
                 <div class="col-12 col-sm-4 d-flex d-sm-block justify-content-between gap-2">
                     <span class="text-muted d-block">@Localizer["Last Boot Time"]</span>
-                    <span>@agent.BootTime.ToString("g", CultureInfo.CurrentCulture)</span>
+                    <span data-utc-time="@agent.BootTime.ToHtmlDateTime()"></span>
                 </div>
             </div>
         </div>
@@ -382,7 +382,7 @@
                                                         }
                                                     </td>
                                                     <td>@(exec.ExitCode?.ToString() ?? "-")</td>
-                                                    <td>@exec.StartedAt.ToString("HH:mm:ss", CultureInfo.CurrentCulture)</td>
+                                                    <td><span data-utc-time="@exec.StartedAt.ToHtmlDateTime()"></span></td>
                                                     <td>
                                                         <button class="btn btn-sm btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#output-@exec.CommandId">
                                                             @Localizer["View"]
