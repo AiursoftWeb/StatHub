@@ -34,7 +34,7 @@
                 }
                 else if (!string.IsNullOrWhiteSpace(agent.CountryCode))
                 {
-                    <img src="~/UIStack/dist/img/flags/@(agent.CountryCode.ToLowerInvariant()).png" alt="@agent.CountryName" height="15" class="me-1" />
+                    <img src="@Url.Content("~/node_modules/@aiursoft/uistack/dist/img/flags/")@(agent.CountryCode.ToLowerInvariant()).png" alt="@agent.CountryName" height="15" class="me-1" />
                 }
                 @agent.Ip
                 <span class="ms-2" data-bs-toggle="tooltip" title="@Localizer["Last Update"]" data-utc-time="@agent.LastUpdate.ToHtmlDateTime()"></span>
