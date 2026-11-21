@@ -12,7 +12,6 @@ using Aiursoft.StatHub.InMemory;
 using Aiursoft.StatHub.MySql;
 using Aiursoft.StatHub.Services.Authentication;
 using Aiursoft.StatHub.Sqlite;
-using Aiursoft.UiStack;
 using Aiursoft.UiStack.Layout;
 using Aiursoft.UiStack.Navigation;
 using Microsoft.AspNetCore.Mvc.Razor;
