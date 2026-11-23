@@ -236,11 +236,13 @@ public sealed class MonitoringService(StatHubDbContext db, MonitoringCoordinator
                         "yellow" => $"Server status warning: {state.Hostname}",
                         _ => $"{state.Hostname}: {state.CurrentState} server health"
                     };
+                    var serverUrl = $"{settings.PublicBaseUrl.TrimEnd('/')}/Dashboard/Details/{Uri.EscapeDataString(state.ClientId)}";
                     await client.CreateAsync(new CreateIncidentRequest
                     {
                         ReportId = state.NextReportId, Title = title.Length > 200 ? title[..200] : title,
                         Level = severity, OccurredAtUtc = new DateTimeOffset(DateTime.SpecifyKind(Since(state, matchedRule!.State)!.Value, DateTimeKind.Utc)),
                         Content = Describe(policy, state, severity, now, settings),
+                        InvestigateUrl = serverUrl,
                         Context = new JObject { ["source"] = Source, ["clientId"] = state.ClientId,
                             ["hostname"] = state.Hostname, ["state"] = state.CurrentState }
                     });

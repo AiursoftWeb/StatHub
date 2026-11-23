@@ -264,6 +264,7 @@ public sealed class MonitoringTests
         await _service.CheckAsync();
         Assert.AreEqual("sev3", _client.Incidents.Single().Level);
         Assert.Contains("red or worse", _client.Created.Single().Content!);
+        Assert.AreEqual($"{_settings.Value.PublicBaseUrl.TrimEnd('/')}/Dashboard/Details/server-1", _client.Created.Single().InvestigateUrl);
         _clock.Advance(TimeSpan.FromMinutes(1));
         await _service.CheckAsync();
         Assert.AreEqual(1, _client.Incidents.Count);
@@ -314,6 +315,7 @@ public sealed class MonitoringTests
         await Continue("red", 1);
         Assert.AreEqual("sev3", _client.Incidents.Single().Level);
         Assert.Contains("red or worse", _client.Created.Single().Content!);
+        Assert.AreEqual($"{_settings.Value.PublicBaseUrl.TrimEnd('/')}/Dashboard/Details/{Uri.EscapeDataString(state.ClientId)}", _client.Created.Single().InvestigateUrl);
     }
 
     [TestMethod]
