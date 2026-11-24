@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
@@ -7,6 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Aiursoft.StatHub.MySql.Migrations
 {
     /// <inheritdoc />
+    [ExcludeFromCodeCoverage]
     public partial class MetricsExportSelection : Migration
     {
         /// <inheritdoc />
