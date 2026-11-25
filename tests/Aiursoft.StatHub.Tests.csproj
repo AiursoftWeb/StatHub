@@ -22,4 +22,8 @@
     <ProjectReference Include="..\src\Aiursoft.StatHub\Aiursoft.StatHub.csproj" />
     <ProjectReference Include="..\src\Aiursoft.StatHub.Client\Aiursoft.StatHub.Client.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="../src/Aiursoft.StatHub/wwwroot/scripts/uploader.js" TargetPath="wwwroot/scripts/uploader.js" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="../src/Aiursoft.StatHub/wwwroot/styles/uploader.css" TargetPath="wwwroot/styles/uploader.css" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
 </Project>
