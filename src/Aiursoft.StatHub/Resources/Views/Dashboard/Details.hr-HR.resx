@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="Abandon" xml:space="preserve">
+    <value>Odbaci</value>
+  </data>
+  <data name="Abandoning is not deletion. If this agent persists in submitting, it will appear again soon. Please use systemd command to stop the agent." xml:space="preserve">
+    <value>Odbacivanje nije brisanje. Ako ovaj agent nastavi s prijavljivanjem, uskoro će se ponovno pojaviti. Molimo vas da koristite systemd naredbu za zaustavljanje agenta.</value>
+  </data>
+  <data name="Accessed" xml:space="preserve">
+    <value>Pristupljeno</value>
+  </data>
+  <data name="Agent Information" xml:space="preserve">
+    <value>Informacije o agentu</value>
+  </data>
+  <data name="Agent Version" xml:space="preserve">
+    <value>Verzija agenta</value>
+  </data>
+  <data name="Back to Dashboard" xml:space="preserve">
+    <value>Natrag na nadzornu ploču</value>
+  </data>
+  <data name="CPU %" xml:space="preserve">
+    <value>CPU %</value>
+  </data>
+  <data name="CPU PSI (avg60)" xml:space="preserve">
+    <value>CPU PSI (avg60)</value>
+  </data>
+  <data name="CPU Usage" xml:space="preserve">
+    <value>Korištenje procesora</value>
+  </data>
+  <data name="Client ID" xml:space="preserve">
+    <value>ID klijenta</value>
+  </data>
+  <data name="Collecting data" xml:space="preserve">
+    <value>Prikupljanje podataka</value>
+  </data>
+  <data name="Colors use sustained resource pressure. A short quiet sample does not establish recovery." xml:space="preserve">
+    <value>Boje koriste sustavni pritisak resursa. Kratak uzorak bez pritiska ne dokazuje oporavak.</value>
+  </data>
+  <data name="Command" xml:space="preserve">
+    <value>Naredba</value>
+  </data>
+  <data name="Cores" xml:space="preserve">
+    <value>Jedra</value>
+  </data>
+  <data name="Created" xml:space="preserve">
+    <value>Kreirano</value>
+  </data>
+  <data name="Critical" xml:space="preserve">
+    <value>Kritično</value>
+  </data>
+  <data name="Disabled" xml:space="preserve">
+    <value>Onemogućeno</value>
+  </data>
+  <data name="Disk I/O" xml:space="preserve">
+    <value>Disk I/O</value>
+  </data>
+  <data name="Disk R/W" xml:space="preserve">
+    <value>Disk R/W</value>
+  </data>
+  <data name="Disk Usage" xml:space="preserve">
+    <value>Korištenje diska</value>
+  </data>
+  <data name="Docker Containers" xml:space="preserve">
+    <value>Docker spremnici</value>
+  </data>
+  <data name="Enabled" xml:space="preserve">
+    <value>Omogućeno</value>
+  </data>
+  <data name="Enter shell command..." xml:space="preserve">
+    <value>Unesite shell naredbu...</value>
+  </data>
+  <data name="Execute" xml:space="preserve">
+    <value>Izvrši</value>
+  </data>
+  <data name="Execute Command" xml:space="preserve">
+    <value>Izvrši naredbu</value>
+  </data>
+  <data name="Exit" xml:space="preserve">
+    <value>Izlaz</value>
+  </data>
+  <data name="Failed" xml:space="preserve">
+    <value>Neuspjelo</value>
+  </data>
+  <data name="File" xml:space="preserve">
+    <value>Datoteka</value>
+  </data>
+  <data name="Firewall Status" xml:space="preserve">
+    <value>Status vatrozida</value>
+  </data>
+  <data name="Fresh PSI measurements are unavailable. Check connectivity, update the agent and verify Linux PSI support." xml:space="preserve">
+    <value>Svježe PSI mjerenja nisu dostupna. Provjerite povezanost, ažurirajte agenta i provjerite podršku za Linux PSI.</value>
+  </data>
+  <data name="Hardware Details" xml:space="preserve">
+    <value>Detalji hardvera</value>
+  </data>
+  <data name="Hardware SKU" xml:space="preserve">
+    <value>Hardverski SKU</value>
+  </data>
+  <data name="Healthy" xml:space="preserve">
+    <value>Zdrav</value>
+  </data>
+  <data name="I/O PSI (avg60)" xml:space="preserve">
+    <value>I/O PSI (avg60)</value>
+  </data>
+  <data name="Identity" xml:space="preserve">
+    <value>Identitet</value>
+  </data>
+  <data name="Image" xml:space="preserve">
+    <value>Slika</value>
+  </data>
+  <data name="Image Size" xml:space="preserve">
+    <value>Veličina slike</value>
+  </data>
+  <data name="Kernel Version" xml:space="preserve">
+    <value>Verzija jezgre</value>
+  </data>
+  <data name="Last Boot Time" xml:space="preserve">
+    <value>Vrijeme zadnjeg pokretanja</value>
+  </data>
+  <data name="Last Update" xml:space="preserve">
+    <value>Zadnje ažuriranje</value>
+  </data>
+  <data name="MOTD" xml:space="preserve">
+    <value>MOTD</value>
+  </data>
+  <data name="Mainly used by process" xml:space="preserve">
+    <value>Prvenstveno koristi proces</value>
+  </data>
+  <data name="Memory" xml:space="preserve">
+    <value>Memorija</value>
+  </data>
+  <data name="Memory PSI (avg60)" xml:space="preserve">
+    <value>PSI memorije (avg60)</value>
+  </data>
+  <data name="Modified" xml:space="preserve">
+    <value>Promijenjeno</value>
+  </data>
+  <data name="More times" xml:space="preserve">
+    <value>Više informacija</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Ime</value>
+  </data>
+  <data name="Net I/O" xml:space="preserve">
+    <value>Mrežni I/O</value>
+  </data>
+  <data name="Network I/O" xml:space="preserve">
+    <value>Mrežni I/O</value>
+  </data>
+  <data name="No open ports" xml:space="preserve">
+    <value>Nema otvorenih portova</value>
+  </data>
+  <data name="No output yet..." xml:space="preserve">
+    <value>Još nema izlaza...</value>
+  </data>
+  <data name="Offline" xml:space="preserve">
+    <value>Izvan mreže</value>
+  </data>
+  <data name="Operating System" xml:space="preserve">
+    <value>Operativni sustav</value>
+  </data>
+  <data name="Output" xml:space="preserve">
+    <value>Izlaz</value>
+  </data>
+  <data name="Owner" xml:space="preserve">
+    <value>Vlasnik</value>
+  </data>
+  <data name="PSI avg60 at page load: time spent waiting for this resource over the last minute. Refresh to update." xml:space="preserve">
+    <value>PSI avg60 pri učitavanju stranice: vrijeme provedeno čekajući ovaj resurs u posljednjoj minuti. Osvježite za ažuriranje.</value>
+  </data>
+  <data name="Ports" xml:space="preserve">
+    <value>Portovi</value>
+  </data>
+  <data name="Pressure index (15-minute load / logical CPUs)" xml:space="preserve">
+    <value>Indeks pritiska (opterećenje od 15 minuta / logički CPU-ovi)</value>
+  </data>
+  <data name="Pressure snapshot" xml:space="preserve">
+    <value>Snimka pritiska</value>
+  </data>
+  <data name="Preview" xml:space="preserve">
+    <value>Pregled</value>
+  </data>
+  <data name="RAM" xml:space="preserve">
+    <value>RAM</value>
+  </data>
+  <data name="RAM Usage" xml:space="preserve">
+    <value>Korištenje RAM-a</value>
+  </data>
+  <data name="Resource pressure" xml:space="preserve">
+    <value>Pritisak resursa</value>
+  </data>
+  <data name="Running" xml:space="preserve">
+    <value>U tijeku</value>
+  </data>
+  <data name="Runtime Info" xml:space="preserve">
+    <value>Informacije o radnom stanju</value>
+  </data>
+  <data name="SSH Keys" xml:space="preserve">
+    <value>SSH ključevi</value>
+  </data>
+  <data name="Smoothed CPU idle" xml:space="preserve">
+    <value>Ugladano CPU mirovanje</value>
+  </data>
+  <data name="Started" xml:space="preserve">
+    <value>Pokrenuto</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="Stopped" xml:space="preserve">
+    <value>Zaustavljeno</value>
+  </data>
+  <data name="Success" xml:space="preserve">
+    <value>Uspješno</value>
+  </data>
+  <data name="System Load" xml:space="preserve">
+    <value>Opterećenje sustava</value>
+  </data>
+  <data name="Unhealthy" xml:space="preserve">
+    <value>Nestabilno</value>
+  </data>
+  <data name="Uptime" xml:space="preserve">
+    <value>Radno vrijeme</value>
+  </data>
+  <data name="View" xml:space="preserve">
+    <value>Prikaz</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>Upozorenje</value>
+  </data>
+
+</root>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="(15m, Online Agents)" xml:space="preserve">
+    <value>(15 min, Online agenti)</value>
+  </data>
+  <data name="Add a server" xml:space="preserve">
+    <value>Dodaj poslužitelj</value>
+  </data>
+  <data name="Agents Status Monitor" xml:space="preserve">
+    <value>Monitor statusa agenata</value>
+  </data>
+  <data name="Agents with Alerts" xml:space="preserve">
+    <value>Agenti s upozorenjima</value>
+  </data>
+  <data name="Average pressure index" xml:space="preserve">
+    <value>Prosjječni indeks opterećenja</value>
+  </data>
+  <data name="Boot at" xml:space="preserve">
+    <value>Pokrenuto u</value>
+  </data>
+  <data name="CPU Usage" xml:space="preserve">
+    <value>Korištenje CPU-a</value>
+  </data>
+  <data name="Collecting data" xml:space="preserve">
+    <value>Prikupljanje podataka</value>
+  </data>
+  <data name="Containers" xml:space="preserve">
+    <value>Kontejneri</value>
+  </data>
+  <data name="Critical or Warning" xml:space="preserve">
+    <value>Kritično ili upozorenje</value>
+  </data>
+  <data name="Cumulative" xml:space="preserve">
+    <value>Kumulativno</value>
+  </data>
+  <data name="Data View" xml:space="preserve">
+    <value>Prikaz podataka</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Detalji</value>
+  </data>
+  <data name="Disk Read" xml:space="preserve">
+    <value>Čitanje diska</value>
+  </data>
+  <data name="Disk Reading" xml:space="preserve">
+    <value>Čitanje diska</value>
+  </data>
+  <data name="Disk Used" xml:space="preserve">
+    <value>Korišten disk</value>
+  </data>
+  <data name="Disk Writing" xml:space="preserve">
+    <value>Pisanje na disk</value>
+  </data>
+  <data name="Disk Written" xml:space="preserve">
+    <value>Disk zapisan</value>
+  </data>
+  <data name="Firewall" xml:space="preserve">
+    <value>Vatrozid</value>
+  </data>
+  <data name="Firewall is disabled" xml:space="preserve">
+    <value>Vatrozid je onemogućen</value>
+  </data>
+  <data name="Healthy" xml:space="preserve">
+    <value>Zdrav</value>
+  </data>
+  <data name="IP" xml:space="preserve">
+    <value>IP</value>
+  </data>
+  <data name="Last 30 seconds" xml:space="preserve">
+    <value>Zadnjih 30 sekundi</value>
+  </data>
+  <data name="More" xml:space="preserve">
+    <value>Više</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Naziv</value>
+  </data>
+  <data name="Net Received" xml:space="preserve">
+    <value>Primljeno na mreži</value>
+  </data>
+  <data name="Net Receiving" xml:space="preserve">
+    <value>Mrežni primop</value>
+  </data>
+  <data name="Net Sending" xml:space="preserve">
+    <value>Mrežno slanje</value>
+  </data>
+  <data name="Net Sent" xml:space="preserve">
+    <value>Poslano preko mreže</value>
+  </data>
+  <data name="OS" xml:space="preserve">
+    <value>OS</value>
+  </data>
+  <data name="Offline Agents" xml:space="preserve">
+    <value>Agenti koji su izvan mreže</value>
+  </data>
+  <data name="Open ports:" xml:space="preserve">
+    <value>Otvoreni priključci:</value>
+  </data>
+  <data name="Out of sync" xml:space="preserve">
+    <value>Izvan sinkronizacije</value>
+  </data>
+  <data name="Pressure index" xml:space="preserve">
+    <value>Indeks pritiska</value>
+  </data>
+  <data name="RAM Usage" xml:space="preserve">
+    <value>Korištenje RAM-a</value>
+  </data>
+  <data name="SKU" xml:space="preserve">
+    <value>SKU</value>
+  </data>
+  <data name="SSH Keys" xml:space="preserve">
+    <value>SSH ključevi</value>
+  </data>
+  <data name="Servers" xml:space="preserve">
+    <value>Poslužitelji</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="Total Agents" xml:space="preserve">
+    <value>Ukupno agenata</value>
+  </data>
+  <data name="Used at" xml:space="preserve">
+    <value>Korišteno u</value>
+  </data>
+
+</root>
