@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="A simple, real-time server monitoring system designed for local deployment." xml:space="preserve">
+    <value>Jednostavan sustav za praćenje poslužitelja u stvarnom vremenu, osmišljen za lokalno razmještanje.</value>
+  </data>
+  <data name="Build Dashboard" xml:space="preserve">
+    <value>Izradi nadzornu ploču</value>
+  </data>
+  <data name="ClickHouse Export" xml:space="preserve">
+    <value>ClickHouse izvoz</value>
+  </data>
+  <data name="Containerized" xml:space="preserve">
+    <value>Kontejnerizirano</value>
+  </data>
+  <data name="Core Features" xml:space="preserve">
+    <value>Osnovne značajke</value>
+  </data>
+  <data name="Data stays on your servers. Authentication and authorization ensure only you can access your metrics." xml:space="preserve">
+    <value>Podaci ostaju na vašim poslužiteljima. Autentifikacija i autorizacija osiguravaju da samo vi imate pristup svojim metrikama.</value>
+  </data>
+  <data name="Deploy in seconds with Docker. Designed for modern cloud-native environments." xml:space="preserve">
+    <value>Postavite u nekoliko sekundi uz Docker. Dizajnirano za moderne cloud-native okruženja.</value>
+  </data>
+  <data name="Developer Friendly" xml:space="preserve">
+    <value>Prijateljsko za developere</value>
+  </data>
+  <data name="Enter Dashboard" xml:space="preserve">
+    <value>Uđite na nadzornu ploču</value>
+  </data>
+  <data name="Get up-to-the-second updates on your server&apos;s CPU, memory, disk, and network usage." xml:space="preserve">
+    <value>Dobijte ažuriranja u stvarnom vremenu o upotrebi CPU-a, memorije, diska i mreže na vašem poslužitelju.</value>
+  </data>
+  <data name="Instant Alerts" xml:space="preserve">
+    <value>Trenutna upozorenja</value>
+  </data>
+  <data name="Join the community of developers monitoring their infrastructure with StatHub." xml:space="preserve">
+    <value>Pridružite se zajednici programera koji prate svoju infrastrukturu pomoću StatHuba.</value>
+  </data>
+  <data name="Keep an eye on your infrastructure with intuitive dashboards and detailed metrics." xml:space="preserve">
+    <value>Pratite svoju infrastrukturu pomoću intuitivnih nadzornih ploča i detaljnih metrika.</value>
+  </data>
+  <data name="Keep raw server samples in ClickHouse with efficient five-minute batch exports." xml:space="preserve">
+    <value>Čuvajte sirove uzorke poslužitelja u ClickHouseu s učinkovitim izvozima u serijama od pet minuta.</value>
+  </data>
+  <data name="Lightweight Agents" xml:space="preserve">
+    <value>Lagani agenti</value>
+  </data>
+  <data name="Low-overhead agents collect metrics without impacting your server&apos;s performance." xml:space="preserve">
+    <value>Agenti s malim troškovima prikupljaju metrike bez utjecaja na performanse vašeg poslužitelja.</value>
+  </data>
+  <data name="MIT Licence" xml:space="preserve">
+    <value>MIT licenca</value>
+  </data>
+  <data name="Monitor multiple servers from a single centralized dashboard. Scale as your infrastructure grows." xml:space="preserve">
+    <value>Praćenje više poslužitelja s jednog centraliziranog nadzornog okvira. Skalirajte kako vaša infrastruktura raste.</value>
+  </data>
+  <data name="Multi-Node" xml:space="preserve">
+    <value>Više čvorova</value>
+  </data>
+  <data name="Open API allows for easy integration with your existing tools and workflows." xml:space="preserve">
+    <value>Otvoreni API omogućuje jednostavnu integraciju s vašim postojećim alatima i radnim procesima.</value>
+  </data>
+  <data name="Open Source" xml:space="preserve">
+    <value>Otvoreni izvor</value>
+  </data>
+  <data name="Ready to get started?" xml:space="preserve">
+    <value>Spremni za početak?</value>
+  </data>
+  <data name="Real-time" xml:space="preserve">
+    <value>U stvarnom vremenu</value>
+  </data>
+  <data name="Secure" xml:space="preserve">
+    <value>Sigurno</value>
+  </data>
+  <data name="See the status of all your nodes at a glance. Identify issues before they become outages." xml:space="preserve">
+    <value>Pregledajte status svih svojih čvorova na jednom mjestu. Prepoznajte probleme prije nego što postanu prekidi rada.</value>
+  </data>
+  <data name="Self Host" xml:space="preserve">
+    <value>Samostanje</value>
+  </data>
+  <data name="Self-Hosted" xml:space="preserve">
+    <value>Samopostavljanje</value>
+  </data>
+  <data name="Simplicity by Design" xml:space="preserve">
+    <value>Jednostavnost po dizajnu</value>
+  </data>
+  <data name="Source code on GitHub" xml:space="preserve">
+    <value>Izvorni kod na GitHubu</value>
+  </data>
+  <data name="The essential tool for monitoring your servers&apos; health and performance." xml:space="preserve">
+    <value>Osnovno alat za praćenje zdravlja i performansi vaših poslužitelja.</value>
+  </data>
+  <data name="Turn your history into Grafana dashboards, from fleet overviews to individual servers." xml:space="preserve">
+    <value>Pretvorite svoju povijest u Grafana nadzorne ploče, od pregleda flote do pojedinačnih poslužitelja.</value>
+  </data>
+  <data name="View Servers Stat" xml:space="preserve">
+    <value>Prikaži statistiku poslužitelja</value>
+  </data>
+  <data name="Why Choose StatHub?" xml:space="preserve">
+    <value>Zašto odabrati StatHub?</value>
+  </data>
+  <data name="Your Server Status" xml:space="preserve">
+    <value>Status vašeg poslužitelja</value>
+  </data>
+
+</root>

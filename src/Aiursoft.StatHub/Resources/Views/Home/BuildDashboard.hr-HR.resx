@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="1. Enable ClickHouse export" xml:space="preserve">
+    <value>1. Omogućite izvoz u ClickHouse</value>
+  </data>
+  <data name="2. Check your first batch" xml:space="preserve">
+    <value>2. Provjerite svoju prvu seriju</value>
+  </data>
+  <data name="3. Connect Grafana to ClickHouse" xml:space="preserve">
+    <value>3. Povežite Grafanu s ClickHouseom</value>
+  </data>
+  <data name="4. Add a server dropdown" xml:space="preserve">
+    <value>4. Dodajte padajući izbornik za poslužitelje</value>
+  </data>
+  <data name="5. Build your resource panels" xml:space="preserve">
+    <value>5. Izgradite svoje panele resursa</value>
+  </data>
+  <data name="A StatHub dashboard in Grafana: select several servers to compare their resource history, or choose one for a closer look. Open the image to view it at full size." xml:space="preserve">
+    <value>StatHub nadzorna ploča u Grafani: odaberite nekoliko poslužitelja za usporedbu povijesti resursa ili odaberite jedan za detaljniji pregled. Otvorite sliku za prikaz u punoj veličini.</value>
+  </data>
+  <data name="Add a Time series visualization with your ClickHouse data source and SQL query type Time series. Start with CPU average and peak:" xml:space="preserve">
+    <value>Dodajte vizualizaciju vremenske serije pomoću izvora podataka ClickHouse i vrste SQL upita Time series. Počnite s prosječnom i vršnom vrijednošću CPU-a:</value>
+  </data>
+  <data name="Average DskRead and DskWrit, divided by 1048576, for MiB/s." xml:space="preserve">
+    <value>Prosječno DskRead i DskWrit, podijeljeno s 1048576, za MiB/s.</value>
+  </data>
+  <data name="Average Load1M, Load5M, and Load15M. These are raw load averages, not CPU percentages." xml:space="preserve">
+    <value>Prosječno Load1M, Load5M i Load15M. Ovo su sirove vrijednosti opterećenja, a ne postoci CPU-a.</value>
+  </data>
+  <data name="Average NetRecv and NetSend, multiplied by 8 / 1000000, for Mbps." xml:space="preserve">
+    <value>Prosječno NetRecv i NetSend, pomnoženo s 8 / 1000000, za Mbps.</value>
+  </data>
+  <data name="Build Dashboard" xml:space="preserve">
+    <value>Izradi nadzornu ploču</value>
+  </data>
+  <data name="Count archived samples in each time bucket to see reporting gaps and batch arrivals." xml:space="preserve">
+    <value>Brojajte arhivirane uzorke u svakom vremenskom intervalu kako biste otkrili praznine u izvještavanju i grupna dolazna dostavljanja.</value>
+  </data>
+  <data name="Create a dashboard and add a Query variable named Server using your ClickHouse data source. Enable Multi-value and Include All, leave Custom all value empty, and refresh the variable on dashboard load. Use this query:" xml:space="preserve">
+    <value>Kreirajte nadzornu ploču i dodajte Query varijablu naziva Server koristeći svoj ClickHouse izvor podataka. Omogućite Multi-value i Include All, ostavite Custom all value praznim i osvježite varijablu pri učitavanju nadzorne ploče. Koristite ovaj upit:</value>
+  </data>
+  <data name="Deploy StatHub" xml:space="preserve">
+    <value>Postavi StatHub</value>
+  </data>
+  <data name="Disk I/O" xml:space="preserve">
+    <value>Disk I/O</value>
+  </data>
+  <data name="For Docker, configure the same settings with environment variables such as MetricsExport__Enabled=true and MetricsExport__ConnectionString. Use your deployment&apos;s secret configuration for the real password. Inside a container, localhost refers to that container; use a reachable ClickHouse hostname." xml:space="preserve">
+    <value>Za Docker, konfigurirajte iste postavke pomoću varijabli okruženja, na primjer MetricsExport__Enabled=true i MetricsExport__ConnectionString. Za stvarnu lozinku koristite tajnu konfiguraciju svog razvoja. Unutar posude, localhost se odnosi na tu posudu; koristite dostupan hostname ClickHouse servera.</value>
+  </data>
+  <data name="For an overview table, group by ClientId and show recent averages, peaks, and max(ReceivedTime). Avoid treating a metric chosen from tied receipt timestamps as the exact last sample." xml:space="preserve">
+    <value>Za preglednu tablicu, grupirajte po ClientId i prikazite nedavne prosjeke, vrhove i max(ReceivedTime). Izbjegavajte tretiranje metrike odabrane iz podudarnih vremenskih žigova primanja kao točnog zadnjeg uzorka.</value>
+  </data>
+  <data name="Grafana dashboard comparing CPU, memory, network, disk I/O, load, and archived samples across selected StatHub servers." xml:space="preserve">
+    <value>Grafana nadzorna ploča za usporedbu CPU-a, memorije, mreže, disk I/O, opterećenja i arhiviranih uzoraka na odabranim StatHub poslužiteljima.</value>
+  </data>
+  <data name="Install ClickHouse" xml:space="preserve">
+    <value>Instalirajte ClickHouse</value>
+  </data>
+  <data name="Install Grafana and the official Grafana ClickHouse data source plugin. Add a ClickHouse data source with the hostname reachable from Grafana, HTTP port 8123 for this example, and StatHubMetrics as the default database. Use Save &amp; test to verify the connection." xml:space="preserve">
+    <value>Instalirajte Grafanu i službeni Grafana ClickHouse data source plugin. Dodajte ClickHouse data source s imenom domene dostupnim iz Grafane, HTTP portom 8123 za ovaj primjer i StatHubMetrics kao zadanim bazom podataka. Koristite opciju Spremi i testiraj za provjeru veze.</value>
+  </data>
+  <data name="Learn more about ClickHouse queries and Grafana macros" xml:space="preserve">
+    <value>Saznajte više o ClickHouse upitima i Grafana makroima</value>
+  </data>
+  <data name="Let agents report and wait for a five-minute export cycle. In ClickHouse, check that servers and recent receipts appear:" xml:space="preserve">
+    <value>Pustite da agenti izvještavaju i pričekajte petominutni ciklus izvoza. U ClickHouseu provjerite pojavljuju li se poslužitelji i nedavni zaprimljeni podaci:</value>
+  </data>
+  <data name="Live server status. Your history, your dashboards." xml:space="preserve">
+    <value>Stanje poslužitelja uživo. Vaša povijest, vaši nadzorni paneli.</value>
+  </data>
+  <data name="Load" xml:space="preserve">
+    <value>Opterećenje</value>
+  </data>
+  <data name="Memory" xml:space="preserve">
+    <value>Memorija</value>
+  </data>
+  <data name="Merge this section into your StatHub appsettings.json, replace the host and credentials, then restart your StatHub instance:" xml:space="preserve">
+    <value>Usporedite ovaj dio s vašom StatHub appsettings.json datotekom, zamijenite domaćina i vjerodajnice, a zatim ponovno pokrenite svoju StatHub instanciju:</value>
+  </data>
+  <data name="Metrics and units" xml:space="preserve">
+    <value>Metrike i jedinice</value>
+  </data>
+  <data name="Network" xml:space="preserve">
+    <value>Mreža</value>
+  </data>
+  <data name="Network and disk fields are already rates in bytes per second; do not apply rate or derivative again. CPU core counts and disk capacity are not exported. Memory used share is not Linux MemAvailable." xml:space="preserve">
+    <value>Mrežna i diskovna polja već su stope u bajtovima u sekundi; nemojte ponovno primijeniti stopu ili derivaciju. Broj CPU jezgri i kapacitet diska nisu izvezeni. Udio korištene memorije nije Linux MemAvailable.</value>
+  </data>
+  <data name="Official ClickHouse data source guide" xml:space="preserve">
+    <value>Službeni vodič za ClickHouse izvor podataka</value>
+  </data>
+  <data name="Panel" xml:space="preserve">
+    <value>Panel</value>
+  </data>
+  <data name="Query ServerMetricsLatest for dashboards so retries do not inflate your results. HasSampleTime=1 means the agent supplied the source timestamp. Older agents use receipt time and mark HasSampleTime=0; samples in one report may share a timestamp, so their exact source timing and order are unavailable." xml:space="preserve">
+    <value>Upitujte ServerMetricsLatest za nadzorne ploče kako ponovna pokušaji ne bi naduvale vaše rezultate. HasSampleTime=1 znači da je agent dostavio izvorni vremenski žig. Stariji agenti koriste vrijeme prijema i označavaju HasSampleTime=0; uzorci u jednom izvještaju mogu dijeliti isti vremenski žig, pa su njihov točan izvorni tajming i redoslijed nedostupni.</value>
+  </data>
+  <data name="Raw samples are batched every five minutes rather than reduced to five-minute averages. The initial retention is 30 days. Changing RetentionDays later does not alter an existing table&apos;s TTL. The buffer is bounded and held in memory; a restart loses samples that have not been written yet." xml:space="preserve">
+    <value>Sirove uzorke se grupiraju svakih pet minuta umjesto da se smanje na petominutne prosjeke. Početno zadržavanje je 30 dana. Kasnije promjena RetentionDays ne mijenja TTL postojeće tablice. Pufer je ograničen i čuva se u memoriji; ponovno pokretanje rezultira gubitkom uzoraka koji još nisu zapisani.</value>
+  </data>
+  <data name="Samples" xml:space="preserve">
+    <value>Uzorci</value>
+  </data>
+  <data name="Self Host" xml:space="preserve">
+    <value>Samostanje</value>
+  </data>
+  <data name="Set Grafana&apos;s Query Timeout to 15 seconds. In the ClickHouse reader&apos;s settings profile, use readonly=1 and max_threads=2, and allow max_execution_time to change in read-only mode with CHANGEABLE_IN_READONLY, as described in the official configuration guide." xml:space="preserve">
+    <value>Postavite Grafanin Query Timeout na 15 sekundi. U profilu postavki ClickHouse čitača, koristite readonly=1 i max_threads=2, i dopustite promjenu max_execution_time u načinu samo za čitanje pomoću CHANGEABLE_IN_READONLY, kako je opisano u službenom vodiču za konfiguraciju.</value>
+  </data>
+  <data name="Set the CPU unit to Percent (0-100). Keep the time and server filters when adapting the query to other panels. All removes the server restriction; individual selections use safely quoted ClientId values." xml:space="preserve">
+    <value>Postavite jedinicu CPU-a na Postotak (0-100). Zadržite filtre za vrijeme i poslužitelj prilikom prilagodbe upita za druge panele. Opcija All uklanja ograničenje poslužitelja; pojedinačne odabire koriste sigurno citirane vrijednosti ClientId.</value>
+  </data>
+  <data name="Start with a self-hosted StatHub instance and a ClickHouse server reachable from it. Keep your existing agents reporting to StatHub; export happens centrally through the Aiursoft ClickHouse SDK." xml:space="preserve">
+    <value>Započnite s vlastitim StatHub instancijom i ClickHouse poslužiteljem dostupnim s nje. Postojanje vaših postojećih agensa prijavljivanja na StatHub; izvoz se događa centralno putem Aiursoft ClickHouse SDK-a.</value>
+  </data>
+  <data name="Start with the last six hours in UTC, a five-minute dashboard refresh, and about 720 points per series. Keep a minimum 30-second bucket and let it grow for longer ranges. Leave missing data empty instead of filling it with zero. Data age is not proof that a server is offline." xml:space="preserve">
+    <value>Započnite s posljednjih šest sati u UTC, osvježavanjem nadzorne ploče svakih pet minuta i približno 720 točaka po seriji. Zadržite minimalnu košuru od 30 sekundi i dopustite joj da raste za duže raspone. Ostavite nedostajuće podatke praznima umjesto da ih popunite nulom. Starost podataka nije dokaz da je poslužitelj izvan mreže.</value>
+  </data>
+  <data name="The ClickHouse plugin reads the first column as the value and the second as the display text. ClientId keeps machines separate even when names match. Search and select one or several servers, or choose All. This menu lists servers reporting within the last 24 hours; reload to discover new servers." xml:space="preserve">
+    <value>ClickHouse priključak čita prvi stupac kao vrijednost, a drugi kao prikazani tekst. ClientId drži strojeve odvojenima čak i kada se nazivi podudaraju. Pretražite i odaberite jedan ili više poslužitelja ili odaberite Svi. Ovaj izbornik prikazuje poslužitelje koji su izvještavali u posljednja 24 sata; osvježite ga kako biste otkrili nove poslužitelje.</value>
+  </data>
+  <data name="The exporter needs permission to create its database, table, and view, and to insert and select metrics. On the first non-empty batch it creates StatHubMetrics.ServerMetrics and the deduplicated ServerMetricsLatest view automatically." xml:space="preserve">
+    <value>Izvoznik treba dopuštenje za stvaranje svoje baze podataka, tablice i pogleda te za umetanje i odabir metrika. Pri prvoj praznoj seriji automatski stvara StatHubMetrics.ServerMetrics i deduplikirani pogled ServerMetricsLatest.</value>
+  </data>
+  <data name="Use ClickHouse export under Monitoring to choose which servers to export. Its independent policy supports all servers, explicit inclusions, and exclusions; exclusions always win." xml:space="preserve">
+    <value>Koristite ClickHouse izvoz pod Nadzorom kako biste odabrali koje poslužitelje izvoziti. Njegova neovisna politika podržava sve poslužitelje, eksplicitne uključivanja i isključivanja; isključivanja uvijek imaju prednost.</value>
+  </data>
+  <data name="Use a separate read-only Grafana account with SELECT permission on both ServerMetricsLatest and its underlying ServerMetrics table. Keep the exporter credentials in StatHub." xml:space="preserve">
+    <value>Koristite zaseban Grafana račun samo za čitanje s SELECT dopuštenjem za tablice ServerMetricsLatest i njenu osnovnu tablicu ServerMetrics. Vrijednosti za prijavu izvoznika zadržite u StatHubu.</value>
+  </data>
+  <data name="Used percent: MemUsed divided by MemUsed + MemFree + MemBuf + MemCach, times 100. Return null when the total is zero. Plot the four fields separately for memory composition." xml:space="preserve">
+    <value>Postotak korištenja: MemUsed podijeljeno s MemUsed + MemFree + MemBuf + MemCach, pomnoženo s 100. Vrati null kada je zbroj nula. Prikazujte četiri polja odvojeno radi sastava memorije.</value>
+  </data>
+  <data name="We recommend ClickHouse and Grafana for exploring your StatHub history. Preserve raw server samples, compare several machines, and switch from a fleet overview to a single server with one dropdown." xml:space="preserve">
+    <value>Preporučujemo ClickHouse i Grafana za istraživanje vaše StatHub povijesti. Sačuvajte sirove uzorke poslužitelja, usporedite više strojeva i prebacite se sa pregleda flote na pojedinačni poslužitelj pomoću jednog padajućeg izbornika.</value>
+  </data>
+
+</root>

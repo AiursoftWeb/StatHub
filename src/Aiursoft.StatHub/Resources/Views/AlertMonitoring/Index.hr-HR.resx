@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="A yellow-or-worse rule set to 35 minutes would trigger. A red-or-worse rule set to 35 minutes would not. The rules you save determine the alert severity." xml:space="preserve">
+    <value>Pravilo „žuto ili gore“ postavljeno na 35 minuta bi se aktiviralo. Pravilo „crveno ili gore“ postavljeno na 35 minuta ne bi se aktiviralo. Pravila koja spremites određuju ozbiljnost upozorenja.</value>
+  </data>
+  <data name="Add rule" xml:space="preserve">
+    <value>Dodaj pravilo</value>
+  </data>
+  <data name="After startup, reconnecting or incomplete data, health stays unconfirmed until pressure or recovery is established. Upgrade older agents to report Linux PSI. Collecting data is different from offline." xml:space="preserve">
+    <value>Nakon pokretanja, ponovnog povezivanja ili nepotpunih podataka, zdravstveno stanje ostaje nepotvrđeno dok se ne uspostavi pritisak ili oporavak. Nadogradite starije agense kako bi izvještavali o Linux PSI. Prikupljanje podataka razlikuje se od stanja izvan mreže.</value>
+  </data>
+  <data name="Alert rules" xml:space="preserve">
+    <value>Pravila upozorenja</value>
+  </data>
+  <data name="Configure the AlertCenter connection in Global Settings. Environment variables can override those settings. Monitoring rules do not store credentials." xml:space="preserve">
+    <value>Podesite poveznicu AlertCentra u globalnim postavkama. Varijable okruženja mogu nadjačati te postavke. Pravila nadzora ne pohranjuju vjerodajnice.</value>
+  </data>
+  <data name="Connection settings" xml:space="preserve">
+    <value>Postavke povezivanja</value>
+  </data>
+  <data name="Continuous minutes" xml:space="preserve">
+    <value>Neprekidno (minuta)</value>
+  </data>
+  <data name="Counts red and grey. Yellow or green resets this timer." xml:space="preserve">
+    <value>Broja crveno i sivo. Žuto ili zeleno poništava ovaj tajmer.</value>
+  </data>
+  <data name="Counts time offline. Any live color resets this timer. Grey starts after one minute without a valid report." xml:space="preserve">
+    <value>Broja vrijeme izvan mreže. Bilo koja aktivna boja poništava ovaj tajmer. Siva boja počinje nakon jedne minute bez valjanog izvještaja.</value>
+  </data>
+  <data name="Counts yellow, red and grey. Confirmed green resets this timer. Incomplete measurements interrupt observation without mitigating incidents." xml:space="preserve">
+    <value>Obuhvaća žutu, crvenu i sivu. Potvrđena zelena vraća ovaj tajmer na početno stanje. Nepotpuna mjerenja prekidaju opažanje bez ublažavanja incidenata.</value>
+  </data>
+  <data name="Delete rule" xml:space="preserve">
+    <value>Obriši pravilo</value>
+  </data>
+  <data name="Enable monitoring policy" xml:space="preserve">
+    <value>Omogući politiku praćenja</value>
+  </data>
+  <data name="Enabled" xml:space="preserve">
+    <value>Omogućeno</value>
+  </data>
+  <data name="Example: alternating colors" xml:space="preserve">
+    <value>Primjer: izmjenične boje</value>
+  </data>
+  <data name="Exclude" xml:space="preserve">
+    <value>Izključi</value>
+  </data>
+  <data name="Exclude server" xml:space="preserve">
+    <value>Isključi poslužitelj</value>
+  </data>
+  <data name="Excluded servers always take precedence. When all servers are monitored, individual inclusions are unnecessary." xml:space="preserve">
+    <value>Isključeni poslužitelji uvijek imaju prednost. Kada se nadziru svi poslužitelji, pojedinačna uključivanja nisu potrebna.</value>
+  </data>
+  <data name="From most to least severe" xml:space="preserve">
+    <value>Od najtežeg prema najmanje teškom</value>
+  </data>
+  <data name="Getting worse keeps a timer running. Improving below its threshold resets it." xml:space="preserve">
+    <value>Pogoršanje zadržava tajmer u radu. Poboljšanje ispod njegovog praga vraća ga na početno stanje.</value>
+  </data>
+  <data name="Green" xml:space="preserve">
+    <value>Zeleno</value>
+  </data>
+  <data name="Green is published only after five continuous minutes below all recovery limits. A brief quiet sample cannot reset timers or mitigate incidents. Missing pressure data is not recovery." xml:space="preserve">
+    <value>Zelena se objavljuje tek nakon pet uzastopnih minuta ispod svih granica oporavka. Kratak tihi uzorak ne može poništiti odbrojavanje niti ublažiti incidente. Nedostajući podaci o opterećenju nisu oporavak.</value>
+  </data>
+  <data name="Grey (offline)" xml:space="preserve">
+    <value>Sivo (neaktivno)</value>
+  </data>
+  <data name="Grey only" xml:space="preserve">
+    <value>Samo sivo</value>
+  </data>
+  <data name="How alert timers work" xml:space="preserve">
+    <value>Kako radovi alarmnih mjerača vremena</value>
+  </data>
+  <data name="Include" xml:space="preserve">
+    <value>Uključi</value>
+  </data>
+  <data name="Include server" xml:space="preserve">
+    <value>Uključi poslužitelj</value>
+  </data>
+  <data name="Last report" xml:space="preserve">
+    <value>Zadnje izvješće</value>
+  </data>
+  <data name="Matching more rules escalates the existing incident when needed; it does not create another incident or automatically lower its severity." xml:space="preserve">
+    <value>Povezivanje s više pravila eskalira postojeći incident kada je to potrebno; ne stvara novi incident niti automatski snižava njegovu ozbiljnost.</value>
+  </data>
+  <data name="Mitigate incidents after five continuous minutes below all resource recovery limits" xml:space="preserve">
+    <value>Otkloni incident nakon pet uzastopnih minuta ispod svih granica oporavka resursa</value>
+  </data>
+  <data name="Monitor all servers, including newly connected servers" xml:space="preserve">
+    <value>Praćenje svih poslužitelja, uključujući novo povezane poslužitelje</value>
+  </data>
+  <data name="Monitoring policy" xml:space="preserve">
+    <value>Politika praćenja</value>
+  </data>
+  <data name="No report since restart" xml:space="preserve">
+    <value>Nema izvještaja od ponovnog pokretanja</value>
+  </data>
+  <data name="One incident, with recovery" xml:space="preserve">
+    <value>Jedan incident, s oporavkom</value>
+  </data>
+  <data name="PSI measures time when tasks wait for CPU, memory or I/O. Health uses PSI avg60 and CPU idle smoothed over 60 seconds; load is diagnostic only." xml:space="preserve">
+    <value>PSI mjeri vrijeme kada zadaci čekaju na CPU, memoriju ili I/O. Zdravlje koristi PSI avg60 i CPU idle glatko izrađen preko 60 sekundi; opterećenje je samo dijagnostičko.</value>
+  </data>
+  <data name="Red" xml:space="preserve">
+    <value>Crveno</value>
+  </data>
+  <data name="Red or worse" xml:space="preserve">
+    <value>Crveno ili gore</value>
+  </data>
+  <data name="Red: CPU idle at most 5% and CPU PSI at least 50%, memory PSI at least 20%, I/O PSI at least 30%, or disk usage at least 92%." xml:space="preserve">
+    <value>Crveno: CPU idle najviše 5% i CPU PSI najmanje 50%, memorijski PSI najmanje 20%, I/O PSI najmanje 30% ili korištenje diska najmanje 92%.</value>
+  </data>
+  <data name="Rules measure how long a server stays at or above a health threshold. Each threshold has its own timer." xml:space="preserve">
+    <value>Pravila mjere koliko dugo poslužitelj ostaje na ili iznad praga zdravlja. Svaki prag ima vlastiti tajmer.</value>
+  </data>
+  <data name="Save policy and server selection" xml:space="preserve">
+    <value>Spremi politiku i odabir poslužitelja</value>
+  </data>
+  <data name="Save rule" xml:space="preserve">
+    <value>Spremi pravilo</value>
+  </data>
+  <data name="Server" xml:space="preserve">
+    <value>Poslužitelj</value>
+  </data>
+  <data name="Server selection" xml:space="preserve">
+    <value>Odabir poslužitelja</value>
+  </data>
+  <data name="Severity" xml:space="preserve">
+    <value>Ozbiljnost</value>
+  </data>
+  <data name="Stable resource health" xml:space="preserve">
+    <value>Stabilno zdravlje resursa</value>
+  </data>
+  <data name="State" xml:space="preserve">
+    <value>Stanje</value>
+  </data>
+  <data name="Sustained state rules" xml:space="preserve">
+    <value>Pravila za trajno stanje</value>
+  </data>
+  <data name="Timers and known servers are kept in memory, with no sample history stored in the database. After StatHub restarts, servers are observed again when they report, and their timers start fresh. Rules and connection settings remain saved." xml:space="preserve">
+    <value>Vremenska okvira i poznati poslužitelji zadržavaju se u memoriji, pri čemu se povijest uzoraka ne sprema u bazu podataka. Nakon ponovnog pokretanja StatHuba, poslužitelji se ponovno promatraju kada prijavljuju, a njihova vremenska okvira počinju ispočetka. Pravila i postavke povezivanja ostaju spremljena.</value>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>Nepoznato</value>
+  </data>
+  <data name="Worsening requires two continuous minutes. Red drops to yellow after five minutes without red pressure. Green requires five minutes with CPU idle at least 20% or CPU PSI at most 10%, memory PSI at most 2%, I/O PSI at most 5%, and disk usage at most 75%." xml:space="preserve">
+    <value>Pogoršanje zahtijeva dvije uzastopne minute. Crveno prelazi u žuto nakon pet minuta bez crvenog opterećenja. Zeleno zahtijeva pet minuta s CPU praznim barem 20% ili CPU PSI najviše 10%, memorijski PSI najviše 2%, I/O PSI najviše 5% i korištenjem diska najviše 75%.</value>
+  </data>
+  <data name="Yellow" xml:space="preserve">
+    <value>Žuto</value>
+  </data>
+  <data name="Yellow for 15 minutes, then red for 10, then yellow for 10: yellow or worse has lasted 35 minutes. Red lasted only 10 minutes and its timer reset when yellow returned." xml:space="preserve">
+    <value>Žuto 15 minuta, zatim crveno 10, zatim žuto 10: žuto ili gore trajalo je 35 minuta. Crveno je trajalo samo 10 minuta i njegov je tajmer ponovno postavljen kada se vratio žuti.</value>
+  </data>
+  <data name="Yellow or worse" xml:space="preserve">
+    <value>Žuto ili gore</value>
+  </data>
+  <data name="Yellow: CPU idle at most 15% and CPU PSI at least 20%, memory PSI at least 5%, I/O PSI at least 10%, or disk usage at least 80%." xml:space="preserve">
+    <value>Žuto: CPU neaktivan najviše 15% i CPU PSI najmanje 20%, memorijski PSI najmanje 5%, I/O PSI najmanje 10% ili korištenje diska najmanje 80%.</value>
+  </data>
+  <data name="Zero minutes means immediately. The most severe matching rule wins. See the guide for how severity thresholds accumulate." xml:space="preserve">
+    <value>Nula minuta znači odmah. Najteže podudarajuće pravilo ima prednost. Pogledajte vodič za to kako se pragovi ozbiljnosti akumuliraju.</value>
+  </data>
+
+</root>
