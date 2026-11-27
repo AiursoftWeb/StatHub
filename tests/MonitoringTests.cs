@@ -35,6 +35,29 @@ public sealed class MonitoringTests
         _service = Service();
     }
 
+    [TestMethod]
+    public async Task RecoveryMitigatesOnlyTheReportingServerEvenWhenHostnamesMatch()
+    {
+        var policy = await _service.PolicyAsync();
+        _db.AlertMonitoringRules.Add(new MonitoringRule { Policy = policy, State = "yellow", DurationMinutes = 0, Severity = "sev4" });
+        await _db.SaveChangesAsync();
+
+        await _service.ObserveAsync("first", "replica", ["yellow"]);
+        await _service.ObserveAsync("second", "replica", ["yellow"]);
+        await _service.CheckAsync();
+        var incidents = _client.Incidents.ToDictionary(incident => incident.Context!.Value<string>("clientId")!);
+        Assert.AreEqual("new", incidents["first"].Status);
+        Assert.AreEqual("new", incidents["second"].Status);
+
+        await _service.ObserveAsync("first", "replica", ["green"]);
+        await _service.CheckAsync();
+        await _service.CheckAsync();
+        Assert.AreEqual("mitigated", incidents["first"].Status);
+        Assert.AreEqual("new", incidents["second"].Status);
+        Assert.AreEqual(1, _client.Mitigations);
+        Assert.HasCount(2, _client.Incidents);
+    }
+
     private MonitoringService Service() => new(_db, _coordinator, _settings, _client, _clock, NullLogger<MonitoringService>.Instance, _agents);
 
     [TestCleanup]
