@@ -10,7 +10,7 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Aiursoft.AlertCenter.SDK" Version="10.10.6" />
+    <PackageReference Include="Aiursoft.AlertCenter.SDK" Version="10.11.0" />
     <PackageReference Include="Aiursoft.Canon.ScheduledTasks" Version="10.0.19" />
     <PackageReference Include="Aiursoft.ClickhouseLoggerProvider" Version="10.0.30" />
     <PackageReference Include="Aiursoft.DbTools.Switchable" Version="10.0.32" />
@@ -21,8 +21,8 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="SkiaSharp" Version="4.157.0" />
-    <PackageReference Include="SkiaSharp.NativeAssets.Linux.NoDependencies" Version="4.157.0" />
+    <PackageReference Include="SkiaSharp" Version="4.158.0" />
+    <PackageReference Include="SkiaSharp.NativeAssets.Linux.NoDependencies" Version="4.158.0" />
     <PackageReference Include="Aiursoft.AiurProtocol.Server" Version="10.0.42" />
     <PackageReference Include="Aiursoft.AiurObserver.WebSocket.Server" Version="10.0.17" />
   </ItemGroup>
